@@ -121,7 +121,7 @@ a:hover
 }
 
 .updateLink {
-  color:#27cacc; 
+  color:#27cacc;
 }
 
 sub
@@ -149,6 +149,15 @@ p, ul, ol, dl, table
 {
   -webkit-text-stroke: 0.3px;
   margin-bottom: 1em;
+}
+
+.DEparagraph {
+  -webkit-text-stroke: 0.3px;
+  font-size: 21px;
+  line-height: 36px;
+  font-weight: 500;
+  width: 75%;
+  margin: 4em auto;
 }
 
 p
@@ -214,7 +223,7 @@ hr:after
   display: block;
   width: 1px;
   height: 21px;
-  background: rgba(128,128,128,0.2);			
+  background: rgba(128,128,128,0.2);
 }
 
 hr:before
@@ -285,7 +294,7 @@ figcaption {
 }
 
 .darkContainer {
-  margin: 0; 
+  margin: 0;
   padding: 0;
   background-color: #2f3238;
   display: inline-block;
@@ -394,7 +403,7 @@ a.image:hover:before
 {
 content: '';
 height: 25%;
-} 
+}
 
 a.image:before
 {
@@ -411,7 +420,7 @@ opacity: 0;
 -webkit-transition: all 0.25s ease-in-out;
 -o-transition: all 0.25s ease-in-out;
 -ms-transition: all 0.25s ease-in-out;
-transition: all 0.25s ease-in-out;	 
+transition: all 0.25s ease-in-out;
 }
 
 a.image:hover:before
@@ -694,8 +703,8 @@ table.style1 tbody
 .button:hover
 {
   color: #fff;
-  background: #ef8376; 
-} 
+  background: #ef8376;
+}
 
 
 .button:active
@@ -1683,7 +1692,7 @@ header .icon.circled
 #main section:first-of-type
 {
   padding-top: 2em;
-}		
+}
 
 /*********************************************************************************/
 /* Footer                                                                        */
@@ -1789,7 +1798,7 @@ header .icon.circled
   width: 6em;
   height: 6em;
   border-radius: 100%;
-  background-color: rgba(72,57,73, 0.5);				
+  background-color: rgba(72,57,73, 0.5);
   position: absolute;
   top: 50%;
   margin-top: -3em;
@@ -1862,11 +1871,11 @@ header .icon.circled
   margin: 0 2em 0 0;
   white-space: normal;
   opacity: 1.0;
-  -moz-transition: opacity 0.25s ease-in-out;			
-  -webkit-transition: opacity 0.25s ease-in-out;			
-  -o-transition: opacity 0.25s ease-in-out;			
-  -ms-transition: opacity 0.25s ease-in-out;			
-  transition: opacity 0.25s ease-in-out;			
+  -moz-transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.25s ease-in-out;
+  -o-transition: opacity 0.25s ease-in-out;
+  -ms-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .carousel article.loading
@@ -1948,4 +1957,3 @@ p.contactPage
   /* background:url(../svg/emailOpen.svg); */
   opacity: .75;
 }
-
