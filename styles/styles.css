@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700');
+
+@font-face {
+  font-family: Butler;
+  font-weight: regular;
+  src: url("./fonts/Butler_Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Butler-Bold;
+  font-weight: bold;
+  src: url("./fonts/Butler_Bold.otf") format("opentype");
+}
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: Butler;
+}
+
+::selection {
+  background: black; /* WebKit/Blink Browsers */
+  color:#fff;
+}
+
+::-moz-selection {
+  background: black; /* Gecko Browsers */
+  color:#fff;
+}
+
+.wrapper {
+  margin: auto;
+  max-width:1440px;
+  display: grid;
+  padding: 32px 64px;
+  grid-template-columns: repeat(auto-fit, minmax(45%, 1fr) ) ;
+  grid-gap: 10px 100px;
+}
+
+
+.box {
+  background: rgba(255,255,255,0);
+  padding: 20px;
+  margin-top:16px;
+  font-size: 18px;
+}
+
+.box.socialBox {
+  text-align:right;
+}
+
+.box.intro {
+  margin-top:32px;
+  margin-bottom:64px;  
+}
+
+.box.projectPreview:hover {
+  color: #F03D76;
+  border-color: #F03D76;
+  cursor: pointer;
+}
+
+.box.projectPreview::after {
+  content: "";
+  z-index: -999;
+  display: block;
+  position: absolute;
+  width: 0;
+  margin-top: -140px;
+  margin-left: -10px;
+  transition: width .5s cubic-bezier(.8,.03,.25,1);
+}
+
+.box.projectPreview:hover::after {
+  width: 25%;
+  height:10%;
+  background-color: rgba(240,61,118,.25);
+}
+
+.box.projectPreview {
+  border-top: 4px solid black;
+  padding: 0;
+  transition: all .25s ease;
+  margin-bottom:24px;
+  font-weight: normal;
+  transition: all .25s ease;
+}
+
+.box.projectPreview:hover a {
+  color: #F03D76;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.projectPreviewLargeLink {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.box.projectPreview .projectPreviewParagraph + a {
+  transition: all .25s ease;
+  font-size: 16px;
+  display: block;
+  font-weight: normal;
+  padding:2px 0px;
+  width:100%;
+  height:100%;
+  margin: 0px 0px;
+  color: #000;
+  text-decoration: none;
+  list-style-type: none;
+  transition: all .25s ease;
+}
+
+.box.projectPreview:hover .projectPreviewParagraph + a{
+  color: #F03D76;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.box.projectPreview.SYW:hover::after {
+  width: 25%;
+  height:10%;
+  background-color: rgba(240,179,66,.25);
+}
+
+.box.projectPreview.SYW:hover {
+  color: #E47427;
+  border-color: #E47427;
+}
+
+.box.projectPreview.SYW:hover a {
+  color: #E47427;
+}
+
+.box.projectPreview.DE:hover::after {
+  width: 25%;
+  height:10%;
+  background-color: rgba(50,119,179,.25);
+}
+
+.box.projectPreview.DE:hover {
+  color: #3277B3;
+  border-color: #3277B3;
+}
+
+.box.projectPreview.DE:hover a {
+  color: #3277B3;
+}
+
+.box.nav a {
+  font-size: 16px;
+  font-weight: normal;
+  padding:2px 0px;
+  margin: 0px 6px;
+  color: #000;
+  text-decoration: none;
+  list-style-type: none;
+  transition: all .25s ease;
+  border-bottom: 4px rgba(0,0,0,0) solid;
+}
+
+.box.nav a:hover {
+  border-bottom: 4px rgba(0,0,0,.25) solid;
+}
+
+.box a.activeNav {
+  font-weight: bold;
+  border-bottom: 4px black solid;
+  width:2px;
+}
+
+h1.myName {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom:32px;
+}
+
+h2.projectTitle {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom:8px;
+  margin-top:8px;
+}
+
+p {
+  line-height: 150%
+}
+
+.socialIcon {
+  margin: 8px;
+  padding: 8px;
+  transition: all .25s ease;
+  border-radius:6px;
+  color: black;
+}
+
+p.projectPreviewParagraph {
+  margin-bottom: 24px;
+}
+
+.socialIcon:hover {
+  background: rgba(0,0,0,.25);
+  cursor: pointer;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 1146px) {
+  .box.socialBox { display: none; }
+  .box.d {
+    display: none;
+ }
+}
+
+@media only screen and (max-width: 756px) {
+   .wrapper { padding: 16px 32px; }
+
+    .box.d {
+      display: none;
+   }
+ 
+}
+
+@media only screen and (max-width: 450px) {
+   .wrapper { padding: 8px 16px; }
+   .box.intro {
+     margin-bottom:32px;
+     margin-top:16px;
+ }
+ .box.d {
+   display: none;
+ }
+}
+
+/* PROJECT PAGE*/
+
+.projectPageBase {
+  margin:0 ;
+}
+
+.wrapperProjectPage {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: 3fr minmax(200px, 900px) 1fr;
+  background-color: #fff;
+}
+
+
+.fullWidth {
+  grid-column: 1 / span 3;
+  background: purple;
+}
