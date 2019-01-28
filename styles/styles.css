@@ -18,7 +18,6 @@ html {
 
 body {
   font-family: 'IBM Plex Sans', sans-serif;
-  
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -49,7 +48,7 @@ h1,h2,h3,h4,h5,h6 {
   background: rgba(255,255,255,0);
   padding: 20px;
   margin-top:16px;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .box.socialBox {
@@ -81,7 +80,7 @@ h1,h2,h3,h4,h5,h6 {
 .box.projectPreview:hover::after {
   width: 25%;
   height:10%;
-  background-color: rgba(240,61,118,.25);
+  background-color: rgba(240,61,118,.20);
 }
 
 .box.projectPreview {
@@ -107,7 +106,6 @@ h1,h2,h3,h4,h5,h6 {
 
 .box.projectPreview .projectPreviewParagraph + a {
   transition: all .25s ease;
-  font-size: 1.6rem;
   display: block;
   font-weight: normal;
   padding:2px 0px;
@@ -129,7 +127,7 @@ h1,h2,h3,h4,h5,h6 {
 .box.projectPreview.SYW:hover::after {
   width: 25%;
   height:10%;
-  background-color: rgba(240,179,66,.25);
+  background-color: rgba(240,179,66,.20);
 }
 
 .box.projectPreview.SYW:hover {
@@ -144,7 +142,7 @@ h1,h2,h3,h4,h5,h6 {
 .box.projectPreview.DE:hover::after {
   width: 25%;
   height:10%;
-  background-color: rgba(50,119,179,.25);
+  background-color: rgba(50,119,179,.20);
 }
 
 .box.projectPreview.DE:hover {
@@ -179,7 +177,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1.myName {
-  font-size: 32px;
+  font-size: 4rem;
   font-weight: bold;
   margin-bottom:32px;
 }
