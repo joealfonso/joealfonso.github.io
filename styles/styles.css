@@ -103,7 +103,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .box.projectPreview .projectPreviewParagraph + a {
   transition: all .25s ease;
-  font-size: 16px;
+  font-size: 1rem;
   display: block;
   font-weight: normal;
   padding:2px 0px;
