@@ -1,37 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700');
 
+@font-face {
+  font-family: Butler;
+  font-weight: 400;
+  src: url("../fonts/Butler_Regular.otf") format("opentype");
+}
 
 @font-face {
-  font-family: 'butlerbold';
-  src: url('./fonts/butler_bold-webfont.woff2') format('woff2'),
-       url('./fonts/butler_bold-webfont.woff') format('woff');
+  font-family: Butler-Bold;
   font-weight: bold;
-  font-style: normal;
+  src: url("../fonts/Butler_Bold.otf") format("opentype");
 }
 
-@font-face {
-  font-family: 'butlerlight';
-  src: url('./fonts/butler_light-webfont.woff2') format('woff2'),
-       url('./fonts/butler_light-webfont.woff') format('woff');
-  font-weight: light;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'butlermedium';
-  src: url('./fonts/butler_medium-webfont.woff2') format('woff2'),
-       url('./fonts/butler_medium-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'butlerregular';
-  src: url('./fonts/butler_regular-webfont.woff2') format('woff2'),
-       url('./fonts/butler_regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-
+html {
+  font-size: 62.5%;
 }
 
 body {
@@ -40,7 +22,7 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: butlerregular;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 ::selection {
@@ -91,7 +73,7 @@ h1,h2,h3,h4,h5,h6 {
   display: block;
   position: absolute;
   width: 0;
-  margin-top: -140px;
+  margin-top: -125px;
   margin-left: -10px;
   transition: width .5s cubic-bezier(.8,.03,.25,1);
 }
@@ -125,7 +107,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .box.projectPreview .projectPreviewParagraph + a {
   transition: all .25s ease;
-  font-size: 1rem;
+  font-size: 1.6rem;
   display: block;
   font-weight: normal;
   padding:2px 0px;
@@ -204,7 +186,7 @@ h1.myName {
 
 h2.projectTitle {
   font-weight: bold;
-  font-size: 24px;
+  font-size: 26px;
   margin-bottom:8px;
   margin-top:8px;
 }
@@ -222,7 +204,8 @@ p {
 }
 
 p.projectPreviewParagraph {
-  margin-bottom: 24px;
+  margin-top:0;
+  margin-bottom: 12px;
 }
 
 .socialIcon:hover {
