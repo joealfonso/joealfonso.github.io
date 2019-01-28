@@ -218,7 +218,17 @@ p.projectPreviewParagraph {
 }
 
 @media only screen and (max-width: 1146px) {
-  .box.socialBox { display: none; }
+  .box.socialBox {
+    text-align:left;
+    padding-left:0;
+  }
+  .box.nav {
+    padding-left:0;
+  }
+  .box.intro {
+    padding-left: 0;
+    padding-right: 0;
+    }
   .box.d {
     display: none;
  }
@@ -226,13 +236,10 @@ p.projectPreviewParagraph {
 
 @media only screen and (max-width: 756px) {
    .wrapper { padding: 16px 16px; }
-   .box.intro {
-    padding-left: 0;
-    padding-right: 0;
-}
-.box.nav a {
 
-}
+    .box.nav a {
+
+    }
     .box.d {
       display: none;
    }
@@ -240,21 +247,20 @@ p.projectPreviewParagraph {
 }
 
 @media only screen and (max-width: 450px) {
-   .wrapper { padding: 8px 8px; }
-   .box.intro {
+    .wrapper { padding: 8px 8px; }
+    .box.intro {
      padding-left: 8px;
      padding-right: 8px;
      margin-bottom:32px;
      margin-top:16px;
- }
-
- .box.intro p {
-  font-size: 20px;
-  line-height: 160%;
- }
- .box.d {
-   display: none;
- }
+    }
+    .box.intro p {
+      font-size: 20px;
+      line-height: 160%;
+    }
+    .box.d {
+      display: none;
+    }
 }
 
 /* PROJECT PAGE*/
