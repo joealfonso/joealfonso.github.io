@@ -47,7 +47,6 @@ h1,h2,h3,h4,h5,h6 {
 .box {
   background: rgba(255,255,255,0);
   padding: 20px;
-  margin-top:16px;
   font-size: 20px;
 }
 
@@ -238,6 +237,10 @@ p.projectPreviewParagraph {
     .box.nav a {
 
     }
+    .box.intro {
+      margin-top:0;
+      padding-top:0;
+    }
     .box.d {
       display: none;
    }
@@ -250,7 +253,6 @@ p.projectPreviewParagraph {
      padding-left: 8px;
      padding-right: 8px;
      margin-bottom:32px;
-     margin-top:16px;
     }
     .box.intro p {
       font-size: 20px;
