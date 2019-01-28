@@ -226,7 +226,10 @@ p.projectPreviewParagraph {
 
 @media only screen and (max-width: 756px) {
    .wrapper { padding: 16px 16px; }
-
+   .box.intro {
+    padding-left: 0;
+    padding-right: 0;
+}
     .box.d {
       display: none;
    }
