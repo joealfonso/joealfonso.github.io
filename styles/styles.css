@@ -225,7 +225,7 @@ p.projectPreviewParagraph {
 }
 
 @media only screen and (max-width: 756px) {
-   .wrapper { padding: 16px 32px; }
+   .wrapper { padding: 16px 16px; }
 
     .box.d {
       display: none;
@@ -234,8 +234,10 @@ p.projectPreviewParagraph {
 }
 
 @media only screen and (max-width: 450px) {
-   .wrapper { padding: 8px 16px; }
+   .wrapper { padding: 8px 8px; }
    .box.intro {
+     padding-left: 0;
+     padding-right: 0;
      margin-bottom:32px;
      margin-top:16px;
  }
