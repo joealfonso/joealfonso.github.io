@@ -269,10 +269,10 @@ p.projectPreviewParagraph {
   margin:0 ;
 }
 
-.wrapperProjectPage {
+/* .wrapperProjectPage {
   display: grid;
   grid-gap: 16px;
-  grid-template-columns: 3fr minmax(200px, 900px) 1fr;
+  grid-template-columns: 1fr minmax(200px, 900px) 1fr;
   background-color: #fff;
 }
 
@@ -280,4 +280,36 @@ p.projectPreviewParagraph {
 .fullWidth {
   grid-column: 1 / span 3;
   background: purple;
+} */
+.grey {
+  background: #f2f2f2;
+}
+.wrapperProjectPage {
+
+  display: grid;
+  grid-template-columns: 
+      [viewport-start] minmax(16px, 1fr)
+      [container-start] minmax(200px, 950px) [container-end]
+      minmax(16px, 1fr) [viewport-end];
+}
+
+.box--narrow {
+  padding-left:16px;
+  padding-right: 16px;
+  grid-column: container;
+  margin: 4rem auto;
+}
+
+.box--fullWidth { 
+  grid-column: viewport; 
+  display: inherit;
+  grid-template-columns: inherit;
+}
+
+.box--fullWidth > * {
+  grid-column: container;
+}
+
+.content {
+  background: white;;
 }
