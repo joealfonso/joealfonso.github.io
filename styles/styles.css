@@ -175,6 +175,28 @@ h1,h2,h3,h4,h5,h6 {
   width:2px;
 }
 
+h1 {
+  font-size: 5.4rem;
+}
+
+h2 {
+  font-size: 5rem;
+}
+
+h3 {
+  font-size: 3.6rem;
+}
+
+h4 {
+  font-size: 3.3rem;
+}
+
+h5 {
+  font-size: 2.4rem;
+}
+
+
+
 h1.myName {
   font-size: 4rem;
   font-weight: bold;
@@ -284,32 +306,83 @@ p.projectPreviewParagraph {
 .grey {
   background: #f2f2f2;
 }
+/* .wrapperProjectPage {
+
+  display: grid;
+  grid-template-columns: 
+      [viewport-start] minmax(16px, 1fr)
+      [container-start] minmax(66.6px, 316.6px)  minmax(66.6px, 316.6px)  minmax(66.6px, 316.6px) [container-end]
+      minmax(16px, 1fr) [viewport-end];
+} */
+
 .wrapperProjectPage {
 
   display: grid;
   grid-template-columns: 
       [viewport-start] minmax(16px, 1fr)
-      [container-start] minmax(200px, 950px) [container-end]
+      [container-start] minmax(66.6px, 316.6px)  minmax(66.6px, 316.6px)  minmax(66.6px, 316.6px) [container-end]
       minmax(16px, 1fr) [viewport-end];
 }
 
-.box--narrow {
-  padding-left:16px;
-  padding-right: 16px;
-  grid-column: container;
-  margin: 4rem auto;
-}
 
-.box--fullWidth { 
+.fullWidth { 
   grid-column: viewport; 
   display: inherit;
   grid-template-columns: inherit;
 }
 
-.box--fullWidth > * {
+.fullWidth > * {
   grid-column: container;
 }
 
-.content {
-  background: white;;
+.callOut {
+  grid-column: container;
+}
+
+.contentImage {
+  grid-column: container;
+}
+
+.wideImage {
+  grid-column: container;
+}
+
+.fullWidthImage {
+
+}
+
+.projectHero {
+
+  background: pink;
+}
+
+.heroProjectContent > *  {
+  grid-column: container;
+}
+
+.boxProjectContent {
+  grid-column: container;
+  background: #1A1E23;
+  padding: 20px;
+  font-size: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.box3Col {
+  grid-column: container;
+  background: #000;
+  padding: 20px;
+  font-size: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.boxCallOut {
+  grid-column: container;
+  background: rgba(255,255,255,0);
+  padding: 20px;
+  font-size: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
