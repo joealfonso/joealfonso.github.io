@@ -15,11 +15,14 @@
 
 html {
   font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 1.8rem;
+  margin:0;
 }
 
 ::selection {
@@ -161,6 +164,7 @@ body {
   color: #3277B3;
 }
 
+
 .box.nav a {
   font-size: 16px;
   font-weight: normal;
@@ -257,7 +261,7 @@ p.projectPreviewParagraph {
   justify-items: center;
   line-height: 1.45;
   display: grid;
-  grid-template-columns: [viewport-start] minmax(1em, 1fr) [container-start] minmax(300px, 1440px) [container-end] minmax(1em, 1fr) [viewport-end];
+  grid-template-columns: [viewport-start] minmax(0, 1fr) [container-start] minmax(300px, 1440px) [container-end] minmax(0, 1fr) [viewport-end];
 }
 
 .section-Contained {
@@ -308,9 +312,10 @@ p.projectPreviewParagraph {
 
 .projectTitle {
   text-transform: uppercase;
-  text-align: center;
+  text-align: left;
   line-height: 1;
   font-size:72px;
+  margin-top: 36px;
   margin-bottom: 18px;
 
 }
@@ -320,9 +325,9 @@ font-size:72px;
 }
 
 .projectSubhead {
-  font-size: 18px;
-  text-align: center;
+  color: #545454;
   font-weight: normal;
+  line-height:150%;
 }
 
 .section-Contained h1.projectTitle {
@@ -331,10 +336,8 @@ font-size:72px;
 
 .section-Contained h3.projectSubhead {
   font-size:20px;
-  line-height: 150%;
-
-  margin-top:128px;
-  margin-bottom: 124px;
+  margin-top:72px;
+  margin-bottom: 72px;
   text-align: left;
 }
 
