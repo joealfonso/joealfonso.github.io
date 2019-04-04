@@ -23,6 +23,7 @@ body {
   font-family: 'Poppins', sans-serif;
   font-size: 1.8rem;
   margin:0;
+  background: #f2f2f2;
 }
 
 ::selection {
@@ -339,6 +340,10 @@ font-size:72px;
   margin-top:72px;
   margin-bottom: 72px;
   text-align: left;
+}
+
+.projectPageWrapper > * {
+  background: #fff;
 }
 
 
