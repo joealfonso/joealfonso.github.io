@@ -292,12 +292,17 @@ p.projectPreviewParagraph {
 }
 
 .projectHeroDisclaimer {
-  font-size: 2rem;
+  font-size: 16px;
   font-style: italic;
   margin: 32px;
   margin-top:128px;
   color: rgba(255,255,255,.6);
   font-family: 'Noto Serif', serif;
+}
+
+.framingParagraph {
+  padding: 32px 32px 16px 32px;
+  border: 1px solid rgba(0,0,0,1);
 }
 
 .keyQuote {
@@ -312,8 +317,6 @@ p.projectPreviewParagraph {
   text-align: left;
   line-height: 1;
   font-size:50px;
-
-
 }
 
 
@@ -328,6 +331,10 @@ p.projectPreviewParagraph {
   width:100%;
   max-height:1046px;
   object-fit: cover;
+}
+
+.sectionTitle {
+
 }
 
 
@@ -358,11 +365,13 @@ p.projectPreviewParagraph {
 
 @media only screen and (max-width: 756px) {
 
-  .box.d {
-    display: none;
-  }
-  .section-Contained {
-    padding: 50px 16px;
+  .projectHeroDisclaimer {
+    font-size: 16px;
+    font-style: italic;
+    margin: 32px;
+    margin-top:128px;
+    color: rgba(255,255,255,.6);
+    font-family: 'Noto Serif', serif;
   }
 
   
@@ -375,6 +384,16 @@ p.projectPreviewParagraph {
     width: 75%;
     height: 10%;
   }
+}
+
+@media only screen and (max-width: 650px) {
+
+
+  p {
+    font-size:22px;
+    line-height:1.5;
+  }
+
 }
 
 @media only screen and (max-width: 450px) {
