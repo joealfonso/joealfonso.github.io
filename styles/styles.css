@@ -276,8 +276,7 @@ p.projectPreviewParagraph {
 
 .wrapper {
   width: 100%;
-  margin-top:164px;
-  margin-bottom: 164px;
+  margin-bottom: 200px;
 }
 
 .wrapperHero {
@@ -338,24 +337,29 @@ p.projectPreviewParagraph {
   color: rgba(255,255,255,.8);
 }
 
+.projectFullWidthImage {
+  width:100%;
+  max-height:1000px;
+  object-fit: cover;
+  vertical-align:text-bottom;
+}
+
+
 .projectImage {
   width:100%;
-  max-height:1046px;
+  max-height: 1000px;
   object-fit: cover;
+  margin-top:64px;
 }
 
-.sectionTitle {
-
+.withinParagraph {
+  margin-top: 64px;
+  margin-bottom: 64px;
 }
 
-.sectionDetailsTitle {
-  
-}
-
-
-
-.imageNoTopMargin {
-  margin-top: 0;
+.wrapper .content h4 {
+  margin-top:64px;
+  margin-bottom:24px;
 }
 
 
