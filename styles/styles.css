@@ -352,14 +352,22 @@ p.projectPreviewParagraph {
   margin-top:64px;
 }
 
-.withinParagraph {
+.imageAbove {
   margin-top: 64px;
-  margin-bottom: 64px;
 }
 
 .wrapper .content h4 {
   margin-top:64px;
   margin-bottom:24px;
+}
+
+.projectCaption {
+  line-height: 150%;
+    font-family: 'Poppins', serif;
+    font-size: 14px;
+    color: rgba(0,0,0,1);
+    margin-top: 0;
+    text-align:center;
 }
 
 
@@ -399,7 +407,9 @@ p.projectPreviewParagraph {
     font-family: 'Noto Serif', serif;
   }
 
-  
+  .framingParagraph {
+    border: none;
+  }
   .box.nav a {}
   .box.intro {
     margin-top: 0;
