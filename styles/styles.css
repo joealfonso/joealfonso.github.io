@@ -230,9 +230,6 @@ letter-spacing: 3px;
 }
 
 
-p {
-  
-}
 
 h1.myName {
   font-size: 4rem;
@@ -251,8 +248,12 @@ h2.projectTitle {
 p {
   line-height: 150%;
   font-family: 'Noto Serif', serif;
-  margin-top: 0;
+  margin-top: 42px;
   font-size:24px;
+}
+
+h5 + p {
+  margin-top: 0;
 }
 
 .socialIcon {
