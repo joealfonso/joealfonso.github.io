@@ -467,6 +467,13 @@ p.projectPreviewParagraph {
     font-size:20px;
     line-height:1.5;
   }
+  .projectSectionHeading {
+    text-align: center;
+    font-size: 4rem;
+    text-transform: uppercase;
+    
+  }
+  
 
 }
 
