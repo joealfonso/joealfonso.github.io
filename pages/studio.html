@@ -7,11 +7,13 @@
   <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js"
     integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1"
     crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="../js/main.js"></script>
 </head>
 <html>
 
 <body>
-  <div class="projectPageWrapper">
+
     <section class="wrapperHero">
       <div class="content projectHero">
         <h1 class="projectTitle">DE: STUDIO</h1>
@@ -26,8 +28,31 @@
       </div>
     </section>
 
+    <section class="wrapper wrapperGrey" id="outline">
+      <div class="content">
+        <h2 class="projectSectionHeading">Outline</h2>
+        <ul>
+          <li><a href="#summary" class="scroll_to">Summary</a></li>
+          <li><a href="#introduction" class="scroll_to">Introducing Discovery Education Studio</a></li>
+          <li><a href="#whatDoesItDo" class="scroll_to">What Does Studio do Exactly?</a></li>
+          <li><a href="#newModel" class="scroll_to">A New Model for Classrooms</a></li>
+          <li><a href="#researchPlanExplore" class="scroll_to">Research, Plan, Explore, and Align</a></li>
+          <li><a href="#establishingGoals" class="scroll_to">Establishing and Measuring Goals</a></li>
+          <li><a href="#earlyExploration" class="scroll_to">Early Exploration</a></li>
+          <li><a href="#stayingFocused" class="scroll_to">Staying Focused on Key Features</a></li>
+          <li><a href="#finalProduct" class="scroll_to">The Final Product</a></li>
+          <li><a href="#supportingUsers" class="scroll_to">Supporting Users and Improving Product Literacy</a></li>
+          <li><a href="#performance" class="scroll_to">Performance and Satisfaction</a></li>
+          <li><a href="#theFuture" class="scroll_to">The Future of the Product and Scalability</a></li>
+          <li><a href="#additionalContributions" class="scroll_to">Additional Contributions</a></li>
+          <li><a href="#doneBetter" class="scroll_to">What Could we Have Done Better?</a></li>
+          <li><a href="#samples" class="scroll_to">Interface Samples and Explorations</a></li>
+        </ul>
+      </div>
+    </section>
 
-    <section class="wrapper">
+
+    <section class="wrapper" id="summary">
       <div class="content">
         <h2 class="projectSectionHeading">Summary</h2>
         <p>While still a capable tool, the current iteration of Discovery Education's design tool, Board Builder, was
@@ -61,7 +86,7 @@
     </section>
 
 
-    <section class="wrapper ">
+    <section class="wrapper " id="introduction">
       <div class="content">
         <h2 class="projectSectionHeading">Introducing Discovery Education Studio</h2>
         <p>Teachers and students have come up with their own custom ways of finding, saving, editing, and distributing
@@ -84,9 +109,9 @@
     </section>
 
 
-    <section class="wrapper wrapperGrey">
+    <section class="wrapper wrapperGrey" id="whatDoesItDo">
       <div class="content">
-        <h2 class="projectSectionHeading">What does studio do exactly?</h2>
+        <h2 class="projectSectionHeading" >What does studio do exactly?</h2>
         <p>Yes... Everything... Kind of... The experience Studio offers has been described in many ways, a design tool,
           a creation tool, lesson planning tool and so on. We like to call it a design tool that offer a "sandbox" type
           experience where we remove many of the traditional models of web and technology in order to allow the user to
@@ -108,7 +133,7 @@
     </section>
 
 
-    <section class="wrapper ">
+    <section class="wrapper " id="newModel">
       <div class="content">
         <h2 class="projectSectionHeading">A NEW MODEL FOR CLASSROOMS</h2>
         <p>One of the significant motivating factors when exploring the initial ideas of Discovery Education's Studio
@@ -131,7 +156,7 @@
     </section>
 
 
-    <section class="wrapper wrapperGrey">
+    <section class="wrapper wrapperGrey" id="researchPlanExplore">
       <div class="content">
         <h2 class="projectSectionHeading">Research, Plan, Explore, and Align</h2>
         <p>Leveraging previous research we were able to identify user frustrations, desires, and behaviors we
@@ -155,7 +180,7 @@
     </section>
 
 
-    <section class="wrapper ">
+    <section class="wrapper " id="establishingGoals">
       <div class="content">
         <h2 class="projectSectionHeading">Establishing and measuring goals</h2>
         <p>Using traditional metrics like time on task, success rate, critical and minor errors, in addition to a few
@@ -174,7 +199,7 @@
     </section>
 
 
-    <section class="wrapper wrapperGrey">
+    <section class="wrapper wrapperGrey" id="earlyExploration">
       <div class="content">
         <h2 class="projectSectionHeading">Early exploration</h2>
         <h5 class="sectionSubHead">Understanding the problem and solution</h5>
@@ -213,7 +238,7 @@
     </section>
 
 
-    <section class="wrapper ">
+    <section class="wrapper " id="stayingFocused">
       <div class="content">
         <h2 class="projectSectionHeading">Staying focused on Key features</h2>
         <h5 class="sectionSubHead">Accessible themes</h5>
@@ -264,7 +289,7 @@
     </section>
 
 
-    <section class="wrapper wrapperGrey">
+    <section class="wrapper wrapperGrey" id="finalProduct">
       <div class="content">
         <h2 class="projectSectionHeading">The Final Product</h2>
         <p>The culmination of over four years of research and 2 years of hard work, Studio was ready for a launch strategy.</p>
@@ -282,7 +307,7 @@
     </section>
 
 
-    <section class="wrapper ">
+    <section class="wrapper " id="supportingUsers">
       <div class="content">
         <h2 class="projectSectionHeading">Supporting users and improving Product literacy</h2>
         <p>Discovery Education has a solid reputation for providing high quality content to classrooms but after enough
@@ -316,18 +341,21 @@
     </section>
 
 
-    <section class="wrapper wrapperGrey">
-      <div class="content">
-        <h2 class="projectSectionHeading">Performance and Satisfaction</h2>
-        <p>Since Studio had to integrate with every product actively, our success metrics were composed of a taxonomy
+    <section class="wrapper wrapperGrey" id="performance">
+      <div class="content grid">
+        <h2 class="projectSectionHeading span-col-4">Performance and Satisfaction</h2>
+        <p class="span-col-4">Since Studio had to integrate with every product actively, our success metrics were composed of a taxonomy
           structure. Each goals had a value and each product had a value as well that attributed to the goals worth.
 
           At the top of the structure was performance, satisfaction, and business goals. Performance was one of the more
           challenging goals to align with due to the fact that much of what we were doing wasn’t done on the web prior,
           and we had to have checkpoints at different points of scale.
+          </p>
+          <div class="span-col-2">
           <h5 class="sectionSubHead">Keeping an ear to the ground</h5>
           <p>We wanted to not only keep an open dialogue with users, we wanted to expand and improve it. The most valuable information that we get is through community type outlets. The Discovery Educators Network (DEN) Community is where teachers go to discuss anything that's on their mind. We create a sub-community just for Studio where we had constant feedback and access to users reducing recruitment costs.</p>
-
+        </div>
+      <div class="span-col-2">
           <h5 class="sectionSubHead">Archived tools guiding new data</h5>
           <p>
           Products that were retired as a result of Studio, often became indicators of key functionality. Tracking and
@@ -336,10 +364,11 @@
           
         </p>
       </div>
+      </div>
     </section>
 
 
-    <section class="wrapper ">
+    <section class="wrapper " id="theFuture">
       <div class="content">
         <h2 class="projectSectionHeading">The Future of the Product and Scalability</h2>
         <p>With scalability built into the fundamental framework of the technology behind Studio, the future is bright.We’re looking
@@ -350,7 +379,7 @@
     </section>
 
 
-    <section class="wrapper wrapperGrey">
+    <section class="wrapper wrapperGrey" id="additionalContributions">
       <div class="content">
         <h2 class="projectSectionHeading">Additional Contributions</h2>
         <h5 class="sectionSubHead">Product Strategy and Alignment</h5>
@@ -377,7 +406,7 @@
     </section>
 
 
-    <section class="wrapper ">
+    <section class="wrapper " id="doneBetter">
       <div class="content">
         <h2 class="projectSectionHeading">What could we have done better?</h2>
         <h5 class="sectionSubHead">Product Strategy and Alignment</h5>
@@ -393,7 +422,7 @@
     </section>
 
 
-    <section class="wrapper wrapperGrey">
+    <section class="wrapper wrapperGrey" id="samples">
       <div class="content">
           <h2 class="projectSectionHeading">Interface samples and explorations</h2>
         <img src="../images/studio/TextElementControlsWBG.jpg" aria-label="Initial elements panel prototypes"
@@ -405,7 +434,7 @@
 
 
 
-  </div>
+
 
 
 </body>
