@@ -1,17 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700');
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,700');
-@font-face {
-  font-family: Butler;
-  font-weight: 400;
-  src: url("../fonts/Butler_Regular.otf") format("opentype");
-}
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap');
 
-@font-face {
-  font-family: Butler-Bold;
-  font-weight: bold;
-  src: url("../fonts/Butler_Bold.otf") format("opentype");
-}
 
 html {
   font-size: 62.5%;
@@ -20,7 +9,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 1.8rem;
   margin:0;
   padding: 0;
@@ -199,7 +188,7 @@ h2 {
 
 .projectSectionHeading {
   text-align: center;
-  font-size: 5rem;
+  font-size: 56px;
   text-transform: uppercase;
   
 }
@@ -222,7 +211,7 @@ h5 {
 }
 
 .sectionSubHead {
-font-size: 2.2rem;
+font-size: 28px;
 margin-top: 64px;
 margin-bottom: 12px;
 text-transform: uppercase;
@@ -248,6 +237,7 @@ h2.projectTitle {
 p {
   line-height: 150%;
   font-family: 'Noto Serif', serif;
+  font-weight: 500;
   margin-top: 42px;
   font-size:24px;
 }
@@ -291,7 +281,7 @@ p.projectPreviewParagraph {
 }
 
 .content {
-  max-width: 756px;
+  max-width: 900px;
   margin: auto;
 }
 
@@ -330,7 +320,6 @@ p.projectPreviewParagraph {
   font-style: italic;
   margin: 32px;
   color: #4D4D4D;
-  font-family: 'Noto Serif', serif;
 }
 
 .projectHeroDisclaimer {
@@ -339,7 +328,6 @@ p.projectPreviewParagraph {
   margin: 32px;
   margin-top:128px;
   color: rgba(255,255,255,.6);
-  font-family: 'Noto Serif', serif;
 }
 
 .framingParagraph {
@@ -356,17 +344,19 @@ p.projectPreviewParagraph {
 
 .projectTitle {
   text-transform: uppercase;
-  text-align: left;
+  text-align:center;
   line-height: 1;
-  font-size:50px;
+  font-size:64px;
 }
 
 
 .projectSubhead {
   font-size: 22px;
   line-height:145%;
-  font-family: 'Poppins';
   color: rgba(255,255,255,.8);
+  max-width:600px;
+  text-align:center;
+  margin:auto;
 }
 
 .projectFullWidthImage {
@@ -436,7 +426,6 @@ p.projectPreviewParagraph {
     margin: 32px;
     margin-top:128px;
     color: rgba(255,255,255,.6);
-    font-family: 'Noto Serif', serif;
   }
 
   .framingParagraph {
@@ -464,8 +453,8 @@ p.projectPreviewParagraph {
   }
 
   p {
-    font-size:20px;
-    line-height:1.5;
+    font-size:24px;
+    line-height:1.4;
   }
   .projectSectionHeading {
     text-align: center;
