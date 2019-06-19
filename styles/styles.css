@@ -94,12 +94,12 @@ li {
   font-family: 'Noto Serif', serif;
 }
 
-li a {
+.summaryItemLink {
     position: relative;
     display: inline-block;
     outline: none;
     color: #000;
-    margin: 4px;
+    margin: 6px;
     transition: all .2s ease;
     font-size:16px;
     text-decoration-skip-ink: auto;
