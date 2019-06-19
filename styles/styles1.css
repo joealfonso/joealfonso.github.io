@@ -42,7 +42,7 @@ body {
   margin: auto;
   max-width: 1440px;
   display: grid;
-  padding: 32px 64px;
+  padding: 64px 64px;
   grid-template-columns: minmax(30%, 50%) minmax(30%, 50%);
   grid-gap: 10px 100px;
 }
@@ -53,14 +53,7 @@ body {
   font-size: 20px;
 }
 
-.box.socialBox {
-  text-align: right;
-}
 
-.box.intro {
-  margin-top: 32px;
-  margin-bottom: 64px;
-}
 
 .box.projectPreview {
   border-top: 4px solid black;
@@ -380,7 +373,7 @@ font-size:72px;
 
 @media only screen and (max-width: 756px) {
   .wrapper {
-    padding: 16px 16px;
+    padding: 64px 16px;
     grid-gap: 10px 50px;
   }
   .box.d {
@@ -411,7 +404,7 @@ font-size:72px;
 
   }
   .box.intro {
-    grid-column: span 1;
+    grid-column: span 2;
     padding-left: 8px;
     padding-right: 8px;
     margin-bottom: 32px;

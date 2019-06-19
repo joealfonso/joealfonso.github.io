@@ -30,7 +30,7 @@
       -ms-transform: translateY(-100%);
           transform: translateY(-100%);
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 756px) {
   .cd-auto-hide-header {
     height: 80px;
   }
@@ -107,7 +107,7 @@
       -ms-transform: translateY(6px);
           transform: translateY(6px);
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 756px) {
   .cd-auto-hide-header .nav-trigger {
     display: none;
   }
@@ -132,9 +132,8 @@
 
 .cd-primary-nav {
   display: inline-block;
-  float: right;
+  margin: auto;
   height: 100%;
-  padding-right: 5%;
 }
 .cd-primary-nav > ul {
   position: absolute;
@@ -159,7 +158,7 @@
 .cd-primary-nav > ul a:hover, .cd-primary-nav > ul a.active {
   color: #8F3985;
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 756px) {
   .cd-primary-nav {
     /* vertically align its content */
     display: table;
@@ -191,6 +190,7 @@
   }
   .cd-primary-nav > ul a {
     /* reset mobile style */
+    text-decoration: none;
     height: auto;
     line-height: normal;
     padding: 0;
@@ -206,7 +206,7 @@
   */
   display: block;
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 756px) {
   .nav-open .cd-primary-nav ul,
   .cd-primary-nav ul:target {
     display: table-cell;
