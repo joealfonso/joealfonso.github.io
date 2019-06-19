@@ -136,6 +136,8 @@
   height: 100%;
 }
 .cd-primary-nav > ul {
+    padding-left: 0;
+
   position: absolute;
   z-index: 2;
   top: 60px;
@@ -147,6 +149,7 @@
 }
 .cd-primary-nav > ul a {
   /* target primary-nav links */
+  text-align: center;
   display: block;
   height: 50px;
   line-height: 50px;
@@ -154,9 +157,10 @@
   color: #25283D;
   font-size: 1.8rem;
   border-top: 1px solid #f2f2f2;
+  
 }
 .cd-primary-nav > ul a:hover, .cd-primary-nav > ul a.active {
-  color: #8F3985;
+  color: #000;
 }
 @media only screen and (min-width: 756px) {
   .cd-primary-nav {
@@ -195,11 +199,19 @@
     line-height: normal;
     padding: 0;
     border: none;
+    padding:6px;
+    transition: all .2s ease;
+    border-bottom:2px solid rgba(0,0,0,0);
   }
+  .cd-primary-nav > ul a:hover {
+    border-bottom:2px solid #000;
+}
 }
 
 .nav-open .cd-primary-nav ul,
 .cd-primary-nav ul:target {
+    list-style: none;
+    
   /* 
   	show primary nav - mobile only 
   	:target is used to show navigation on no-js devices
@@ -212,3 +224,5 @@
     display: table-cell;
   }
 }
+
+

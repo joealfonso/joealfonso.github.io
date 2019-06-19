@@ -15,6 +15,7 @@ body {
   font-size: 1.8rem;
   margin:0;
   background: #fff;
+
 }
 
 ::selection {
@@ -44,7 +45,7 @@ body {
   display: grid;
   padding: 64px 64px;
   grid-template-columns: minmax(30%, 50%) minmax(30%, 50%);
-  grid-gap: 10px 100px;
+  grid-gap: 10px 50px;
 }
 
 .box {
