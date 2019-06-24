@@ -3,7 +3,7 @@
 
 
 html {
-  font-size: 62.5%;
+  /* font-size: 62.5%; */
   -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 
@@ -130,25 +130,26 @@ h5 + p {
 }
 
 .content {
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   grid-gap: 0 32px;
 }
+.span-col-12{grid-column: span 12 / auto;}
+
+.span-col-6{grid-column: span 6 / auto;}
+
 .span-col-4{grid-column: span 4 / auto;}
 
-.span-col-2{grid-column: span 2 / auto;
-font-size:2px;}
-
-.span-col-2 .sectionSubHead {
+.span-col-6 .sectionSubHead {
   text-align: center;
 }
 
-.span-col-2 p {
+.span-col-6 p {
   font-size:20px;
 }
 
@@ -307,7 +308,8 @@ p.outline {
 }
 
 @media only screen and (max-width: 1000px) {
-  .span-col-2{grid-column: span 4 / auto;}
+  .span-col-6{grid-column: span 12 / auto;}
+  .span-col-4{grid-column: span 12 / auto;}
 }
 
 @media only screen and (max-width: 756px) {
@@ -319,6 +321,7 @@ p.outline {
     margin-top:128px;
     color: rgba(255,255,255,.6);
   }
+  
 
   .framingParagraph {
     border: none;
