@@ -94,6 +94,7 @@ ul.summaryList {
 
 li {
   font-family: 'Noto Serif', serif;
+  font-size:20px
 }
 
 .summaryItemLink {
@@ -104,9 +105,9 @@ li {
     margin: 6px;
     transition: all .2s ease;
     font-size:16px;
-
-    
 }
+
+p + ul {margin:0;}
 
 a:hover {
   
