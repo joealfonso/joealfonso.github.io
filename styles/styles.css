@@ -70,11 +70,16 @@ h5 {
 }
 
 .sectionSubHead {
-font-size: 28px;
+
 margin-top: 64px;
 margin-bottom: 12px;
 text-transform: uppercase;
-letter-spacing: 3px;
+
+}
+
+.subsectionSubHead {
+  font-size:22px;
+  text-transform: uppercase;
 }
 
 
