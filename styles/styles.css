@@ -237,7 +237,7 @@ h5 + p {
   font-size:56px;
   text-transform: uppercase;
   text-align:center;
-  margin-bottom:100px;
+  margin-bottom:75px;
   margin-top:0;
 }
 
@@ -258,6 +258,7 @@ p.outline {
   max-height:1000px;
   object-fit: cover;
   vertical-align:text-bottom;
+
 }
 
 
@@ -286,7 +287,16 @@ p.outline {
     text-align:center;
 }
 
-
+.summary {
+  border-left:4px solid #000;
+  width: 70%;
+  font-family: 'Noto Serif', serif;
+  font-weight: 400;
+  font-size:18px;
+  font-style: italic;
+  margin: 0 auto 32px auto;
+  padding-left: 20px;
+}
 
 @media only screen and (max-width: 1146px) {
   
