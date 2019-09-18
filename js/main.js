@@ -6,7 +6,7 @@ $(document).ready(function () {
 		$('html, body').stop().animate({ scrollTop: new_position.top }, 750);
 		e.preventDefault();
 	});
-
+console.log("HELLO QUALTRICS. I hope the poor code doesn't turn you off too much. The thought behind the work and the work itself is top notch though!");
 	//--------------------------------------
 	//NAV-----------------------------------
 	//--------------------------------------
