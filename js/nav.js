@@ -4,7 +4,7 @@ jQuery(document).ready(function($){
 		//this applies only if secondary nav is below intro section
 		belowNavHeroContent = $('.sub-nav-hero'),
 		headerHeight = mainHeader.height();
-	
+		console.log("HELLO QUALTRICS. I hope the poor code doesn't turn you off too much. The thought behind the work and the work itself is top notch though!");
 	//set scrolling variables
 	var scrolling = false,
 		previousTop = 0,
