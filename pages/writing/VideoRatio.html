@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+ 
+<head>
+ <link rel="stylesheet" href="../../styles/styles.css">
+ <link rel="stylesheet" href="../../styles/nav.css">
+ <!-- <link rel="stylesheet" href="../styles/typeplate.css"> -->
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js"
+   integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1"
+   crossorigin="anonymous"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+ <script src="../js/main.js"></script>
+ <script src="../js/nav.js"></script>
+</head>
+<html>
+ 
+<body>
+ 
+ <header class="cd-auto-hide-header">
+   <!-- <div class="logo"><a href="#0"></a></div> -->
+ 
+   <nav class="cd-primary-nav" aria-label="primary">
+     <a href="#cd-navigation" class="nav-trigger">
+       <span>
+         <em aria-hidden="true"></em>
+ 
+       </span>
+     </a> <!-- .nav-trigger -->
+ 
+     <ul id="cd-navigation">
+       <li> <a href="../index.html">Home</a></li>
+       <li> <a href="https://dribbble.com/josephalfonso">Writing</a></li>
+       <li><a href="./pages/about.html">About</a></li>
+     </ul>
+   </nav> <!-- .cd-primary-nav -->
+ </header> <!-- .cd-auto-hide-header -->
+
+ 
+ 
+ <section class="wrapper ">
+   <div class="content grid">
+     <article class="span-col-12">
+       <h2 class="projectSectionHeading">Solving for Videos that Match Screen Aspect Ratio</h2>
+       <p class="summary">An look into solving for when a video's aspect ratio is similar to the available viewport size. Often this can lead to a "fullscreen" experience being smaller, and the video being cut otherwise.
+      </p>
+       <p>While working at Discovery Education I was tasked with redesigning the Resource Player page which included a video play on many pages. It should have been easy enough, we all view videos every day on screens. It wasn't until I started testing on Chreombooks that I realized some challenges that weren't present on more modern and capable device.</p>
+       <p>What most of us don't realize is that due to the larger resolutions and screen sizes, in addition to the fact that on mobile devices most of the time we view them in portrait mode, we rarely encounter an experience where spacing is a limiting factor. In this case it would be that a video on a webpage is too tall, and this happens way more often on the devices used in pedigocial and publicly available devices where the resolution of a video might be the identicle resolution and aspect ratio as the device it's on.</p>
+       <p>In the specific case of a 1280x720 Chromebook, after the toolbars and Chrome UI the available vertical space was around 550px. At that height any video or layout that's beyond ~977px will result in content being out of the vieweport. In the case of the Discovery Education Resource Player, we try to offer a visually engaging experience by leveraging large, high quality media. </p>
+
+
+     </article>
+ 
+   </div>
+ </section>
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</body>
+ 
+</html>
