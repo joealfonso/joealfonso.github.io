@@ -201,7 +201,7 @@ h5 {
 
 
 h1.myName {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: bold;
   margin-bottom: 32px;
 }
@@ -221,9 +221,17 @@ p {
   font-size:24px;
 }
 
+.homeSummary {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  font-weight:700;
+  margin:0;
+  background: #fff;
+  text-decoration-skip-ink: auto;
 
+}
 
-p.projectPreviewParagraph, .homeSummary {
+p.projectPreviewParagraph {
   font-size:20px
 }
 
@@ -351,6 +359,10 @@ font-size:72px;
 
 .projectPageWrapper > * {
   background: #fff;
+}
+
+.box.intro {
+  margin-bottom:32px;
 }
 
 
