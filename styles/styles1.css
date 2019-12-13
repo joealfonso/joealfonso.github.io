@@ -43,10 +43,20 @@ body {
 .wrapper {
   margin: auto;
   max-width: 1440px;
+
+}
+
+#grid { 
   display: grid;
-  padding: 64px 64px;
-  grid-template-columns: minmax(30%, 50%) minmax(30%, 50%);
-  grid-gap: 10px 50px;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2vw;
+  }
+#grid > div {
+  font-size: 5vw;
+  padding: .5em;
+  background: gold;
+  text-align: center;
 }
 
 .box {
