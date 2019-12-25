@@ -270,6 +270,17 @@ p.outline {
 
 }
 
+p.drop-cap:first-letter {
+  font-size: 4.5rem;
+  float: left;
+  margin-top: 0;
+  padding-top: .75rem;
+  padding-left: .2rem;
+  margin-right:4px;
+  border-left: 2px black solid;
+  border-top: 2px black solid;
+}
+
 
 .projectImage {
   width:100%;

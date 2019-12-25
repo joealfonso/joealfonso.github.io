@@ -71,22 +71,21 @@ h5 {
 
 .box {
   background: rgba(255, 255, 255, 0);
-  padding: 20px;
 
 }
 
 .box.intro {
-  margin-top:32px;
-  margin-bottom: 32px;
+  margin:24px 12px;
   grid-column: span 3;
 }
 
 .box.projectPreview {
   border-top: 2px solid black;
-  padding: 8px 0 0 0;
-  margin-bottom: 24px;
-  margin-bottom: 40px;
+  padding:0;
+  margin:32px 12px;
+
 }
+
 
 .projectTitle {
   margin-bottom: 12px;
@@ -146,20 +145,15 @@ a:hover {
 @media only screen and (max-width: 756px) {
   .box.projectPreview {
     grid-column: span 3;
+    margin:24px 12px;
   }
+
+  
 }
 
 @media only screen and (max-width: 450px) {
   .wrapper {
     grid-template-columns: 1fr;
-  }
-  .box.intro {
-    padding-left: 8px;
-    padding-right: 8px;
-    margin-bottom: 32px;
-  }
-  .box.intro p {
-    line-height: 160%;
   }
   .box {
     grid-column: span 3;
