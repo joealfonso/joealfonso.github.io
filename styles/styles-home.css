@@ -80,13 +80,16 @@ h5 {
 }
 
 div.span3 > h3 {
-  border-bottom:1px black solid;
+  border-bottom:2px black solid;
   padding-left: 24px;
 }
 .span3 {
   grid-column: span 3;
-
 }
+.span2 {
+  grid-column: span 2;
+}
+
 
 .box.projectPreview {
   border-bottom: 1px solid black;
@@ -94,7 +97,6 @@ div.span3 > h3 {
   margin:12px 12px;
   transition: all .25s ease;
 }
-
 
 .projectTitle {
   margin-bottom: 12px;
@@ -130,6 +132,7 @@ a {
   background-repeat: no-repeat;
   background-size: 0% 4px;
   padding-bottom: 4px;
+  font-family: 'Libre Franklin', sans-serif;
 }
 
 a:hover {
@@ -165,4 +168,60 @@ a:hover {
   .box {
     grid-column: span 3;
   }
+}
+
+
+
+
+
+a.button {
+  background-color: #000;
+  border: none;
+  color: white;
+  padding: 12px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 12px 0px;
+  cursor: pointer;
+  transition: all .3s ease;
+  background-image: none;
+  border: 1px solid #fff;
+}
+
+a.button:Hover {
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+}
+
+
+
+.image-stack {
+  display: grid;
+  position: relative; 
+  grid-template-columns: repeat(12, 1fr);
+  transition: all .2s ease;
+}
+
+.box:hover .image-stack .image-stack__item--bottom {
+  transform: scale(1.025);
+}
+
+.image-stack__item--bottom {
+  grid-column: 4 / -1;
+  grid-row: 1;
+  transition: all .2s ease;
+}
+
+.image-stack__item--top {
+  grid-row: 1;
+  grid-column: 1 / span 8;
+  padding-top: 20%; 
+  z-index: 1; 
+}
+
+img {
+  width: 100%;
+  display: block;
 }
