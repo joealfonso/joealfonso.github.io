@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Cormorant:500,500i,700,700i|Libre+Franklin:400,400i,700,700i&display=swap');
+
 html {
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
@@ -53,7 +54,6 @@ h5 {
   font-size: 1.25rem;
 }
 
-
 .wrapper {
   margin: 60px auto auto auto;
   max-width: 1440px;
@@ -75,15 +75,24 @@ h5 {
 }
 
 .box.intro {
-  margin:24px 12px;
+  margin:56px 12px 24px 24px;
   grid-column: span 3;
 }
 
-.box.projectPreview {
-  border-top: 2px solid black;
-  padding:0;
-  margin:32px 12px;
+div.span3 > h3 {
+  border-bottom:1px black solid;
+  padding-left: 24px;
+}
+.span3 {
+  grid-column: span 3;
 
+}
+
+.box.projectPreview {
+  border-bottom: 1px solid black;
+  padding:12px;
+  margin:12px 12px;
+  transition: all .25s ease;
 }
 
 
@@ -147,8 +156,6 @@ a:hover {
     grid-column: span 3;
     margin:24px 12px;
   }
-
-  
 }
 
 @media only screen and (max-width: 450px) {
