@@ -124,6 +124,10 @@ a:hover, a:focus {
   color: #000;
 }
 
+p a {
+  font-family: 'Cormorant', serif;
+}
+
 a {
   color: #000;
   transition: all .3s ease;
