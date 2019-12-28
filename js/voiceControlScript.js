@@ -2,7 +2,7 @@ var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
 
-var acceptedWords = [ 'violet', 'white', 'yellow','back','forward','navigate to project Studio','navigate to project player','navigate to project home','navigate to older work','navigate to home','navigate to writing','navigate to about','navigate to Ed Tech challenges'];
+var acceptedWords = [ 'violet', 'white', 'yellow','navigate back','navigate forward','navigate to project Studio','navigate to project player','navigate to project home','navigate to older work','navigate to home','navigate to writing','navigate to about','navigate to Ed Tech challenges'];
 var grammar = '#JSGF V1.0; grammar acceptedWords; public <words> = ' + acceptedWords.join(' | ') + ' ;'
 
 var recognition = new SpeechRecognition();
