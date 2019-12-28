@@ -37,9 +37,9 @@ recognition.onresult = function(event) {
 
   diagnostic.textContent = 'Result received: "' + command + '".';
   bg.style.backgroundColor = command;
-  if (command == 'back') {
+  if (command == 'navigate back') {
     window.history.back();
-  } else if (command == 'forward') {
+  } else if (command == 'navigate forward') {
     window.history.forward();
   } else if (command == 'navigate to home') {
     window.location.href = "https://josephalfonso.com/index.html";
