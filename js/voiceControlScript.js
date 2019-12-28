@@ -57,7 +57,12 @@ recognition.onresult = function(event) {
     window.location.href = "https://josephalfonso.com/OldSite/index-OldSite.html";
   }else if (command == 'navigate to Ed Tech challenges') {
     window.location.href = "https://josephalfonso.com/pages/writing/EdTechResearchChallenges.html";
+  }else if (command == 'scroll down') {
+    window.scrollBy(0, 1000);
+  }else if (command == 'scroll up') {
+    window.scrollBy(0, -1000);
   }
+  
   console.log('Confidence: ' + event.results[0][0].confidence);
 }
 
