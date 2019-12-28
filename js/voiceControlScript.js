@@ -46,7 +46,7 @@ recognition.onresult = function(event) {
   }else if (command == 'navigate to writing') {
     window.location.href = "https://josephalfonso.com/pages/writing/EdTechResearchChallenges.html";
   }else if (command == 'navigate to about') {
-    window.location.href = "https://josephalfonso.com/about.html";
+    window.location.href = "https://josephalfonso.com/pages/about.html";
   }else if (command == 'navigate to project Studio') {
     window.location.href = "https://josephalfonso.com/pages/studio.html";
   }else if (command == 'navigate to project player') {
