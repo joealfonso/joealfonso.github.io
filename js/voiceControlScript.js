@@ -36,26 +36,26 @@ recognition.onresult = function(event) {
   var command = event.results[last][0].transcript;
 
   diagnostic.textContent = 'Result received: "' + command + '".';
-  bg.style.backgroundColor = color;
-  if (color == 'back') {
+  bg.style.backgroundColor = command;
+  if (command == 'back') {
     window.history.back();
-  } else if (color == 'forward') {
+  } else if (command == 'forward') {
     window.history.forward();
-  } else if (color == 'navigate to home') {
+  } else if (command == 'navigate to home') {
     window.location.href = "https://josephalfonso.com/index.html";
-  }else if (color == 'navigate to writing') {
+  }else if (command == 'navigate to writing') {
     window.location.href = "https://josephalfonso.com/pages/writing/EdTechResearchChallenges.html";
-  }else if (color == 'navigate to about') {
+  }else if (command == 'navigate to about') {
     window.location.href = "https://josephalfonso.com/about.html";
-  }else if (color == 'navigate to project Studio') {
+  }else if (command == 'navigate to project Studio') {
     window.location.href = "https://josephalfonso.com/pages/studio.html";
-  }else if (color == 'navigate to project player') {
+  }else if (command == 'navigate to project player') {
     window.location.href = "https://josephalfonso.com/pages/player.html";
-  }else if (color == 'navigate to project home') {
+  }else if (command == 'navigate to project home') {
     window.location.href = "https://josephalfonso.com/pages/home.html";
-  }else if (color == 'navigate to project Studio') {
+  }else if (command == 'navigate to project Studio') {
     window.location.href = "https://josephalfonso.com/OldSite/index-OldSite.html";
-  }else if (color == 'navigate to Ed Tech challenges') {
+  }else if (command == 'navigate to Ed Tech challenges') {
     window.location.href = "https://josephalfonso.com/pages/writing/EdTechResearchChallenges.html";
   }
   console.log('Confidence: ' + event.results[0][0].confidence);
