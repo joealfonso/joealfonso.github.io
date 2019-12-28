@@ -58,9 +58,9 @@ recognition.onresult = function(event) {
   }else if (command == 'navigate to Ed Tech challenges') {
     window.location.href = "https://josephalfonso.com/pages/writing/EdTechResearchChallenges.html";
   }else if (command == 'scroll down') {
-    window.scrollBy(0, 1000);
+    window.scrollBy(0, 800);
   }else if (command == 'scroll up') {
-    window.scrollBy(0, -1000);
+    window.scrollBy(0, -800);
   }
   
   console.log('Confidence: ' + event.results[0][0].confidence);
