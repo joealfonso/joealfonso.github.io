@@ -119,8 +119,8 @@ a:hover {
 p.output {
   position: absolute;
   bottom: 24px;
-  right: 34px;
-  padding: 24px;
+  right: 1%;
+  padding: 16px;
   background: rgba(0,0,0,.65);
   border-radius: 8px;
   color: #fff;
