@@ -37,6 +37,34 @@ recognition.onresult = function(event) {
 
   diagnostic.textContent = 'Result received: "' + command + '".';
   bg.style.backgroundColor = command;
+  // if (command == 'navigate back') {
+  //   window.history.back();
+  // } else if (command == 'navigate forward') {
+  //   window.history.forward();
+  // } else if (command == 'navigate to home') {
+  //   window.location.href = "../index.html";
+  // }else if (command == 'navigate to writing') {
+  //   window.location.href = "./pages/writing/EdTechResearchChallenges.html";
+  // }else if (command == 'navigate to about') {
+  //   window.location.href = "./pages/about.html";
+  // }else if (command == 'navigate to project Studio') {
+  //   window.location.href = "./pages/studio.html";
+  // }else if (command == 'navigate to project player') {
+  //   window.location.href = "./pages/player.html";
+  // }else if (command == 'navigate to project channels') {
+  //   window.location.href = "./pages/channels.html";
+  // }else if (command == 'navigate to project home') {
+  //   window.location.href = "./pages/home.html";
+  // }else if (command == 'navigate to older work') {
+  //   window.location.href = "./OldSite/index-OldSite.html";
+  // }else if (command == 'navigate to Ed Tech challenges') {
+  //   window.location.href = "./pages/writing/EdTechResearchChallenges.html";
+  // }else if (command == 'scroll down') {
+  //   window.scrollBy(0, 800);
+  // }else if (command == 'scroll up') {
+  //   window.scrollBy(0, -800);
+  // }
+
   if (command == 'navigate back') {
     window.history.back();
   } else if (command == 'navigate forward') {
@@ -53,7 +81,7 @@ recognition.onresult = function(event) {
     window.location.href = "https://josephalfonso.com/pages/player.html";
   }else if (command == 'navigate to project home') {
     window.location.href = "https://josephalfonso.com/pages/home.html";
-  }else if (command == 'navigate to project Studio') {
+  }else if (command == 'navigate to older work') {
     window.location.href = "https://josephalfonso.com/OldSite/index-OldSite.html";
   }else if (command == 'navigate to Ed Tech challenges') {
     window.location.href = "https://josephalfonso.com/pages/writing/EdTechResearchChallenges.html";
