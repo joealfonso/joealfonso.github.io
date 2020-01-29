@@ -86,9 +86,9 @@ recognition.onresult = function(event) {
   }else if (command == 'navigate to Ed Tech challenges') {
     window.location.href = '/pages/writing/EdTechResearchChallenges.html';
   }else if (command == 'scroll down') {
-    window.scrollBy(0, 800);
+    window.scrollBy(0, 750);
   }else if (command == 'scroll up') {
-    window.scrollBy(0, -800);
+    window.scrollBy(0, -750);
   }
   
   console.log('Confidence: ' + event.results[0][0].confidence);
@@ -99,7 +99,7 @@ recognition.onspeechend = function() {
 }
 
 recognition.onnomatch = function(event) {
-  diagnostic.textContent = "I didn't recognise that color.";
+  diagnostic.textContent = "I'm sorry Dave, I'm afraid I didn't recognize that command.";
 }
 
 recognition.onerror = function(event) {
