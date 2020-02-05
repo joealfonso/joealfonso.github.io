@@ -121,15 +121,30 @@ p.output {
   bottom: 1%;
   right: 1%;
   padding: 16px;
-  min-height:46px;
-  min-width:46px;
-  background: rgba(0,0,0,.65);
+  min-height:18px;
+  background: rgba(0,0,0,.45);
   border-radius: 8px;
   color: #fff;
   font-family: 'Libre Franklin', sans-serif;
-  font-size:18px;
+  font-size:14px;
   position: fixed;
+  cursor: pointer;
+  
+  animation: voicePrompt 1s ease forwards;
+  animation-delay: 5s;
 }
+
+@keyframes voicePrompt{
+  from {opacity:1;}
+  to {opacity:0;}
+}
+
+@-webkit-keyframes voicePrompt{
+  from {opacity:1;}
+  to {opacity:0;}
+}
+
+
 
 
 h5 + p {

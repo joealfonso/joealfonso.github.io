@@ -69,19 +69,19 @@ recognition.onresult = function(event) {
     window.history.back();
   } else if (command == 'navigate forward') {
     window.history.forward();
-  } else if (command == 'navigate to home') {
+  } else if (command == 'navigate to homepage') {
     window.location.href = '/index.html';
   }else if (command == 'navigate to writing') {
     window.location.href = '/pages/writing/EdTechResearchChallenges.html';
   }else if (command == 'navigate to about') {
     window.location.href = '/pages/about';
-  }else if (command == 'navigate to project Studio') {
+  }else if (command == 'navigate to Discovery Education Studio') {
     window.location.href = '/pages/studio';
-  }else if (command == 'navigate to project player') {
+  }else if (command == 'navigate to resource player redesign') {
     window.location.href = '/pages/player';
-  }else if (command == 'navigate to project home') {
+  }else if (command == 'navigate to Discovery Education home') {
     window.location.href = '/pages/home';
-  }else if (command == 'navigate to older work') {
+  }else if (command == 'navigate to various older work') {
     window.location.href = '/OldSite/index-OldSite.html';
   }else if (command == 'navigate to Ed Tech challenges') {
     window.location.href = '/pages/writing/EdTechResearchChallenges.html';
