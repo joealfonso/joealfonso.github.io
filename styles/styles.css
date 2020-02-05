@@ -131,7 +131,7 @@ p.output {
   cursor: pointer;
   
   animation: voicePrompt 1s ease forwards;
-  animation-delay: 5s;
+  animation-delay: 7s;
 }
 
 @keyframes voicePrompt{
