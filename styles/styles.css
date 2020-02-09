@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Cormorant:500,500i,700,700i|Libre+Franklin:400,400i,700,700i&display=swap');
+
+
+@import url("https://use.typekit.net/zqk3znz.css");
 
 html {
   /* font-size: 62.5%; */
@@ -7,9 +9,13 @@ html {
 scroll-behavior: smooth;
 }
 
+
+
 body {
-  font-family: 'Oswald', sans-serif;
+  
+  font-family: 'din-2014', sans-serif;
   font-size: 1.8rem;
+  font-weight: 800;
   margin:0;
   padding: 0;
   text-decoration-skip-ink: auto;
@@ -46,6 +52,10 @@ margin-inline-end: 0;
   height: 100%;
 }
 
+h1, h2, h3, h4, h5 {
+  font-family: 'big-caslon-fb', serif;
+}
+
 h1 {
   font-size: 5.4rem;
 }
@@ -71,19 +81,16 @@ h5 {
 
 margin-top: 64px;
 margin-bottom: 12px;
-text-transform: uppercase;
 
 }
 
 .subsectionSubHead {
   font-size:22px;
-  text-transform: uppercase;
 }
 
 
 p {
   line-height: 170%;
-  font-family: 'Noto Serif', serif;
   font-weight: 500;
   margin-top: 42px;
   font-size:24px;
@@ -96,7 +103,7 @@ ul.summaryList {
 }
 
 li {
-  font-family: 'Noto Serif', serif;
+
   font-size:20px
 }
 
@@ -185,6 +192,7 @@ h5 + p {
 .span-col-3{grid-column: span 3 / auto;}
 
 .span-col-2{grid-column: span 2 / auto;}
+.span-col-1{grid-column: span 1 / auto;}
 
 .span-col-6 .sectionSubHead {
   text-align: center;
@@ -252,7 +260,6 @@ h5 + p {
 }
 
 .projectTitle {
-  text-transform: uppercase;
   text-align:center;
   line-height: 1;
   font-size:72px;
@@ -270,7 +277,7 @@ h5 + p {
 
 .projectSectionHeading {
   font-size:56px;
-  text-transform: uppercase;
+
   text-align:center;
   margin-bottom:75px;
   margin-top:0;
