@@ -44,7 +44,14 @@ margin-inline-end: 0;
 #outline .content {
   text-align:center;
 }
-
+.arrow-down {
+  margin: auto;
+  width: 0px;
+  height: 0px;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 28px solid #000;
+}
 
 .projectPreviewLargeLink {
   display: block;
