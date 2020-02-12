@@ -14,7 +14,7 @@ scroll-behavior: smooth;
 body {
   
   font-family: 'din-2014', sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.375rem;
   font-weight: 800;
   margin:0;
   padding: 0;
@@ -74,7 +74,7 @@ h4 {
 }
 
 h5 {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .sectionSubHead {
@@ -93,7 +93,7 @@ p {
   line-height: 170%;
   font-weight: 500;
   margin-top: 42px;
-  font-size:24px;
+
 }
 
 ul.summaryList {
@@ -194,9 +194,7 @@ h5 + p {
 .span-col-2{grid-column: span 2 / auto;}
 .span-col-1{grid-column: span 1 / auto;}
 
-.span-col-6 .sectionSubHead {
-  text-align: center;
-}
+
 
 .span-col-6 p {
   font-size:20px;
