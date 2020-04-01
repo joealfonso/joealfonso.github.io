@@ -313,7 +313,6 @@ h5 + p {
 
 .projectSectionHeading {
   font-size:56px;
-
   text-align:center;
   margin-bottom:75px;
   margin-top:0;
@@ -339,18 +338,6 @@ p.outline {
 
 }
 
-p.drop-cap:first-letter {
-  font-size: 6rem;
-  float: left;
-  margin-top: 0;
-  padding-top: 1rem;
-  padding-left: .2rem;
-  margin-right:4px;
-
-  padding-bottom: 0;
-  border-left: 2px black solid;
-  border-top: 2px black solid;
-}
 
 
 .projectImage {
@@ -466,10 +453,15 @@ p.drop-cap:first-letter {
     display: none;
   }
   .projectSectionHeading {
-    font-size: 46px;
+    font-size: 32px;
   }
-  /* .wrapperHero {
-    max-width:90%;
-  } */
+  .content {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  p {
+    font-size: 1.25rem;
+  }
+
 
 }
