@@ -1,18 +1,12 @@
-
-
 @import url("https://use.typekit.net/zqk3znz.css");
 
 html {
-  /* font-size: 62.5%; */
   -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 scroll-behavior: smooth;
 }
 
-
-
 body {
-  
   font-family: 'din-2014', sans-serif;
   font-size: 1.375rem;
   margin:0;
@@ -177,7 +171,7 @@ h5 + p {
   position: absolute;
   bottom: 0;
   left: 32px;
-  width: 380px;
+  max-width: 380px;
 }
 
 .content {
@@ -220,7 +214,13 @@ h5 + p {
   font-size:20px;
 }
 
-.wrapper {
+.wrapperSpacer {
+  margin: 60px auto auto auto;
+  max-width: 1440px;
+  padding: 0px;
+}
+
+.sectionWrapper {
   width: 100%;
   padding-top: 100px;
   padding-bottom: 100px;
@@ -307,7 +307,7 @@ h5 + p {
   line-height:165%;
   color: rgba(255,255,255,.8);
   max-width:600px;
-  margin:auto;
+  margin-left:none;
   text-align:left;
 }
 
@@ -329,8 +329,6 @@ p.outline {
   font-size:16px;
 }
 
-
-
 .projectFullWidthImage {
   width:100%;
   max-height:1000px;
@@ -338,20 +336,6 @@ p.outline {
   vertical-align:text-bottom;
 
 }
-
-p.drop-cap:first-letter {
-  font-size: 6rem;
-  float: left;
-  margin-top: 0;
-  padding-top: 1rem;
-  padding-left: .2rem;
-  margin-right:4px;
-
-  padding-bottom: 0;
-  border-left: 2px black solid;
-  border-top: 2px black solid;
-}
-
 
 .projectImage {
   width:100%;
@@ -416,6 +400,11 @@ p.drop-cap:first-letter {
 @media only screen and (max-width: 1000px) {
   .span-col-6{grid-column: span 12 / auto;}
   .span-col-4{grid-column: span 12 / auto;}
+  .content {
+
+    padding-left: 24px;
+      padding-right: 24px;
+  }
 }
 
 @media only screen and (max-width: 756px) {
@@ -425,6 +414,12 @@ p.drop-cap:first-letter {
     font-style: italic;
     color: rgba(255,255,255,.6);
   }
+  .content {
+
+    padding-left: 16px;
+      padding-right: 16px;
+  }
+
   
 
   .framingParagraph {
@@ -466,10 +461,10 @@ p.drop-cap:first-letter {
     display: none;
   }
   .projectSectionHeading {
-    font-size: 46px;
+    font-size: 16px;
   }
-  /* .wrapperHero {
-    max-width:90%;
-  } */
+  .projectHero {
+    width: 90%;
+  }
 
 }
