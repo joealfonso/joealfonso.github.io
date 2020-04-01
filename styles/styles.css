@@ -8,7 +8,7 @@ scroll-behavior: smooth;
 
 body {
   font-family: 'din-2014', sans-serif;
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   margin:0;
   padding: 0;
   text-decoration-skip-ink: auto;
@@ -92,9 +92,9 @@ margin-bottom: 12px;
 
 
 p {
-  line-height: 170%;
+  line-height: 150%;
   font-weight: 500;
-  margin-top: 42px;
+  margin-top:0;
 
 }
 
@@ -163,21 +163,20 @@ h5 + p {
 
 /* PROJECT PAGE*/
 
-
-
 .projectHero {
   padding: 144px 0 24px 0;
   color: rgba(255,255,255);
   position: absolute;
   bottom: 0;
   left: 32px;
-  max-width: 380px;
+  max-width: 420px;
 }
 
 .content {
   max-width: 1000px;
   margin: auto;
-
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 
@@ -198,6 +197,7 @@ h5 + p {
 .span-col-9{grid-column: span 9 / auto;}
 
 .span-col-8{grid-column: span 8 / auto;}
+.span-col-right{grid-column: 6/12}
 
 .span-col-6{grid-column: span 6 / auto;}
 
@@ -220,6 +220,9 @@ h5 + p {
   padding: 0px;
 }
 
+.wrapper {  padding-top:100px;
+  padding-bottom: 100px;}
+
 .sectionWrapper {
   width: 100%;
   padding-top: 100px;
@@ -232,9 +235,13 @@ h5 + p {
 
 .wrapperGrey {
   background: #f2f2f2;
-  padding-top:100px;
-  padding-bottom: 100px;
 }
+
+.wrapperBlack {
+  background: #000;
+  color: #fff;
+}
+
 
 .wrapperHero {
   width: 100%;
@@ -299,6 +306,7 @@ h5 + p {
   font-size:40px;
   margin-top: 12px;
   margin-bottom:12px;
+  letter-spacing:1.5px;
 }
 
 
@@ -308,15 +316,25 @@ h5 + p {
   color: rgba(255,255,255,.8);
   max-width:600px;
   margin-left:none;
+  margin-top:16px;
   text-align:left;
 }
+.content div{
+
+display: inline-block;
+} 
 
 .projectSectionHeading {
-  font-size:56px;
-
-  text-align:center;
-  margin-bottom:75px;
+  font-size:40px;
+  text-align:left;
+  margin-bottom:-8px;
   margin-top:0;
+}
+
+.divider {
+  background-color: #717171;
+  width: 100%;
+  height: 4px;
 }
 
 .outline {
@@ -346,6 +364,11 @@ p.outline {
   margin-top:32px;
 }
 
+.projectImageNoShadow {
+  margin-top: 64px;
+  box-shadow: none;
+}
+
 .imageAbove {
   margin-top: 64px;
 }
@@ -365,14 +388,11 @@ p.outline {
 }
 
 .summary {
-  border-left:4px solid #000;
-  width: 70%;
   font-family: 'Noto Serif', serif;
   font-weight: 400;
   font-size:18px;
   font-style: italic;
-  margin: 0 auto 32px auto;
-  padding-left: 20px;
+  margin: 0 auto 42px auto;
 }
 
 @media only screen and (max-width: 1146px) {
@@ -400,6 +420,7 @@ p.outline {
 @media only screen and (max-width: 1000px) {
   .span-col-6{grid-column: span 12 / auto;}
   .span-col-4{grid-column: span 12 / auto;}
+  .span-col-right{grid-column: span 12 / auto;}
   .content {
 
     padding-left: 24px;
