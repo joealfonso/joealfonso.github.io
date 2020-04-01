@@ -194,13 +194,7 @@ h5 + p {
   grid-gap: 0 32px;
 }
 
-.wrapperHero
-{
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
-  grid-gap: 0 32px;
-}
+
 .span-col-12{grid-column: span 12 / auto;}
 
 .span-col-10{grid-column: span 10 / auto;}
@@ -470,6 +464,9 @@ p.drop-cap:first-letter {
   }
   .projectSectionHeading {
     font-size: 46px;
+  }
+  .wrapperHero {
+    max-width:90%;
   }
 
 }
