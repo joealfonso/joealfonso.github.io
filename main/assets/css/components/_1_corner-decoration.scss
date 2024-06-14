@@ -1,0 +1,29 @@
+@use '../base' as *;
+/* -------------------------------- 
+
+File#: _1_corner-decoration
+Title: Corner Decoration
+Descr: Section triangle decoration
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+.corner-decoration {
+  --size: 32px;
+  width: var(--size);
+  height: var(--size);
+  position: absolute;
+  top: 1px;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.corner-decoration--left {
+  left: 0;
+  clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+}
+
+.corner-decoration--right {
+  right: 0;
+  clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+}
