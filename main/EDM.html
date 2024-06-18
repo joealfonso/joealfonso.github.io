@@ -1,0 +1,1034 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&amp;family=Chivo:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Joseph Alfonso | Employee Document Management</title>
+</head>
+
+<body>
+
+
+  <!-- header -->
+  <header class="f-header position-absolute bg-transparent js-f-header padding-bottom-xxxl" data-theme="dark">
+    <div class="f-header__mobile-content container max-width-lg">
+
+      <button class="reset anim-menu-btn js-anim-menu-btn f-header__nav-control js-tab-focus" aria-label="Toggle menu">
+        <i class="anim-menu-btn__icon anim-menu-btn__icon--close" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <!-- <div class="f-header__nav" role="navigation">
+      <div class="f-header__nav-grid justify-between@md container max-width-lg">
+        <ul class="f-header__list flex-grow flex-basis-0 justify-center@md">
+          <li class="f-header__item"><a href="club.html" class="f-header__link">The Club</a></li>
+          <li class="f-header__item"><a href="membership.html" class="f-header__link">Membership</a></li>
+          <li class="f-header__item"><a href="timetable.html" class="f-header__link">Timetable</a></li>
+          <li class="f-header__item"><a href="contact.html" class="f-header__link">Contact</a></li>
+        </ul>
+  
+       
+      </div>
+    </div> -->
+  </header>
+
+  <!-- classes navigation -->
+  <div class="float-sidenav display@md js-float-sidenav">
+    <nav class="float-sidenav__nav">
+      <button class="reset float-sidenav__close-btn js-float-sidenav__close-btn js-tab-focus"
+        aria-label="Close navigation">
+        <svg class="icon icon--xs" viewBox="0 0 16 16">
+          <g stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"
+            stroke-miterlimit="10">
+            <line x1="13.5" y1="2.5" x2="2.5" y2="13.5"></line>
+            <line x1="2.5" y1="2.5" x2="13.5" y2="13.5"></line>
+          </g>
+        </svg>
+      </button>
+
+      <ul class="js-float-sidenav__list">
+        <li>
+          <a class="float-sidenav__link js-smooth-scroll" href="#high-concept">
+            <span class="float-sidenav__label">The High Concept</span>
+            <span class="float-sidenav__marker" aria-hidden="true"></span>
+          </a>
+        </li>
+
+        <li>
+          <a class="float-sidenav__link js-smooth-scroll" href="#role">
+            <span class="float-sidenav__label">My Role</span>
+            <span class="float-sidenav__marker" aria-hidden="true"></span>
+          </a>
+        </li>
+
+        <li>
+          <a class="float-sidenav__link js-smooth-scroll" href="#impacts">
+            <span class="float-sidenav__label">Impacts and results</span>
+            <span class="float-sidenav__marker" aria-hidden="true"></span>
+          </a>
+        </li>
+
+        <li>
+          <a class="float-sidenav__link js-smooth-scroll" href="#gtktm">
+            <span class="float-sidenav__label">Getting to know the team</span>
+            <span class="float-sidenav__marker" aria-hidden="true"></span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#pre-discovery" class="custom-transition float-sidenav__link js-smooth-scroll">
+            <span class="float-sidenav__label">What did we already have?</span>
+            <span class="float-sidenav__marker" aria-hidden="true"></span>
+          </a>
+        </li>
+
+        <li>
+          <a class="float-sidenav__link js-smooth-scroll" href="#discovery">
+            <span class="float-sidenav__label">Documents don't exist without people</span>
+            <span class="float-sidenav__marker" aria-hidden="true"></span>
+          </a>
+        </li>
+
+        <li>
+          <a class="float-sidenav__link js-smooth-scroll" href="#define">
+            <span class="float-sidenav__label">An Amazon worthy experience</span>
+            <span class="float-sidenav__marker" aria-hidden="true"></span>
+          </a>
+        </li>
+
+        <li>
+          <a class="float-sidenav__link js-smooth-scroll" href="#develop">
+            <span class="float-sidenav__label">Getting to production</span>
+            <span class="float-sidenav__marker" aria-hidden="true"></span>
+          </a>
+        </li>
+
+        <li>
+          <a class="float-sidenav__link js-smooth-scroll" href="#deliver">
+            <span class="float-sidenav__label">Progressive global launching</span>
+            <span class="float-sidenav__marker" aria-hidden="true"></span>
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+
+  <!-- text intro -->
+  <section class="position-relative z-index-1 padding-top-xxxxl padding-bottom-xxxl" data-theme="dark">
+    <div class="container max-width-adaptive-md padding-bottom-xl">
+      <div class="grid gap-sm">
+        <div class="col-4@md col-5@lg">
+          <h1 class="text-xxxl@lg">Electronic Document Management</h1>
+        </div>
+
+        <div class="col-8@md col-7@lg">
+          <div class="text-component">
+            <p>I was the lead designer for Amazon’s Employee Document Management (EDM) tool which supports 4.8 billion
+              documents and counting for employees in 67 countries. It is a critical system for managing documents
+              across their vast potential and current workforce including candidates, employees, alumni, students, and
+              more. Furthermore, EDM replaced an older software service with an accessible web application, saving
+              Amazon well over $7 million annually in contracts and extensions. </p>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+    <div class="corner-decoration corner-decoration--left bg" aria-hidden="true"></div>
+  </section>
+
+  <!-- App mock -->
+  <section class="position-relative z-index-1 padding-y-xxl lightBG">
+    <figure class="bg-decoration-v3 z-index-0" aria-hidden="true">
+      <svg class="bg-decoration-v3__svg top-0 left-0 color-contrast-higher opacity-20%" viewBox="0 0 1920 610">
+        <defs>
+          <linearGradient id="bg-dec-v3-gradient-5" gradientTransform="rotate(90)">
+            <stop offset="0" stop-color="white" stop-opacity="1" />
+            <stop offset="1" stop-color="white" stop-opacity="0" />
+          </linearGradient>
+
+          <mask id="bg-dec-v3-gradient-mask-5">
+            <rect x="0" y="0" width="1920" height="610" fill="url(#bg-dec-v3-gradient-5)" />
+          </mask>
+        </defs>
+
+        <g fill="none" stroke="currentColor" stroke-miterlimit="10" mask="url(#bg-dec-v3-gradient-mask-5)">
+          <polyline points="-699.07 -165.58 38.206 443.271 107.459 386.081 341.853 579.647 1305 -215.731" />
+          <polyline points="-651.354 -164.839 50.813 420.594 116.769 365.604 340.001 551.725 1257.284 -213.061" />
+          <polyline points="-605.911 -164.127 62.821 398.79 125.635 345.915 338.237 524.877 1211.84 -210.495" />
+          <polyline points="-562.631 -163.442 74.256 377.824 134.079 326.983 336.558 499.061 1168.56 -208.026" />
+          <polyline points="-521.412 -162.784 85.147 357.665 142.121 308.778 334.958 474.239 1127.342 -205.653" />
+          <polyline points="-482.156 -162.151 95.519 338.28 149.781 291.275 333.435 450.371 1088.086 -203.371" />
+          <polyline points="-444.769 -161.542 105.398 319.642 157.075 274.444 331.984 427.421 1050.699 -201.177" />
+          <polyline points="-409.163 -160.957 114.806 301.72 164.022 258.261 330.602 405.354 1015.093 -199.067" />
+          <polyline points="-375.252 -160.394 123.766 284.488 170.639 242.7 329.286 384.136 981.182 -197.039" />
+          <polyline points="-342.956 -159.853 132.299 267.918 176.94 227.737 328.032 363.734 948.886 -195.088" />
+          <polyline points="-312.198 -159.332 140.426 251.986 182.941 213.35 326.839 344.116 918.127 -193.213" />
+          <polyline points="-282.904 -158.832 148.166 236.666 188.656 199.517 325.702 325.253 888.834 -191.409" />
+          <polyline points="-255.006 -158.351 155.537 221.936 194.1 186.215 324.619 307.115 860.935 -189.675" />
+          <polyline points="-228.436 -157.888 162.558 207.772 199.284 173.425 323.588 289.676 834.365 -188.008" />
+          <polyline points="-203.131 -157.443 169.244 194.153 204.221 161.127 322.606 272.906 809.061 -186.404" />
+          <polyline points="-179.031 -157.016 175.611 181.058 208.923 149.302 321.671 256.782 784.961 -184.863" />
+          <polyline points="-156.079 -156.605 181.676 168.466 213.401 137.932 320.78 241.278 762.009 -183.381" />
+          <polyline points="-134.22 -156.209 187.451 156.359 217.666 126.999 319.932 226.37 740.149 -181.955" />
+          <polyline points="-113.402 -155.829 192.952 144.717 221.728 116.487 319.124 212.036 719.331 -180.585" />
+          <polyline points="-93.575 -155.463 198.191 133.523 225.596 106.379 318.354 198.253 699.504 -179.267" />
+          <polyline points="-74.692 -155.112 203.18 122.76 229.281 96.659 317.621 185 680.621 -178" />
+        </g>
+      </svg>
+</figure>
+    <div class="container max-width-adaptive-sm">
+      <div class="grid gap-md items-center">
+        <div
+        class="tilted-slideshow position-relative padding-top-md width-80% margin-x-auto reveal-fx reveal-fx--translate-up width-70%@sm padding-top-0@md js-tilted-slideshow">
+        <p class="sr-only">Tilted Image Slideshow</p>
+
+        <ul class="tilted-slideshow__list position-relative perspective-xs js-tilted-slideshow__list z-index-1">
+          <li class="tilted-slideshow__item tilted-slideshow__item--top js-tilted-slideshow__item">
+            <div class="dev-browser dev-browser--top-light max-width-sm" aria-label="Image description">
+              <div class="dev-browser__body">
+                <div class="dev-browser__dots"><span></span><span></span><span></span></div>
+                <div class="dev-browser__media">
+                  <img class="block" src="assets/img/AdminDashboard-Default.png" alt="Apple Store badge">
+                </div>
+              </div>
+              <div class="dev-browser__shadow"></div>
+            </div>
+          </li>
+
+          <li class="tilted-slideshow__item tilted-slideshow__item--middle js-tilted-slideshow__item">
+            <div class="dev-browser dev-browser--top-light max-width-sm" aria-label="Image description">
+              <div class="dev-browser__body">
+                <div class="dev-browser__dots"><span></span><span></span><span></span></div>
+                <div class="dev-browser__media">
+                  <img class="block" src="assets/img/DocumentGeneration-Report.png" alt="Apple Store badge">
+                </div>
+              </div>
+              <div class="dev-browser__shadow"></div>
+            </div>
+          </li>
+
+          <li class="tilted-slideshow__item tilted-slideshow__item--bottom js-tilted-slideshow__item">
+            <div class="dev-browser dev-browser--top-light max-width-sm" aria-label="Image description">
+              <div class="dev-browser__body">
+                <div class="dev-browser__dots"><span></span><span></span><span></span></div>
+                <div class="dev-browser__media">
+                  <img class="block" src="assets/img/ViewingDocument-Password.png" alt="Apple Store badge">
+                </div>
+              </div>
+              <div class="dev-browser__shadow"></div>
+            </div>
+          </li>
+        </ul>
+
+        <span class="tilted-slideshow__touch-hint" aria-hidden="true">Tap to change image</span>
+      </div>
+
+        
+      </div>
+    </div>
+
+
+
+    <div class="corner-decoration corner-decoration--right bg" aria-hidden="true"></div>
+  </section>
+
+  
+  <!-- text content -->
+  <section class="position-relative z-index-1 padding-y-xl">
+    <div class="position-relative z-index-2">
+      <div class="container max-width-lg">
+        <div class="grid gap-sm">
+          <div class="col-8@md">
+
+
+            <h1 id="high-concept" class="text-xxxl">The High Concept</h1>
+            <div class="color-primary margin-bottom-sm">Where it begins</div>
+          </div>
+
+          <div class="col-10 offset-0@xs offset-0@xs offset-2@md col-8@lg padding-y-lg">
+            <div class="text-component line-height-lg text-space-y-lg">
+              <p>Employee Document Management empowers a wide range of users including candidates, employees, alumni,
+                and students, to efficiently and securely manage, generate, and execute their documents on any device
+                throughout their time with Amazon and after as well. Furthermore, on the administrative side, HR can
+                leverage EDM for comprehensive document lifecycle management, including compliance, distribution, legal
+                support, and country specific template management. EDM simplifies document sharing across all stages of
+                the employment journey, fostering a more efficient, easy to use, and delightful document experience for
+                enterprise and user solutions.</p>
+              <p>Amazon relied on a third party contractor for document management which lead to fragmented and
+                error-prone products resulting in frustrating experience for both Admins and employees. The impacts were
+                spread across multiple systems and databases causing errors at all points of the employment life cycle.
+                Our team set out to launching in-house first party document solution that would be fully integrated into
+                the end-to-end lifecycle for employment documents.</p>
+
+                <p>Document management is not just about documents, but also about the people who use them and the context in which they operate. This concept was a key driver behind the creation of Amazon's initial first-party solution for document management, designed for both users and administrators.</p>
+                  <p>Everyone applying for an opportunity deserves an accessible, trustworthy, and top-quality experience. This approach allows Amazon not only to evaluate but also to scale its services, ensuring that a world-class experience remains so.</p>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- text content -->
+  <section class="position-relative z-index-1 padding-y-xl bg-contrast-lower bg-opacity-30%">
+    <div class="position-relative z-index-2">
+      <div class="container max-width-lg">
+        <div class="grid gap-sm">
+          <div class="col-8@md">
+
+
+            <h1 id="role" class="text-xxxl">My Role</h1>
+            <div class="color-primary margin-bottom-sm">Scope and responsibility</div>
+          </div>
+
+          <div class="col-10 offset-0@xs offset-2@md col-8@lg padding-y-lg">
+            <div class="text-component line-height-lg text-space-y-lg">
+              <p>My role for this product was multi-faceted and spanned all child products and experiences, encompassing
+                various aspects of UX design, research, project management, and supervising UX deliverables for the
+                project, making sure they met both deadlines and quality standards. I advocated assertive but
+                collaborative UX integration, aligning with both user needs and business objectives in addition to
+                acting as a liaison among UX, engineering, product management, and other stakeholders and vendors.
+                Collaborating with researchers and defining research strategies to get the most out of a limited system
+                was critical as we had to be as efficient as possible. In addition, as part of project planning, I
+                ensured the seamless integration of UX activities with the overall development and progressive launch
+                schedule over multiple countries. They also proactively identified potential UX obstacles and devised
+                strategies to counteract them. </p>
+              <p>My scope spanned not only the parent product of Employee Document Management, but also each child
+                product and service, such as Document Generation, the entire employee experience, bulk admin actions the
+                general administrative experience.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- text content -->
+  <section class="position-relative z-index-1 padding-y-xl">
+    <div class="position-relative z-index-2">
+      <div class="container max-width-lg">
+        <div class="grid gap-sm">
+          <div class="col-8@md">
+
+
+            <h1 id="impacts" class="text-xxxl">Included Products and Key Features</h1>
+            <div class="color-primary margin-bottom-sm">Products were chunks of work with formal launches</div>
+          </div>
+
+          <section class="sticky-feature js-sticky-feature">
+            <div class="sticky-feature__container">
+              <div class="sticky-feature__grid-1">
+                <div>
+                  <ul class="sticky-feature__content-list sticky-feature__grid-2 js-sticky-feature__content-list">
+                    <li class="text-component js-sticky-feature__content-item">
+                      <h3 class="sticky-feature__title js-sticky-feature__title">User Portal</h3>
+                      <div class="color-primary margin-bottom-sm">Candidates, active employees, students, alumni, vendors and anyone affiliated with Amazon</div>
+                      <p class="margin-top-md">Designing the Document Portal experience for a product that I used myself was a really fun and exciting experience. It was something that I could go to 100% of the people I worked with, and whether I knew them or not, we could have a conversation about the experience. This lead to many really interesting explorations into the document experience as a whole for humans in general. Getting to know and understand how facility employees work is always something I enjoy doing, so I made sure to reach out and visit with various hourly employees as well in order to understand their unique challenges.</p>
+                      <p>One of obstacles I came across while designign the experience was the lack of information that coudl be presented often for security reasons. No preview images of documents, no personal information and a general lack of content made creating engaging but also meaningful elements for representing documents fairly challening. I leaned on a new date requirement system that I cover in another part of this case study.. Technically only two specific documents needed to be signed to legally work, but we can't tell people that information.</p>
+                      <p>Something I found extremely interesting was the required date dynamic. Once a document had passed the "required" date, users generally diregarded them. We had one person request us to remove the documents as they were bothering them! </p>
+                      <blockquote class="text-md text-center line-height-md margin-bottom-md">Can you remove the overdue documents? They're distracting"</blockquote>
+                      <p>For this reason, we removed the literal date, since the farther a person was from the date, the less important the document became, and just had a general overdue label.</p>
+
+                    
+                      <figure class="sticky-feature__content-figure">
+                        <img src="assets/img/UserDashboard-Default.png" alt="Image description">
+                      </figure>
+                    </li>
+
+                    <li class="text-component js-sticky-feature__content-item">
+                      <h3 class="sticky-feature__title js-sticky-feature__title">Administrative Portal</h3>
+                      <p class="margin-top-md">The research conducted in addition to a number of normal conversations with internal team and users highlighted the crucial relationship between people and documents, underscoring the need for more efficient search functionality. The existing software's limitations necessitated the introduction of different filters and attributes. The challenge was to innovate and change the product based on these insights rather than merely improving current functionalities, which involved understanding new friction points and ensuring intuitive feature learnability.</p>
+                      <p>Throughout the project, I noticed a recurring theme: the relationship between people and documents. The existing software permitted admins to search only by exact person IDs or documents, which was not entirely logical.</p>
+                      <p>In our research, we emphasized this theme and made some intriguing discoveries. We found that different attributes and filters are crucial for people and documents. Furthermore, we realized that a document does not exist without a person, reinforcing the human aspect of document management.</p>
+                      <p>The real challenge was not simply improving existing features, but innovatively changing the product based on our research. This required understanding new friction points and ensuring that the feature was intuitive to learn.</p>
+                      <figure class="sticky-feature__content-figure">
+                        <img src="assets/img/AdminDashboard-Default.png" alt="Image description">
+                      </figure>
+                    </li>
+
+                    <li class="text-component js-sticky-feature__content-item">
+                      <h3 class="sticky-feature__title js-sticky-feature__title">Bulk Document Generation</h3>
+                      <div class="color-primary margin-bottom-sm">Where it begins</div>
+                      <p class="margin-top-md">The research conducted in addition to a number of normal conversations with internal team and users highlighted the crucial relationship between people and documents, underscoring the need for more efficient search functionality. The existing software's limitations necessitated the introduction of different filters and attributes. The challenge was to innovate and change the product based on these insights rather than merely improving current functionalities, which involved understanding new friction points and ensuring intuitive feature learnability.</p>
+                      <p>Throughout the project, I noticed a recurring theme: the relationship between people and documents. The existing software permitted admins to search only by exact person IDs or documents, which was not entirely logical.</p>
+                      <p>In our research, we emphasized this theme and made some intriguing discoveries. We found that different attributes and filters are crucial for people and documents. Furthermore, we realized that a document does not exist without a person, reinforcing the human aspect of document management.
+
+                      </p>
+                      <p>The real challenge was not simply improving existing features, but innovatively changing the product based on our research. This required understanding new friction points and ensuring that the feature was intuitive to learn.</p>
+                      <figure class="sticky-feature__content-figure">
+                        <img src="assets/img/DocumentGeneration-Report.png" alt="Image description">
+                      </figure>
+                    </li>
+
+                    <li class="text-component js-sticky-feature__content-item">
+                      <h3 class="sticky-feature__title js-sticky-feature__title">Mergers and Acquisitions</h3>
+                      <p class="margin-top-md">The research conducted in addition to a number of normal conversations with internal team and users highlighted the crucial relationship between people and documents, underscoring the need for more efficient search functionality. The existing software's limitations necessitated the introduction of different filters and attributes. The challenge was to innovate and change the product based on these insights rather than merely improving current functionalities, which involved understanding new friction points and ensuring intuitive feature learnability.</p>
+                      <p>Throughout the project, I noticed a recurring theme: the relationship between people and documents. The existing software permitted admins to search only by exact person IDs or documents, which was not entirely logical.</p>
+                      <p>In our research, we emphasized this theme and made some intriguing discoveries. We found that different attributes and filters are crucial for people and documents. Furthermore, we realized that a document does not exist without a person, reinforcing the human aspect of document management.</p>
+                      <p>The real challenge was not simply improving existing features, but innovatively changing the product based on our research. This required understanding new friction points and ensuring that the feature was intuitive to learn.</p>
+                      <figure class="sticky-feature__content-figure">
+                        <img src="assets/img/MA1.png" alt="Image description">
+                      </figure>
+                    </li>
+            
+                    <li class="text-component js-sticky-feature__content-item">
+                      <h3 class="sticky-feature__title js-sticky-feature__title">Document Collection Requests</h3>
+                      <figure class="sticky-feature__content-figure">
+                        <img src="assets/img/DocumentCollectionRequest.png" alt="Image description">
+                      </figure>
+                    </li>
+            
+                    <li class="text-component js-sticky-feature__content-item">
+                      <h3 class="sticky-feature__title js-sticky-feature__title">Bulk Employee Data Changes</h3>
+                      <figure class="sticky-feature__content-figure">
+                        <img src="assets/img/BulkUpload1.png" alt="Image description">
+                      </figure>
+                    </li>
+            
+                    <li class="text-component js-sticky-feature__content-item">
+                      <h3 class="sticky-feature__title js-sticky-feature__title">Upload contextual documents</h3>
+                      <figure class="sticky-feature__content-figure">
+                        <img src="assets/img/ContextualUploads.png" alt="Image description">
+                      </figure>
+                    </li>
+                    <li class="text-component js-sticky-feature__content-item">
+                      <h3 class="sticky-feature__title js-sticky-feature__title">Document Collection</h3>
+                      <figure class="sticky-feature__content-figure">
+                        <img src="assets/img/UserDCR.png" alt="Image description">
+                      </figure>
+                    </li>
+
+                    <li class="text-component js-sticky-feature__content-item">
+                      <h3 class="sticky-feature__title js-sticky-feature__title">Document viewing experience</h3>
+                      <figure class="sticky-feature__content-figure">
+                        <img src="assets/img/EmployeeViewNew.png" alt="Image description">
+                      </figure>
+                    </li>
+                  </ul>
+                </div>
+            
+                <div class="sticky-feature-display@md" aria-hidden="true">
+                  <ul class="sticky-feature__media-list js-sticky-feature__media-list">
+                    <li class="sticky-feature__media-item js-sticky-feature__media-item">
+                      <figure class="sticky-feature__media-figure">
+                        <img src="assets/img/UserDashboard-Default.png" alt="Image description">
+                      </figure>
+                    </li>
+            
+                    <li class="sticky-feature__media-item js-sticky-feature__media-item">
+                      <figure class="sticky-feature__media-figure">
+                        <img src="assets/img/AdminDashboard-Default.png" alt="Image description">
+                      </figure>
+                    </li>
+            
+                    <li class="sticky-feature__media-item js-sticky-feature__media-item">
+                      <figure class="sticky-feature__media-figure">
+                        <img src="assets/img/DocumentGeneration-Report.png" alt="Image description">
+                      </figure>
+                    </li>
+            
+                    <li class="sticky-feature__media-item js-sticky-feature__media-item">
+                      <figure class="sticky-feature__media-figure">
+                        <img src="assets/img/MA2.png" alt="Image description">
+                      </figure>
+                    </li>
+
+                    <li class="sticky-feature__media-item js-sticky-feature__media-item">
+                      <figure class="sticky-feature__media-figure">
+                        <img src="assets/img/DocumentCollectionRequest.png" alt="Image description">
+                      </figure>
+                    </li>
+
+                    <li class="sticky-feature__media-item js-sticky-feature__media-item">
+                      <figure class="sticky-feature__media-figure">
+                        <img src="assets/img/BulkUpload1.png" alt="Image description">
+                      </figure>
+                    </li>
+
+                    <li class="sticky-feature__media-item js-sticky-feature__media-item">
+                      <figure class="sticky-feature__media-figure">
+                        <img src="assets/img/ContextualUploads.png" alt="Image description">
+                      </figure>
+                    </li>
+
+                    <li class="sticky-feature__media-item js-sticky-feature__media-item">
+                      <figure class="sticky-feature__media-figure">
+                        <img src="assets/img/UserDCR.png" alt="Image description">
+                      </figure>
+                    </li>
+
+                    <li class="sticky-feature__media-item js-sticky-feature__media-item">
+                      <figure class="sticky-feature__media-figure">
+                        <img src="assets/img/EmployeeViewNew.png" alt="Image description">
+                      </figure>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- text content -->
+   <section class="position-relative z-index-1 padding-y-xl bg-contrast-lower bg-opacity-30%">
+    <div class="position-relative z-index-2">
+      <div class="container max-width-lg">
+        <div class="grid gap-sm">
+          <div class="col-8@md">
+
+
+            <h1 id="impacts" class="text-xxxl">Impacts and Results</h1>
+            <div class="color-primary margin-bottom-sm">Scope and responsibility</div>
+          </div>
+
+          <div class="col-10 offset-0@xs offset-2@md col-8@lg padding-y-lg">
+            <div class="text-component line-height-lg text-space-y-lg">
+              <p>My role for this product was multi-faceted and spanned all child products and experiences, encompassing
+                various aspects of UX design, research, project management, and supervising UX deliverables for the
+                project, making sure they met both deadlines and quality standards. I advocated assertive but
+                collaborative UX integration, aligning with both user needs and business objectives in addition to
+                acting as a liaison among UX, engineering, product management, and other stakeholders and vendors.
+                Collaborating with researchers and defining research strategies to get the most out of a limited system
+                was critical as we had to be as efficient as possible. In addition, as part of project planning, I
+                ensured the seamless integration of UX activities with the overall development and progressive launch
+                schedule over multiple countries. They also proactively identified potential UX obstacles and devised
+                strategies to counteract them. </p>
+              <p>My scope spanned not only the parent product of Employee Document Management, but also each child
+                product and service, such as Document Generation, the entire employee experience, bulk admin actions the
+                general administrative experience.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- text content -->
+  <section class="position-relative z-index-1 padding-y-xl">
+    <div class="position-relative z-index-2">
+      <div class="container max-width-lg">
+        <div class="grid gap-sm">
+          <div class="col-8@md">
+
+
+            <h1 id="gtktm" class="text-xxxl">Getting to know the team</h1>
+            <div class="color-primary margin-bottom-sm">Who am I working with and how can I add value?</div>
+          </div>
+
+          <div class="col-10 offset-0@xs offset-2@md col-8@lg padding-y-lg">
+            <div class="text-component line-height-lg text-space-y-lg">
+              <p>I didn’t want to just solve problems, I aimed to understand the most effective way to articulate why my
+                solution addresses those issues compellingly, fostering agreement and gaining support to move forward. A
+                countless number of people are involved in the designs process depending on the stage, scope, timing,
+                and a number of other factors and it was up to me to make sure we could be as effective as possible no
+                matter the audience or setting.</p>
+              <p>After meeting the team and anyone handing off work to me I set off to talk with the prior design and
+                research team to get a hold of any research and information. I would end up bothering them for a very
+                long time slowly gathering pieces and parts while putting together my own investigation in ways of
+                gathering and making sense for not only myself, but for the rest of the team as well. My findings were
+                going to be there's as well.</p>
+              <p>Some of the work I inherited were Heuristic evaluations, usability test, SUS scores, and every known
+                persona and journey form pre-hire to alumni. All of these research meant I could focus my time on
+                studying and benchmarking instead of doing the initial evaluations. We could evaluate performance of
+                changes right away.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- text content -->
+  <section class="position-relative z-index-1 padding-y-xl bg-contrast-lower bg-opacity-30%">
+    <div class="position-relative z-index-2">
+      <div class="container max-width-lg">
+        <div class="grid gap-sm">
+          <div class="col-8@md">
+
+
+            <h1 id="pre-discovery" class="text-xxxl">What did we already have?</h1>
+            <div class="color-primary margin-bottom-sm">Pre-Discovery</div>
+          </div>
+
+          <div class="col-10 offset-0@xs offset-2@md col-8@lg padding-y-lg">
+            <div class="text-component line-height-lg text-space-y-lg">
+              <p>To grasp the scope of existing work, research, and knowledge, I started a comprehensive review process
+                of evaluating what information we already had so I could understand the current situation better than
+                anyone as the goal. The first few months were occupied with intensive interviews with the previous team,
+                extensive examination of existing documentation, and frequent sync-ups with project managers to gather
+                all pertinent information.</p>
+              <p>Interestingly, much of this invaluable work had not been previously shared with this specific team. It
+                was a great opportunity for everyone to get a fresh and more critical look at the work they’ve been
+                doing. It was there, just not socialized to a very relevant group of people. This not only saved
+                research time, but also created an environment where we were all on the same page and learning together.
+                Everyone understood together and there was much less “but I thought” conversation happening.</p>
+              <p>By leveraging available information, we were able to expedite a three-year plan and prioritize tasks
+                more effectively. The early integration of design provided a platform for all teams to collaborate
+                efficiently. Prior to this, the process was fragmented and lacked an effective way to consolidate,
+                align, and advance together. Now, with a centralized repository for our designs, we could hold ideas and
+                facilitate asynchronous conversations more effectively.</p>
+              <p>Transforming this analysis into a roadmap allowed each team to provide precise estimates, taking into
+                account all contextual factors, leading to a significant decrease in planning uncertainties. By
+                delivering UX work ahead of development, we could accommodate inevitable adjustments and effectively
+                manage multiple concurrent work streams.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+   <!-- overscroll gallery   -->
+   <section class="position-relative z-index-1  bg-dark" data-theme="dark">
+    <div class="position-sticky z-index-1 top-0 ">
+      <div class="container max-width-sm height-100vh flex flex-center">
+        <blockquote class="text-center padding-y-xxl">
+          <svg class="icon icon--xxl color-contrast-lower" aria-hidden="true" viewBox="0 0 64 64">
+            <polygon fill="currentColor" points="2 36 17 2 26 2 15 36 26 36 26 62 2 62 2 36" />
+            <polygon fill="currentColor" points="38 36 53 2 62 2 51 36 62 36 62 62 38 62 38 36" />
+          </svg>
+          <div class="text-component margin-top-lg">
+            <p class="text-xl">It always comes down to a person.</p>
+          </div>
+          <footer class="margin-top-lg">&mdash; A Human Resources Admin during an interview</footer>
+        </blockquote>
+      </div>
+    </div>
+    
+    <div class="position-relative z-index-2 padding-y-xl bg-dark">
+      <div class="container max-width-adaptive-lg">
+        <div class="overscroll-gallery m">
+    
+        
+          <h1 id="discovery" class="text-xxxl">Documents don't exist without people</h1>
+                  <div class="color-primary margin-bottom-sm">Discovery</div>
+                
+    
+                <div class="col-10 offset-0@xs offset-2@md col-8@lg padding-y-lg">
+                  <div class="text-component line-height-lg text-space-y-lg">
+    
+                    <p>Document management is about documents, sure, but those documents don't have a pupose to exist
+                      without people. The people working and the people governing the countries they work within. It's
+                      people all the way down.</p>
+    
+                    <p>The initial discussions grounded in research, along with various organizational prioritization
+                      meetings, ensured that UX held a substantial role in the decision-making process. This beneficial
+                      context allowed me to work independently, without the need to divide my responsibilities to many
+                      times.</p>
+                    <p>With everyone on the team now sharing a unified understanding, I was able to facilitate workshops to
+                      gather sufficient information for informed decision-making. Collaboratively, we developed both current
+                      and future user journeys as well as story maps. This was achieved by merging our internal
+                      understanding and user knowledge, which together painted a comprehensive picture of both the perceived
+                      and backend user experiences</p>
+                    <p>During these sessions, we focused on creating a comprehensive view of the employee document
+                      experience, including tab and context switching. Most services were distributed across various tools
+                      depending on the needs of the HR representative.</p>
+    
+    
+    
+                    <ul class="bg-primary bg-opacity-10% padding-md border-left border-3 border-primary list list--ul">
+                      <li>What was the current experience like?</li>
+                      <li>Biggest points of frustration and issue?</li>
+                      <li>What were needs not being met?</li>
+                      <li>Which jobs to be done needed to be accounted for weren’t being addressed?</li>
+                      <li>Once we had a universal understanding of the experience we were ready to define and plan.</li>
+                    </ul>
+    
+    
+                    <p>While developing the user journeys, we recorded screenshots, notes, journey paths, and time spent on
+                      each relevant task. This allowed us to establish benchmarks for measuring the impact of changes. It
+                      also highlighted the various factors and the scope influenced by these roles, leading us to discover
+                      new teams for collaboration and communication.</p>
+    
+                    <h2>Automating document storage workflows</h2>
+                    <p>One of the really interesting things I realized while working on this projects is the fact that while
+                      the concept of a digital files is simple enough, where it's stored is an extremely important
+                      requirement. It's one of those things that make you realize how concepts like where a file is stored
+                      is often taken for granted. As we started to dig into requirements it was very clear that we had to
+                      establish some type of logic based system where rules are applied leveraging attributes and system
+                      information in ordert to automate many of these tasks. Converting thousands of manually created rules
+                      that determined which employee received which documents was a monster of a task that revealed just how
+                      different each country can be. For example, Germany has a Work Councils, that by concept offer better
+                      treatment for employees, but that also require wet (physical) signatures in a digital age.</p>
+                  </div>
+                </div>
+      
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- text content -->
+  <section class="position-relative z-index-1 padding-y-xl lightBG">
+    <div class="position-relative z-index-2">
+      <div class="container max-width-lg">
+        <div class="grid gap-sm">
+          <div class="col-8@md">
+
+
+            <h1 id="define" class="text-xxxl">An Amazon worthy experience</h1>
+            <div class="color-primary margin-bottom-sm">Define</div>
+          </div>
+
+          <div class="col-10 offset-0@xs offset-2@md col-8@lg padding-y-lg">
+            <div class="text-component line-height-lg text-space-y-lg">
+              <p>To grasp the scope of existing work, research, and knowledge, I started a comprehensive review
+                process of evaluating what information we already had so I could understand the current situation
+                better than anyone as the goal. The first few months were occupied with intensive interviews with the
+                previous team, extensive examination of existing documentation, and frequent sync-ups with project
+                managers to gather all pertinent information.</p>
+              <p>Interestingly, much of this invaluable work had not been previously shared with this specific team.
+                It was a great opportunity for everyone to get a fresh and more critical look at the work they’ve been
+                doing. It was there, just not socialized to a very relevant group of people. This not only saved
+                research time, but also created an environment where we were all on the same page and learning
+                together. Everyone understood together and there was much less “but I thought” conversation happening.
+              </p>
+              <p>By leveraging available information, we were able to expedite a three-year plan and prioritize tasks
+                more effectively. The early integration of design provided a platform for all teams to collaborate
+                efficiently. Prior to this, the process was fragmented and lacked an effective way to consolidate,
+                align, and advance together. Now, with a centralized repository for our designs, we could hold ideas
+                and facilitate asynchronous conversations more effectively.</p>
+              <p>Transforming this analysis into a roadmap allowed each team to provide precise estimates, taking into
+                account all contextual factors, leading to a significant decrease in planning uncertainties. By
+                delivering UX work ahead of development, we could accommodate inevitable adjustments and effectively
+                manage multiple concurrent work streams.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- text content -->
+  <section class="position-relative z-index-1 padding-y-xl " data-theme="light">
+    <div class="position-relative z-index-2">
+      <div class="container max-width-lg">
+        <div class="grid gap-sm">
+          <div class="col-8@md">
+
+
+            <h1 id="develop" class="text-xxxl">Getting to production</h1>
+            <div class="color-primary margin-bottom-sm">Develop</div>
+          </div>
+
+          <div class="col-10 offset-0@xs offset-2@md col-8@lg padding-y-lg">
+            <div class="text-component line-height-lg text-space-y-lg">
+              <p>The development phase of our project held significant value and importance. Primarily, it was an
+                instrumental period that provided an opportunity to enhance the operational procedures for the new
+                team. It served as a pivotal point where all efforts, strategies, and plans culminated into an
+                actionable process. During this phase, every team member was actively involved, contributing their
+                specific skills and expertise, and working collaboratively to ensure the success of the project. </p>
+              <p>Furthermore, this was the phase where we could establish open communication and dialogue with our
+                users. It was during this time that we could put our product to the test, identify areas of
+                improvement, and incorporate user feedback into our development process. This interactive process did
+                not only result in a significant improvement in the quality of our product, but it also facilitated
+                the development of lasting relationships with our administrative users users.</p>
+              <p>These relationships have proven invaluable, as the individuals we connected with during the
+                development phase continue to provide us with insightful and constructive feedback from their
+                respective teams. Their continued involvement and willingness to share their experiences with our
+                product have greatly contributed to the quality of the product being delivered.</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- text content -->
+  <section class="position-relative z-index-1 padding-y-xl lightBG" data-theme="light">
+    <div class="position-relative z-index-2">
+      <div class="container max-width-lg">
+        <div class="grid gap-sm">
+          <div class="col-8@md">
+
+
+            <h1 id="deliver" class="text-xxxl">Progressive global launching</h1>
+            <div class="color-primary margin-bottom-sm">Deliver</div>
+          </div>
+
+          <div class="col-10 offset-0@xs offset-2@md col-8@lg padding-y-lg">
+            <div class="text-component line-height-lg text-space-y-lg">
+              <p>After establishing a comprehensive plan, we took advantage of these progressive launches, treating each as an opportunity to conduct User Acceptance Tests (UATs). Executing UATs in small, real-world groups allowed us to gather valuable feedback and insights into the usability and functionality of the tool. This strategic approach was designed to ensure that the vast majority of the users, who represented the primary populations, received a thoroughly vetted and tested user experience.</p>
+              <p>Following the initial launch, we would conduct a rigorous round of bug fixing. This consisted of internal bug bashing sessions (a HUGE thank you to the development team if they ever see this) in addition to feedback sessions in the various geographic regions as the groups of countries were launched.  Any remaining issues, whether minor or significant, were promptly addressed. If the problems couldn't be resolved immediately, they were scheduled as a fast-follow task or added to our backlog for future attention. This method ensured that we were constantly refining and improving the user experience, even after the product was live.</p>
+              <p>An important aspect to consider was that our launches were always phased due to various country-specific limitations. These limitations often resulted in multiple mini-product launches. While this method fragmented the launch process, it was necessary to accommodate the differing requirements and regulations of each country.</p>
+              <p>This phased approach had a dual impact. On one hand, it simplified each individual launch by reducing the scope and scale of each phase. On the other hand, it could occasionally elevate cognitive and operational strain. The process of coordinating and managing multiple mini-launches could be challenging and required careful planning and organization.</p>
+              <p>Despite the challenges, this approach proved beneficial. It allowed us to adapt and respond to user feedback in real-time and ensured that each user group received a thoroughly tested and refined user experience. It also allowed us to continually refine and improve our product, ensuring that we delivered the highest quality tool to our users.</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- overscroll gallery   -->
+<section class="position-relative z-index-1  bg-dark" data-theme="dark">
+  <div class="position-sticky z-index-1 top-0 ">
+    <div class="container max-width-sm height-100vh flex flex-center">
+      <blockquote class="text-center padding-y-xxl">
+        <svg class="icon icon--xxl color-contrast-lower" aria-hidden="true" viewBox="0 0 64 64">
+          <polygon fill="currentColor" points="2 36 17 2 26 2 15 36 26 36 26 62 2 62 2 36" />
+          <polygon fill="currentColor" points="38 36 53 2 62 2 51 36 62 36 62 62 38 62 38 36" />
+        </svg>
+        <div class="text-component margin-top-lg">
+          <p class="text-xl">I appreciate the effort you put into something that is often taken for granted... Especially for employees who need accessible administrative and internal tools.</p>
+        </div>
+        <footer class="margin-top-lg">&mdash; Stakeholder + collective sentiment</footer>
+      </blockquote>
+    </div>
+  </div>
+  
+  <div class="position-relative z-index-2 padding-y-xl bg-dark">
+    <div class="container max-width-adaptive-lg">
+      <div class="overscroll-gallery m">
+  
+      
+        <h1 id="discovery" class="text-xxxl">The final launch</h1>
+                <div class="color-primary margin-bottom-sm">The Launch</div>
+              
+                <div class="device-group-3 max-width-adaptive-sm items-center">
+
+                  <div class="dev-phone dev-phone--top-light" aria-label="Image description">
+                    <div class="dev-phone__body">
+                      <div class="dev-phone__media">
+                        <div class="dev-phone__notch"></div>
+                        <svg viewBox="0 0 750 1334">
+                          <rect width="750" height="1334" fill="var(--color-contrast-lower)" />
+                          <path d="M130 850.633L436.4 544.233L620.24 850.633H130Z" fill="var(--color-contrast-medium)" />
+                          <path d="M192.328 606.56C226.172 606.56 253.608 579.124 253.608 545.28C253.608 511.436 226.172 484 192.328 484C158.484 484 131.048 511.436 131.048 545.28C131.048 579.124 158.484 606.56 192.328 606.56Z" fill="var(--color-contrast-medium)" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="dev-phone__shadow"></div>
+                  </div>
+                
+                  <div class="dev-desktop " aria-label="Image description">
+                    <div class="dev-desktop__body">
+                      <div class="dev-desktop__media">
+                        <svg viewBox="0 0 1920 1200">
+                          <rect width="1920" height="1200" fill="var(--color-contrast-lower)" />
+                          <path d="M639.76 839.094L1039.91 438.944L1280 839.094H639.76Z" fill="var(--color-contrast-medium)" />
+                          <path d="M721.158 520.342C765.357 520.342 801.188 484.511 801.188 440.312C801.188 396.113 765.357 360.282 721.158 360.282C676.959 360.282 641.128 396.113 641.128 440.312C641.128 484.511 676.959 520.342 721.158 520.342Z" fill="var(--color-contrast-medium)" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="dev-desktop__base">
+                      <div class="dev-desktop__base-top"></div>
+                      <div class="dev-desktop__base-bottom"></div>
+                      <div class="dev-desktop__shadow"></div>
+                    </div>
+                  </div>
+                </div>
+              <div class="col-10 offset-0@xs offset-2@md col-8@lg padding-y-lg">
+                <div class="text-component line-height-lg text-space-y-lg">
+  
+                  <p>Document management is not just about documents, but also about the people who use them and the context in which they operate. This concept was a key driver behind the creation of Amazon's initial first-party solution for document management, designed for both users and administrators.</p>
+                  <p>Everyone applying for an opportunity deserves an accessible, trustworthy, and top-quality experience. This approach allows Amazon not only to evaluate but also to scale its services, ensuring that a world-class experience remains so.</p>
+  
+                  <p>The initial discussions grounded in research, along with various organizational prioritization
+                    meetings, ensured that UX held a substantial role in the decision-making process. This beneficial
+                    context allowed me to work independently, without the need to divide my responsibilities to many
+                    times.</p>
+                  
+                </div>
+              </div>
+    
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- text content -->
+<section class="position-relative z-index-1 padding-y-xl" data-theme="light">
+  <div class="position-relative z-index-2">
+    <div class="container max-width-lg">
+      <div class="grid gap-sm">
+        <div class="col-8@md">
+
+
+          <h1 id="deliver" class="text-xxxl">Overcoming Obstacles</h1>
+          <div class="color-primary margin-bottom-sm">Key Challenges</div>
+        </div>
+
+        <div class="col-10 offset-0@xs offset-2@md col-8@lg padding-y-lg">
+          <div class="text-component line-height-lg text-space-y-lg">
+            <p>Challenges are what put life into a project and what make good stories and it's not possible to have a project without challegnes because humans are involved. These are some of the most impactful, interesting, and/or diffcult challenges I encountered while working ont his project.</p>
+  
+
+          </div>
+        </div>
+        <div class="col-12 padding-y-xs">
+          <ul class="grid gap-xs">
+            <li>
+              <div class="grid gap-xs">
+                <div class="flex items-center col-12" data-theme="dark">
+                  <div class="padding-md padding-x-lg@lg padding-y-xl@lg">
+                    <div class="text-sm color-contrast-medium margin-bottom-xxxs">Changing from a document seasrch to a person search</div>
+            
+                    <div class="text-component">
+                      <h2 class="text-xxl">Employee Search</h2>
+                      <p class="margin-top-md">The research conducted in addition to a number of normal conversations with internal team and users highlighted the crucial relationship between people and documents, underscoring the need for more efficient search functionality. The existing software's limitations necessitated the introduction of different filters and attributes. The challenge was to innovate and change the product based on these insights rather than merely improving current functionalities, which involved understanding new friction points and ensuring intuitive feature learnability.</p>
+            <p>Throughout the project, I noticed a recurring theme: the relationship between people and documents. The existing software permitted admins to search only by exact person IDs or documents, which was not entirely logical.</p>
+            <p>In our research, we emphasized this theme and made some intriguing discoveries. We found that different attributes and filters are crucial for people and documents. Furthermore, we realized that a document does not exist without a person, reinforcing the human aspect of document management.</p>
+            <p>The real challenge was not simply improving existing features, but innovatively changing the product based on our research. This required understanding new friction points and ensuring that the feature was intuitive to learn.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+    
+            <li>
+              <div class="grid gap-xs">
+                <div class="flex items-center col-12 lightBG" data-theme="light">
+                  <div class="padding-md padding-x-lg@lg padding-y-xl@lg">
+                    <div class="text-sm color-contrast-medium margin-bottom-xxxs">Cost savings strategies</div>
+                    <div class="text-component">
+                      <h2 class="text-xxl">Cost Savings and Frugality</h2>
+                      <p class="margin-top-md">The research conducted in addition to a number of normal conversations with internal team and users highlighted the crucial relationship between people and documents, underscoring the need for more efficient search functionality. The existing software's limitations necessitated the introduction of different filters and attributes. The challenge was to innovate and change the product based on these insights rather than merely improving current functionalities, which involved understanding new friction points and ensuring intuitive feature learnability.</p>
+            <p>Throughout the project, I noticed a recurring theme: the relationship between people and documents. The existing software permitted admins to search only by exact person IDs or documents, which was not entirely logical.</p>
+            <p>In our research, we emphasized this theme and made some intriguing discoveries. We found that different attributes and filters are crucial for people and documents. Furthermore, we realized that a document does not exist without a person, reinforcing the human aspect of document management.</p>
+            <p>The real challenge was not simply improving existing features, but innovatively changing the product based on our research. This required understanding new friction points and ensuring that the feature was intuitive to learn.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+            <li>
+              <div class="grid gap-xs">
+                <div class="flex items-center col-12" data-theme="dark">
+                  <div class="padding-md padding-x-lg@lg padding-y-xl@lg">
+                    <div class="text-sm color-contrast-medium margin-bottom-xxxs">Document management language and vocabulary</div>
+                    <div class="text-component">
+                      <h2 class="text-xxl">Documents, Files, Hierarchy</h2>
+                      <p class="margin-top-md">Conflicting perceptions of documents and files led to vocabulary challenges in Employee Document Management (EDM). It was essential to standardize language and account for exceptions to rules or standards to ensure scalability. For instance, document collection requests, classified as documents, also make requests and contain other documents, all of which could appear individually in a search.</p>
+                      <p>Initially, conflicting mental models of what documents and files are led to vocabulary challenges, especially among administrators and users. This confusion was not limited to internal debates.</p>
+                      <p>Discussions also arose about the distinctions between documents and files, and how files within documents were perceived as items on a computer during upload processes. It was crucial to establish a standardized language and vocabulary.</p>
+                      <p>We had to compensate for specific cases that violated rules or standards, ensuring we could scale gracefully in unexpected ways. For example, consider document collection requests. These items are classified as documents, but they are a type of document that also makes requests and contains other documents. Remember, during a search, all of these documents could appear individually in a document search due to the structure we modeled based on our best insights.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- text content -->
+<section class="position-relative z-index-1 padding-y-xl lightBG" data-theme="light">
+  <div class="position-relative z-index-2">
+    <div class="container max-width-lg">
+      <div class="grid gap-sm">
+        <div class="col-8@md">
+
+
+          <h1 id="deliver" class="text-xxxl">Impacts</h1>
+          <div class="color-primary margin-bottom-sm">Select impacts that myself or the project itself had</div>
+        </div>
+
+        <div class="col-10 offset-0@xs offset-2@md col-8@lg padding-y-lg">
+          <div class="text-component line-height-lg text-space-y-lg">
+            <p>Challenges are what put life into a project and what make good stories and it's not possible to have a project without challegnes because humans are involved. These are some of the most impactful, interesting, and/or diffcult challenges I encountered while working ont his project.</p>
+  
+
+          </div>
+        </div>
+        <div class="col-12 padding-y-xs">
+          <ul class="grid gap-xs">
+            <li>
+              <div class="grid gap-xs">
+                <div class="flex items-center col-12" data-theme="dark">
+                  <div class="padding-md padding-x-lg@lg padding-y-xl@lg">
+                    <div class="text-sm color-contrast-medium margin-bottom-xxxs">Changing from a document seasrch to a person search</div>
+                    <div class="text-component">
+                      <h2 class="text-xxl">Accessibility</h2>
+                      <p class="margin-top-md">The research conducted in addition to a number of normal conversations with internal team and users highlighted the crucial relationship between people and documents, underscoring the need for more efficient search functionality. The existing software's limitations necessitated the introduction of different filters and attributes. The challenge was to innovate and change the product based on these insights rather than merely improving current functionalities, which involved understanding new friction points and ensuring intuitive feature learnability.</p>
+            <p>Throughout the project, I noticed a recurring theme: the relationship between people and documents. The existing software permitted admins to search only by exact person IDs or documents, which was not entirely logical.</p>
+            <p>In our research, we emphasized this theme and made some intriguing discoveries. We found that different attributes and filters are crucial for people and documents. Furthermore, we realized that a document does not exist without a person, reinforcing the human aspect of document management.</p>
+            <p>The real challenge was not simply improving existing features, but innovatively changing the product based on our research. This required understanding new friction points and ensuring that the feature was intuitive to learn.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+    
+            <li>
+              <div class="grid gap-xs">
+                <div class="flex items-center col-12" data-theme="light">
+                  <div class="padding-md padding-x-lg@lg padding-y-xl@lg">
+                    <div class="text-sm color-contrast-medium margin-bottom-xxxs">Cost savings strategies</div>
+                    <div class="text-component">
+                      <h2 class="text-xxl">Employee vs. Document Search</h2>
+                      <p class="margin-top-md">The research conducted in addition to a number of normal conversations with internal team and users highlighted the crucial relationship between people and documents, underscoring the need for more efficient search functionality. The existing software's limitations necessitated the introduction of different filters and attributes. The challenge was to innovate and change the product based on these insights rather than merely improving current functionalities, which involved understanding new friction points and ensuring intuitive feature learnability.</p>
+            <p>Throughout the project, I noticed a recurring theme: the relationship between people and documents. The existing software permitted admins to search only by exact person IDs or documents, which was not entirely logical.</p>
+            <p>In our research, we emphasized this theme and made some intriguing discoveries. We found that different attributes and filters are crucial for people and documents. Furthermore, we realized that a document does not exist without a person, reinforcing the human aspect of document management.</p>
+            <p>The real challenge was not simply improving existing features, but innovatively changing the product based on our research. This required understanding new friction points and ensuring that the feature was intuitive to learn.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+
+    <!-- footer -->
+    <footer class="footer-v6">
+      <div class="container max-width-lg">
+        <div
+          class="padding-y-xl border-bottom border-contrast-higher border-opacity-10% margin-bottom-lg margin-bottom-xl@md">
+          <div class="flex flex-column gap-xs flex-row@md justify-between@md items-center@md">
+            <div>
+              <h1>Hello there. Welcome to the footer.</h1>
+            </div>
+          </div>
+        </div>
+
+        
+
+
+    </footer>
+    <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>
