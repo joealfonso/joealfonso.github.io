@@ -16046,6 +16046,226 @@ Usage: codyhouse.co/license
 
 /* -------------------------------- 
 
+File#: _1_sticky-feature
+Title: Sticky Feature
+Descr: List of product features with sticky images
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+
+/* variables */
+:root {
+  /* colors */
+  --sh4-color-primary-hsl: 250, 84%, 54%;
+  --sh4-color-contrast-lower-hsl: 240, 4%, 85%;
+  --sh4-color-contrast-medium-hsl: 225, 4%, 47%;
+  --sh4-color-contrast-high-hsl: 230, 7%, 23%;
+  --sh4-color-contrast-higher-hsl: 230, 13%, 9%;
+  --sh4-color-bg-dark-hsl: 240, 4%, 95%;
+  --sh4-color-bg-hsl: 0, 0%, 100%;
+  --sh4-color-black-hsl: 230, 13%, 9%;
+  --sh4-color-accent-hsl: 342, 89%, 48%;
+
+  /* spacing */
+  --sh4-space-xs: 0.5rem;
+  --sh4-space-sm: 0.75rem;
+  --sh4-space-md: 1.25rem;
+  --sh4-space-lg: 2rem;
+  --sh4-space-xl: 3.25rem;
+  --sh4-space-2xl: 5.25rem;
+
+  /* typography */
+  --sh4-text-xl: 1.728rem;
+  --sh4-text-sm: 0.833rem;
+}
+
+@media(min-width: 64rem){
+  :root {
+    /* spacing */
+    --sh4-space-xs: 0.75rem;
+    --sh4-space-sm: 1.125rem;
+    --sh4-space-md: 2rem;
+    --sh4-space-lg: 3.125rem;
+    --sh4-space-xl: 5.125rem;
+    --sh4-space-2xl: 8.25rem;
+    
+    /* typography */
+    --sh4-text-xl: 2.44rem;
+    --sh4-text-sm: 1rem;
+  }
+}
+
+/* component */
+.sticky-feature {
+  position: relative;
+  z-index: 1;
+  padding: var(--sh4-space-lg) 0;
+}
+
+.sticky-feature__container {
+  width: calc(100% - 2*var(--sh4-space-md));
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 32rem;
+}
+
+@media(min-width: 48rem) {
+  .sticky-feature__container {
+    max-width: 48rem;
+  }
+}
+
+@media(min-width: 64rem) {
+  .sticky-feature__container {
+    max-width: 64rem;
+  }
+}
+
+@media(min-width: 80rem) {
+  .sticky-feature__container {
+    max-width: 80rem;
+  }
+}
+
+.sticky-feature__grid-1 {
+  display: grid;
+}
+
+@media(min-width: 64rem) {
+  .sticky-feature__grid-1 {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sh4-space-md);
+  }
+}
+
+@media(min-width: 80rem) {
+  .sticky-feature__grid-1 > *:first-child {
+    padding-right: var(--sh4-space-xl);
+  }
+}
+
+.sticky-feature__grid-2 {
+  display: grid;
+  gap: var(--sh4-space-xl);
+}
+
+@media(min-width: 64rem) {
+  .sticky-feature__grid-2 {
+    gap: var(--sh4-space-2xl);
+  }
+}
+
+.sticky-feature__content-figure {
+  /* images visible on small screens */
+  border-radius: 0.375em;
+  overflow: hidden;
+  box-shadow: 0 0.3px 0.4px hsla(var(--sh4-color-black-hsl), 0.025),0 0.9px 1.5px hsla(var(--sh4-color-black-hsl), 0.05), 0 3.5px 6px hsla(var(--sh4-color-black-hsl), 0.1);
+  margin-top: var(--sh4-space-md);
+}
+
+.sticky-feature__content-figure img {
+  display: block;
+  width: 100%;
+}
+
+.sticky-feature__media-list {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sticky-feature__media-item {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sticky-feature__media-figure {
+  /* images visible on bigger screens */
+  border-radius: 0.75em;
+  box-shadow: 0 0.3px 0.4px hsla(var(--sh4-color-black-hsl), 0.025),0 0.9px 1.5px hsla(var(--sh4-color-black-hsl), 0.05), 0 3.5px 6px hsla(var(--sh4-color-black-hsl), 0.1);
+  overflow: hidden;
+  opacity: 0;
+}
+
+.sticky-feature__media-figure img {
+  display: block;
+  width: 100%;
+  max-height: 90vh;
+}
+
+.sticky-feature-current-item .sticky-feature__media-figure {
+  opacity: 1;
+}
+
+@media (min-width: 64rem) {
+  .sticky-feature__content-list {
+    padding-top: 50vh;
+    padding-bottom: 50vh;
+  }
+
+  .sticky-feature__title {
+    font-size: var(--sh4-text-xl);
+    cursor: pointer;
+    opacity: 1;
+  }
+
+  .sticky-feature__title:hover, .sticky-feature-current-item .sticky-feature__title {
+    opacity: 1;
+  }
+
+  .sticky-feature__content-figure {
+    /* show only to screen readers */
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+            clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
+  }
+
+  .sticky-feature__media-list::before, .sticky-feature__media-list::after {
+    /* text overlay gradients */
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 100vw;
+    height: 100px;
+    pointer-events: none;
+  }
+
+  .sticky-feature__media-list::before {
+    top: 0;
+    background: linear-gradient(to bottom, hsl(var(--sh4-color-bg-hsl)), hsla(var(--sh4-color-bg-hsl), 0.8), hsla(var(--sh4-color-bg-hsl), 0));
+  }
+
+  .sticky-feature__media-list::after {
+    bottom: 0;
+    background: linear-gradient(to top, hsl(var(--sh4-color-bg-hsl)), hsla(var(--sh4-color-bg-hsl), 0.8), hsla(var(--sh4-color-bg-hsl), 0));
+  }
+}
+
+/* utility classes */
+@media not all and (min-width: 64rem) {
+  .sticky-feature-display\@md {
+    display:none !important;
+  }
+}
+
+/* -------------------------------- 
+
 File#: _1_tilted-img-slideshow
 Title: Tilted Image Slideshow
 Descr: A slideshow plugin to loop through a list of 3 tilted images
@@ -16080,11 +16300,11 @@ Usage: codyhouse.co/license
 }
 
 .tilted-slideshow__item:nth-of-type(2) {
-  --tilted-slideshow-rotate-z: -2deg;
+  --tilted-slideshow-rotate-z: -1.2deg;
 }
 
 .tilted-slideshow__item:nth-of-type(3) {
-  --tilted-slideshow-rotate-z: 2deg;
+  --tilted-slideshow-rotate-z: 1.2deg;
 }
 
 .tilted-slideshow__item--middle {
@@ -16793,7 +17013,7 @@ Usage: codyhouse.co/license
   display: block;
 }
 
-@media (min-width: 64rem) {
+@media (min-width: 1rem) {
   .float-sidenav {
     visibility: visible;
     opacity: 1;
