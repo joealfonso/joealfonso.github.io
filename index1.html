@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52875112-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-52875112-1');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/styles-home.css">
+  <link rel="stylesheet" href="./styles/nav.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js"
+    integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="./js/nav.js"></script>
+
+</head>
+<html>
+
+<body>
+  <header class="cd-auto-hide-header">
+    <!-- <div class="logo"><a href="#0"></a></div> -->
+
+    <nav class="cd-primary-nav" aria-label="primary">
+      <a href="#cd-navigation" class="nav-trigger">
+        <span><em aria-hidden="true"></em></span>
+      </a> <!-- .nav-trigger -->
+      <ul id="cd-navigation">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./pages/writing/EdTechResearchChallenges.html">Writing</a></li>
+        <li><a href="./pages/about.html">About</a></li>
+      </ul>
+    </nav> <!-- .cd-primary-nav -->
+  </header> <!-- .cd-auto-hide-header -->
+
+  <div class="wrapper"></div>
+  <div id="grid">
+    <div class="box intro">
+
+
+      <p class="output">Voice control. Try "navigate to [project name]" or "scroll up/down"</p>
+
+      <h3 class="mainName">Joseph Alfonso</h3>
+      <p>specializes in user research, design, <a href="https://trydesignlab.com/jalfonso/"
+          class="My DesignLab Profile">instruction</a>, and accessibility.</p>
+      <a target="_blank" href="https://twitter.com/whoisjoealfonso"><i class="fab fa-twitter socialIcon"></i></a>
+      <a target="_blank" href="https://dribbble.com/josephalfonso"><i class="fab fa-dribbble socialIcon"></i></a>
+      <a target="_blank" href="https://www.linkedin.com/in/jalfonsodesign/"><i
+          class="fab fa-linkedin socialIcon"></i></a>
+    </div>
+
+    <div class="span3">
+      <h3>Recent Work</h3>
+    </div>
+    <div class="box projectPreview">
+      <h4 class="projectTitle">
+        <a class="homeProjectTitle" href="./pages/EDM.html">Amazon Electronic Document Management (EDM)</a>
+      </h4>
+      <p>Creating an experience to manage over 4.8 billion documents.</p>
+      <a href="main/EDM.html" class="button">View EDM</a>
+
+
+    </div>
+    <div class="box projectPreview">
+      <h4 class="projectTitle">
+        <a class="homeProjectTitle" href="./pages/studio.html">Discovery Education Studio</a>
+      </h4>
+      <!-- <div class="image-stack">
+          <div class="image-stack__item image-stack__item--top">
+            <img src="./images/studio/BoardsMock1.jpg" alt="">
+          </div>
+          <div class="image-stack__item image-stack__item--bottom">
+            <img src="./images/studio/BoardsMock1.jpg" alt="">
+          </div>
+        </div> -->
+      <p>Bringing the ability to freely create, edit, and collaborate live, regardless
+        of device or location, into the classroom. </p>
+      <a href="./pages/studio.html" class="button">View Studio</a>
+
+
+    </div>
+    <div class="box projectPreview">
+      <h4 class="projectTitle">
+        <a class="homeProjectTitle" href="./pages/player.html">Resource Player Redesign</a>
+      </h4>
+      <p class="drop-cap">Quick and short iterations to quickly design a new Player experience.</p>
+      <a href="./pages/player.html" class="button">View Player</a>
+
+    </div>
+    <div class="box projectPreview">
+      <h4 class="projectTitle">
+        <a class="homeProjectTitle" href="./pages/home.html">Discovery Education Home</a>
+      </h4>
+      <p>Paving the way for the new Discovery Education Experience.</p>
+      <a href="./pages/home.html" class="button">View DE Home</a>
+      <!-- <picture>
+          <img src="images/studio/Perspective-App-Screens-Mock-Up.jpg" alt="Descriptive text about the picture.">
+        </picture> -->
+    </div>
+
+    <div class="box projectPreview SYW" onclick="document.location='./OldSite/index-OldSite.html'">
+      <h4 class="projectTitle">
+        <a class="homeProjectTitle" href="./OldSite/index-OldSite.html">Various Older Work</a>
+      </h4>
+      <p>Explore work from a land long ago.</p>
+      <a href="./OldSite/index-OldSite.html" class="button">View Older Stuff</a>
+    </div>
+
+    <div class="span3">
+      <h3>Recent Writing</h3>
+    </div>
+    <div class="box projectPreview">
+      <h4 class="projectTitle">
+        <a class="homeProjectTitle" href="./pages/writing/EdTechResearchChallenges.html">Ed Tech User Engagement
+          Challenges and Solutions</a>
+      </h4>
+      <p>A look into some of the challenges and insights into them.</p>
+      <a href="./pages/writing/EdTechResearchChallenges.html" class="button">View Ed Tech Research Challenges</a>
+    </div>
+  </div>
+  
+</body>
+<script src="js/voiceControlScript.js"></script>
+</html>

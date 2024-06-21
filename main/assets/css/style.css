@@ -13811,6 +13811,199 @@ Usage: codyhouse.co/license
 
 /* -------------------------------- 
 
+File#: _1_feature
+Title: Feature
+Descr: Content group containing text + media (img, video, iframe, inline SVG)
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+
+/* -------------------------------- 
+
+Buttons 
+
+-------------------------------- */
+
+.cd-btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375em;
+  font-size: 1em;
+  font-weight: 500;
+  text-decoration: none;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: 0.2s;
+  will-change: transform;
+}
+
+.cd-btn:focus-visible {
+  outline: none;
+}
+
+.cd-btn:active {
+  transform: translateY(2px);
+}
+
+.cd-btn--primary {
+  background: hsl(250, 84%, 54%);
+  box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.15), 
+              0 1px 3px hsla(250, 84%, 38%, 0.25), 
+              0 2px 6px hsla(250, 84%, 38%, 0.1), 
+              0 6px 10px -2px hsla(250, 84%, 38%, 0.25);
+  color: hsl(0, 0%, 100%);
+}
+
+.cd-btn--primary:hover {
+  background: hsl(250, 84%, 60%);
+  box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.15), 
+              0 1px 2px hsla(250, 84%, 38%, 0.25), 
+              0 1px 4px hsla(250, 84%, 38%, 0.1), 
+              0 3px 6px -2px hsla(250, 84%, 38%, 0.25);
+}
+
+.cd-btn--primary:focus-visible {
+  box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.15), 
+              0 1px 2px hsla(250, 84%, 38%, 0.25), 
+              0 1px 4px hsla(250, 84%, 38%, 0.1), 
+              0 3px 6px -2px hsla(250, 84%, 38%, 0.25), 
+              0 0 0 2px hsl(0, 0%, 100%), 
+              0 0 0 4px hsl(250, 84%, 54%);
+}
+
+/* --------------------------------
+
+Component 
+
+-------------------------------- */
+
+.feature {}
+
+.feature__grid {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.feature__grid > * {
+  min-width: 0;
+}
+
+.feature__content {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.feature__label {
+  font-size: 0.9375rem;
+  color: hsl(240, 4%, 65%);
+  text-transform: capitalize;
+}
+
+.feature__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.feature--center-x .feature__actions {
+  justify-content: center;
+}
+
+.feature__img {
+  width: 100%;
+  border-radius: 0.75em;
+}
+
+@media (min-width: 64rem) {
+  .feature__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature--invert .feature__grid > *:first-child {
+    order: 2;
+  }
+}
+
+/* -------------------------------- 
+
+Utilities 
+
+-------------------------------- */
+
+.cd-container {
+  width: calc(100% - 3rem);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cd-max-width-adaptive-lg {
+  max-width: 32rem;
+}
+
+@media (min-width: 48rem) {
+  .cd-max-width-adaptive-lg {
+    max-width: 48rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .cd-max-width-adaptive-lg {
+    max-width: 64rem;
+  }
+}
+
+@media (min-width: 80rem) {
+  .cd-max-width-adaptive-lg {
+    max-width: 80rem;
+  }
+}
+
+.cd-position-relative {
+  position: relative;
+}
+
+.cd-z-index-1 {
+  z-index: 1;
+}
+
+.cd-margin-y-2xl {
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+}
+
+.cd-text-center {
+  text-align: center;
+}
+
+.cd-line-height-lg {
+  line-height: 1.58;
+}
+
+.cd-link {
+  color: hsl(250, 84%, 54%);
+  text-decoration: none;
+  background-image: linear-gradient(to right, hsl(250, 84%, 54%) 50%, hsla(250, 84%, 54%, 0.2) 50%);
+  background-size: 200% 1px;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  transition: background-position 0.2s;
+}
+
+.cd-link:hover {
+  background-position: 0% 100%;
+}
+
+/* -------------------------------- 
+
 File#: _1_feature-v12
 Title: Feature v12
 Descr: Feature section containing text that overlaps a background image
@@ -14134,6 +14327,266 @@ Usage: codyhouse.co/license
 
 .google-maps--ratio-3\:1 {
   padding-bottom: 33%;
+}
+
+/* -------------------------------- 
+
+File#: _1_animated-headline
+Title: Animated Headline
+Descr: A collection of word replacement effects
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+
+/* -------------------------------- 
+
+Component 
+
+-------------------------------- */
+
+.text-anim {}
+
+.text-anim__wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.text-anim__word {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.text-anim__word--in {
+  position: relative;
+  z-index: 2;
+}
+
+/* rotate */
+.text-anim--rotate {
+  --text-anim-duration: 0.85s;
+  --text-anim-pause: 2.5s;
+}
+
+.text-anim--rotate .text-anim__wrapper {
+  perspective: 300px;
+}
+
+.text-anim--rotate .text-anim__word {
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transform-origin: 50% 100%;
+  transform: rotateX(-180deg);
+  transition: opacity calc(var(--text-anim-duration) / 3) cubic-bezier(0.215, 0.61, 0.355, 1), transform var(--text-anim-duration) cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.text-anim--rotate .text-anim__word--in {
+  opacity: 1;
+  transform: rotateX(0deg);
+}
+
+.text-anim--rotate .text-anim__word--out {
+  opacity: 0;
+  transform: rotateX(180deg);
+  transition: opacity calc(var(--text-anim-duration) / 6) cubic-bezier(0.215, 0.61, 0.355, 1), transform var(--text-anim-duration) cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* loader */
+.text-anim--loader {
+  --text-anim-duration: 2.5s;
+  --text-anim-pause: 0s;
+  color: hsl(225, 4%, 47%);
+}
+
+.text-anim--loader .text-anim__wrapper {
+  color: hsl(230, 13%, 9%);
+}
+
+.text-anim--loader .text-anim__word {
+  color: transparent;
+  transition: color 0.2s;
+}
+
+.text-anim--loader .text-anim__word::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 100%;
+  background-color: currentColor;
+  transform-origin: left center;
+  transform: translateY(100%) scaleX(0);
+  transition: transform var(--text-anim-duration) cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.text-anim--loader .text-anim__word--in {
+  color: currentColor;
+}
+
+.text-anim--loader .text-anim__word--in::after {
+  transform: translateY(100%) scaleX(1);
+}
+
+.text-anim--loader .text-anim__word--out {
+  color: transparent;
+}
+
+.text-anim--loader .text-anim__word--out::after {
+  transition: none;
+  transform: translateY(100%) scaleX(0);
+}
+
+/* slide */
+.text-anim--slide {
+  --text-anim-duration: 0.5s;
+  --text-anim-pause: 2.5s;
+}
+
+.text-anim--slide .text-anim__wrapper {
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  padding: 0.1em 0;
+}
+
+.text-anim--slide .text-anim__word {
+  height: 100%;
+  transform: translateY(-100%);
+}
+
+.text-anim--slide .text-anim__word--in,
+.text-anim--slide .text-anim__word--out {
+  animation-duration: var(--text-anim-duration);
+  animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.text-anim--slide .text-anim__word--in {
+  animation-name: text-anim-slide-in;
+  animation-fill-mode: forwards;
+}
+
+.text-anim--slide .text-anim__word--out {
+  animation-name: text-anim-slide-out;
+}
+
+@keyframes text-anim-slide-in {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes text-anim-slide-out {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+/* zoom */
+.text-anim--zoom {
+  --text-anim-duration: 0.85s;
+  --text-anim-pause: 2.5s;
+}
+
+.text-anim--zoom .text-anim__wrapper {
+  perspective: 300px;
+}
+
+.text-anim--zoom .text-anim__word {
+  opacity: 0;
+  transform: translateZ(100px);
+  transition: opacity var(--text-anim-duration), transform var(--text-anim-duration) cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.text-anim--zoom .text-anim__word--in {
+  opacity: 1;
+  transform: translateZ(0);
+}
+
+.text-anim--zoom .text-anim__word--out {
+  opacity: 0;
+  transform: translateZ(-100px);
+}
+
+/* push */
+.text-anim--push {
+  --text-anim-duration: 0.65s;
+  --text-anim-pause: 2.5s;
+}
+
+.text-anim--push .text-anim__word {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: none;
+}
+
+.text-anim--push .text-anim__word--in,
+.text-anim--push .text-anim__word--out {
+  transition: opacity var(--text-anim-duration), transform var(--text-anim-duration) cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.text-anim--push .text-anim__word--in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.text-anim--push .text-anim__word--out {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+/* clip */
+.text-anim--clip {
+  --text-anim-duration: 0.7s;
+  --text-anim-pause: 2s;
+  --text-anim-border-width: 2px;
+}
+
+.text-anim--clip .text-anim__wrapper {
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.text-anim--clip .text-anim__wrapper::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: calc(50% - 0.7em);
+  height: 1.4em;
+  width: var(--text-anim-border-width);
+  background-color: hsl(342, 89%, 48%);
+}
+
+.text-anim--clip .text-anim__wrapper--pulse::after {
+  animation: text-anim-pulse 0.8s infinite;
+}
+
+.text-anim--clip .text-anim__word {
+  opacity: 0;
+  padding-right: var(--text-anim-border-width);
+}
+
+.text-anim--clip .text-anim__word--in {
+  opacity: 1;
+}
+
+@keyframes text-anim-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 /* -------------------------------- 
