@@ -337,12 +337,6 @@ section + section {
   overflow: hidden;
 }
 
-/* Inner page orbs: same size and position as the homepage so they peek in
-   from the edges the same way — just reduce the whole layer's opacity so
-   the effect is subtle rather than flooding the shorter section. */
-.page-orb-section .hero__bg {
-  opacity: 0.35;
-}
 
 /* Fade the bottom edge into the page background */
 .page-orb-section::after {
