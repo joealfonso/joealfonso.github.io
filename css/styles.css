@@ -25,11 +25,11 @@
 :root {
 
   /* --- Color (dark by default) --- */
-  --color-bg:               #0F0F0E;
-  --color-surface:          #1A1A19;
-  --color-surface-elevated: #222221;
-  --color-border:           #2C2C2A;
-  --color-border-strong:    #3E3E3C;
+  --color-bg:               #181817;
+  --color-surface:          #222221;
+  --color-surface-elevated: #2A2A29;
+  --color-border:           #343432;
+  --color-border-strong:    #484846;
 
   --color-text:             #F0F0EE;
   --color-text-secondary:   #9A9A98;
@@ -345,10 +345,23 @@ section + section {
   pointer-events: none;
 }
 
-/* Content wrapper lifts above orbs */
+/* Fade bottom of hero into page background */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 220px;
+  background: linear-gradient(to bottom, transparent, var(--color-bg));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Content wrapper lifts above orbs and fade overlay */
 .hero > .container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero__orb {
