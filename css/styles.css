@@ -337,26 +337,11 @@ section + section {
   overflow: hidden;
 }
 
-/* Inner page orbs: smaller and more transparent than the homepage hero.
-   The hero is tall so orbs peek in subtly from the edges.
-   Inner page headers are shorter, so we scale down and dial back opacity
-   to avoid flooding the section with color. */
-.page-orb-section .hero__orb--1 {
-  width: 480px;
-  height: 480px;
-  background: radial-gradient(circle at center, var(--orb-1, rgba(0, 82, 204, 0.08)) 0%, transparent 70%);
-}
-
-.page-orb-section .hero__orb--2 {
-  width: 360px;
-  height: 360px;
-  background: radial-gradient(circle at center, var(--orb-2, rgba(99, 102, 241, 0.06)) 0%, transparent 70%);
-}
-
-.page-orb-section .hero__orb--3 {
-  width: 260px;
-  height: 260px;
-  background: radial-gradient(circle at center, var(--orb-3, rgba(14, 165, 233, 0.05)) 0%, transparent 70%);
+/* Inner page orbs: same size and position as the homepage so they peek in
+   from the edges the same way — just reduce the whole layer's opacity so
+   the effect is subtle rather than flooding the shorter section. */
+.page-orb-section .hero__bg {
+  opacity: 0.35;
 }
 
 /* Fade the bottom edge into the page background */
