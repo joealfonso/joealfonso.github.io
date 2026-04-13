@@ -328,7 +328,37 @@ section + section {
 
 
 /* ============================================================
-   5. HERO
+   5. PAGE ORB SECTION (reusable animated orb background)
+   ============================================================ */
+
+/* Full-width wrapper that holds the orb layer for inner page headers */
+.page-orb-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fade the bottom edge into the page background */
+.page-orb-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--color-bg));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Lift all direct children above the orb layer */
+.page-orb-section > *:not(.hero__bg) {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* ============================================================
+   6. HERO
    ============================================================ */
 
 .hero {
