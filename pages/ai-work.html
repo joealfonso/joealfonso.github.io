@@ -80,115 +80,90 @@
         </div>
       </section>
 
-      <hr class="divider container" />
+      <div class="case-study-body container container--narrow">
 
-      <!-- SECTION: DESIGNING AI PRODUCTS -->
-      <section class="case-study-section container">
-        <div class="case-study-section__content">
+        <h2>Designing AI-powered products</h2>
+        <p>
+          At Amazon, designing for AI means navigating a set of problems that don't exist in traditional product work:
+          outputs are probabilistic, not deterministic; users form mental models based on one interaction that don't
+          generalize; and trust is fragile in ways that are hard to anticipate until something goes wrong.
+        </p>
+        <p>
+          My approach starts with the failure modes, not the happy path. When I'm designing an AI feature,
+          I spend as much time mapping what happens when the model gets it wrong — and how the interface
+          recovers — as I do on the primary flow. This is especially important in enterprise HR contexts,
+          where a confused or misleading AI output has real downstream consequences for real people.
+        </p>
+        <p>A few principles I've developed through this work:</p>
 
-          <h2>Designing AI-powered products</h2>
-          <p>
-            At Amazon, designing for AI means navigating a set of problems that don't exist in traditional product work:
-            outputs are probabilistic, not deterministic; users form mental models based on one interaction that don't
-            generalize; and trust is fragile in ways that are hard to anticipate until something goes wrong.
-          </p>
-          <p>
-            My approach starts with the failure modes, not the happy path. When I'm designing an AI feature,
-            I spend as much time mapping what happens when the model gets it wrong — and how the interface
-            recovers — as I do on the primary flow. This is especially important in enterprise HR contexts,
-            where a confused or misleading AI output has real downstream consequences for real people.
-          </p>
-          <p>
-            A few principles I've developed through this work:
-          </p>
-
-          <div class="stat-block">
-            <div class="stat-block__item">
-              <p class="stat-block__value">Show, don't assert</p>
-              <p class="stat-block__label">AI should surface evidence and let users decide, not present conclusions as facts</p>
-            </div>
-            <div class="stat-block__item">
-              <p class="stat-block__value">Graceful degradation</p>
-              <p class="stat-block__label">Every AI feature needs a designed fallback — the experience can't collapse when confidence is low</p>
-            </div>
-            <div class="stat-block__item">
-              <p class="stat-block__value">Human in the loop</p>
-              <p class="stat-block__label">Enterprise AI must preserve accountability — who approved what, and when, always needs an answer</p>
-            </div>
+        <div class="stat-block">
+          <div class="stat-block__item">
+            <p class="stat-block__value">Show, don't assert</p>
+            <p class="stat-block__label">AI should surface evidence and let users decide, not present conclusions as facts</p>
           </div>
-
+          <div class="stat-block__item">
+            <p class="stat-block__value">Graceful degradation</p>
+            <p class="stat-block__label">Every AI feature needs a designed fallback — the experience can't collapse when confidence is low</p>
+          </div>
+          <div class="stat-block__item">
+            <p class="stat-block__value">Human in the loop</p>
+            <p class="stat-block__label">Enterprise AI must preserve accountability — who approved what, and when, always needs an answer</p>
+          </div>
         </div>
-      </section>
 
-      <hr class="divider container" />
+        <h2>Building AI tools for design work</h2>
+        <p>
+          Parallel to the product work, I've been building my own AI tooling. This started as curiosity — I wanted
+          to understand how these systems actually worked, not just how they appeared from the outside.
+          It's become a core part of how I work.
+        </p>
 
-      <!-- SECTION: BUILDING AI TOOLS -->
-      <section class="case-study-section container">
-        <div class="case-study-section__content">
+        <h3>MCP servers</h3>
+        <p>
+          I've built and shipped several MCP (Model Context Protocol) servers that connect AI agents to external
+          services — design systems, documentation, research repositories, project tracking. The goal is to give
+          AI assistants real context about the work instead of making them operate on vague prompts. A server
+          that can pull the current design system tokens, recent usability findings, and open tickets simultaneously
+          is a fundamentally different collaborator than one working from memory.
+        </p>
 
-          <h2>Building AI tools for design work</h2>
-          <p>
-            Parallel to the product work, I've been building my own AI tooling. This started as curiosity — I wanted
-            to understand how these systems actually worked, not just how they appeared from the outside.
-            It's become a core part of how I work.
-          </p>
+        <h3>LangGraph agents</h3>
+        <p>
+          I've used LangGraph to build multi-step research and synthesis agents — workflows that can gather
+          competitive information, surface patterns across user research sessions, and generate structured
+          design briefs with minimal manual input. These aren't replacements for design judgment. They're
+          tools that compress the time between "we need to understand X" and "here's what we know about X"
+          so that judgment can happen faster and with better information.
+        </p>
 
-          <h3>MCP servers</h3>
-          <p>
-            I've built and shipped several MCP (Model Context Protocol) servers that connect AI agents to external
-            services — design systems, documentation, research repositories, project tracking. The goal is to give
-            AI assistants real context about the work instead of making them operate on vague prompts. A server
-            that can pull the current design system tokens, recent usability findings, and open tickets simultaneously
-            is a fundamentally different collaborator than one working from memory.
-          </p>
+        <h3>Why this matters for product work</h3>
+        <p>
+          Building these tools has changed how I design AI features. I understand the actual constraints —
+          context windows, tool-calling reliability, hallucination patterns, latency tradeoffs — not as
+          abstract engineering concerns but as things I've personally run into. When a product manager
+          says "can the AI just figure that out automatically?", I can give a grounded answer and propose
+          a design approach that works within the real constraints, not an idealized version of them.
+        </p>
 
-          <h3>LangGraph agents</h3>
-          <p>
-            I've used LangGraph to build multi-step research and synthesis agents — workflows that can gather
-            competitive information, surface patterns across user research sessions, and generate structured
-            design briefs with minimal manual input. These aren't replacements for design judgment. They're
-            tools that compress the time between "we need to understand X" and "here's what we know about X"
-            so that judgment can happen faster and with better information.
-          </p>
+        <h2>What I think about AI and design</h2>
+        <p>
+          The most important thing AI changes about design isn't the output — it's the speed of iteration and
+          the cost of a bad decision. When you can prototype five directions in an afternoon instead of a week,
+          the bottleneck shifts from making things to evaluating them. That puts a premium on the skills that
+          have always mattered most in senior design roles: knowing what question to ask, identifying which
+          signal to trust, and making a call when the data is ambiguous.
+        </p>
+        <p>
+          I'm not worried that AI makes designers less relevant. I'm more interested in what it makes possible
+          when designers know how to use it well — and how to design products that other people can use well too.
+        </p>
 
-          <h3>Why this matters for product work</h3>
-          <p>
-            Building these tools has changed how I design AI features. I understand the actual constraints —
-            context windows, tool-calling reliability, hallucination patterns, latency tradeoffs — not as
-            abstract engineering concerns but as things I've personally run into. When a product manager
-            says "can the AI just figure that out automatically?", I can give a grounded answer and propose
-            a design approach that works within the real constraints, not an idealized version of them.
-          </p>
-
-        </div>
-      </section>
-
-      <hr class="divider container" />
-
-      <!-- SECTION: PERSPECTIVE -->
-      <section class="case-study-section container">
-        <div class="case-study-section__content">
-
-          <h2>What I think about AI and design</h2>
-          <p>
-            The most important thing AI changes about design isn't the output — it's the speed of iteration and
-            the cost of a bad decision. When you can prototype five directions in an afternoon instead of a week,
-            the bottleneck shifts from making things to evaluating them. That puts a premium on the skills that
-            have always mattered most in senior design roles: knowing what question to ask, identifying which
-            signal to trust, and making a call when the data is ambiguous.
-          </p>
-          <p>
-            I'm not worried that AI makes designers less relevant. I'm more interested in what it makes possible
-            when designers know how to use it well — and how to design products that other people can use well too.
-          </p>
-
-        </div>
-      </section>
+      </div>
 
       <hr class="divider container" />
 
       <!-- CTA -->
-      <section class="case-study-section container">
+      <section class="container" style="padding-block: var(--space-16);">
         <div class="about__links">
           <a href="contact.html" class="btn btn--primary">Get in touch</a>
           <a href="work.html" class="btn btn--secondary">View all work</a>
