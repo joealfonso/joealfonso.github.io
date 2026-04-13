@@ -24,21 +24,21 @@
    ============================================================ */
 :root {
 
-  /* --- Color --- */
-  --color-bg:               #FFFFFF;
-  --color-surface:          #F6F6F4;
-  --color-surface-elevated: #FFFFFF;
-  --color-border:           #E4E4E2;
-  --color-border-strong:    #C8C8C6;
+  /* --- Color (dark by default) --- */
+  --color-bg:               #0F0F0E;
+  --color-surface:          #1A1A19;
+  --color-surface-elevated: #222221;
+  --color-border:           #2C2C2A;
+  --color-border-strong:    #3E3E3C;
 
-  --color-text:             #111110;
-  --color-text-secondary:   #5C5C5A;
-  --color-text-muted:       #9A9A98;
-  --color-text-inverse:     #FFFFFF;
+  --color-text:             #F0F0EE;
+  --color-text-secondary:   #9A9A98;
+  --color-text-muted:       #5C5C5A;
+  --color-text-inverse:     #0F0F0E;
 
-  --color-accent:           #0052CC;
-  --color-accent-hover:     #003D99;
-  --color-accent-subtle:    #EBF2FF;
+  --color-accent:           #4D94FF;
+  --color-accent-hover:     #7AB3FF;
+  --color-accent-subtle:    #0F1E38;
 
   --color-success:          #1A7F4B;
   --color-warning:          #B45309;
@@ -1161,40 +1161,46 @@ section + section {
 
 
 /* ============================================================
-   15. DARK MODE
+   15. COLOR SCHEME
    ============================================================ */
 
-@media (prefers-color-scheme: dark) {
+/* Dark is the default — these rules always apply */
+.site-header {
+  background: rgba(15, 15, 14, 0.88);
+}
+
+.btn--primary {
+  background: var(--color-text);
+  color: var(--color-text-inverse);
+}
+
+/* Light mode override for users with light system preference */
+@media (prefers-color-scheme: light) {
   :root {
-    --color-bg:               #0F0F0E;
-    --color-surface:          #1A1A19;
-    --color-surface-elevated: #222221;
-    --color-border:           #2C2C2A;
-    --color-border-strong:    #3E3E3C;
+    --color-bg:               #FFFFFF;
+    --color-surface:          #F6F6F4;
+    --color-surface-elevated: #FFFFFF;
+    --color-border:           #E4E4E2;
+    --color-border-strong:    #C8C8C6;
 
-    --color-text:             #F0F0EE;
-    --color-text-secondary:   #9A9A98;
-    --color-text-muted:       #5C5C5A;
-    --color-text-inverse:     #0F0F0E;
+    --color-text:             #111110;
+    --color-text-secondary:   #5C5C5A;
+    --color-text-muted:       #9A9A98;
+    --color-text-inverse:     #FFFFFF;
 
-    --color-accent:           #4D94FF;
-    --color-accent-hover:     #7AB3FF;
-    --color-accent-subtle:    #0F1E38;
+    --color-accent:           #0052CC;
+    --color-accent-hover:     #003D99;
+    --color-accent-subtle:    #EBF2FF;
 
-    --shadow-sm:  0 1px 2px rgba(0, 0, 0, 0.3);
-    --shadow-md:  0 4px 12px rgba(0, 0, 0, 0.4);
-    --shadow-lg:  0 12px 32px rgba(0, 0, 0, 0.5);
-    --shadow-xl:  0 24px 64px rgba(0, 0, 0, 0.6);
+    --shadow-sm:  0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-md:  0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg:  0 12px 32px rgba(0, 0, 0, 0.10);
+    --shadow-xl:  0 24px 64px rgba(0, 0, 0, 0.12);
   }
 
   .site-header {
-    background: rgba(15, 15, 14, 0.88);
+    background: rgba(255, 255, 255, 0.88);
   }
 
-  .btn--primary {
-    background: var(--color-text);
-    color: var(--color-text-inverse);
-  }
-
-  /* Orb colors/opacity are set dynamically by main.js per palette */
+  /* Orb colors/opacity are set dynamically per palette */
 }
