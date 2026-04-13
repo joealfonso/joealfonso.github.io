@@ -16,7 +16,7 @@
           { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
           { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
         ];
-        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var dark = true; // dark mode enforced
         var p = palettes[Math.floor(Math.random() * palettes.length)];
         var r = document.documentElement;
         r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);

@@ -51,7 +51,7 @@
           },
         ];
 
-        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var dark = true; // dark mode enforced
 
         function boost(c) {
           return dark ? c.replace(/,([\d.]+)\)$/, function (_, v) {
