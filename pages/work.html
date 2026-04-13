@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work | Joseph Alfonso</title>
+    <meta name="description" content="Case studies and projects from Joseph Alfonso, Product Design Leader with 15 years designing enterprise systems at Amazon and Discovery Education." />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script>
+      (function () {
+        var palettes = [
+          { accent: '#0052CC', accentHover: '#003D99', accentSubtle: '#EBF2FF',   accentDark: '#4D94FF', accentHoverDark: '#7AB3FF', accentSubtleDark: '#0F1E38' },
+          { accent: '#0D9488', accentHover: '#0F766E', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
+          { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
+          { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
+          { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
+        ];
+        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var p = palettes[Math.floor(Math.random() * palettes.length)];
+        var r = document.documentElement;
+        r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
+        r.style.setProperty('--color-accent-hover',  dark ? p.accentHoverDark  : p.accentHover);
+        r.style.setProperty('--color-accent-subtle', dark ? p.accentSubtleDark : p.accentSubtle);
+      })();
+    </script>
+  </head>
+  <body>
+
+    <!-- NAV -->
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="nav__logo">Joseph Alfonso</a>
+        <ul class="nav__links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="work.html" aria-current="page">Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- INTRO -->
+      <section class="container" style="padding-block: var(--space-16) var(--space-10);">
+        <p class="eyebrow">Work</p>
+        <h1 style="font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl)); font-weight: var(--weight-bold); letter-spacing: var(--tracking-tight); max-width: 20ch; line-height: var(--leading-tight);">
+          15 years of designing things that matter at scale.
+        </h1>
+        <p style="font-size: var(--text-md); color: var(--color-text-secondary); max-width: 56ch; margin-top: var(--space-4); line-height: var(--leading-normal);">
+          Enterprise HR, real-time collaboration, educational media, and platform design.
+          Each project below is a case study with the full story: problem, process, and outcome.
+        </p>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="projects">
+        <div class="container">
+          <div class="projects__grid">
+
+            <!-- Amazon EDM -->
+            <a href="../main/EDM.html" class="card">
+              <img
+                class="card__image"
+                src="../images/projects/edm-cover.png"
+                alt="Amazon Employee Document Management admin dashboard"
+                loading="lazy"
+              />
+              <div class="card__body">
+                <p class="card__eyebrow">Amazon &middot; Lead Designer &middot; 2020–Present</p>
+                <h2 class="card__title">Employee Document Management</h2>
+                <p class="card__metric">$10M+ in annual savings</p>
+                <p class="card__description">
+                  Led UX for Amazon's global document platform: 4.8 billion documents across
+                  67 countries. Transformed accessibility, compliance, and operational efficiency
+                  across HR infrastructure used by the entire global workforce.
+                </p>
+              </div>
+              <div class="card__footer">
+                <div class="card__tags">
+                  <span class="tag">Enterprise UX</span>
+                  <span class="tag">Accessibility</span>
+                  <span class="tag">Systems Design</span>
+                </div>
+                <span class="card__cta">Read case study →</span>
+              </div>
+            </a>
+
+            <!-- Discovery Education Studio -->
+            <a href="studio.html" class="card">
+              <img
+                class="card__image"
+                src="../images/projects/studio-cover.jpg"
+                alt="Discovery Education Studio board with student-created content"
+                loading="lazy"
+              />
+              <div class="card__body">
+                <p class="card__eyebrow">Discovery Education &middot; Lead Designer</p>
+                <h2 class="card__title">Discovery Education Studio</h2>
+                <p class="card__metric">Live collaboration for every classroom</p>
+                <p class="card__description">
+                  Designed the first real-time creation and collaboration platform for K–12
+                  classrooms, enabling students and teachers to freely create, edit, and
+                  collaborate live regardless of device or location.
+                </p>
+              </div>
+              <div class="card__footer">
+                <div class="card__tags">
+                  <span class="tag">Real-time Collaboration</span>
+                  <span class="tag">Cross-device</span>
+                  <span class="tag">EdTech</span>
+                </div>
+                <span class="card__cta">View project →</span>
+              </div>
+            </a>
+
+            <!-- Discovery Education Media Redesign -->
+            <a href="player.html" class="card">
+              <img
+                class="card__image"
+                src="../images/projects/media-cover-new.png"
+                alt="Discovery Education Media redesigned video player interface"
+                loading="lazy"
+              />
+              <div class="card__body">
+                <p class="card__eyebrow">Discovery Education &middot; Lead Designer</p>
+                <h2 class="card__title">Media Redesign</h2>
+                <p class="card__metric">Significant learning gains through focused iteration</p>
+                <p class="card__description">
+                  Led an iterative redesign of the Discovery Education media experience,
+                  showing how short, well-defined design cycles produce compounding improvements
+                  in how children engage with educational content.
+                </p>
+              </div>
+              <div class="card__footer">
+                <div class="card__tags">
+                  <span class="tag">Iterative Design</span>
+                  <span class="tag">Learning UX</span>
+                  <span class="tag">Video Player</span>
+                </div>
+                <span class="card__cta">View project →</span>
+              </div>
+            </a>
+
+            <!-- Discovery Education Home -->
+            <a href="home.html" class="card">
+              <img
+                class="card__image"
+                src="../images/projects/home-cover.jpg"
+                alt="Discovery Education Home redesigned across multiple devices"
+                loading="lazy"
+              />
+              <div class="card__body">
+                <p class="card__eyebrow">Discovery Education &middot; Lead Designer</p>
+                <h2 class="card__title">Discovery Education Home</h2>
+                <p class="card__metric">A new face for millions of teachers and students</p>
+                <p class="card__description">
+                  Redesigned the Discovery Education platform homepage, establishing a new
+                  visual foundation, navigational architecture, and first impression for
+                  K–12 educators and students across the country.
+                </p>
+              </div>
+              <div class="card__footer">
+                <div class="card__tags">
+                  <span class="tag">Information Architecture</span>
+                  <span class="tag">Rebrand</span>
+                  <span class="tag">Navigation</span>
+                </div>
+                <span class="card__cta">View project →</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">&copy; 2026 Joseph Alfonso</p>
+        <nav class="site-footer__links" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/jalfonsodesign/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="mailto:J.ALFONSO84@gmail.com">Email</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

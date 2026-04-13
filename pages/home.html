@@ -1,435 +1,437 @@
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discovery Education Home | Joseph Alfonso</title>
+    <meta name="description" content="How I redesigned the Discovery Education platform homepage to serve millions of teachers and students with a personalized, accessible, and deeply researched new experience." />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script>
+      (function () {
+        var palettes = [
+          { accent: '#0052CC', accentHover: '#003D99', accentSubtle: '#EBF2FF',   accentDark: '#4D94FF', accentHoverDark: '#7AB3FF', accentSubtleDark: '#0F1E38' },
+          { accent: '#0D9488', accentHover: '#0F766E', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
+          { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
+          { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
+          { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
+        ];
+        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var p = palettes[Math.floor(Math.random() * palettes.length)];
+        var r = document.documentElement;
+        r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
+        r.style.setProperty('--color-accent-hover',  dark ? p.accentHoverDark  : p.accentHover);
+        r.style.setProperty('--color-accent-subtle', dark ? p.accentSubtleDark : p.accentSubtle);
+      })();
+    </script>
+  </head>
+  <body>
 
-<head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-52875112-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- NAV -->
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="nav__logo">Joseph Alfonso</a>
+        <ul class="nav__links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  gtag('config', 'UA-52875112-1');
-</script>
-  <link rel="stylesheet" href="../styles/styles.css">
-  <link rel="stylesheet" href="../styles/nav.css">
-  <!-- <link rel="stylesheet" href="../styles/typeplate.css"> -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js"
-    integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1"
-    crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script src="../js/main.js"></script>
-  <script src="../js/nav.js"></script>
-</head>
-<html>
+    <main>
 
-<body>
-
-  <header class="cd-auto-hide-header">
-    <!-- <div class="logo"><a href="#0"></a></div> -->
-
-    <nav class="cd-primary-nav" aria-label="primary">
-      <a href="#cd-navigation" class="nav-trigger">
-        <span><em aria-hidden="true"></em>
-        </span>
-      </a> <!-- .nav-trigger -->
-      <ul id="cd-navigation">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../pages/Test.html">Writing</a></li>
-        <li><a href="../pages/about.html">About</a></li>
-      </ul>
-    </nav> <!-- .cd-primary-nav -->
-  </header> <!-- .cd-auto-hide-header -->
-
-  </header> <!-- .cd-auto-hide-header -->
-  <section class="wrapperHero">
-    <div class="content projectHero">
-      <h1 class="projectTitle">Discovery Education Home Reimagined</h1>
-      <p class="projectSubhead">Redesigning the Home experience was the final step in the new Discovery
-        Education Experience. After we understood what and how we were going to change the rest of the site, we could
-        create a homepage that supported, facilitated, and aligned with the rest of the experience.
-      </p>
-      <p class="projectHeroDisclaimer">
-        Disclaimer: Due to personally identifiable information (PII) and various privacy concerns, much of the content
-        has been adjusted, hidden, or removed completely.
-      </p>
-    </div>
-  </section>
-
-
-  <p class="output">Voice control. Try "navigate to [project name]" or "scroll up/down"</p>
-  <div class="arrow-down"></div>
-  <section class="wrapper " id="outline">
-    <div class="content grid">
-      <article class="span-col-12">
-      <h2 class="projectSectionHeading outline">Outline</h2>
-      <p class="outline">Save yourself some time.</p>
-      <ul class="summaryList">
-        <li><a href="#summary" class="scroll_to summaryItemLink">Key Contributions</a></li>
-        <li><a href="#myRole" class="scroll_to summaryItemLink">Evaluating the Old Home</a></li>
-        <li><a href="#introduction" class="scroll_to summaryItemLink">Research and Prototypes</a></li>
-        <li><a href="#whatDoesItDo" class="scroll_to summaryItemLink">The New Discovery Education Home</a></li>
-        <li><a href="#newModel" class="scroll_to summaryItemLink">Onboarding and Personalization</a></li>
-        <li><a href="#researchPlanExplore" class="scroll_to summaryItemLink">Unique Challenges</a></li>
-        <li><a href="#establishingGoals" class="scroll_to summaryItemLink">Interesting Findings</a></li>
-        <li><a href="#earlyExploration" class="scroll_to summaryItemLink">Post Launch Reflections</a></li>
-      </ul>
-      
- 
-  </article>
-  <!-- <div class="span-col-3">
-    <div class="quickFacts"></div>
-    <p>Quick Facts</p>
-    <p class="quickFactsNumber">2</p>
-    <p>EDTech Awards<a href="http://www.edtechroundup.org/reviews/discovery-education-experience-curated-personalized-digital-resources-for-k-12-educators">1</a> <a href="https://www.techlearning.com/news/awards-of-excellence-winners-announced-by-tech-and-learning-magazine">2</a></p>
-  </div> -->
-  </div>
-
- 
-  </section>
-  
-  
-  <section class="wrapper">
-    <div class="content grid">
-      <article class="span-col-12">
-        <h2 class="projectSectionHeading">My Responsibilities & Key Contributions</h2>
-        <p class="summary">Throughout the project I took on and managed a number of roles. Our job was to "get stuff done" and that's what we made sure to do. Resources, timelines, personnel, and so much always changed, and I adapted as needed.</p>
-  <p>
-         Working across the organization I lead the user experience and design the revised Discovery Education Home Experience. After establishing requirements, use cases, personas, and other preliminary artifacts I then handed the project off for futher iterations while I delegated more time to research and usabaility. 
+      <!-- CASE STUDY HEADER -->
+      <section class="case-study-header container">
+        <p class="case-study-header__eyebrow eyebrow">Discovery Education &middot; Home Redesign</p>
+        <h1 class="case-study-header__title">Reimagining the front door for millions of teachers and students</h1>
+        <p class="case-study-header__summary">
+          Discovery Education's homepage was underperforming in ways that compounded daily:
+          users were bypassing it entirely via direct bookmarks, engagement below the hero
+          was near zero, and the experience offered almost no meaningful personalization.
+          I led the end-to-end redesign, from research planning through launch, building a
+          new homepage that adapted to each user and finally felt like a place worth landing.
         </p>
-        
-      </article>
 
-  
-      <article class="span-col-12">
-        <h5 class="sectionSubHead">User Research Planning and Integration</h5>
-        <p>I was in charge of planning and delegating throughout the project. After speaking with our U.K. team we teamed
-          up and leveraged research that they had done. They had also taken into account student designs more heavily,
-          which we then turned into production-ready designs after some review and refinement. Just as important as
-          doing the research was collecting and digesting it in a usable manner so it could be integrated quickly.
+        <div class="case-study-meta">
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Role</p>
+            <p class="case-study-meta__value">Lead Product Designer</p>
+          </div>
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Company</p>
+            <p class="case-study-meta__value">Discovery Education</p>
+          </div>
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Scope</p>
+            <p class="case-study-meta__value">Research, IA, interaction design, personalization, onboarding</p>
+          </div>
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Methods</p>
+            <p class="case-study-meta__value">Remote usability testing, 1:1 interviews, analytics, surveys</p>
+          </div>
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Users</p>
+            <p class="case-study-meta__value">K&ndash;12 teachers and students nationwide</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- COVER IMAGE -->
+      <div class="case-study-cover container">
+        <img
+          src="../main/assets/img/home/Platform-HeroDevices.jpg"
+          alt="Discovery Education platform shown across multiple devices"
+          loading="eager"
+        />
+      </div>
+
+      <div class="case-study-body container container--narrow">
+
+        <!-- STAT BLOCK -->
+        <div class="stat-block">
+          <div class="stat-block__item">
+            <p class="stat-block__value">Near zero</p>
+            <p class="stat-block__label">Engagement below the hero on the original homepage</p>
+          </div>
+          <div class="stat-block__item">
+            <p class="stat-block__value">Bypassed</p>
+            <p class="stat-block__label">Users navigating around the homepage via direct bookmarks</p>
+          </div>
+          <div class="stat-block__item">
+            <p class="stat-block__value">3 to 1</p>
+            <p class="stat-block__label">Onboarding screens reduced through iterative testing</p>
+          </div>
+          <div class="stat-block__item">
+            <p class="stat-block__value">AA compliant</p>
+            <p class="stat-block__label">Full accessibility compliance across screen readers and touch</p>
+          </div>
+        </div>
+
+        <h2>The problem with the original homepage</h2>
+        <p>
+          The legacy Discovery Education homepage had a fundamental issue: it wasn't earning
+          its position as the platform's front door. Teachers and students had figured out
+          that going directly to the content they needed was faster than using the homepage
+          as a starting point. That's a damning signal.
         </p>
-      </article>
-      <article class="span-col-12">
-        <h5 class="sectionSubHead">Accessibility and Touch Compliance Specialist</h5>
-        <p>Partnered with an excellent developer, we ensured all production designs were AA compliant, appropriate
-          for screen readers, and made sure we design around touch interfaces. We strive to allow every student the
-          ability to have the same experience as the next, regardless of situation. We're legally obligated to be AA
-          compliant, but that's a minimum and we believe our work should result in a higher quality of product.
+        <p>
+          The social and activity feeds were too granular, surfacing information users
+          didn't want or couldn't act on. Personalization barely existed beyond district-level
+          settings. And engagement data from tools like Hotjar and Google Analytics confirmed
+          what qualitative research was already showing: the further down the page you went,
+          the less anyone was looking.
         </p>
-      </article>
-      <article class="span-col-12">
-        <h5 class="sectionSubHead">Reduced Research Time and Increased Data</h5>
-        <p>Working with the research team in the United Kingdom, we combined efforts to test with a larger and more diverse population. While we all generally agreed on the methods used, often times the tools used would vary due to permissions, funding, or process differences. This allowed us the flexibility to exercise new and unique ways to do research, while still retaining the formality of findings. If we needed a card sort and the current active services didn't include that we needed
-          to plan accordingly and reallocate funds. Working with a budget, even if it was fair, and having restrictions
-          forced us to generate creative solutions if we wanted to stick to such an ambitious and active plan.
-        </p>
-      </article>
-      <article class="span-col-12">
-        <h5 class="sectionSubHead">Introduced New and Innovative Tools</h5>
-        <p>Identifying, testing, and leveraging modern tools like Figma, Maze.Design, Airtable, Hotjar, Invision, and more, we were able to record information with a level of access not commonly seen within EdTech.</p> <p>I was able to reduce research costs, research time, and increase not only the quantity but also the quality of findings.</p><p>
-          Something that can be limiting when testing in the educational tech industry is a lack of access to users'
-          hardware due to security risks and reasons. Finding new and creative solutions and sometimes even repurposing products that weren't even made for research, has been something that has been made easier by the evolution of web development and technology in general. 
-        </p>
-      </article>
-    </div>
-  </section>
-  
- 
 
-
-  <section class="wrapper fullImageWrapper">
-    <figure>
-      <img src="../images/platform/Platform-HeroDevices.jpg"
-        aria-label="Perspective mocks of various Studio board examples" class="projectFullWidthImage">
-    </figure>
-  </section>
-
-
-
-  <section class="wrapper">
-    <div class="content grid">
-      <article class="span-col-12">
-        <h2 class="projectSectionHeading ">Evaluating the Old Home Experience</h2>
-        <p class="summary">The old home experience had serious usability and engagement issues. By gathering user feedback, analytics, and the current product suite and company transition, we were able to create a new landing experience for post-login users that increased engagement frequency and scope of products.</p>
-        <p>The first job to be done was obtaining any research and analytics that existed. Using Google Analytics and a newly implemented tool called Pendo (an analytics and tracking tool), we were able to leverage quantatitaive data with qualitative data through usability and satisfaction research. Gathering usage data and funnels were very useful for the data itself and it also enabled us to identify any potential patterns to be aware of when running research sessions.</p>
-      
         <figure>
-          <img src="../images/home/oldhome.png" aria-label="Old home screen engagament chart. Home is at the bottom."
-            class="projectImage">
-          </figure>
-          <p>After years of tinkering and in light of recent software developments, I've developed a very
-            cost-effective remote user research solution that we leveraged to get timely, digestable, and actionable data.
-            By having assumptions, analytics, and a general awareness of user concerns, it took less than a week to
-            facilitate and extract findings that were immediately integrated into prototypes and planing. Our primary
-            methods included remote moderated and unmoderated usability testing, 1:1 interviews, and almost always surveys as follow-ups to
-            studies and as their own studies. This combination of generative and evaluative research was critical in
-            discovering and analyzing users' behavior, needs, and motivations.</p>
-          <figure>
-            <img src="../images/home/Homeresearch1.png" aria-label="Research spreadhseet 1" class="projectImage">
-          </figure>
-          <figure>
-            <img src="../images/home/Homeresearch2.png" aria-label="Research spreadhseet 1" class="projectImage">
-          </figure>
-          <figure>
-            <img src="../images/home/HomeResearch3.png" aria-label="Research spreadhseet 1" class="projectImage">
-          </figure>
-          <p>When evaluating the performance of the old home experience we needed two things: 1) to know what
-            would save users time, and 2) we needed a set of goals that could guide the experience and metrics determined
-            to result in a successful product. The following were some of our high-level conclusions that were most
-            relevant to our goals.
-   
-        </p>
-
-      </article>
-      <article class="span-col-12">
-        <h5 class="sectionSubHead">Irrelevant Feed of Content</h5>
-        <p>Social and activity feeds offered information that was too detailed and needed to be consolidated. Users were
-          also inundated with certain users and content due to a weak sorting and throttling algorithm.
-        </p>
-      </article>
-
-      <article class="span-col-12">
-        <h5 class="sectionSubHead">Not Engaging and Lacked Customization</h5>
-        <p>We found that users rarely strayed from certain areas of the site regardless of the content on their
-          homepage. At the same time, there wasn't any way for users to personalize their feeds other than district
-          settings.
-        </p>
-      </article>
-      <article class="span-col-12">
-        <h5 class="sectionSubHead">Low Element Engagement</h5>
-        <p>When we changed the hero experience engagement spiked and stuck, but overall the experience below the hero
-          area, while also improved, was still performed at extremely low conversion rates.
-        </p>
-      </article>
-
-      <article class="span-col-12">
-        <h5 class="sectionSubHead">Users using direct URLs and Bookmarks</h5>
-        <p>Analytics showed that often users would use direct bookmarks to certain areas of the site which they found
-          most valuable. This resulted in Home being the least used page of product landing pages and also reduced
-          product diversity each user engaged with.
-
-        </p>
-      </article>
-
-    </div>
-  </section>
-
-  <section class="wrapper wrapperGrey">
-    <div class="content grid">
-      <article class="span-col-12">
-        <h2 class="projectSectionHeading ">Research and Prototypes</h2>
-        <p class="summary">Prototypes iterations were based off of both research and evaluation of the old homepage, and also had to take into account all of the new experiences and goals. As a result, instead of being fast short iterations, homepage consists of a longer, but less dense timeline staging the final release.</p>
-       <p>Instead of early quick revisions, the new homepage experience was done over time and changed as the experience itself changed. Home had a separate research track that ran in parallel with others since home was often the step prior to a user engaging with other parts of the site but we weren't finishing it until the rest of the site was done.</p>
-       <p>It was important to establish goals early in the process and identify guiding principles for research and design so that research was more valuable and to avoid doing unnecessary research that wasted time and money. Having these goals allowed us to create research templates. What this meant is that we could have different people collecting, at different times, but all returning relatively the same type of information. This enabled quicker synthesization and integration of research, and opportunities that were out of scope were easier to identify and delegate. </p>
-      </article>
-  
-        <figure class="span-col-6">
-          <img src="../images/home/Notes1.jpg"
-            aria-label="New home screen engagament chart. Home is at the bottom." class="projectImage">
+          <img
+            src="../main/assets/img/home/oldhome.png"
+            alt="The original Discovery Education homepage"
+            loading="lazy"
+          />
+          <figcaption>The original homepage. Low engagement below the hero, minimal personalization, no clear reason to be there.</figcaption>
         </figure>
-        <figure class="span-col-6">
-          <img src="../images/home/SWOT.jpg"
-            aria-label="SWOT table for the new home experience.." class="projectImage">
+
+        <figure>
+          <img
+            src="../main/assets/img/home/OldHomeAnalytics.png"
+            alt="Analytics data from the original homepage showing low engagement"
+            loading="lazy"
+          />
+          <figcaption>Analytics confirmed the pattern: engagement dropped sharply below the fold.</figcaption>
         </figure>
-        <article class="span-col-12"><p>Some of our findings revealed that by using larger cards with simple but relevant visuals provided a well-balanced and scannable experience. Cards were a familiar pattern throughout the new design system which created a recognizable experience as soon as the user logged in. Strong visuals were important, but only in the short term. Long-term research found that visuals, if done poorly, actually slow users down. It took a great effort by the content team to work with us in order to accomodate meaningful imagery that was an indication of content and not just a design element.</p>
 
-        
-        </article>
+        <h2>My role</h2>
+        <p>
+          I led UX across the full project lifecycle while coordinating research responsibilities
+          across teams. On the research side, I planned studies, helped reduce costs through
+          international collaboration, and evaluated and implemented the tooling we needed:
+          Figma, Maze, Airtable, Hotjar, and InVision.
+        </p>
+        <p>
+          I also owned accessibility compliance throughout, ensuring the new experience met
+          AA standards across screen readers, touch interfaces, and the wide range of devices
+          Discovery Education's users bring to the classroom.
+        </p>
 
-    </div>
-  </section>
+        <h2>Research methodology</h2>
+        <p>
+          We ran a combination of remote moderated and unmoderated usability testing, 1:1
+          interviews, and follow-up surveys. Quantitative data from Google Analytics and Pendo
+          gave us the scale picture. Qualitative sessions gave us the why.
+        </p>
+        <p>
+          One finding that consistently came up: users assumed personalization already existed.
+          They expected to be able to customize their homepage and were surprised when they
+          couldn't. That's not a feature request. That's an expectation gap, and it set the
+          direction for much of the design work that followed.
+        </p>
 
+        <figure>
+          <img
+            src="../main/assets/img/home/Homeresearch1.png"
+            alt="Research documentation and notes from homepage usability sessions"
+            loading="lazy"
+          />
+          <figcaption>Research documentation from moderated usability sessions.</figcaption>
+        </figure>
 
-  <section class="wrapper ">
-    <div class="content grid">
-      <article class="span-col-12">
-        <h2 class="projectSectionHeading ">The New Discovery Education Home</h2>
-       <p class="summary">The new experience set out to provide a solution to accomodate all users by leveraging a personalization system, new layout based around teaching and learning modes, and a persistent navigation system that acted as a "mini" version of the homepage.</p>
-   
-       <p>After months of research, testing, iterating, debate, and last-minute changes because someone noticed something, what we arrived at was something that we can confidently say solves what the modern day classroom teacher desires with the Discovery Education Experience. </p>
-       <figure>
-         <img src="../images/home/HomeNew.png"
-           aria-label="New home screen engagement chart. Home is at the bottom." class="projectImage">
-       </figure>
- 
-     </article>
-     <article class="span-col-12">
-       <h5 class="sectionSubHead">Accommodate a broad spectrum of educators through personalization </h5>
-       <p>Allow users to add and remove content, reorder that content, and group it all in ways that make sense. Allow the users to own the space and really personalize in order to facilitate whichever learning mode they're in.
-       </p>
-     </article>
- 
-     <article class="span-col-12">
-       <h5 class="sectionSubHead">Simplify and unify the ‘base’ experience for all users</h5>
-       <p>By providing a Home experience that was anchored around the goals of users and then personalized content, we enabled a much more intentional and useful space. Home and the global navigation should be the hub where teachers can switch modes and pivot on the type of work they're doing. This same base experience can be seen within the global navigation as well, where all nine homepage functions are found.
-       </p>
-     </article>
-     <article class="span-col-12">
-       <h5 class="sectionSubHead">Increase awareness and engagement with supporting experiences</h5>
-       <p>By leveraging a personalized home experience, we were able to promote high value content that users weren't aware of. This resulted in higher engagement with products along a larger scope as well. In addition, reported satisfaction and perceived lesson planning effectiveness went up as well on surveys.
-       </p>
-     </article>
- 
-     <article class="span-col-12">
-       <h5 class="sectionSubHead">Connect instruction to high-quality content</h5>
-       <p>We wanted to connect users to the high-quality content they expected to find. Discovery Education is known for excellent content. We wanted to increase awareness of changes and updates within Discovery Education resoucres and content library. If new content was added that was relevant to the user, we wanted to increase the chance the user might encounter it. The second thing we wanted to do was notify the user of content within feed Keeping the homepage fresh, but also consistent will never stop being a challenge.
- 
-       </p>
-     </article>
-     <article class="span-col-12">
-       <h5 class="sectionSubHead">Save students and educators time and effort</h5>
-       <p>We invested heavily in the fact that users have many modes and we wouldn't be able to predict which mode they'll arrive in. Making sure that users were aware and had quick access to any path was imperative to us. Bouncing and pogo-sticking back to the home page. as in the previous experience, was unacceptable. With the integration of the global navigation, the home experience is with the users throughout. But only what they need, not the content. Just the ability to access the content.
- 
-       </p>
-     </article>
-     <article class="span-col-12">
-       <h5 class="sectionSubHead">Be extensible enough to be adapted internationally</h5>
-       <p>Discovery Education is a global product and we take localization very seriously. We believe that every student and educator should have the same opportunities. With considerations for RTL languages, special character availability in typeface, cultural sensitivities and more, everything from content to the interface goes through a litany of checks and use cases to make sure the experience is as uniform and accommodating as possible.
- 
-       </p>
-      </article>
-      <article class="span-col-12">
-       <h5 class="sectionSubHead">Communicating the Site's Purpose</h5>
-       <p>While we wanted the Home page to tell a story and indicate what the Discovery Experience offers, we also recognized that this isn't a traditional homepage experience. Users are log-ins in with agendas and tasks they need to complete. The homepage needs to be as functional as it is informative. 
-       </p>
-       <p>We emphasized the highest priority and most frequent tasks users visited Discovery Education for and crafted an experience with these tasks holding a large influence in persona and design creation. It was different then all of the rest of the experience, but also remained consistent by utilizing elements from other parts of the experience such as photographic cards.</p>
-     </article>
- 
-   </div>
- </section>
- 
- 
- 
- 
- <section class="wrapper wrapperGrey">
-   <div class="content grid">
-       <article class="span-col-12">
-     <h2 class="projectSectionHeading">Onboarding and Personalization</h2>
-     <p class="summary">We carefully empowered users to create and own their Discovery Education experience and collaborated with a number of teams to offer direct support through a number of channels.</p>
-     
-     <p>Early on in our soft-launch timeline we identified that we were struggling to get users to complete the initial onboarding screen forms. In order for users to have the best experience, and have the most relevant content served to them, we needed to know more about each user. We also want to remind users about settings they might have overlooked and enable them to make any adjustments to ease their transition to a new product.     
-     </p> <p>What started out as a three-screen experience ended up becoming a single with the future considerations to replace it with a much leaner and less intrusive experience. Initially the intentions were good; allow users the ability to refresh and set up their profiles. Due to a number of reasons we explored with users, the immediate value just wasn't communicated or implemented well enough.
-      
-     </p>
-     <h5 class="sectionSubHead">Iterative Improvement</h5>
-     <p>The initial prototype called for three on-boarding screens. With less than stellar performance we reduced the experience to two screens and immediately noticed an improvement.</p>
- 
-     <figure class="span-col-12">
-       <img src="../images/home/SetupChanges.png"
-         aria-label="New home screen engagement chart. Home is at the bottom." class="projectImage">
-     </figure>
-   </article>
-   <figure class="span-col-6">
-       <img src="../images/home/OnboardingScreen1.png"
-         aria-label="New home screen engagement chart. Home is at the bottom." class="projectImage">
-     </figure>
-     <figure class="span-col-6">
-         <img src="../images/home/OnboardingScreen2.png"
-           aria-label="New home screen engagement chart. Home is at the bottom." class="projectImage">
-       </figure>
-     <article class="span-col-12"><p>
-       With performance still below where we wanted it to be, we again reduced the flow to a single screen, and again, noticed an improvement. We saw an especially large increase in mobile users making selections. We discovered that it was easier for users to see that there was additional content and as a result users were more likely to scroll.
-     </p></article>
-     <figure class="span-col-9">
-         <img src="../images/home/OnboardingConsolidated1.png"
-           aria-label="New home screen engagement chart. Home is at the bottom." class="projectImage">
-       </figure>
-       <figure class="span-col-3">
-           <img src="../images/home/OnboardingConsolidatedMobile.png"
-             aria-label="New home screen engagement chart. Home is at the bottom." class="projectImage">
-         </figure>
-         <article class="span-col-12"><p>
-          We have since concluded that removing the on-boarding experience screen/page and directing the user to their profile is the best option. Adjusting the on-boarding in this way will provide opportunities in other areas as well as being a less intrusive experience overall.
-           </p></article>
-    
-     <article class="span-col-12">
-     <h5 class="sectionSubHead">Battling Prior Mental Models</h5>
-     <p>One of the key reasons educators skipped the screens was due to being unaware of significant changes to a familiar experience. This was different than simply something new. users already had mental models and assumptions about their profile and the options they selected. They weren't used to those selections meaning much and continued to assume the same thing.</p>
-     <h5 class="sectionSubHead">Minimize Interruption</h5>
-     <p>A critical issue we dealt with was trying to reach educators prior to using the experience. We wanted to establish a voice with users to speak to them and explain exactly why the on-boarding experience was worth their time. The last thing a teacher needs was an additional interruption, never mind one that resulted in an entire experience change. The less prepared and exposed an educator was, the increased likelihood that they would skip the onboarding experience.</p>
-     </article>
- 
-    
-   </div>
- </section>
- 
- 
- <section class="wrapper ">
-   <div class="content grid">
-       <article class="span-col-12">
-     <h2 class="projectSectionHeading">Unique Challenges</h2>
-     <h5 class="sectionSubHead">Similar Provisioned Products</h5>
-     <p>The product suite for Discovery Education is already considerable, but the number of provisioned product and services that districts and users can purchase plus the combinations they make are almost endless. This results in certain products looking very similar to other products and sub-products.</p>
-       </article>
-       <figure class="span-col-6">
-         <img src="../images/home/SameProduct.png"
-           aria-label="New home screen engagement chart. Home is at the bottom." class="projectImage">
-       </figure>
-       <article class="span-col-12">
-     <p>Prior to this new experience, products were usually recognized by their text alone. Now, with the design system set for a more engaging experience, we needed to create system solutions that weren't in place before. We needed to work with the content team to obtain and generate images for each product. This required a whole new sub-project for the team to focus on and delegate time towards, but in the end resulted in an experience that was much more scannable and easier to understand.</p>
-     <h5 class="sectionSubHead">Not interrupting class time</h5>
-     <p>Reducing the number of screens and effort required to engage with the experience for the first time wasn't just to increase conversions. One of the more consistent pieces of feedback we received was about class interruption for students and teachers. Users generally were only signed in during times they had a task to complete or a specific purpose. Generally, they were signed in to do something and any pauses were seen as an interruption</p>
-     <p>By reducing the on-boarding experience and working with the Marketing and Community teams much more proactively, we were able to reduce friction, increase engagement with the profile customization, and increase general satisfaction ratings.</p>
-     <h5 class="sectionSubHead">Providing contextual support</h5>
-     <p>One of the major improvements with the new experience was our new in-product messaging, support, and analytics system. We established three goals needed to accomodate for when exploring solutions. Options had to be accessible, contextual, and explorable. The user had to be able to easily access help at any time during the experience. The help they access should be contextual and present information about the current experience initially. Research has shown that users tend to want specific support related to wa current ask over general support. And lastly, if the user wasn't able to find a solution, they should have other options such as related content or a way to directly reach out for support.</p>
-     <h5 class="sectionSubHead">Customization, Personalization, and Security Infrastructure</h5>
-     <p>Figuring out how we would leverage user data to create better experiences required thorough planning that would influence the entire data schema of each person's profile. We had to account for what was currently available, what we would be collecting, what we COULD be collecting in the distant future, technology limitations, optimizations, and especially security. Security was an additional challenge because at all times we were required to abstract and anonymize each user's information. When we needed to access a user's information, we had to go through additional steps to identify them while retaining anonymity. </p>
-       </article>
-   </div>
- </section>
- 
- <section class="wrapper wrapperGrey">
-     <div class="content grid">
-         <article class="span-col-12">
-       <h2 class="projectSectionHeading">Interesting findings</h2>
-       <h5 class="sectionSubHead">Personalization is assumed</h5>
-       <p>A common theme we encountered during research was the fact that most users assumed personalization and customization. Time and time again, when testing experiences, teachers had assumptions about how the experience would be personalized for them.</p>
-       <p>It wasn't just that users wanted personalization, they assumed and expected it. The fact that this was such a widely observed theme, meant it quickly elevated certain features and experiences that were relevant to personalization and customization.</p>
-       <h5 class="sectionSubHead">Joy and Playfulness</h5>
-       <p>When the drag and drop interactions were introduced we often found users playing with them on their free time or during research sessions when waiting. This specific little interaction was similar to clicking the top of a pen. A little action that served as a way for users to find comfort and occupy time just because they enjoyed how it felt. In later interactions the drag and drop interaction was improved to raise and skew a little on rotation in order to create a more playful experience and stronger interaction affordance.</p>
-         </article>
-         <figure class="span-col-6">
-           <img src="../images/home/Cards2.gif"
-             aria-label="New home screen engagement chart. Home is at the bottom." class="projectImage">
-         </figure>
-        </article>
-         <article class="span-col-12">
-            <h5 class="sectionSubHead">User Testing and Personalization</h5>
-            <p>With the goal of the experience being so focused on personalization, an interesting challenge presented itself. How close to the real thing do we need to get when testing experiences? In the end it depended on the situation. If we tested something specific to personalization we often had to create a unique experience for each user, which then impacted our organization and workflow system since we then had to account for versions that had not been considered previously.</p>
-            <p>If we were testing something that wasn't directly related to personalization then it would depend on how much the experience was influenced. We would leverage one of our personas that aligned with a majority of teachers so that content would at least be within their subject and therefore still accurate enough to suspend a bit of disbelief during testing.</p>
-         </article>
-     </div>
-   </section>
+        <figure>
+          <img
+            src="../main/assets/img/home/Homeresearch2.png"
+            alt="Research synthesis and pattern identification"
+            loading="lazy"
+          />
+          <figcaption>Synthesizing patterns across sessions to identify consistent themes.</figcaption>
+        </figure>
 
-   <section class="wrapper ">
-    <div class="content grid">
-        <article class="span-col-12">
-      <h2 class="projectSectionHeading">Post Launch Reflections</h2>
-      <p>At the time of writing we were in the analysis and monitor phase of the product cycle. We set up satisfaction surveys, product and event monitoring, and feedback collection teams that were responsible for reporting every quarter. Different people on different teams at different levels all want different goals. I'm working with the appropriate people to help guide them to the most valuable metrics and performance indicators based on company goals and philosophies.</p> 
-        </article>
+        <figure>
+          <img
+            src="../main/assets/img/home/HomeResearch3.png"
+            alt="Research findings and design implications"
+            loading="lazy"
+          />
+          <figcaption>Translating research findings into design implications and priorities.</figcaption>
+        </figure>
 
-    </div>
-  </section>
- 
+        <figure>
+          <img
+            src="../main/assets/img/home/SWOT.jpg"
+            alt="SWOT analysis for the homepage redesign"
+            loading="lazy"
+          />
+          <figcaption>SWOT analysis used to frame the opportunity and identify risks before design work began.</figcaption>
+        </figure>
 
+        <h2>Key design challenges</h2>
 
+        <h3>Differentiating a product suite full of similar things</h3>
+        <p>
+          Discovery Education's content library is enormous, and a meaningful portion of
+          it looks similar at a glance. Videos, articles, interactive tools — surfacing
+          these on a homepage without them blurring together required a system-level approach
+          to visual differentiation. We worked closely with content teams to ensure the
+          right imagery was in place and developed a set of visual conventions that made
+          scanning actually work.
+        </p>
 
+        <figure>
+          <img
+            src="../main/assets/img/home/SameProduct.png"
+            alt="Challenge of differentiating similar products in the Discovery Education suite"
+            loading="lazy"
+          />
+          <figcaption>Differentiating visually similar products within the content library was a core design challenge.</figcaption>
+        </figure>
 
+        <p>
+          Research consistently showed that larger cards with simple, relevant visuals
+          produced a more scannable experience. Purely decorative imagery slowed users
+          down rather than helping them. Every visual decision was anchored in whether
+          it supported scanning and selection, not whether it looked good in isolation.
+        </p>
 
+        <h3>Teachers don't have time to lose</h3>
+        <p>
+          Every piece of friction in a teacher's workflow is perceived as classroom
+          disruption. There's no such thing as a minor annoyance for a teacher managing
+          thirty students. Any setup step, any unexpected screen, any moment of confusion
+          costs them something real.
+        </p>
+        <p>
+          This shaped how we approached every interaction decision on the homepage,
+          and especially how we designed the onboarding flow that helped users set up
+          their personalized experience.
+        </p>
 
+        <h3>Personalization requires careful data handling</h3>
+        <p>
+          The new homepage was built around user-specific data: class assignments,
+          recently viewed content, personalized recommendations. But that data had to
+          be abstracted and anonymized appropriately given the platform's user base
+          of minors and educators under institutional data policies. Security and
+          privacy shaped the technical architecture of the personalization system
+          from the start.
+        </p>
 
-  <!-- <section class="wrapper ">
-    <div class="content">
-      <h2 class="projectSectionHeading">Interface samples and explorations</h2>
+        <h2>The new homepage</h2>
+        <p>
+          The redesigned homepage gave users real control: add and remove content sections,
+          reorder them, and group them in ways that matched their actual workflow. Teachers
+          could organize around their classes. Students could surface what was most relevant
+          to their current assignments. The homepage became a tool rather than a landing page.
+        </p>
+        <p>
+          The navigation was redesigned in parallel as a persistent "mini homepage" accessible
+          throughout the platform, so users had a consistent entry point to their personalized
+          content without needing to return to the homepage itself.
+        </p>
 
-    </div>
-  </section> -->
+        <figure>
+          <img
+            src="../main/assets/img/home/HomeNew.png"
+            alt="The redesigned Discovery Education homepage"
+            loading="lazy"
+          />
+          <figcaption>The redesigned homepage. Personalized, scannable, and organized around how users actually work.</figcaption>
+        </figure>
 
+        <figure>
+          <img
+            src="../main/assets/img/home/Cards2.gif"
+            alt="Drag and drop card interaction demonstration"
+            loading="lazy"
+          />
+          <figcaption>Drag-and-drop reordering let users arrange their homepage around their own priorities.</figcaption>
+        </figure>
 
+        <div class="callout">
+          <p>
+            We discovered during testing that users were engaging with the drag-and-drop
+            interface outside of assigned tasks, on their own time. That's one of the best
+            signals a designer can get. It means the interaction was genuinely enjoyable,
+            not just functional.
+          </p>
+        </div>
 
+        <h2>Onboarding: from three screens to one</h2>
+        <p>
+          Setting up a personalized homepage required some upfront input from users. The
+          challenge was minimizing that cost while still collecting enough information to
+          make the personalization meaningful. We went through several rounds of iteration.
+        </p>
 
+        <figure>
+          <img
+            src="../main/assets/img/home/OnboardingScreen1.png"
+            alt="Early onboarding flow version one"
+            loading="lazy"
+          />
+          <figcaption>Early onboarding flow: three screens, higher drop-off, especially on mobile.</figcaption>
+        </figure>
 
-  <script src="../js/voiceControlScript.js"></script>
-</body>
+        <figure>
+          <img
+            src="../main/assets/img/home/OnboardingScreen2.png"
+            alt="Intermediate onboarding iteration"
+            loading="lazy"
+          />
+          <figcaption>An intermediate iteration refining the information hierarchy and reducing required steps.</figcaption>
+        </figure>
 
+        <figure>
+          <img
+            src="../main/assets/img/home/OnboardingConsolidated1.png"
+            alt="Final consolidated single-screen onboarding on desktop"
+            loading="lazy"
+          />
+          <figcaption>The final consolidated onboarding on desktop: everything in one screen.</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="../main/assets/img/home/OnboardingConsolidatedMobile.png"
+            alt="Final consolidated onboarding on mobile"
+            loading="lazy"
+          />
+          <figcaption>Mobile onboarding saw the largest improvement after consolidation, with a significant increase in users completing setup.</figcaption>
+        </figure>
+
+        <p>
+          Collapsing three screens into one had a particularly strong effect on mobile.
+          Mobile users showed the largest increase in setup completion after the consolidation.
+          The cognitive load reduction mattered more on a smaller screen with a less forgiving
+          interaction model.
+        </p>
+
+        <h3>Setup changes and notes</h3>
+
+        <figure>
+          <img
+            src="../main/assets/img/home/SetupChanges.png"
+            alt="Setup flow changes and design notes"
+            loading="lazy"
+          />
+          <figcaption>Annotated design notes tracking the rationale behind each setup flow change.</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="../main/assets/img/home/Notes1.jpg"
+            alt="Design and research notes from the project"
+            loading="lazy"
+          />
+          <figcaption>Working notes from research synthesis and design decision-making.</figcaption>
+        </figure>
+
+        <h2>In-product support</h2>
+        <p>
+          Any personalization system introduces complexity, and complexity means users
+          will occasionally need help. We established three requirements for in-product
+          support: it had to be accessible, contextual, and explorable. Help had to
+          appear where users were already looking, be relevant to what they were trying
+          to do, and allow them to dig deeper if they wanted to.
+        </p>
+
+        <h2>Post-launch monitoring</h2>
+        <p>
+          After launch, the work shifted to measurement and iteration. We ran satisfaction
+          surveys, monitored product and event data, and worked with feedback collection
+          teams that reported findings quarterly. The challenge with a homepage redesign is
+          that different stakeholders measure success differently: engagement metrics tell
+          one story, task completion rates tell another, and qualitative satisfaction data
+          tells a third. Holding all three simultaneously is the job.
+        </p>
+
+        <div class="callout">
+          <p>
+            Users overwhelmingly assumed personalization already existed before we built it.
+            That expectation gap was the most important finding from the research. We weren't
+            adding a feature. We were closing a gap between what users believed the product
+            could do and what it actually could.
+          </p>
+        </div>
+
+        <h2>Contributions</h2>
+        <ul class="case-study-list">
+          <li>Led end-to-end UX from research planning through post-launch monitoring</li>
+          <li>Designed a personalization system allowing teachers and students to customize, reorder, and group homepage content</li>
+          <li>Reduced onboarding from three screens to one, with significant mobile completion gains</li>
+          <li>Established visual differentiation system for a large, visually similar content library</li>
+          <li>Coordinated research across teams and reduced study costs through international collaboration</li>
+          <li>Implemented and managed tooling across Figma, Maze, Airtable, Hotjar, and InVision</li>
+          <li>Designed a persistent navigation system as a platform-wide mini homepage</li>
+          <li>Ensured full AA accessibility compliance across screen readers and touch interfaces</li>
+          <li>Designed in-product support that was contextual, accessible, and explorable</li>
+        </ul>
+
+      </div>
+
+      <!-- CASE STUDY NAV -->
+      <nav class="case-study-nav container" aria-label="Case study navigation">
+        <a href="player.html" class="case-study-nav__link case-study-nav__link--prev">
+          <span class="case-study-nav__label">Previous</span>
+          <span class="case-study-nav__title">Media Redesign</span>
+        </a>
+        <a href="../main/EDM.html" class="case-study-nav__link case-study-nav__link--next">
+          <span class="case-study-nav__label">Next</span>
+          <span class="case-study-nav__title">Employee Document Management</span>
+        </a>
+      </nav>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">&copy; 2026 Joseph Alfonso</p>
+        <nav class="site-footer__links" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/jalfonsodesign/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="mailto:J.ALFONSO84@gmail.com">Email</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+  </body>
 </html>

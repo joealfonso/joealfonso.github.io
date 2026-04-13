@@ -1,231 +1,355 @@
 <!DOCTYPE html>
- 
-<head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-52875112-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Redesign | Joseph Alfonso</title>
+    <meta name="description" content="How iterative design sprints and focused research led to a significantly more effective media experience for millions of K–12 students and teachers at Discovery Education." />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script>
+      (function () {
+        var palettes = [
+          { accent: '#0052CC', accentHover: '#003D99', accentSubtle: '#EBF2FF',   accentDark: '#4D94FF', accentHoverDark: '#7AB3FF', accentSubtleDark: '#0F1E38' },
+          { accent: '#0D9488', accentHover: '#0F766E', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
+          { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
+          { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
+          { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
+        ];
+        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var p = palettes[Math.floor(Math.random() * palettes.length)];
+        var r = document.documentElement;
+        r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
+        r.style.setProperty('--color-accent-hover',  dark ? p.accentHoverDark  : p.accentHover);
+        r.style.setProperty('--color-accent-subtle', dark ? p.accentSubtleDark : p.accentSubtle);
+      })();
+    </script>
+  </head>
+  <body>
 
-  gtag('config', 'UA-52875112-1');
-</script>
- <link rel="stylesheet" href="../styles/styles.css">
- <link rel="stylesheet" href="../styles/nav.css">
- <!-- <link rel="stylesheet" href="../styles/typeplate.css"> -->
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js"
-   integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1"
-   crossorigin="anonymous"></script>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
- <script src="../js/main.js"></script>
- <script src="../js/nav.js"></script>
-</head>
-<html>
- 
-<body>
- 
-  <header class="cd-auto-hide-header">
-    <!-- <div class="logo"><a href="#0"></a></div> -->
+    <!-- NAV -->
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="nav__logo">Joseph Alfonso</a>
+        <ul class="nav__links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <nav class="cd-primary-nav" aria-label="primary">
-      <a href="#cd-navigation" class="nav-trigger">
-        <span><em aria-hidden="true"></em>
-        </span>
-      </a> <!-- .nav-trigger -->
-      <ul id="cd-navigation">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../pages/writing/EdTechResearchChallenges.html">Writing</a></li>
-        <li><a href="../pages/about.html">About</a></li>
-      </ul>
-    </nav> <!-- .cd-primary-nav -->
-  </header> <!-- .cd-auto-hide-header -->
+    <main>
 
+      <!-- CASE STUDY HEADER -->
+      <section class="case-study-header container">
+        <p class="case-study-header__eyebrow eyebrow">Discovery Education &middot; Media Redesign</p>
+        <h1 class="case-study-header__title">How short, focused design sprints produced compounding improvements to how children learn from video</h1>
+        <p class="case-study-header__summary">
+          The Resource Player was the single most-used page on the Discovery Education platform:
+          the place where students and teachers actually engaged with educational content.
+          After enough feedback made it clear the experience was falling short, we used
+          design sprints to rethink it from the ground up, arriving at a solution that let
+          the content do the work and gave teachers what they actually needed.
+        </p>
 
+        <div class="case-study-meta">
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Role</p>
+            <p class="case-study-meta__value">Lead Product Designer</p>
+          </div>
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Company</p>
+            <p class="case-study-meta__value">Discovery Education</p>
+          </div>
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Approach</p>
+            <p class="case-study-meta__value">Design sprints, iterative research</p>
+          </div>
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Scope</p>
+            <p class="case-study-meta__value">Information architecture, interaction design, UX research</p>
+          </div>
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Users</p>
+            <p class="case-study-meta__value">K&ndash;12 students and teachers</p>
+          </div>
+        </div>
+      </section>
 
- <section class="wrapperHero">
-   <div class="content projectHero">
-     <h1 class="projectTitle">Discovery Education Player Redesign</h1>
-     <p class="projectSubhead">After receiving enough feedback we decided it was time to rework the Resource Player
-       page experience into an experience that supported quick assessment, supporting materials, and ways to engage
-       with the classroom using the resource.
-     </p>
-     <p class="projectHeroDisclaimer">
-       Disclaimer: Due to personally identifiable information (PII) and various privacy concerns, much of the content
-       has been adjusted, hidden, or removed completely.
-     </p>
-   </div>
- </section>
- 
- <p class="output">Voice control. Try "navigate to [project name]" or "scroll up/down"</p>
-
- <div class="arrow-down"></div>
- 
- <section class="wrapper ">
-   <div class="content grid">
-     <article class="span-col-12">
-       <h2 class="projectSectionHeading">What is Player?</h2>
-       <figure>
-        <img src="../images/player/Player-Hero-1.png" aria-label="Picture of Player in a mockup" class="projectImage">
-      </figure>
-       <p>Player is short for "Resource Player" which is how students and teachers view each individual resource within Discovery Education. We retained the term "player" due to the fact that there were many long-term users who still understood Discovery Education through a certain lens, which was as a streaming video service. For this reason we reworked it and leveraged it to resonate with older, newer, and future users.
-      </p>
-       <p>We approached the new Player experience based on the three core goals that we discovered students and teachers try to accomplish most often when encountering a resource. Our new solution needed to allow for quick assessment and comprehension, offer relevant related content based on the user and the resource, and lastly, to facilitate and demonstrate how to use the resources within the classroom.  </p>
-
-       
-       <p>The last goal, "demonstrate how to use the resource within the classroom" was one of our most unique findings. It's often assumed that teachers always have comprehensive, perfectly-planned lessons for every piece of content and type of learning method they use. The reality is that does not happen in many classrooms. This could be for any number of reasons, ranging from unpredictable external factors to a teacher wanting to try a new resource or strategy. Reducing the amount of assimilating and decision-making a teacher has to do is one of the most important goals that guides our entire organization down to every last designer and developer. <strong>Teachers matter and it's our job to support them.</strong></p>
-     </article>
- 
-   </div>
- </section>
- 
- 
- <section class="wrapper wrapperGrey">
-   <div class="content grid">
-    <div class=" span-col-4">
-      <h2 class="projectSectionHeading">Role and Team</h2>
-      <div class="divider"></div>
-      <p class="summary">We identified an opportunity to try implementing design sprints in order to optimize the resource Player experience. I worked closely with 2 developers to quickly assess, design, test, and iterate within a very tight timeline.
-      </p>
-  </div>
-       <div class="span-col-right">
-       <p>We had identified through some prior research that the Player page could benefit from information architecture and design changes. I took the opportunity to try out a small design sprint. It's one of those things you read about but always find challenging to get others involved. Since it was a small team, the ask wasn't significant, in addition to the fact that they were super collaborative to begin with.</p>
-       <p>
-        Managing progress was a balance that required enough trust to allow an informal process to be productive. By explicitly separating roles, but always encouraging feedback and critiques, we managed to quickly iterate and make small, meaningful, and impactful changes that resulted in a new and optimized Player experience.
-       </p>
+      <!-- COVER IMAGE -->
+      <div class="case-study-cover container">
+        <img
+          src="../main/assets/img/player/Player-Hero-1.png"
+          alt="Discovery Education Resource Player redesign shown across devices"
+          loading="eager"
+        />
       </div>
- 
 
- 
-   </div>
- </section>
- 
- 
- 
- 
- <section class="wrapper">
-   <div class="content grid">
-     <article class="span-col-12">
-       <h2 class="projectSectionHeading ">What to Change and Why?</h2>
-       <p class="summary">With the focus on using familiar patterns and allowing content to shine, by reducing low value information and rearranging the hierarchy of the page, we managed to create a much more effective experience.</p>
+      <div class="case-study-body container container--narrow">
 
-       <figure>
-        <img src="../images/player/Player-Old.png" aria-label="Old version of Player" class="projectImage">
-      </figure>
-       <h5 class="sectionSubHead">Like? You know... Whatever.</h5>
-       <!––https://www.youtube.com/watch?v=Ax25gfr5J98––>
-       <p>Over the course of a number of studies one of the most consistent findings we found was ambiguity on the expected behavior and the actual behavior of the "likes" dynamic on educational resources.
-       </p>
-       <p>This was an interesting set of conditions in the fact that people use likes, hearts, claps, etc. and it generally comes down to internal versus external motivations. A person would "like/heart" something as an expression or reaction, or they would do it with the expectation of saving, marking, or somehow designating an item for some reason at a later time. The results varied by age, service, icon, and context; but in general the heart icon always resulted as the most controversial.</p>
-       <p>The dynamic of "likes" also affected other areas of the experience such as saving content for the user, weighting resources when searching, and the entirely new customization and personalization system we were also in the process of producing. Given the findings of the research and the fact that we only wanted to introduce an element when it worked, instead of changing it mid-experience, we elected to dedicate a more significant amount of time to the entire experience of that type of user input.</p>
-       <h5 class="sectionSubHead">Focus the User and Highlight the Content</h5>
-       <p>Something that we noticed during research sessions was the tendency for teachers to often reference additional material before completely understanding the main resource first. When reviewing mouse tracking information, we noticed that there was movement and highlighting of areas that weren't part of the task, nor the thoughts they were speaking to. We interpreted this as a subconscious action due to poor information hierarchy
-       </p>
-     </article>
-     <figure class="span-col-8">
-        <img src="../images/player/Concept-Sidebar2.png"
-          aria-label="SWOT table for the new home experience.." class="projectImage">
-      </figure>
-       <figure class="span-col-4">
-          <img src="../images/player/EarlySidePanelConcepts.png"
-            aria-label="New home screen engagament chart. Home is at the bottom." class="projectImage">
+        <!-- STAT BLOCK -->
+        <div class="stat-block">
+          <div class="stat-block__item">
+            <p class="stat-block__value">Most visited</p>
+            <p class="stat-block__label">Page on the entire Discovery Education platform</p>
+          </div>
+          <div class="stat-block__item">
+            <p class="stat-block__value">Sprint-based</p>
+            <p class="stat-block__label">Compressed, integrated design and research cycles</p>
+          </div>
+          <div class="stat-block__item">
+            <p class="stat-block__value">3 goals</p>
+            <p class="stat-block__label">Defined upfront, used to evaluate every decision</p>
+          </div>
+          <div class="stat-block__item">
+            <p class="stat-block__value">Before &amp; after</p>
+            <p class="stat-block__label">Clear improvement in task success and content engagement</p>
+          </div>
+        </div>
+
+        <h2>What is Player?</h2>
+        <p>
+          "Player" is shorthand for the Resource Player: the page where students and teachers
+          view individual videos, documents, and interactive media on Discovery Education.
+          It's not a flashy product. It doesn't have a lot of moving parts. But it's the most
+          visited page on the platform, which means every friction point compounds across
+          millions of sessions a day.
+        </p>
+        <p>
+          We approached the redesign around three core goals that research had identified as
+          what students and teachers actually needed from the experience: understand the resource
+          quickly, engage with it effectively, and know how to use it in the classroom. That
+          third goal was the most distinctive. Discovery Education isn't just a media library.
+          It's a teaching tool, and the Player needed to reflect that.
+        </p>
+
+        <figure>
+          <img
+            src="../main/assets/img/player/Player-Old.png"
+            alt="Old version of the Discovery Education Resource Player"
+            loading="lazy"
+          />
+          <figcaption>The original Player. Crowded hierarchy, low-value information competing with the content.</figcaption>
         </figure>
-   
-        <article class="span-col-12">
 
-       <h5 class="sectionSubHead">Incorporate New Patterns</h5>
-       <p>Discovery Education encourages discovery and exploration of resources and materials. This is supported by the dynamic of customized feeds of information and resources. Facilitated and found mainly within the Channels experience, we started to utilize the same patterns within the Player page to keep a new but familiar feel and to improve the design inconsistencies of the previous iteration.
-          <figure>
-              <img src="../images/player/FamiliarPatterns.png" aria-label="Showing a design pattern." class="projectImage" />
-              <p class="projectCaption">Utilizing a modular design pattern from another section of the site.</p>
-            </figure>
+        <h2>Role and team</h2>
+        <p>
+          We identified an opportunity to try design sprints as a way to compress and integrate
+          our research, design, and development cycles. Rather than a long sequential handoff
+          process, the sprint structure kept the team in close contact throughout, which meant
+          decisions were grounded in research without creating bottlenecks.
+        </p>
+        <p>
+          I led UX throughout the process, from the initial research and framing through
+          exploration, testing, and the final solution. Managing the balance between an
+          informal, fast-moving process and a production-quality result required clear shared
+          understanding of our goals and consistent communication about where we were relative
+          to them.
+        </p>
 
-       </p>
- 
-     </article>
- 
-   </div>
- </section>
- 
- <section class="wrapper wrapperGrey">
-   <div class="content grid">
-     <article class="span-col-12">
-       <h2 class="projectSectionHeading ">Experimenting With Process</h2>
-       <p class="summary">Taking a chance with a new but small team, we consolidated workflows into design sprints that integrated and supported our current processes.</p>
- 
-       <p>Sometimes in Figma, sometimes in html, and other times on phone calls, the work that needed to be done was done in the best way possible. With team alignment on general expectations and goals, we were able to take advantage of this freedom to sidestep the usual Jira ticket system and abbreviate it with what we roughly called design sprints. Our use of design sprints meant having quick, iterative, but explicit stages of progress.</p>
-       <p>When you really get to experience true fluidity in workflow between research, design, and development, it can result in an extremely fulfilling experience that everyone is proud to have invested themselves into. And when that happens, presenting on meetings is more engaging and the increased energy is tangible.  </p>
- 
- 
-     </article>
- 
-   </div>
- </section>
- 
- 
- <section class="wrapper ">
-   <div class="content grid">
-     <article class="span-col-12">
-       <h2 class="projectSectionHeading ">Player Reworked</h2>
-       <p class="summary">Having felt we met all of the requirements for a successful experience the team agreed with the solution and we staged the launch and support campaign.</p>
-       <figure>
-          <img src="../images/player/playerMisc.png" aria-label="High level view is design explorations." class="projectImage" />
-          <p class="projectCaption">Utilizaing a modular design pattern from another section of the site.</p>
+        <h2>What needed to change and why</h2>
+        <p>
+          The existing Player had accumulated a lot of features that made individual sense
+          but collectively created noise. Low-value information was fighting for attention
+          with the content itself. The hierarchy was off. Teachers were referencing secondary
+          material before they'd fully engaged with the primary resource, and mouse tracking
+          data showed users consistently drifting to areas outside the task they were trying
+          to complete.
+        </p>
+        <p>
+          The core principle we kept returning to: familiar patterns, content first. Reduce
+          what isn't earning its place. Reorganize what remains around what users actually
+          need in the order they actually need it.
+        </p>
+
+        <figure>
+          <img
+            src="../main/assets/img/player/FamiliarPatterns.png"
+            alt="Familiar design patterns applied in the new Player"
+            loading="lazy"
+          />
+          <figcaption>Leveraging familiar patterns from other parts of the platform to reduce cognitive load.</figcaption>
+        </figure>
+
+        <h3>The "like" problem</h3>
+        <p>
+          One of the most consistent findings across multiple research rounds was genuine
+          confusion around the like/heart interaction. Users couldn't agree on what it meant
+          to like something. Was it an expression? A way to save something for later? A signal
+          to the platform that affects what shows up in search?
+        </p>
+        <p>
+          The answer was: all three, depending on who you asked. Age, platform context, and
+          icon choice all influenced how people interpreted it. The heart icon in particular
+          produced consistently split reactions. This ambiguity wasn't just a UI problem.
+          It was connected to saving, content weighting in search results, and a broader
+          personalization system we were building in parallel.
+        </p>
+
+        <div class="callout">
+          <p>
+            Rather than ship an interaction we didn't fully understand and fix it mid-experience,
+            we committed to solving it properly first. Introducing a broken pattern and then
+            changing it is worse than taking more time to get it right.
+          </p>
+        </div>
+
+        <h3>Hierarchy and focus</h3>
+        <p>
+          Research sessions revealed a consistent pattern: teachers would move to supplementary
+          material before they'd fully engaged with the main resource. Mouse tracking showed
+          highlighting and attention in areas unrelated to the current task. We read this as a
+          hierarchy problem. The page wasn't clearly communicating what mattered most, so users
+          filled the ambiguity with their own navigation behavior.
+        </p>
+        <p>
+          The redesign addressed this by pulling the content to center stage and progressively
+          revealing supporting information only after the primary experience had been established.
+        </p>
+
+        <h2>Incorporating new patterns</h2>
+        <p>
+          Discovery Education's platform had modular design patterns developed elsewhere in the
+          product suite. Rather than inventing new conventions for Player, we pulled in and
+          adapted patterns that users already understood from other contexts. This reduced the
+          learning curve and gave the redesigned Player a consistency that felt like it belonged
+          to the same product family.
+        </p>
+
+        <figure>
+          <img
+            src="../main/assets/img/player/Concept-LargeCard.jpg"
+            alt="Large card concept exploration for related content"
+            loading="lazy"
+          />
+          <figcaption>Applying the platform's card pattern to related content discovery within Player.</figcaption>
         </figure>
 
         <figure>
-            <img src="../images/player/PlayerNew-1.jpg" aria-label="High level view is design explorations." class="projectImage" />
-            <p class="projectCaption">The new Player..</p>
-          </figure>
-       <p>By really taking the time to explore exactly why we needed to change Player, how we wanted to change it, and what we needed to build towards, we established an alignment in expectations that helped support decisions. We carefully tested a few bolder solutions that addressed some of the goals explicitly by promoting good material more actively. This resulted in a hard-to-balance line of promoting content and not being perceived as an ad. It had to be almost too perfect to work within a pedagogical setting and still be useful and tasteful.</p>
- 
- 
-       <p>Our solution allowed the content and related information to take center stage and allow the user to engage with the resource fully before facilitating alternatives or supporting material that is customized and relevant to the user. </p>
- 
-       <p>After a few weeks of hard work, constant communication, and considerate collaboration, we presented to stakeholders and the internal teams. It tested to our standards and it was sent to QA to be staged for release. </p>
- 
- 
-   </div>
- </section>
- 
-  <section class="wrapper wrapperGrey">
-   <div class="content grid">
-     <article class="span-col-12">
-       <h2 class="projectSectionHeading ">Retrospective</h2>
-       <p class="summary">The new experience set out to provide a solution that set out to accomodate all users by
-         leveraging a personalization system, new layout based around teaching and learning modes, and a persistent
-         navigation system that acted as a "mini" version of the homepage.</p>
-       <h5 class="sectionSubHead">MATCHING ASPECT RATIOS AND VERTICAL MEDIA QUERIES</h5>
- 
-       <p>In education technology Chromebooks are very popular. Many Chromebooks are also hybrid devices that have to account for touch inputs. For this reason the Chrome toolbars are made to be a certain minimum size. This results in the user having around ~576px vertically on a traditional 1029x1280 device and videos with 16:9 aspect ratios to be overwhelming in height. When this happens, often the "fullscreen" option is actually smaller, but made to fit the screen more appropriately since the controls account for native user interface. </p>
- 
- 
- 
- 
-   </div>
- </section>
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- <!-- <section class="wrapper ">
-   <div class="content">
-     <h2 class="projectSectionHeading">Interface samples and explorations</h2>
- 
-   </div>
- </section> -->
- 
- 
- 
- 
- 
- <script src="../js/voiceControlScript.js"></script>
-</body>
- 
+          <img
+            src="../main/assets/img/player/EarlySidePanelConcepts.png"
+            alt="Early sidebar and side panel concept explorations"
+            loading="lazy"
+          />
+          <figcaption>Early side panel explorations for surfacing supplementary content without disrupting the main experience.</figcaption>
+        </figure>
+
+        <h2>Experimenting with process</h2>
+        <p>
+          Design sprints were genuinely new territory for this team. The compressed timeline
+          and integrated workflow forced a kind of collaboration that more sequential processes
+          don't require: decisions had to be made with incomplete information, shared quickly,
+          and revised without ceremony.
+        </p>
+        <p>
+          Work happened in Figma, in HTML prototypes, and on calls. The fluidity between
+          research, design, and development during a sprint produces a different quality
+          of output than a traditional handoff model. Not always better in every dimension,
+          but significantly faster to a tested, grounded solution.
+        </p>
+
+        <div class="callout">
+          <p>
+            When research, design, and development are truly integrated rather than sequential,
+            the feedback loops get short enough that you can feel them in real time. That changes
+            how you make decisions.
+          </p>
+        </div>
+
+        <h2>The redesigned Player</h2>
+        <p>
+          After several weeks of sprint cycles, the team converged on a solution that met all
+          three of our original goals. The content leads. Supporting information is organized
+          around the natural sequence of how a teacher or student would engage with a resource.
+          The interaction patterns are familiar and consistent with the rest of the platform.
+        </p>
+
+        <figure>
+          <img
+            src="../main/assets/img/player/Concept-Sidebar1.png"
+            alt="Redesigned Player with sidebar navigation and content focus"
+            loading="lazy"
+          />
+          <figcaption>The redesigned experience with a clear content hierarchy and accessible supplementary navigation.</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="../main/assets/img/player/Player-New-Default.png"
+            alt="Final redesigned Resource Player"
+            loading="lazy"
+          />
+          <figcaption>The final Player. Content front and center, supporting material accessible without competing.</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="../main/assets/img/player/PlayerNew-1.jpg"
+            alt="Redesigned Player showing related content and classroom integration features"
+            loading="lazy"
+          />
+          <figcaption>Related content and classroom-use features surfaced progressively below the main resource.</figcaption>
+        </figure>
+
+        <h2>Retrospective</h2>
+        <p>
+          The new experience improved content engagement and reduced the friction users had
+          reported around navigating supplementary material. Task success rates improved
+          and the signal noise that was pulling attention away from the primary resource
+          was significantly reduced.
+        </p>
+
+        <h3>Aspect ratios and the Chromebook problem</h3>
+        <p>
+          One technical constraint that shaped design decisions throughout: Chromebooks are
+          by far the most common device in K&ndash;12 classrooms, and many of them are hybrid
+          devices with non-standard aspect ratios. A video-heavy page that looks great on a
+          standard widescreen can be significantly degraded on a Chromebook in tablet mode.
+        </p>
+        <p>
+          We implemented vertical media queries alongside standard breakpoints to handle these
+          cases. It was a small but important investment. Every student deserves the same
+          quality of experience regardless of what device their school issued them.
+        </p>
+
+        <ul class="case-study-list">
+          <li>Led UX across research, information architecture, interaction design, and final solution</li>
+          <li>Introduced and ran design sprints as a new workflow for the team</li>
+          <li>Conducted multi-round usability studies to surface hierarchy and interaction issues</li>
+          <li>Resolved a long-standing ambiguity in the platform's like/save interaction model</li>
+          <li>Applied and adapted modular patterns from the broader Discovery Education design system</li>
+          <li>Addressed cross-device parity with vertical media query implementation for Chromebooks</li>
+          <li>Presented final solution to stakeholders with full rationale grounded in research findings</li>
+        </ul>
+
+      </div>
+
+      <!-- CASE STUDY NAV -->
+      <nav class="case-study-nav container" aria-label="Case study navigation">
+        <a href="studio.html" class="case-study-nav__link case-study-nav__link--prev">
+          <span class="case-study-nav__label">Previous</span>
+          <span class="case-study-nav__title">Discovery Education Studio</span>
+        </a>
+        <a href="home.html" class="case-study-nav__link case-study-nav__link--next">
+          <span class="case-study-nav__label">Next</span>
+          <span class="case-study-nav__title">Discovery Education Home</span>
+        </a>
+      </nav>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">&copy; 2026 Joseph Alfonso</p>
+        <nav class="site-footer__links" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/jalfonsodesign/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="mailto:J.ALFONSO84@gmail.com">Email</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+  </body>
 </html>

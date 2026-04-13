@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Write(**.html)",
+      "Write(**.css)",
+      "Write(**.js)",
+      "Write(**.md)",
+      "Write(images/**)",
+      "Write(fonts/**)"
+    ],
+    "deny": []
+  }
+}

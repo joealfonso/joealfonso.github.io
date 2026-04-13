@@ -1,199 +1,258 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joseph Alfonso | Product Design Leader &amp; Teacher</title>
+    <meta name="description" content="Product Design Leader and Teacher with 15 years designing enterprise systems at Amazon and Discovery Education. Championing accessibility and measurable impact at global scale." />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Set palette before first paint to avoid flash -->
+    <script>
+      (function () {
+        var palettes = [
+          // Blue / Indigo
+          {
+            orbs: ['rgba(0,82,204,0.15)',   'rgba(99,102,241,0.12)',  'rgba(14,165,233,0.09)'],
+            accent:       '#0052CC', accentHover: '#003D99', accentSubtle: '#EBF2FF',
+            accentDark:   '#4D94FF', accentHoverDark: '#7AB3FF', accentSubtleDark: '#0F1E38',
+          },
+          // Teal / Emerald
+          {
+            orbs: ['rgba(20,184,166,0.15)', 'rgba(6,182,212,0.12)',   'rgba(16,185,129,0.09)'],
+            accent:       '#0D9488', accentHover: '#0F766E', accentSubtle: '#CCFBF1',
+            accentDark:   '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E',
+          },
+          // Purple / Violet
+          {
+            orbs: ['rgba(147,51,234,0.14)', 'rgba(168,85,247,0.11)',  'rgba(99,102,241,0.09)'],
+            accent:       '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',
+            accentDark:   '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040',
+          },
+          // Amber / Orange
+          {
+            orbs: ['rgba(217,119,6,0.14)',  'rgba(234,88,12,0.11)',   'rgba(245,158,11,0.09)'],
+            accent:       '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',
+            accentDark:   '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00',
+          },
+          // Rose / Fuchsia
+          {
+            orbs: ['rgba(225,29,72,0.13)',  'rgba(217,70,239,0.11)',  'rgba(239,68,68,0.08)'],
+            accent:       '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',
+            accentDark:   '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12',
+          },
+        ];
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>document.getElementsByTagName("html")[0].className += " js";</script>
-  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&amp;family=Chivo:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="./main/assets/css/style.css">
-  <title>Joseph Alfonso | Employee Document Management</title>
-</head>
+        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-<body>
+        function boost(c) {
+          return dark ? c.replace(/,([\d.]+)\)$/, function (_, v) {
+            return ',' + Math.min(parseFloat(v) * 1.8, 0.4) + ')';
+          }) : c;
+        }
 
+        var p = palettes[Math.floor(Math.random() * palettes.length)];
+        var r = document.documentElement;
 
+        // Orb colors
+        r.style.setProperty('--orb-1', boost(p.orbs[0]));
+        r.style.setProperty('--orb-2', boost(p.orbs[1]));
+        r.style.setProperty('--orb-3', boost(p.orbs[2]));
 
+        // Accent colors — swap for dark mode variant
+        r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
+        r.style.setProperty('--color-accent-hover',  dark ? p.accentHoverDark  : p.accentHover);
+        r.style.setProperty('--color-accent-subtle', dark ? p.accentSubtleDark : p.accentSubtle);
+      })();
+    </script>
+  </head>
+  <body>
 
-  <!-- text content -->
-  <section class="position-relative z-index-1 padding-y-xxxl">
-    <div class="position-relative z-index-2">
-      <div class="container max-width-lg text-center">
-        <div class="grid gap-sm">
-          <div class="col-12@md">
+    <!-- NAV -->
+    <header class="site-header">
+      <nav class="nav">
+        <a href="index.html" class="nav__logo">Joseph Alfonso</a>
+        <ul class="nav__links">
+          <li><a href="pages/about.html">About</a></li>
+          <li><a href="pages/work.html">Work</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-            <h1 class="text-anim text-anim--clip js-text-anim text-xxxl@lg">
-              Joseph Alfonso <br><span class="text-anim__wrapper js-text-anim__wrapper"><i
-                  class="text-anim__word text-anim__word--in js-text-anim__word">has 14+ years in design.</i><i
-                  class="text-anim__word js-text-anim__word">mentors professionally.</i><i
-                  class="text-anim__word js-text-anim__word">advanced experience with AI.</i><i
-                  class="text-anim__word js-text-anim__word">is a positive disruptor.</i></span>
-            </h1>
-          </div>
-          <div class="feature__content max-width-sm margin-x-auto">
-            <p class="cd-line-height-lg">I'm a Senior UX Design Leader with 15 years solving complex problems at global
-              scale. I've designed systems serving millions at Amazon and Discovery Education, delivering measurable
-              business impact while championing accessibility and user-centered design.<br>
+    <main>
 
-
-              I believe great design makes the complex feel simple and people happy.</p>
+      <!-- HERO -->
+      <section class="hero">
+        <!-- Background orbs -->
+        <div class="hero__bg" aria-hidden="true">
+          <div class="hero__orb hero__orb--1"></div>
+          <div class="hero__orb hero__orb--2"></div>
+          <div class="hero__orb hero__orb--3"></div>
+        </div>
+        <div class="container">
+          <p class="hero__eyebrow">Product Design Leader &amp; Teacher</p>
+          <h1 class="hero__headline">
+            Joseph Alfonso
+            <span class="hero__rotate" id="js-rotate" aria-live="polite">designs at scale.</span>
+          </h1>
+          <p class="hero__subheadline">
+            15 years designing enterprise systems at Amazon and Discovery Education,
+            building products that serve millions while championing accessibility and measurable impact.
+          </p>
+          <div class="hero__meta">
+            <span class="hero__meta-item">Enterprise UX · HR, EdTech &amp; Global Scale</span>
+            <span class="hero__meta-dot" aria-hidden="true">·</span>
+            <span class="hero__meta-item">Seattle, WA</span>
+            <span class="hero__meta-dot" aria-hidden="true">·</span>
+            <a
+              href="https://www.linkedin.com/in/jalfonsodesign/"
+              class="hero__meta-item hero__meta-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >LinkedIn ↗</a>
           </div>
         </div>
-      </div>
-    </div>
-    </div>
-  </section>
+      </section>
 
+      <!-- PROJECTS -->
+      <section class="projects">
+        <div class="container">
+          <div class="projects__grid">
 
-
-  <section class="feature cd-position-relative cd-z-index-1 padding-y-lg">
-    <div class="cd-container cd-max-width-adaptive-lg">
-      <div class="feature__grid">
-        <div>
-          <div class="feature__content">
-            <p class="feature__label">Amazon</p>
-            <h1>Employee Document Management (EDM)</h1>
-            <p class="cd-line-height-lg">I led UX for Amazon's global document platform managing 4.8 billion documents across 67 countries. Delivered $10M+ in annual savings while transforming accessibility and operational efficiency.</p>
-
-            <div class="feature__actions">
-              <a class="cd-link" href="main/EDM.html">Read more</a>
-            </div>
-
-          </div>
-        </div>
-
-        <div>
-          <div class="dev-browser dev-browser--top-light max-width-sm" aria-label="Image description">
-            <div class="dev-browser__body">
-              <div class="dev-browser__dots"><span></span><span></span><span></span></div>
-              <div class="dev-browser__media">
-                <img class="block" src="./main/assets/img/AdminDashboard-Default.png" alt="Admin Dashboard">
+            <!-- Amazon EDM -->
+            <a href="main/EDM.html" class="card">
+              <img
+                class="card__image"
+                src="images/projects/edm-cover.png"
+                alt="Amazon Employee Document Management admin dashboard"
+                loading="lazy"
+              />
+              <div class="card__body">
+                <p class="card__eyebrow">Amazon &middot; Lead Designer &middot; 2020–Present</p>
+                <h2 class="card__title">Employee Document Management</h2>
+                <p class="card__metric">$10M+ in annual savings</p>
+                <p class="card__description">
+                  Led UX for Amazon's global document platform: 4.8 billion documents across
+                  67 countries. Transformed accessibility, compliance, and operational efficiency
+                  across HR infrastructure used by the entire global workforce.
+                </p>
               </div>
-            </div>
-            <div class="dev-browser__shadow"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section
-    class="feature feature--invert cd-position-relative cd-z-index-1 cd-margin-y-2xl bg-contrast-lower bg-opacity-30% padding-y-lg">
-    <div class="cd-container cd-max-width-adaptive-lg">
-      <div class="feature__grid">
-        <div>
-          <div class="feature__content">
-            <p class="feature__label">Discovery Education | E-Learning</p>
-            <h1>Discovery Education Studio</h1>
-            <p class="cd-line-height-lg">Bringing the ability to freely create, edit, and collaborate live, regardless
-              of device or location, into the classroom.</p>
-
-            <div class="feature__actions">
-              <a href="pages/studio.html" class="cd-link ">Learn more</a>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="dev-browser dev-browser--top-light max-width-sm" aria-label="Image description">
-            <div class="dev-browser__body">
-              <div class="dev-browser__dots"><span></span><span></span><span></span></div>
-              <div class="dev-browser__media">
-                <img class="block" src="./images/studio/StudioMarketingSitesmall.png" alt="Admin Dashboard">
+              <div class="card__footer">
+                <div class="card__tags">
+                  <span class="tag">Enterprise UX</span>
+                  <span class="tag">Accessibility</span>
+                  <span class="tag">Systems Design</span>
+                </div>
+                <span class="card__cta">Read case study →</span>
               </div>
-            </div>
-            <div class="dev-browser__shadow"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+            </a>
 
-  <section class="feature cd-position-relative cd-z-index-1 cd-margin-y-2xl padding-y-l">
-    <div class="cd-container cd-max-width-adaptive-lg">
-      <div class="feature__grid">
-        <div>
-          <div class="feature__content">
-            <p class="feature__label">Discovery Education | E-Learning</p>
-            <h1>Discovery Education Media Redesign </h1>
-            <p class="cd-line-height-lg">How quick and short iterations can lead to significant improvement in learning
-              for children.</p>
-
-            <div class="feature__actions">
-              <a href="pages/player.html" class="cd-link">Learn more</a>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="dev-browser dev-browser--top-light max-width-sm" aria-label="Image description">
-            <div class="dev-browser__body">
-              <div class="dev-browser__dots"><span></span><span></span><span></span></div>
-              <div class="dev-browser__media">
-                <img class="block" src="./images/player/Player-New-Default.png" alt="Admin Dashboard">
+            <!-- Discovery Education Studio -->
+            <a href="pages/studio.html" class="card">
+              <img
+                class="card__image"
+                src="images/projects/studio-cover.jpg"
+                alt="Discovery Education Studio board with student-created content"
+                loading="lazy"
+              />
+              <div class="card__body">
+                <p class="card__eyebrow">Discovery Education &middot; Lead Designer</p>
+                <h2 class="card__title">Discovery Education Studio</h2>
+                <p class="card__metric">Live collaboration for every classroom</p>
+                <p class="card__description">
+                  Designed the first real-time creation and collaboration platform for K–12
+                  classrooms, enabling students and teachers to freely create, edit, and
+                  collaborate live regardless of device or location.
+                </p>
               </div>
-            </div>
-            <div class="dev-browser__shadow"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section
-    class="feature feature--invert cd-position-relative cd-z-index-1 cd-margin-y-2xl bg-contrast-lower bg-opacity-30% padding-y-lg">
-    <div class="cd-container cd-max-width-adaptive-lg">
-      <div class="feature__grid">
-        <div>
-          <div class="feature__content">
-            <p class="feature__label">Discovery Education | E-Learning</p>
-            <h1>Discovery Education Home</h1>
-            <p class="cd-line-height-lg">Creating the new face for Discovery Education for teachers and students.</p>
-
-            <div class="feature__actions">
-              <a href="pages/home.html" class="cd-link">Learn more</a>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="dev-browser dev-browser--top-light max-width-sm" aria-label="Image description">
-            <div class="dev-browser__body">
-              <div class="dev-browser__dots"><span></span><span></span><span></span></div>
-              <div class="dev-browser__media">
-                <img class="block" src="./images/home/OnboardingScreen1.png" alt="Admin Dashboard">
+              <div class="card__footer">
+                <div class="card__tags">
+                  <span class="tag">Real-time Collaboration</span>
+                  <span class="tag">Cross-device</span>
+                  <span class="tag">EdTech</span>
+                </div>
+                <span class="card__cta">View project →</span>
               </div>
-            </div>
-            <div class="dev-browser__shadow"></div>
+            </a>
+
+            <!-- Discovery Education Media Redesign -->
+            <a href="pages/player.html" class="card">
+              <img
+                class="card__image"
+                src="images/projects/media-cover-new.png"
+                alt="Discovery Education Media redesigned video player interface"
+                loading="lazy"
+              />
+              <div class="card__body">
+                <p class="card__eyebrow">Discovery Education &middot; Lead Designer</p>
+                <h2 class="card__title">Media Redesign</h2>
+                <p class="card__metric">Significant learning gains through focused iteration</p>
+                <p class="card__description">
+                  Led an iterative redesign of the Discovery Education media experience,
+                  showing how short, well-defined design cycles produce compounding improvements
+                  in how children engage with educational content.
+                </p>
+              </div>
+              <div class="card__footer">
+                <div class="card__tags">
+                  <span class="tag">Iterative Design</span>
+                  <span class="tag">Learning UX</span>
+                  <span class="tag">Video Player</span>
+                </div>
+                <span class="card__cta">View project →</span>
+              </div>
+            </a>
+
+            <!-- Discovery Education Home -->
+            <a href="pages/home.html" class="card">
+              <img
+                class="card__image"
+                src="images/projects/home-cover.jpg"
+                alt="Discovery Education Home redesigned across multiple devices"
+                loading="lazy"
+              />
+              <div class="card__body">
+                <p class="card__eyebrow">Discovery Education &middot; Lead Designer</p>
+                <h2 class="card__title">Discovery Education Home</h2>
+                <p class="card__metric">A new face for millions of teachers and students</p>
+                <p class="card__description">
+                  Redesigned the Discovery Education platform homepage, establishing a new
+                  visual foundation, navigational architecture, and first impression for
+                  K–12 educators and students across the country.
+                </p>
+              </div>
+              <div class="card__footer">
+                <div class="card__tags">
+                  <span class="tag">Information Architecture</span>
+                  <span class="tag">Rebrand</span>
+                  <span class="tag">Navigation</span>
+                </div>
+                <span class="card__cta">View project →</span>
+              </div>
+            </a>
+
           </div>
         </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">&copy; 2026 Joseph Alfonso</p>
+        <nav class="site-footer__links" aria-label="Social links">
+          <a
+            href="https://www.linkedin.com/in/jalfonsodesign/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >LinkedIn ↗</a>
+          <a href="mailto:J.ALFONSO84@gmail.com">Email</a>
+        </nav>
       </div>
-    </div>
-  </section>
+    </footer>
 
-
-
-
-
-  <!-- footer -->
-  <footer class="footer-v6">
-    <div class="container max-width-lg">
-      <div
-        class="padding-y-xl border-bottom border-contrast-higher border-opacity-10% margin-bottom-lg margin-bottom-xl@md">
-        <div class="flex flex-column gap-xs flex-row@md justify-between@md items-center@md">
-          <div>
-            <h1>Hello there. Welcome to the footer.</h1>
-          </div>
-
-        </div>
-      </div>
-
-  </footer>
-  <script src="./main/assets/js/scripts.js"></script>
-</body>
-
+    <script src="js/main.js"></script>
+  </body>
 </html>

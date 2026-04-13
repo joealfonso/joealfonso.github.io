@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Joseph Alfonso</title>
+    <meta name="description" content="Get in touch with Joseph Alfonso, Product Design Leader and Teacher based in Seattle." />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script>
+      (function () {
+        var palettes = [
+          { accent: '#0052CC', accentHover: '#003D99', accentSubtle: '#EBF2FF',   accentDark: '#4D94FF', accentHoverDark: '#7AB3FF', accentSubtleDark: '#0F1E38' },
+          { accent: '#0D9488', accentHover: '#0F766E', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
+          { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
+          { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
+          { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
+        ];
+        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var p = palettes[Math.floor(Math.random() * palettes.length)];
+        var r = document.documentElement;
+        r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
+        r.style.setProperty('--color-accent-hover',  dark ? p.accentHoverDark  : p.accentHover);
+        r.style.setProperty('--color-accent-subtle', dark ? p.accentSubtleDark : p.accentSubtle);
+      })();
+    </script>
+  </head>
+  <body>
+
+    <!-- NAV -->
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="nav__logo">Joseph Alfonso</a>
+        <ul class="nav__links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- CONTACT HERO -->
+      <section class="contact container">
+        <h1 class="contact__title">Let's work together.</h1>
+        <p class="contact__subtitle">
+          I'm currently open to Principal-level and Staff design leadership roles at companies
+          building at scale. If you're working on something hard and need a design leader who
+          can go deep. I'd love to hear about it.
+        </p>
+        <div class="contact__links">
+          <a href="mailto:J.ALFONSO84@gmail.com" class="btn btn--primary">Email me ↗</a>
+          <a
+            href="https://www.linkedin.com/in/jalfonsodesign/"
+            class="btn btn--secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >LinkedIn ↗</a>
+        </div>
+      </section>
+
+      <hr class="divider container" />
+
+      <!-- CONTEXT SECTION -->
+      <section class="about-detail container container--narrow">
+
+        <h2 class="about-detail__heading">What I'm looking for</h2>
+
+        <p>
+          Staff or Principal UX roles at places like Meta, Google, Microsoft, LinkedIn, or Apple.
+          I'm drawn to teams where design operates at scale, where the problems are genuinely hard,
+          and where there's room to shape how an organization thinks about design, not just execute
+          on it.
+        </p>
+
+        <p>
+          I have 15+ years of experience leading UX on enterprise products. Most recently at Amazon,
+          where I led design for a global HR platform managing 4.8 billion documents across 67 countries.
+          I'm used to ambiguity, stakeholder complexity, and shipping things that actually work.
+        </p>
+
+        <h2 class="about-detail__heading" style="margin-top: var(--space-12);">Mentoring</h2>
+
+        <p>
+          I also work with early-career designers through
+          <a href="https://designlab.com" target="_blank" rel="noopener noreferrer">Designlab</a>
+          and the
+          <a href="https://www.svcseattle.com" target="_blank" rel="noopener noreferrer">School of Visual Concepts</a>
+          in Seattle. If you're a designer looking for mentorship around portfolio development,
+          systems thinking, or transitioning into leadership. Reach out.
+        </p>
+
+        <div class="about__links" style="margin-top: var(--space-10);">
+          <a href="mailto:J.ALFONSO84@gmail.com" class="btn btn--primary">Email me ↗</a>
+          <a href="about.html" class="btn btn--secondary">Learn more about me</a>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">&copy; 2026 Joseph Alfonso</p>
+        <nav class="site-footer__links" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/jalfonsodesign/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="mailto:J.ALFONSO84@gmail.com">Email</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

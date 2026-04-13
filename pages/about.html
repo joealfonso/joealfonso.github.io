@@ -1,84 +1,248 @@
 <!DOCTYPE html>
- 
-<head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-52875112-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Joseph Alfonso</title>
+    <meta name="description" content="Joseph Alfonso is a Product Design Leader and Teacher with 15+ years designing enterprise systems at global scale. Based in Seattle." />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script>
+      (function () {
+        var palettes = [
+          { accent: '#0052CC', accentHover: '#003D99', accentSubtle: '#EBF2FF',   accentDark: '#4D94FF', accentHoverDark: '#7AB3FF', accentSubtleDark: '#0F1E38' },
+          { accent: '#0D9488', accentHover: '#0F766E', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
+          { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
+          { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
+          { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
+        ];
+        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var p = palettes[Math.floor(Math.random() * palettes.length)];
+        var r = document.documentElement;
+        r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
+        r.style.setProperty('--color-accent-hover',  dark ? p.accentHoverDark  : p.accentHover);
+        r.style.setProperty('--color-accent-subtle', dark ? p.accentSubtleDark : p.accentSubtle);
+      })();
+    </script>
+  </head>
+  <body>
 
-  gtag('config', 'UA-52875112-1');
-</script>
- <link rel="stylesheet" href="../styles/styles.css">
- <link rel="stylesheet" href="../styles/nav.css">
- <!-- <link rel="stylesheet" href="../styles/typeplate.css"> -->
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js"
-   integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1"
-   crossorigin="anonymous"></script>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
- <script src="../js/main.js"></script>
- <script src="../js/nav.js"></script>
-</head>
-<html>
- 
-<body>
- 
- <header class="cd-auto-hide-header">
-   <!-- <div class="logo"><a href="#0"></a></div> -->
- 
-   <nav class="cd-primary-nav" aria-label="primary">
-     <a href="#cd-navigation" class="nav-trigger">
-       <span>
-         <em aria-hidden="true"></em>
- 
-       </span>
-     </a> <!-- .nav-trigger -->
- 
-     <ul id="cd-navigation">
-       <li> <a href="../index.html">Home</a></li>
-       <li> <a href="https://dribbble.com/josephalfonso">Writing</a></li>
-       <li><a href="./about.html">About</a></li>
-     </ul>
-   </nav> <!-- .cd-primary-nav -->
- </header> <!-- .cd-auto-hide-header -->
- <p class="output">Voice control. Try "navigate to [project name]" or "scroll up/down"</p>
+    <!-- NAV -->
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="nav__logo">Joseph Alfonso</a>
+        <ul class="nav__links">
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
- <p class="output"></p>
- <section class="wrapper ">
-   <div class="content grid">
-     <article class="span-col-12">
-       <h2 class="projectSectionHeading">Who is this guy?</h2>
-       <p class="summary">Me? I'm just another duck on the pond. <br><br>
-         
-        Someone I work with once called me a "positive disruptor" and it really resonated with me. I try to make changes, lead, and advocate for healthy, collaborative, and productive teams. 
-      </p>
-      <p>Before we get real deep here... in addition to the information you can find on my website, and also on my resume, I specialize in cost-effective team operations, research, and user-centered design. I understand what it takes to operate an in-person and remote team in regards of commitment, organization, software and hardware, and group dynamics- with a focus on enhancing a team's strengths and improving on their weaknesses. Furthermore, as a result of security concerns within schools and education in general, I've explored solutions ranging from mailing specially selected cameras to users in order to operate within legal guidelines to leveraging the newest design tools to track the mouse movement of eight users at once.</p>
-      
-       <p>This part of the site is always a challenge for me. Balancing confidence and humbleness is something I struggle with. At the end of the day I help teams and projects raise their level of quality by leading, demonstrating, collaborating, and generally just getting stuff done.</p>
-       <p>I take great pride in teaching and mentoring new professionals to the industry and I feel it's our responsibility as designers and people in general to pass on and share our experiences so that others can have even better opportunities than we did.</p>
+    <main>
 
+      <!-- INTRO -->
+      <section class="about container">
+        <div class="about__layout">
 
+          <!-- Photo -->
+          <div class="about__photo-col">
+            <!-- Replace src with your actual headshot -->
+            <img
+              src="../images/joseph-alfonso.jpg"
+              alt="Joseph Alfonso"
+              class="about__image"
+              onerror="this.style.background='var(--color-surface)';this.removeAttribute('src')"
+            />
+          </div>
 
-     </article>
- 
-   </div>
- </section>
- 
- 
+          <!-- Content -->
+          <div class="about__content">
+            <p class="eyebrow">About</p>
+            <h1 class="about__title">I believe great design makes the complex feel simple — and people happy.</h1>
 
+            <p class="about__body">
+              I'm a Product Design Leader and Teacher based in Seattle with 15 years of experience
+              designing enterprise systems at global scale. Most of that time has been at Amazon,
+              where I currently lead UX on the People Experience Foundation team.
+            </p>
 
- 
- 
- 
- 
- 
- 
- 
- 
- <script src="../js/voiceControlScript.js"></script>
- 
-</body>
- 
+            <p class="about__body">
+              My work tends to live at the intersection of scale and humanity. I've designed systems
+              managing billions of documents across 67 countries, built real-time collaboration tools
+              for K–12 classrooms, and redesigned learning experiences used by millions of students
+              and educators. The common thread isn't the subject matter — it's the conviction that
+              complex systems deserve thoughtful, accessible, human-centered design.
+            </p>
+
+            <p class="about__body">
+              I'm also a practicing mentor. I work with early-career designers at
+              <a href="https://designlab.com" target="_blank" rel="noopener noreferrer">Designlab</a>
+              and the
+              <a href="https://www.svcseattle.com" target="_blank" rel="noopener noreferrer">School of Visual Concepts</a>
+              in Seattle. Teaching keeps me honest — explaining your decisions clearly to someone
+              learning the craft is one of the best ways to pressure-test whether you actually
+              understand them yourself.
+            </p>
+
+            <div class="about__links">
+              <a
+                href="https://www.linkedin.com/in/jalfonsodesign/"
+                class="btn btn--primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >LinkedIn ↗</a>
+              <a href="contact.html" class="btn btn--secondary">Get in touch</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <hr class="divider container" />
+
+      <!-- BACKGROUND -->
+      <section class="about-detail container container--narrow">
+
+        <h2 class="about-detail__heading">Background</h2>
+
+        <div class="about-timeline">
+
+          <div class="about-timeline__item">
+            <div class="about-timeline__meta">
+              <p class="label">2020 — Present</p>
+            </div>
+            <div class="about-timeline__body">
+              <p class="about-timeline__role">Lead Product Designer</p>
+              <p class="about-timeline__company">Amazon · People Experience Foundation</p>
+              <p class="about-timeline__detail">
+                Leading UX strategy and execution across enterprise HR products, including the Employee
+                Document Management platform managing 4.8 billion documents across 67 countries.
+                Delivered $10M+ in annual savings, accessibility compliance, and a global product
+                rollout spanning multiple legal jurisdictions.
+              </p>
+            </div>
+          </div>
+
+          <div class="about-timeline__item">
+            <div class="about-timeline__meta">
+              <p class="label">Prior</p>
+            </div>
+            <div class="about-timeline__body">
+              <p class="about-timeline__role">Lead Product Designer</p>
+              <p class="about-timeline__company">Discovery Education</p>
+              <p class="about-timeline__detail">
+                Led design across the Discovery Education platform: Studio (real-time classroom
+                collaboration), Media (iterative video player redesign), and Home (platform homepage
+                redesign). Products served K–12 teachers and students across the country.
+              </p>
+            </div>
+          </div>
+
+          <div class="about-timeline__item">
+            <div class="about-timeline__meta">
+              <p class="label">Ongoing</p>
+            </div>
+            <div class="about-timeline__body">
+              <p class="about-timeline__role">Mentor</p>
+              <p class="about-timeline__company">Designlab + School of Visual Concepts, Seattle</p>
+              <p class="about-timeline__detail">
+                Long-term mentoring commitment with early-career designers. Focus areas include
+                portfolio development, systems thinking, and navigating the transition from individual
+                contributor to design leader.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <hr class="divider container" />
+
+      <!-- APPROACH -->
+      <section class="about-detail container container--narrow">
+
+        <h2 class="about-detail__heading">How I work</h2>
+
+        <div class="about-principles">
+
+          <div class="about-principles__item">
+            <h3 class="about-principles__title">Lead from the front</h3>
+            <p class="about-principles__body">
+              I don't wait to be handed a brief. I go find the right problem, build shared
+              understanding across teams, and advocate for users in rooms where design doesn't
+              always have a seat. The best outcomes I've been part of came from getting upstream,
+              not from executing downstream.
+            </p>
+          </div>
+
+          <div class="about-principles__item">
+            <h3 class="about-principles__title">Accessibility is not a checkbox</h3>
+            <p class="about-principles__body">
+              On the EDM project I discovered that users with disabilities had been bypassing the
+              entire product because it wasn't screen-readable. They'd adapted by memorizing menu
+              positions. That experience shaped how I approach every project since: inclusive
+              design has to be built in from the start, not retrofitted at the end.
+            </p>
+          </div>
+
+          <div class="about-principles__item">
+            <h3 class="about-principles__title">Research is a team sport</h3>
+            <p class="about-principles__body">
+              I've run workshops with HR administrators in Germany, visited Amazon facility employees
+              to understand their actual workflows, and sat with users to watch them navigate products
+              I designed. The insights that change a product rarely come from the research report.
+              They come from being in the room.
+            </p>
+          </div>
+
+          <div class="about-principles__item">
+            <h3 class="about-principles__title">Complexity is the starting point</h3>
+            <p class="about-principles__body">
+              Enterprise design is hard because the problems are genuinely hard. Legal constraints,
+              country-specific requirements, competing stakeholder needs, legacy systems. I don't
+              find this discouraging. Constraints are where good design actually happens — they're
+              what separates interesting solutions from obvious ones.
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
+      <hr class="divider container" />
+
+      <!-- CURRENTLY -->
+      <section class="about-detail container container--narrow">
+        <h2 class="about-detail__heading">Currently</h2>
+        <p>
+          Based in Seattle. Working on enterprise HR products at Amazon.
+          Actively exploring Principal-level design leadership roles at companies building at scale.
+        </p>
+        <p>
+          When I'm not designing: mentoring, laser cutting things in my garage, and
+          tinkering with home automation setups that are almost always more complicated than they need to be.
+        </p>
+        <div class="about__links" style="margin-top: var(--space-8);">
+          <a href="contact.html" class="btn btn--primary">Get in touch</a>
+          <a href="../index.html" class="btn btn--secondary">View work</a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">&copy; 2026 Joseph Alfonso</p>
+        <nav class="site-footer__links" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/jalfonsodesign/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="mailto:J.ALFONSO84@gmail.com">Email</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+  </body>
 </html>

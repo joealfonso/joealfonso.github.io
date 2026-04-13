@@ -1,1024 +1,391 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Document Management | Joseph Alfonso</title>
+    <meta name="description" content="How I led UX for Amazon's global document platform managing 4.8 billion documents across 67 countries, delivering $10M+ in annual savings and accessibility compliance." />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script>
+      (function () {
+        var palettes = [
+          { accent: '#0052CC', accentHover: '#003D99', accentSubtle: '#EBF2FF',   accentDark: '#4D94FF', accentHoverDark: '#7AB3FF', accentSubtleDark: '#0F1E38' },
+          { accent: '#0D9488', accentHover: '#0F766E', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
+          { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
+          { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
+          { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
+        ];
+        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var p = palettes[Math.floor(Math.random() * palettes.length)];
+        var r = document.documentElement;
+        r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
+        r.style.setProperty('--color-accent-hover',  dark ? p.accentHoverDark  : p.accentHover);
+        r.style.setProperty('--color-accent-subtle', dark ? p.accentSubtleDark : p.accentSubtle);
+      })();
+    </script>
+  </head>
+  <body>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>document.getElementsByTagName("html")[0].className += " js";</script>
-  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&amp;family=Chivo:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <title>Joseph Alfonso | Employee Document Management</title>
-</head>
-
-<body>
-
-
-  <!-- header -->
-  <header class="f-header position-absolute bg-transparent js-f-header padding-bottom-xxxl" data-theme="dark">
-    <div class="f-header__mobile-content container max-width-lg">
-
-      <button class="reset anim-menu-btn js-anim-menu-btn f-header__nav-control js-tab-focus" aria-label="Toggle menu">
-        <i class="anim-menu-btn__icon anim-menu-btn__icon--close" aria-hidden="true"></i>
-      </button>
-    </div>
-
-    <!-- <div class="f-header__nav" role="navigation">
-      <div class="f-header__nav-grid justify-between@md container max-width-lg">
-        <ul class="f-header__list flex-grow flex-basis-0 justify-center@md">
-          <li class="f-header__item"><a href="club.html" class="f-header__link">The Club</a></li>
-          <li class="f-header__item"><a href="membership.html" class="f-header__link">Membership</a></li>
-          <li class="f-header__item"><a href="timetable.html" class="f-header__link">Timetable</a></li>
-          <li class="f-header__item"><a href="contact.html" class="f-header__link">Contact</a></li>
+    <!-- NAV -->
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="nav__logo">Joseph Alfonso</a>
+        <ul class="nav__links">
+          <li><a href="../pages/about.html">About</a></li>
+          <li><a href="../pages/work.html">Work</a></li>
+          <li><a href="../pages/contact.html">Contact</a></li>
         </ul>
-  
-       
-      </div>
-    </div> -->
-  </header>
+      </nav>
+    </header>
 
-  <!-- classes navigation -->
-  <div class="float-sidenav display@md js-float-sidenav">
-    <nav class="float-sidenav__nav">
-      <button class="reset float-sidenav__close-btn js-float-sidenav__close-btn js-tab-focus"
-        aria-label="Close navigation">
-        <svg class="icon icon--xs" viewBox="0 0 16 16">
-          <g stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"
-            stroke-miterlimit="10">
-            <line x1="13.5" y1="2.5" x2="2.5" y2="13.5"></line>
-            <line x1="2.5" y1="2.5" x2="13.5" y2="13.5"></line>
-          </g>
-        </svg>
-      </button>
+    <main>
 
-      <ul class="js-float-sidenav__list">
-        <li>
-          <a class="float-sidenav__link js-smooth-scroll" href="#high-concept">
-            <span class="float-sidenav__label">The High Concept</span>
-            <span class="float-sidenav__marker" aria-hidden="true"></span>
-          </a>
-        </li>
+      <!-- CASE STUDY HEADER -->
+      <section class="case-study-header container">
+        <p class="case-study-header__eyebrow eyebrow">Amazon &middot; Employee Document Management</p>
+        <h1 class="case-study-header__title">Designing the document infrastructure for Amazon's global workforce</h1>
+        <p class="case-study-header__summary">
+          Amazon's employee document system was fragmented, inaccessible, and outsourced across 67 countries.
+          I led the end-to-end UX strategy to replace it with a first-party platform that now manages
+          4.8 billion documents annually and delivers over $10M in cost savings.
+        </p>
 
-        <li>
-          <a class="float-sidenav__link js-smooth-scroll" href="#role">
-            <span class="float-sidenav__label">My Role</span>
-            <span class="float-sidenav__marker" aria-hidden="true"></span>
-          </a>
-        </li>
-
-        <li>
-          <a class="float-sidenav__link js-smooth-scroll" href="#scopeandimpact">
-            <span class="float-sidenav__label">My Scope and Impacts</span>
-            <span class="float-sidenav__marker" aria-hidden="true"></span>
-          </a>
-        </li>
-
-        <li>
-          <a class="float-sidenav__link js-smooth-scroll" href="#gtktm">
-            <span class="float-sidenav__label">Getting to know the team</span>
-            <span class="float-sidenav__marker" aria-hidden="true"></span>
-          </a>
-        </li>
-
-        <li>
-          <a href="#pre-discovery" class="custom-transition float-sidenav__link js-smooth-scroll">
-            <span class="float-sidenav__label">What did we already have?</span>
-            <span class="float-sidenav__marker" aria-hidden="true"></span>
-          </a>
-        </li>
-
-        <li>
-          <a class="float-sidenav__link js-smooth-scroll" href="#discovery">
-            <span class="float-sidenav__label">Documents don't exist without people</span>
-            <span class="float-sidenav__marker" aria-hidden="true"></span>
-          </a>
-        </li>
-
-        <li>
-          <a class="float-sidenav__link js-smooth-scroll" href="#define">
-            <span class="float-sidenav__label">An Amazon worthy experience</span>
-            <span class="float-sidenav__marker" aria-hidden="true"></span>
-          </a>
-        </li>
-
-        <li>
-          <a class="float-sidenav__link js-smooth-scroll" href="#develop">
-            <span class="float-sidenav__label">Getting to production</span>
-            <span class="float-sidenav__marker" aria-hidden="true"></span>
-          </a>
-        </li>
-
-        <li>
-          <a class="float-sidenav__link js-smooth-scroll" href="#globallaunch">
-            <span class="float-sidenav__label">Progressive global launching</span>
-            <span class="float-sidenav__marker" aria-hidden="true"></span>
-          </a>
-        </li>
-
-        <li>
-          <a class="float-sidenav__link js-smooth-scroll" href="#mainlaunch">
-            <span class="float-sidenav__label">The Main Launch</span>
-            <span class="float-sidenav__marker" aria-hidden="true"></span>
-          </a>
-        </li>
-
-        <li>
-          <a class="float-sidenav__link js-smooth-scroll" href="#challenges">
-            <span class="float-sidenav__label">Overcoming Obstacles</span>
-            <span class="float-sidenav__marker" aria-hidden="true"></span>
-          </a>
-        </li>
-
-        <li>
-          <a class="float-sidenav__link js-smooth-scroll" href="#impactdetails">
-            <span class="float-sidenav__label">Impacts in Detail</span>
-            <span class="float-sidenav__marker" aria-hidden="true"></span>
-          </a>
-        </li>
-
-      </ul>
-    </nav>
-  </div>
-
-  <!-- text intro -->
-  <section class="position-relative z-index-1 padding-top-xxxxl padding-bottom-xxxl" data-theme="dark">
-    <div class="container max-width-adaptive-md padding-bottom-xl">
-      <div class="grid gap-sm">
-        <div class="col-4@md col-5@lg">
-          <h1 class="text-xxxl@lg">Electronic Document Management</h1>
-        </div>
-
-        <div class="col-8@md col-7@lg">
-          <div class="text-component">
-            <p>As the lead designer for Amazon’s Employee Document Management (EDM) tool, I supported a system that handles 4.8 billion documents for employees across 67 countries. EDM is critical for managing documents related to Amazon’s vast workforce, including candidates, employees, alumni, and students. Furthermore, EDM replaced an older software service with an accessible web application, resulting in annual savings of over $7 million for Amazon in contracts and extensions. </p>
-
-
+        <div class="case-study-meta">
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Role</p>
+            <p class="case-study-meta__value">Lead Product Designer</p>
+          </div>
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Scope</p>
+            <p class="case-study-meta__value">9 product experiences</p>
+          </div>
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Duration</p>
+            <p class="case-study-meta__value">2+ years</p>
+          </div>
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Scale</p>
+            <p class="case-study-meta__value">67 countries</p>
+          </div>
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Impact</p>
+            <p class="case-study-meta__value">$10M+ annual savings</p>
           </div>
         </div>
+      </section>
+
+      <!-- COVER IMAGE -->
+      <div class="container">
+        <img
+          src="assets/img/AdminDashboard-Default.png"
+          alt="EDM Admin Dashboard showing the document management interface"
+          class="case-study-cover"
+          loading="eager"
+        />
       </div>
-    </div>
-  </section>
 
+      <!-- BODY -->
+      <article class="case-study-body container container--narrow">
 
+        <!-- THE CHALLENGE -->
+        <h2>The challenge</h2>
+        <p>
+          Amazon managed employee documents through a patchwork of third-party contractors spread across
+          67 countries. The result was a fragmented, error-prone system that failed employees and
+          administrators at nearly every stage of the employment lifecycle, from candidates signing
+          offer letters to alumni accessing records.
+        </p>
+        <p>
+          The system couldn't scale. It created poor candidate experiences, lacked accessibility
+          compliance, and produced recurring errors across hiring, onboarding, and HR workflows.
+          For a company operating at Amazon's scale, this wasn't just a UX problem. It was a
+          legal, operational, and reputational one.
+        </p>
 
+        <div class="callout">
+          <p>"It always comes down to a person." — HR Administrator, during a research interview</p>
+        </div>
 
-    <div class="corner-decoration corner-decoration--left bg" aria-hidden="true"></div>
-  </section>
-
-  <!-- App mock -->
-  <section class="position-relative z-index-1 padding-y-xxl lightBG">
-    <figure class="bg-decoration-v3 z-index-0" aria-hidden="true">
-      <svg class="bg-decoration-v3__svg top-0 left-0 color-contrast-higher opacity-20%" viewBox="0 0 1920 610">
-        <defs>
-          <linearGradient id="bg-dec-v3-gradient-5" gradientTransform="rotate(90)">
-            <stop offset="0" stop-color="white" stop-opacity="1" />
-            <stop offset="1" stop-color="white" stop-opacity="0" />
-          </linearGradient>
-
-          <mask id="bg-dec-v3-gradient-mask-5">
-            <rect x="0" y="0" width="1920" height="610" fill="url(#bg-dec-v3-gradient-5)" />
-          </mask>
-        </defs>
-
-        <g fill="none" stroke="currentColor" stroke-miterlimit="10" mask="url(#bg-dec-v3-gradient-mask-5)">
-          <polyline points="-699.07 -165.58 38.206 443.271 107.459 386.081 341.853 579.647 1305 -215.731" />
-          <polyline points="-651.354 -164.839 50.813 420.594 116.769 365.604 340.001 551.725 1257.284 -213.061" />
-          <polyline points="-605.911 -164.127 62.821 398.79 125.635 345.915 338.237 524.877 1211.84 -210.495" />
-          <polyline points="-562.631 -163.442 74.256 377.824 134.079 326.983 336.558 499.061 1168.56 -208.026" />
-          <polyline points="-521.412 -162.784 85.147 357.665 142.121 308.778 334.958 474.239 1127.342 -205.653" />
-          <polyline points="-482.156 -162.151 95.519 338.28 149.781 291.275 333.435 450.371 1088.086 -203.371" />
-          <polyline points="-444.769 -161.542 105.398 319.642 157.075 274.444 331.984 427.421 1050.699 -201.177" />
-          <polyline points="-409.163 -160.957 114.806 301.72 164.022 258.261 330.602 405.354 1015.093 -199.067" />
-          <polyline points="-375.252 -160.394 123.766 284.488 170.639 242.7 329.286 384.136 981.182 -197.039" />
-          <polyline points="-342.956 -159.853 132.299 267.918 176.94 227.737 328.032 363.734 948.886 -195.088" />
-          <polyline points="-312.198 -159.332 140.426 251.986 182.941 213.35 326.839 344.116 918.127 -193.213" />
-          <polyline points="-282.904 -158.832 148.166 236.666 188.656 199.517 325.702 325.253 888.834 -191.409" />
-          <polyline points="-255.006 -158.351 155.537 221.936 194.1 186.215 324.619 307.115 860.935 -189.675" />
-          <polyline points="-228.436 -157.888 162.558 207.772 199.284 173.425 323.588 289.676 834.365 -188.008" />
-          <polyline points="-203.131 -157.443 169.244 194.153 204.221 161.127 322.606 272.906 809.061 -186.404" />
-          <polyline points="-179.031 -157.016 175.611 181.058 208.923 149.302 321.671 256.782 784.961 -184.863" />
-          <polyline points="-156.079 -156.605 181.676 168.466 213.401 137.932 320.78 241.278 762.009 -183.381" />
-          <polyline points="-134.22 -156.209 187.451 156.359 217.666 126.999 319.932 226.37 740.149 -181.955" />
-          <polyline points="-113.402 -155.829 192.952 144.717 221.728 116.487 319.124 212.036 719.331 -180.585" />
-          <polyline points="-93.575 -155.463 198.191 133.523 225.596 106.379 318.354 198.253 699.504 -179.267" />
-          <polyline points="-74.692 -155.112 203.18 122.76 229.281 96.659 317.621 185 680.621 -178" />
-        </g>
-      </svg>
-</figure>
-    <div class="container max-width-adaptive-sm">
-      <div class="grid gap-md items-center">
-        <div
-        class="tilted-slideshow position-relative padding-top-md width-80% margin-x-auto reveal-fx reveal-fx--translate-up width-70%@sm padding-top-0@md js-tilted-slideshow">
-        <p class="sr-only">Tilted Image Slideshow</p>
-
-        <ul class="tilted-slideshow__list position-relative perspective-xs js-tilted-slideshow__list z-index-1">
-          <li class="tilted-slideshow__item tilted-slideshow__item--top js-tilted-slideshow__item">
-            <div class="dev-browser dev-browser--top-light max-width-sm" aria-label="Image description">
-              <div class="dev-browser__body">
-                <div class="dev-browser__dots"><span></span><span></span><span></span></div>
-                <div class="dev-browser__media">
-                  <img class="block" src="assets/img/AdminDashboard-Default.png" alt="Admin Dashboard">
-                </div>
-              </div>
-              <div class="dev-browser__shadow"></div>
-            </div>
-          </li>
-
-          <li class="tilted-slideshow__item tilted-slideshow__item--middle js-tilted-slideshow__item">
-            <div class="dev-browser dev-browser--top-light max-width-sm" aria-label="Image description">
-              <div class="dev-browser__body">
-                <div class="dev-browser__dots"><span></span><span></span><span></span></div>
-                <div class="dev-browser__media">
-                  <img class="block" src="assets/img/DocumentGeneration-Report.png" alt="Document generation report">
-                </div>
-              </div>
-              <div class="dev-browser__shadow"></div>
-            </div>
-          </li>
-
-          <li class="tilted-slideshow__item tilted-slideshow__item--bottom js-tilted-slideshow__item">
-            <div class="dev-browser dev-browser--top-light max-width-sm" aria-label="Image description">
-              <div class="dev-browser__body">
-                <div class="dev-browser__dots"><span></span><span></span><span></span></div>
-                <div class="dev-browser__media">
-                  <img class="block" src="assets/img/ViewingDocument-Password.png" alt="Viewing a document with a password">
-                </div>
-              </div>
-              <div class="dev-browser__shadow"></div>
-            </div>
-          </li>
+        <!-- MY ROLE -->
+        <h2>My role</h2>
+        <p>
+          I was the lead product designer for EDM for over two years, owning end-to-end UX strategy
+          and execution across nine distinct product experiences within the ecosystem. This wasn't an
+          embedded designer role. I drove the design direction, facilitated workshops with global
+          stakeholders, advocated for user-centered decisions with leadership, and supervised all UX
+          deliverables for quality and deadline alignment.
+        </p>
+        <p>
+          I acted as the primary liaison between UX, engineering, product management, legal, HR
+          compliance, and vendor teams across multiple countries. I collaborated with researchers to
+          define study strategies and ensured UX work stayed ahead of development to accommodate
+          inevitable pivots, especially in a product where country-specific legal requirements
+          could change the entire scope of a feature.
+        </p>
+        <p>My direct scope covered:</p>
+        <ul class="case-study-list">
+          <li>Employee document portal (user-facing)</li>
+          <li>Administrative portal</li>
+          <li>Bulk document generation</li>
+          <li>Document Collection Requests (DCRs)</li>
+          <li>Mergers &amp; Acquisitions document tooling</li>
+          <li>Bulk employee data changes</li>
+          <li>Contextual document uploads</li>
+          <li>Document collection (country-specific compliance)</li>
+          <li>Document viewing and accessibility</li>
         </ul>
-        <span class="tilted-slideshow__touch-hint" aria-hidden="true">Tap to change image</span>
-      </div>      
+
+        <!-- DISCOVERY -->
+        <h2>Getting oriented</h2>
+        <p>
+          When I joined, the team had existing research: heuristic evaluations, usability tests,
+          SUS scores, and journey maps from pre-hire through alumni. But it hadn't been socialized
+          across the full team. A significant amount of institutional knowledge existed in silos.
+        </p>
+        <p>
+          I spent the first few months conducting intensive interviews with the prior design team,
+          reviewing all existing documentation, and holding frequent syncs with product managers to
+          develop a clearer picture than anyone on the team currently had. This wasn't just onboarding.
+          It was creating a shared foundation from which the entire team could move faster.
+        </p>
+
+        <figure>
+          <img
+            src="assets/img/JTBD-Grouped.png"
+            alt="Jobs to be done mapping across user types"
+            loading="lazy"
+          />
+          <figcaption>Jobs-to-be-done mapped across candidates, employees, admins, and alumni</figcaption>
+        </figure>
+
+        <p>
+          By surfacing and synthesizing what already existed, we bypassed months of redundant foundational
+          research and focused immediately on evaluating the performance of changes. We expedited
+          a three-year plan by delivering UX work ahead of development, which gave every team
+          (engineering, product, legal) a common place to align, debate, and move forward from.
+        </p>
+
+        <figure>
+          <img
+            src="assets/img/Journeys-Grouped.png"
+            alt="Current and future state user journeys"
+            loading="lazy"
+          />
+          <figcaption>Current and future-state journeys developed collaboratively across teams</figcaption>
+        </figure>
+
+        <!-- KEY DESIGN DECISIONS -->
+        <h2>Key design decisions</h2>
+
+        <h3>Shifting from document-centric to people-centric search</h3>
+        <p>
+          The entire paradigm of document management had always centered on the document itself:
+          find it, edit it, store it. The existing software reflected this. Admins could only
+          search by exact document IDs or person IDs, which wasn't practical at Amazon's scale.
+        </p>
+        <p>
+          What I kept noticing in research and hearing in conversations was that every document
+          task ultimately existed because of a person. The "why" behind document management was
+          people, not paper. I advocated internally for flipping the default search paradigm to
+          employee-based, while preserving document search as a secondary mode for complex bulk tasks.
+        </p>
+
+        <figure>
+          <img
+            src="assets/img/UIBreakdown.png"
+            alt="Employee-based search interface breakdown"
+            loading="lazy"
+          />
+          <figcaption>The redesigned search model: employee-first, with document mode available for bulk contexts</figcaption>
+        </figure>
+
+        <p>
+          The shift resulted in dramatically faster admin workflows and a significant increase in
+          automation, reducing the time spent per document task and enabling admins to handle
+          larger volumes without proportional increases in effort.
+        </p>
+
+        <h3>Making document completion feel urgent without punishing users</h3>
+        <p>
+          Incomplete documents were a persistent legal risk. But document management systems had
+          a well-known engagement problem: people only accessed them when they needed something
+          they'd already completed. There was no inherent urgency to proactively submit.
+        </p>
+        <p>
+          During interviews, one user crystallized the problem: <em>"Can you remove the overdue
+          documents? They're distracting."</em> Rather than treating this as an edge case, I
+          recognized it as a signal about how people perceived completion. The further they were
+          from a required date, the less the document registered as important.
+        </p>
+        <p>
+          We removed the literal overdue date and replaced it with a contextual "overdue" label,
+          preserving urgency without anchoring to a specific date that became noise over time.
+          Completion rates improved and admin follow-up volume decreased.
+        </p>
+
+        <h3>Accessible document viewing</h3>
+        <p>
+          During user interviews, I discovered something unexpected: most employees with disabilities
+          were bypassing the document portal entirely, downloading PDFs directly to their computers
+          so they could use their own assistive tools. The default document viewer wasn't screen-readable,
+          and these users had adapted by memorizing menu positions and workflows just to get basic
+          tasks done.
+        </p>
+        <p>
+          This wasn't a minor inconvenience. It was a complete breakdown of the intended experience
+          for a significant portion of the workforce, and it had gone undetected because standard
+          testing doesn't catch people who abandon the product entirely.
+        </p>
+
+        <figure>
+          <img
+            src="assets/img/ViewingDocument-Password.png"
+            alt="Redesigned document viewing experience"
+            loading="lazy"
+          />
+          <figcaption>Redesigned document viewing built on the Mozilla PDF reader for full accessibility compliance</figcaption>
+        </figure>
+
+        <p>
+          I worked with engineering to evaluate and implement the Mozilla PDF reader, which provided
+          full screen-reader compatibility with minimal operational impact. Documents requiring
+          signatures needed a separate solution, involving legal and financial teams to align on
+          an approach. After launching the new viewer, I revisited the same participants. The response
+          was immediate and meaningful. People were visibly moved that they'd been considered.
+        </p>
+
+        <div class="callout">
+          <p>"I appreciate the effort you put into something that is often taken for granted, especially for employees who need accessible administrative and internal tools." — Stakeholder</p>
+        </div>
+
+        <h3>Bulk document generation at global scale</h3>
+        <p>
+          Amazon's hiring volume is among the largest in the world, spanning facilities, corporate,
+          services, student programs, and acquisitions. Bulk document generation had to work across
+          67 countries, each with its own legal requirements, governing bodies, and file storage
+          rules. Some required locally hosted servers or country-specific trusted proxies.
+        </p>
+        <p>
+          To handle this complexity without creating an administrative burden, I designed a logic
+          gating system: a rules-based framework that automated document routing and generation
+          based on the employee's context. Once configured, the system ran autonomously and only
+          required human intervention for adjustments or additions.
+        </p>
+
+        <figure>
+          <img
+            src="assets/img/BulkUpload1.png"
+            alt="Bulk document generation interface"
+            loading="lazy"
+          />
+          <figcaption>Bulk generation workflow with logic gating for country-specific requirements</figcaption>
+        </figure>
+
+        <h3>Contextual document uploads</h3>
+        <p>
+          Previously, uploading a document required leaving the current context, initiating a new
+          search, locating the individual, and then selecting the relevant document. We redesigned
+          uploads to happen contextually, directly within the page the admin was already on, with
+          the system inferring the relevant individual and document type automatically.
+        </p>
+
+        <figure>
+          <img
+            src="assets/img/ContextualUploads.png"
+            alt="Contextual uploads within the admin workflow"
+            loading="lazy"
+          />
+          <figcaption>Contextual uploads eliminated unnecessary context switching and increased tasks completed per shift</figcaption>
+        </figure>
+
+        <p>
+          More tasks were being completed per shift as a result, not because of speed improvements
+          but because reducing cognitive load per task created headroom for additional work within
+          the same session.
+        </p>
+
+        <!-- PROGRESSIVE LAUNCH -->
+        <h2>Progressive global launch</h2>
+        <p>
+          Every launch was phased by country group, and each phase was treated as a live User
+          Acceptance Test. Small, real-world groups gave us feedback before each broader rollout,
+          ensuring the primary user populations received a thoroughly vetted experience.
+        </p>
+        <p>
+          Country-specific legal requirements (Germany's Work Councils requiring physical wet signatures,
+          region-specific file hosting rules, language and vocabulary differences) meant that what
+          worked in one market sometimes required significant rethinking for another. Phased launching
+          let us respond in real time rather than discovering issues after a global rollout.
+        </p>
+
+        <!-- OUTCOMES -->
+        <h2>Outcomes</h2>
+
+        <div class="stat-block">
+          <div class="stat-block__item">
+            <p class="stat-block__number">4.8B</p>
+            <p class="stat-block__label">Documents managed annually</p>
+          </div>
+          <div class="stat-block__item">
+            <p class="stat-block__number">$10M+</p>
+            <p class="stat-block__label">Annual savings vs. third-party contracts</p>
+          </div>
+          <div class="stat-block__item">
+            <p class="stat-block__number">67</p>
+            <p class="stat-block__label">Countries on the platform</p>
+          </div>
+          <div class="stat-block__item">
+            <p class="stat-block__number">9</p>
+            <p class="stat-block__label">Product experiences delivered</p>
+          </div>
+        </div>
+
+        <p>
+          Beyond the headline numbers, the most meaningful outcomes were harder to quantify.
+          Application abandonment dropped after the document viewing redesign, a result we
+          hadn't anticipated. Accessibility compliance was achieved for the first time. Admin
+          workflows that previously spanned seven steps and five tools were reduced to three
+          steps and two tools for bulk employee data changes.
+        </p>
+
+        <!-- REFLECTION -->
+        <h2>What I'd do differently</h2>
+        <p>
+          The accessibility discovery came too late. Users with disabilities had been adapting
+          around a broken experience for a long time before we surfaced it, because standard
+          usability testing doesn't catch people who abandon the product entirely. I'd build
+          inclusive participant recruitment into the research plan from day one, not as a
+          secondary study.
+        </p>
+        <p>
+          I'd also invest earlier in vocabulary alignment. The language challenges around
+          "documents vs. files," Document Collection Requests, and country-specific terminology
+          created friction that cascaded into design decisions, engineering estimates, and user
+          confusion. Establishing a shared taxonomy before defining features would have saved
+          significant rework across multiple workstreams.
+        </p>
+
+        <!-- NAV -->
+        <div class="case-study-nav">
+          <a href="../index.html" class="btn btn--secondary">&larr; Back to work</a>
+          <a href="../pages/studio.html" class="btn btn--secondary">Next: Discovery Education Studio &rarr;</a>
+        </div>
+
+      </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">&copy; 2026 Joseph Alfonso</p>
+        <nav class="site-footer__links" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/jalfonsodesign/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="mailto:J.ALFONSO84@gmail.com">Email</a>
+        </nav>
       </div>
-    </div>
-    <div class="corner-decoration corner-decoration--right bg" aria-hidden="true"></div>
-  </section>
-
-  
-  <!-- text content -->
-  <section id="high-concept" class="position-relative z-index-1 padding-y-xl">
-    <div class="position-relative z-index-2">
-      <div class="container max-width-lg">
-        <div class="grid gap-sm">
-          <div class="col-8@md">
-            <h1 class="text-xxxl">The High Concept</h1>
-            
-            <div class="color-primary margin-bottom-sm">Where it begins</div>
-          </div>
-          <div class="col-10 offset-0@xs offset-0@xs offset-2@md col-8@lg padding-y-lg">
-            <div class="text-component line-height-lg text-space-y-lg">
-              <p>Employee Document Management (EDM) empowers a wide range of users, including candidates, employees, alumni, and students, to efficiently and securely manage, generate, and execute their documents on any device throughout their time with Amazon and beyond. Furthermore, from an administrative perspective, HR can leverage EDM for comprehensive document lifecycle management, including compliance, distribution, legal support, and country-specific template management. EDM simplifies document sharing across all stages of the employment journey, fostering a more efficient, easy-to-use, and delightful document experience for enterprise and user solutions.</p>
-              <p>Amazon previously relied on a third-party contractor for document management, resulting in fragmented and error-prone products. This frustrating experience affected both administrators and employees. The impacts reverberated across multiple systems and databases, causing errors at various stages of the employment life cycle.</p>
-              <p>Document management is not just about documents; it also encompasses the people who use them and the context in which they operate. This concept was a key driver behind the creation of Amazon’s initial first-party solution for document management, designed for both users and administrators.</p>
-              <p>Everyone applying for an opportunity deserves an accessible, trustworthy, and top-quality experience. This approach allows Amazon not only to evaluate but also to scale its services, ensuring that a world-class experience remains. </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  
-
-  <!-- new section -->
-  <section id="challenge-role-impact" class="position-relative z-index-1 padding-y-xl bg-contrast-lower bg-opacity-30%">
-    <div class="position-relative z-index-2">
-      <div class="container max-width-lg">
-        <div class="grid gap-sm">
-          <div class="col-8@md">
-          
-          </div>
-          <div class="col-10 offset-0@xs offset-2@md col-8@lg padding-y-lg">
-            <div class="text-component line-height-lg text-space-y-lg">
-              <h2>THE CHALLENGE</h2>
-              <p>Amazon relied on fragmented third-party contractors for employee document management across 67 countries. The system couldn't scale, created poor candidate experiences, and lacked accessibility compliance.</p>
-              <h2>MY ROLE</h2>
-              <p>Lead Product Designer (2+ years)</p>
-              <ul>
-                <li>Led end-to-end UX strategy and execution</li>
-                <li>Owned 9 distinct product experiences within the EDM ecosystem</li>
-                <li>Collaborated with global teams across legal, HR, and compliance</li>
-              </ul>
-              <h2>THE IMPACT</h2>
-              <ul>
-                <li>4.8 billion documents managed annually</li>
-                <li>$7M+ in annual cost savings</li>
-                <li>Reduced application abandonment through improved document viewing</li>
-                <li>Achieved accessibility compliance for users with disabilities</li>
-                <li>Progressive global rollout across 67 countries</li>
-              </ul>
-              <h2>KEY INNOVATIONS</h2>
-              <ol>
-                <li>Shifted paradigm from document-centric to people-centric search</li>
-                <li>Redesigned bulk generation system to handle country-specific legal requirements</li>
-                <li>Created accessible PDF viewing experience after discovering users with disabilities navigated by memorizing menu positions</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  
-
-  <!-- text content -->
-  <section id="role" class="position-relative z-index-1 padding-y-xl bg-contrast-lower bg-opacity-30%">
-    <div class="position-relative z-index-2">
-      <div class="container max-width-lg">
-        <div class="grid gap-sm">
-          <div class="col-8@md">
-            <h1  class="text-xxxl">My Role</h1>
-            <div class="color-primary margin-bottom-sm">Scope and responsibility</div>
-          </div>
-          <div class="col-10 offset-0@xs offset-2@md col-8@lg padding-y-lg">
-            <div class="text-component line-height-lg text-space-y-lg">
-              <p>My role for this product was multi-faceted and spanned all child products and experiences. It encompassed various aspects of UX design, research, project management, and supervision of UX deliverables for the project, ensuring that they met both deadlines and quality standards. I advocated assertive but collaborative UX integration, aligning with both user needs and business objectives. Additionally, I acted as a liaison among UX, engineering, product management, and other stakeholders and vendors. Collaborating with researchers and defining research strategies to get the most out of a limited system was critical, as we had to be as efficient as possible. As part of project planning, I ensured the seamless integration of UX activities with the overall development and progressive launch schedule across multiple countries. We also proactively identified potential UX obstacles and devised strategies to counteract them.</p>
-              <p>My scope spanned not only the parent product of Employee Document Management, but also each child
-                product and service, such as Document Generation, the entire employee experience, bulk admin actions, and the
-                general administrative experience.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- text content -->
-  <section id="scopeandimpact" class="position-relative z-index-1 padding-y-xl">
-    <div class="position-relative z-index-2">
-      <div class="container max-width-lg">
-        <div class="grid gap-sm">
-          <div class="col-8@md">
-            <h1 class="text-xxxl">My Scope and Impacts</h1>
-            <div class="color-primary margin-bottom-sm">Work I was directly responsible for</div>
-          </div>
-          <section class="sticky-feature js-sticky-feature">
-            <div class="sticky-feature__container">
-              <div class="sticky-feature__grid-1">
-                <div>
-                  <ul class="sticky-feature__content-list sticky-feature__grid-2 js-sticky-feature__content-list">
-                    <li class="text-component js-sticky-feature__content-item">
-                      <h3 class="sticky-feature__title js-sticky-feature__title">User Portal</h3>
-                      <p class="margin-top-md">Redesigning the Document Portal experience for a product that I used myself was an incredibly fun and exciting experience. It provided a common ground for conversations with 100% of the people I worked with, whether I knew them personally or not. This journey led to interesting explorations into the document experience as a whole. Understanding how facility employees work has always been important to me, and I proactively reached out and visited various hourly employees to gain insights into their unique challenges. Their perspectives enriched the design process, ensuring that the new Document Portal would truly meet their needs. </p>
-                      <p>One of obstacles I encountered while designing the user experience was the lack of information that could be presented due to security reasons. The absence of preview images for documents, the omission of personal information, and a general lack of content posed a significant challenge in creating engaging yet meaningful elements for representing documents. To address this, I devised a novel date requirement system, which I discuss in another section of this case study.</p>
-                      <p>Something I found extremely interesting was the required date dynamic. Once a document had passed the 'required' date, users generally diregarded them. We even had one person request that we remove the documents, as they were bothering them! </p>
-                      <p>For this reason, we removed the literal date, as the farther a person was from the date, the less important the document became. Instead, we opted for a general ‘overdue’ label.</p>
-                      <figure class="sticky-feature__content-figure">
-                        <img src="assets/img/UserDashboard-Default.png" alt="Image description">
-                      </figure>
-                    </li>
-
-                    <li class="text-component js-sticky-feature__content-item">
-                      <h3 class="sticky-feature__title js-sticky-feature__title">Administrative Portal</h3>
-                      <p class="margin-top-md">Our research, coupled with numerous discussions with the internal team and users, underscored the pivotal relationship between individuals and documents, highlighting the need for a more efficient search functionality. The limitations of the existing software necessitated the incorporation of various filters and attributes. The challenge lay not merely in enhancing current functionalities, but in innovatively transforming the product based on these insights. This involved identifying new friction points and ensuring the intuitive learnability of features.</p>
-                      <p>Throughout the project, one theme consistently emerged: the interplay between individuals and documents. The existing software allowed admins to search solely by exact person IDs or documents, which was not entirely practical.</p>
-                      <p>Our research centered around this theme, leading to some fascinating discoveries. We found that different attributes and filters are crucial for both individuals and documents. Moreover, we recognized that a document does not exist in isolation from a person, emphasizing the human element of document management. </p>
-                      <p>The real challenge was not just in improving existing features, but in innovatively transforming the product based on our research findings. This required us to understand new friction points and ensure that the features were intuitive to learn.</p>
-                      <figure class="sticky-feature__content-figure">
-                        <img src="assets/img/AdminDashboard-Default.png" alt="Image description">
-                      </figure>
-                    </li>
-
-                    <li class="text-component js-sticky-feature__content-item">
-                      <h3 class="sticky-feature__title js-sticky-feature__title">Bulk Document Generation</h3>
-                      <p class="margin-top-md">A recurring theme in document management at Amazon is the company’s immense hiring volume and workforce, which ranks among the largest globally. The influx of applicants spans not only facilities and corporate offices but also various services. Additionally, the number of students, support programs, and company mergers further amplifies the potential pool of individuals, making it exponentially larger than most other organizations. This vast scale underscores the importance of developing a new bulk upload solution for global document generation.</p>
-                      <p>However, the challenge lies in the unique attributes and requirements of each country, dictated by local governing bodies. Additionally, files must be stored on a locally hosted server or a trusted proxy within a specific country. This requirement underscores the technical complexities and significance of digital file storage locations.</p>
-                      <p>To navigate these diverse rules and attributes, we devised a logic gating system. This system facilitates automated workflows tailored to the context of the individual. Once the initial setup is complete, the system operates autonomously. Human intervention is only required for adjustments or additions.</p>
-                      <figure class="sticky-feature__content-figure">
-                        <img src="assets/img/DocumentGeneration-Report.png" alt="Image description">
-                      </figure>
-                    </li>
-
-                    <li class="text-component js-sticky-feature__content-item">
-                      <h3 class="sticky-feature__title js-sticky-feature__title">Mergers and Acquisitions</h3>
-                      <p class="margin-top-md">The Mergers and Acquisitions (M&A) team at Amazon is a specialized group responsible for managing individuals who have become or will become Amazon employees through mergers or acquisitions. The administrative needs differ slightly, with a focus on reporting and ensuring that all personnel are accounted for.</p>
-                      <p>This tool proves invaluable when an issue arises or an employee hasn’t progressed as expected. It allows administrators to access the individual’s history and details, enabling them to provide better support. They can then reach out directly and offer assistance tailored to the individual’s needs.</p>
-
-                      <figure class="sticky-feature__content-figure">
-                        <img src="assets/img/MA2.png" alt="Image description">
-                      </figure>
-                    </li>
-            
-                    <li class="text-component js-sticky-feature__content-item">
-                      <h3 class="sticky-feature__title js-sticky-feature__title">Document Collection Requests</h3>
-                      <p class="margin-top-md">Document Collection Requests (DCRs) may seem straightforward, but the details reveal a different story. A DCR is a request by Amazon for a party to supply at least one document, typically an upload.</p>
-                      <p>One of the more complex challenges was treating the DCR as a type of document while also including the uploaded documents within it as searchable unique documents, yet still representing them as part of a larger document. While legally supported, creating an interface that people understand proved to be more difficult. Context was crucial. Depending on what the user was searching for, they might be served the entire DCR or one of the documents within it. Regardless of their choice, they could always navigate through the DCR itself, enabling faster access to potentially relevant documents.</p>
-                      <p>There were some special use cases worldwide that required physical execution of documents in addition to Work Councils, particularly in Germany. These special cases had to be considered individually and led to a large number of spreadsheet and tertiary artifacts. Design files had to take into account special considerations where minor changes in content were legally significant, so each country had to have its own set of components, even if 99% of it was duplicative.</p>
-                      <figure class="sticky-feature__content-figure">
-                        <img src="assets/img/DocumentCollectionRequest.png" alt="Image description">
-                      </figure>
-                    </li>
-            
-                    <li class="text-component js-sticky-feature__content-item">
-                      <h3 class="sticky-feature__title js-sticky-feature__title">Bulk Employee Data Changes</h3>
-                      <p class="margin-top-md">Considering Amazon’s vast annual hiring, along with its existing workforce, students, and alumni, it’s evident that the volume of document-related tasks is substantial. The intricacy of implementing a bulk feature directly correlates with the complexity of the task at hand.</p>
-                      <p>The process begins with an internal task management tool, similar to Jira. However, the challenge arises from the tool’s need to serve the entire organization, resulting in inevitable functionality gaps. The ‘tickets’ are primarily designed to manage the personal information of individual users, unless additional details are provided in an alternative format.</p>
-                      <p>When a second person is added, the administrator must scan two different areas and manually collect data to complete the tasks. This may not appear overwhelming until there are over 100 people listed, especially when the information is presented in free text rather than a structured table format.</p>
-                      <p>To better understand the process, we collaborated closely with users and even assumed the role of administrators ourselves. I meticulously documented the entire journey, capturing videos and images of each screen that users would need to navigate, with a particular emphasis on context and screen switching.</p>
-                      <p>As a result of our revisions, we streamlined the process from seven steps and five tools down to just three steps and two tools.</p>
-                    
-                      <figure class="sticky-feature__content-figure">
-                        <img src="assets/img/BulkUpload1.png" alt="Image description">
-                      </figure>
-                    </li>
-            
-                    <li class="text-component js-sticky-feature__content-item">
-                      <h3 class="sticky-feature__title js-sticky-feature__title">Upload contextual documents</h3>
-                      <p class="margin-top-md">Prior to the recent changes, users could only upload files using a specific tool. This process involved initiating a new search to locate the desired individual or group, followed by selecting the relevant document. However, the recent updates allow users to upload files directly within the context of specific individuals or groups. This enhancement considers the current page and available options, resulting in a more streamlined and personalized upload experience tailored to the intended action.</p>
-                      <p>This improvement not only saves valuable time but also significantly reduces the need for context switching. As a result, more tasks are being completed per shift. We discovered that this increase in productivity was due to a reduction in the attrition rate per task. By decreasing the cognitive load per task, we’ve enabled more tasks to be completed.</p>
-                      <figure class="sticky-feature__content-figure">
-                        <img src="assets/img/ContextualUploads.png" alt="Image description">
-                      </figure>
-                    </li>
-
-                    <li class="text-component js-sticky-feature__content-item">
-                      <h3 class="sticky-feature__title js-sticky-feature__title">Document Collection</h3>
-                      <p class="margin-top-md">Before the recent changes, candidates and employees worldwide encountered difficulties when uploading documents due to inadequate information about their local regulatory bodies and their specific requirements. Although links were accessible, the lack of contextual details posed a significant challenge. To remedy this, I proactively engaged with teams representing each relevant country, collecting precise requirements and language nuances. Given that these documents were all legal in nature, precision was crucial, considering the technicalities involved.</p>
-                      <p>The result was a user-centric experience that displayed the appropriate information based on the user’s selection. Additionally, we implemented a substantial UI update, incorporating our new design system and aesthetic.</p>
-                      <figure class="sticky-feature__content-figure">
-                        <img src="assets/img/UserDCR.png" alt="Image description">
-                      </figure>
-                    </li>
-
-                    <li class="text-component js-sticky-feature__content-item">
-                      <h3 class="sticky-feature__title js-sticky-feature__title">Document viewing experience</h3>
-                      <p class="margin-top-md">Although our focus during the document viewing experience primarily centered around accessibility, the changes we made had far-reaching advantages. Design is often associated with aesthetics, enhancing visual appeal and overall user experience. However, when it comes to signing legal documents, even minor deviations from Amazon’s established identity can undermine trust. This principle applies equally to both design and functionality. As a world-class company, Amazon is held to a high standard for exceptional experiences, especially in areas that are relevant to all organizations.</p>
-                      <p>Not only did feedback and questions indicate fewer issues with trust and system safety, but <strong><mark>application abondonment dropped</mark></strong> as well -- a result we hadn't anticipated.</p>
-                      <figure class="sticky-feature__content-figure">
-                        <img src="assets/img/EmployeeViewNew.png" alt="Image description">
-                      </figure>
-                    </li>
-                  </ul>
-                </div>
-            
-                <div class="sticky-feature-display@md" aria-hidden="true">
-                  <ul class="sticky-feature__media-list js-sticky-feature__media-list">
-                    <li class="sticky-feature__media-item js-sticky-feature__media-item">
-                      <figure class="sticky-feature__media-figure">
-                        <img src="assets/img/UserDashboard-Default.png" alt="Image description">
-                      </figure>
-                    </li>
-            
-                    <li class="sticky-feature__media-item js-sticky-feature__media-item">
-                      <figure class="sticky-feature__media-figure">
-                        <img src="assets/img/AdminDashboard-Default.png" alt="Image description">
-                      </figure>
-                    </li>
-            
-                    <li class="sticky-feature__media-item js-sticky-feature__media-item">
-                      <figure class="sticky-feature__media-figure">
-                        <img src="assets/img/DocumentGeneration-Report.png" alt="Image description">
-                      </figure>
-                    </li>
-            
-                    <li class="sticky-feature__media-item js-sticky-feature__media-item">
-                      <figure class="sticky-feature__media-figure">
-                        <img src="assets/img/MA2.png" alt="Image description">
-                      </figure>
-                    </li>
-
-                    <li class="sticky-feature__media-item js-sticky-feature__media-item">
-                      <figure class="sticky-feature__media-figure">
-                        <img src="assets/img/DocumentCollectionRequest.png" alt="Image description">
-                      </figure>
-                    </li>
-
-                    <li class="sticky-feature__media-item js-sticky-feature__media-item">
-                      <figure class="sticky-feature__media-figure">
-                        <img src="assets/img/BulkUpload1.png" alt="Image description">
-                      </figure>
-                    </li>
-
-                    <li class="sticky-feature__media-item js-sticky-feature__media-item">
-                      <figure class="sticky-feature__media-figure">
-                        <img src="assets/img/ContextualUploads.png" alt="Image description">
-                      </figure>
-                    </li>
-
-                    <li class="sticky-feature__media-item js-sticky-feature__media-item">
-                      <figure class="sticky-feature__media-figure">
-                        <img src="assets/img/UserDCR.png" alt="Image description">
-                      </figure>
-                    </li>
-
-                    <li class="sticky-feature__media-item js-sticky-feature__media-item">
-                      <figure class="sticky-feature__media-figure">
-                        <img src="assets/img/EmployeeViewNew.png" alt="Image description">
-                      </figure>
-                    </li>
-                  </ul>               
-                </div>
-              </div>
-            </div>
-          </section>
-          <div class="col-12 offset-0@xs">
-            <div class="text-component line-height-lg text-space-y-lg">
-              <h3>Some additional difference makers:</h3>
-              <ol class="text-points nobullet padding-y-sm">
-                <li class="text-points__item">
-                  <div class="text-points__content">
-                    <h4>Accessibility</h4>
-                    <p>Through our interviews, we discovered that within just a session or two, most users with disabilities opted to bypass the website experience and directly download documents to their computers. They did this to utilize their assistive tools, as the default document viewing experience on Amazon lacked screen readability.<a class="" href="#accessibility">Jump to details</a></p>
-                  </div>
-                </li>          
-                <li class="text-points__item">
-                  <div class="text-points__content">
-                    <h4>Employee vs. Document Search</h4>
-                    <p>I advocated for and facilitated the change in the default search approach from document-based to employee-based. As a result, workflows became faster, and automation increased significantly, ultimately saving substantial operational time per person.<a class="" href="#empvsdoc">Jump to details</a></p>
-                  </div>
-                </li>           
-                <li class="text-points__item">
-                  <div class="text-points__content">
-                    <h4>Document completion dates</h4>
-                    <p>In an effort to increase document completion rates, and also present a more welcoming and informative document experience.<a class="" href="#docdates">Jump to details</a></p> 
-                  </div>
-                </li>
-
-              </ol>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-  </section>
-
-   
-
-
-  <!-- text content -->
-  <section  id="gtktm" class="position-relative z-index-1 padding-y-xl">
-    <div class="position-relative z-index-2">
-      <div class="container max-width-lg">
-        <div class="grid gap-sm">
-          <div class="col-8@md">
-            <h1 class="text-xxxl">Getting to know the team</h1>
-            <div class="color-primary margin-bottom-sm">Who am I working with and how can I add value?</div>
-          </div>
-          <div class="col-10 offset-0@xs offset-2@md col-8@lg padding-y-lg">
-            <div class="text-component line-height-lg text-space-y-lg">
-              <p>I didn’t want to just solve problems; I aimed to understand the most effective way to articulate why my solution addresses those issues compellingly. This approach fosters agreement and gains support to move forward. Given the countless number of people involved in the design process—depending on the stage, scope, timing, and other factors—it was my responsibility to ensure maximum effectiveness, regardless of the audience or setting.</p>
-              <p>After meeting the team and anyone handing off work to me, I set off to talk with the prior design and
-                research team to get a hold of any research and information. I would end up bothering them for a very
-                long time slowly gathering pieces and parts while putting together my own investigation in ways of
-                gathering and making sense for not only myself, but for the rest of the team as well. My findings were
-                going to be their's as well.</p>
-              <p>Some of the work I inherited were Heuristic evaluations, usability tests, SUS scores, and every known
-                persona and journey form pre-hire to alumni. All of this research allowed me to focus on
-                studying and benchmarking instead of doing initial evaluations. I was able to evaluate the performance of
-                changes right away.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- text content -->
-  <section id="pre-discovery" class="position-relative z-index-1 padding-y-xl bg-contrast-lower bg-opacity-30%">
-    <div class="position-relative z-index-2">
-      <div class="container max-width-lg">
-        <div class="grid gap-sm">
-          <div class="col-8@md">
-            <h1  class="text-xxxl">What did we already have?</h1>
-            <div class="color-primary margin-bottom-sm">Pre-Discovery</div>
-          </div>
-          <div class="col-10 offset-0@xs offset-2@md col-8@lg padding-y-lg">
-            <div class="text-component line-height-lg text-space-y-lg">
-              <p>In order to fully grasp the scope of existing work, research, and knowledge, I initiated a thorough review process. My primary goal was to understand the current situation better than anyone else. Over the initial few months, I conducted intensive interviews with the previous team, examined existing documentation, and held frequent sync-ups with project managers to gather all relevant information.</p>
-              <p>Interestingly, a significant portion of this invaluable work had not been previously shared with this specific team.  to gain a fresh and more critical perspective on the work they had been doing. The information was there, it just hadn't been socialized to a relevant group of people. T As a result, we not only saved research time but also fostered an environment where we were all aligned and learning together. The prevalence of “but I thought” conversations decreased significantly.</p>
-                <div class="text-component__block text-component__block--outset">
-                  <div class="grid gap-xs">
-                    <figure class="col">
-                      <img src="assets/img/JTBD-Grouped.png" alt="Image description here">
-                      <figcaption>Some of the key tasks broken down by product/feature.</figcaption>
-                    </figure>
-              
-                    <figure class="col">
-                      <img src="assets/img/Journeys-Grouped.png" alt="Image description here">
-                      <br>
-                      <img src="assets/img/UIBreakdown.png" alt="Image description here">
-                      <figcaption>Various journeys representing the current and future states.</figcaption>
-                    </figure>
-                  </div>
-                </div>
-              <p>y leveraging available information, we expedited a three-year plan and prioritized tasks more effectively. The early integration of design provided a platform for all teams to collaborate efficiently. Prior to this, the process was fragmented and lacked an effective way to consolidate, align, and advance together. Now, with a centralized repository for our designs, we can hold ideas and facilitate asynchronous conversations more effectively.</p>
-              <p>Transforming this analysis into a roadmap allowed each team to provide precise estimates, taking into
-                account all contextual factors, leading to a significant decrease in planning uncertainties. By
-                delivering UX work ahead of development, we could accommodate inevitable adjustments and effectively
-                manage multiple concurrent work streams.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-   <!-- overscroll gallery   -->
-   <section id="discovery" class="position-relative z-index-1  bg-dark" data-theme="dark">
-    <div class="position-sticky z-index-1 top-0 ">
-      <div class="container max-width-sm height-100vh flex flex-center">
-        <blockquote class="text-center padding-y-xxl">
-          <svg class="icon icon--xxl color-contrast-lower" aria-hidden="true" viewBox="0 0 64 64">
-            <polygon fill="currentColor" points="2 36 17 2 26 2 15 36 26 36 26 62 2 62 2 36" />
-            <polygon fill="currentColor" points="38 36 53 2 62 2 51 36 62 36 62 62 38 62 38 36" />
-          </svg>
-          <div class="text-component margin-top-lg">
-            <p class="text-xl">It always comes down to a person.</p>
-          </div>
-          <footer class="margin-top-lg">&mdash; A Human Resources Admin during an interview</footer>
-        </blockquote>
-      </div>
-    </div>
-    
-    <div class="position-relative z-index-2 padding-y-xl bg-dark">
-      <div class="container max-width-adaptive-lg">
-        <div class="overscroll-gallery m">       
-          <h1  class="text-xxxl">Documents don't exist without people</h1>
-                  <div class="color-primary margin-bottom-sm">Discovery</div>
-                <div class="col-10 offset-0@xs offset-2@md col-8@lg padding-y-lg">
-                  <div class="text-component line-height-lg text-space-y-lg">
-                    <p>Document management is indeed centered around documents, but these documents lack purpose without people. Whether it’s the individuals working diligently or the governing bodies within the countries they operate in, it’s ultimately people who give meaning and context to these documents. In essence, it’s people all the way down.</p>
-    
-                    <p>The initial discussions, grounded in research, along with various organizational prioritization meetings, ensured that UX held a substantial role in the decision-making process. This beneficial context allowed me to work independently, without the need to divide my responsibilities too thinly.</p>
-                    <p>With everyone on the team now sharing a unified understanding, I facilitated workshops to gather sufficient information for informed decision-making. Collaboratively, we developed both current and future user journeys, as well as story maps. This was achieved by merging our internal understanding and user knowledge, which together painted a comprehensive picture of both the perceived and backend user experiences./p>
-                    <p>During these sessions, we focused on creating a comprehensive view of the employee document
-                      experience, including tab and context switching. Most services were distributed across various tools
-                      depending on the needs of the HR representative.</p> 
-                    <ul class="bg-primary bg-opacity-10% padding-md border-left border-3 border-primary list list--ul">
-                      <li>What was the current experience like?</li>
-                      <li>Biggest points of frustration?</li>
-                      <li>What needs were not being met?</li>
-                      <li>Which jobs to be done needed to be accounted for, but weren’t being addressed?</li>
-                      <li>Once we had a universal understanding of the experience we were ready to define and plan.</li>
-                    </ul>
-                    <p>While developing the user journeys, we recorded screenshots, notes, journey paths, and time spent on
-                      each relevant task. This allowed us to establish benchmarks for measuring the impact of changes. It
-                      also highlighted the various factors and the scope influenced by these roles, leading us to discover
-                      new teams for collaboration and communication.</p>  
-                    <h2>Automating document storage workflows</h2>
-                    <p>One of the intriguing realizations I had while working on this project is that while the concept of digital files seems straightforward, where it's stored is an extremely important
-                      requirement. It's one of those aspects that makes you realize how concepts such as where a file is stored
-                      is often taken for granted. As we started to dig into the requirements, it was very clear that we had to
-                      establish some type of logic based system where rules are applied leveraging attributes and system
-                      information in ordert to automate many of these tasks. Converting thousands of manually created rules
-                      that determined which employee received which documents was a monster of a task that revealed just how
-                      different each country can be. For example, Germany has Work Councils, that by concept offer better
-                      treatment for employees, but also require wet (physical) signatures in a digital age.</p>
-                  </div>
-                </div>
-      
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- text content -->
-  <section id="define" class="position-relative z-index-1 padding-y-xl lightBG">
-    <div class="position-relative z-index-2">
-      <div class="container max-width-lg">
-        <div class="grid gap-sm">
-          <div class="col-8@md">
-            <h1 class="text-xxxl">An Amazon worthy experience</h1>
-            <div class="color-primary margin-bottom-sm">Define</div>
-          </div>
-          <div class="col-10 offset-0@xs offset-2@md col-8@lg padding-y-lg">
-            <div class="text-component line-height-lg text-space-y-lg">
-              <p>To grasp the scope of existing work, research, and knowledge, I started a comprehensive review
-                process of evaluating what information we already had so I could understand the current situation
-                better than anyone as the goal. The first few months were occupied with intensive interviews with the
-                previous team, extensive examination of existing documentation, and frequent sync-ups with project
-                managers to gather all pertinent information.</p>
-              <p>Interestingly, much of this invaluable work had not been previously shared with this specific team.
-                It was a great opportunity for everyone to get a fresh and more critical look at the work they had been
-                doing. The information was there, just not socialized to a very relevant group of people. This not only saved
-                research time, but also created an environment where we were all on the same page. Everyone understood together, and there was much less “but I thought” conversation happening.
-              </p>
-              <p>By leveraging available information, we were able to expedite a three-year plan and prioritize tasks
-                more effectively. The early integration of design provided a platform for all teams to collaborate
-                efficiently. Prior to this, the process was fragmented and lacked an effective way to consolidate,
-                align, and advance together. Now, with a centralized repository for our designs, we could hold ideas
-                and facilitate asynchronous conversations more effectively.</p>
-              <p>Transforming this analysis into a roadmap allowed each team to provide precise estimates, taking into
-                account all contextual factors, leading to a significant decrease in planning uncertainties. By
-                delivering UX work ahead of development, we could accommodate inevitable adjustments and effectively
-                manage multiple concurrent work streams.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- text content -->
-  <section id="develop" class="position-relative z-index-1 padding-y-xl " data-theme="light">
-    <div class="position-relative z-index-2">
-      <div class="container max-width-lg">
-        <div class="grid gap-sm">
-          <div class="col-8@md">
-            <h1 class="text-xxxl">Getting to production</h1>
-            <div class="color-primary margin-bottom-sm">Develop</div>
-          </div>
-          <div class="col-10 offset-0@xs offset-2@md col-8@lg padding-y-lg">
-            <div class="text-component line-height-lg text-space-y-lg">
-              <p>The development phase of our project held significant value and importance. Primarily, it was an
-                instrumental period that provided an opportunity to enhance the operational procedures for the new
-                team. It served as a pivotal point where all efforts, strategies, and plans culminated into an
-                actionable process. During this phase, every team member was actively involved, contributing their
-                specific skills and expertise, and working collaboratively to ensure the success of the project. </p>
-              <p>Furthermore, this was the phase where we could establish open communication and dialogue with our
-                users. It was during this time that we could put our product to the test, identify areas of
-                improvement, and incorporate user feedback into our development process. This interactive process not only resulted in a significant improvement in the quality of our product, but it also facilitated the development of lasting relationships with our administrative users.</p>
-              <p>These relationships have proven invaluable, as the individuals we connected with during the
-                development phase still continue to provide us with insightful and constructive feedback from their
-                respective teams. Their continued involvement and willingness to share experiences with our
-                product have greatly contributed to the quality of the product being delivered.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- text content -->
-  <section id="globallaunch" class="position-relative z-index-1 padding-y-xl lightBG" data-theme="light">
-    <div class="position-relative z-index-2">
-      <div class="container max-width-lg">
-        <div class="grid gap-sm">
-          <div class="col-8@md">
-            <h1 class="text-xxxl">Progressive global launching</h1>
-            <div class="color-primary margin-bottom-sm">Deliver</div>
-          </div>
-          <div class="col-10 offset-0@xs offset-2@md col-8@lg padding-y-lg">
-            <div class="text-component line-height-lg text-space-y-lg">
-              <p>After establishing a comprehensive plan, we took advantage of these progressive launches, treating each as an opportunity to conduct User Acceptance Tests (UATs). Executing UATs in small, real-world groups allowed us to gather valuable feedback and insights into the usability and functionality of the tool. This strategic approach was designed to ensure that the vast majority of the users, who represented the primary populations, received a thoroughly vetted and tested user-experience.</p>
-              <p>Following the initial launch, we conducted a rigorous round of bug fixing. This consisted of internal bug bashing sessions (a HUGE thank you to the development team if they ever see this), in addition to feedback sessions in the various geographic regions as the groups of countries were launched.  Any remaining issues, whether minor or significant, were promptly addressed. If the problems couldn't be resolved immediately, they were scheduled as a fast-follow task or added to our backlog for future attention. This method ensured that we were constantly refining and improving the user experience, even after the product was live.</p>
-              <p>An important aspect to consider was that our launches were always phased due to various country-specific limitations. These limitations often resulted in multiple mini-product launches. While this method fragmented the launch process, it was necessary to accommodate the differing requirements and regulations of each country.</p>
-              <p>This phased approach had a dual impact. On one hand, it simplified each individual launch by reducing the scope and scale of each phase. On the other hand, it could occasionally elevate cognitive and operational strain. The process of coordinating and managing multiple mini-launches could be challenging and required careful planning and organization.</p>
-              <p>Despite the challenges, this approach proved beneficial. It allowed us to adapt and respond to user feedback in real-time and ensured that each user group received a thoroughly tested and refined user experience. It also allowed us to continually refine and improve our product, ensuring that we delivered the highest quality tool to our users.</p>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<!-- overscroll gallery   -->
-<section id="mainlaunch" class="position-relative z-index-1  bg-dark" data-theme="dark">
-  <div class="position-sticky z-index-1 top-0 ">
-    <div class="container max-width-sm height-100vh flex flex-center">
-      <blockquote class="text-center padding-y-xxl">
-        <svg class="icon icon--xxl color-contrast-lower" aria-hidden="true" viewBox="0 0 64 64">
-          <polygon fill="currentColor" points="2 36 17 2 26 2 15 36 26 36 26 62 2 62 2 36" />
-          <polygon fill="currentColor" points="38 36 53 2 62 2 51 36 62 36 62 62 38 62 38 36" />
-        </svg>
-        <div class="text-component margin-top-lg">
-          <p class="text-xl">I appreciate the effort you put into something that is often taken for granted... Especially for employees who need accessible administrative and internal tools.</p>
-        </div>
-        <footer class="margin-top-lg">&mdash; Stakeholder + collective sentiment</footer>
-      </blockquote>
-    </div>
-  </div>
-  
-  <div class="position-relative z-index-2 padding-y-xl bg-dark">
-    <div class="container max-width-adaptive-lg">
-      <div class="overscroll-gallery m">
-        <h1 class="text-xxxl">The Main Launch</h1>
-                <div class="color-primary margin-bottom-sm">The Launch</div>
-                <div class="device-group-3 max-width-adaptive-sm items-center">
-                  <div class="dev-phone dev-phone--top-light" aria-label="Image description">
-                    <div class="dev-phone__body">
-                      <div class="dev-phone__media">
-                        <div class="dev-phone__notch"></div>
-                      
-                          <img class="block" src="assets/img/BulkGenerate-Phone.png" alt="Apple Store badge">
-                      
-                      </div>
-                    </div>
-                    <div class="dev-phone__shadow"></div>
-                  </div>  
-                  <div class="dev-desktop " aria-label="Image description">
-                    <div class="dev-desktop__body">
-                      <div class="dev-desktop__media">
-                        <img class="block" src="assets/img/EmployeeDocs-Launch.png" alt="Apple Store badge">
-                      </div>
-                    </div>
-                    <div class="dev-desktop__base">
-                      <div class="dev-desktop__base-top"></div>
-                      <div class="dev-desktop__base-bottom"></div>
-                      <div class="dev-desktop__shadow"></div>
-                    </div>
-                  </div>
-                </div>
-              <div class="col-10 offset-0@xs offset-2@md col-8@lg padding-y-lg">
-                <div class="text-component line-height-lg text-space-y-lg">
-                  <p>Document management is not just about documents, but also about the people who use them and the context in which they operate. This concept was a key driver behind the creation of Amazon's initial first-party solution for document management, designed for both users and administrators.</p>
-                  <p>Everyone applying for an opportunity deserves an accessible, trustworthy, and top-quality experience. This approach allows Amazon not only to evaluate but also scale its services, ensuring that a world-class experience remains so.</p>
-                  <p>The initial discussions grounded in research, along with various organizational prioritization
-                    meetings, ensured that UX held a substantial role in the decision-making process. This beneficial
-                    context allowed me to work independently, without the need to divide my responsibilities to many
-                    times.</p>                 
-                </div>
-              </div>
-    
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- text content -->
-<section id="challenges" class="position-relative z-index-1 padding-y-xl" data-theme="light">
-  <div class="position-relative z-index-2">
-    <div class="container max-width-lg">
-      <div class="grid gap-sm">
-        <div class="col-8@md">
-          <h1 class="text-xxxl">Overcoming Obstacles</h1>
-          <div class="color-primary margin-bottom-sm">Key Challenges</div>
-        </div>
-        <div class="col-10 offset-0@xs offset-2@md col-8@lg padding-y-lg">
-          <div class="text-component line-height-lg text-space-y-lg">
-            <p>Challenges breathe life into a project, and create the interesting narratives and stories you end up telling about those projects. Whether on interviews or perhaps onstage at some point. The presence of humans inherently introduces complexities, making it virtually impossible for a project to be devoid of challenges. Here, I recount some of the most significant, intriguing, and arduous obstacles I faced during the course of this project.</p>
-          </div>
-        </div>
-        <div class="col-12 padding-y-xs">
-          <ul class="grid gap-xs">
-            <li>
-              <div class="grid gap-xs">
-                <div class="flex items-center col-12" data-theme="dark">
-                  <div class="padding-md padding-x-lg@lg padding-y-xl@lg">
-                    <div class="text-sm color-contrast-medium margin-bottom-xxxs">Changing from a document search to a person search</div>
-            
-                    <div class="text-component">
-                      <h2 class="text-xxl">Employee Search</h2>
-                      <p class="margin-top-md">The research conducted in addition to a number of normal conversations with internal team and users highlighted the crucial relationship between people and documents, underscoring the need for more efficient search functionality. The existing software's limitations necessitated the introduction of different filters and attributes. The challenge was to innovate and change the product based on these insights rather than merely improving current functionalities, which involved understanding new friction points and ensuring intuitive feature learnability.</p>
-            <p>Throughout the project, I noticed a recurring theme: the relationship between people and documents. The existing software permitted admins to search only by exact person IDs or documents, which was not entirely logical.</p>
-            <p>In our research, we emphasized this theme and made some intriguing discoveries. We found that different attributes and filters are crucial for people and documents. Furthermore, we realized that a document does not exist without a person, reinforcing the human aspect of document management.</p>
-            <p>The real challenge was not simply improving existing features, but innovatively changing the product based on our research. This required understanding new friction points and ensuring that the feature was intuitive to learn.</p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-    
-            <li>
-              <div class="grid gap-xs">
-                <div class="flex items-center col-12 lightBG" data-theme="light">
-                  <div class="padding-md padding-x-lg@lg padding-y-xl@lg">
-                    <div class="text-sm color-contrast-medium margin-bottom-xxxs">Cost savings strategies</div>
-                    <div class="text-component">
-                      <h2 class="text-xxl">Cost Savings and Frugality</h2>
-                      <p class="margin-top-md">Amazon implemented a cost-saving measure by consolidating all signature-required documents into a single document. This approach allowed for a single charge while obtaining three completed signatures. However, this method often led to confusion among users during the signing process, as they were uncertain about the specific document being signed or the total number of included documents.</p>
-                      <p>The primary issues identified included:</p>
-                      <ul class="bg-primary bg-opacity-10% padding-md border-left border-3 border-primary list list--ul">
-                        <li>A lack of clarity regarding the included documents</li>
-                        <li>Uncertainty about the document currently being signed due to the ‘snap to signature’ feature, which bypasses document titles. </li>
-                        <li>All signatures had to be executed at once. Any signatures made were not saved until submission.</li>
-                      </ul>
-            <p>The multiple signatures, coupled with i-frame issues, often resulted in users inadvertently signing several documents without their knowledge. We are still striving to resolve this issue while also considering its economic implications.</p>
-            <p>Given the significant cost savings and the prohibitive cost of change, we had to make a decision: modify the service or the user experience. We chose to maintain the service and enhance the user experience.</p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-            <li>
-              <div class="grid gap-xs">
-                <div class="flex items-center col-12" data-theme="dark">
-                  <div class="padding-md padding-x-lg@lg padding-y-xl@lg">
-                    <div class="text-sm color-contrast-medium margin-bottom-xxxs">Document management language and vocabulary</div>
-                    <div class="text-component">
-                      <h2 class="text-xxl">Documents, Files, Hierarchy</h2>
-                      <p class="margin-top-md">Differing interpretations of documents and files led to language challenges in Employee Document Management (EDM). Standardizing language and accounting for exceptions to rules or standards was crucial for scalability. For example, document collection requests, categorized as documents, also make requests and contain other documents, all of which could appear individually in a search.</p>
-                      <p>Initially, differing mental models of what constitutes documents and files led to language challenges, particularly among administrators and users. This confusion extended beyond internal discussions.</p>
-                      <p>Debates also emerged about the differences between documents and files, and how files within documents were perceived as items on a computer during upload processes. Establishing a standardized language and vocabulary was critical.</p>
-                      <p>We had to account for specific cases that deviated from rules or standards, ensuring we could scale effectively in unexpected ways. For instance, consider document collection requests. These items are classified as documents, but they are a type of document that also makes requests and contains other documents. Keep in mind, during a search, all of these documents could appear individually in a document search due to the structure we modeled based on our best insights</p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div id="docdates" class="grid gap-xs">
-                <div class="flex items-center col-12 lightBG" data-theme="light">
-                  <div class="padding-md padding-x-lg@lg padding-y-xl@lg">
-                    <div class="text-sm color-contrast-medium margin-bottom-xxxs">Document Completion Dates</div>
-                    <div class="text-component">
-                      <h2 class="text-xxl">Depending on how you position it, dates can either help or hinder your experience</h2>
-                      <p class="margin-top-md">We encountered a challenge due to the lack of a system enforcing document completion. Documents originated from various teams across multiple countries, resulting in no standardized completion or signing mechanism. This reliance on manual follow-up led to a significantly higher number of incomplete documents than the legal team deemed acceptable.</p>
-                      <p>I started my work by working with the team to identify number of employees with incomplete documents and interviewed them. While doing this a encountered one user who really put all the pieces together for me. They stated:</p>
-                      <blockquote class="text-lg text-center line-height-md margin-bottom-md">Can you remove the overdue documents? They're distracting."</blockquote>
-                      <p>Traditionally, document management systems faced a critical user behavior hurdle: low engagement. People primarily accessed the system to find documents they'd already completed, lacking motivation to proactively update or submit new information. This resonated with me – it highlighted the missing piece to understanding user behavior. There was simply no inherent urgency for them. Without someone actively reminding them, many wouldn't prioritize completing documents.
-                      <strong><mark>The Root Cause: Lack of Perceived Value.</mark></strong>
-                        One key factor contributing to this apathy was the users' unclear understanding of the purpose behind document completion.  Unless information was explicitly required, they didn't see the value in providing it.</p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- text content -->
-<section id="impactdetails" class="position-relative z-index-1 padding-y-xl lightBG" data-theme="light">
-  <div class="position-relative z-index-2">
-    <div class="container max-width-lg">
-      <div class="grid gap-sm">
-        <div class="col-8@md">
-
-
-          <h1 class="text-xxxl">Impacts in Detail</h1>
-          <div class="color-primary margin-bottom-sm">Additional impacts and details</div>
-        </div>
-
-        <div class="col-10 offset-0@xs offset-2@md col-8@lg padding-y-lg">
-          <div class="text-component line-height-lg text-space-y-lg">
-            <p>These are some additional things that I wanted to cover and that weren't covered but still have noticeable impact on the experience. Especially the changes for searching employees and the positive impacts it had on admin workflows and time spent on tasks.</p>
-          </div>
-        </div>
-        <div class="col-12 padding-y-xs">
-          <ul class="grid gap-xs">
-            <li id="accessibility">
-              <div class="grid gap-xs">
-                <div class="flex items-center col-12" data-theme="dark">
-                  <div class="padding-md padding-x-lg@lg padding-y-xl@lg">
-                    <div class="text-sm color-contrast-medium margin-bottom-xxxs">Changing from a document seasrch to a person search</div>
-                    <div class="text-component">
-                      <h2 class="text-xxl">Accessibility</h2>
-                      <p class="margin-top-md">As previously mentioned, during our interviews, it quickly became apparent that most users with disabilities would bypass the website experience and download documents directly to their computers. This allowed them to use their assistive tools, as the default document viewing experience on Amazon wasn’t screen-readable. This unique situation put a spin on testing, as it’s rare that users completely circumvent the product we’re supposed to be testing.</p>
-                      <p>This made the sessions both interesting and challenging, as these individuals had to painstakingly navigate a process that wasn’t designed with anyone outside of a fully able-bodied person in mind. As we navigated the UI together, we encountered several poor and downright experience-blocking issues that made it nearly impossible to do anything beyond the required functions. Reading, understanding, and navigating weren’t options unless the documents were downloaded.</p>
-                      <p>While this was disheartening, it was also motivating. Here was an opportunity to truly influence positive change and directly improve people’s lives.</p>
-                      <p>The first step was to create a better reading experience for everyone, not just individuals with disabilities. This involved working with developers and reviewing different libraries and solutions to determine which best fit our needs. We ended up using the Mozilla PDF reader, which is fully accessible and offered everything we needed with minimal operational impact. We did encounter some challenges where documents that required signatures couldn’t leverage this new tool, so we had to create a solution for that later, which also involved financial and legal teams.</p>
-                      <p>After creating and testing the new PDF reader, I revisited our participants from our last session and introduced a few new people as well. The feedback was overwhelmingly positive, and the impact on people’s lives was palpable. The way they spoke was heartwarming. Adults were genuinely happy that people had considered them. The Accommodation team reached out to me personally, and we had a lovely conversation about the type of work this represented and how it affected people differently than a typical product improvement.</p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-    
-            <li id="empvsdoc">
-              <div class="grid gap-xs">
-                <div class="flex items-center col-12" data-theme="light">
-                  <div class="padding-md padding-x-lg@lg padding-y-xl@lg">
-                    <div class="text-sm color-contrast-medium margin-bottom-xxxs">How to change a long term mental model of operations within an organization</div>
-                    <div class="text-component">
-                      <h2 class="text-xxl">Employee vs. Document Search</h2>
-                      <p class="margin-top-md">For quite some time, the entire paradigm of document management revolved around documents themselves—finding them, editing them, organizing, and storing them. The software tools we used were built with documents at the core, and everyone had grown accustomed to this approach. However, what I noticed was that despite the documents being the tasks at hand, we were missing the <mark>'WHY'</mark>behind managing those documents: it was all about people. I then created designs exploring an employee-based search, which revealed a number of workflows that could be signifigantly improved, that had just not taken this approach yet.</p>
-                      <p>I proposed enabling a search feature with distinct ‘modes’: one for employee-based searching and another for documents. That way, the user had flexibilty to complete the task if it contained bulk actions or complex contexts that might span across multiple people.</p>
-                      <p>Documents are only needed because of people.</p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-    
-
-    <!-- footer -->
-    <footer class="footer-v6">
-      <div class="container max-width-lg">
-        <div
-          class="padding-y-xl border-bottom border-contrast-higher border-opacity-10% margin-bottom-lg margin-bottom-xl@md">
-          <div class="flex flex-column gap-xs flex-row@md justify-between@md items-center@md">
-            <div>
-              <h1>Hello there. Welcome to the footer.</h1>
-            </div>
-          </div>
-        </div>
-
-        
-
-
     </footer>
-    <script src="assets/js/scripts.js"></script>
-</body>
 
+    <script src="../js/main.js"></script>
+  </body>
 </html>

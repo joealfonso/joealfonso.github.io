@@ -1,105 +1,39 @@
-$(document).ready(function () {
-	$('.scroll_to').click(function (e) {
-		var jump = $(this).attr('href');
-		
-		var new_position = $(jump).offset();
-		$('html, body').stop().animate({ scrollTop: new_position.top }, 750);
-		e.preventDefault();
-	});
+// main.js — entry point
 
-	//--------------------------------------
-	//NAV-----------------------------------
-	//--------------------------------------
-	var mainHeader = $('.cd-auto-hide-header'),
-		secondaryNavigation = $('.cd-secondary-nav'),
-		//this applies only if secondary nav is below intro section
-		belowNavHeroContent = $('.sub-nav-hero'),
-		headerHeight = mainHeader.height();
-	
-	//set scrolling variables
-	var scrolling = false,
-		previousTop = 0,
-		currentTop = 0,
-		scrollDelta = 10,
-		scrollOffset = 150;
+document.addEventListener('DOMContentLoaded', () => {
 
-	mainHeader.on('click', '.nav-trigger', function(event){
-		// open primary navigation on mobile
-		event.preventDefault();
-		mainHeader.toggleClass('nav-open');
-	});
+  // ─── Rotating hero text ───────────────────────────────────────────────────
+  // Cycles through phrases in the hero headline with a smooth fade transition.
+  const rotateEl = document.getElementById('js-rotate');
 
-	$(window).on('scroll', function(){
-		if( !scrolling ) {
-			scrolling = true;
-			(!window.requestAnimationFrame)
-				? setTimeout(autoHideHeader, 250)
-				: requestAnimationFrame(autoHideHeader);
-		}
-	});
+  if (rotateEl) {
+    const phrases = [
+      'designs at scale.',
+      'mentors the next generation.',
+      'navigates AI with intention.',
+      'is a positive disruptor.',
+      'makes the complex feel simple.',
+    ];
 
-	$(window).on('resize', function(){
-		headerHeight = mainHeader.height();
-	});
+    let current = 0;
 
-	function autoHideHeader() {
-		var currentTop = $(window).scrollTop();
+    const FADE_MS = 900;   // how long the fade out/in takes
+    const HOLD_MS = 2500;  // how long each phrase stays visible
 
-		( belowNavHeroContent.length > 0 ) 
-			? checkStickyNavigation(currentTop) // secondary navigation below intro
-			: checkSimpleNavigation(currentTop);
+    const cycle = () => {
+      // Fade out
+      rotateEl.classList.add('is-fading');
 
-	   	previousTop = currentTop;
-		scrolling = false;
-	}
+      setTimeout(() => {
+        current = (current + 1) % phrases.length;
+        rotateEl.textContent = phrases[current];
 
-	function checkSimpleNavigation(currentTop) {
-		//there's no secondary nav or secondary nav is below primary nav
-	    if (previousTop - currentTop > scrollDelta) {
-	    	//if scrolling up...
-	    	mainHeader.removeClass('is-hidden');
-	    } else if( currentTop - previousTop > scrollDelta && currentTop > scrollOffset) {
-	    	//if scrolling down...
-	    	mainHeader.addClass('is-hidden');
-	    }
-	}
+        // Fade back in
+        rotateEl.classList.remove('is-fading');
+      }, FADE_MS);
+    };
 
-	function checkStickyNavigation(currentTop) {
-		//secondary nav below intro section - sticky secondary nav
-		var secondaryNavOffsetTop = belowNavHeroContent.offset().top - secondaryNavigation.height() - mainHeader.height();
-		
-		if (previousTop >= currentTop ) {
-	    	//if scrolling up... 
-	    	if( currentTop < secondaryNavOffsetTop ) {
-	    		//secondary nav is not fixed
-	    		mainHeader.removeClass('is-hidden');
-	    		secondaryNavigation.removeClass('fixed slide-up');
-	    		belowNavHeroContent.removeClass('secondary-nav-fixed');
-	    	} else if( previousTop - currentTop > scrollDelta ) {
-	    		//secondary nav is fixed
-	    		mainHeader.removeClass('is-hidden');
-	    		secondaryNavigation.removeClass('slide-up').addClass('fixed'); 
-	    		belowNavHeroContent.addClass('secondary-nav-fixed');
-	    	}
-	    	
-	    } else {
-	    	//if scrolling down...	
-	 	  	if( currentTop > secondaryNavOffsetTop + scrollOffset ) {
-	 	  		//hide primary nav
-	    		mainHeader.addClass('is-hidden');
-	    		secondaryNavigation.addClass('fixed slide-up');
-	    		belowNavHeroContent.addClass('secondary-nav-fixed');
-	    	} else if( currentTop > secondaryNavOffsetTop ) {
-	    		//once the secondary nav is fixed, do not hide primary nav if you haven't scrolled more than scrollOffset 
-	    		mainHeader.removeClass('is-hidden');
-	    		secondaryNavigation.addClass('fixed').removeClass('slide-up');
-	    		belowNavHeroContent.addClass('secondary-nav-fixed');
-	    	}
-
-	    }
-	}
-	//--------------------------------------
-	//END NAV-------------------------------
-	//--------------------------------------
+    setInterval(cycle, HOLD_MS + FADE_MS);
+  }
 
 });
