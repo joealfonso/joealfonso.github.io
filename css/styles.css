@@ -409,7 +409,7 @@ section + section {
 .hero__orb--1 {
   width: 700px;
   height: 700px;
-  background: radial-gradient(circle at center, var(--orb-1, rgba(0, 82, 204, 0.15)) 0%, transparent 70%);
+  background: radial-gradient(circle at center, var(--orb-1, rgba(0, 82, 204, 0.30)) 0%, transparent 70%);
   top: -220px;
   right: -180px;
   animation: orb-float-1 20s ease-in-out infinite alternate;
@@ -418,7 +418,7 @@ section + section {
 .hero__orb--2 {
   width: 520px;
   height: 520px;
-  background: radial-gradient(circle at center, var(--orb-2, rgba(99, 102, 241, 0.12)) 0%, transparent 70%);
+  background: radial-gradient(circle at center, var(--orb-2, rgba(99, 102, 241, 0.24)) 0%, transparent 70%);
   bottom: -160px;
   left: -120px;
   animation: orb-float-2 25s ease-in-out infinite alternate;
@@ -427,7 +427,7 @@ section + section {
 .hero__orb--3 {
   width: 380px;
   height: 380px;
-  background: radial-gradient(circle at center, var(--orb-3, rgba(14, 165, 233, 0.09)) 0%, transparent 70%);
+  background: radial-gradient(circle at center, var(--orb-3, rgba(14, 165, 233, 0.18)) 0%, transparent 70%);
   top: 40%;
   left: 42%;
   transform: translate(-50%, -50%);
