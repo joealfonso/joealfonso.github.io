@@ -30,6 +30,14 @@
         r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
         r.style.setProperty('--color-accent-hover',  dark ? p.accentHoverDark  : p.accentHover);
         r.style.setProperty('--color-accent-subtle', dark ? p.accentSubtleDark : p.accentSubtle);
+        // Derive orb colors from the selected accent so they change each load
+        var hex = (dark ? p.accentDark : p.accent).replace('#', '');
+        var rv = parseInt(hex.slice(0, 2), 16);
+        var gv = parseInt(hex.slice(2, 4), 16);
+        var bv = parseInt(hex.slice(4, 6), 16);
+        r.style.setProperty('--orb-1', 'rgba(' + rv + ',' + gv + ',' + bv + ',0.30)');
+        r.style.setProperty('--orb-2', 'rgba(' + rv + ',' + gv + ',' + bv + ',0.20)');
+        r.style.setProperty('--orb-3', 'rgba(' + rv + ',' + gv + ',' + bv + ',0.15)');
       })();
     </script>
   </head>
