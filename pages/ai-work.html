@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K17M6WE3GP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K17M6WE3GP');
+  </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Design &amp; Tooling | Joseph Alfonso</title>
+    <meta name="description" content="How I design AI-powered products and build the automation tools that make design work faster, smarter, and more human." />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script>
+      (function () {
+        var palettes = [
+          { accent: '#0052CC', accentHover: '#003D99', accentSubtle: '#EBF2FF',   accentDark: '#4D94FF', accentHoverDark: '#7AB3FF', accentSubtleDark: '#0F1E38' },
+          { accent: '#0D9488', accentHover: '#0F766E', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
+          { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
+          { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
+          { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
+        ];
+        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var p = palettes[Math.floor(Math.random() * palettes.length)];
+        var r = document.documentElement;
+        r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
+        r.style.setProperty('--color-accent-hover',  dark ? p.accentHoverDark  : p.accentHover);
+        r.style.setProperty('--color-accent-subtle', dark ? p.accentSubtleDark : p.accentSubtle);
+      })();
+    </script>
+  </head>
+  <body>
+
+    <!-- NAV -->
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="nav__logo">Joseph Alfonso</a>
+        <ul class="nav__links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- CASE STUDY HEADER -->
+      <section class="case-study-header container">
+        <p class="case-study-header__eyebrow eyebrow">AI Design &amp; Tooling &middot; Ongoing</p>
+        <h1 class="case-study-header__title">Designing for AI — and building the tools that make it possible</h1>
+        <p class="case-study-header__summary">
+          Most designers work with AI. I also build with it. Over the past two years I've been designing AI-powered product features
+          at Amazon while simultaneously building the automation tooling — MCP servers, LangGraph agents, workflow pipelines —
+          that I use in my own design practice. That dual perspective shapes how I approach AI product work in ways
+          that purely design-side or purely engineering-side roles don't get.
+        </p>
+
+        <div class="case-study-meta">
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Role</p>
+            <p class="case-study-meta__value">Designer &amp; Builder</p>
+          </div>
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Context</p>
+            <p class="case-study-meta__value">Amazon + Personal projects</p>
+          </div>
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Timeline</p>
+            <p class="case-study-meta__value">2023–Present</p>
+          </div>
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Focus</p>
+            <p class="case-study-meta__value">AI product design, MCP servers, LangGraph agents</p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="divider container" />
+
+      <!-- SECTION: DESIGNING AI PRODUCTS -->
+      <section class="case-study-section container">
+        <div class="case-study-section__content">
+
+          <h2>Designing AI-powered products</h2>
+          <p>
+            At Amazon, designing for AI means navigating a set of problems that don't exist in traditional product work:
+            outputs are probabilistic, not deterministic; users form mental models based on one interaction that don't
+            generalize; and trust is fragile in ways that are hard to anticipate until something goes wrong.
+          </p>
+          <p>
+            My approach starts with the failure modes, not the happy path. When I'm designing an AI feature,
+            I spend as much time mapping what happens when the model gets it wrong — and how the interface
+            recovers — as I do on the primary flow. This is especially important in enterprise HR contexts,
+            where a confused or misleading AI output has real downstream consequences for real people.
+          </p>
+          <p>
+            A few principles I've developed through this work:
+          </p>
+
+          <div class="stat-block">
+            <div class="stat-block__item">
+              <p class="stat-block__value">Show, don't assert</p>
+              <p class="stat-block__label">AI should surface evidence and let users decide, not present conclusions as facts</p>
+            </div>
+            <div class="stat-block__item">
+              <p class="stat-block__value">Graceful degradation</p>
+              <p class="stat-block__label">Every AI feature needs a designed fallback — the experience can't collapse when confidence is low</p>
+            </div>
+            <div class="stat-block__item">
+              <p class="stat-block__value">Human in the loop</p>
+              <p class="stat-block__label">Enterprise AI must preserve accountability — who approved what, and when, always needs an answer</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <hr class="divider container" />
+
+      <!-- SECTION: BUILDING AI TOOLS -->
+      <section class="case-study-section container">
+        <div class="case-study-section__content">
+
+          <h2>Building AI tools for design work</h2>
+          <p>
+            Parallel to the product work, I've been building my own AI tooling. This started as curiosity — I wanted
+            to understand how these systems actually worked, not just how they appeared from the outside.
+            It's become a core part of how I work.
+          </p>
+
+          <h3>MCP servers</h3>
+          <p>
+            I've built and shipped several MCP (Model Context Protocol) servers that connect AI agents to external
+            services — design systems, documentation, research repositories, project tracking. The goal is to give
+            AI assistants real context about the work instead of making them operate on vague prompts. A server
+            that can pull the current design system tokens, recent usability findings, and open tickets simultaneously
+            is a fundamentally different collaborator than one working from memory.
+          </p>
+
+          <h3>LangGraph agents</h3>
+          <p>
+            I've used LangGraph to build multi-step research and synthesis agents — workflows that can gather
+            competitive information, surface patterns across user research sessions, and generate structured
+            design briefs with minimal manual input. These aren't replacements for design judgment. They're
+            tools that compress the time between "we need to understand X" and "here's what we know about X"
+            so that judgment can happen faster and with better information.
+          </p>
+
+          <h3>Why this matters for product work</h3>
+          <p>
+            Building these tools has changed how I design AI features. I understand the actual constraints —
+            context windows, tool-calling reliability, hallucination patterns, latency tradeoffs — not as
+            abstract engineering concerns but as things I've personally run into. When a product manager
+            says "can the AI just figure that out automatically?", I can give a grounded answer and propose
+            a design approach that works within the real constraints, not an idealized version of them.
+          </p>
+
+        </div>
+      </section>
+
+      <hr class="divider container" />
+
+      <!-- SECTION: PERSPECTIVE -->
+      <section class="case-study-section container">
+        <div class="case-study-section__content">
+
+          <h2>What I think about AI and design</h2>
+          <p>
+            The most important thing AI changes about design isn't the output — it's the speed of iteration and
+            the cost of a bad decision. When you can prototype five directions in an afternoon instead of a week,
+            the bottleneck shifts from making things to evaluating them. That puts a premium on the skills that
+            have always mattered most in senior design roles: knowing what question to ask, identifying which
+            signal to trust, and making a call when the data is ambiguous.
+          </p>
+          <p>
+            I'm not worried that AI makes designers less relevant. I'm more interested in what it makes possible
+            when designers know how to use it well — and how to design products that other people can use well too.
+          </p>
+
+        </div>
+      </section>
+
+      <hr class="divider container" />
+
+      <!-- CTA -->
+      <section class="case-study-section container">
+        <div class="about__links">
+          <a href="contact.html" class="btn btn--primary">Get in touch</a>
+          <a href="work.html" class="btn btn--secondary">View all work</a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">&copy; 2026 Joseph Alfonso</p>
+        <nav class="site-footer__links" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/jalfonsodesign/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="mailto:J.ALFONSO84@gmail.com">Email</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>
