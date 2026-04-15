@@ -326,77 +326,9 @@ section + section {
   color: var(--color-text);
 }
 
-/* Hamburger toggle button — hidden on desktop, shown on mobile */
-.nav__toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 40px;
-  height: 40px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: var(--space-2);
-  color: var(--color-text);
-}
-
-.nav__toggle-bar {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: currentColor;
-  border-radius: var(--radius-full);
-  transition:
-    transform var(--duration-base) var(--ease-default),
-    opacity var(--duration-base) var(--ease-default);
-}
-
-/* Animate bars into X when menu is open */
-.nav__toggle[aria-expanded="true"] .nav__toggle-bar:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-.nav__toggle[aria-expanded="true"] .nav__toggle-bar:nth-child(2) {
-  opacity: 0;
-}
-.nav__toggle[aria-expanded="true"] .nav__toggle-bar:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
 
 /* ============================================================
-   5. PAGE ORB SECTION (reusable animated orb background)
-   ============================================================ */
-
-/* Full-width wrapper that holds the orb layer for inner page headers */
-.page-orb-section {
-  position: relative;
-  overflow: hidden;
-}
-
-
-/* Fade the bottom edge into the page background */
-.page-orb-section::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 120px;
-  background: linear-gradient(to bottom, transparent, var(--color-bg));
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Lift all direct children above the orb layer */
-.page-orb-section > *:not(.hero__bg) {
-  position: relative;
-  z-index: 2;
-}
-
-
-/* ============================================================
-   6. HERO
+   5. HERO
    ============================================================ */
 
 .hero {
@@ -446,7 +378,7 @@ section + section {
 .hero__orb--1 {
   width: 700px;
   height: 700px;
-  background: radial-gradient(circle at center, var(--orb-1, rgba(0, 82, 204, 0.30)) 0%, transparent 70%);
+  background: radial-gradient(circle at center, var(--orb-1, rgba(0, 82, 204, 0.15)) 0%, transparent 70%);
   top: -220px;
   right: -180px;
   animation: orb-float-1 20s ease-in-out infinite alternate;
@@ -455,7 +387,7 @@ section + section {
 .hero__orb--2 {
   width: 520px;
   height: 520px;
-  background: radial-gradient(circle at center, var(--orb-2, rgba(99, 102, 241, 0.24)) 0%, transparent 70%);
+  background: radial-gradient(circle at center, var(--orb-2, rgba(99, 102, 241, 0.12)) 0%, transparent 70%);
   bottom: -160px;
   left: -120px;
   animation: orb-float-2 25s ease-in-out infinite alternate;
@@ -464,7 +396,7 @@ section + section {
 .hero__orb--3 {
   width: 380px;
   height: 380px;
-  background: radial-gradient(circle at center, var(--orb-3, rgba(14, 165, 233, 0.18)) 0%, transparent 70%);
+  background: radial-gradient(circle at center, var(--orb-3, rgba(14, 165, 233, 0.09)) 0%, transparent 70%);
   top: 40%;
   left: 42%;
   transform: translate(-50%, -50%);
@@ -756,36 +688,6 @@ section + section {
   text-align: center;
   margin-top: calc(var(--space-10) * -1 + var(--space-3));
   margin-bottom: var(--space-10);
-}
-
-/* Multi-image grids for case studies */
-.figure-grid {
-  display: grid;
-  gap: var(--space-4);
-  margin-block: var(--space-10);
-  align-items: start;
-}
-.figure-grid--2 {
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 480px;
-  margin-inline: auto;
-}
-.figure-grid--3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-.figure-grid img {
-  width: 100%;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
-  margin-block: 0;
-}
-.figure-grid figcaption {
-  grid-column: 1 / -1;
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 /* Stat callout */
@@ -1256,34 +1158,7 @@ section + section {
 @media (max-width: 640px) {
   :root { --gutter: var(--space-4); }
 
-  .nav__toggle { display: flex; }
-
-  .nav__links {
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    gap: 0;
-    padding: 0 var(--gutter) var(--space-4);
-    background: rgba(15, 15, 14, 0.97);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .nav__links.is-open { display: flex; }
-
-  .nav__links li {
-    padding: var(--space-4) 0;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .nav__links li:last-child { border-bottom: none; }
-
-  .nav__links a { font-size: var(--text-base); }
-
+  .nav__links { gap: var(--space-5); }
   .hero { padding-block: var(--space-20) var(--space-16); }
   .projects__grid { grid-template-columns: 1fr; }
 
@@ -1312,4 +1187,33 @@ section + section {
   color: var(--color-text-inverse);
 }
 
-/* Dark mode enforced — light mode override removed */
+/* Light mode override for users with light system preference */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg:               #FFFFFF;
+    --color-surface:          #F6F6F4;
+    --color-surface-elevated: #FFFFFF;
+    --color-border:           #E4E4E2;
+    --color-border-strong:    #C8C8C6;
+
+    --color-text:             #111110;
+    --color-text-secondary:   #5C5C5A;
+    --color-text-muted:       #9A9A98;
+    --color-text-inverse:     #FFFFFF;
+
+    --color-accent:           #0052CC;
+    --color-accent-hover:     #003D99;
+    --color-accent-subtle:    #EBF2FF;
+
+    --shadow-sm:  0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-md:  0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg:  0 12px 32px rgba(0, 0, 0, 0.10);
+    --shadow-xl:  0 24px 64px rgba(0, 0, 0, 0.12);
+  }
+
+  .site-header {
+    background: rgba(255, 255, 255, 0.88);
+  }
+
+  /* Orb colors/opacity are set dynamically per palette */
+}

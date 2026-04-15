@@ -2,26 +2,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ─── Mobile nav toggle ────────────────────────────────────────────────────
-  const navToggle = document.querySelector('.nav__toggle');
-  const navLinks  = document.querySelector('.nav__links');
-
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!isOpen));
-      navLinks.classList.toggle('is-open', !isOpen);
-    });
-
-    // Close menu when a nav link is followed
-    navLinks.addEventListener('click', (e) => {
-      if (e.target.tagName === 'A') {
-        navToggle.setAttribute('aria-expanded', 'false');
-        navLinks.classList.remove('is-open');
-      }
-    });
-  }
-
   // ─── Rotating hero text ───────────────────────────────────────────────────
   // Cycles through phrases in the hero headline with a smooth fade transition.
   const rotateEl = document.getElementById('js-rotate');

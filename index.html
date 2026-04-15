@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K17M6WE3GP"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-K17M6WE3GP');
-  </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Joseph Alfonso | Product Design Leader &amp; Teacher</title>
@@ -49,14 +41,9 @@
             accent:       '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',
             accentDark:   '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12',
           },
-          {
-            orbs: ['rgba(226,232,240,0.22)', 'rgba(248,250,252,0.14)', 'rgba(203,213,225,0.10)'],
-            accent:       '#64748B', accentHover: '#475569', accentSubtle: '#F8FAFC',
-            accentDark:   '#E2E8F0', accentHoverDark: '#F8FAFC', accentSubtleDark: '#1E293B',
-          },
         ];
 
-        var dark = true; // dark mode enforced
+        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
         function boost(c) {
           return dark ? c.replace(/,([\d.]+)\)$/, function (_, v) {
@@ -72,7 +59,7 @@
         r.style.setProperty('--orb-2', boost(p.orbs[1]));
         r.style.setProperty('--orb-3', boost(p.orbs[2]));
 
-        // Accent colors  -  swap for dark mode variant
+        // Accent colors — swap for dark mode variant
         r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
         r.style.setProperty('--color-accent-hover',  dark ? p.accentHoverDark  : p.accentHover);
         r.style.setProperty('--color-accent-subtle', dark ? p.accentSubtleDark : p.accentSubtle);
@@ -85,12 +72,7 @@
     <header class="site-header">
       <nav class="nav">
         <a href="index.html" class="nav__logo">Joseph Alfonso</a>
-        <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
-          <span class="nav__toggle-bar"></span>
-          <span class="nav__toggle-bar"></span>
-          <span class="nav__toggle-bar"></span>
-        </button>
-        <ul class="nav__links" id="nav-links">
+        <ul class="nav__links">
           <li><a href="pages/about.html">About</a></li>
           <li><a href="pages/work.html">Work</a></li>
           <li><a href="pages/contact.html">Contact</a></li>
@@ -147,85 +129,23 @@
                 loading="lazy"
               />
               <div class="card__body">
-                <p class="card__eyebrow">Amazon &middot; Lead Designer &middot; 2020-Present</p>
-                <h2 class="card__title">Employee Document Management</h2>
-                <p class="card__metric">$7M+ in annual savings</p>
+                <p class="card__eyebrow">Amazon &middot; Lead Designer &middot; 2020–Present</p>
+                <h2 class="card__title">Employee Document Management &amp; AI</h2>
+                <p class="card__metric">$10M+ in annual savings</p>
                 <p class="card__description">
                   Led UX for Amazon's global document platform: 4.8 billion documents across
-                  67 countries. Transformed accessibility, compliance, and operational efficiency
-                  across HR infrastructure used by the entire global workforce.
+                  67 countries. Then designed the AI integration layer across four product
+                  surfaces, turning a compliance tool into an intelligent decision-support system.
                 </p>
               </div>
               <div class="card__footer">
                 <div class="card__tags">
                   <span class="tag">Enterprise UX</span>
+                  <span class="tag">AI Design</span>
                   <span class="tag">Accessibility</span>
                   <span class="tag">Systems Design</span>
                 </div>
                 <span class="card__cta">Read case study →</span>
-              </div>
-            </a>
-
-            <!-- Self-Service Resignation -->
-            <a href="pages/resignation.html" class="card">
-              <img
-                class="card__image"
-                src="images/resignation/Frame%2048095835.png"
-                alt="The Explore hub in the Amazon A to Z app showing resignation and retention pathways"
-                loading="lazy"
-              />
-              <div class="card__body">
-                <p class="card__eyebrow">Amazon &middot; Lead Designer &middot; A to Z App</p>
-                <h2 class="card__title">Self-Service Resignation</h2>
-                <p class="card__metric">Retention lift measured in avoided recruiting cost and attrition reduction</p>
-                <p class="card__description">
-                  Turned Amazon's most anxiety-inducing HR moment into a dignified, human experience. Led design across
-                  Legal, HR, Engineering, and Product - from strategy through ship - for a retention-first exit flow
-                  serving tens of thousands of employees globally.
-                </p>
-              </div>
-              <div class="card__footer">
-                <div class="card__tags">
-                  <span class="tag">HR Experience</span>
-                  <span class="tag">Retention Design</span>
-                  <span class="tag">Cross-functional Lead</span>
-                </div>
-                <span class="card__cta">Read case study →</span>
-              </div>
-            </a>
-
-            <!-- AI Design & Tooling -->
-            <a href="pages/ai-work.html" class="card">
-              <div class="card__image card__image--placeholder" aria-hidden="true" style="background: linear-gradient(135deg, var(--color-accent-subtle) 0%, var(--color-accent-subtle) 100%); display:flex; align-items:center; justify-content:center;">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <circle cx="24" cy="24" r="10" stroke="var(--color-accent)" stroke-width="2.5" fill="none"/>
-                  <circle cx="24" cy="8"  r="3.5" stroke="var(--color-accent)" stroke-width="2" fill="none"/>
-                  <circle cx="24" cy="40" r="3.5" stroke="var(--color-accent)" stroke-width="2" fill="none"/>
-                  <circle cx="8"  cy="24" r="3.5" stroke="var(--color-accent)" stroke-width="2" fill="none"/>
-                  <circle cx="40" cy="24" r="3.5" stroke="var(--color-accent)" stroke-width="2" fill="none"/>
-                  <line x1="24" y1="14" x2="24" y2="11.5" stroke="var(--color-accent)" stroke-width="2"/>
-                  <line x1="24" y1="34" x2="24" y2="36.5" stroke="var(--color-accent)" stroke-width="2"/>
-                  <line x1="14" y1="24" x2="11.5" y2="24" stroke="var(--color-accent)" stroke-width="2"/>
-                  <line x1="34" y1="24" x2="36.5" y2="24" stroke="var(--color-accent)" stroke-width="2"/>
-                </svg>
-              </div>
-              <div class="card__body">
-                <p class="card__eyebrow">Amazon + Personal &middot; Designer &amp; Builder &middot; 2023-Present</p>
-                <h2 class="card__title">AI Design &amp; Tooling</h2>
-                <p class="card__metric">Designing AI products and building the tools behind them</p>
-                <p class="card__description">
-                  I design AI-powered enterprise features and build the infrastructure that supports that work  - 
-                  MCP servers, LangGraph agents, and workflow automation. The dual perspective informs how I approach
-                  AI product problems from both sides of the implementation.
-                </p>
-              </div>
-              <div class="card__footer">
-                <div class="card__tags">
-                  <span class="tag">AI Product Design</span>
-                  <span class="tag">MCP / Agents</span>
-                  <span class="tag">Automation</span>
-                </div>
-                <span class="card__cta">Read more →</span>
               </div>
             </a>
 
@@ -240,9 +160,9 @@
               <div class="card__body">
                 <p class="card__eyebrow">Discovery Education &middot; Lead Designer</p>
                 <h2 class="card__title">Discovery Education Studio</h2>
-                <p class="card__metric">Millions of K-12 students and teachers at launch</p>
+                <p class="card__metric">Live collaboration for every classroom</p>
                 <p class="card__description">
-                  Designed the first real-time creation and collaboration platform for K-12
+                  Designed the first real-time creation and collaboration platform for K–12
                   classrooms, enabling students and teachers to freely create, edit, and
                   collaborate live regardless of device or location.
                 </p>
@@ -268,7 +188,7 @@
               <div class="card__body">
                 <p class="card__eyebrow">Discovery Education &middot; Lead Designer</p>
                 <h2 class="card__title">Media Redesign</h2>
-                <p class="card__metric">#1 most-visited page on the platform</p>
+                <p class="card__metric">Significant learning gains through focused iteration</p>
                 <p class="card__description">
                   Led an iterative redesign of the Discovery Education media experience,
                   showing how short, well-defined design cycles produce compounding improvements
@@ -300,7 +220,7 @@
                 <p class="card__description">
                   Redesigned the Discovery Education platform homepage, establishing a new
                   visual foundation, navigational architecture, and first impression for
-                  K-12 educators and students across the country.
+                  K–12 educators and students across the country.
                 </p>
               </div>
               <div class="card__footer">

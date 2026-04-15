@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Employee Document Management | Joseph Alfonso</title>
-    <meta name="description" content="How I led UX for Amazon's global document platform managing 4.8 billion documents across 67 countries, delivering $10M+ in annual savings and accessibility compliance." />
+    <title>Employee Document Management &amp; AI | Joseph Alfonso</title>
+    <meta name="description" content="How I led UX for Amazon's global document platform managing 4.8 billion documents across 67 countries, then designed the AI integration layer across four product surfaces to make the system actively intelligent for every user type." />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/styles.css" />
     <script>
@@ -15,22 +15,13 @@
           { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
           { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
           { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
-          { accent: '#64748B', accentHover: '#475569', accentSubtle: '#F8FAFC',   accentDark: '#E2E8F0', accentHoverDark: '#F8FAFC', accentSubtleDark: '#1E293B' },
         ];
-        var dark = true; // dark mode enforced
+        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         var p = palettes[Math.floor(Math.random() * palettes.length)];
         var r = document.documentElement;
         r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
         r.style.setProperty('--color-accent-hover',  dark ? p.accentHoverDark  : p.accentHover);
         r.style.setProperty('--color-accent-subtle', dark ? p.accentSubtleDark : p.accentSubtle);
-        // Derive orb colors from the selected accent so they change each load
-        var hex = (dark ? p.accentDark : p.accent).replace('#', '');
-        var rv = parseInt(hex.slice(0, 2), 16);
-        var gv = parseInt(hex.slice(2, 4), 16);
-        var bv = parseInt(hex.slice(4, 6), 16);
-        r.style.setProperty('--orb-1', 'rgba(' + rv + ',' + gv + ',' + bv + ',0.30)');
-        r.style.setProperty('--orb-2', 'rgba(' + rv + ',' + gv + ',' + bv + ',0.20)');
-        r.style.setProperty('--orb-3', 'rgba(' + rv + ',' + gv + ',' + bv + ',0.15)');
       })();
     </script>
   </head>
@@ -40,12 +31,7 @@
     <header class="site-header">
       <nav class="nav">
         <a href="../index.html" class="nav__logo">Joseph Alfonso</a>
-        <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
-          <span class="nav__toggle-bar"></span>
-          <span class="nav__toggle-bar"></span>
-          <span class="nav__toggle-bar"></span>
-        </button>
-        <ul class="nav__links" id="nav-links">
+        <ul class="nav__links">
           <li><a href="../pages/about.html">About</a></li>
           <li><a href="../pages/work.html">Work</a></li>
           <li><a href="../pages/contact.html">Contact</a></li>
@@ -56,19 +42,14 @@
     <main>
 
       <!-- CASE STUDY HEADER -->
-      <section class="page-orb-section">
-        <div class="hero__bg" aria-hidden="true">
-          <div class="hero__orb hero__orb--1"></div>
-          <div class="hero__orb hero__orb--2"></div>
-          <div class="hero__orb hero__orb--3"></div>
-        </div>
-        <div class="case-study-header container">
-        <p class="case-study-header__eyebrow eyebrow">Amazon &middot; Employee Document Management</p>
-        <h1 class="case-study-header__title">Designing the document infrastructure for Amazon's global workforce</h1>
+      <section class="case-study-header container">
+        <p class="case-study-header__eyebrow eyebrow">Amazon &middot; Employee Document Management &amp; AI</p>
+        <h1 class="case-study-header__title">Designing the document infrastructure for Amazon's global workforce, then making it intelligent</h1>
         <p class="case-study-header__summary">
           Amazon's employee document system was fragmented, inaccessible, and outsourced across 67 countries.
-          I led the end-to-end UX strategy to replace it with a first-party platform that now manages
-          4.8 billion documents annually and delivers over $10M in cost savings.
+          I led the end-to-end UX strategy to replace it with a first-party platform managing 4.8 billion
+          documents annually. Then I led the AI integration phase: designing decision-support features across
+          four product surfaces, grounded in the same research discipline that built the platform.
         </p>
 
         <div class="case-study-meta">
@@ -78,7 +59,7 @@
           </div>
           <div class="case-study-meta__item">
             <p class="case-study-meta__label">Scope</p>
-            <p class="case-study-meta__value">9 product experiences</p>
+            <p class="case-study-meta__value">9 product experiences + AI layer</p>
           </div>
           <div class="case-study-meta__item">
             <p class="case-study-meta__label">Duration</p>
@@ -92,7 +73,6 @@
             <p class="case-study-meta__label">Impact</p>
             <p class="case-study-meta__value">$10M+ annual savings</p>
           </div>
-        </div>
         </div>
       </section>
 
@@ -125,7 +105,7 @@
         </p>
 
         <div class="callout">
-          <p>"It always comes down to a person."  -  HR Administrator, during a research interview</p>
+          <p>"It always comes down to a person." — HR Administrator, during a research interview</p>
         </div>
 
         <!-- MY ROLE -->
@@ -277,7 +257,7 @@
         </p>
 
         <div class="callout">
-          <p>"I appreciate the effort you put into something that is often taken for granted, especially for employees who need accessible administrative and internal tools."  -  Stakeholder</p>
+          <p>"I appreciate the effort you put into something that is often taken for granted, especially for employees who need accessible administrative and internal tools." — Stakeholder</p>
         </div>
 
         <h3>Bulk document generation at global scale</h3>
@@ -325,6 +305,97 @@
           but because reducing cognitive load per task created headroom for additional work within
           the same session.
         </p>
+
+        <!-- PHASE 2: AI INTEGRATION -->
+        <h2>Phase 2: Adding an intelligence layer</h2>
+        <p>
+          After shipping the platform, the system was still largely reactive. It showed you what had
+          happened. It didn't tell you what to do about it. I led a second phase of work focused on
+          AI integration: running cross-functional workshops, identifying where intelligence could
+          close the gap for each user type, and designing enhancements grounded in the same research
+          we'd already done.
+        </p>
+        <p>
+          Every concept came from a validated research finding or an existing backlog item. The
+          framing I used across all of it: what does this person actually need right now that the
+          system isn't surfacing for them?
+        </p>
+
+        <h3>M&amp;A dashboard: from status to decision support</h3>
+        <p>
+          Managers tracking acquisition document completion had one signal: a percentage.
+          57% complete. They had to do all the interpretation themselves. Is that on track?
+          What's the blocker? What do I do next?
+        </p>
+        <p>
+          The AI layer I designed changes that question entirely. Risk scoring on each project card
+          with a plain-language explanation of why. Velocity-based close date forecasting. Anomaly
+          detection that surfaces the actual blocker — three unreleased Critical employees — instead
+          of leaving it buried in a table. And a conversational assistant that lets managers ask
+          the system direct questions about any employee's status and get a synthesized answer,
+          not a raw data dump.
+        </p>
+
+        <figure>
+          <img
+            src="assets/img/MA2.png"
+            alt="M&A dashboard with AI risk scoring and anomaly detection panel"
+            loading="lazy"
+          />
+          <figcaption>AI layer on the M&amp;A dashboard: risk scoring, anomaly detection, and velocity forecasting replace a plain completion percentage</figcaption>
+        </figure>
+
+        <h3>Bulk generation: breaking the error round trip</h3>
+        <p>
+          The existing error handling for bulk document generation was a full round trip. HR uploaded
+          a spreadsheet, the system found errors, they downloaded a new file, fixed it offline, and
+          re-uploaded. For 72 employees with 8 errors, that meant repeating the entire process for 8 rows.
+        </p>
+        <p>
+          The self-fix feature I designed eliminates that loop. The system detects each error,
+          proposes the most likely correction with its reasoning, assigns a confidence level, and
+          lets HR accept or reject inline. Rows that genuinely can't be auto-resolved are flagged
+          explicitly with a clear explanation. They don't block the other 64 employees from
+          generating. About 75% of common errors became fixable without leaving the page.
+        </p>
+        <p>
+          A principle I held throughout: the "can't auto-fix" state had to be honest, not papered over.
+          In a compliance context, an AI that guesses and gets it wrong isn't just a UX problem.
+          It's a liability.
+        </p>
+
+        <h3>HR admin portal: reviewing with context instead of cold</h3>
+        <p>
+          Document approvers were opening 14-page agreements with no context and reading the entire
+          thing to find out if anything was wrong. For passport and ID collection, they were manually
+          reading scanned documents and mentally cross-checking fields against the employee record.
+        </p>
+        <p>
+          The AI pre-review panel I designed does the reading before the approver opens the document.
+          It cross-references against Workday, surfaces pay band violations, legal entity mismatches,
+          and expired documents before a single line is read. For ID documents, it extracts key
+          fields automatically and flags expiry issues immediately. The approver still makes the call.
+          What AI removes is the archaeology.
+        </p>
+
+        <h3>Employee portal: comprehension, not just completion</h3>
+        <p>
+          The employee side had the most vulnerable users in the system: new hires on their first day,
+          warehouse workers on phones, non-native speakers reading bilingual legal agreements. The
+          accessibility work I'd already done gave us the foundation. The AI layer builds directly on it.
+        </p>
+        <p>
+          A plain language panel runs alongside the document and explains each section in real terms,
+          flagging clauses with real consequences that employees consistently miss (non-solicitation
+          terms buried on page 8 are the thing people get surprised by months later). On mobile, a
+          briefing card surfaces three things to know before the user starts scrolling. A section
+          tracker flags when someone has moved quickly past a high-stakes clause, giving the
+          experience a chance to intervene before the signature rather than after.
+        </p>
+
+        <div class="callout">
+          <p>AI should surface, not decide. Every enhancement in this phase kept the human in the loop. The approver still approves. The HR admin still releases. What changed is how much work they have to do to understand what matters before they act.</p>
+        </div>
 
         <!-- PROGRESSIVE LAUNCH -->
         <h2>Progressive global launch</h2>
@@ -385,6 +456,16 @@
           created friction that cascaded into design decisions, engineering estimates, and user
           confusion. Establishing a shared taxonomy before defining features would have saved
           significant rework across multiple workstreams.
+        </p>
+        <p>
+          On the AI work specifically: I'd establish the measurement infrastructure earlier.
+          We built it, but later than I'd have liked. Having server-side task timing and a
+          continuous feedback loop from day one would have given us better signal during the
+          design phase, not just after launch. I'd also push to involve legal and compliance
+          teams in the AI design process from the start. Many of the constraints we designed
+          around were things I already knew from the platform work. Getting those stakeholders
+          into the AI workshops earlier would have accelerated the work and likely surfaced
+          edge cases we hadn't anticipated.
         </p>
 
         <!-- NAV -->

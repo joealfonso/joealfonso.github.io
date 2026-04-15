@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K17M6WE3GP"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-K17M6WE3GP');
-  </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About | Joseph Alfonso</title>
@@ -23,21 +15,13 @@
           { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
           { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
           { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
-          { accent: '#64748B', accentHover: '#475569', accentSubtle: '#F8FAFC',   accentDark: '#E2E8F0', accentHoverDark: '#F8FAFC', accentSubtleDark: '#1E293B' },
         ];
-        var dark = true; // dark mode enforced
+        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         var p = palettes[Math.floor(Math.random() * palettes.length)];
         var r = document.documentElement;
         r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
         r.style.setProperty('--color-accent-hover',  dark ? p.accentHoverDark  : p.accentHover);
         r.style.setProperty('--color-accent-subtle', dark ? p.accentSubtleDark : p.accentSubtle);
-        var hex = (dark ? p.accentDark : p.accent).replace('#', '');
-        var rv = parseInt(hex.slice(0, 2), 16);
-        var gv = parseInt(hex.slice(2, 4), 16);
-        var bv = parseInt(hex.slice(4, 6), 16);
-        r.style.setProperty('--orb-1', 'rgba(' + rv + ',' + gv + ',' + bv + ',0.30)');
-        r.style.setProperty('--orb-2', 'rgba(' + rv + ',' + gv + ',' + bv + ',0.20)');
-        r.style.setProperty('--orb-3', 'rgba(' + rv + ',' + gv + ',' + bv + ',0.15)');
       })();
     </script>
   </head>
@@ -47,12 +31,7 @@
     <header class="site-header">
       <nav class="nav">
         <a href="../index.html" class="nav__logo">Joseph Alfonso</a>
-        <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
-          <span class="nav__toggle-bar"></span>
-          <span class="nav__toggle-bar"></span>
-          <span class="nav__toggle-bar"></span>
-        </button>
-        <ul class="nav__links" id="nav-links">
+        <ul class="nav__links">
           <li><a href="about.html" aria-current="page">About</a></li>
           <li><a href="work.html">Work</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -63,12 +42,6 @@
     <main>
 
       <!-- INTRO -->
-      <div class="page-orb-section">
-        <div class="hero__bg" aria-hidden="true">
-          <div class="hero__orb hero__orb--1"></div>
-          <div class="hero__orb hero__orb--2"></div>
-          <div class="hero__orb hero__orb--3"></div>
-        </div>
       <section class="about container">
         <div class="about__layout">
 
@@ -86,7 +59,7 @@
           <!-- Content -->
           <div class="about__content">
             <p class="eyebrow">About</p>
-            <h1 class="about__title">I design systems that serve millions, and teach the next generation to do the same.</h1>
+            <h1 class="about__title">I believe great design makes the complex feel simple — and people happy.</h1>
 
             <p class="about__body">
               I'm a Product Design Leader and Teacher based in Seattle with 15 years of experience
@@ -97,8 +70,8 @@
             <p class="about__body">
               My work tends to live at the intersection of scale and humanity. I've designed systems
               managing billions of documents across 67 countries, built real-time collaboration tools
-              for K-12 classrooms, and redesigned learning experiences used by millions of students
-              and educators. The common thread isn't the subject matter  -  it's the conviction that
+              for K–12 classrooms, and redesigned learning experiences used by millions of students
+              and educators. The common thread isn't the subject matter — it's the conviction that
               complex systems deserve thoughtful, accessible, human-centered design.
             </p>
 
@@ -107,7 +80,7 @@
               <a href="https://designlab.com" target="_blank" rel="noopener noreferrer">Designlab</a>
               and the
               <a href="https://www.svcseattle.com" target="_blank" rel="noopener noreferrer">School of Visual Concepts</a>
-              in Seattle. Teaching keeps me honest  -  explaining your decisions clearly to someone
+              in Seattle. Teaching keeps me honest — explaining your decisions clearly to someone
               learning the craft is one of the best ways to pressure-test whether you actually
               understand them yourself.
             </p>
@@ -125,7 +98,6 @@
 
         </div>
       </section>
-      </div>
 
       <hr class="divider container" />
 
@@ -138,7 +110,7 @@
 
           <div class="about-timeline__item">
             <div class="about-timeline__meta">
-              <p class="label">2020  -  Present</p>
+              <p class="label">2020 — Present</p>
             </div>
             <div class="about-timeline__body">
               <p class="about-timeline__role">Lead Product Designer</p>
@@ -146,7 +118,7 @@
               <p class="about-timeline__detail">
                 Leading UX strategy and execution across enterprise HR products, including the Employee
                 Document Management platform managing 4.8 billion documents across 67 countries.
-                Delivered $7M+ in annual savings, accessibility compliance, and a global product
+                Delivered $10M+ in annual savings, accessibility compliance, and a global product
                 rollout spanning multiple legal jurisdictions.
               </p>
             </div>
@@ -162,7 +134,7 @@
               <p class="about-timeline__detail">
                 Led design across the Discovery Education platform: Studio (real-time classroom
                 collaboration), Media (iterative video player redesign), and Home (platform homepage
-                redesign). Products served K-12 teachers and students across the country.
+                redesign). Products served K–12 teachers and students across the country.
               </p>
             </div>
           </div>
@@ -230,7 +202,7 @@
             <p class="about-principles__body">
               Enterprise design is hard because the problems are genuinely hard. Legal constraints,
               country-specific requirements, competing stakeholder needs, legacy systems. I don't
-              find this discouraging. Constraints are where good design actually happens  -  they're
+              find this discouraging. Constraints are where good design actually happens — they're
               what separates interesting solutions from obvious ones.
             </p>
           </div>
@@ -247,9 +219,6 @@
         <p>
           Based in Seattle. Working on enterprise HR products at Amazon.
           Actively exploring Principal-level design leadership roles at companies building at scale.
-        </p>
-        <p>
-          Outside of core product work, I've been building with AI  -  designing and shipping MCP servers and LangGraph agents to automate research and workflow tasks. I think deeply about how AI changes the designer's role, and I bring that perspective into the work.
         </p>
         <p>
           When I'm not designing: mentoring, laser cutting things in my garage, and
