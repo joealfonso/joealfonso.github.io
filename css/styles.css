@@ -836,6 +836,41 @@ section + section {
 }
 
 
+/* Mobile screenshot grid (for resignation and similar mobile case studies) */
+.figure-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  justify-content: center;
+  align-items: flex-start;
+  margin-block: var(--space-8);
+}
+
+.figure-grid img {
+  flex: 1 1 0;
+  min-width: 0;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  display: block;
+  object-fit: contain;
+}
+
+.figure-grid--2 img {
+  max-width: 280px;
+}
+
+.figure-grid--3 img {
+  max-width: 220px;
+}
+
+.figure-grid figcaption {
+  width: 100%;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-top: var(--space-2);
+}
+
 /* Case study cover image */
 .case-study-cover {
   width: 100%;
