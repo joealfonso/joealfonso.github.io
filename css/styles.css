@@ -134,9 +134,6 @@
    2. TYPOGRAPHY
    ============================================================ */
 
-/* Import */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
