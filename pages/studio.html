@@ -13,33 +13,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Discovery Education Studio | Joseph Alfonso</title>
     <meta name="description" content="How I led UX for Discovery Education Studio, replacing a legacy tool with a real-time K-12 collaboration platform used by millions of students and teachers." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/styles.css" />
-    <script>
-      (function () {
-        var palettes = [
-          { accent: '#0052CC', accentHover: '#003D99', accentSubtle: '#EBF2FF',   accentDark: '#4D94FF', accentHoverDark: '#7AB3FF', accentSubtleDark: '#0F1E38' },
-          { accent: '#0D9488', accentHover: '#0F766E', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
-          { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
-          { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
-          { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
-        ];
-        var dark = true; // dark mode enforced
-        var p = palettes[Math.floor(Math.random() * palettes.length)];
-        var r = document.documentElement;
-        r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
-        r.style.setProperty('--color-accent-hover',  dark ? p.accentHoverDark  : p.accentHover);
-        r.style.setProperty('--color-accent-subtle', dark ? p.accentSubtleDark : p.accentSubtle);
-        // Derive orb colors from the selected accent so they change each load
-        var hex = (dark ? p.accentDark : p.accent).replace('#', '');
-        var rv = parseInt(hex.slice(0, 2), 16);
-        var gv = parseInt(hex.slice(2, 4), 16);
-        var bv = parseInt(hex.slice(4, 6), 16);
-        r.style.setProperty('--orb-1', 'rgba(' + rv + ',' + gv + ',' + bv + ',0.30)');
-        r.style.setProperty('--orb-2', 'rgba(' + rv + ',' + gv + ',' + bv + ',0.20)');
-        r.style.setProperty('--orb-3', 'rgba(' + rv + ',' + gv + ',' + bv + ',0.15)');
-      })();
-    </script>
+    <script src="../js/palette.js"></script>
   </head>
   <body>
 
@@ -436,6 +414,6 @@
       </div>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <script src="../js/main.js" defer></script>
   </body>
 </html>
