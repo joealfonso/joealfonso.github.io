@@ -370,70 +370,77 @@ section + section {
   padding-block: var(--space-32) var(--space-24);
 }
 
-/* Orb layer sits behind hero content */
-.hero__bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
+/* Legacy hero orb layer — superseded by page-wide .bg-orbs below.
+   Kept hidden so existing markup on older case-study pages doesn't duplicate. */
+.hero__bg { display: none; }
 
-/* Fade bottom of hero into page background */
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 220px;
-  background: linear-gradient(to bottom, transparent, var(--color-bg));
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Content wrapper lifts above orbs and fade overlay */
+/* Content wrapper lifts above the page-wide bg-orbs layer. */
 .hero > .container {
   position: relative;
   z-index: 2;
 }
 
-.hero__orb {
+/* ─── Page-wide background orbs ───────────────────────────────────────────
+   Fixed layer behind everything. JS injects this into every page so the
+   mouse-follow effect is consistent site-wide. Each orb reads normalized
+   --mx/--my (-1 to 1) set on :root and translates by a per-orb factor.
+   The `translate:` individual property composes with the keyframe
+   `transform:` so the autonomous float stays alive while the orbs drift
+   toward the cursor. */
+.bg-orbs {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(72px);
-  will-change: transform;
+  filter: blur(80px);
+  will-change: transform, translate;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-fill-mode: both;
 }
 
-.hero__orb--1 {
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle at center, var(--orb-1, rgba(0, 82, 204, 0.15)) 0%, transparent 70%);
-  top: -220px;
-  right: -180px;
-  animation: orb-float-1 20s ease-in-out infinite alternate;
+.bg-orb--1 {
+  width: 60vw;
+  height: 60vw;
+  max-width: 900px;
+  max-height: 900px;
+  top: -15vh;
+  right: -15vw;
+  background: radial-gradient(circle at center, var(--orb-1, rgba(0, 82, 204, 0.28)) 0%, transparent 70%);
+  translate: calc(var(--mx, 0) * 80px) calc(var(--my, 0) * 80px);
+  animation: orb-float-1 22s ease-in-out infinite alternate;
 }
 
-.hero__orb--2 {
-  width: 520px;
-  height: 520px;
-  background: radial-gradient(circle at center, var(--orb-2, rgba(99, 102, 241, 0.12)) 0%, transparent 70%);
-  bottom: -160px;
-  left: -120px;
-  animation: orb-float-2 25s ease-in-out infinite alternate;
+.bg-orb--2 {
+  width: 50vw;
+  height: 50vw;
+  max-width: 720px;
+  max-height: 720px;
+  bottom: -15vh;
+  left: -15vw;
+  background: radial-gradient(circle at center, var(--orb-2, rgba(99, 102, 241, 0.24)) 0%, transparent 70%);
+  translate: calc(var(--mx, 0) * -100px) calc(var(--my, 0) * -100px);
+  animation: orb-float-2 28s ease-in-out infinite alternate;
 }
 
-.hero__orb--3 {
-  width: 380px;
-  height: 380px;
-  background: radial-gradient(circle at center, var(--orb-3, rgba(14, 165, 233, 0.09)) 0%, transparent 70%);
-  top: 40%;
-  left: 42%;
+.bg-orb--3 {
+  width: 40vw;
+  height: 40vw;
+  max-width: 520px;
+  max-height: 520px;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  animation: orb-float-3 16s ease-in-out infinite alternate;
+  background: radial-gradient(circle at center, var(--orb-3, rgba(14, 165, 233, 0.20)) 0%, transparent 70%);
+  translate: calc(var(--mx, 0) * 140px) calc(var(--my, 0) * 140px);
+  animation: orb-float-3 18s ease-in-out infinite alternate;
 }
 
 @keyframes orb-float-1 {
@@ -453,7 +460,7 @@ section + section {
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .hero__orb { animation: none; }
+  .bg-orb { animation: none; translate: 0 0 !important; }
 }
 
 .hero__eyebrow {
