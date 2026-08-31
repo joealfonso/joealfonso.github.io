@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Review Card</title>
+<style>
+:root{
+  --bg:#f7f5f1; --paper:#fff; --ink:#1a1e24; --ink-2:#525a64; --ink-3:#8b939d;
+  --line:#e4dfd6; --line-2:#f1ede6;
+  --accent:#1f3fbe; --accent-bg:#ecf0fd;
+  --ok:#136b41; --ok-bg:#e7f4ed;
+  --q:#8a5300; --q-bg:#fbf0da;
+  --skip:#8b939d; --skip-bg:#eeebe5;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#15181c; --paper:#1d2128; --ink:#eff2f5; --ink-2:#b4bcc6; --ink-3:#868f99;
+    --line:#2f353e; --line-2:#252a31;
+    --accent:#82a0ff; --accent-bg:#1e2740;
+    --ok:#63d69e; --ok-bg:#173123;
+    --q:#eab55f; --q-bg:#342710;
+    --skip:#868f99; --skip-bg:#262b32;
+  }
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  padding-bottom:96px;
+}
+.wrap{max-width:820px;margin:0 auto;padding:36px 20px 24px}
+
+/* header */
+header{border-bottom:2px solid var(--ink);padding-bottom:16px;margin-bottom:20px}
+.kicker{font:700 .66rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:9px}
+h1{font-size:1.85rem;line-height:1.12;letter-spacing:-.02em;margin:0 0 7px;font-weight:750}
+.tagline{color:var(--ink-2);font-size:.97rem;margin:0;max-width:560px}
+
+.howto{
+  background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:9px;padding:14px 16px;margin:18px 0 22px;font-size:.88rem;color:var(--ink-2);
+}
+.howto b{color:var(--ink)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;font-size:.83rem}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.chip{display:inline-block;width:22px;height:22px;border-radius:5px;border:1px solid var(--line);text-align:center;line-height:20px;font-weight:700;font-size:.8rem}
+.chip.c-ok{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.chip.c-q{background:var(--q-bg);border-color:var(--q);color:var(--q)}
+.chip.c-s{background:var(--skip-bg);border-color:var(--skip);color:var(--skip)}
+
+/* meta */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:16px 18px;margin-bottom:16px}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+label.fl{display:block;font:700 .68rem/1 inherit;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:5px}
+input[type=text],textarea{
+  width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:6px;
+  font:inherit;font-size:.88rem;color:var(--ink);background:var(--bg);
+}
+input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+textarea{resize:vertical;min-height:44px;font-size:.85rem}
+
+/* AI toggle */
+.aitoggle{
+  display:flex;align-items:center;gap:12px;background:var(--paper);border:1px solid var(--line);
+  border-radius:9px;padding:14px 18px;margin-bottom:22px;
+}
+.aitoggle.on{border-color:var(--accent);background:var(--accent-bg)}
+.aitoggle input{width:20px;height:20px;accent-color:var(--accent);flex:0 0 auto;cursor:pointer}
+.aitoggle label{font-size:.94rem;font-weight:650;cursor:pointer}
+.aitoggle .note{font-size:.82rem;color:var(--ink-2);display:block;font-weight:400;margin-top:2px}
+
+/* sections */
+.sec{background:var(--paper);border:1px solid var(--line);border-radius:9px;margin-bottom:14px;overflow:hidden}
+.sec.ai{border-color:var(--accent)}
+.sec.hidden{display:none}
+.sec-hd{padding:14px 18px 11px;border-bottom:1px solid var(--line-2);display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.sec-name{font-size:1.02rem;font-weight:700}
+.sec-name .n{font:700 .68rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink-3);margin-right:8px}
+.sec-tally{font:600 .76rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink-3);white-space:nowrap}
+.sec-hint{font-size:.83rem;color:var(--ink-2);padding:0 18px;margin:9px 0 3px}
+
+.item{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;padding:9px 18px;border-top:1px solid var(--line-2)}
+.item:first-of-type{border-top:1px solid var(--line-2)}
+.item p{margin:0;font-size:.9rem}
+.item .why{font-size:.78rem;color:var(--ink-3);margin-top:2px}
+.marks{display:flex;gap:5px}
+.mk{
+  width:34px;height:30px;border:1px solid var(--line);background:var(--bg);color:var(--ink-3);
+  border-radius:6px;font:700 .85rem/1 inherit;cursor:pointer;
+}
+.mk:hover{border-color:var(--accent)}
+.mk.on-ok{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.mk.on-q{background:var(--q-bg);border-color:var(--q);color:var(--q)}
+.mk.on-s{background:var(--skip-bg);border-color:var(--skip);color:var(--skip)}
+.item.flagged{background:var(--q-bg)}
+.qnote{padding:0 18px 12px;display:none}
+.qnote.show{display:block}
+.qnote input{font-size:.85rem}
+
+/* follow-ups */
+.followups{background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:18px}
+.followups h3{margin:0 0 4px;font-size:1.05rem}
+.fu-sub{font-size:.85rem;color:var(--ink-2);margin:0 0 14px}
+ol.fu-list{margin:0;padding-left:20px;font-size:.9rem}
+ol.fu-list li{margin-bottom:7px}
+ol.fu-list .fu-src{font:600 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink-3);display:block;margin-top:2px}
+.fu-empty{font-size:.88rem;color:var(--ink-3);font-style:italic}
+.fu-skipped{margin-top:16px;padding-top:14px;border-top:1px solid var(--line-2);font-size:.85rem;color:var(--ink-2)}
+.fu-skipped b{color:var(--ink)}
+
+/* status */
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--paper);border-top:1px solid var(--line);box-shadow:0 -3px 18px rgba(0,0,0,.08);padding:12px 20px;z-index:40}
+.bar-in{max-width:820px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.tally-big{font:600 .86rem/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink-2)}
+.tally-big b.q{color:var(--q)}
+.tally-big b.s{color:var(--skip)}
+.acts{margin-left:auto;display:flex;gap:7px;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:8px 13px;border-radius:7px;font:600 .83rem/1 inherit;cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:#fff}
+
+footer{margin-top:32px;padding-top:14px;border-top:1px solid var(--line);font-size:.78rem;color:var(--ink-3);line-height:1.7}
+footer a{color:var(--accent)}
+
+@media print{
+  body{padding-bottom:0;background:#fff;font-size:11pt}
+  .bar,.acts,.howto .legend{display:none}
+  .bar{position:static;box-shadow:none;border-top:2px solid #000;margin-top:20px;padding:10px 0}
+  .bar{display:block}
+  .mk{display:none}
+  .mk.on-ok,.mk.on-q,.mk.on-s{display:inline-block}
+  .sec,.card,.followups{break-inside:avoid}
+  .wrap{padding:0}
+}
+
+.backlink{
+  display:inline-flex;align-items:center;gap:7px;text-decoration:none;
+  font-size:.82rem;font-weight:600;color:var(--ink-3);
+  border:1px solid var(--line);border-radius:999px;padding:6px 13px;
+  background:var(--paper);margin-bottom:26px;
+}
+.backlink:hover{border-color:var(--accent);color:var(--accent)}
+@media print{.backlink{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="backlink" href="../">← Lab</a>
+
+
+
+<header>
+  <div class="kicker">Design Review</div>
+  <h1>Design Review Card</h1>
+  <p class="tagline">A fast, repeatable pass over any design before it goes to build. Ten to fifteen minutes. Produces a follow-up list, not a grade.</p>
+</header>
+
+<div class="howto">
+  <b>How to use it.</b> Walk the card with the designer, not at them. Mark each line as you go. The point is not to score the work, it is to find the questions nobody has asked yet, so mark generously and move fast. Anything marked <b>?</b> lands in the follow-up list at the bottom, which is the actual output of the review.
+  <div class="legend">
+    <span><i class="chip c-ok">✓</i> Looks good</span>
+    <span><i class="chip c-q">?</i> Open question, goes to follow-ups</span>
+    <span><i class="chip c-s">–</i> Not reviewed today</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="meta">
+    <div><label class="fl" for="m-what">What we're reviewing</label><input type="text" id="m-what" placeholder="Feature or flow"></div>
+    <div><label class="fl" for="m-designer">Designer</label><input type="text" id="m-designer" placeholder="Name"></div>
+    <div><label class="fl" for="m-who">Reviewers</label><input type="text" id="m-who" placeholder="Names"></div>
+    <div><label class="fl" for="m-date">Date</label><input type="text" id="m-date" placeholder="e.g. 12 Aug 2026"></div>
+  </div>
+</div>
+
+<div class="aitoggle" id="aitoggle">
+  <input type="checkbox" id="ai-on">
+  <label for="ai-on">This feature uses AI or ML
+    <span class="note">Adds five questions. Skip it and the card works exactly as before.</span>
+  </label>
+</div>
+
+<div id="sections"></div>
+
+<div class="followups" id="followups">
+  <h3>Follow-ups</h3>
+  <p class="fu-sub">Everything marked as an open question. This is what leaves the room.</p>
+  <div id="fu-body"></div>
+</div>
+
+<footer>
+  <b>Design Review Card</b> · A general-purpose review pass with an optional AI section.<br>
+  The AI questions are the short form of a longer instrument, the AI Readiness Review. If three or more come back as open questions, the feature is worth a full review before build.<br>
+  Runs entirely in your browser, nothing is stored. Copy or print the follow-ups before closing.
+</footer>
+</div>
+
+<div class="bar">
+  <div class="bar-in">
+    <span class="tally-big" id="tally">Nothing marked yet</span>
+    <div class="acts">
+      <button class="btn" id="b-reset">Reset</button>
+      <button class="btn" id="b-print">Print</button>
+      <button class="btn pri" id="b-copy">Copy follow-ups</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const SECTIONS = [
+  {n:"01", name:"Purpose", hint:"If these are shaky, stop here. Everything downstream inherits the problem.", items:[
+    {id:"p1", t:"We can say in one sentence what problem this solves, and for whom."},
+    {id:"p2", t:"We know how we will tell whether it worked.", why:"A number, a behavior, or an observation. Not \"users will love it.\""},
+    {id:"p3", t:"Someone who is not on this team has looked at it.", why:"Fresh eyes catch what familiarity hides."},
+  ]},
+  {n:"02", name:"States", hint:"The happy path is always designed. These are the ones that get discovered in QA.", items:[
+    {id:"s1", t:"Empty, before there is any content."},
+    {id:"s2", t:"Loading, including slow loading."},
+    {id:"s3", t:"Error, and it says what to do next."},
+    {id:"s4", t:"Partial, some of it worked and some did not."},
+    {id:"s5", t:"Full, more content than fits comfortably."},
+    {id:"s6", t:"First time versus returning.", why:"Onboarding affordances that never go away become clutter."},
+  ]},
+  {n:"03", name:"Edges", hint:"Cheap to check now, expensive to find later.", items:[
+    {id:"e1", t:"Longest realistic name, title, or string.", why:"Including languages that run longer than English."},
+    {id:"e2", t:"Zero items, and thousands of items."},
+    {id:"e3", t:"Slow or intermittent connection."},
+    {id:"e4", t:"Someone who lacks permission to see part of this."},
+    {id:"e5", t:"Small screen, and largest supported text size."},
+  ]},
+  {n:"04", name:"Access", hint:"Test it, do not assume the design system covers it.", items:[
+    {id:"a1", t:"Reachable and operable by keyboard alone, in a sensible order."},
+    {id:"a2", t:"Makes sense to a screen reader, verified by listening.", why:"Reading the markup is not the same as hearing it."},
+    {id:"a3", t:"Contrast holds for text and for meaningful non-text."},
+    {id:"a4", t:"Nothing important is carried by color, position, or shape alone."},
+    {id:"a5", t:"Targets are big enough, and motion can be reduced."},
+  ]},
+  {n:"05", name:"Words", hint:"Copy is design. Review it like design.", items:[
+    {id:"w1", t:"Labels say what will happen, not what the system is called internally."},
+    {id:"w2", t:"Errors say what went wrong and what to do about it."},
+    {id:"w3", t:"Nothing here overpromises what the product actually does."},
+  ]},
+  {n:"06", name:"When it goes wrong", hint:"Assume it will. Design that path deliberately.", items:[
+    {id:"r1", t:"A person can undo, edit, or back out."},
+    {id:"r2", t:"Destructive or irreversible actions are clearly marked as such."},
+    {id:"r3", t:"We know who receives the support ticket when this breaks."},
+    {id:"r4", t:"One thing failing does not take unrelated things down with it."},
+  ]},
+];
+
+const AI_SECTION = {n:"07", name:"AI check", ai:true,
+  hint:"The short form. Any \"?\" here is worth resolving before build, not after.", items:[
+    {id:"ai1", t:"The user can tell an AI is involved, at the point they rely on it."},
+    {id:"ai2", t:"The user can see why it produced this result, in plain language."},
+    {id:"ai3", t:"The system can say \"I'm not sure\" instead of guessing confidently.", why:"The single most common gap. Confident wrong answers are worse than no answer."},
+    {id:"ai4", t:"A person can override or reverse it without filing a ticket."},
+    {id:"ai5", t:"There is a designed path for when the AI is confidently wrong.", why:"Distinct from a generic error state."},
+  ]};
+
+const marks = {};   // id -> 'ok' | 'q' | 's'
+const qnotes = {};  // id -> text
+const allSections = () => SECTIONS.concat(document.getElementById('ai-on').checked ? [AI_SECTION] : []);
+
+function build(){
+  const host = document.getElementById('sections');
+  host.innerHTML = '';
+  SECTIONS.concat([AI_SECTION]).forEach(sec => {
+    const isAI = !!sec.ai;
+    const box = document.createElement('div');
+    box.className = 'sec' + (isAI ? ' ai hidden' : '');
+    if(isAI) box.id = 'sec-ai';
+    box.innerHTML = `<div class="sec-hd">
+        <div class="sec-name"><span class="n">${sec.n}</span>${sec.name}</div>
+        <div class="sec-tally" id="tl-${sec.n}"></div>
+      </div>
+      <p class="sec-hint">${sec.hint}</p>`;
+    sec.items.forEach(it => {
+      const row = document.createElement('div');
+      row.className = 'item';
+      row.id = 'row-' + it.id;
+      row.innerHTML = `<div><p>${it.t}</p>${it.why ? `<p class="why">${it.why}</p>` : ''}</div>
+        <div class="marks" id="mk-${it.id}">
+          <button type="button" class="mk" data-v="ok" title="Looks good">✓</button>
+          <button type="button" class="mk" data-v="q" title="Open question">?</button>
+          <button type="button" class="mk" data-v="s" title="Not reviewed">–</button>
+        </div>`;
+      box.appendChild(row);
+      const note = document.createElement('div');
+      note.className = 'qnote'; note.id = 'qn-' + it.id;
+      note.innerHTML = `<input type="text" placeholder="What's the question? (optional, appears in follow-ups)">`;
+      box.appendChild(note);
+      row.querySelectorAll('.mk').forEach(b => {
+        b.addEventListener('click', () => {
+          marks[it.id] = marks[it.id] === b.dataset.v ? undefined : b.dataset.v;
+          paint(it.id); render();
+        });
+      });
+      note.querySelector('input').addEventListener('input', e => { qnotes[it.id] = e.target.value; render(); });
+    });
+    host.appendChild(box);
+  });
+}
+
+function paint(id){
+  document.querySelectorAll('#mk-' + id + ' .mk').forEach(b => {
+    b.classList.remove('on-ok','on-q','on-s');
+    if(marks[id] === b.dataset.v) b.classList.add('on-' + b.dataset.v);
+  });
+  const row = document.getElementById('row-' + id);
+  const note = document.getElementById('qn-' + id);
+  const isQ = marks[id] === 'q';
+  row.classList.toggle('flagged', isQ);
+  note.classList.toggle('show', isQ);
+}
+
+function render(){
+  const secs = allSections();
+  let ok=0, q=0, s=0, unmarked=0;
+  const followups = [], skipped = [];
+
+  SECTIONS.concat([AI_SECTION]).forEach(sec => {
+    const active = secs.includes(sec);
+    let so=0, sq=0, ss=0;
+    sec.items.forEach(it => {
+      const m = marks[it.id];
+      if(!active) return;
+      if(m === 'ok'){ ok++; so++; }
+      else if(m === 'q'){ q++; sq++; followups.push({sec:sec.name, item:it.t, note:(qnotes[it.id]||'').trim()}); }
+      else if(m === 's'){ s++; ss++; skipped.push(sec.name + ': ' + it.t); }
+      else unmarked++;
+    });
+    const tl = document.getElementById('tl-' + sec.n);
+    if(tl) tl.textContent = active ? `${so}✓ ${sq}? ${ss}–` : '';
+  });
+
+  const total = secs.reduce((a,x)=>a+x.items.length,0);
+  const tally = document.getElementById('tally');
+  if(ok+q+s === 0) tally.textContent = 'Nothing marked yet';
+  else tally.innerHTML = `${ok+q+s}/${total} marked  ·  ${ok} ✓  ·  <b class="q">${q} open</b>  ·  <b class="s">${s} not reviewed</b>${unmarked ? '  ·  ' + unmarked + ' blank' : ''}`;
+
+  const body = document.getElementById('fu-body');
+  let html = '';
+  if(followups.length){
+    html += '<ol class="fu-list">' + followups.map(f =>
+      `<li>${f.note ? f.note : f.item}<span class="fu-src">${f.sec}${f.note ? ' · ' + f.item : ''}</span></li>`).join('') + '</ol>';
+  } else {
+    html += '<p class="fu-empty">No open questions marked yet.</p>';
+  }
+  if(skipped.length){
+    html += `<div class="fu-skipped"><b>Not reviewed today (${skipped.length}):</b><br>${skipped.join('<br>')}</div>`;
+  }
+  const aiQs = followups.filter(f => f.sec === 'AI check').length;
+  if(aiQs >= 3){
+    html += `<div class="fu-skipped" style="color:var(--q)"><b style="color:var(--q)">${aiQs} of 5 AI questions are open.</b> Worth running a full AI Readiness Review before this goes to build.</div>`;
+  }
+  body.innerHTML = html;
+}
+
+function summary(){
+  const g = id => (document.getElementById(id).value || '').trim();
+  const L = [];
+  L.push(`# Design review: ${g('m-what') || 'untitled'}`);
+  L.push(``);
+  if(g('m-designer')) L.push(`Designer: ${g('m-designer')}`);
+  if(g('m-who')) L.push(`Reviewers: ${g('m-who')}`);
+  if(g('m-date')) L.push(`Date: ${g('m-date')}`);
+  L.push(``);
+  const secs = allSections();
+  const fu = [], sk = [];
+  secs.forEach(sec => sec.items.forEach(it => {
+    if(marks[it.id] === 'q') fu.push({sec:sec.name, item:it.t, note:(qnotes[it.id]||'').trim()});
+    if(marks[it.id] === 's') sk.push(`${sec.name}: ${it.t}`);
+  }));
+  L.push(`## Follow-ups (${fu.length})`);
+  L.push(``);
+  if(fu.length) fu.forEach((f,i) => {
+    L.push(`${i+1}. ${f.note || f.item}`);
+    L.push(`   _${f.sec}${f.note ? ' · ' + f.item : ''}_`);
+  });
+  else L.push(`_None marked._`);
+  if(sk.length){
+    L.push(``);
+    L.push(`## Not reviewed (${sk.length})`);
+    L.push(``);
+    sk.forEach(x => L.push(`- ${x}`));
+  }
+  const aiQ = fu.filter(f => f.sec === 'AI check').length;
+  if(aiQ >= 3){
+    L.push(``);
+    L.push(`> ${aiQ} of 5 AI questions came back open. Recommend a full AI Readiness Review before build.`);
+  }
+  return L.join('\n');
+}
+
+document.getElementById('ai-on').addEventListener('change', e => {
+  document.getElementById('sec-ai').classList.toggle('hidden', !e.target.checked);
+  document.getElementById('aitoggle').classList.toggle('on', e.target.checked);
+  render();
+});
+document.getElementById('b-copy').addEventListener('click', () => {
+  const txt = summary(), btn = document.getElementById('b-copy');
+  navigator.clipboard.writeText(txt).then(() => {
+    const o = btn.textContent; btn.textContent = 'Copied'; setTimeout(()=>btn.textContent=o,1400);
+  }).catch(() => {
+    const w = window.open('','_blank');
+    if(w) w.document.write('<pre>' + txt.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])) + '</pre>');
+  });
+});
+document.getElementById('b-print').addEventListener('click', () => window.print());
+document.getElementById('b-reset').addEventListener('click', () => {
+  if(!confirm('Clear this review?')) return;
+  Object.keys(marks).forEach(k=>delete marks[k]);
+  Object.keys(qnotes).forEach(k=>delete qnotes[k]);
+  document.querySelectorAll('.mk').forEach(b=>b.classList.remove('on-ok','on-q','on-s'));
+  document.querySelectorAll('.item').forEach(r=>r.classList.remove('flagged'));
+  document.querySelectorAll('.qnote').forEach(n=>{n.classList.remove('show');n.querySelector('input').value='';});
+  document.querySelectorAll('.meta input').forEach(i=>i.value='');
+  render();
+});
+
+build();
+render();
+</script>
+</body>
+</html>
