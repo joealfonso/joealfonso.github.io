@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV6CVTX4BZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NV6CVTX4BZ');
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Discovery Education Home | Joseph Alfonso</title>
     <meta name="description" content="How I redesigned the Discovery Education platform homepage to serve millions of teachers and students with a personalized, accessible, and deeply researched new experience." />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/styles.css" />
     <script>
@@ -39,7 +50,12 @@
     <header class="site-header">
       <nav class="nav">
         <a href="../index.html" class="nav__logo">Joseph Alfonso</a>
-        <ul class="nav__links">
+        <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+        <ul class="nav__links" id="nav-links">
           <li><a href="about.html">About</a></li>
           <li><a href="work.html">Work</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -285,11 +301,10 @@
         </figure>
 
         <figure>
-          <img
-            src="../main/assets/img/home/Cards2.gif"
-            alt="Drag and drop card interaction demonstration"
-            loading="lazy"
-          />
+          <video autoplay loop muted playsinline aria-label="Drag and drop card interaction demonstration" loading="lazy">
+            <source src="../main/assets/img/home/Cards2.webm" type="video/webm" />
+            <img src="../main/assets/img/home/Cards2.gif" alt="Drag and drop card interaction demonstration" />
+          </video>
           <figcaption>Drag-and-drop reordering let users arrange their homepage around their own priorities.</figcaption>
         </figure>
 

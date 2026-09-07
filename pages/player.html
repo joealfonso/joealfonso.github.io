@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV6CVTX4BZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NV6CVTX4BZ');
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Media Redesign | Joseph Alfonso</title>
     <meta name="description" content="How iterative design sprints and focused research led to a significantly more effective media experience for millions of K–12 students and teachers at Discovery Education." />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/styles.css" />
     <script>
@@ -39,7 +50,12 @@
     <header class="site-header">
       <nav class="nav">
         <a href="../index.html" class="nav__logo">Joseph Alfonso</a>
-        <ul class="nav__links">
+        <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+        <ul class="nav__links" id="nav-links">
           <li><a href="about.html">About</a></li>
           <li><a href="work.html">Work</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -274,11 +290,14 @@
         </p>
 
         <figure>
-          <img
-            src="../main/assets/img/player/Concept-Sidebar1.png"
-            alt="Redesigned Player with sidebar navigation and content focus"
-            loading="lazy"
-          />
+          <picture>
+            <source srcset="../main/assets/img/player/Concept-Sidebar1.webp" type="image/webp" />
+            <img
+              src="../main/assets/img/player/Concept-Sidebar1.png"
+              alt="Redesigned Player with sidebar navigation and content focus"
+              loading="lazy"
+            />
+          </picture>
           <figcaption>The redesigned experience with a clear content hierarchy and accessible supplementary navigation.</figcaption>
         </figure>
 
