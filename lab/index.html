@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV6CVTX4BZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NV6CVTX4BZ');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab | Joseph Alfonso</title>
+    <meta name="description" content="Experiments and prototypes by Joseph Alfonso." />
+    <meta name="robots" content="noindex" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script>
+      (function () {
+        var palettes = [
+          { accent: '#0052CC', accentHover: '#003D99', accentSubtle: '#EBF2FF',   accentDark: '#4D94FF', accentHoverDark: '#7AB3FF', accentSubtleDark: '#0F1E38' },
+          { accent: '#0D9488', accentHover: '#0F766E', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
+          { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
+          { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
+          { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
+        ];
+        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var p = palettes[Math.floor(Math.random() * palettes.length)];
+        var r = document.documentElement;
+        r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
+        r.style.setProperty('--color-accent-hover',  dark ? p.accentHoverDark  : p.accentHover);
+        r.style.setProperty('--color-accent-subtle', dark ? p.accentSubtleDark : p.accentSubtle);
+      })();
+    </script>
+  </head>
+  <body>
+
+    <!-- NAV -->
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="nav__logo">Joseph Alfonso</a>
+        <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="../pages/about.html">About</a></li>
+          <li><a href="../pages/work.html">Work</a></li>
+          <li><a href="../pages/contact.html">Contact</a></li>
+          <li><a href="index.html" aria-current="page">Lab</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+
+      <section class="container">
+        <div class="lab-hero">
+          <p class="lab-hero__eyebrow">Lab</p>
+          <h1 class="lab-hero__title">Experiments</h1>
+          <p class="lab-hero__desc">A scratchpad for prototypes, UI explorations, and design ideas in progress. Nothing here is finished.</p>
+        </div>
+
+        <!-- Experiment list — add new entries here -->
+        <div class="lab-grid">
+          <!-- Example entry (remove or replace when you add real experiments):
+          <a href="experiment-name.html" class="lab-card">
+            <p class="lab-card__title">Experiment title</p>
+            <p class="lab-card__meta">Brief description of what you're exploring</p>
+          </a>
+          -->
+          <div class="lab-empty">
+            <p>No experiments yet. Add pages to <code>/lab/</code> and link them here.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">&copy; 2026 Joseph Alfonso</p>
+        <nav class="site-footer__links" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/jalfonsodesign/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="mailto:J.ALFONSO84@gmail.com">Email</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>
