@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K17M6WE3GP"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-K17M6WE3GP');
-  </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV6CVTX4BZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NV6CVTX4BZ');
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Media Redesign | Joseph Alfonso</title>
-    <meta name="description" content="How iterative design sprints and focused research led to a significantly more effective media experience for millions of K-12 students and teachers at Discovery Education." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/styles.css" />
     <script src="../js/palette.js"></script>
-  </head>
   <body>
 
     <!-- NAV -->
@@ -41,13 +40,7 @@
     <main>
 
       <!-- CASE STUDY HEADER -->
-      <section class="page-orb-section">
-        <div class="hero__bg" aria-hidden="true">
-          <div class="hero__orb hero__orb--1"></div>
-          <div class="hero__orb hero__orb--2"></div>
-          <div class="hero__orb hero__orb--3"></div>
-        </div>
-        <div class="case-study-header container">
+      <section class="case-study-header container">
         <p class="case-study-header__eyebrow eyebrow">Discovery Education &middot; Media Redesign</p>
         <h1 class="case-study-header__title">How short, focused design sprints produced compounding improvements to how children learn from video</h1>
         <p class="case-study-header__summary">
@@ -80,7 +73,6 @@
             <p class="case-study-meta__value">K&ndash;12 students and teachers</p>
           </div>
         </div>
-              </div>
       </section>
 
       <!-- COVER IMAGE -->
@@ -272,11 +264,14 @@
         </p>
 
         <figure>
-          <img
-            src="../main/assets/img/player/Concept-Sidebar1.png"
-            alt="Redesigned Player with sidebar navigation and content focus"
-            loading="lazy"
-          />
+          <picture>
+            <source srcset="../main/assets/img/player/Concept-Sidebar1.webp" type="image/webp" />
+            <img
+              src="../main/assets/img/player/Concept-Sidebar1.png"
+              alt="Redesigned Player with sidebar navigation and content focus"
+              loading="lazy"
+            />
+          </picture>
           <figcaption>The redesigned experience with a clear content hierarchy and accessible supplementary navigation.</figcaption>
         </figure>
 
@@ -357,5 +352,6 @@
     </footer>
 
     <script src="../js/main.js" defer></script>
-  </body>
+    <script src="../js/analytics.js"></script>
+</body>
 </html>
