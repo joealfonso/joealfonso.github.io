@@ -29,7 +29,8 @@
     },
   ];
 
-  var dark = true;
+  // Dark is the default; match the light override in styles.css.
+  var dark = !window.matchMedia('(prefers-color-scheme: light)').matches;
 
   function boost(c) {
     return dark ? c.replace(/,([\d.]+)\)$/, function (_, v) {
