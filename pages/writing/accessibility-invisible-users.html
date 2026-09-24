@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV6CVTX4BZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NV6CVTX4BZ');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your usability tests can’t see the users who already left | Joseph Alfonso</title>
+    <meta name="description" content="On Amazon’s employee document platform, employees with disabilities had quietly routed around the product. Standard research never caught it. Here’s why, and what to do instead." />
+    <link rel="canonical" href="https://josephalfonso.com/pages/writing/accessibility-invisible-users.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Your usability tests can’t see the users who already left" />
+    <meta property="og:description" content="On Amazon’s employee document platform, employees with disabilities had quietly routed around the product. Standard research never caught it. Here’s why, and what to do instead." />
+    <meta property="og:url" content="https://josephalfonso.com/pages/writing/accessibility-invisible-users.html" />
+    <meta property="article:published_time" content="2026-09-24" />
+    <meta property="article:author" content="Joseph Alfonso" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <script src="../../js/palette.js"></script>
+  </head>
+  <body>
+
+    <div class="reading-progress" aria-hidden="true"></div>
+
+    <!-- NAV -->
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../../index.html" class="nav__logo">Joseph Alfonso</a>
+        <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../writing.html" aria-current="page">Writing</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <article>
+
+        <!-- ARTICLE HEADER -->
+        <header class="article-header container container--narrow">
+          <a href="../writing.html" class="article-header__back">← All writing</a>
+          <p class="eyebrow">Perspective &middot; Accessibility</p>
+          <h1 class="article-header__title">Your usability tests can’t see the users who already left</h1>
+          <p class="article-header__dek">
+            On Amazon’s employee document platform, employees with disabilities had quietly stopped using the product as designed. Our research never caught it, because standard research only studies the people who stay.
+          </p>
+          <dl class="article-meta">
+            <div>
+              <dt class="article-meta__label">Published</dt>
+              <dd class="article-meta__value"><time datetime="2026-09-24">Sep 24, 2026</time></dd>
+            </div>
+            <div>
+              <dt class="article-meta__label">Reading time</dt>
+              <dd class="article-meta__value" data-reading-time>3 min read</dd>
+            </div>
+            <div>
+              <dt class="article-meta__label">Topic</dt>
+              <dd class="article-meta__value">Accessibility</dd>
+            </div>
+            <div>
+              <dt class="article-meta__label">Best for</dt>
+              <dd class="article-meta__value">Design leaders, researchers, product managers</dd>
+            </div>
+          </dl>
+        </header>
+
+        <div class="container container--narrow">
+
+          <!-- SUMMARY -->
+          <aside class="article-summary" aria-labelledby="summary-label">
+            <p class="article-summary__label" id="summary-label">The short version</p>
+            <p class="article-summary__lead">
+              Accessibility failures rarely show up as complaints. They show up as absence: people who work around your product so completely that your research never meets them.
+            </p>
+            <ul class="article-summary__points">
+              <li><strong>What happened:</strong> employees with disabilities were downloading PDFs to use their own assistive tools and memorizing menu positions just to finish basic tasks.</li>
+              <li><strong>Why it hid:</strong> usability tests, SUS scores, and completion metrics measure people using the product, not people who have routed around it.</li>
+              <li><strong>The fix was smaller than the problem:</strong> a screen-readable viewer shipped with minimal operational impact, and application abandonment dropped.</li>
+              <li><strong>What to do:</strong> recruit participants with disabilities into every study from day one, and treat workarounds as findings, not edge cases.</li>
+            </ul>
+          </aside>
+
+          <!-- TABLE OF CONTENTS (populated by main.js) -->
+          <nav class="article-toc" aria-labelledby="toc-label" data-article-toc hidden>
+            <p class="article-toc__label" id="toc-label">In this article</p>
+            <ol class="article-toc__list"></ol>
+          </nav>
+
+          <!-- BODY -->
+          <div class="article-body" data-article-body>
+
+            <h2>The finding nobody was looking for</h2>
+            <p>
+              I was lead product designer on Amazon’s Employee Document Management platform for more than two years. EDM
+              manages 4.8 billion documents a year across 67 countries, for everyone from candidates signing offer letters
+              to alumni requesting records. When I joined, the team already had a healthy research foundation: heuristic
+              evaluations, usability tests, SUS scores, and journey maps from pre-hire through alumni.
+            </p>
+            <p>
+              None of it had surfaced what I heard in interviews: most employees with disabilities weren’t using the document
+              portal at all. They were downloading PDFs straight to their computers so they could open them with their own
+              assistive tools. The default viewer wasn’t screen-readable, and people had adapted by memorizing menu positions
+              and workflows just to get through basic tasks.
+            </p>
+            <p>
+              That isn’t a minor inconvenience. It’s a complete breakdown of the intended experience for a meaningful part of
+              the workforce, and it had gone undetected for a long time.
+            </p>
+
+            <h2>Why good research missed it</h2>
+            <p>
+              Nothing was wrong with the existing research. It was doing exactly what it was designed to do: measure how well
+              the product worked for the people using it. That’s the blind spot. Most research methods start from the product
+              and look outward, so they are structurally unable to see the people who have given up on it.
+            </p>
+            <p>
+              Worse, a workaround can look like success in your data. An employee who downloads a document and reads it in their
+              own screen reader still generates a “document accessed” event. The breakdown shows up in the metrics as completion.
+            </p>
+
+            <blockquote>Standard testing doesn’t catch people who abandon the product entirely. You have to go looking for them.</blockquote>
+
+            <h2>Absence is a signal</h2>
+            <p>
+              The shift I’d ask any team to make is to treat workarounds as first-class findings. When someone exports, downloads,
+              prints, or asks a coworker to complete a task, they’re telling you where the product failed them. Those behaviors
+              are easy to dismiss as preference. Often they’re adaptation.
+            </p>
+            <p>
+              In practice, that means asking different questions in interviews. Not just “how do you do this in the tool?” but
+              “what do you do instead?” and “when do you avoid the tool entirely?”
+            </p>
+
+            <h2>The fix was smaller than the problem</h2>
+            <p>
+              Once we understood the problem, the solution wasn’t exotic. I worked with engineering to evaluate and implement the
+              Mozilla PDF reader, which gave us full screen-reader compatibility with minimal operational impact. Documents that
+              required signatures needed a separate approach, which meant bringing in legal and financial teams to align on one.
+            </p>
+            <p>
+              After launch, I went back to the same participants. The response was immediate. People were visibly moved that
+              they’d been considered at all. We also saw something we hadn’t predicted: application abandonment dropped after the
+              viewer redesign, and the platform met accessibility compliance for the first time.
+            </p>
+
+            <h2>The counterargument: “we can’t research every population”</h2>
+            <p>
+              Research budgets are real, and it’s fair to ask whether dedicated accessibility recruitment is worth it on every
+              project. My answer is that you don’t need a separate study. You need inclusive recruitment built into the studies
+              you’re already running. That costs far less than discovering the problem years later.
+            </p>
+            <p>
+              The work also compounds. When we later added an AI layer to EDM’s employee portal, with plain-language summaries of
+              legal agreements and a mobile briefing card for new hires, the accessibility foundation was what made it possible.
+              Designing for the people on the margins made the product better for everyone else too.
+            </p>
+
+            <h2>What to do Monday</h2>
+            <ul>
+              <li>Add participants with disabilities to your next study’s recruitment criteria, not to a follow-up study.</li>
+              <li>Ask “what do you do instead?” in every interview, and log workarounds as findings.</li>
+              <li>Look at your data for workaround behavior: downloads, exports, and repeated drop-off at the same step.</li>
+              <li>When you fix something, go back to the same participants. It builds trust, and it tells you whether the fix worked.</li>
+            </ul>
+
+            <div class="callout">
+              <p class="callout__label">What I’d do differently</p>
+              <p>
+                The accessibility discovery came too late. Users with disabilities had been working around a broken experience
+                for a long time before we surfaced it. I’d build inclusive participant recruitment into the research plan from day
+                one, not treat it as a secondary study.
+              </p>
+            </div>
+          </div>
+
+          <!-- ARTICLE FOOTER -->
+          <footer class="article-footer">
+            <div>
+              <p class="article-footer__name">Joseph Alfonso</p>
+              <p class="article-footer__bio">
+                Lead UX Designer at Amazon. 15+ years leading design for enterprise platforms, accessibility-first
+                products, and K–12 learning experiences.
+              </p>
+            </div>
+            <div class="article-footer__actions">
+              <a class="btn btn--secondary btn--sm" data-share="linkedin" href="https://www.linkedin.com/in/jalfonsodesign/" target="_blank" rel="noopener noreferrer">Share on LinkedIn ↗</a>
+              <a class="btn btn--ghost btn--sm" href="../writing.html">More writing</a>
+              <a class="btn btn--ghost btn--sm" href="../contact.html">Get in touch</a>
+            </div>
+          </footer>
+
+        </div>
+      </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">&copy; 2026 Joseph Alfonso</p>
+        <nav class="site-footer__links" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/jalfonsodesign/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="mailto:J.ALFONSO84@gmail.com">Email</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../../js/main.js" defer></script>
+    <script src="../../js/analytics.js"></script>
+  </body>
+</html>

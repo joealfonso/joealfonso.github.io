@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!--
+  TEMPLATE: Field notes (lessons from real work)
+  ──────────────────────────────────────────────
+  Use when: you solved a recurring problem on a real project and want to
+  share what worked. e.g. "Getting Legal, HR, and Engineering to agree on
+  one resignation flow."
+  Target length: 900–1,600 words (5–8 min read).
+
+  Shape: Context (your role, explicit) → Challenge / What worked pairs
+  → Results → What I'd do differently.
+
+  Keep it lead-framed: say what YOU drove. "I ran a workshop with..." not
+  "The team held a workshop."
+
+  To publish:
+    1. Copy this file to pages/writing/your-slug.html (lowercase, hyphens).
+    2. Delete the noindex <meta> tag.
+    3. Replace every [bracketed] value, including canonical/og:url.
+    4. Add a post entry to pages/writing.html.
+  See pages/writing/README.md for the full checklist.
+-->
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV6CVTX4BZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NV6CVTX4BZ');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" /> <!-- DELETE WHEN PUBLISHING -->
+    <title>[Article title] | Joseph Alfonso</title>
+    <!-- 1–2 sentences, under 160 characters. Shown in search results and link previews. -->
+    <meta name="description" content="[The core argument in one or two sentences.]" />
+    <link rel="canonical" href="https://josephalfonso.com/pages/writing/[slug].html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="[Article title]" />
+    <meta property="og:description" content="[Same as meta description.]" />
+    <meta property="og:url" content="https://josephalfonso.com/pages/writing/[slug].html" />
+    <!-- Optional: 1200×630 image for LinkedIn previews, e.g. ../../images/writing/[slug].jpg -->
+    <!-- <meta property="og:image" content="https://josephalfonso.com/images/writing/[slug].jpg" /> -->
+    <meta property="article:published_time" content="[YYYY-MM-DD]" />
+    <meta property="article:author" content="Joseph Alfonso" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <script src="../../js/palette.js"></script>
+  </head>
+  <body>
+
+    <div class="reading-progress" aria-hidden="true"></div>
+
+    <!-- NAV -->
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../../index.html" class="nav__logo">Joseph Alfonso</a>
+        <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../writing.html" aria-current="page">Writing</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <article>
+
+        <!-- ARTICLE HEADER -->
+        <header class="article-header container container--narrow">
+          <a href="../writing.html" class="article-header__back">← All writing</a>
+          <p class="eyebrow">Field notes &middot; [Topic]</p>
+          <!-- Name the problem and the payoff. "Four challenges and what worked" beats "My research experience". -->
+          <h1 class="article-header__title">[Headline naming the problem and that you solved it]</h1>
+          <!-- Dek: one or two sentences on why this matters and who should care. -->
+          <p class="article-header__dek">[The situation in a sentence, and what the reader will be able to apply.]</p>
+          <dl class="article-meta">
+            <div>
+              <dt class="article-meta__label">Published</dt>
+              <dd class="article-meta__value"><time datetime="[YYYY-MM-DD]">[Mon DD, YYYY]</time></dd>
+            </div>
+            <div>
+              <dt class="article-meta__label">Reading time</dt>
+              <!-- main.js calculates this from the body; this value is the no-JS fallback. -->
+              <dd class="article-meta__value" data-reading-time>[N] min read</dd>
+            </div>
+            <div>
+              <dt class="article-meta__label">Topic</dt>
+              <dd class="article-meta__value">[Topic]</dd>
+            </div>
+            <div>
+              <dt class="article-meta__label">Best for</dt>
+              <dd class="article-meta__value">[Design leaders, PMs, hiring managers]</dd>
+            </div>
+          </dl>
+        </header>
+
+        <div class="container container--narrow">
+
+          <!-- SUMMARY — list each challenge with its fix. A reader who stops here should know what to try. -->
+          <aside class="article-summary" aria-labelledby="summary-label">
+            <p class="article-summary__label" id="summary-label">The short version</p>
+            <p class="article-summary__lead">[The situation and the headline lesson in one or two sentences.]</p>
+            <ul class="article-summary__points">
+              <li><strong>[Challenge one]:</strong> [what worked, in one line]</li>
+              <li><strong>[Challenge two]:</strong> [what worked, in one line]</li>
+              <li><strong>[Challenge three]:</strong> [what worked, in one line]</li>
+              <li><strong>Result:</strong> [the quantified outcome]</li>
+            </ul>
+          </aside>
+
+          <!-- TABLE OF CONTENTS — built automatically from the body's h2s. Leave empty. -->
+          <nav class="article-toc" aria-labelledby="toc-label" data-article-toc hidden>
+            <p class="article-toc__label" id="toc-label">In this article</p>
+            <ol class="article-toc__list"></ol>
+          </nav>
+
+          <!-- BODY -->
+          <div class="article-body" data-article-body>
+
+            <h2>Context</h2>
+            <p>[The project, the company, the scale, and your role. Be explicit about ownership: "As lead designer, I owned..." Name the stakeholders you were aligning.]</p>
+
+            <h2>[Challenge one]</h2>
+            <p>[What got in the way, and why it mattered. Include the constraint: technical, organizational, legal, or timeline.]</p>
+
+            <h3>What worked: [approach]</h3>
+            <p>[What you did and why you chose it over the alternatives.]</p>
+
+            <h3>What didn't: [approach]</h3>
+            <p>[Optional but valuable: what you tried first and why you abandoned it.]</p>
+
+            <h2>[Challenge two]</h2>
+            <p>[What got in the way.]</p>
+
+            <h3>What worked: [approach]</h3>
+            <p>[What you did.]</p>
+
+            <h2>[Challenge three]</h2>
+            <p>[What got in the way.]</p>
+
+            <h3>What worked: [approach]</h3>
+            <p>[What you did.]</p>
+
+            <h2>Results</h2>
+            <!-- Feature-level numbers beat top-line ones. Delete a stat rather than inventing one. -->
+            <div class="stat-block">
+              <div class="stat-block__item">
+                <p class="stat-block__number">[34%]</p>
+                <p class="stat-block__label">[What moved, and compared to what]</p>
+              </div>
+              <div class="stat-block__item">
+                <p class="stat-block__number">[3×]</p>
+                <p class="stat-block__label">[What moved, and compared to what]</p>
+              </div>
+            </div>
+            <p>[What the outcome meant for users and the business.]</p>
+
+            <div class="callout">
+              <p class="callout__label">What I'd do differently</p>
+              <p>[Honest reflection. What would you change with hindsight: sequencing, who you brought in earlier, what you'd measure?]</p>
+            </div>
+          </div>
+
+          <!-- ARTICLE FOOTER -->
+          <footer class="article-footer">
+            <div>
+              <p class="article-footer__name">Joseph Alfonso</p>
+              <p class="article-footer__bio">
+                Lead UX Designer at Amazon. 15+ years leading design for enterprise platforms, accessibility-first
+                products, and K–12 learning experiences.
+              </p>
+            </div>
+            <div class="article-footer__actions">
+              <a class="btn btn--secondary btn--sm" data-share="linkedin" href="https://www.linkedin.com/in/jalfonsodesign/" target="_blank" rel="noopener noreferrer">Share on LinkedIn ↗</a>
+              <a class="btn btn--ghost btn--sm" href="../writing.html">More writing</a>
+              <a class="btn btn--ghost btn--sm" href="../contact.html">Get in touch</a>
+            </div>
+          </footer>
+
+        </div>
+      </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">&copy; 2026 Joseph Alfonso</p>
+        <nav class="site-footer__links" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/jalfonsodesign/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="mailto:J.ALFONSO84@gmail.com">Email</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../../js/main.js" defer></script>
+    <script src="../../js/analytics.js"></script>
+  </body>
+</html>

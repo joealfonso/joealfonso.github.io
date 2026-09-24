@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV6CVTX4BZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NV6CVTX4BZ');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Writing | Joseph Alfonso</title>
+    <meta name="description" content="Field notes, frameworks, and points of view from Joseph Alfonso on user research, accessibility, stakeholder alignment, and leading design at enterprise scale." />
+    <link rel="canonical" href="https://josephalfonso.com/pages/writing.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/palette.js"></script>
+  </head>
+  <body>
+
+    <!-- NAV -->
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="nav__logo">Joseph Alfonso</a>
+        <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="writing.html" aria-current="page">Writing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- INTRO -->
+      <section class="page-intro container">
+        <p class="eyebrow">Writing</p>
+        <h1 class="page-intro__title">Notes on leading design at enterprise scale.</h1>
+        <p class="page-intro__lead">
+          Field notes, frameworks, and points of view on research, accessibility, stakeholder alignment, and
+          designing with AI. Every piece opens with a short summary, so you can get the point in under a minute
+          and decide whether to read on.
+        </p>
+      </section>
+
+      <!-- POSTS -->
+      <section class="writing-list container">
+
+        <!--
+          Topic filter: add a button for each topic you publish under.
+          data-filter must match a value in a post's data-topics list.
+        -->
+        <div class="topic-filter" role="group" aria-label="Filter by topic">
+          <button type="button" class="topic-filter__btn" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="topic-filter__btn" data-filter="accessibility" aria-pressed="false">Accessibility</button>
+          <button type="button" class="topic-filter__btn" data-filter="ai" aria-pressed="false">AI design</button>
+          <button type="button" class="topic-filter__btn" data-filter="enterprise-ux" aria-pressed="false">Enterprise UX</button>
+          <button type="button" class="topic-filter__btn" data-filter="research" aria-pressed="false">User research</button>
+          <button type="button" class="topic-filter__btn" data-filter="edtech" aria-pressed="false">EdTech</button>
+        </div>
+
+        <!--
+          Newest first. To add a post, copy an <li> block below and update:
+          href, datetime + date, reading time (from the article page), topic,
+          title, summary (reuse the article's "short version" lead), and tags.
+        -->
+        <ol class="post-list" reversed>
+
+          <li class="post-list__item" data-topics="accessibility research">
+            <article class="post">
+              <p class="post__meta">
+                <time datetime="2026-09-24">Sep 24, 2026</time>
+                <span aria-hidden="true">&middot;</span>
+                <span>3 min read</span>
+                <span aria-hidden="true">&middot;</span>
+                <span>Perspective</span>
+              </p>
+              <h2 class="post__title">
+                <a href="writing/accessibility-invisible-users.html">Your usability tests can’t see the users who already left</a>
+              </h2>
+              <p class="post__summary">
+                Accessibility failures rarely show up as complaints. They show up as absence: people who work around your product so completely that your research never meets them.
+              </p>
+              <div class="post__tags">
+                <span class="tag">Accessibility</span>
+                <span class="tag">User research</span>
+                <span class="tag">Enterprise UX</span>
+              </div>
+            </article>
+          </li>
+
+          <li class="post-list__item" data-topics="enterprise-ux research">
+            <article class="post">
+              <p class="post__meta">
+                <time datetime="2026-09-24">Sep 24, 2026</time>
+                <span aria-hidden="true">&middot;</span>
+                <span>3 min read</span>
+                <span aria-hidden="true">&middot;</span>
+                <span>Field notes</span>
+              </p>
+              <h2 class="post__title">
+                <a href="writing/exit-flow-retention.html">Designing an exit flow that gives people a reason to stay</a>
+              </h2>
+              <p class="post__summary">
+                An exit flow isn’t a form to close out. It’s the organization’s last chance to listen, and designing it that way turned a compliance task into a retention tool.
+              </p>
+              <div class="post__tags">
+                <span class="tag">Enterprise UX</span>
+                <span class="tag">Stakeholder alignment</span>
+                <span class="tag">HR design</span>
+              </div>
+            </article>
+          </li>
+
+          <li class="post-list__item" data-topics="ai enterprise-ux">
+            <article class="post">
+              <p class="post__meta">
+                <time datetime="2026-09-24">Sep 24, 2026</time>
+                <span aria-hidden="true">&middot;</span>
+                <span>3 min read</span>
+                <span aria-hidden="true">&middot;</span>
+                <span>Playbook</span>
+              </p>
+              <h2 class="post__title">
+                <a href="writing/ai-compliance-playbook.html">How to design AI features for compliance-heavy workflows</a>
+              </h2>
+              <p class="post__summary">
+                In compliance contexts, AI should surface, not decide. A six-step method for designing AI where a wrong guess is a liability, not just a UX bug.
+              </p>
+              <div class="post__tags">
+                <span class="tag">AI design</span>
+                <span class="tag">Compliance</span>
+                <span class="tag">Enterprise UX</span>
+              </div>
+            </article>
+          </li>
+
+          <li class="post-list__item" data-topics="research edtech">
+            <article class="post">
+              <p class="post__meta">
+                <time datetime="2019-12-26">Dec 26, 2019</time>
+                <span aria-hidden="true">&middot;</span>
+                <span>4 min read</span>
+                <span aria-hidden="true">&middot;</span>
+                <span>Field notes</span>
+              </p>
+              <h2 class="post__title">
+                <a href="writing/edtech-research-challenges.html">Running user research in EdTech: four challenges and what worked</a>
+              </h2>
+              <p class="post__summary">
+                Research with teachers breaks in four predictable ways: locked-down devices, surprise participants,
+                content mismatch, and scarce time. Each one has a practical workaround.
+              </p>
+              <div class="post__tags">
+                <span class="tag">User research</span>
+                <span class="tag">EdTech</span>
+                <span class="tag">Remote testing</span>
+              </div>
+            </article>
+          </li>
+
+        </ol>
+
+        <p class="post-list__empty" hidden>Nothing published under this topic yet.</p>
+
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">&copy; 2026 Joseph Alfonso</p>
+        <nav class="site-footer__links" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/jalfonsodesign/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="mailto:J.ALFONSO84@gmail.com">Email</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+    <script src="../js/analytics.js"></script>
+  </body>
+</html>

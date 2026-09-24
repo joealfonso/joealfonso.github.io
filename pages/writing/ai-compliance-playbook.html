@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV6CVTX4BZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NV6CVTX4BZ');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to design AI features for compliance-heavy workflows | Joseph Alfonso</title>
+    <meta name="description" content="A six-step method from adding an intelligence layer to Amazon’s employee document platform, where a wrong AI guess isn’t a UX bug, it’s a liability." />
+    <link rel="canonical" href="https://josephalfonso.com/pages/writing/ai-compliance-playbook.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="How to design AI features for compliance-heavy workflows" />
+    <meta property="og:description" content="A six-step method from adding an intelligence layer to Amazon’s employee document platform, where a wrong AI guess isn’t a UX bug, it’s a liability." />
+    <meta property="og:url" content="https://josephalfonso.com/pages/writing/ai-compliance-playbook.html" />
+    <meta property="article:published_time" content="2026-09-24" />
+    <meta property="article:author" content="Joseph Alfonso" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <script src="../../js/palette.js"></script>
+  </head>
+  <body>
+
+    <div class="reading-progress" aria-hidden="true"></div>
+
+    <!-- NAV -->
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../../index.html" class="nav__logo">Joseph Alfonso</a>
+        <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../writing.html" aria-current="page">Writing</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <article>
+
+        <!-- ARTICLE HEADER -->
+        <header class="article-header container container--narrow">
+          <a href="../writing.html" class="article-header__back">← All writing</a>
+          <p class="eyebrow">Playbook &middot; AI design</p>
+          <h1 class="article-header__title">How to design AI features for compliance-heavy workflows</h1>
+          <p class="article-header__dek">
+            A six-step method from adding an intelligence layer to Amazon’s employee document platform, where a wrong guess isn’t a UX bug. It’s a liability.
+          </p>
+          <dl class="article-meta">
+            <div>
+              <dt class="article-meta__label">Published</dt>
+              <dd class="article-meta__value"><time datetime="2026-09-24">Sep 24, 2026</time></dd>
+            </div>
+            <div>
+              <dt class="article-meta__label">Reading time</dt>
+              <dd class="article-meta__value" data-reading-time>3 min read</dd>
+            </div>
+            <div>
+              <dt class="article-meta__label">Topic</dt>
+              <dd class="article-meta__value">AI design</dd>
+            </div>
+            <div>
+              <dt class="article-meta__label">Best for</dt>
+              <dd class="article-meta__value">Product designers, design leads, PMs in regulated domains</dd>
+            </div>
+          </dl>
+        </header>
+
+        <div class="container container--narrow">
+
+          <!-- SUMMARY -->
+          <aside class="article-summary" aria-labelledby="summary-label">
+            <p class="article-summary__label" id="summary-label">The short version</p>
+            <p class="article-summary__lead">
+              In compliance contexts, AI should surface, not decide. Start from validated research, show your reasoning and confidence, make failure states honest, and keep a person accountable for every decision.
+            </p>
+            <ul class="article-summary__points">
+              <li><strong>Start from findings:</strong> every AI concept should trace back to a validated research finding, not a model capability.</li>
+              <li><strong>Turn status into decisions:</strong> replace numbers people have to interpret with the specific thing they should act on.</li>
+              <li><strong>Show reasoning and confidence:</strong> propose, explain, and let people accept or reject inline.</li>
+              <li><strong>Be honest about limits:</strong> the “can’t do this” state is a feature. Don’t let exceptions block everything else.</li>
+              <li><strong>Set up early:</strong> bring Legal into the first workshop and build measurement before launch, not after.</li>
+            </ul>
+          </aside>
+
+          <!-- TABLE OF CONTENTS (populated by main.js) -->
+          <nav class="article-toc" aria-labelledby="toc-label" data-article-toc hidden>
+            <p class="article-toc__label" id="toc-label">In this article</p>
+            <ol class="article-toc__list"></ol>
+          </nav>
+
+          <!-- BODY -->
+          <div class="article-body" data-article-body>
+
+            <h2>When to use this</h2>
+            <p>
+              After shipping Amazon’s Employee Document Management platform, I led a second phase focused on AI integration across
+              four product surfaces: an M&amp;A dashboard, bulk document generation, the HR admin portal, and the employee portal.
+              The platform worked, but it was reactive. It showed people what had happened without telling them what to do about it.
+            </p>
+            <p>
+              Use this method when the stakes of a wrong answer are high: HR, legal, finance, healthcare, or anywhere an
+              output affects a real person’s employment, money, or rights. The signals that AI can help are familiar: people
+              interpreting raw data themselves, repeating round trips to fix errors, or reading an entire document to find the
+              one thing that’s wrong.
+            </p>
+            <p>
+              It’s not the right method when a mistake costs little and speed matters more than accountability. There, a
+              lighter-touch approach is fine.
+            </p>
+
+            <h2>The steps</h2>
+            <ol class="article-steps">
+              <li class="article-steps__item">
+                <h3>Start from a validated finding, not a model capability</h3>
+                <p>
+                  I ran cross-functional workshops to identify where intelligence could close a gap for each user type. Every
+                  concept had to trace back to a validated research finding or an existing backlog item. The framing question:
+                  what does this person need right now that the system isn’t surfacing for them? Done looks like a short list of
+                  concepts, each with the finding it answers.
+                </p>
+              </li>
+              <li class="article-steps__item">
+                <h3>Turn status into a decision</h3>
+                <p>
+                  Managers tracking acquisition paperwork had one signal: a completion percentage. “57% complete” leaves all the
+                  interpretation to them. The redesign added risk scoring with a plain-language explanation, close-date
+                  forecasting based on velocity, and anomaly detection that named the actual blocker (three unreleased Critical
+                  employees) instead of burying it in a table. Done looks like every metric answering “so what do I do?”
+                </p>
+              </li>
+              <li class="article-steps__item">
+                <h3>Show the reasoning, the confidence, and the choice</h3>
+                <p>
+                  Bulk document generation used to be a full round trip: upload a spreadsheet, get errors, download, fix offline,
+                  re-upload. The self-fix feature detects each error, proposes the most likely correction with its reasoning and a
+                  confidence level, and lets HR accept or reject inline. About 75% of common errors became fixable without leaving
+                  the page. Done looks like no AI output without an explanation next to it.
+                </p>
+              </li>
+              <li class="article-steps__item">
+                <h3>Make the “I can’t” state honest</h3>
+                <p>
+                  Some rows can’t be auto-resolved. Those are flagged explicitly, with a clear reason, and they don’t block the
+                  rest. In a batch of 72 employees with 8 errors, the other 64 still generate. In compliance, an AI that guesses and
+                  gets it wrong is a liability, so the fallback has to be designed as carefully as the happy path.
+                </p>
+              </li>
+              <li class="article-steps__item">
+                <h3>Keep a person as the decision-maker</h3>
+                <p>
+                  Approvers were opening 14-page agreements cold and reading every line to find problems. The pre-review panel
+                  cross-references Workday before they open the document and flags pay band violations, legal entity mismatches,
+                  and expired IDs. The approver still makes the call. What AI removes is the archaeology. Done looks like a clear
+                  answer to “who approved this, and when?”
+                </p>
+              </li>
+              <li class="article-steps__item">
+                <h3>Bring in Legal and measurement from day one</h3>
+                <p>
+                  Many of the constraints I designed around were things I already knew from the platform work. Getting Legal and
+                  Compliance into the AI workshops from the start would have surfaced edge cases sooner. The same goes for
+                  measurement: server-side task timing and a continuous feedback loop give you signal during design, not just
+                  after launch.
+                </p>
+              </li>
+            </ol>
+
+            <h2>Common pitfalls</h2>
+            <ul>
+              <li><strong>Leading with the model:</strong> “What can the AI do?” produces demos. “What does this person need?” produces products.</li>
+              <li><strong>Hiding uncertainty:</strong> a confident-looking wrong answer does more damage than an honest “I’m not sure.”</li>
+              <li><strong>Letting exceptions block the batch:</strong> isolate what can’t be resolved so everything else moves forward.</li>
+              <li><strong>Adding Legal at review time:</strong> by then, their constraints mean rework instead of design input.</li>
+              <li><strong>Forgetting the most vulnerable users:</strong> new hires on their first day, warehouse workers on phones, and non-native speakers need comprehension, not just completion.</li>
+            </ul>
+
+            <h2>Checklist</h2>
+            <p>Before an AI feature in a regulated workflow goes to review:</p>
+            <ul class="article-checklist">
+              <li>Every AI output traces back to a research finding</li>
+              <li>Every suggestion shows its reasoning and confidence</li>
+              <li>Users can accept, reject, or edit inline</li>
+              <li>The low-confidence and “can’t resolve” states are designed, not defaulted</li>
+              <li>A named person approves every consequential action</li>
+              <li>Legal and Compliance have reviewed the language</li>
+              <li>Measurement is in place before launch</li>
+            </ul>
+
+            <div class="callout">
+              <p class="callout__label">Where this came from</p>
+              <p>
+                Phase 2 of Amazon’s Employee Document Management platform: 4.8 billion documents a year across 67 countries.
+                On the employee side, the AI layer built on earlier accessibility work, adding plain-language summaries of legal
+                agreements and a section tracker that flags when someone moves quickly past a high-stakes clause, before they sign
+                rather than after.
+              </p>
+            </div>
+          </div>
+
+          <!-- ARTICLE FOOTER -->
+          <footer class="article-footer">
+            <div>
+              <p class="article-footer__name">Joseph Alfonso</p>
+              <p class="article-footer__bio">
+                Lead UX Designer at Amazon. 15+ years leading design for enterprise platforms, accessibility-first
+                products, and K–12 learning experiences.
+              </p>
+            </div>
+            <div class="article-footer__actions">
+              <a class="btn btn--secondary btn--sm" data-share="linkedin" href="https://www.linkedin.com/in/jalfonsodesign/" target="_blank" rel="noopener noreferrer">Share on LinkedIn ↗</a>
+              <a class="btn btn--ghost btn--sm" href="../writing.html">More writing</a>
+              <a class="btn btn--ghost btn--sm" href="../contact.html">Get in touch</a>
+            </div>
+          </footer>
+
+        </div>
+      </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">&copy; 2026 Joseph Alfonso</p>
+        <nav class="site-footer__links" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/jalfonsodesign/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="mailto:J.ALFONSO84@gmail.com">Email</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../../js/main.js" defer></script>
+    <script src="../../js/analytics.js"></script>
+  </body>
+</html>

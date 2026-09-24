@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV6CVTX4BZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NV6CVTX4BZ');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Running User Research in EdTech: Four Challenges and What Worked | Joseph Alfonso</title>
+    <meta name="description" content="Research with teachers breaks in predictable ways: locked-down devices, surprise participants, content mismatch, and scarce time. Here's what worked at Discovery Education." />
+    <link rel="canonical" href="https://josephalfonso.com/pages/writing/edtech-research-challenges.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Running User Research in EdTech: Four Challenges and What Worked" />
+    <meta property="og:description" content="Research with teachers breaks in predictable ways: locked-down devices, surprise participants, content mismatch, and scarce time. Here's what worked at Discovery Education." />
+    <meta property="og:url" content="https://josephalfonso.com/pages/writing/edtech-research-challenges.html" />
+    <meta property="article:published_time" content="2019-12-26" />
+    <meta property="article:author" content="Joseph Alfonso" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <script src="../../js/palette.js"></script>
+  </head>
+  <body>
+
+    <div class="reading-progress" aria-hidden="true"></div>
+
+    <!-- NAV -->
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../../index.html" class="nav__logo">Joseph Alfonso</a>
+        <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../writing.html" aria-current="page">Writing</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <article>
+
+        <!-- ARTICLE HEADER -->
+        <header class="article-header container container--narrow">
+          <a href="../writing.html" class="article-header__back">← All writing</a>
+          <p class="eyebrow">Field notes &middot; User research</p>
+          <h1 class="article-header__title">Running user research in EdTech: four challenges and what worked</h1>
+          <p class="article-header__dek">
+            Teachers are some of the most willing research participants you'll ever recruit, and some of the hardest
+            to actually run a clean session with. Here's what got in the way at Discovery Education, and how we worked around it.
+          </p>
+          <dl class="article-meta">
+            <div>
+              <dt class="article-meta__label">Published</dt>
+              <dd class="article-meta__value"><time datetime="2019-12-26">Dec 26, 2019</time></dd>
+            </div>
+            <div>
+              <dt class="article-meta__label">Reading time</dt>
+              <dd class="article-meta__value" data-reading-time>4 min read</dd>
+            </div>
+            <div>
+              <dt class="article-meta__label">Topic</dt>
+              <dd class="article-meta__value">User research</dd>
+            </div>
+            <div>
+              <dt class="article-meta__label">Best for</dt>
+              <dd class="article-meta__value">Researchers, design leads, EdTech teams</dd>
+            </div>
+          </dl>
+        </header>
+
+        <div class="container container--narrow">
+
+          <!-- SUMMARY -->
+          <aside class="article-summary" aria-labelledby="summary-label">
+            <p class="article-summary__label" id="summary-label">The short version</p>
+            <p class="article-summary__lead">
+              Research with teachers breaks in four predictable ways. Each one has a practical workaround,
+              and most of them come down to planning for the classroom rather than the lab.
+            </p>
+            <ul class="article-summary__points">
+              <li><strong>Locked-down school devices:</strong> use browser-based tools and Figma prototypes that need no install. Mail hardware only when the study justifies the cost.</li>
+              <li><strong>Unplanned participants:</strong> keep a discussion-based fallback guide ready so a usability test can pivot without losing the session.</li>
+              <li><strong>Content mismatch:</strong> frame the scenario before the session starts. Custom-content prototypes help, but rarely justify the effort.</li>
+              <li><strong>Limited availability:</strong> open self-serve scheduling across the whole day. Teachers will book early mornings and evenings.</li>
+            </ul>
+          </aside>
+
+          <!-- TABLE OF CONTENTS (populated by main.js) -->
+          <nav class="article-toc" aria-labelledby="toc-label" data-article-toc hidden>
+            <p class="article-toc__label" id="toc-label">In this article</p>
+            <ol class="article-toc__list"></ol>
+          </nav>
+
+          <!-- BODY -->
+          <div class="article-body" data-article-body>
+
+            <h2 id="context">Context</h2>
+            <p>
+              While running user research at Discovery Education, I ran into a set of challenges that kept coming back,
+              study after study. Some of them apply well beyond EdTech, but I can only speak to what I've seen. Working
+              through them with some excellent peers, we landed on approaches that held up, and I want to share not just
+              what we did, but the circumstances that made it necessary.
+            </p>
+            <p>
+              The focus here is direct user engagement: interviews, usability testing, and prototype feedback sessions.
+            </p>
+
+            <h2 id="locked-down-devices">Challenge 1: Locked-down school devices</h2>
+            <p>
+              Teachers, and almost always students, use school-provided computers that restrict what can be installed.
+              That conflicts with most of the tools used to run remote research.
+            </p>
+            <p>
+              For years, most of our interviews were phone calls, with no way to observe, assist, or interact with the
+              participant. Video tools often required software users couldn't install, which led to more technical problems
+              and more compromised data than we were comfortable with. It also made it much harder to build a real
+              relationship with participants.
+            </p>
+            <p>
+              Group sessions suffered most. When nobody could see each other, participation caused anxiety, something we
+              only learned by talking to users over time. Moderating was harder too, since we had no control over the call.
+            </p>
+
+            <h3>What worked: browser-based video tools</h3>
+            <p>
+              We moved to tools like appear.in that didn't need an elaborate permissions model. Later, hybrid platforms like
+              RingCentral let us consolidate back onto standard tools. One constraint never went away: screen sharing
+              almost always requires the participant to install something. That's what pushed us toward Figma.
+            </p>
+
+            <h3>What worked: mailing cameras to participants</h3>
+            <p>
+              For studies where observation was essential, we bought action cameras, built custom stands, and mailed them
+              out with prepaid return postage. It was slow and expensive, so we reserved it for research where the stakes
+              justified it.
+            </p>
+
+            <h3>What worked: Figma prototypes in multiplayer mode</h3>
+            <p>
+              Figma's prototype and multiplayer modes sidestepped installation and security restrictions entirely. We could
+              follow and record exact cursor movement and prototype interactions, and give participants far better support
+              during the session.
+            </p>
+
+            <h2 id="unplanned-participants">Challenge 2: Distractions and unplanned participants</h2>
+            <p>
+              You sit down for an interview and suddenly there are three people instead of one. A true usability test is
+              off the table, and the session will inevitably turn into a discussion. You have to change your moderation
+              plan on the spot while still getting to your research goals and keeping a good relationship with the
+              participants. This isn't unique to EdTech, but I saw it far more often with schools, where some districts
+              and administrators are much more hands-on than others.
+            </p>
+            <p>
+              How much it hurts depends on the study. It's a significant setback for usability testing, or when you only
+              have a handful of sessions planned.
+            </p>
+
+            <h3>What worked: have a plan, be explicit, stay flexible</h3>
+            <p>
+              There's no elegant way to tell someone they're not invited, so the answer is preparation. We'd lean on the
+              open-ended questions we normally saved for the end of a session. Having that fallback ready is essential.
+            </p>
+
+            <h2 id="content-mismatch">Challenge 3: Choosing the right content</h2>
+            <p>
+              Of all the user groups I've researched with, teachers have the hardest time setting aside their mental
+              models to participate in a session.
+            </p>
+            <p>
+              Teachers work within a specific range of grades and subjects every day. In a test, they assume the content will
+              match what they already teach. When a history teacher opens the prototype and finds Language Arts content,
+              they get thrown off. Even within the same subject, being a grade or two off creates friction you have to work
+              through.
+            </p>
+            <p>
+              In early project phases we rarely had access to production user data, so we couldn't build prototypes around
+              real user profiles and scenarios. We could recruit teachers by subject, but when content isn't what you're
+              testing, that shrinks an already small participant pool.
+            </p>
+
+            <h3>What worked, with caveats: custom-content prototypes</h3>
+            <p>
+              We tried building a version of the prototype for each teacher, with content broad enough to feel familiar.
+              It did improve sessions, but the extra effort only paid off at high participant volumes.
+            </p>
+
+            <h3>What worked: framing the scenario before the session</h3>
+            <p>
+              This is standard practice, but it matters more here because each teacher's curriculum is so specific, and
+              different subjects are taught in different ways. Put simply, in our use cases, content and layout can't be
+              evaluated independently.
+            </p>
+
+            <h2 id="availability">Challenge 4: Limited availability</h2>
+            <p>
+              Asking for anyone's time during the day is a big ask, and teachers are responsible for their students' days
+              as well as their own. But being overbooked doesn't stop them. Teachers sign up at a higher rate per invite
+              than any user group I've worked with, and they're happy to meet early in the morning or late in the evening.
+              I've seen teachers book slots they knew they couldn't make because they were excited to take part. That
+              pushed us to rethink scheduling for remote research altogether.
+            </p>
+
+            <h3>What worked: self-serve scheduling</h3>
+            <p>
+              With Calendly, we opened time slots across entire days to fit teachers' schedules and our own. Automating
+              scheduling saved time and stress, which made us more willing to run studies in the first place.
+            </p>
+
+          </div>
+
+          <!-- ARTICLE FOOTER -->
+          <footer class="article-footer">
+            <div>
+              <p class="article-footer__name">Joseph Alfonso</p>
+              <p class="article-footer__bio">
+                Lead UX Designer at Amazon. 15+ years leading design for enterprise platforms, accessibility-first
+                products, and K–12 learning experiences.
+              </p>
+            </div>
+            <div class="article-footer__actions">
+              <a class="btn btn--secondary btn--sm" data-share="linkedin" href="https://www.linkedin.com/in/jalfonsodesign/" target="_blank" rel="noopener noreferrer">Share on LinkedIn ↗</a>
+              <a class="btn btn--ghost btn--sm" href="../writing.html">More writing</a>
+              <a class="btn btn--ghost btn--sm" href="../contact.html">Get in touch</a>
+            </div>
+          </footer>
+
+        </div>
+      </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">&copy; 2026 Joseph Alfonso</p>
+        <nav class="site-footer__links" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/jalfonsodesign/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="mailto:J.ALFONSO84@gmail.com">Email</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../../js/main.js" defer></script>
+    <script src="../../js/analytics.js"></script>
+  </body>
+</html>
