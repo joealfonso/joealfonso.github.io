@@ -12,11 +12,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your usability tests can’t see the users who already left | Joseph Alfonso</title>
-    <meta name="description" content="On Amazon’s employee document platform, employees with disabilities had quietly routed around the product. Standard research never caught it. Here’s why, and what to do instead." />
+    <meta name="description" content="On Amazon’s employee document platform, many employees with disabilities had found their own way around the product. Our research never caught it. Here’s why, and what I’d do instead." />
     <link rel="canonical" href="https://josephalfonso.com/pages/writing/accessibility-invisible-users.html" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Your usability tests can’t see the users who already left" />
-    <meta property="og:description" content="On Amazon’s employee document platform, employees with disabilities had quietly routed around the product. Standard research never caught it. Here’s why, and what to do instead." />
+    <meta property="og:description" content="On Amazon’s employee document platform, many employees with disabilities had found their own way around the product. Our research never caught it. Here’s why, and what I’d do instead." />
     <meta property="og:url" content="https://josephalfonso.com/pages/writing/accessibility-invisible-users.html" />
     <meta property="article:published_time" content="2026-09-24" />
     <meta property="article:author" content="Joseph Alfonso" />
@@ -58,7 +58,7 @@
           <p class="eyebrow">Perspective &middot; Accessibility</p>
           <h1 class="article-header__title">Your usability tests can’t see the users who already left</h1>
           <p class="article-header__dek">
-            On Amazon’s employee document platform, employees with disabilities had quietly stopped using the product as designed. Our research never caught it, because standard research only studies the people who stay.
+            On Amazon’s employee document platform, a lot of employees with disabilities had stopped using the product the way we designed it. Our research never flagged it, because it only studied the people who were still using it.
           </p>
           <dl class="article-meta">
             <div>
@@ -86,13 +86,13 @@
           <aside class="article-summary" aria-labelledby="summary-label">
             <p class="article-summary__label" id="summary-label">The short version</p>
             <p class="article-summary__lead">
-              Accessibility failures rarely show up as complaints. They show up as absence: people who work around your product so completely that your research never meets them.
+              Accessibility problems don’t always show up as complaints. Sometimes people just work around your product, and your research never runs into them.
             </p>
             <ul class="article-summary__points">
-              <li><strong>What happened:</strong> employees with disabilities were downloading PDFs to use their own assistive tools and memorizing menu positions just to finish basic tasks.</li>
-              <li><strong>Why it hid:</strong> usability tests, SUS scores, and completion metrics measure people using the product, not people who have routed around it.</li>
-              <li><strong>The fix was smaller than the problem:</strong> a screen-readable viewer shipped with minimal operational impact, and application abandonment dropped.</li>
-              <li><strong>What to do:</strong> recruit participants with disabilities into every study from day one, and treat workarounds as findings, not edge cases.</li>
+              <li><strong>What happened:</strong> employees with disabilities were downloading PDFs to open in their own assistive tools, or memorizing where menus were just to get basic tasks done.</li>
+              <li><strong>Why we missed it:</strong> usability tests, SUS scores, and completion rates measure people using the product. They don’t tell you about people who’ve found a way around it.</li>
+              <li><strong>The fix was simple:</strong> a screen-readable viewer that didn’t take much to ship. Application abandonment dropped afterward.</li>
+              <li><strong>What I’d tell other teams:</strong> include participants with disabilities in every study from the start, and write down workarounds as findings.</li>
             </ul>
           </aside>
 
@@ -105,86 +105,86 @@
           <!-- BODY -->
           <div class="article-body" data-article-body>
 
-            <h2>The finding nobody was looking for</h2>
+            <h2>What I found</h2>
             <p>
-              I was lead product designer on Amazon’s Employee Document Management platform for more than two years. EDM
-              manages 4.8 billion documents a year across 67 countries, for everyone from candidates signing offer letters
-              to alumni requesting records. When I joined, the team already had a healthy research foundation: heuristic
-              evaluations, usability tests, SUS scores, and journey maps from pre-hire through alumni.
+              I was the lead product designer on Amazon’s Employee Document Management platform for more than two years. EDM
+              handles 4.8 billion documents a year in 67 countries. Candidates use it to sign offer letters, alumni use it to
+              request records, and pretty much everyone in between uses it for something. When I joined, the team had already
+              done solid research: heuristic evaluations, usability tests, SUS scores, and journey maps from pre-hire through alumni.
             </p>
             <p>
-              None of it had surfaced what I heard in interviews: most employees with disabilities weren’t using the document
-              portal at all. They were downloading PDFs straight to their computers so they could open them with their own
-              assistive tools. The default viewer wasn’t screen-readable, and people had adapted by memorizing menu positions
-              and workflows just to get through basic tasks.
+              But in my own interviews, I kept hearing something none of that research had picked up. Most of the employees with
+              disabilities I talked to weren’t using the document portal at all. They downloaded PDFs to their computers and opened
+              them in their own assistive tools, because our default viewer didn’t work with screen readers. The people who did
+              stick with the portal had memorized where the menus were and what order to click things in.
             </p>
             <p>
-              That isn’t a minor inconvenience. It’s a complete breakdown of the intended experience for a meaningful part of
-              the workforce, and it had gone undetected for a long time.
-            </p>
-
-            <h2>Why good research missed it</h2>
-            <p>
-              Nothing was wrong with the existing research. It was doing exactly what it was designed to do: measure how well
-              the product worked for the people using it. That’s the blind spot. Most research methods start from the product
-              and look outward, so they are structurally unable to see the people who have given up on it.
-            </p>
-            <p>
-              Worse, a workaround can look like success in your data. An employee who downloads a document and reads it in their
-              own screen reader still generates a “document accessed” event. The breakdown shows up in the metrics as completion.
+              For those employees, the experience we’d designed basically didn’t exist. And it had been that way for a long time
+              without anyone noticing.
             </p>
 
-            <blockquote>Standard testing doesn’t catch people who abandon the product entirely. You have to go looking for them.</blockquote>
-
-            <h2>Absence is a signal</h2>
+            <h2>Why the research didn’t catch it</h2>
             <p>
-              The shift I’d ask any team to make is to treat workarounds as first-class findings. When someone exports, downloads,
-              prints, or asks a coworker to complete a task, they’re telling you where the product failed them. Those behaviors
-              are easy to dismiss as preference. Often they’re adaptation.
+              The existing research wasn’t bad. It measured how well the product worked for the people using it, which is exactly
+              what it was set up to do. The trouble is that people who’ve given up on a product aren’t in that group. If your
+              methods start from the product, you’re not going to find them.
             </p>
             <p>
-              In practice, that means asking different questions in interviews. Not just “how do you do this in the tool?” but
-              “what do you do instead?” and “when do you avoid the tool entirely?”
+              It gets worse, because a workaround can look fine in the data. If someone downloads a document and reads it in their
+              own screen reader, that still logs as “document accessed.” In our metrics, the task looked done.
             </p>
 
-            <h2>The fix was smaller than the problem</h2>
+            <blockquote>Standard testing won’t find the people who stopped using your product. You have to go looking for them.</blockquote>
+
+            <h2>Pay attention to workarounds</h2>
             <p>
-              Once we understood the problem, the solution wasn’t exotic. I worked with engineering to evaluate and implement the
-              Mozilla PDF reader, which gave us full screen-reader compatibility with minimal operational impact. Documents that
-              required signatures needed a separate approach, which meant bringing in legal and financial teams to align on one.
+              The main thing I’d ask other teams to do is log workarounds as real findings. When someone exports, downloads, prints,
+              or asks a coworker to do a task for them, there’s usually a reason, and often it’s that the product didn’t work for
+              them. It’s easy to write that off as personal preference. A lot of the time, it’s someone adapting.
             </p>
             <p>
-              After launch, I went back to the same participants. The response was immediate. People were visibly moved that
-              they’d been considered at all. We also saw something we hadn’t predicted: application abandonment dropped after the
-              viewer redesign, and the platform met accessibility compliance for the first time.
+              In interviews, that just means asking a couple more questions. Along with “how do you do this in the tool?”, ask
+              “what do you do instead?” and “when do you skip the tool completely?”
             </p>
 
-            <h2>The counterargument: “we can’t research every population”</h2>
+            <h2>The fix was pretty simple</h2>
             <p>
-              Research budgets are real, and it’s fair to ask whether dedicated accessibility recruitment is worth it on every
-              project. My answer is that you don’t need a separate study. You need inclusive recruitment built into the studies
-              you’re already running. That costs far less than discovering the problem years later.
+              Once we understood what was going on, the solution wasn’t complicated. I worked with engineering to evaluate the
+              Mozilla PDF reader and build it in, which gave us full screen reader support without much operational overhead.
+              Documents that needed signatures were harder. For those, I had to get legal and finance aligned on a separate approach.
             </p>
             <p>
-              The work also compounds. When we later added an AI layer to EDM’s employee portal, with plain-language summaries of
-              legal agreements and a mobile briefing card for new hires, the accessibility foundation was what made it possible.
-              Designing for the people on the margins made the product better for everyone else too.
+              After launch, I went back to the same participants. The reaction was stronger than I expected. People were genuinely
+              moved that someone had thought about them at all. We also saw something we hadn’t planned for: application abandonment
+              dropped after the viewer redesign. And the platform met accessibility compliance for the first time.
             </p>
 
-            <h2>What to do Monday</h2>
+            <h2>“We can’t research every population”</h2>
+            <p>
+              I hear this a lot, and it’s a fair point. Research budgets are limited. But you don’t need a separate accessibility
+              study. You need to include people with disabilities in the studies you’re already running. That costs a lot less than
+              finding the problem years later, which is what happened to us.
+            </p>
+            <p>
+              It also paid off later. When we added an AI layer to EDM’s employee portal, with plain-language summaries of legal
+              agreements and a mobile briefing card for new hires, the accessibility work was the foundation for it. Fixing the
+              product for the people we’d missed ended up making it better for everyone else, too.
+            </p>
+
+            <h2>Where to start</h2>
             <ul>
-              <li>Add participants with disabilities to your next study’s recruitment criteria, not to a follow-up study.</li>
-              <li>Ask “what do you do instead?” in every interview, and log workarounds as findings.</li>
-              <li>Look at your data for workaround behavior: downloads, exports, and repeated drop-off at the same step.</li>
-              <li>When you fix something, go back to the same participants. It builds trust, and it tells you whether the fix worked.</li>
+              <li>Add participants with disabilities to the recruiting criteria for your next study. Don’t save them for a follow-up.</li>
+              <li>Ask “what do you do instead?” in every interview, and write down the workarounds you hear.</li>
+              <li>Look for workarounds in your data too: downloads, exports, and people dropping off at the same step over and over.</li>
+              <li>When you fix something, go back to the same participants. It builds trust, and it’s the best way to find out if the fix worked.</li>
             </ul>
 
             <div class="callout">
               <p class="callout__label">What I’d do differently</p>
               <p>
-                The accessibility discovery came too late. Users with disabilities had been working around a broken experience
-                for a long time before we surfaced it. I’d build inclusive participant recruitment into the research plan from day
-                one, not treat it as a secondary study.
+                We found this too late. People with disabilities had been working around a broken experience for a long time before
+                anyone on our side knew about it. Next time, I’d build inclusive recruiting into the research plan from the start
+                instead of treating it as a separate study.
               </p>
             </div>
           </div>
