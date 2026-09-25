@@ -12,11 +12,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>How to design AI features for compliance-heavy workflows | Joseph Alfonso</title>
-    <meta name="description" content="A six-step method from adding an intelligence layer to Amazon’s employee document platform, where a wrong AI guess isn’t a UX bug, it’s a liability." />
+    <meta name="description" content="A six-step method from adding AI to Amazon’s employee document platform, where a wrong guess from the AI can turn into a real legal or HR problem." />
     <link rel="canonical" href="https://josephalfonso.com/pages/writing/ai-compliance-playbook.html" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="How to design AI features for compliance-heavy workflows" />
-    <meta property="og:description" content="A six-step method from adding an intelligence layer to Amazon’s employee document platform, where a wrong AI guess isn’t a UX bug, it’s a liability." />
+    <meta property="og:description" content="A six-step method from adding AI to Amazon’s employee document platform, where a wrong guess from the AI can turn into a real legal or HR problem." />
     <meta property="og:url" content="https://josephalfonso.com/pages/writing/ai-compliance-playbook.html" />
     <meta property="article:published_time" content="2026-09-24" />
     <meta property="article:author" content="Joseph Alfonso" />
@@ -58,7 +58,7 @@
           <p class="eyebrow">Playbook &middot; AI design</p>
           <h1 class="article-header__title">How to design AI features for compliance-heavy workflows</h1>
           <p class="article-header__dek">
-            A six-step method from adding an intelligence layer to Amazon’s employee document platform, where a wrong guess isn’t a UX bug. It’s a liability.
+            A six-step method from adding AI to Amazon’s employee document platform. In HR and legal workflows, a wrong guess from the AI can turn into a real legal problem, so the design has to plan for that.
           </p>
           <dl class="article-meta">
             <div>
@@ -86,14 +86,14 @@
           <aside class="article-summary" aria-labelledby="summary-label">
             <p class="article-summary__label" id="summary-label">The short version</p>
             <p class="article-summary__lead">
-              In compliance contexts, AI should surface, not decide. Start from validated research, show your reasoning and confidence, make failure states honest, and keep a person accountable for every decision.
+              In compliance work, the AI should point things out and let a person decide. Start from research, show how the AI got its answer and how sure it is, design for the cases it can’t handle, and make sure a person signs off on every decision.
             </p>
             <ul class="article-summary__points">
-              <li><strong>Start from findings:</strong> every AI concept should trace back to a validated research finding, not a model capability.</li>
-              <li><strong>Turn status into decisions:</strong> replace numbers people have to interpret with the specific thing they should act on.</li>
-              <li><strong>Show reasoning and confidence:</strong> propose, explain, and let people accept or reject inline.</li>
-              <li><strong>Be honest about limits:</strong> the “can’t do this” state is a feature. Don’t let exceptions block everything else.</li>
-              <li><strong>Set up early:</strong> bring Legal into the first workshop and build measurement before launch, not after.</li>
+              <li><strong>Start from research:</strong> every AI idea should come from something research actually found, not from what the model can do.</li>
+              <li><strong>Tell people what to do:</strong> instead of a number they have to interpret, show them the specific thing that needs attention.</li>
+              <li><strong>Show your work:</strong> suggest a fix, explain why, and let people accept or reject it right there.</li>
+              <li><strong>Plan for what it can’t do:</strong> say clearly when the AI can’t resolve something, and don’t let those cases hold up everything else.</li>
+              <li><strong>Involve Legal early:</strong> bring them into the first workshop, and set up measurement before launch.</li>
             </ul>
           </aside>
 
@@ -108,85 +108,87 @@
 
             <h2>When to use this</h2>
             <p>
-              After shipping Amazon’s Employee Document Management platform, I led a second phase focused on AI integration across
-              four product surfaces: an M&amp;A dashboard, bulk document generation, the HR admin portal, and the employee portal.
-              The platform worked, but it was reactive. It showed people what had happened without telling them what to do about it.
+              After we shipped Amazon’s Employee Document Management platform, I led a second phase focused on adding AI to four
+              parts of the product: an M&amp;A dashboard, bulk document generation, the HR admin portal, and the employee portal.
+              The platform worked well, but it mostly reported what had already happened. People still had to figure out what to
+              do about it on their own.
             </p>
             <p>
-              Use this method when the stakes of a wrong answer are high: HR, legal, finance, healthcare, or anywhere an
-              output affects a real person’s employment, money, or rights. The signals that AI can help are familiar: people
-              interpreting raw data themselves, repeating round trips to fix errors, or reading an entire document to find the
-              one thing that’s wrong.
+              This approach makes sense when a wrong answer is expensive: HR, legal, finance, healthcare, or anything that affects
+              someone’s job, pay, or rights. You’ll usually spot the need in a few familiar places. People are interpreting raw data
+              by hand, sending the same work back and forth to fix errors, or reading a whole document to find the one thing that’s wrong.
             </p>
             <p>
-              It’s not the right method when a mistake costs little and speed matters more than accountability. There, a
-              lighter-touch approach is fine.
+              If mistakes are cheap and speed matters more than accountability, you probably don’t need all of this.
             </p>
 
             <h2>The steps</h2>
             <ol class="article-steps">
               <li class="article-steps__item">
-                <h3>Start from a validated finding, not a model capability</h3>
+                <h3>Start from a research finding, not a model capability</h3>
                 <p>
-                  I ran cross-functional workshops to identify where intelligence could close a gap for each user type. Every
-                  concept had to trace back to a validated research finding or an existing backlog item. The framing question:
-                  what does this person need right now that the system isn’t surfacing for them? Done looks like a short list of
-                  concepts, each with the finding it answers.
+                  I ran workshops with cross-functional partners to figure out where AI could actually help each type of user.
+                  The rule was that every idea had to connect to a research finding we’d validated or something already on the
+                  backlog. The question we kept coming back to was: what does this person need right now that the system isn’t
+                  showing them? By the end, you want a short list of concepts, each tied to the finding it addresses.
                 </p>
               </li>
               <li class="article-steps__item">
-                <h3>Turn status into a decision</h3>
+                <h3>Tell people what to do, not just where things stand</h3>
                 <p>
-                  Managers tracking acquisition paperwork had one signal: a completion percentage. “57% complete” leaves all the
-                  interpretation to them. The redesign added risk scoring with a plain-language explanation, close-date
-                  forecasting based on velocity, and anomaly detection that named the actual blocker (three unreleased Critical
-                  employees) instead of burying it in a table. Done looks like every metric answering “so what do I do?”
+                  Managers tracking paperwork for acquisitions had one number to go on: a completion percentage. “57% complete”
+                  doesn’t tell you much. You still have to work out whether that’s a problem. We added a risk score with a
+                  plain-language explanation, a close-date forecast based on how fast things were moving, and anomaly detection
+                  that called out the actual blocker (for example, three Critical employees who hadn’t been released yet) instead
+                  of leaving it buried in a table. A good test is whether every number on the screen answers “so what do I do?”
                 </p>
               </li>
               <li class="article-steps__item">
-                <h3>Show the reasoning, the confidence, and the choice</h3>
+                <h3>Show the reasoning and the confidence, and let people choose</h3>
                 <p>
-                  Bulk document generation used to be a full round trip: upload a spreadsheet, get errors, download, fix offline,
-                  re-upload. The self-fix feature detects each error, proposes the most likely correction with its reasoning and a
-                  confidence level, and lets HR accept or reject inline. About 75% of common errors became fixable without leaving
-                  the page. Done looks like no AI output without an explanation next to it.
+                  Bulk document generation used to mean a lot of back and forth. HR would upload a spreadsheet, get a list of
+                  errors, download it, fix things offline, and upload it again. The self-fix feature finds each error, suggests
+                  the most likely fix, explains why, and shows how confident it is. HR can accept or reject each one inline. About
+                  75% of common errors can now be fixed without leaving the page. My rule here: no AI output shows up without an
+                  explanation next to it.
                 </p>
               </li>
               <li class="article-steps__item">
-                <h3>Make the “I can’t” state honest</h3>
+                <h3>Be upfront when the AI can’t help</h3>
                 <p>
-                  Some rows can’t be auto-resolved. Those are flagged explicitly, with a clear reason, and they don’t block the
-                  rest. In a batch of 72 employees with 8 errors, the other 64 still generate. In compliance, an AI that guesses and
-                  gets it wrong is a liability, so the fallback has to be designed as carefully as the happy path.
+                  Some rows can’t be fixed automatically. We flag those clearly, say why, and let everything else go through. So if
+                  a batch has 72 employees and 8 errors, the other 64 documents still get generated. In compliance work, an AI that
+                  guesses wrong creates legal risk, so the fallback needs as much design attention as the main flow.
                 </p>
               </li>
               <li class="article-steps__item">
-                <h3>Keep a person as the decision-maker</h3>
+                <h3>Keep a person in charge of the decision</h3>
                 <p>
-                  Approvers were opening 14-page agreements cold and reading every line to find problems. The pre-review panel
-                  cross-references Workday before they open the document and flags pay band violations, legal entity mismatches,
-                  and expired IDs. The approver still makes the call. What AI removes is the archaeology. Done looks like a clear
-                  answer to “who approved this, and when?”
+                  Approvers used to open 14-page agreements with no context and read every line looking for problems. The
+                  pre-review panel checks the document against Workday before they open it, and flags things like pay band
+                  violations, legal entity mismatches, and expired IDs. The approver still makes the call. The AI just saves them
+                  from digging through the whole thing to find what’s wrong. You should always be able to answer “who approved
+                  this, and when?”
                 </p>
               </li>
               <li class="article-steps__item">
                 <h3>Bring in Legal and measurement from day one</h3>
                 <p>
-                  Many of the constraints I designed around were things I already knew from the platform work. Getting Legal and
-                  Compliance into the AI workshops from the start would have surfaced edge cases sooner. The same goes for
-                  measurement: server-side task timing and a continuous feedback loop give you signal during design, not just
-                  after launch.
+                  A lot of the constraints I designed around were things I already knew from the platform work. Still, if Legal
+                  and Compliance had been in the AI workshops from the beginning, we would have caught some edge cases sooner. Same
+                  with measurement: if you set up server-side task timing and a feedback loop early, you get useful data while
+                  you’re still designing, not only after launch.
                 </p>
               </li>
             </ol>
 
             <h2>Common pitfalls</h2>
             <ul>
-              <li><strong>Leading with the model:</strong> “What can the AI do?” produces demos. “What does this person need?” produces products.</li>
-              <li><strong>Hiding uncertainty:</strong> a confident-looking wrong answer does more damage than an honest “I’m not sure.”</li>
-              <li><strong>Letting exceptions block the batch:</strong> isolate what can’t be resolved so everything else moves forward.</li>
-              <li><strong>Adding Legal at review time:</strong> by then, their constraints mean rework instead of design input.</li>
-              <li><strong>Forgetting the most vulnerable users:</strong> new hires on their first day, warehouse workers on phones, and non-native speakers need comprehension, not just completion.</li>
+              <li><strong>Starting with the model:</strong> if the first question is “what can the AI do?”, you’ll end up with demos. Start with what the person needs.</li>
+              <li><strong>Hiding uncertainty:</strong> a wrong answer that looks confident does more damage than one that admits it isn’t sure.</li>
+              <li><strong>Letting exceptions hold up the batch:</strong> set aside what can’t be resolved so the rest can keep moving.</li>
+              <li><strong>Bringing Legal in at review time:</strong> by then, their feedback means rework instead of shaping the design.</li>
+              <li><strong>Forgetting the people with the least context:</strong> new hires on their first day, warehouse workers on their phones, and non-native English speakers need to understand what they’re signing, not just get through it.</li>
             </ul>
 
             <h2>Checklist</h2>
@@ -195,7 +197,7 @@
               <li>Every AI output traces back to a research finding</li>
               <li>Every suggestion shows its reasoning and confidence</li>
               <li>Users can accept, reject, or edit inline</li>
-              <li>The low-confidence and “can’t resolve” states are designed, not defaulted</li>
+              <li>The low-confidence and “can’t resolve” states are designed, not left to defaults</li>
               <li>A named person approves every consequential action</li>
               <li>Legal and Compliance have reviewed the language</li>
               <li>Measurement is in place before launch</li>
@@ -204,10 +206,10 @@
             <div class="callout">
               <p class="callout__label">Where this came from</p>
               <p>
-                Phase 2 of Amazon’s Employee Document Management platform: 4.8 billion documents a year across 67 countries.
-                On the employee side, the AI layer built on earlier accessibility work, adding plain-language summaries of legal
-                agreements and a section tracker that flags when someone moves quickly past a high-stakes clause, before they sign
-                rather than after.
+                This came out of phase 2 of Amazon’s Employee Document Management platform, which handles 4.8 billion documents a
+                year in 67 countries. On the employee side, the AI work built on the accessibility work we’d already done. It added
+                plain-language summaries of legal agreements and a section tracker that flags when someone moves quickly past an
+                important clause, so they catch it before they sign instead of after.
               </p>
             </div>
           </div>

@@ -12,11 +12,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Designing an exit flow that gives people a reason to stay | Joseph Alfonso</title>
-    <meta name="description" content="Lessons from leading Amazon’s Self-Service Resignation experience, where Legal, HR, Product, and Engineering all had a stake in the most sensitive moment of the employee lifecycle." />
+    <meta name="description" content="What I learned leading Amazon’s Self-Service Resignation experience, where Legal, HR, Product, and Engineering all had a stake in how people leave the company." />
     <link rel="canonical" href="https://josephalfonso.com/pages/writing/exit-flow-retention.html" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Designing an exit flow that gives people a reason to stay" />
-    <meta property="og:description" content="Lessons from leading Amazon’s Self-Service Resignation experience, where Legal, HR, Product, and Engineering all had a stake in the most sensitive moment of the employee lifecycle." />
+    <meta property="og:description" content="What I learned leading Amazon’s Self-Service Resignation experience, where Legal, HR, Product, and Engineering all had a stake in how people leave the company." />
     <meta property="og:url" content="https://josephalfonso.com/pages/writing/exit-flow-retention.html" />
     <meta property="article:published_time" content="2026-09-24" />
     <meta property="article:author" content="Joseph Alfonso" />
@@ -58,7 +58,7 @@
           <p class="eyebrow">Field notes &middot; Enterprise UX</p>
           <h1 class="article-header__title">Designing an exit flow that gives people a reason to stay</h1>
           <p class="article-header__dek">
-            Lessons from leading Amazon’s Self-Service Resignation experience in the A to Z app, where five teams had competing priorities for the most sensitive moment in the employee lifecycle.
+            What I learned leading Amazon’s Self-Service Resignation experience in the A to Z app, where five teams had different priorities for one of the most sensitive moments in anyone’s time at the company.
           </p>
           <dl class="article-meta">
             <div>
@@ -86,14 +86,14 @@
           <aside class="article-summary" aria-labelledby="summary-label">
             <p class="article-summary__label" id="summary-label">The short version</p>
             <p class="article-summary__lead">
-              An exit flow isn’t a form to close out. It’s the organization’s last chance to listen, and designing it that way turned a compliance task into a retention tool.
+              We set out to build a resignation form. It turned into a way to learn why people were leaving and, where it made sense, give them a reason to stay.
             </p>
             <ul class="article-summary__points">
-              <li><strong>Competing priorities:</strong> align on vision with leadership and run cross-functional workshops before drawing a single wireframe.</li>
-              <li><strong>Two populations:</strong> map full-time and contingent worker journeys in parallel to see where one design can serve both.</li>
-              <li><strong>Retention without manipulation:</strong> let the employee’s stated reason decide which alternatives appear, and protect their right to change their mind.</li>
-              <li><strong>The business case:</strong> model avoided recruiting and onboarding cost to justify an investment in people.</li>
-              <li><strong>Result:</strong> shipped in 3–6 months to tens of thousands of employees, with measurable retention lift and NPS gains.</li>
+              <li><strong>Competing priorities:</strong> I got leadership aligned on the vision and ran cross-functional workshops before anyone drew a wireframe.</li>
+              <li><strong>Two populations:</strong> we mapped full-time and contingent worker journeys side by side to find where one design could work for both.</li>
+              <li><strong>Retention without pressure:</strong> the reason someone gives for leaving decides which alternatives they see, and they can still change their mind.</li>
+              <li><strong>The business case:</strong> I modeled what it costs to recruit and onboard a replacement to justify the investment.</li>
+              <li><strong>Result:</strong> shipped in 3–6 months to tens of thousands of employees, with measurable retention and NPS gains.</li>
             </ul>
           </aside>
 
@@ -108,90 +108,90 @@
 
             <h2>Context</h2>
             <p>
-              Before this project, Amazon had no unified, self-service way for employees to resign, understand what happened next,
-              or find resources that might address the reason they were leaving. As lead designer, I owned the end-to-end
-              experience in the A to Z app on mobile and web, working across Engineering, Product, Legal, Compliance, and People
-              Experience leadership, from strategy through ship.
+              Before this project, Amazon didn’t have a single self-service way for employees to resign, see what would happen next,
+              or find resources that might address why they were leaving. I was the lead designer and owned the full experience in
+              the A to Z app, on mobile and web. I worked with Engineering, Product, Legal, Compliance, and People Experience
+              leadership from early strategy through launch.
             </p>
             <p>
-              On the surface it was a multi-step form with conditional logic. Underneath, it was a set of human tensions, and the
-              most valuable work I did happened before the first screen existed.
+              On paper, it was a multi-step form with some conditional logic. The hard part was everything around it, and honestly,
+              the most useful work I did happened before we designed a single screen.
             </p>
 
             <h2>Challenge 1: Five teams, five definitions of success</h2>
             <p>
-              Every group had a legitimate stake. Employees in distress needed empathy, not bureaucracy. Legal and Compliance
-              needed precise language, documented consent, and airtight data capture. HR leadership wanted the flow to surface
-              retention options without feeling manipulative. Product and Engineering needed something that would scale globally.
+              Every group had a real stake in this. Employees who were already stressed needed empathy, not paperwork. Legal and
+              Compliance needed exact language, documented consent, and reliable data capture. HR leadership wanted retention
+              options in the flow without it feeling manipulative. Product and Engineering needed something that would scale globally.
             </p>
 
-            <h3>What worked: alignment before wireframes</h3>
+            <h3>What worked: aligning before designing</h3>
             <p>
-              I started by meeting with People Experience leadership to agree on a shared vision, including objective retention
-              metrics and a clear picture of how the experience would affect the people using it. Then I facilitated workshops
-              with stakeholders across all five groups.
+              I started by meeting with People Experience leadership to agree on a shared vision. That included retention metrics
+              we could actually measure and a clear picture of how the experience would affect the people going through it. Then I
+              ran workshops with stakeholders from all five groups.
             </p>
             <p>
-              Getting alignment early wasn’t a courtesy. It was a design decision. Those sessions surfaced assumptions that would
-              otherwise have become friction in reviews, and gave us a shared framework we returned to every time a tradeoff came up.
+              Doing this early made a big difference. The workshops surfaced assumptions that would otherwise have turned into
+              arguments in design reviews, and we came out with a shared framework we kept going back to whenever we had to make a tradeoff.
             </p>
 
             <h2>Challenge 2: Two populations, two legal frameworks</h2>
             <p>
-              The flow had to serve full-time employees and contingent workers, who operate under different access policies and
-              legal protections. Designing for one and adapting for the other would have broken in subtle ways.
+              The flow had to work for full-time employees and contingent workers, who have different access policies and legal
+              protections. If we’d designed for one group and adapted it for the other, it would have broken in ways that were hard to spot.
             </p>
 
-            <h3>What worked: parallel service blueprints</h3>
+            <h3>What worked: side-by-side service blueprints</h3>
             <p>
-              We interviewed current employees who had considered resigning and former employees who had followed through. From
-              that, we built service blueprints that tracked both populations side by side, making it visible where their needs
-              diverged and where a single design could serve both. That dual-journey framework has since become a methodology
-              reference for later People Experience work.
+              We interviewed current employees who had thought about resigning and former employees who had actually left. From
+              those interviews, we built service blueprints that tracked both groups side by side. That showed us where their needs
+              were different and where one design could cover both. People Experience teams have since reused that approach on
+              other projects.
             </p>
 
-            <h2>Challenge 3: Offering alternatives without manipulating people</h2>
+            <h2>Challenge 3: Offering alternatives without pressuring people</h2>
             <p>
-              HR wanted retention options in the flow. Employees needed to feel respected, not sold to. Get the balance wrong and
-              the whole experience reads as a trap.
+              HR wanted retention options in the flow. Employees needed to feel respected, not sold to. If we got that wrong, the
+              whole thing would feel like a trap.
             </p>
 
-            <h3>What worked: let the reason drive the resources</h3>
+            <h3>What worked: let the reason decide what people see</h3>
             <p>
-              The flow opens with a personal acknowledgment, then asks for the primary reason for leaving, followed by a drill-down
-              specific to that reason. Everything after that is shaped by the answer. Someone leaving for growth sees training
-              resources, career development materials, and a connection to the A to Z Assistant. Someone leaving over scheduling
-              sees alternate shift options.
+              The flow starts with a short personal acknowledgment, then asks for the main reason someone is leaving, with follow-up
+              questions specific to that reason. Everything after that depends on the answer. If someone’s leaving for growth, they
+              see training resources, career development materials, and a link to the A to Z Assistant. If it’s about scheduling,
+              they see alternate shift options.
             </p>
             <p>
-              Just as important, the design protects autonomy. The final step shows a full summary with inline editing before
-              submission, and makes clear that employees can change their mind up to 24 hours before their last day. The cancel
-              modal adds deliberate friction to confirm intent without being obstructive.
+              We were also careful to protect people’s right to choose. The last step shows a full summary they can edit before
+              submitting, and it’s clear they can change their mind up to 24 hours before their last day. The cancel modal adds a
+              little friction to confirm intent, but not enough to get in anyone’s way.
             </p>
 
             <h2>Challenge 4: Making the case for an investment in people</h2>
             <p>
-              The hardest challenge was justifying the project at all. It didn’t generate revenue. Proving its value meant
-              translating human outcomes like retention and satisfaction into financial ones.
+              The hardest part was justifying the project at all. It didn’t make money, so proving its value meant translating
+              things like retention and satisfaction into dollars.
             </p>
 
-            <h3>What worked: model the cost of attrition</h3>
+            <h3>What worked: putting a number on attrition</h3>
             <p>
-              I modeled the recruiting spend, onboarding time, and productivity loss of replacing a departing employee, and
-              compared it against the retention lift the flow produced. That financial argument secured sustained organizational
-              commitment, and changed how People Experience leadership evaluated employee-facing investments afterward.
+              I estimated what it costs to replace someone who leaves, including recruiting, onboarding time, and lost productivity,
+              and compared that to the retention lift from the flow. That’s what got us long-term support, and it changed how People
+              Experience leadership looked at employee-facing projects from then on.
             </p>
 
-            <h2>The pivot that changed the product</h2>
+            <h2>What changed halfway through</h2>
             <p>
-              Midway through, research and stakeholder conversations surfaced a defining insight. Employees didn’t just want more
-              training. They wanted access to training from other teams across Amazon. They weren’t trying to do their current job
-              better. They were trying to see a path forward inside the company.
+              Partway through, research and stakeholder conversations turned up something we hadn’t expected. Employees didn’t just
+              want more training. They wanted access to training from other teams across Amazon. A lot of them weren’t looking to get
+              better at their current job. They wanted to see where else they could go inside the company.
             </p>
             <p>
-              That reframed the product. What started as a resignation form became a retention intervention, centered on an Explore
-              hub offering career growth resources, team openings and leader profiles, flex shift options, and self-service
-              resignation in one place. Each pathway was a potential reason to stay.
+              That changed what we were building. The resignation form became one part of a bigger retention effort, centered on an
+              Explore hub that brought together career growth resources, team openings and leader profiles, flex shift options, and
+              self-service resignation. Each one gave people another possible reason to stay.
             </p>
 
             <h2>Results</h2>
@@ -206,9 +206,9 @@
               </div>
             </div>
             <p>
-              The flow delivered a measurable reduction in attrition among the populations it served, positive movement in NPS,
-              and a modeled, demonstrated reduction in recruiting spend. The integration pattern between a structured form and the
-              A to Z Assistant now underpins other self-service HR features.
+              The flow measurably reduced attrition in the groups it served, moved NPS in the right direction, and cut recruiting
+              spend, both in our model and in practice. The way we connected a structured form to the A to Z Assistant is now used
+              in other self-service HR features.
             </p>
           </div>
 
