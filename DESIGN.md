@@ -7,44 +7,59 @@
 
 ## Aesthetic Direction
 
-Clean, confident, and typographically precise. No decorative elements — the design recedes so the work leads. Influenced by editorial portfolios and product design tooling (Linear, Vercel). Whitespace is intentional and generous. Every component should feel like it belongs in a system, not a personal site.
+Editorial, warm, and deliberate. It should read like a design publication written by one person, not a SaaS template. Serif display type, warm paper tones, one accent color, and real work images carry the page. No decorative effects: no gradient orbs, glassmorphism, animated/rotating headlines, or randomized colors. Hierarchy comes from type and layout (featured projects vs. a compact list), not from identical cards.
+
+### Signature motif: the annotated document
+
+The site reads like a working document Joseph has marked up. This is what makes it his, so keep it consistent:
+
+- **Doc header** (`.doc-header`) at the top of the homepage: Doc ID, author, location, revision date, in IBM Plex Mono.
+- **Numbered sections**: `<span class="section-heading__num">01</span>` inside `.section-heading`. No § symbol.
+- **Project IDs** (`.doc-id`): EDM-01, RES-02, STU-03, AI-04, MED-05, HOM-06. Reuse the same ID for a project everywhere it appears. Writing uses "Note 01", "Note 02"…
+- **Highlighter** (`<mark>`): only on the one or two figures that matter most in a block. Never decorative.
+- **Margin notes** (`.margin-note`): one or two sentences in Joseph's voice beside a project, the kind of thing he'd say in person. Must be true and specific; no slogans.
+- **Footer**: "End of document" ID tag plus the colophon.
+
+Mono (`--font-mono`, IBM Plex Mono) is reserved for this document metadata. Don't use it for body copy or headings.
 
 ---
 
 ## Colors
 
-### Light mode (default)
+One accent: **oxblood**. Never randomize or rotate the accent.
+
+### Light mode (`prefers-color-scheme: light`)
 
 | Token | Value | Usage |
 |---|---|---|
-| `--color-bg` | `#FFFFFF` | Page background |
-| `--color-surface` | `#F6F6F4` | Cards, code blocks, subtle fills |
-| `--color-surface-elevated` | `#FFFFFF` | Cards with border on surface bg |
-| `--color-border` | `#E4E4E2` | Default borders, dividers |
-| `--color-border-strong` | `#C8C8C6` | Hover borders, inputs |
-| `--color-text` | `#111110` | Primary headings and body |
-| `--color-text-secondary` | `#5C5C5A` | Body copy, descriptions |
-| `--color-text-muted` | `#9A9A98` | Labels, metadata, captions |
-| `--color-text-inverse` | `#FFFFFF` | Text on dark fills |
-| `--color-accent` | `#0052CC` | Links, CTAs, active states |
-| `--color-accent-hover` | `#003D99` | Accent hover state |
-| `--color-accent-subtle` | `#EBF2FF` | Accent background tint |
+| `--color-bg` | `#FAF8F4` | Page background (warm paper) |
+| `--color-surface` | `#F1EDE6` | Subtle fills, image placeholders |
+| `--color-surface-elevated` | `#FFFDF9` | Cards on surface bg |
+| `--color-border` | `#E3DDD2` | Default borders, dividers |
+| `--color-border-strong` | `#C9C1B3` | Section rules, hover borders |
+| `--color-text` | `#1C1916` | Headings and primary text |
+| `--color-text-secondary` | `#55504A` | Body copy, descriptions |
+| `--color-text-muted` | `#716A60` | Labels, metadata (AA on bg) |
+| `--color-text-inverse` | `#FAF8F4` | Text on dark fills |
+| `--color-accent` | `#8C2F2B` | Links, metrics, active states |
+| `--color-accent-hover` | `#6B221F` | Accent hover |
+| `--color-accent-subtle` | `#F4E3DF` | Accent background tint |
 
-### Dark mode (`prefers-color-scheme: dark`)
+### Dark mode (default)
 
 | Token | Value |
 |---|---|
-| `--color-bg` | `#0F0F0E` |
-| `--color-surface` | `#1A1A19` |
-| `--color-surface-elevated` | `#222221` |
-| `--color-border` | `#2C2C2A` |
-| `--color-border-strong` | `#3E3E3C` |
-| `--color-text` | `#F0F0EE` |
-| `--color-text-secondary` | `#9A9A98` |
-| `--color-text-muted` | `#5C5C5A` |
-| `--color-accent` | `#4D94FF` |
-| `--color-accent-hover` | `#7AB3FF` |
-| `--color-accent-subtle` | `#0F1E38` |
+| `--color-bg` | `#171513` |
+| `--color-surface` | `#201D1A` |
+| `--color-surface-elevated` | `#26221F` |
+| `--color-border` | `#36312C` |
+| `--color-border-strong` | `#4C463F` |
+| `--color-text` | `#F2EDE6` |
+| `--color-text-secondary` | `#B0A89C` |
+| `--color-text-muted` | `#8C8478` |
+| `--color-accent` | `#E0907F` |
+| `--color-accent-hover` | `#EEB2A5` |
+| `--color-accent-subtle` | `#2E1916` |
 
 **Rule:** Never use raw hex values in HTML or CSS. Always reference tokens.
 
@@ -52,7 +67,11 @@ Clean, confident, and typographically precise. No decorative elements — the de
 
 ## Typography
 
-**Font family:** Inter (Google Fonts), fallback to `system-ui, -apple-system, sans-serif`
+**Display (`--font-display`):** Fraunces (Google Fonts), fallback Georgia. Used for all headings, the nav wordmark, project titles, and pull metrics (italic).
+**Body (`--font-sans`):** Inter, fallback `system-ui, -apple-system, sans-serif`.
+**Metadata (`--font-mono`):** IBM Plex Mono. Doc IDs, section numbers and the doc header only.
+
+Headings use medium weight (500), not bold. Avoid uppercase tracked "eyebrow" labels on the homepage; use sentence-case muted text instead. Uppercase labels are fine for case-study metadata only.
 
 ### Type scale
 
@@ -247,8 +266,7 @@ Grid of labeled data points: Role, Company, Timeline, Platform, Outcome. Always 
 **Do:**
 - Use `clamp()` for fluid headline sizing on hero and case study headers
 - Use `--color-text-secondary` for body copy (not full black — too heavy)
-- Add `.eyebrow` above every major section heading
-- Put quantified outcomes in `.card__metric` — this is primary signal for Principal-level readers
+- Put quantified outcomes in `.feature__metric` / `.card__metric` — this is primary signal for Principal-level readers
 - Use `--leading-relaxed` for case study body copy
 
 **Don't:**
@@ -257,4 +275,6 @@ Grid of labeled data points: Role, Company, Timeline, Platform, Outcome. Always 
 - Don't use more than 2 font weights on a single component
 - Don't use color for decoration — only for meaning (accent = interactive/important)
 - Don't center-align body copy or long-form text — left-align only
+- Don't add gradient orbs, blur/glass effects, rotating headline text, or random palettes — they read as template/AI-generated
+- Don't use "X, not Y" slogans or rule-of-three phrasing in copy; use specific facts
 - Don't write placeholder copy. Every piece of text on this site reflects Principal-level positioning.
