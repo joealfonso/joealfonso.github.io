@@ -15,10 +15,9 @@
     <meta name="description" content="Joseph Alfonso is a Product Design Leader and Teacher with 15+ years designing enterprise systems at global scale. Based in Seattle." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/styles.css" />
-    <script src="../js/palette.js"></script>
 </head>
 </head>
   <body>
@@ -47,44 +46,42 @@
       <section class="about container">
         <div class="about__layout">
 
-          <!-- Photo -->
+          <!-- Photo: add images/joseph-alfonso.webp (and a .jpg fallback), then restore this block.
+               The layout switches to two columns automatically when it's present.
           <div class="about__photo-col">
-            <!-- Replace src with your actual headshot -->
-            <img
-              src="../images/joseph-alfonso.jpg"
-              alt="Joseph Alfonso"
-              class="about__image"
-              onerror="this.style.background='var(--color-surface)';this.removeAttribute('src')"
-            />
+            <picture>
+              <source srcset="../images/joseph-alfonso.webp" type="image/webp" />
+              <img src="../images/joseph-alfonso.jpg" alt="Joseph Alfonso" class="about__image" />
+            </picture>
           </div>
+          -->
 
           <!-- Content -->
           <div class="about__content">
-            <p class="eyebrow">About</p>
-            <h1 class="about__title">I believe great design makes the complex feel simple — and people happy.</h1>
+            <h1 class="about__title">I design the software people use at work: the forms, dashboards and flows that decide whether their day goes well.</h1>
 
             <p class="about__body">
-              I'm a Product Design Leader and Teacher based in Seattle with 15 years of experience
-              designing enterprise systems at global scale. Most of that time has been at Amazon,
-              where I currently lead UX on the People Experience Foundation team.
+              I've been doing this for 15 years. Right now I lead UX on Amazon's People Experience
+              Foundation team in Seattle, working on the HR systems behind employee documents and
+              the resignation flow in the A to Z app.
             </p>
 
             <p class="about__body">
-              My work tends to live at the intersection of scale and humanity. I've designed systems
-              managing billions of documents across 67 countries, built real-time collaboration tools
-              for K–12 classrooms, and redesigned learning experiences used by millions of students
-              and educators. The common thread isn't the subject matter — it's the conviction that
-              complex systems deserve thoughtful, accessible, human-centered design.
+              Most of my work is unglamorous on purpose. At Amazon that has meant a document platform
+              with 4.8 billion records in 67 countries, where each country has its own legal rules.
+              Before that, at Discovery Education, it meant a collaboration tool that had to work on
+              whatever device a student happened to have in front of them. In both places the hard part
+              was the same: getting a lot of people with different constraints to agree on what
+              to build.
             </p>
 
             <p class="about__body">
-              I'm also a practicing mentor. I work with early-career designers at
+              I also mentor. I work with early-career designers at
               <a href="https://designlab.com" target="_blank" rel="noopener noreferrer">Designlab</a>
               and the
               <a href="https://www.svcseattle.com" target="_blank" rel="noopener noreferrer">School of Visual Concepts</a>
-              in Seattle. Teaching keeps me honest — explaining your decisions clearly to someone
-              learning the craft is one of the best ways to pressure-test whether you actually
-              understand them yourself.
+              in Seattle. Teaching keeps me honest. If I can't explain a design decision to someone
+              new to the field, I probably don't understand it as well as I think.
             </p>
 
             <div class="about__links">
@@ -185,7 +182,7 @@
               On the EDM project I discovered that users with disabilities had been bypassing the
               entire product because it wasn't screen-readable. They'd adapted by memorizing menu
               positions. That experience shaped how I approach every project since: inclusive
-              design has to be built in from the start, not retrofitted at the end.
+              design has to start on day one, because retrofitting it later rarely happens.
             </p>
           </div>
 
@@ -202,10 +199,10 @@
           <div class="about-principles__item">
             <h3 class="about-principles__title">Complexity is the starting point</h3>
             <p class="about-principles__body">
-              Enterprise design is hard because the problems are genuinely hard. Legal constraints,
-              country-specific requirements, competing stakeholder needs, legacy systems. I don't
-              find this discouraging. Constraints are where good design actually happens — they're
-              what separates interesting solutions from obvious ones.
+              Enterprise design is hard because the problems are hard: legal constraints,
+              country-specific requirements, competing stakeholders, legacy systems. I like that.
+              Most of the interesting design decisions I've made came straight out of a constraint
+              someone told me I couldn't get around.
             </p>
           </div>
 
@@ -226,7 +223,7 @@
           When I'm not designing: mentoring, laser cutting things in my garage, and
           tinkering with home automation setups that are almost always more complicated than they need to be.
         </p>
-        <div class="about__links" style="margin-top: var(--space-8);">
+        <div class="about__links about__links--spaced">
           <a href="contact.html" class="btn btn--primary">Get in touch</a>
           <a href="../index.html" class="btn btn--secondary">View work</a>
         </div>

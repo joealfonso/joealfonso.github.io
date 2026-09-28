@@ -12,13 +12,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Work | Joseph Alfonso</title>
-    <meta name="description" content="Case studies and projects from Joseph Alfonso, Product Design Leader with 15 years designing enterprise systems at Amazon and Discovery Education." />
+    <meta name="description" content="Case studies from Joseph Alfonso: Amazon's employee document platform, self-service resignation, AI design, and three Discovery Education projects." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/styles.css" />
-    <script src="../js/palette.js"></script>
 </head>
 </head>
   <body>
@@ -44,191 +43,96 @@
     <main>
 
       <!-- INTRO -->
-      <section class="container" style="padding-block: var(--space-16) var(--space-10);">
-        <p class="eyebrow">Work</p>
-        <h1 style="font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl)); font-weight: var(--weight-bold); letter-spacing: var(--tracking-tight); max-width: 20ch; line-height: var(--leading-tight);">
-          15 years of designing things that matter at scale.
-        </h1>
-        <p style="font-size: var(--text-md); color: var(--color-text-secondary); max-width: 56ch; margin-top: var(--space-4); line-height: var(--leading-normal);">
-          Enterprise HR, real-time collaboration, educational media, and platform design.
-          Each project below is a case study with the full story: problem, process, and outcome.
+      <section class="page-intro container">
+        <h1 class="page-intro__title">Work</h1>
+        <p class="page-intro__lead">
+          Six projects from Amazon and Discovery Education. Each one is a full case study: the problem, what I did,
+          what happened, and what I&rsquo;d change.
         </p>
       </section>
 
       <!-- PROJECTS -->
-      <section class="projects">
+      <section class="work">
         <div class="container">
-          <div class="projects__grid">
+          <h2 class="section-heading section-heading--sub"><span class="section-heading__num">01</span> Amazon &middot; 2020&ndash;present</h2>
+          <ul class="work-list">
+            <li>
+              <a href="../main/EDM.html" class="work-list__item work-list__item--large">
+                <img class="work-list__thumb" src="../images/projects/edm-cover.png" alt="" loading="lazy" />
+                <span class="work-list__text">
+                  <span class="doc-id work-list__id">EDM-01</span>
+                  <span class="work-list__title">Employee Document Management &amp; AI</span>
+                  <span class="work-list__meta">$10M+ saved per year &middot; 4.8 billion documents &middot; 67 countries</span>
+                  <span class="work-list__desc">Led the redesign of Amazon&rsquo;s document platform, found that screen-reader users couldn&rsquo;t use it at all, and then designed AI features across four of its surfaces.</span>
+                </span>
+                <span class="work-list__arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="resignation.html" class="work-list__item work-list__item--large">
+                <img class="work-list__thumb" src="../images/resignation/Frame%2048095835.png" alt="" loading="lazy" />
+                <span class="work-list__text">
+                  <span class="doc-id work-list__id">RES-02</span>
+                  <span class="work-list__title">Self-Service Resignation</span>
+                  <span class="work-list__meta">A to Z app &middot; tens of thousands of employees</span>
+                  <span class="work-list__desc">Designed Amazon&rsquo;s first self-service way to resign, which also shows people their other options first. Built the business case that got it funded.</span>
+                </span>
+                <span class="work-list__arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="ai-work.html" class="work-list__item work-list__item--large">
+                <img class="work-list__thumb" src="../main/assets/img/MA2.png" alt="" loading="lazy" />
+                <span class="work-list__text">
+                  <span class="doc-id work-list__id">AI-04</span>
+                  <span class="work-list__title">AI design &amp; tooling</span>
+                  <span class="work-list__meta">Amazon and personal projects &middot; 2023&ndash;present</span>
+                  <span class="work-list__desc">How I design AI features that fail safely, and the MCP servers and LangGraph agents I build for my own work.</span>
+                </span>
+                <span class="work-list__arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+          </ul>
 
-            <!-- Amazon EDM -->
-            <a href="../main/EDM.html" class="card">
-              <img
-                class="card__image"
-                src="../images/projects/edm-cover.png"
-                alt="Amazon Employee Document Management admin dashboard"
-                loading="lazy"
-              />
-              <div class="card__body">
-                <p class="card__eyebrow">Amazon &middot; Lead Designer &middot; 2020–Present</p>
-                <h2 class="card__title">Employee Document Management</h2>
-                <p class="card__metric">$10M+ in annual savings</p>
-                <p class="card__description">
-                  Led UX for Amazon's global document platform: 4.8 billion documents across
-                  67 countries. Transformed accessibility, compliance, and operational efficiency
-                  across HR infrastructure used by the entire global workforce.
-                </p>
-              </div>
-              <div class="card__footer">
-                <div class="card__tags">
-                  <span class="tag">Enterprise UX</span>
-                  <span class="tag">Accessibility</span>
-                  <span class="tag">Systems Design</span>
-                </div>
-                <span class="card__cta">Read case study →</span>
-              </div>
-            </a>
-
-            <!-- Self-Service Resignation -->
-            <a href="resignation.html" class="card">
-              <img
-                class="card__image"
-                src="../images/resignation/Frame%2048095835.png"
-                alt="Self-Service Resignation explore hub showing alternative pathways for employees"
-                loading="lazy"
-              />
-              <div class="card__body">
-                <p class="card__eyebrow">Amazon &middot; Lead Designer &middot; A to Z App</p>
-                <h2 class="card__title">Self-Service Resignation</h2>
-                <p class="card__metric">Humanizing Amazon's highest-stakes HR moment</p>
-                <p class="card__description">
-                  Led the end-to-end redesign of Amazon's resignation flow in the A to Z mobile app.
-                  Ran leadership workshops, built the business case, and advocated for an experience
-                  that treated leaving employees with dignity — not just compliance.
-                </p>
-              </div>
-              <div class="card__footer">
-                <div class="card__tags">
-                  <span class="tag">Mobile UX</span>
-                  <span class="tag">HR Design</span>
-                  <span class="tag">Workshop Facilitation</span>
-                </div>
-                <span class="card__cta">Read case study →</span>
-              </div>
-            </a>
-
-            <!-- AI Design & Tooling -->
-            <a href="ai-work.html" class="card">
-              <img
-                class="card__image"
-                src="../main/assets/img/MA2.png"
-                alt="AI-enhanced M&A dashboard showing risk scoring and anomaly detection"
-                loading="lazy"
-              />
-              <div class="card__body">
-                <p class="card__eyebrow">Amazon &middot; Lead Designer</p>
-                <h2 class="card__title">AI Design &amp; Tooling</h2>
-                <p class="card__metric">Designing AI-powered products and building the tools behind the work</p>
-                <p class="card__description">
-                  How I design AI-powered products and build the automation tools that make design
-                  work faster, smarter, and more human — from decision-support features at enterprise
-                  scale to the internal tooling that accelerates the design process itself.
-                </p>
-              </div>
-              <div class="card__footer">
-                <div class="card__tags">
-                  <span class="tag">AI Design</span>
-                  <span class="tag">Design Tooling</span>
-                  <span class="tag">Automation</span>
-                </div>
-                <span class="card__cta">Read case study →</span>
-              </div>
-            </a>
-
-            <!-- Discovery Education Studio -->
-            <a href="studio.html" class="card">
-              <img
-                class="card__image"
-                src="../images/projects/studio-cover.jpg"
-                alt="Discovery Education Studio board with student-created content"
-                loading="lazy"
-              />
-              <div class="card__body">
-                <p class="card__eyebrow">Discovery Education &middot; Lead Designer</p>
-                <h2 class="card__title">Discovery Education Studio</h2>
-                <p class="card__metric">Live collaboration for every classroom</p>
-                <p class="card__description">
-                  Designed the first real-time creation and collaboration platform for K–12
-                  classrooms, enabling students and teachers to freely create, edit, and
-                  collaborate live regardless of device or location.
-                </p>
-              </div>
-              <div class="card__footer">
-                <div class="card__tags">
-                  <span class="tag">Real-time Collaboration</span>
-                  <span class="tag">Cross-device</span>
-                  <span class="tag">EdTech</span>
-                </div>
-                <span class="card__cta">View project →</span>
-              </div>
-            </a>
-
-            <!-- Discovery Education Media Redesign -->
-            <a href="player.html" class="card">
-              <img
-                class="card__image"
-                src="../images/projects/media-cover-new.png"
-                alt="Discovery Education Media redesigned video player interface"
-                loading="lazy"
-              />
-              <div class="card__body">
-                <p class="card__eyebrow">Discovery Education &middot; Lead Designer</p>
-                <h2 class="card__title">Media Redesign</h2>
-                <p class="card__metric">Significant learning gains through focused iteration</p>
-                <p class="card__description">
-                  Led an iterative redesign of the Discovery Education media experience,
-                  showing how short, well-defined design cycles produce compounding improvements
-                  in how children engage with educational content.
-                </p>
-              </div>
-              <div class="card__footer">
-                <div class="card__tags">
-                  <span class="tag">Iterative Design</span>
-                  <span class="tag">Learning UX</span>
-                  <span class="tag">Video Player</span>
-                </div>
-                <span class="card__cta">View project →</span>
-              </div>
-            </a>
-
-            <!-- Discovery Education Home -->
-            <a href="home.html" class="card">
-              <img
-                class="card__image"
-                src="../images/projects/home-cover.jpg"
-                alt="Discovery Education Home redesigned across multiple devices"
-                loading="lazy"
-              />
-              <div class="card__body">
-                <p class="card__eyebrow">Discovery Education &middot; Lead Designer</p>
-                <h2 class="card__title">Discovery Education Home</h2>
-                <p class="card__metric">A new face for millions of teachers and students</p>
-                <p class="card__description">
-                  Redesigned the Discovery Education platform homepage, establishing a new
-                  visual foundation, navigational architecture, and first impression for
-                  K–12 educators and students across the country.
-                </p>
-              </div>
-              <div class="card__footer">
-                <div class="card__tags">
-                  <span class="tag">Information Architecture</span>
-                  <span class="tag">Rebrand</span>
-                  <span class="tag">Navigation</span>
-                </div>
-                <span class="card__cta">View project →</span>
-              </div>
-            </a>
-
-          </div>
+          <h2 class="section-heading section-heading--sub"><span class="section-heading__num">02</span> Discovery Education</h2>
+          <ul class="work-list">
+            <li>
+              <a href="studio.html" class="work-list__item work-list__item--large">
+                <img class="work-list__thumb" src="../images/projects/studio-cover.jpg" alt="" loading="lazy" />
+                <span class="work-list__text">
+                  <span class="doc-id work-list__id">STU-03</span>
+                  <span class="work-list__title">Discovery Education Studio</span>
+                  <span class="work-list__meta">Real-time collaboration &middot; K&ndash;12</span>
+                  <span class="work-list__desc">Shared boards where students and teachers could create together and see each other&rsquo;s cursors live, on whatever device they had.</span>
+                </span>
+                <span class="work-list__arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="player.html" class="work-list__item work-list__item--large">
+                <img class="work-list__thumb" src="../images/projects/media-cover-new.png" alt="" loading="lazy" />
+                <span class="work-list__text">
+                  <span class="doc-id work-list__id">MED-05</span>
+                  <span class="work-list__title">Media player redesign</span>
+                  <span class="work-list__meta">Iterative design &middot; video</span>
+                  <span class="work-list__desc">Short, focused design cycles on the video player that students and teachers use most.</span>
+                </span>
+                <span class="work-list__arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="home.html" class="work-list__item work-list__item--large">
+                <img class="work-list__thumb" src="../images/projects/home-cover.jpg" alt="" loading="lazy" />
+                <span class="work-list__text">
+                  <span class="doc-id work-list__id">HOM-06</span>
+                  <span class="work-list__title">Discovery Education Home</span>
+                  <span class="work-list__meta">Information architecture &middot; navigation</span>
+                  <span class="work-list__desc">A new homepage and navigation for the whole platform, and the first thing millions of teachers and students saw when they signed in.</span>
+                </span>
+                <span class="work-list__arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </section>
 
