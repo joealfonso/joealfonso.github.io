@@ -1,7 +1,7 @@
 # CLAUDE.md — josephalfonso.com
 
 ## Who this is for
-Joseph Alfonso — Lead UX Designer at Amazon, 15+ years experience, building toward a Principal-level role. This portfolio is his primary external presence alongside LinkedIn. The intended audience is hiring managers, design leaders, and recruiters evaluating senior/principal-level candidates.
+Joseph Alfonso — Principal Product Designer at Amazon, 15+ years experience, looking for his next Staff or Principal role. This portfolio is his primary external presence alongside LinkedIn. The intended audience is hiring managers, design leaders, and recruiters evaluating senior/principal-level candidates.
 
 **The portfolio must communicate:** lead ownership, strategic thinking, enterprise scale, quantified outcomes, and accessibility advocacy. It should feel polished and confident — not a personal blog, not a student portfolio.
 
