@@ -25,28 +25,28 @@
 :root {
 
   /* --- Color (dark by default) --- */
-  --color-bg:               #171513;
-  --color-surface:          #201D1A;
-  --color-surface-elevated: #26221F;
-  --color-border:           #36312C;
-  --color-border-strong:    #4C463F;
+  --color-bg:               #121416;
+  --color-surface:          #1A1D20;
+  --color-surface-elevated: #202428;
+  --color-border:           #2E3338;
+  --color-border-strong:    #444A51;
 
-  --color-text:             #F2EDE6;
-  --color-text-secondary:   #B0A89C;
-  --color-text-muted:       #8C8478;
-  --color-text-inverse:     #171513;
+  --color-text:             #ECEEF0;
+  --color-text-secondary:   #A9AFB6;
+  --color-text-muted:       #8A9098;
+  --color-text-inverse:     #121416;
 
-  --color-accent:           #E0907F;
-  --color-accent-hover:     #EEB2A5;
-  --color-accent-subtle:    #2E1916;
-  --color-mark:             rgba(224, 144, 127, 0.24);
+  --color-accent:           #8FAEFF;
+  --color-accent-hover:     #B5C9FF;
+  --color-accent-subtle:    #17213A;
+  --color-mark:             rgba(143, 174, 255, 0.22);
 
   --color-success:          #1A7F4B;
   --color-warning:          #B45309;
 
   /* --- Typography --- */
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
-  --font-sans:   'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'IBM Plex Serif', Georgia, 'Times New Roman', serif;
+  --font-sans:   'IBM Plex Sans', system-ui, -apple-system, sans-serif;
   --font-mono:   'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
   --text-xs:     0.75rem;    /* 12px */
@@ -616,6 +616,29 @@ a.card__cover:focus-visible,
 
 .feature:hover { color: inherit; }
 
+/* Lead project: a larger image than the other features, with the story
+   and margin note stacked beside it */
+.feature--lead {
+  grid-template-columns: 6fr 5fr;
+  row-gap: var(--space-6);
+  padding-bottom: var(--space-4);
+}
+
+.feature--lead .feature__image {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.feature--lead .feature__body { grid-column: 2; grid-row: 1; }
+
+.feature--lead .feature__title { font-size: var(--text-3xl); }
+
+.feature--lead .margin-note {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: var(--text-md);
+}
+
 .feature__image {
   width: 100%;
   aspect-ratio: 3 / 2;
@@ -743,6 +766,10 @@ mark {
 @media (max-width: 1100px) and (min-width: 769px) {
   .feature { grid-template-columns: 5fr 7fr; row-gap: var(--space-4); }
   .feature .margin-note { grid-column: 2; }
+  .feature--lead { grid-template-columns: 5fr 7fr; }
+  .feature--lead .feature__image { grid-row: 1; }
+  .feature--lead .feature__body { grid-column: 2; grid-row: 1; }
+  .feature--lead .margin-note { grid-column: 2; grid-row: 2; }
 }
 
 .site-footer__copy .doc-id { margin-right: var(--space-3); }
@@ -892,7 +919,11 @@ mark {
   .margin-note { margin-top: 0; }
   .doc-header { gap: var(--space-1) var(--space-5); }
   .feature + .feature { margin-top: var(--space-10); padding-top: var(--space-10); }
-  .feature__title { font-size: var(--text-xl); }
+  .feature__title,
+  .feature--lead .feature__title { font-size: var(--text-xl); }
+  .feature--lead .feature__image,
+  .feature--lead .feature__body,
+  .feature--lead .margin-note { grid-column: auto; grid-row: auto; }
   .latest-post { padding: var(--space-6); }
 
   .work-list__item,
@@ -1897,6 +1928,10 @@ section:has(> .case-study-header) { padding-block: 0; }
   gap: var(--space-8);
 }
 
+.about-principles--spaced {
+  margin-top: var(--space-10);
+}
+
 .about-principles__item {
   padding: var(--space-6);
   background: var(--color-surface);
@@ -2118,21 +2153,21 @@ section:has(> .case-study-header) { padding-block: 0; }
 /* Light mode override for users with light system preference */
 @media (prefers-color-scheme: light) {
   :root {
-    --color-bg:               #FAF8F4;
-    --color-surface:          #F1EDE6;
-    --color-surface-elevated: #FFFDF9;
-    --color-border:           #E3DDD2;
-    --color-border-strong:    #C9C1B3;
+    --color-bg:               #F6F6F3;
+    --color-surface:          #ECECE7;
+    --color-surface-elevated: #FFFFFF;
+    --color-border:           #DCDCD5;
+    --color-border-strong:    #BDBDB4;
 
-    --color-text:             #1C1916;
-    --color-text-secondary:   #55504A;
-    --color-text-muted:       #716A60;
-    --color-text-inverse:     #FAF8F4;
+    --color-text:             #16181B;
+    --color-text-secondary:   #4A4E55;
+    --color-text-muted:       #646870;
+    --color-text-inverse:     #F6F6F3;
 
-    --color-accent:           #8C2F2B;
-    --color-accent-hover:     #6B221F;
-    --color-accent-subtle:    #F4E3DF;
-    --color-mark:             rgba(140, 47, 43, 0.13);
+    --color-accent:           #1F45B5;
+    --color-accent-hover:     #16348A;
+    --color-accent-subtle:    #E3E9F8;
+    --color-mark:             rgba(31, 69, 181, 0.12);
 
     --shadow-sm:  0 1px 2px rgba(0, 0, 0, 0.06);
     --shadow-md:  0 4px 12px rgba(0, 0, 0, 0.08);

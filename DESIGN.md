@@ -7,7 +7,7 @@
 
 ## Aesthetic Direction
 
-Editorial, warm, and deliberate. It should read like a design publication written by one person, not a SaaS template. Serif display type, warm paper tones, one accent color, and real work images carry the page. No decorative effects: no gradient orbs, glassmorphism, animated/rotating headlines, or randomized colors. Hierarchy comes from type and layout (featured projects vs. a compact list), not from identical cards.
+Precise, quiet, and deliberate. It should read like a well-kept technical document written by one person, not a SaaS template or a generic "editorial" portfolio. One type superfamily (IBM Plex), cool paper tones, one ink-blue accent, and real work images carry the page. No decorative effects: no gradient orbs, glassmorphism, animated/rotating headlines, or randomized colors. Hierarchy comes from type and layout (one full-width lead project, then featured projects, then a compact list), not from identical cards.
 
 ### Signature motif: the annotated document
 
@@ -15,10 +15,12 @@ The site reads like a working document Joseph has marked up. This is what makes 
 
 - **Doc header** (`.doc-header`) at the top of the homepage: Doc ID, author, location, revision date, in IBM Plex Mono.
 - **Numbered sections**: `<span class="section-heading__num">01</span>` inside `.section-heading`. No § symbol.
-- **Project IDs** (`.doc-id`): EDM-01, RES-02, STU-03, AI-04, MED-05, HOM-06. Reuse the same ID for a project everywhere it appears. Writing uses "Note 01", "Note 02"…
+- **Project IDs** (`.doc-id`): EDM-01, RES-02, STU-03, AI-04, MED-05, HOM-06. Used only on the Work index, where a catalog number earns its place. Don't add them to homepage cards, lists, or the footer; the motif reads as a theme when it's everywhere.
 - **Highlighter** (`<mark>`): only on the one or two figures that matter most in a block. Never decorative.
 - **Margin notes** (`.margin-note`): one or two sentences in Joseph's voice beside a project, the kind of thing he'd say in person. Must be true and specific; no slogans.
-- **Footer**: "End of document" ID tag plus the colophon.
+- **Footer**: the colophon only.
+- **Lead project**: EDM on the homepage uses `.feature--lead` (full-width image, larger title, margin note beside the story). This is the one deliberate break in the grid; don't apply it to more than one project.
+- **Captions** say what is specifically in the image (who, what number, what changed), never what kind of artifact it is.
 
 Mono (`--font-mono`, IBM Plex Mono) is reserved for this document metadata. Don't use it for body copy or headings.
 
@@ -26,40 +28,40 @@ Mono (`--font-mono`, IBM Plex Mono) is reserved for this document metadata. Don'
 
 ## Colors
 
-One accent: **oxblood**. Never randomize or rotate the accent.
+One accent: **ink blue**, like an editor's pen on a printed draft. Never randomize or rotate the accent.
 
 ### Light mode (`prefers-color-scheme: light`)
 
 | Token | Value | Usage |
 |---|---|---|
-| `--color-bg` | `#FAF8F4` | Page background (warm paper) |
-| `--color-surface` | `#F1EDE6` | Subtle fills, image placeholders |
-| `--color-surface-elevated` | `#FFFDF9` | Cards on surface bg |
-| `--color-border` | `#E3DDD2` | Default borders, dividers |
-| `--color-border-strong` | `#C9C1B3` | Section rules, hover borders |
-| `--color-text` | `#1C1916` | Headings and primary text |
-| `--color-text-secondary` | `#55504A` | Body copy, descriptions |
-| `--color-text-muted` | `#716A60` | Labels, metadata (AA on bg) |
-| `--color-text-inverse` | `#FAF8F4` | Text on dark fills |
-| `--color-accent` | `#8C2F2B` | Links, metrics, active states |
-| `--color-accent-hover` | `#6B221F` | Accent hover |
-| `--color-accent-subtle` | `#F4E3DF` | Accent background tint |
+| `--color-bg` | `#F6F6F3` | Page background (cool paper) |
+| `--color-surface` | `#ECECE7` | Subtle fills, image placeholders |
+| `--color-surface-elevated` | `#FFFFFF` | Cards on surface bg |
+| `--color-border` | `#DCDCD5` | Default borders, dividers |
+| `--color-border-strong` | `#BDBDB4` | Section rules, hover borders |
+| `--color-text` | `#16181B` | Headings and primary text |
+| `--color-text-secondary` | `#4A4E55` | Body copy, descriptions |
+| `--color-text-muted` | `#646870` | Labels, metadata (AA on bg and surface) |
+| `--color-text-inverse` | `#F6F6F3` | Text on dark fills |
+| `--color-accent` | `#1F45B5` | Links, metrics, active states |
+| `--color-accent-hover` | `#16348A` | Accent hover |
+| `--color-accent-subtle` | `#E3E9F8` | Accent background tint |
 
 ### Dark mode (default)
 
 | Token | Value |
 |---|---|
-| `--color-bg` | `#171513` |
-| `--color-surface` | `#201D1A` |
-| `--color-surface-elevated` | `#26221F` |
-| `--color-border` | `#36312C` |
-| `--color-border-strong` | `#4C463F` |
-| `--color-text` | `#F2EDE6` |
-| `--color-text-secondary` | `#B0A89C` |
-| `--color-text-muted` | `#8C8478` |
-| `--color-accent` | `#E0907F` |
-| `--color-accent-hover` | `#EEB2A5` |
-| `--color-accent-subtle` | `#2E1916` |
+| `--color-bg` | `#121416` |
+| `--color-surface` | `#1A1D20` |
+| `--color-surface-elevated` | `#202428` |
+| `--color-border` | `#2E3338` |
+| `--color-border-strong` | `#444A51` |
+| `--color-text` | `#ECEEF0` |
+| `--color-text-secondary` | `#A9AFB6` |
+| `--color-text-muted` | `#8A9098` |
+| `--color-accent` | `#8FAEFF` |
+| `--color-accent-hover` | `#B5C9FF` |
+| `--color-accent-subtle` | `#17213A` |
 
 **Rule:** Never use raw hex values in HTML or CSS. Always reference tokens.
 
@@ -67,8 +69,10 @@ One accent: **oxblood**. Never randomize or rotate the accent.
 
 ## Typography
 
-**Display (`--font-display`):** Fraunces (Google Fonts), fallback Georgia. Used for all headings, the nav wordmark, project titles, and pull metrics (italic).
-**Body (`--font-sans`):** Inter, fallback `system-ui, -apple-system, sans-serif`.
+**Display (`--font-display`):** IBM Plex Serif (Google Fonts), fallback Georgia. Used for all headings, the nav wordmark, project titles, and pull metrics (italic).
+**Body (`--font-sans`):** IBM Plex Sans, fallback `system-ui, -apple-system, sans-serif`.
+
+Why Plex: one superfamily built for technical documentation, which fits enterprise work and the annotated-document motif. Avoid swapping in Fraunces, Inter, or other fonts that have become the default look of AI-generated sites.
 **Metadata (`--font-mono`):** IBM Plex Mono. Doc IDs, section numbers and the doc header only.
 
 Headings use medium weight (500), not bold. Avoid uppercase tracked "eyebrow" labels on the homepage; use sentence-case muted text instead. Uppercase labels are fine for case-study metadata only.
