@@ -11,8 +11,8 @@
   </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Design &amp; Tooling | Joseph Alfonso</title>
-    <meta name="description" content="How I design AI features at Amazon, and the MCP servers and LangGraph agents I build for my own design work." />
+    <title>AI Evaluation &amp; Design | Joseph Alfonso</title>
+    <meta name="description" content="How I set the evaluation bar for AI features on Amazon&rsquo;s employee document platform: accuracy from 76% to 93%, restricted-document errors from 4.1% to 0.6%." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
@@ -45,30 +45,31 @@
       <!-- CASE STUDY HEADER -->
       <section>
         <div class="case-study-header container">
-        <p class="case-study-header__eyebrow eyebrow">AI Design &amp; Tooling &middot; Ongoing</p>
-        <h1 class="case-study-header__title">Designing AI features, and building the tools I design with</h1>
+        <p class="case-study-header__eyebrow eyebrow">Amazon &middot; Employee Document Management &middot; 2023&ndash;present</p>
+        <h1 class="case-study-header__title">Setting the bar AI features ship against</h1>
         <p class="case-study-header__summary">
-          For the past two years I&rsquo;ve designed AI features at Amazon, and on the side I&rsquo;ve built my own
-          automation: MCP servers, LangGraph agents and workflow pipelines that I use in my design work. Building the
-          tools taught me what the models can and can&rsquo;t do, and that changes the product decisions I make.
+          On Amazon&rsquo;s employee document platform, a wrong AI answer can put the wrong document in front of the
+          wrong person, or misstate someone&rsquo;s pay or start date. I owned the evaluation bar those features had
+          to clear before launch, designed the AI layer across four product surfaces, and built my own AI tools to
+          do the design work faster.
         </p>
 
         <div class="case-study-meta">
           <div class="case-study-meta__item">
             <p class="case-study-meta__label">Role</p>
-            <p class="case-study-meta__value">Designer &amp; Builder</p>
+            <p class="case-study-meta__value">Principal Product Designer, owner of the AI evaluation bar</p>
           </div>
           <div class="case-study-meta__item">
-            <p class="case-study-meta__label">Context</p>
-            <p class="case-study-meta__value">Amazon + Personal projects</p>
+            <p class="case-study-meta__label">Surfaces</p>
+            <p class="case-study-meta__value">M&amp;A dashboard, bulk generation, HR admin portal, employee portal</p>
           </div>
           <div class="case-study-meta__item">
             <p class="case-study-meta__label">Timeline</p>
             <p class="case-study-meta__value">2023&ndash;present</p>
           </div>
           <div class="case-study-meta__item">
-            <p class="case-study-meta__label">Focus</p>
-            <p class="case-study-meta__value">AI product design, MCP servers, LangGraph agents</p>
+            <p class="case-study-meta__label">Also built</p>
+            <p class="case-study-meta__value">MCP servers and LangGraph agents for my own design work</p>
           </div>
         </div>
               </div>
@@ -76,18 +77,64 @@
 
       <div class="case-study-body container container--narrow">
 
-        <h2>Designing AI-powered products</h2>
+        <div class="stat-block">
+          <div class="stat-block__item">
+            <p class="stat-block__number">76% &rarr; 93%</p>
+            <p class="stat-block__label">Accuracy against the golden set</p>
+          </div>
+          <div class="stat-block__item">
+            <p class="stat-block__number">4.1% &rarr; 0.6%</p>
+            <p class="stat-block__label">Errors on restricted documents</p>
+          </div>
+          <div class="stat-block__item">
+            <p class="stat-block__number">~20%</p>
+            <p class="stat-block__label">Less task time for HR business partners</p>
+          </div>
+          <div class="stat-block__item">
+            <p class="stat-block__number">35%</p>
+            <p class="stat-block__label">Faster design iteration with my own AI toolkit</p>
+          </div>
+        </div>
+
+        <!-- PROBLEM -->
+        <h2>The problem</h2>
         <p>
-          AI features at Amazon come with problems ordinary product work doesn&rsquo;t have. The same input can give a
-          different answer tomorrow. People decide how the whole feature works based on one interaction. And trust
-          disappears the first time it confidently gets something wrong.
+          After we shipped the new document platform, it was still reactive. It showed people what had happened and
+          left them to work out what to do about it. AI could close that gap, but HR documents are an unforgiving place
+          to use it. The same input can give a different answer tomorrow. People decide whether to trust a feature
+          after one bad interaction. And some documents are restricted: showing one to the wrong person is a legal problem.
+        </p>
+
+        <!-- ROLE -->
+        <h2>My role</h2>
+        <p>
+          I owned two things. First, the evaluation bar: the rubrics, the test set and the thresholds each AI feature
+          had to meet before it shipped. Second, the design of the AI layer itself across four surfaces, from the
+          cross-functional workshops that picked where AI would help through to the final screens. Every concept came from a research finding or an existing backlog item.
+        </p>
+
+        <!-- EVALUATION -->
+        <h2>Defining &ldquo;good enough&rdquo;</h2>
+        <p>
+          I wrote the scoring rubrics and built a golden set of 1,800 documents across 15 document types and
+          8 languages, so the model was tested on the variety it would actually meet, including non-English and country-specific documents. Cases the rubric couldn&rsquo;t settle went to human
+          review panels.
         </p>
         <p>
-          So I start with how it fails. For every AI feature I spend as long on what happens when the model is wrong,
-          and how the screen recovers, as on the main flow. In HR that matters a lot: a misleading answer can affect
-          someone&rsquo;s pay, documents or start date.
+          It gave every launch review the same measure to check against. Over the course of the work, accuracy against the golden set went from 76% to 93%, and errors on restricted documents fell from
+          4.1% to 0.6%.
         </p>
-        <p>Three rules I keep coming back to:</p>
+
+        <div class="callout">
+          <p>I tracked restricted-document errors separately from overall accuracy. An overall number can look healthy while the rare, high-risk mistakes stay hidden in the average.</p>
+        </div>
+
+        <!-- DESIGN PRINCIPLES -->
+        <h2>Designing for when the model is wrong</h2>
+        <p>
+          For every AI feature I spent as long on what happens when the model is wrong, and how the screen recovers,
+          as on the main flow. Three rules held across all four surfaces:
+        </p>
 
         <div class="stat-block">
           <div class="stat-block__item">
@@ -104,34 +151,108 @@
           </div>
         </div>
 
-        <h2>Building AI tools for design work</h2>
+        <!-- SURFACES -->
+        <h2>Four surfaces</h2>
+
+        <h3>M&amp;A dashboard: from a percentage to a next step</h3>
         <p>
-          Alongside the product work, I build my own AI tools. It started because I wanted to know how these systems
-          work from the inside. Now it&rsquo;s part of how I work every day.
+          Managers tracking acquisition paperwork had one signal: a completion percentage. They had to work out for
+          themselves whether 57% was on track and what was holding it up. I designed risk scoring with a
+          plain-language reason on each project, a forecast close date based on how fast documents were actually
+          coming in, and anomaly detection that names the real blocker instead of leaving it in a table.
         </p>
 
-        <h3>MCP servers</h3>
+        <figure>
+          <img
+            src="../main/assets/img/MA2.png"
+            alt="M&amp;A project summary showing 43 of 75 employees complete, a 57% progress bar, and tables of completion totals and incomplete documents"
+            loading="lazy"
+          />
+          <figcaption>The M&amp;A project summary before the AI layer: 43 of 75 employees complete, a 57% bar, and three tables the manager had to read to find the problem.</figcaption>
+        </figure>
+
+        <h3>Bulk generation: ending the re-upload loop</h3>
         <p>
-          I&rsquo;ve built several MCP (Model Context Protocol) servers that connect AI assistants to the things a
-          designer actually uses: design systems, documentation, research repositories and project tracking. An
-          assistant that can read the current design tokens, last week&rsquo;s usability findings and the open tickets
-          gives far better help than one guessing from a prompt.
+          When a bulk upload had errors, HR downloaded the file, fixed it offline and uploaded everything again. For
+          72 employees with 8 bad rows, that meant repeating the whole job. I designed inline fixes instead: the system
+          proposes the likely correction, shows its confidence and reasoning, and HR accepts or rejects each one. Rows it
+          can&rsquo;t fix are flagged plainly and don&rsquo;t hold up the rest. About 75% of common errors became
+          fixable without leaving the page.
         </p>
 
-        <h3>LangGraph agents</h3>
+        <figure>
+          <img
+            src="../main/assets/img/BulkUpload2.png"
+            alt="Bulk upload screen with instructions to fix errors in the spreadsheet and re-upload it"
+            loading="lazy"
+          />
+          <figcaption>The upload step before inline fixes. The instructions say it all: &ldquo;If there are any errors found, fix them in your spreadsheet and re-upload it again.&rdquo;</figcaption>
+        </figure>
+
+        <h3>HR admin portal: context before the approver opens the file</h3>
         <p>
-          I&rsquo;ve used LangGraph to build research and synthesis agents that gather competitive information, find
-          patterns across research sessions and draft structured design briefs. They don&rsquo;t make design decisions.
-          They shorten the gap between &ldquo;we need to understand X&rdquo; and &ldquo;here&rsquo;s what we know,&rdquo;
-          so the decision happens sooner and with better information.
+          Approvers were reading 14-page agreements start to finish to find out whether anything was wrong. A pre-review
+          panel now checks the document against Workday first and flags pay band violations, legal entity mismatches
+          and expired IDs. The approver still makes the decision; they just start with the problems instead of hunting
+          for them.
         </p>
 
-        <h3>Why this matters for product work</h3>
+        <h3>Employee portal: understanding what you sign</h3>
         <p>
-          Building these tools changed how I design AI features. I&rsquo;ve personally run into context-window limits,
-          unreliable tool calls, hallucinations and slow responses. So when a product manager asks &ldquo;can the AI
-          just figure that out?&rdquo;, I can give a straight answer and suggest a design that works with the real
-          limits.
+          New hires on their first day, warehouse employees on phones, and non-native speakers reading bilingual legal
+          agreements needed the most help. A plain-language panel explains each section and flags clauses with real
+          consequences, such as non-solicitation terms on page 8. A section tracker notices when someone skims past a
+          high-stakes clause, so the product can step in before the signature instead of after.
+        </p>
+
+        <p>
+          The full platform story, including the accessibility work these features build on, is in the
+          <a href="../main/EDM.html#ai-layer">Employee Document Management case study</a>.
+        </p>
+
+        <!-- TOOLS -->
+        <h2>Building my own tools</h2>
+        <p>
+          Alongside the product work I build AI tools for my own design practice. I started because I wanted to know how
+          these systems behave from the inside, and it has cut my design iteration time by about 35%.
+        </p>
+        <p>
+          <strong>MCP servers</strong> connect AI assistants to what a designer actually uses: design systems,
+          documentation, research repositories and project tracking. An assistant that can read the current design
+          tokens, last week&rsquo;s usability findings and the open tickets gives far better help than one guessing from
+          a prompt.
+        </p>
+        <p>
+          <strong>LangGraph agents</strong> gather competitive information, find patterns across research sessions and
+          draft structured design briefs. They don&rsquo;t make design decisions. They shorten the time between
+          &ldquo;we need to understand X&rdquo; and &ldquo;here&rsquo;s what we know.&rdquo;
+        </p>
+        <p>
+          Building them changed how I design AI products. I&rsquo;ve hit context-window limits, unreliable tool calls,
+          hallucinations and slow responses myself, so when someone asks &ldquo;can the AI just figure that out?&rdquo;
+          I can give a straight answer and suggest a design that works within the real limits.
+        </p>
+
+        <!-- OUTCOMES -->
+        <h2>Outcomes</h2>
+        <ul>
+          <li>Accuracy against the golden set rose from 76% to 93%.</li>
+          <li>Errors on restricted documents fell from 4.1% to 0.6%.</li>
+          <li>HR business partners spend about 20% less time on the tasks the AI layer covers.</li>
+          <li>About 75% of common bulk-upload errors are now fixed inline instead of by re-uploading.</li>
+        </ul>
+
+        <!-- REFLECTION -->
+        <h2>What I&rsquo;d do differently</h2>
+        <p>
+          I&rsquo;d build the measurement infrastructure first. We got there, but later than I wanted. Server-side task
+          timing and a continuous feedback loop from day one would have given us signal during design, not only after
+          launch.
+        </p>
+        <p>
+          I&rsquo;d also bring legal and compliance into the AI workshops from the start. Many of the constraints we
+          designed around were ones I already knew from the platform work, and having those stakeholders in the room
+          earlier would have sped things up and likely surfaced edge cases we missed.
         </p>
 
         <h2>What I think about AI and design</h2>
@@ -139,10 +260,6 @@
           The biggest change AI brings to design is speed. When you can prototype five directions in an afternoon, the
           slow part becomes deciding which one is right. That makes the old senior skills more valuable: asking the
           right question, knowing which signal to trust, and making a call when the data is unclear.
-        </p>
-        <p>
-          I&rsquo;m not worried about AI making designers irrelevant. I&rsquo;m more interested in what designers can do
-          once they know how to use it well, and in designing AI products other people can use well.
         </p>
 
       </div>
