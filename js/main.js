@@ -21,6 +21,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ─── Highlighter-pen text selection ───────────────────────────────────────
+  // Each new selection picks up the next pen color (see ::selection in
+  // styles.css). Starts on a random pen so the first one varies too.
+  const PENS = ['yellow', 'pink', 'green', 'blue', 'orange'];
+  let pen = Math.floor(Math.random() * PENS.length);
+  document.documentElement.dataset.pen = PENS[pen];
+
+  document.addEventListener('selectstart', () => {
+    pen = (pen + 1) % PENS.length;
+    document.documentElement.dataset.pen = PENS[pen];
+  });
+
+  // ─── Clickable cards ──────────────────────────────────────────────────────
+  // Cards ([data-card]) keep their text selectable: only the title is a real
+  // link (.card-link), and a click anywhere else on the card follows it —
+  // unless the click ended a text selection.
+  document.querySelectorAll('[data-card]').forEach((card) => {
+    const link = card.querySelector('.card-link');
+    if (!link) return;
+
+    const follow = (e, newTab) => {
+      if (e.target.closest('a')) return;               // real links handle themselves
+      if (String(window.getSelection())) return;       // user was selecting text
+      if (newTab) window.open(link.href, '_blank', 'noopener');
+      else link.click();
+    };
+
+    // Selecting the title's own text shouldn't follow the title link either.
+    link.addEventListener('click', (e) => {
+      if (String(window.getSelection())) e.preventDefault();
+    });
+
+    card.addEventListener('click', (e) => follow(e, e.metaKey || e.ctrlKey || e.shiftKey));
+    card.addEventListener('auxclick', (e) => { if (e.button === 1) follow(e, true); });
+  });
+
   // ─── Writing: reading time ────────────────────────────────────────────────
   // Counts words in the article body (not the header or summary) and writes
   // "N min read" into every [data-reading-time] element. The HTML ships with
@@ -120,11 +156,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ─── Image lightbox ───────────────────────────────────────────────────────
-  // Any content image in <main> that isn't already a link opens full-screen.
+  // Any content image in <main> that isn't part of a link or clickable card
+  // opens full-screen.
   // In the lightbox, click (or Enter) toggles between fit-to-screen and full
   // resolution; when zoomed, drag or scroll to pan. Esc, the close button, or
   // a click on the backdrop closes it.
-  const zoomables = [...document.querySelectorAll('main img')].filter((img) => !img.closest('a'));
+  const zoomables = [...document.querySelectorAll('main img')].filter((img) => !img.closest('a, [data-card]'));
 
   if (zoomables.length) {
     const lightbox = document.createElement('dialog');
@@ -155,21 +192,47 @@ document.addEventListener('DOMContentLoaded', () => {
       hint.hidden = !zoomable;
     };
 
+    // FLIP animation: the image has already jumped to its new size/position;
+    // play it back from where it was (`from`) to where it is now. Duration and
+    // easing come from the motion tokens in styles.css.
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const rootStyle = getComputedStyle(document.documentElement);
+    const zoomDuration = parseFloat(rootStyle.getPropertyValue('--duration-slow')) || 350;
+    const zoomEasing = rootStyle.getPropertyValue('--ease-default').trim() || 'ease-out';
+
+    const animateFrom = (from) => {
+      if (reduceMotion.matches || !from.width || !from.height) return;
+      const to = big.getBoundingClientRect();
+      if (!to.width || !to.height) return;
+      big.animate([
+        {
+          transformOrigin: '0 0',
+          transform: `translate(${from.left - to.left}px, ${from.top - to.top}px) scale(${from.width / to.width}, ${from.height / to.height})`,
+        },
+        { transformOrigin: '0 0', transform: 'none' },
+      ], { duration: zoomDuration, easing: zoomEasing });
+    };
+
     const setZoom = (on, point) => {
       if (on && !canZoom()) return;
+      // Finish any running zoom so we measure the image's real position.
+      big.getAnimations().forEach((a) => a.finish());
       const before = big.getBoundingClientRect();
       lightbox.classList.toggle('is-zoomed', on);
       big.setAttribute('aria-label', on ? 'Zoom out' : 'Zoom in');
-      if (!on) return;
 
-      // Keep the point under the cursor (or the centre, from the keyboard) in place.
-      const s  = stage.getBoundingClientRect();
-      const px = point ? point.x : before.left + before.width / 2;
-      const py = point ? point.y : before.top + before.height / 2;
-      const rx = (px - before.left) / before.width;
-      const ry = (py - before.top) / before.height;
-      stage.scrollLeft = big.offsetLeft + rx * big.clientWidth - (px - s.left);
-      stage.scrollTop  = big.offsetTop  + ry * big.clientHeight - (py - s.top);
+      if (on) {
+        // Keep the point under the cursor (or the centre, from the keyboard) in place.
+        const s  = stage.getBoundingClientRect();
+        const px = point ? point.x : before.left + before.width / 2;
+        const py = point ? point.y : before.top + before.height / 2;
+        const rx = (px - before.left) / before.width;
+        const ry = (py - before.top) / before.height;
+        stage.scrollLeft = big.offsetLeft + rx * big.clientWidth - (px - s.left);
+        stage.scrollTop  = big.offsetTop  + ry * big.clientHeight - (py - s.top);
+      }
+
+      animateFrom(before);
     };
 
     const open = (img) => {
@@ -181,8 +244,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const figcaption = img.closest('figure')?.querySelector('figcaption');
       caption.textContent = figcaption ? figcaption.textContent.trim() : img.alt;
       caption.hidden = !caption.textContent;
+      // Measured before opening: the scroll lock can shift the page.
+      const from = img.getBoundingClientRect();
       lightbox.showModal();
-      if (big.complete) updateZoomable();
+      // Grow out of the image on the page. Skipped if the full image isn't
+      // decoded yet, since there's nothing to measure.
+      if (big.complete) {
+        updateZoomable();
+        animateFrom(from);
+      }
     };
 
     big.addEventListener('load', updateZoomable);
