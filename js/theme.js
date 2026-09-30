@@ -1,18 +1,24 @@
-// theme.js — picks a random accent theme on every page load.
-// Loaded in <head> (not deferred) so the theme is set before first paint.
-// Never repeats the previous theme, so each reload visibly changes.
+// theme.js — picks a random accent theme and link-highlight style on every
+// page load. Loaded in <head> (not deferred) so both are set before first
+// paint. Neither repeats the previous pick, so each reload visibly changes.
 
 (function () {
-  var THEMES = ['iris', 'sage', 'amber', 'coral', 'violet', 'teal'];
-  var KEY = 'accent-theme';
-  var last = null;
+  var root = document.documentElement;
 
-  try { last = localStorage.getItem(KEY); } catch (e) {}
+  function pickFresh(options, key) {
+    var last = null;
+    try { last = localStorage.getItem(key); } catch (e) {}
 
-  var pool = THEMES.filter(function (t) { return t !== last; });
-  var theme = pool[Math.floor(Math.random() * pool.length)];
+    var pool = options.filter(function (o) { return o !== last; });
+    var pick = pool[Math.floor(Math.random() * pool.length)];
 
-  document.documentElement.setAttribute('data-theme', theme);
+    try { localStorage.setItem(key, pick); } catch (e) {}
+    return pick;
+  }
 
-  try { localStorage.setItem(KEY, theme); } catch (e) {}
+  root.setAttribute('data-theme', pickFresh(
+    ['iris', 'sage', 'amber', 'coral', 'violet', 'teal'], 'accent-theme'));
+
+  root.setAttribute('data-highlight', pickFresh(
+    ['marker', 'rise', 'bloom', 'thicken'], 'highlight-style'));
 })();

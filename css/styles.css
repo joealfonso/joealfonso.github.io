@@ -44,6 +44,16 @@
   --color-success:          #1A7F4B;
   --color-warning:          #B45309;
 
+  /* Text selection: highlighter pens, same in both color schemes.
+     main.js switches to the next pen on every new selection. */
+  --pen-yellow:          #FFE45C;
+  --pen-pink:            #FF9ACB;
+  --pen-green:           #8EF0A8;
+  --pen-blue:            #93D5FF;
+  --pen-orange:          #FFB870;
+  --color-selection-ink: #16181B;
+  --color-selection:     var(--pen-yellow);
+
   /* Lightbox overlay — dark in both color schemes */
   --color-overlay:          rgba(8, 9, 10, 0.96);
   --color-overlay-text:     #ECEEF0;
@@ -224,17 +234,66 @@ a:hover {
   color: var(--color-accent-hover);
 }
 
-/* Highlighter hover — text links get the same marker stroke as <mark>,
-   swept in from the left. Block links (cards, buttons, list rows) opt out
-   by carrying a class. */
+/* Highlighter hover — text links get a marker stroke in the <mark> color.
+   Block links (cards, buttons, list rows) opt out by carrying a class.
+
+   js/theme.js picks one style per page load (data-highlight on <html>);
+   each style is just a set of --hl-* values:
+     marker  — chisel-tip marker swiped left to right, with a springy overshoot
+     rise    — ink floods up from the baseline to fill the whole word
+     bloom   — the stroke bursts outward from the middle
+     thicken — a faint underline at rest that swells into a full highlight */
+:root {
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --hl-image:    linear-gradient(var(--color-mark), var(--color-mark));
+  --hl-position: 0 88%;
+  --hl-rest:     0% 34%;
+  --hl-active:   100% 34%;
+  --hl-ease:     var(--ease-default);
+}
+
+:root[data-highlight="marker"] {
+  /* Slanted ends, like the chisel tip of a real highlighter */
+  --hl-image: linear-gradient(
+    100deg,
+    transparent 0.25em,
+    var(--color-mark) 0.35em,
+    var(--color-mark) calc(100% - 0.35em),
+    transparent calc(100% - 0.25em)
+  );
+  --hl-ease: var(--ease-spring);
+}
+
+:root[data-highlight="rise"] {
+  --hl-position: 0 100%;
+  --hl-rest:     100% 0%;
+  --hl-active:   100% 100%;
+}
+
+:root[data-highlight="bloom"] {
+  --hl-position: 50% 88%;
+  --hl-ease:     var(--ease-spring);
+}
+
+:root[data-highlight="thicken"] {
+  --hl-position: 0 100%;
+  --hl-rest:     100% 2px;
+  --hl-active:   100% 40%;
+  --hl-ease:     var(--ease-spring);
+}
+
 a:not([class]),
 .hero__meta-link,
 .writing-teaser__all,
 .article-header__back {
-  background-image: linear-gradient(var(--color-mark), var(--color-mark));
+  background-image: var(--hl-image);
   background-repeat: no-repeat;
-  background-position: 0 88%;
-  background-size: 0% 34%;
+  background-position: var(--hl-position);
+  background-size: var(--hl-rest);
+  transition:
+    color var(--duration-fast) var(--ease-default),
+    background-size var(--duration-slow) var(--hl-ease);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
@@ -247,11 +306,15 @@ a:not([class]):focus-visible,
 .writing-teaser__all:focus-visible,
 .article-header__back:hover,
 .article-header__back:focus-visible {
-  background-size: 100% 34%;
+  background-size: var(--hl-active);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  a { transition: none; }
+  a,
+  a:not([class]),
+  .hero__meta-link,
+  .writing-teaser__all,
+  .article-header__back { transition: none; }
 }
 
 /* Lets width/height attributes reserve space (no layout shift) while CSS
@@ -260,6 +323,17 @@ img { height: auto; }
 
 /* Jump-link targets clear the sticky header instead of landing under it. */
 [id] { scroll-margin-top: var(--space-24); }
+
+/* Highlighter-pen text selection */
+:root[data-pen="pink"]   { --color-selection: var(--pen-pink); }
+:root[data-pen="green"]  { --color-selection: var(--pen-green); }
+:root[data-pen="blue"]   { --color-selection: var(--pen-blue); }
+:root[data-pen="orange"] { --color-selection: var(--pen-orange); }
+
+::selection {
+  background-color: var(--color-selection);
+  color: var(--color-selection-ink);
+}
 
 strong { font-weight: var(--weight-semibold); color: var(--color-text); }
 em     { font-style: italic; }
@@ -765,8 +839,19 @@ a.card__cover:focus-visible,
   text-underline-offset: 0.25em;
 }
 
-.feature:focus-visible,
-.work-list__item:focus-visible {
+/* Clickable cards: the "Read…" line (or arrow) is the real link and main.js
+   makes the rest of the card clickable. Titles and copy stay plain text so
+   they can be selected, and show a text cursor to say so. The focus ring
+   goes around the whole card. */
+[data-card] { cursor: pointer; }
+
+[data-card] :is(h3, p, .work-list__text) { cursor: text; }
+
+.card-link:focus-visible { outline: none; }
+
+.work-list__item:focus-visible,
+.feature:has(.card-link:focus-visible),
+.work-list__item:has(.card-link:focus-visible) {
   outline: 2px solid var(--color-accent);
   outline-offset: var(--space-2);
 }
@@ -941,7 +1026,7 @@ mark {
 }
 
 .latest-post:hover { color: inherit; }
-.latest-post:focus-visible { outline: 2px solid var(--color-accent); outline-offset: var(--space-1); }
+.latest-post:has(.card-link:focus-visible) { outline: 2px solid var(--color-accent); outline-offset: var(--space-1); }
 
 .latest-post__meta {
   font-size: var(--text-sm);
@@ -1012,6 +1097,19 @@ mark {
   .work-list__item--large .work-list__thumb { width: 72px; align-self: start; }
   .work-list__item--large .work-list__title { font-size: var(--text-lg); }
   .work-list__arrow { display: none; }
+
+  /* On the home page the arrow is the row's link: hide it visually but keep
+     it for screen readers and keyboard focus (the row shows the ring). */
+  a.work-list__arrow {
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
 }
 
 
