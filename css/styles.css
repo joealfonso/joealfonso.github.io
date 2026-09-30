@@ -44,6 +44,11 @@
   --color-success:          #1A7F4B;
   --color-warning:          #B45309;
 
+  /* Lightbox overlay — dark in both color schemes */
+  --color-overlay:          rgba(8, 9, 10, 0.96);
+  --color-overlay-text:     #ECEEF0;
+  --color-overlay-muted:    #A9AFB6;
+
   /* --- Typography --- */
   --font-display: 'IBM Plex Serif', Georgia, 'Times New Roman', serif;
   --font-sans:   'IBM Plex Sans', system-ui, -apple-system, sans-serif;
@@ -131,6 +136,44 @@
   --z-nav:     300;
 }
 
+/* --- Accent themes ---
+   js/theme.js picks one at random on each load and sets it as
+   data-theme on <html>. "iris" (no override) is the :root default. */
+:root[data-theme="sage"] {
+  --color-accent:        #7DD3A8;
+  --color-accent-hover:  #A8E6C6;
+  --color-accent-subtle: #14281F;
+  --color-mark:          rgba(125, 211, 168, 0.22);
+}
+
+:root[data-theme="amber"] {
+  --color-accent:        #F2B866;
+  --color-accent-hover:  #F8D08F;
+  --color-accent-subtle: #2E2312;
+  --color-mark:          rgba(242, 184, 102, 0.22);
+}
+
+:root[data-theme="coral"] {
+  --color-accent:        #FF9A8B;
+  --color-accent-hover:  #FFBDB2;
+  --color-accent-subtle: #33191A;
+  --color-mark:          rgba(255, 154, 139, 0.22);
+}
+
+:root[data-theme="violet"] {
+  --color-accent:        #C3A6FF;
+  --color-accent-hover:  #D8C6FF;
+  --color-accent-subtle: #241B38;
+  --color-mark:          rgba(195, 166, 255, 0.22);
+}
+
+:root[data-theme="teal"] {
+  --color-accent:        #6FD3E0;
+  --color-accent-hover:  #A1E4EC;
+  --color-accent-subtle: #12282C;
+  --color-mark:          rgba(111, 211, 224, 0.22);
+}
+
 
 /* ============================================================
    2. TYPOGRAPHY
@@ -172,12 +215,51 @@ p {
 a {
   color: var(--color-accent);
   text-decoration: none;
-  transition: color var(--duration-fast) var(--ease-default);
+  transition:
+    color var(--duration-fast) var(--ease-default),
+    background-size var(--duration-slow) var(--ease-default);
 }
 
 a:hover {
   color: var(--color-accent-hover);
 }
+
+/* Highlighter hover — text links get the same marker stroke as <mark>,
+   swept in from the left. Block links (cards, buttons, list rows) opt out
+   by carrying a class. */
+a:not([class]),
+.hero__meta-link,
+.writing-teaser__all,
+.article-header__back {
+  background-image: linear-gradient(var(--color-mark), var(--color-mark));
+  background-repeat: no-repeat;
+  background-position: 0 88%;
+  background-size: 0% 34%;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+a:not([class]):hover,
+a:not([class]):focus-visible,
+.hero__meta-link:hover,
+.hero__meta-link:focus-visible,
+.writing-teaser__all:hover,
+.writing-teaser__all:focus-visible,
+.article-header__back:hover,
+.article-header__back:focus-visible {
+  background-size: 100% 34%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a { transition: none; }
+}
+
+/* Lets width/height attributes reserve space (no layout shift) while CSS
+   still controls the rendered width. */
+img { height: auto; }
+
+/* Jump-link targets clear the sticky header instead of landing under it. */
+[id] { scroll-margin-top: var(--space-24); }
 
 strong { font-weight: var(--weight-semibold); color: var(--color-text); }
 em     { font-style: italic; }
@@ -313,7 +395,6 @@ section + section {
   font-weight: var(--weight-medium);
   color: var(--color-text-secondary);
   text-decoration: none;
-  transition: color var(--duration-fast) var(--ease-default);
 }
 
 .nav__links a:hover,
@@ -413,7 +494,6 @@ section + section {
 .hero__meta-link {
   color: var(--color-accent);
   text-decoration: none;
-  transition: color var(--duration-fast) var(--ease-default);
 }
 
 .hero__meta-link:hover {
@@ -1357,7 +1437,6 @@ mark {
 
 .post__title a {
   color: var(--color-text);
-  transition: color var(--duration-fast) var(--ease-default);
 }
 
 /* Stretch the title link so the whole row is clickable */
@@ -2031,10 +2110,153 @@ section:has(> .case-study-header) { padding-block: 0; }
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   text-decoration: none;
-  transition: color var(--duration-fast) var(--ease-default);
 }
 
 .site-footer__links a:hover { color: var(--color-text); }
+
+
+/* ============================================================
+   IMAGE LIGHTBOX
+   Built by main.js. Content images open full-screen; click the
+   enlarged image to toggle full resolution, drag to pan.
+   ============================================================ */
+
+img.is-zoomable { cursor: zoom-in; }
+
+main img.is-zoomable:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: var(--space-1);
+}
+
+/* Stop the page behind from scrolling while the lightbox is open */
+html:has(.lightbox[open]) { overflow: hidden; }
+
+.lightbox {
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-overlay-text);
+}
+
+.lightbox[open] {
+  display: flex;
+  flex-direction: column;
+  animation: lightbox-in var(--duration-base) var(--ease-default);
+}
+
+.lightbox::backdrop { background: var(--color-overlay); }
+
+@keyframes lightbox-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lightbox__stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  overflow: hidden;
+  padding: var(--space-16) var(--space-4) var(--space-2);
+}
+
+.lightbox__img {
+  /* Auto margins centre the image but collapse to 0 when it overflows,
+     so the zoomed image can scroll to every edge. */
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  cursor: default;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.lightbox__img.is-zoomable { cursor: zoom-in; }
+
+.lightbox__img:focus-visible {
+  outline: 2px solid var(--color-overlay-text);
+  outline-offset: var(--space-1);
+}
+
+.lightbox.is-zoomed .lightbox__stage {
+  overflow: auto;
+  cursor: grab;
+  overscroll-behavior: contain;
+}
+
+.lightbox.is-zoomed .lightbox__stage.is-dragging { cursor: grabbing; }
+
+.lightbox.is-zoomed .lightbox__img {
+  max-width: none;
+  max-height: none;
+  border-radius: 0;
+  cursor: zoom-out;
+}
+
+.lightbox.is-zoomed .lightbox__stage.is-dragging .lightbox__img { cursor: grabbing; }
+
+.lightbox__close {
+  position: fixed;
+  top: var(--space-3);
+  right: var(--space-3);
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--color-overlay-muted);
+  border-radius: var(--radius-full);
+  background: var(--color-overlay);
+  color: var(--color-overlay-text);
+  font-size: var(--text-xl);
+  line-height: 1;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-default);
+}
+
+.lightbox__close:hover { border-color: var(--color-overlay-text); }
+
+.lightbox__close:focus-visible {
+  outline: 2px solid var(--color-overlay-text);
+  outline-offset: 2px;
+}
+
+.lightbox__caption,
+.lightbox__hint {
+  max-width: var(--max-width-text);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+  text-align: center;
+}
+
+.lightbox__caption {
+  font-size: var(--text-sm);
+  color: var(--color-overlay-text);
+  padding-top: var(--space-2);
+}
+
+.lightbox__hint {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-overlay-muted);
+  padding-block: var(--space-2) var(--space-4);
+}
+
+.lightbox.is-zoomed .lightbox__caption,
+.lightbox.is-zoomed .lightbox__hint { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox[open] { animation: none; }
+}
 
 
 /* ============================================================
@@ -2173,5 +2395,40 @@ section:has(> .case-study-header) { padding-block: 0; }
     --shadow-md:  0 4px 12px rgba(0, 0, 0, 0.08);
     --shadow-lg:  0 12px 32px rgba(0, 0, 0, 0.10);
     --shadow-xl:  0 24px 64px rgba(0, 0, 0, 0.12);
+  }
+
+  :root[data-theme="sage"] {
+    --color-accent:        #1C6B45;
+    --color-accent-hover:  #134D31;
+    --color-accent-subtle: #E0F0E7;
+    --color-mark:          rgba(28, 107, 69, 0.14);
+  }
+
+  :root[data-theme="amber"] {
+    --color-accent:        #8A5200;
+    --color-accent-hover:  #663C00;
+    --color-accent-subtle: #F6EAD7;
+    --color-mark:          rgba(214, 140, 30, 0.22);
+  }
+
+  :root[data-theme="coral"] {
+    --color-accent:        #B3362A;
+    --color-accent-hover:  #8A2419;
+    --color-accent-subtle: #F8E3E0;
+    --color-mark:          rgba(179, 54, 42, 0.13);
+  }
+
+  :root[data-theme="violet"] {
+    --color-accent:        #5B3CC4;
+    --color-accent-hover:  #45289E;
+    --color-accent-subtle: #ECE6FA;
+    --color-mark:          rgba(91, 60, 196, 0.13);
+  }
+
+  :root[data-theme="teal"] {
+    --color-accent:        #0E6A78;
+    --color-accent-hover:  #0A4F5A;
+    --color-accent-subtle: #DDEFF1;
+    --color-mark:          rgba(14, 106, 120, 0.14);
   }
 }
