@@ -43,7 +43,7 @@
     <main>
 
       <!-- HERO -->
-      <section class="hero">
+      <section class="hero" data-paintable="Intro">
         <div class="container">
           <dl class="doc-header">
             <div><dt>Name</dt><dd>Joseph Alfonso</dd></div>
@@ -74,12 +74,12 @@
       </section>
 
       <!-- SELECTED WORK -->
-      <section class="work">
+      <section class="work" data-paintable="Selected work">
         <div class="container">
           <h2 class="section-heading"><span class="section-heading__num">01</span> Selected work</h2>
 
           <!-- Amazon EDM -->
-          <article class="feature feature--lead" data-card>
+          <article class="feature feature--lead" data-card data-paintable="Employee Document Management &amp; AI">
             <img
               class="feature__image"
               src="images/projects/edm-cover.webp"
@@ -104,7 +104,7 @@
           </article>
 
           <!-- Self-Service Resignation -->
-          <article class="feature" data-card>
+          <article class="feature" data-card data-paintable="Self-Service Resignation">
             <img
               class="feature__image"
               src="images/resignation/Frame%2048095835.webp"
@@ -128,7 +128,7 @@
           </article>
 
           <!-- Discovery Education Studio -->
-          <article class="feature" data-card>
+          <article class="feature" data-card data-paintable="Discovery Education Studio">
             <img
               class="feature__image"
               src="images/projects/studio-cover.webp"
@@ -155,10 +155,10 @@
       </section>
 
       <!-- WRITING — when you publish, move the current latest post into the list below -->
-      <section class="writing-teaser">
+      <section class="writing-teaser" data-paintable="Latest writing">
         <div class="container">
           <h2 class="section-heading"><span class="section-heading__num">02</span> Latest writing</h2>
-          <article class="latest-post" data-card>
+          <article class="latest-post" data-card data-paintable="Latest article">
             <p class="latest-post__meta">
               <time datetime="2026-09-24">Sep 24, 2026</time> &middot; Perspective &middot; 3 min read
             </p>
@@ -183,13 +183,13 @@
       </section>
 
       <!-- MORE WORK -->
-      <section class="work work--more">
+      <section class="work work--more" data-paintable="More work">
         <div class="container">
           <!-- More work -->
           <h2 class="section-heading"><span class="section-heading__num">03</span> More work</h2>
           <ul class="work-list">
             <li>
-              <div class="work-list__item" data-card>
+              <div class="work-list__item" data-card data-paintable="AI evaluation &amp; design">
                 <img class="work-list__thumb" src="main/assets/img/MA2.png" width="1440" height="1680" alt="" loading="lazy" />
                 <span class="work-list__text">
                   <span class="work-list__title">AI evaluation &amp; design</span>
@@ -199,7 +199,7 @@
               </div>
             </li>
             <li>
-              <div class="work-list__item" data-card>
+              <div class="work-list__item" data-card data-paintable="Media player redesign">
                 <img class="work-list__thumb" src="images/projects/media-cover-new.webp" width="1280" height="1291" alt="" loading="lazy" />
                 <span class="work-list__text">
                   <span class="work-list__title">Media player redesign</span>
@@ -209,7 +209,7 @@
               </div>
             </li>
             <li>
-              <div class="work-list__item" data-card>
+              <div class="work-list__item" data-card data-paintable="Discovery Education Home">
                 <img class="work-list__thumb" src="images/projects/home-cover.webp" width="2300" height="1291" alt="" loading="lazy" />
                 <span class="work-list__text">
                   <span class="work-list__title">Discovery Education Home</span>
@@ -240,6 +240,7 @@
     </footer>
 
     <script src="js/main.js" defer></script>
+    <script src="js/paint.js" defer></script>
     <script src="js/analytics.js"></script>
   </body>
 </html>
