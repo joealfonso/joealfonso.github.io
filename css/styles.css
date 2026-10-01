@@ -54,6 +54,29 @@
   --color-selection-ink: #16181B;
   --color-selection:     var(--pen-yellow);
 
+  /* Paint mode (home page): swatches and the ink that sits on them.
+     Every swatch/ink pair is at least 5.3:1, so painted text passes AA. */
+  --paint-yellow:        var(--pen-yellow);
+  --paint-pink:          var(--pen-pink);
+  --paint-mint:          var(--pen-green);
+  --paint-sky:           var(--pen-blue);
+  --paint-navy:          #1F2A5C;
+  --paint-forest:        #1C4D36;
+  --paint-plum:          #4B2559;
+  --paint-brick:         #7A2E22;
+
+  --ink-dark-text:       #16181B;
+  --ink-dark-secondary:  #2B2E33;
+  --ink-dark-muted:      #3D4047;
+  --ink-dark-border:     rgba(22, 24, 27, 0.22);
+  --ink-dark-mark:       rgba(22, 24, 27, 0.14);
+
+  --ink-light-text:      #FFFFFF;
+  --ink-light-secondary: #E6E8EB;
+  --ink-light-muted:     #CDD1D6;
+  --ink-light-border:    rgba(255, 255, 255, 0.28);
+  --ink-light-mark:      rgba(255, 255, 255, 0.2);
+
   /* Lightbox overlay — dark in both color schemes */
   --color-overlay:          rgba(8, 9, 10, 0.96);
   --color-overlay-text:     #ECEEF0;
@@ -242,11 +265,12 @@ a:hover {
      marker  — chisel-tip marker swiped left to right, with a springy overshoot
      rise    — ink floods up from the baseline to fill the whole word
      bloom   — the stroke bursts outward from the middle
-     thicken — a faint underline at rest that swells into a full highlight */
+     thicken — a faint underline at rest that swells into a full highlight
+   The stroke gradient is set on the links themselves (not :root) so it
+   follows --color-mark wherever it's overridden, e.g. painted regions. */
 :root {
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  --hl-image:    linear-gradient(var(--color-mark), var(--color-mark));
   --hl-position: 0 88%;
   --hl-rest:     0% 34%;
   --hl-active:   100% 34%;
@@ -254,14 +278,6 @@ a:hover {
 }
 
 :root[data-highlight="marker"] {
-  /* Slanted ends, like the chisel tip of a real highlighter */
-  --hl-image: linear-gradient(
-    100deg,
-    transparent 0.25em,
-    var(--color-mark) 0.35em,
-    var(--color-mark) calc(100% - 0.35em),
-    transparent calc(100% - 0.25em)
-  );
   --hl-ease: var(--ease-spring);
 }
 
@@ -287,7 +303,7 @@ a:not([class]),
 .hero__meta-link,
 .writing-teaser__all,
 .article-header__back {
-  background-image: var(--hl-image);
+  background-image: linear-gradient(var(--color-mark), var(--color-mark));
   background-repeat: no-repeat;
   background-position: var(--hl-position);
   background-size: var(--hl-rest);
@@ -296,6 +312,22 @@ a:not([class]),
     background-size var(--duration-slow) var(--hl-ease);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
+}
+
+:root[data-highlight="marker"] :is(
+  a:not([class]),
+  .hero__meta-link,
+  .writing-teaser__all,
+  .article-header__back
+) {
+  /* Slanted ends, like the chisel tip of a real highlighter */
+  background-image: linear-gradient(
+    100deg,
+    transparent 0.25em,
+    var(--color-mark) 0.35em,
+    var(--color-mark) calc(100% - 0.35em),
+    transparent calc(100% - 0.25em)
+  );
 }
 
 a:not([class]):hover,
@@ -2354,6 +2386,334 @@ html:has(.lightbox[open]) { overflow: hidden; }
 
 @media (prefers-reduced-motion: reduce) {
   .lightbox[open] { animation: none; }
+}
+
+
+/* ============================================================
+   PAINT MODE (home page)
+   Built by js/paint.js. Pick a swatch, then click a [data-paintable]
+   region to fill it. paint.js sets --paint-bg and data-ink on the
+   region; the ink rules below re-point the color tokens inside it, so
+   every component stays readable without its own paint styles.
+   ============================================================ */
+
+[data-painted] {
+  background-color: var(--paint-bg);
+  transition:
+    background-color var(--duration-slow) var(--ease-default),
+    box-shadow var(--duration-slow) var(--ease-default);
+}
+
+/* Fills bleed past the box with a shadow rather than padding, so painting
+   never shifts the layout. Cards bleed all round; sections bleed up into
+   the empty space above them. */
+[data-paintable]:not(section)[data-painted] {
+  border-radius: var(--radius-md);
+  box-shadow: 0 0 0 var(--space-4) var(--paint-bg);
+}
+
+section[data-painted] {
+  box-shadow: 0 calc(var(--space-8) * -1) 0 0 var(--paint-bg);
+}
+
+[data-ink="dark"] {
+  --color-text:           var(--ink-dark-text);
+  --color-text-secondary: var(--ink-dark-secondary);
+  --color-text-muted:     var(--ink-dark-muted);
+  --color-accent:         var(--ink-dark-text);
+  --color-accent-hover:   var(--ink-dark-text);
+  --color-border:         var(--ink-dark-border);
+  --color-border-strong:  var(--ink-dark-border);
+  --color-mark:           var(--ink-dark-mark);
+  --color-surface:        transparent;
+  color: var(--color-text);
+}
+
+[data-ink="light"] {
+  --color-text:           var(--ink-light-text);
+  --color-text-secondary: var(--ink-light-secondary);
+  --color-text-muted:     var(--ink-light-muted);
+  --color-accent:         var(--ink-light-text);
+  --color-accent-hover:   var(--ink-light-text);
+  --color-border:         var(--ink-light-border);
+  --color-border-strong:  var(--ink-light-border);
+  --color-mark:           var(--ink-light-mark);
+  --color-surface:        transparent;
+  color: var(--color-text);
+}
+
+/* While painting: outline what a click would fill */
+.is-painting [data-paintable] { cursor: crosshair; }
+.is-painting [data-paintable] * { cursor: inherit; }
+
+.is-painting [data-paintable]:hover:not(:has([data-paintable]:hover)),
+.is-painting [data-paintable]:focus-visible {
+  outline: 2px dashed var(--paint-current, var(--color-accent));
+  outline-offset: var(--space-2);
+}
+
+/* Toggle + toolbar */
+.paint-toggle {
+  position: fixed;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  z-index: var(--z-overlay);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  background: var(--color-surface-elevated);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: border-color var(--duration-fast) var(--ease-default);
+}
+
+.paint-toggle:hover { border-color: var(--color-accent); }
+
+.paint-toggle svg { width: 18px; height: 18px; fill: currentColor; }
+
+.paint-toggle[aria-expanded="true"] { visibility: hidden; }
+
+/* The drop gives a little wobble while the callout is up */
+.paint-toggle.is-wobbling svg {
+  animation: paint-wobble 1.6s var(--ease-spring) 2;
+  transform-origin: 50% 90%;
+}
+
+@keyframes paint-wobble {
+  0%, 60%, 100% { transform: rotate(0); }
+  15% { transform: rotate(-14deg) scale(1.15); }
+  30% { transform: rotate(10deg) scale(1.1); }
+  45% { transform: rotate(-5deg); }
+}
+
+/* One-time callout above the toggle */
+.paint-hint {
+  position: fixed;
+  right: var(--space-4);
+  bottom: calc(var(--space-4) + 44px + var(--space-3));
+  z-index: var(--z-overlay);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  max-width: calc(100vw - var(--space-8));
+  padding: var(--space-3) var(--space-2) var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  box-shadow: var(--shadow-lg);
+  overflow: visible;
+  animation: paint-hint-in var(--duration-slow) var(--ease-spring);
+}
+
+.paint-hint[hidden] { display: none; }
+
+/* A stripe of the paint colors along the top edge */
+.paint-hint::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background: linear-gradient(90deg,
+    var(--paint-yellow) 0 12.5%, var(--paint-pink) 0 25%, var(--paint-mint) 0 37.5%,
+    var(--paint-sky) 0 50%, var(--paint-navy) 0 62.5%, var(--paint-forest) 0 75%,
+    var(--paint-plum) 0 87.5%, var(--paint-brick) 0 100%);
+}
+
+/* Tail pointing down at the toggle */
+.paint-hint::after {
+  content: "";
+  position: absolute;
+  right: var(--space-8);
+  bottom: -6px;
+  width: 12px;
+  height: 12px;
+  background: var(--color-text);
+  transform: rotate(45deg);
+}
+
+.paint-hint.is-leaving {
+  opacity: 0;
+  transform: translateY(var(--space-1));
+  transition:
+    opacity var(--duration-base) var(--ease-default),
+    transform var(--duration-base) var(--ease-default);
+}
+
+@keyframes paint-hint-in {
+  from { opacity: 0; transform: translateY(var(--space-2)) scale(0.96); }
+  to   { opacity: 1; transform: none; }
+}
+
+.paint-hint__close {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: var(--text-lg);
+  line-height: 1;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.paint-hint__close:hover { opacity: 1; }
+
+.paint-hint__close:focus-visible {
+  outline: 2px solid var(--color-bg);
+  outline-offset: 1px;
+}
+
+.paint-toolbar {
+  position: fixed;
+  left: 50%;
+  bottom: var(--space-4);
+  z-index: var(--z-overlay);
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  max-width: calc(100vw - var(--space-8));
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface-elevated);
+  box-shadow: var(--shadow-lg);
+  animation: paint-toolbar-in var(--duration-base) var(--ease-default);
+}
+
+.paint-toolbar[hidden] { display: none; }
+
+@keyframes paint-toolbar-in {
+  from { opacity: 0; transform: translate(-50%, var(--space-2)); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.paint-toolbar__tools {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.paint-swatch,
+.paint-tool {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 2px solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  background: var(--swatch, transparent);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-md);
+  line-height: 1;
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--ease-spring);
+}
+
+.paint-swatch:hover,
+.paint-tool:hover { transform: scale(1.1); }
+
+.paint-swatch[aria-pressed="true"],
+.paint-tool[aria-pressed="true"] {
+  border-color: var(--color-text);
+  box-shadow: 0 0 0 2px var(--color-surface-elevated), 0 0 0 4px var(--color-text);
+  transform: scale(1.1);
+}
+
+.paint-swatch:focus-visible,
+.paint-tool:focus-visible,
+.paint-toolbar__text-btn:focus-visible,
+.paint-toggle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.paint-swatch--yellow { --swatch: var(--paint-yellow); }
+.paint-swatch--pink   { --swatch: var(--paint-pink); }
+.paint-swatch--mint   { --swatch: var(--paint-mint); }
+.paint-swatch--sky    { --swatch: var(--paint-sky); }
+.paint-swatch--navy   { --swatch: var(--paint-navy); }
+.paint-swatch--forest { --swatch: var(--paint-forest); }
+.paint-swatch--plum   { --swatch: var(--paint-plum); }
+.paint-swatch--brick  { --swatch: var(--paint-brick); }
+
+.paint-tool svg { width: 18px; height: 18px; fill: currentColor; }
+
+.paint-toolbar__divider {
+  width: 1px;
+  height: 24px;
+  background: var(--color-border-strong);
+}
+
+.paint-toolbar__text-btn {
+  min-height: 36px;
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--color-text-secondary);
+  font: inherit;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  cursor: pointer;
+}
+
+.paint-toolbar__text-btn:hover { color: var(--color-text); background: var(--color-surface); }
+
+.paint-toolbar__hint {
+  max-width: none;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .paint-toolbar__divider { display: none; }
+
+  .paint-toolbar {
+    left: var(--space-4);
+    right: var(--space-4);
+    max-width: none;
+    transform: none;
+  }
+
+  @keyframes paint-toolbar-in {
+    from { opacity: 0; transform: translateY(var(--space-2)); }
+    to   { opacity: 1; transform: none; }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-painted] { transition: none; }
+  .paint-toolbar,
+  .paint-hint,
+  .paint-toggle.is-wobbling svg { animation: none; }
+  .paint-hint.is-leaving { transition: none; }
+  .paint-swatch,
+  .paint-tool { transition: none; }
 }
 
 
