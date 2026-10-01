@@ -137,46 +137,6 @@
 
   toggle.addEventListener('click', open);
 
-  // ─── One-time callout ─────────────────────────────────────────────────────
-  // A small bubble over the toggle, shown once per visitor a few seconds in.
-  // It never takes focus, and it leaves on its own, on dismiss, or as soon as
-  // Paint is opened.
-  const HINT_KEY = 'paint-hint-seen';
-  let hintSeen = false;
-  try { hintSeen = localStorage.getItem(HINT_KEY) === '1'; } catch (e) {}
-
-  if (!hintSeen) {
-    const hint = document.createElement('div');
-    hint.className = 'paint-hint';
-    hint.hidden = true;
-    hint.innerHTML = `
-      <span>Psst&hellip; this page is paintable.</span>
-      <button type="button" class="paint-hint__close" aria-label="Dismiss">&times;</button>
-    `;
-    toggle.after(hint);
-
-    let hideTimer;
-    const dismiss = () => {
-      clearTimeout(showTimer);
-      clearTimeout(hideTimer);
-      if (!hint.isConnected) return;
-      hint.classList.add('is-leaving');
-      setTimeout(() => hint.remove(), 300);
-      toggle.classList.remove('is-wobbling');
-      try { localStorage.setItem(HINT_KEY, '1'); } catch (e) {}
-    };
-
-    const showTimer = setTimeout(() => {
-      if (!toolbar.hidden) return dismiss();   // already painting
-      hint.hidden = false;
-      toggle.classList.add('is-wobbling');
-      hideTimer = setTimeout(dismiss, 10000);
-    }, 4000);
-
-    hint.querySelector('.paint-hint__close').addEventListener('click', dismiss);
-    toggle.addEventListener('click', dismiss);
-  }
-
   toolbar.addEventListener('click', (e) => {
     const btn = e.target.closest('button');
     if (!btn) return;
