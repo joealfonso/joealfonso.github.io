@@ -1,19 +1,18 @@
 (function () {
   if (typeof window.gtag !== 'function') return;
 
-  // Map URL paths to case study names for event params
+  // Map URL paths to case study names for event params. Keys are lowercase
+  // with no ".html": GitHub Pages serves both /main/EDM.html and /main/EDM.
   var CASE_STUDIES = {
-    '/pages/edm.html':         'EDM',
-    '/pages/studio.html':      'Studio',
-    '/pages/platform.html':    'Home',
-    '/pages/channels.html':    'Media',
-    '/pages/home.html':        'Home',
-    '/pages/dex.html':         'Discovery Education',
-    '/pages/resignation.html': 'Resignation',
-    '/pages/ai-work.html':     'AI Work',
+    '/main/edm':         'EDM',
+    '/pages/resignation': 'Resignation',
+    '/pages/studio':      'Studio',
+    '/pages/player':      'Media',
+    '/pages/home':        'Home',
+    '/pages/ai-work':     'AI Work',
   };
 
-  var path = window.location.pathname;
+  var path = window.location.pathname.toLowerCase().replace(/\.html$/, '');
   var caseStudy = CASE_STUDIES[path] || null;
 
   // ── case_study_open ─────────────────────────────────────────────────────────
