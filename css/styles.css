@@ -2481,104 +2481,6 @@ section[data-painted] {
 
 .paint-toggle[aria-expanded="true"] { visibility: hidden; }
 
-/* The drop gives a little wobble while the callout is up */
-.paint-toggle.is-wobbling svg {
-  animation: paint-wobble 1.6s var(--ease-spring) 2;
-  transform-origin: 50% 90%;
-}
-
-@keyframes paint-wobble {
-  0%, 60%, 100% { transform: rotate(0); }
-  15% { transform: rotate(-14deg) scale(1.15); }
-  30% { transform: rotate(10deg) scale(1.1); }
-  45% { transform: rotate(-5deg); }
-}
-
-/* One-time callout above the toggle */
-.paint-hint {
-  position: fixed;
-  right: var(--space-4);
-  bottom: calc(var(--space-4) + 44px + var(--space-3));
-  z-index: var(--z-overlay);
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  max-width: calc(100vw - var(--space-8));
-  padding: var(--space-3) var(--space-2) var(--space-3) var(--space-4);
-  border-radius: var(--radius-lg);
-  background: var(--color-text);
-  color: var(--color-bg);
-  font-size: var(--text-sm);
-  font-weight: var(--weight-medium);
-  box-shadow: var(--shadow-lg);
-  overflow: visible;
-  animation: paint-hint-in var(--duration-slow) var(--ease-spring);
-}
-
-.paint-hint[hidden] { display: none; }
-
-/* A stripe of the paint colors along the top edge */
-.paint-hint::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 4px;
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  background: linear-gradient(90deg,
-    var(--paint-yellow) 0 12.5%, var(--paint-pink) 0 25%, var(--paint-mint) 0 37.5%,
-    var(--paint-sky) 0 50%, var(--paint-navy) 0 62.5%, var(--paint-forest) 0 75%,
-    var(--paint-plum) 0 87.5%, var(--paint-brick) 0 100%);
-}
-
-/* Tail pointing down at the toggle */
-.paint-hint::after {
-  content: "";
-  position: absolute;
-  right: var(--space-8);
-  bottom: -6px;
-  width: 12px;
-  height: 12px;
-  background: var(--color-text);
-  transform: rotate(45deg);
-}
-
-.paint-hint.is-leaving {
-  opacity: 0;
-  transform: translateY(var(--space-1));
-  transition:
-    opacity var(--duration-base) var(--ease-default),
-    transform var(--duration-base) var(--ease-default);
-}
-
-@keyframes paint-hint-in {
-  from { opacity: 0; transform: translateY(var(--space-2)) scale(0.96); }
-  to   { opacity: 1; transform: none; }
-}
-
-.paint-hint__close {
-  width: 28px;
-  height: 28px;
-  display: grid;
-  place-items: center;
-  padding: 0;
-  border: 0;
-  border-radius: var(--radius-full);
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  font-size: var(--text-lg);
-  line-height: 1;
-  opacity: 0.7;
-  cursor: pointer;
-}
-
-.paint-hint__close:hover { opacity: 1; }
-
-.paint-hint__close:focus-visible {
-  outline: 2px solid var(--color-bg);
-  outline-offset: 1px;
-}
-
 .paint-toolbar {
   position: fixed;
   left: 50%;
@@ -2708,10 +2610,7 @@ section[data-painted] {
 
 @media (prefers-reduced-motion: reduce) {
   [data-painted] { transition: none; }
-  .paint-toolbar,
-  .paint-hint,
-  .paint-toggle.is-wobbling svg { animation: none; }
-  .paint-hint.is-leaving { transition: none; }
+  .paint-toolbar { animation: none; }
   .paint-swatch,
   .paint-tool { transition: none; }
 }
