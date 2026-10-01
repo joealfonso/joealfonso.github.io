@@ -351,7 +351,7 @@ a:not([class]):focus-visible,
 
 /* Lets width/height attributes reserve space (no layout shift) while CSS
    still controls the rendered width. */
-img { height: auto; }
+img, video { height: auto; }
 
 /* Jump-link targets clear the sticky header instead of landing under it. */
 [id] { scroll-margin-top: var(--space-24); }
