@@ -1245,8 +1245,10 @@ mark {
 .stat-block__item {}
 
 .stat-block__number {
+  font-family: var(--font-display);
   font-size: var(--text-3xl);
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-medium);
+  white-space: nowrap;
   letter-spacing: var(--tracking-tight);
   color: var(--color-text);
   line-height: 1;
@@ -1779,7 +1781,9 @@ mark {
 
 /* Plain lists only — classed lists (steps, checklist) style themselves */
 .article-body > ul:not([class]),
-.article-body > ol:not([class]) {
+.article-body > ol:not([class]),
+.case-study-body > ul:not([class]),
+.case-study-body > ol:not([class]) {
   display: grid;
   gap: var(--space-2);
   margin-bottom: var(--space-6);
@@ -1788,8 +1792,10 @@ mark {
   line-height: var(--leading-relaxed);
 }
 
-.article-body > ul:not([class]) { list-style: disc; }
-.article-body > ol:not([class]) { list-style: decimal; }
+.article-body > ul:not([class]),
+.case-study-body > ul:not([class]) { list-style: disc; }
+.article-body > ol:not([class]),
+.case-study-body > ol:not([class]) { list-style: decimal; }
 
 /* Components inside the body keep their own spacing */
 .article-body .callout p,
@@ -2712,6 +2718,7 @@ section[data-painted] {
   .site-footer__inner { flex-direction: column; align-items: flex-start; }
 
   .stat-block { grid-template-columns: repeat(2, 1fr); }
+  .stat-block:has(.stat-block__number) { grid-template-columns: 1fr; }
 
   .article-summary { padding: var(--space-6); }
   .article-meta { grid-template-columns: repeat(2, 1fr); }
