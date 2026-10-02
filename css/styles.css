@@ -84,8 +84,8 @@
 
   /* --- Typography --- */
   --font-display: 'Source Serif 4', Georgia, 'Times New Roman', serif;
-  --font-sans:   'Source Sans 3', system-ui, -apple-system, sans-serif;
-  --font-mono:   'Source Sans 3', system-ui, -apple-system, sans-serif; /* meta labels: narrow, readable sans (no monospace) */
+  --font-sans:   'Instrument Sans', system-ui, -apple-system, sans-serif;
+  --font-mono:   'Instrument Sans', system-ui, -apple-system, sans-serif; /* meta labels: narrow, readable sans (no monospace) */
 
   --text-xs:     0.75rem;    /* 12px */
   --text-sm:     0.875rem;   /* 14px */
@@ -137,7 +137,7 @@
 
   /* --- Layout --- */
   --max-width:       1200px;
-  --max-width-text:  680px;
+  --max-width-text:  760px;
   --gutter:          var(--space-8);
 
   /* --- Radius --- */
@@ -564,14 +564,14 @@ section + section {
   font-weight: var(--weight-regular);
   line-height: var(--leading-snug);
   color: var(--color-text);
-  max-width: 28ch;
+  max-width: 36ch;
   margin-bottom: var(--space-6);
 }
 
 .hero__subheadline {
   font-size: var(--text-md);
   color: var(--color-text-secondary);
-  max-width: 52ch;
+  max-width: 66ch;
   line-height: var(--leading-relaxed);
   margin-bottom: var(--space-5);
 }
