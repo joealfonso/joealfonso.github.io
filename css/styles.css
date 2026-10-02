@@ -1,4 +1,15 @@
 /* ============================================================
+   Self-hosted type. All SIL OFL, Latin subset, woff2.
+   Besley: Indestructible Type. Sporting Grotesque: Velvetyne.
+   Xanh Mono: Yellow Type / Google Fonts.
+   ============================================================ */
+@font-face { font-family: 'Besley'; src: url('../fonts/Besley-roman.woff2') format('woff2'); font-weight: 400 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Besley'; src: url('../fonts/Besley-italic.woff2') format('woff2'); font-weight: 400 700; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Sporting Grotesque'; src: url('../fonts/SportingGrotesque-Regular.woff2') format('woff2'); font-weight: 400 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Sporting Grotesque'; src: url('../fonts/SportingGrotesque-Bold.woff2') format('woff2'); font-weight: 600 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Xanh Mono'; src: url('../fonts/XanhMono-Regular.woff2') format('woff2'); font-weight: 400 500; font-style: normal; font-display: swap; }
+
+/* ============================================================
    josephalfonso.com — Design System
    ============================================================
    Organized as:
@@ -83,9 +94,9 @@
   --color-overlay-muted:    #A9AFB6;
 
   /* --- Typography --- */
-  --font-display: 'IBM Plex Serif', Georgia, 'Times New Roman', serif;
-  --font-sans:   'IBM Plex Sans', system-ui, -apple-system, sans-serif;
-  --font-mono:   'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --font-display: 'Besley', Georgia, 'Times New Roman', serif;
+  --font-sans:   'Sporting Grotesque', system-ui, -apple-system, sans-serif;
+  --font-mono:   'Xanh Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
   --text-xs:     0.75rem;    /* 12px */
   --text-sm:     0.875rem;   /* 14px */

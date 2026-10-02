@@ -7,13 +7,13 @@
 
 ## Aesthetic Direction
 
-Precise, quiet, and deliberate. It should read like a well-kept technical document written by one person, not a SaaS template or a generic "editorial" portfolio. One type superfamily (IBM Plex), cool paper tones, one ink-blue accent, and real work images carry the page. No decorative effects: no gradient orbs, glassmorphism, animated/rotating headlines, or randomized colors. Hierarchy comes from type and layout (one full-width lead project, then featured projects, then a compact list), not from identical cards.
+Precise, quiet, and deliberate. It should read like a well-kept technical document written by one person, not a SaaS template or a generic "editorial" portfolio. Three independent-foundry typefaces (Besley, Sporting Grotesque, Xanh Mono), cool paper tones, one ink-blue accent, and real work images carry the page. No decorative effects: no gradient orbs, glassmorphism, animated/rotating headlines, or randomized colors. Hierarchy comes from type and layout (one full-width lead project, then featured projects, then a compact list), not from identical cards.
 
 ### Signature motif: the annotated document
 
 The site reads like a working document Joseph has marked up. This is what makes it his, so keep it consistent:
 
-- **Doc header** (`.doc-header`) at the top of the homepage: Doc ID, author, location, revision date, in IBM Plex Mono.
+- **Doc header** (`.doc-header`) at the top of the homepage: Doc ID, author, location, revision date, in Xanh Mono.
 - **Numbered sections**: `<span class="section-heading__num">01</span>` inside `.section-heading`. No § symbol.
 - **Project IDs** (`.doc-id`): EDM-01, RES-02, STU-03, AI-04, MED-05, HOM-06. Used only on the Work index, where a catalog number earns its place. Don't add them to homepage cards, lists, or the footer; the motif reads as a theme when it's everywhere.
 - **Highlighter** (`<mark>`): only on the one or two figures that matter most in a block. Never decorative.
@@ -22,7 +22,7 @@ The site reads like a working document Joseph has marked up. This is what makes 
 - **Lead project**: EDM on the homepage uses `.feature--lead` (full-width image, larger title, margin note beside the story). This is the one deliberate break in the grid; don't apply it to more than one project.
 - **Captions** say what is specifically in the image (who, what number, what changed), never what kind of artifact it is.
 
-Mono (`--font-mono`, IBM Plex Mono) is reserved for this document metadata. Don't use it for body copy or headings.
+Mono (`--font-mono`, Xanh Mono) is reserved for this document metadata. Don't use it for body copy or headings.
 
 ---
 
@@ -69,11 +69,11 @@ One accent: **ink blue**, like an editor's pen on a printed draft. Never randomi
 
 ## Typography
 
-**Display (`--font-display`):** IBM Plex Serif (Google Fonts), fallback Georgia. Used for all headings, the nav wordmark, project titles, and pull metrics (italic).
-**Body (`--font-sans`):** IBM Plex Sans, fallback `system-ui, -apple-system, sans-serif`.
+**Display (`--font-display`):** Besley (Indestructible Type, OFL). A Clarendon-rooted serif, variable weight. Used for all headings, the nav wordmark, project titles, margin notes and pull metrics (italic). Fallback Georgia.
+**Body (`--font-sans`):** Sporting Grotesque (Velvetyne, OFL). A wide, slightly odd grotesque with only Regular and Bold, so 500 renders Regular and 600/700 render Bold. Fallback `system-ui, -apple-system, sans-serif`.
+**Metadata (`--font-mono`):** Xanh Mono (OFL), a serif monospace. Doc IDs, section numbers and the doc header only.
 
-Why Plex: one superfamily built for technical documentation, which fits enterprise work and the annotated-document motif. Avoid swapping in Fraunces, Inter, or other fonts that have become the default look of AI-generated sites.
-**Metadata (`--font-mono`):** IBM Plex Mono. Doc IDs, section numbers and the doc header only.
+Fonts are self-hosted in `/fonts` (Latin subset, woff2) and declared with `@font-face` at the top of `styles.css`. No Google Fonts requests. Avoid swapping in Inter, Fraunces, Instrument Serif or other fonts that have become the default look of portfolio sites.
 
 Headings use medium weight (500), not bold. Avoid uppercase tracked "eyebrow" labels on the homepage; use sentence-case muted text instead. Uppercase labels are fine for case-study metadata only.
 
