@@ -154,7 +154,9 @@ def prep_laws():
                 same_cat = 1 if other["category"] == law["category"] else 0
                 scores.append((-shared, -same_cat, abs(j - i), j))
         scores.sort()
-        law["related"] = [LAWS[s[3]]["slug"] for s in scores[:3]]
+        related = [LAWS[s[3]]["slug"] for s in scores[:3]]
+        fill = sorted((j for j in range(len(LAWS)) if j != i and LAWS[j]["slug"] not in related), key=lambda j: (LAWS[j]["category"] != law["category"], abs(j - i)))
+        law["related"] = (related + [LAWS[j]["slug"] for j in fill])[:3]
     by_slug = {l["slug"]: l for l in LAWS}
     return by_slug
 
@@ -524,10 +526,12 @@ def build_law(i, law):
 
     cite_apa, cite_bib = apa(law), bibtex(law)
     cite = """<div class="cite" data-cite>
-  <div class="cite__tabs" role="tablist" aria-label="Citation format">
-    <button type="button" role="tab" id="tab-apa" aria-selected="true" aria-controls="panel-apa" data-tab="apa">APA</button>
-    <button type="button" role="tab" id="tab-bibtex" aria-selected="false" aria-controls="panel-bibtex" tabindex="-1" data-tab="bibtex">BibTeX</button>
-    <button type="button" role="tab" id="tab-link" aria-selected="false" aria-controls="panel-link" tabindex="-1" data-tab="link">Permalink</button>
+  <div class="cite__tabs">
+    <div class="cite__tablist" role="tablist" aria-label="Citation format">
+      <button type="button" role="tab" id="tab-apa" aria-selected="true" aria-controls="panel-apa" data-tab="apa">APA</button>
+      <button type="button" role="tab" id="tab-bibtex" aria-selected="false" aria-controls="panel-bibtex" tabindex="-1" data-tab="bibtex">BibTeX</button>
+      <button type="button" role="tab" id="tab-link" aria-selected="false" aria-controls="panel-link" tabindex="-1" data-tab="link">Permalink</button>
+    </div>
     <button class="btn btn--ink cite__copy" type="button" data-copy>Copy</button>
   </div>
   <div role="tabpanel" id="panel-apa" aria-labelledby="tab-apa" data-panel="apa"><pre><code>%s</code></pre></div>
@@ -539,7 +543,7 @@ def build_law(i, law):
 
     trust = (
         '<dl class="trust">'
-        '<div><dt>Evidence checked</dt><dd>%s</dd></div>'
+        '<div><dt>Last reviewed</dt><dd>%s</dd></div>'
         '<div><dt>Sources</dt><dd><a href="#sources">%d</a> \u00b7 <a href="#cite-this-law">Cite</a></dd></div>'
         '<div><dt>Source types</dt><dd class="trust__small">%s</dd></div>'
         '<div><dt>Version</dt><dd>%s <span class="trust__small">%s</span></dd></div></dl>'
@@ -625,7 +629,7 @@ def build_law(i, law):
         "takeaways": takeaways,
         "h_means": h2("what-it-means", "What it means"),
         "means": means,
-        "h_evid": h2("the-evidence", "The evidence", '<span class="sec-head__note">checked %s</span>' % fmt_date(law["evidenceChecked"])),
+        "h_evid": h2("the-evidence", "The evidence", '<span class="sec-head__note">reviewed %s</span>' % fmt_date(law["evidenceChecked"])),
         "evidence": evidence,
         "h_use": h2("use-it", "Use it"),
         "use_it": use_it,

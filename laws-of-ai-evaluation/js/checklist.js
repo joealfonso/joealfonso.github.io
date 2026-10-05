@@ -29,7 +29,7 @@
   (function init() {
     var p = params.get('preset');
     var laws = (params.get('laws') || '').split(',').map(function (x) { return parseInt(x, 10); }).filter(function (n) { return byNo[n]; });
-    if (p && LAI.presets[p]) {
+    if (p && Object.prototype.hasOwnProperty.call(LAI.presets, p)) {
       state.preset = p;
       state.selected = toNums(LAI.presets[p].laws);
     } else if (laws.length) {

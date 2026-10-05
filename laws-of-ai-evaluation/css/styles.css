@@ -289,6 +289,7 @@ kbd { font: 400 var(--fs-mono-xs)/1 var(--font-mono); border: var(--border); pad
 
 .cite { border: var(--border); background: var(--surface); }
 .cite__tabs { display: flex; align-items: center; gap: var(--space-5); padding: 0 var(--space-4); border-bottom: var(--border); }
+.cite__tablist { display: flex; align-items: center; gap: var(--space-5); }
 .cite__tabs [role="tab"] { background: none; border: 0; border-bottom: 2px solid transparent; padding: 12px 0 10px; font: 500 var(--fs-xs)/1 var(--font-body); color: var(--ink-soft); }
 .cite__tabs [role="tab"][aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
 .cite__tabs [role="tab"]:focus-visible { outline-offset: -2px; }

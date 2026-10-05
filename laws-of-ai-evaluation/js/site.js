@@ -29,9 +29,15 @@
     var items = document.querySelectorAll(selector);
     if (!items.length) return;
     var mq = window.matchMedia(query);
+    Array.prototype.forEach.call(items, function (d) {
+      var summary = d.querySelector('summary');
+      if (summary) summary.addEventListener('click', function (e) { if (mq.matches) e.preventDefault(); });
+    });
     var apply = function () {
       Array.prototype.forEach.call(items, function (d, i) {
         d.open = mq.matches ? true : (mobileFirstOpen && i === 0);
+        var summary = d.querySelector('summary');
+        if (summary) { if (mq.matches) summary.tabIndex = -1; else summary.removeAttribute('tabindex'); }
       });
     };
     apply();
