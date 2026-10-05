@@ -34,34 +34,34 @@ One accent: **ink blue**, like an editor's pen on a printed draft. Never randomi
 
 | Token | Value | Usage |
 |---|---|---|
-| `--color-bg` | `#F6F6F3` | Page background (cool paper) |
-| `--color-surface` | `#ECECE7` | Subtle fills, image placeholders |
-| `--color-surface-elevated` | `#FFFFFF` | Cards on surface bg |
-| `--color-border` | `#DCDCD5` | Default borders, dividers |
-| `--color-border-strong` | `#BDBDB4` | Section rules, hover borders |
-| `--color-text` | `#16181B` | Headings and primary text |
-| `--color-text-secondary` | `#4A4E55` | Body copy, descriptions |
-| `--color-text-muted` | `#646870` | Labels, metadata (AA on bg and surface) |
-| `--color-text-inverse` | `#F6F6F3` | Text on dark fills |
-| `--color-accent` | `#1F45B5` | Links, metrics, active states |
-| `--color-accent-hover` | `#16348A` | Accent hover |
-| `--color-accent-subtle` | `#E3E9F8` | Accent background tint |
+| `--color-bg` | `#EEE6D3` | Page background (warm parchment) |
+| `--color-surface` | `#E4D9C1` | Subtle fills, image placeholders |
+| `--color-surface-elevated` | `#F6F0E1` | Cards on surface bg |
+| `--color-border` | `#D2C7AC` | Default borders, dividers |
+| `--color-border-strong` | `#B8AB91` | Section rules, hover borders |
+| `--color-text` | `#1E1A15` | Headings and primary text |
+| `--color-text-secondary` | `#4A4438` | Body copy, descriptions |
+| `--color-text-muted` | `#5B5246` | Labels, metadata (AA on bg and surface) |
+| `--color-text-inverse` | `#EEE6D3` | Text on dark fills |
+| `--color-accent` | `#2E5B45` | Links, metrics, active states |
+| `--color-accent-hover` | `#1F4332` | Accent hover |
+| `--color-accent-subtle` | `#CCD8C1` | Accent background tint |
 
 ### Dark mode (default)
 
 | Token | Value |
 |---|---|
-| `--color-bg` | `#121416` |
-| `--color-surface` | `#1A1D20` |
-| `--color-surface-elevated` | `#202428` |
-| `--color-border` | `#2E3338` |
-| `--color-border-strong` | `#444A51` |
-| `--color-text` | `#ECEEF0` |
-| `--color-text-secondary` | `#A9AFB6` |
-| `--color-text-muted` | `#8A9098` |
-| `--color-accent` | `#8FAEFF` |
-| `--color-accent-hover` | `#B5C9FF` |
-| `--color-accent-subtle` | `#17213A` |
+| `--color-bg` | `#11160F` |
+| `--color-surface` | `#1B231A` |
+| `--color-surface-elevated` | `#232C21` |
+| `--color-border` | `#3B4535` |
+| `--color-border-strong` | `#56634D` |
+| `--color-text` | `#E6DDC7` |
+| `--color-text-secondary` | `#B9B09A` |
+| `--color-text-muted` | `#9C9584` |
+| `--color-accent` | `#8EBB9B` |
+| `--color-accent-hover` | `#B3D6BF` |
+| `--color-accent-subtle` | `#22352A` |
 
 **Rule:** Never use raw hex values in HTML or CSS. Always reference tokens.
 

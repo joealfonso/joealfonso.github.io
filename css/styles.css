@@ -25,21 +25,21 @@
 :root {
 
   /* --- Color (dark by default) --- */
-  --color-bg:               #121416;
-  --color-surface:          #1A1D20;
-  --color-surface-elevated: #202428;
-  --color-border:           #2E3338;
-  --color-border-strong:    #444A51;
+  --color-bg:               #11160F;
+  --color-surface:          #1B231A;
+  --color-surface-elevated: #232C21;
+  --color-border:           #3B4535;
+  --color-border-strong:    #56634D;
 
-  --color-text:             #ECEEF0;
-  --color-text-secondary:   #A9AFB6;
-  --color-text-muted:       #8A9098;
-  --color-text-inverse:     #121416;
+  --color-text:             #E6DDC7;
+  --color-text-secondary:   #B9B09A;
+  --color-text-muted:       #9C9584;
+  --color-text-inverse:     #11160F;
 
-  --color-accent:           #8FAEFF;
-  --color-accent-hover:     #B5C9FF;
-  --color-accent-subtle:    #17213A;
-  --color-mark:             rgba(143, 174, 255, 0.22);
+  --color-accent:           #8EBB9B;
+  --color-accent-hover:     #B3D6BF;
+  --color-accent-subtle:    #22352A;
+  --color-mark:             rgba(142, 187, 155, 0.22);
 
   --color-success:          #1A7F4B;
   --color-warning:          #B45309;
@@ -78,9 +78,9 @@
   --ink-light-mark:      rgba(255, 255, 255, 0.2);
 
   /* Lightbox overlay — dark in both color schemes */
-  --color-overlay:          rgba(8, 9, 10, 0.96);
-  --color-overlay-text:     #ECEEF0;
-  --color-overlay-muted:    #A9AFB6;
+  --color-overlay:          rgba(10, 13, 9, 0.96);
+  --color-overlay-text:     #E6DDC7;
+  --color-overlay-muted:    #B9B09A;
 
   /* --- Typography --- */
   --font-display: 'Source Serif 4', Georgia, 'Times New Roman', serif;
@@ -2739,21 +2739,21 @@ section[data-painted] {
 /* Light mode override for users with light system preference */
 @media (prefers-color-scheme: light) {
   :root {
-    --color-bg:               #F6F6F3;
-    --color-surface:          #ECECE7;
-    --color-surface-elevated: #FFFFFF;
-    --color-border:           #DCDCD5;
-    --color-border-strong:    #BDBDB4;
+    --color-bg:               #EEE6D3;
+    --color-surface:          #E4D9C1;
+    --color-surface-elevated: #F6F0E1;
+    --color-border:           #D2C7AC;
+    --color-border-strong:    #B8AB91;
 
-    --color-text:             #16181B;
-    --color-text-secondary:   #4A4E55;
-    --color-text-muted:       #646870;
-    --color-text-inverse:     #F6F6F3;
+    --color-text:             #1E1A15;
+    --color-text-secondary:   #4A4438;
+    --color-text-muted:       #5B5246;
+    --color-text-inverse:     #EEE6D3;
 
-    --color-accent:           #1F45B5;
-    --color-accent-hover:     #16348A;
-    --color-accent-subtle:    #E3E9F8;
-    --color-mark:             rgba(31, 69, 181, 0.12);
+    --color-accent:           #2E5B45;
+    --color-accent-hover:     #1F4332;
+    --color-accent-subtle:    #CCD8C1;
+    --color-mark:             rgba(46, 91, 69, 0.14);
 
     --shadow-sm:  0 1px 2px rgba(0, 0, 0, 0.06);
     --shadow-md:  0 4px 12px rgba(0, 0, 0, 0.08);
