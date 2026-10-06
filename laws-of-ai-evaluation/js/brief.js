@@ -36,6 +36,7 @@
   /* ---------- state ---------- */
   var params = new URLSearchParams(window.location.search);
   var linked = false;
+  var dirty = false;
   var state = { laws: [], detail: params.get('detail') === 'full' ? 'full' : 'gist' };
 
   function parseLaws(str) {
@@ -56,21 +57,23 @@
 
   function updateUrl() {
     var q = [];
-    if (linked && state.laws.length) q.push('laws=' + state.laws.join(','));
+    if ((linked || dirty) && state.laws.length) q.push('laws=' + state.laws.join(','));
     if (state.detail === 'full') q.push('detail=full');
     try { window.history.replaceState(null, '', window.location.pathname + (q.length ? '?' + q.join('&') : '')); } catch (e) { /* file:// */ }
   }
 
   function setLaws(list) {
     state.laws = list.slice().sort(function (a, b) { return a - b; });
-    if (!linked) LAIC.set(state.laws);
+    dirty = true;
     updateUrl();
     renderPicker();
     renderBrief();
   }
 
+  // The brief is a working set: editing it never changes My laws. Until the visitor edits it,
+  // it follows My laws; afterwards it only refreshes so the Save button reflects the collection.
   LAIC.onChange(function (list) {
-    if (linked) return;
+    if (linked || dirty) { renderBrief(); return; }
     var mine = list.filter(function (n) { return byNo[n]; });
     if (!sameList(mine, state.laws)) { state.laws = mine; renderPicker(); renderBrief(); }
   });
@@ -112,7 +115,7 @@
           if (cb.checked) set[n] = true; else delete set[n];
           var list = Object.keys(set).map(Number);
           state.laws = list.sort(function (a, b) { return a - b; });
-          if (!linked) LAIC.set(state.laws);
+          dirty = true;
           updateUrl();
           renderBrief();
           renderPresets();
@@ -350,13 +353,14 @@
     });
     actions.appendChild(copyLink);
     actions.appendChild(copyText);
-    if (linked && !sameList(state.laws, LAIC.get())) {
+    if (state.laws.some(function (n) { return !LAIC.has(n); })) {
       var save = el('button', 'btn btn--outline btn--sm', 'Save to My laws');
       save.type = 'button';
       save.addEventListener('click', function () {
         LAIC.addMany(state.laws);
-        flash(save, 'Saved');
-        LAIC.announce('Saved to My laws');
+        LAIC.announce('Saved to My laws.');
+        var count = outEl.querySelector('.brief__count');
+        if (count) { count.tabIndex = -1; count.focus(); }
       });
       actions.appendChild(save);
     }
@@ -404,7 +408,7 @@
         li.appendChild(el('span', 'brief__next-quote', '“' + typo(l.aphorism) + '”'));
         var add = el('button', 'pick pick--inline', '+ Add to brief');
         add.type = 'button';
-        add.setAttribute('aria-label', 'Add ' + typo(l.name) + ' to this brief');
+        add.appendChild(el('span', 'visually-hidden', ' (' + typo(l.name) + ')'));
         add.addEventListener('click', function () {
           setLaws(state.laws.concat([parseInt(l.no, 10)]));
           LAIC.announce('Added ' + typo(l.name) + ' to this brief.');

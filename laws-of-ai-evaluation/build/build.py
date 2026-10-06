@@ -354,8 +354,8 @@ def roman_label(cat_id):
 def pick_button(law, cls="pick", off="Add", on="Added"):
     name = esc(typo(law["name"]))
     return (
-        '<button class="%s" type="button" data-pick="%d" data-name="%s" data-label-off="%s" data-label-on="%s" aria-pressed="false" aria-label="Add %s to My laws">'
-        '<span class="pick__mark" aria-hidden="true">+</span><span class="pick__text">%s</span></button>' % (cls, int(law["no"]), name, off, on, name, off)
+        '<button class="%s" type="button" data-pick="%d" data-name="%s" data-label-off="%s" data-label-on="%s" aria-pressed="false">'
+        '<span class="pick__mark" aria-hidden="true">+</span><span class="pick__text">%s</span><span class="visually-hidden"> (%s)</span></button>' % (cls, int(law["no"]), name, off, on, off, name)
     )
 
 
@@ -954,7 +954,7 @@ def build_data_js():
         "laws": [
             {
                 "no": l["no"], "slug": l["slug"], "name": l["name"], "aphorism": l["aphorism"], "cat": l["category"], "questions": l["questions"],
-                "plain": l["plainTerms"], "evidence": l["evidenceLine"], "doIt": l["doIt"], "shared": l["shared"],
+                "plain": typo(l["plainTerms"]), "evidence": l["evidenceLine"], "doIt": l["doIt"], "shared": l["shared"],
             }
             for l in LAWS
         ],

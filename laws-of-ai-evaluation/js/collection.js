@@ -59,9 +59,7 @@
     Array.prototype.forEach.call(document.querySelectorAll('[data-pick]'), function (b) {
       var n = parseInt(b.getAttribute('data-pick'), 10);
       var on = memory.indexOf(n) !== -1;
-      var name = b.getAttribute('data-name') || 'this law';
       b.setAttribute('aria-pressed', String(on));
-      b.setAttribute('aria-label', (on ? 'Remove ' : 'Add ') + name + (on ? ' from My laws' : ' to My laws'));
       var mark = b.querySelector('.pick__mark');
       var text = b.querySelector('.pick__text');
       if (mark) mark.textContent = on ? '✓' : '+';
@@ -133,6 +131,7 @@
       return;
     }
     if (e.target.closest && e.target.closest('[data-tray-clear]')) {
+      if (memory.length > 1 && !window.confirm('Remove all ' + memory.length + ' laws from My laws?')) return;
       api.clear();
       announce('My laws cleared.');
     }
