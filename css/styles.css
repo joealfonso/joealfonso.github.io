@@ -508,6 +508,28 @@ section + section {
   color: var(--color-text);
 }
 
+/* Special callout — sister project link */
+.nav__links a.nav__callout {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-full);
+  background: var(--color-accent-subtle);
+  color: var(--color-accent);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  white-space: nowrap;
+  transition: background var(--duration-fast) var(--ease-default),
+              color var(--duration-fast) var(--ease-default);
+}
+
+.nav__links a.nav__callout:hover {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
 /* Hamburger toggle button — hidden on desktop, shown on mobile */
 .nav__toggle {
   display: none;
@@ -2706,6 +2728,9 @@ section[data-painted] {
   .nav__links li:last-child { border-bottom: none; }
 
   .nav__links a { font-size: var(--text-base); }
+
+  .nav__links li:has(.nav__callout) { border-bottom: none; }
+  .nav__links a.nav__callout { font-size: var(--text-sm); }
 
   .hero { padding-block: var(--space-8) var(--space-12); }
   .projects__grid { grid-template-columns: 1fr; }
