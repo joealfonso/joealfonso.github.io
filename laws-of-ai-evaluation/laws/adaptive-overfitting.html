@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Adaptive Overfitting · Laws of AI Evaluation</title>
 <meta name="description" content="Every time you tune against the test set, it&#x27;s worth a little less. Each time you adjust a prompt or a model because of how it did on the test, the test tells you a little less. Keep a locked test that you use only to decide.">
