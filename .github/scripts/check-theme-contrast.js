@@ -2,12 +2,19 @@
 // js/theme.js picks a random theme per page load, so a browser scan only
 // ever sees one of them; this reads the tokens straight from styles.css
 // and checks all of them. No dependencies: run with `node`.
+//
+// It also checks hovered/focused links on the highlight stroke (--color-mark
+// blended over each background). axe reports those links as "needs review"
+// because the stroke is a background gradient it can't measure; this covers
+// them. Highlighted links switch to one of HIGHLIGHT_TEXT (see the :hover and
+// :focus-visible rules in styles.css).
 const fs = require('fs');
 
 const css = fs.readFileSync('css/styles.css', 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
 const MIN = 4.5;
 const TEXT = ['--color-text', '--color-text-secondary', '--color-text-muted', '--color-accent'];
 const BACKGROUNDS = ['--color-bg', '--color-surface', '--color-surface-elevated'];
+const HIGHLIGHT_TEXT = ['--color-text', '--color-accent-hover'];
 
 // Split a stylesheet into [selector, body] pairs at one nesting level.
 function blocks(src) {
@@ -28,6 +35,9 @@ function blocks(src) {
 function vars(body) {
   const v = {};
   for (const m of body.matchAll(/(--color-[\w-]+)\s*:\s*(#[0-9a-fA-F]{6})\b/g)) v[m[1]] = m[2];
+  for (const m of body.matchAll(/(--color-[\w-]+)\s*:\s*rgba\(\s*(\d+),\s*(\d+),\s*(\d+),\s*([\d.]+)\s*\)/g)) {
+    v[m[1]] = { rgb: [m[2], m[3], m[4]].map(Number), a: Number(m[5]) };
+  }
   return v;
 }
 
@@ -60,21 +70,31 @@ const ratio = (a, b) => {
   return (hi + 0.05) / (lo + 0.05);
 };
 
+// Composite a translucent color over an opaque hex background.
+const blend = ({ rgb, a }, hex) => '#' + rgb.map((c, i) => {
+  const under = parseInt(hex.substr(1 + i * 2, 2), 16);
+  return Math.round(c * a + under * (1 - a)).toString(16).padStart(2, '0');
+}).join('');
+
 let failures = 0, checks = 0;
 for (const [mode, { base, themes }] of Object.entries(modes)) {
   for (const [theme, overrides] of Object.entries(themes)) {
     // Mirror the cascade: :root[data-theme] outranks plain :root, so in light
     // mode a dark theme override wins unless the light block redefines it.
     const t = { ...modes.dark.base, ...base, ...modes.dark.themes[theme], ...overrides };
-    for (const fg of TEXT) {
-      for (const bg of BACKGROUNDS) {
-        if (!t[fg] || !t[bg]) continue;
-        checks++;
-        const r = ratio(t[fg], t[bg]);
-        if (r < MIN) {
-          failures++;
-          console.log(`::error::${mode}/${theme}: ${fg} ${t[fg]} on ${bg} ${t[bg]} is ${r.toFixed(2)}:1 (needs ${MIN}:1)`);
-        }
+    const pairs = [];
+    for (const bg of BACKGROUNDS) {
+      for (const fg of TEXT) pairs.push([fg, bg, t[bg]]);
+      if (!t['--color-mark']) continue;
+      for (const fg of HIGHLIGHT_TEXT) pairs.push([fg, `${bg} + highlight`, blend(t['--color-mark'], t[bg])]);
+    }
+    for (const [fg, label, color] of pairs) {
+      if (!t[fg] || !color) continue;
+      checks++;
+      const r = ratio(t[fg], color);
+      if (r < MIN) {
+        failures++;
+        console.log(`::error::${mode}/${theme}: ${fg} ${t[fg]} on ${label} ${color} is ${r.toFixed(2)}:1 (needs ${MIN}:1)`);
       }
     }
   }
