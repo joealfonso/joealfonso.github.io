@@ -15,7 +15,6 @@ The site reads like a working document Joseph has marked up. This is what makes 
 
 - **Doc header** (`.doc-header`) at the top of the homepage: Doc ID, author, location, revision date, in Xanh Mono.
 - **Numbered sections**: `<span class="section-heading__num">01</span>` inside `.section-heading`. No § symbol.
-- **Project IDs** (`.doc-id`): EDM-01, RES-02, STU-03, AI-04, MED-05, HOM-06. Used only on the Work index, where a catalog number earns its place. Don't add them to homepage cards, lists, or the footer; the motif reads as a theme when it's everywhere.
 - **Highlighter** (`<mark>`): only on the one or two figures that matter most in a block. Never decorative.
 - **Margin notes** (`.margin-note`): one or two sentences in Joseph's voice beside a project, the kind of thing he'd say in person. Must be true and specific; no slogans.
 - **Footer**: the colophon only.
