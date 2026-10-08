@@ -2786,7 +2786,7 @@ section[data-painted] {
   }
 
   :root[data-theme="coral"] {
-    --color-accent:        #B3362A;
+    --color-accent:        #AA3328;
     --color-accent-hover:  #8A2419;
     --color-accent-subtle: #F8E3E0;
     --color-mark:          rgba(179, 54, 42, 0.13);
@@ -2800,7 +2800,7 @@ section[data-painted] {
   }
 
   :root[data-theme="teal"] {
-    --color-accent:        #0E6A78;
+    --color-accent:        #0E6774;
     --color-accent-hover:  #0A4F5A;
     --color-accent-subtle: #DDEFF1;
     --color-mark:          rgba(14, 106, 120, 0.14);
