@@ -102,12 +102,14 @@ Add to `main.js` inside the `DOMContentLoaded` callback, or create a new file wi
 | Check | What it catches | Run locally |
 |---|---|---|
 | House rules | Missing CSP or `<title>`, inline `style=""` or `on*=` handlers, scripts from hosts the CSP blocks | `.github/scripts/check-site-rules.sh` |
-| Theme contrast | Any accent theme (light or dark) whose text tokens fall below WCAG AA 4.5:1 | `node .github/scripts/check-theme-contrast.js` |
+| Theme contrast | Any accent theme (light or dark) whose text tokens fall below WCAG AA 4.5:1, including hovered/focused links on the highlight stroke | `node .github/scripts/check-theme-contrast.js` |
 | HTML validation | Broken markup (stray tags, missing required elements); rules in `.htmlvalidate.json` | `git ls-files '*.html' \| xargs npx html-validate@9.4.0` |
 | Links | Broken internal links and missing images/assets | CI only (lychee) |
 | Accessibility | axe WCAG 2 AA scan of every page; config in `.pa11yci.json` | CI only (pa11y-ci) |
 
-When adding or changing an accent theme in `styles.css`, run the theme contrast check: the browser scan only sees whichever theme `theme.js` picks at random.
+When adding or changing an accent theme in `styles.css`, run the theme contrast check: the browser scan only sees whichever theme `theme.js` picks at random. The scan lists highlighted text links as "needs review" warnings because axe can't measure their gradient background; the theme contrast check covers those.
+
+Pages under `laws-of-ai-evaluation/` are generated. Edit `laws-of-ai-evaluation/build/build.py` (or its data files) and run `python3 laws-of-ai-evaluation/build/build.py`; never hand-edit the HTML, or the next build will undo it.
 
 ## Out of scope
 - Do not introduce npm, Node, or any package manager into the site. (CI tools run via `npx` inside GitHub Actions only; no `package.json`, no `node_modules`.)

@@ -5,12 +5,6 @@
     "no-trailing-whitespace": "off",
     "long-title": "off",
     "no-implicit-button-type": "off",
-    "valid-id": ["error", { "relaxed": true }],
-
-    "aria-label-misuse": "warn",
-    "unique-landmark": "warn",
-    "prefer-native-element": "warn",
-    "no-autoplay": "warn",
-    "element-permitted-content": "warn"
+    "valid-id": ["error", { "relaxed": true }]
   }
 }
