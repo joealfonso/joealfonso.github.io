@@ -1019,6 +1019,9 @@ mark {
   background: var(--color-surface);
 }
 
+/* For covers whose subject sits mid-frame rather than top left */
+.work-list__thumb--center { object-position: center; }
+
 .work-list__text {
   display: flex;
   flex-direction: column;
