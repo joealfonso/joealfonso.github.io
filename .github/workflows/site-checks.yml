@@ -1,0 +1,76 @@
+# Checks that run on every pull request. The site itself has no build step;
+# these tools run only inside the CI runner and are never added to the repo.
+name: Site checks
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+  schedule:
+    - cron: "0 14 * * 1" # Mondays: also sweep external links for rot
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  site-rules:
+    name: House rules and theme contrast
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: CSP, titles, no inline styles or handlers
+        run: .github/scripts/check-site-rules.sh
+      - name: WCAG AA contrast for every accent theme
+        run: node .github/scripts/check-theme-contrast.js
+
+  html:
+    name: HTML validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: git ls-files '*.html' | xargs npx --yes html-validate@9.4.0
+
+  links:
+    name: Internal links and assets
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: lycheeverse/lychee-action@v2
+        with:
+          args: --offline --no-progress --exclude-path 'pages/writing/_template' './**/*.html'
+          fail: true
+
+  external-links:
+    name: External links (weekly)
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: lycheeverse/lychee-action@v2
+        with:
+          # LinkedIn blocks bots (status 999); font hosts are preconnect targets, not pages.
+          args: >-
+            --no-progress --max-concurrency 8 --accept '200..=299,403,429'
+            --exclude 'linkedin\.com' --exclude 'fonts\.(googleapis|gstatic)\.com'
+            --exclude-path 'pages/writing/_template'
+            './**/*.html'
+          fail: true
+
+  accessibility:
+    name: Accessibility (axe, WCAG 2 AA)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Serve the site
+        run: python3 -m http.server 8080 --bind 127.0.0.1 &
+      - name: Scan every page
+        run: |
+          urls=$(git ls-files '*.html' | grep -v '/_template' | sed 's#^#http://127.0.0.1:8080/#')
+          npx --yes pa11y-ci@4.1.1 $urls

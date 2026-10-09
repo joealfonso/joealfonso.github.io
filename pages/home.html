@@ -22,12 +22,11 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <script src="../js/theme.js"></script>
 </head>
-</head>
   <body>
 
     <!-- NAV -->
     <header class="site-header">
-      <nav class="nav">
+      <nav class="nav" aria-label="Main">
         <a href="../index.html" class="nav__logo">Joseph Alfonso</a>
         <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
           <span class="nav__toggle-bar"></span>
@@ -300,9 +299,10 @@
         </figure>
 
         <figure>
-          <video autoplay loop muted playsinline width="1280" height="720" aria-label="Drag and drop card interaction demonstration">
+          <video data-autoplay controls loop muted playsinline width="1280" height="720">
             <source src="../main/assets/img/home/Cards2.webm" type="video/webm" />
             <source src="../main/assets/img/home/Cards2.mp4" type="video/mp4" />
+            <track kind="captions" src="../main/assets/img/home/Cards2.vtt" srclang="en" label="English" />
             <img src="../main/assets/img/home/Cards2.gif" width="1280" height="720" alt="Drag and drop card interaction demonstration" />
           </video>
           <figcaption>Drag-and-drop reordering let users arrange their homepage around their own priorities.</figcaption>

@@ -292,6 +292,8 @@ def layout(title, desc, body, depth=0, current=None, scripts=(), data=False, ski
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>%(title)s</title>
 <meta name="description" content="%(desc)s">
@@ -447,14 +449,14 @@ def build_index():
   <div data-view-panel="grid">%(sections)s</div>
   <div class="catview" data-view-panel="category" hidden><ul class="catview__grid">%(columns)s</ul></div>
 </main>
-<div class="tray no-print" data-tray hidden role="region" aria-label="My laws">
+<section class="tray no-print" data-tray hidden aria-label="My laws">
   <p class="tray__count"><strong data-collection-count>0</strong> <span data-tray-word>laws</span> in My laws</p>
   <div class="tray__actions">
     <a class="btn btn--accent btn--sm" href="brief.html" data-collection-link="brief.html">Quick brief</a>
     <a class="btn btn--outline btn--sm" href="checklist.html?preset=custom" data-collection-link="checklist.html?preset=custom">Checklist</a>
     <button class="btn btn--ghost btn--sm" type="button" data-tray-clear>Clear</button>
   </div>
-</div>
+</section>
 """ % {
         "total": total,
         "updated": SITE["updated"],
@@ -610,9 +612,9 @@ def build_law(i, law):
         crumb_next = '<a class="btn btn--outline btn--sm" href="../index.html">All laws \u2192</a>'
         bar_next = '<a href="../index.html">All laws \u2192</a>'
 
-    body = """<div class="crumbs"><nav aria-label="Breadcrumb"><ol>
-    <li><a href="../index.html">Laws</a></li><li><a href="%(cat_href)s">%(cat_id)s. %(cat_name)s</a></li><li aria-current="page">No. %(no)s</li></ol></nav>
-    <div class="crumbs__right"><span>%(pos)d of %(cat_total)d in this category</span>%(crumb_next)s</div></div>
+    body = """<nav class="crumbs" aria-label="Breadcrumb"><div><ol>
+    <li><a href="../index.html">Laws</a></li><li><a href="%(cat_href)s">%(cat_id)s. %(cat_name)s</a></li><li aria-current="page">No. %(no)s</li></ol></div>
+    <div class="crumbs__right"><span>%(pos)d of %(cat_total)d in this category</span>%(crumb_next)s</div></nav>
 <main id="main" class="law-layout cat-%(cat_n)d" data-page="law" data-no="%(no)s" data-slug="%(slug)s">
   <aside class="law-rail" aria-label="On this page">
     <details class="toc" open><summary>On this page <span aria-hidden="true" class="toc__plus"></span></summary><ol>%(toc)s</ol></details>
@@ -637,7 +639,7 @@ def build_law(i, law):
   </article>
   <aside class="law-aside" aria-label="Supporting material"><h2 class="aside-title">Supporting material</h2>%(aside)s</aside>
 </main>
-<div class="law-bar" aria-label="Law navigation"><a href="%(cat_href)s">\u2190 Category</a><a href="#cite-this-law">Cite</a>%(bar_next)s</div>
+<nav class="law-bar" aria-label="Law navigation"><a href="%(cat_href)s">\u2190 Category</a><a href="#cite-this-law">Cite</a>%(bar_next)s</nav>
 """ % {
         "cat_href": cat_href,
         "cat_id": cat["id"],
@@ -722,7 +724,7 @@ def tool_page(title, desc, current, intro_html, sections_html, source_note):
 def build_rubric():
     secs = []
     for g in RUBRIC:
-        items = "".join('<li id="%s"><span class="crit__id">%s</span><span class="crit__text">%s</span></li>' % (i["id"], i["id"], esc(typo(i["text"]))) for i in g["items"])
+        items = "".join('<li id="%s"><span class="crit__id">%s</span><div class="crit__text">%s</div></li>' % (i["id"], i["id"], esc(typo(i["text"]))) for i in g["items"])
         secs.append(
             '<section class="tool-sec" aria-labelledby="g-%s"><h2 id="g-%s"><span class="tool-sec__code">%s</span>%s <span class="tool-sec__tag">\u2014 %s</span></h2><ol class="crit">%s</ol></section>'
             % (g["code"], g["code"], g["code"], esc(typo(g["name"])), esc(typo(g["tagline"])), items)
@@ -757,7 +759,7 @@ def src_id(ref):
 
 def build_review():
     dims = {d["code"]: d for d in AIRR["dimensions"]}
-    screening = "".join('<li id="%s"><span class="crit__id">%s</span><span class="crit__text">%s</span></li>' % (s["id"], s["id"].upper(), esc(typo(s["question"]))) for s in AIRR["screening"])
+    screening = "".join('<li id="%s"><span class="crit__id">%s</span><div class="crit__text">%s</div></li>' % (s["id"], s["id"].upper(), esc(typo(s["question"]))) for s in AIRR["screening"])
     secs = ['<section class="tool-sec" aria-labelledby="screening"><h2 id="screening"><span class="tool-sec__code">1</span>Screening <span class="tool-sec__tag">\u2014 five questions asked before scoring</span></h2><ol class="crit">%s</ol></section>' % screening]
     for code in sorted(dims):
         crits = [c for c in AIRR["criteria"] if c["dimension"] == code]
@@ -765,7 +767,7 @@ def build_review():
         for c in crits:
             gate = '<span class="gate">Gate \u00b7 T%d</span>' % c["gateTier"] if c["gateTier"] else ""
             refs = "".join('<li><a href="#%s">%s</a></li>' % (src_id(r), esc(r)) for r in c["references"])
-            rows += '<li id="%s"><span class="crit__id">%s</span><span class="crit__text">%s<span class="crit__meta">%s<span class="crit__label" id="%s-src">Based on</span><ul class="refs" aria-labelledby="%s-src">%s</ul></span></span></li>' % (c["id"], c["id"], esc(typo(c["criterion"])), gate, c["id"], c["id"], refs)
+            rows += '<li id="%s"><span class="crit__id">%s</span><div class="crit__text">%s<div class="crit__meta">%s<span class="crit__label" id="%s-src">Based on</span><ul class="refs" aria-labelledby="%s-src">%s</ul></div></div></li>' % (c["id"], c["id"], esc(typo(c["criterion"])), gate, c["id"], c["id"], refs)
         secs.append(
             '<section class="tool-sec" aria-labelledby="%s"><h2 id="%s"><span class="tool-sec__code">%s</span>%s</h2><ol class="crit">%s</ol></section>'
             % (code, code, code, esc(typo(dims[code]["title"])), rows)

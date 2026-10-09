@@ -331,4 +331,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ─── Demo videos ──────────────────────────────────────────────────────────
+  // Looping demos ([data-autoplay]) start on their own unless the visitor
+  // prefers reduced motion. They ship with controls, so anyone can pause
+  // them (WCAG 2.2.2).
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('video[data-autoplay]').forEach((video) => {
+      video.play().catch(() => {});
+    });
+  }
+
 });
