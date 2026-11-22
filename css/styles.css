@@ -2811,3 +2811,242 @@ section[data-painted] {
     --color-mark:          rgba(14, 106, 120, 0.14);
   }
 }
+
+/* Article diagrams (inline SVG figures in writing posts) */
+.article-figure {
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.article-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.article-figure__label {
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+  margin-right: var(--space-2);
+}
+
+.fig-box { fill: var(--color-surface-elevated); stroke: var(--color-border-strong); stroke-width: 1; }
+.fig-box--accent { stroke: var(--color-accent); stroke-width: 2; }
+.fig-text { fill: var(--color-text); font-family: var(--font-sans); font-size: 14px; font-weight: 600; }
+.fig-text--muted { fill: var(--color-text-secondary); font-weight: 400; font-size: 12px; }
+.fig-line { stroke: var(--color-border-strong); stroke-width: 1.5; fill: none; }
+.fig-dot--pass { fill: var(--color-accent); }
+.fig-dot--fail { fill: none; stroke: var(--color-text-muted); stroke-width: 1.5; }
+
+/* Example spec card (writing posts) */
+.eval-spec {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  overflow: hidden;
+}
+
+.eval-spec__header {
+  padding: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.article-body .eval-spec__label,
+.article-body .eval-spec__title,
+.article-body .eval-spec__version { margin-bottom: 0; }
+
+.eval-spec__label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.eval-spec__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-text);
+  margin-top: var(--space-2);
+}
+
+.eval-spec__version {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+.eval-spec__row {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.eval-spec__term {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+}
+
+.eval-spec__value {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.eval-spec__pattern {
+  display: block;
+  width: fit-content;
+  margin-top: var(--space-2);
+  padding: 0 var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--color-text);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-full);
+}
+
+.eval-spec__row:last-child {
+  border-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .eval-spec__row { grid-template-columns: 1fr; gap: var(--space-1); }
+}
+
+/* Term explanations (writing posts). Hover or focus on desktop, tap on touch.
+   Behavior lives in js/main.js. */
+.term {
+  position: relative;
+}
+
+.term__trigger {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: help;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.25em;
+}
+
+.term__tip {
+  position: absolute;
+  bottom: calc(100% + var(--space-2));
+  left: 50%;
+  transform: translateX(calc(-50% + var(--term-shift, 0px)));
+  z-index: var(--z-overlay);
+  width: 20rem;
+  max-width: calc(100vw - var(--space-8));
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-style: normal;
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  text-align: left;
+  color: var(--color-text);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
+}
+
+/* No room above (sticky header): open below the term instead */
+.term.is-below .term__tip {
+  bottom: auto;
+  top: calc(100% + var(--space-2));
+}
+
+.term.is-below .term__tip::after {
+  top: auto;
+  bottom: 100%;
+}
+
+/* Invisible bridge so the pointer can move from the term onto the tip */
+.term__tip::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: var(--space-2);
+}
+
+.term__title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  margin-bottom: var(--space-2);
+}
+
+.term__body {
+  display: block;
+  color: var(--color-text-secondary);
+}
+
+.term__source {
+  display: block;
+  margin-top: var(--space-3);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.term.is-open .term__tip,
+.term:not(.is-dismissed) .term__trigger:focus-visible + .term__tip {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (hover: hover) {
+  /* Short delay, like a link preview, so passing the pointer over a term
+     doesn't flash a card. */
+  .term:not(.is-dismissed):hover .term__tip {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: 0.3s;
+  }
+}
+
+@media (max-width: 640px) {
+  .term__tip {
+    position: fixed;
+    top: auto;
+    bottom: var(--space-4);
+    left: var(--space-4);
+    right: var(--space-4);
+    transform: none;
+    width: auto;
+    max-width: none;
+    padding: var(--space-4);
+    font-size: var(--text-base);
+  }
+  .term__tip::after { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .term__tip { transition: none; }
+}
+
+.article-note {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
