@@ -46,13 +46,18 @@
     <main>
 
       <!-- HERO -->
-      <section class="hero" data-paintable="Intro">
+      <section class="hero">
         <div class="container">
           <dl class="doc-header">
             <div><dt>Name</dt><dd>Joseph Alfonso</dd></div>
             <div><dt>Title</dt><dd>Principal Product Designer</dd></div>
             <div><dt>Location</dt><dd>Seattle</dd></div>
-            <div><dt>Rev.</dt><dd><time datetime="2026-09">Sep 2026</time></dd></div>
+            <div><dt>Rev.</dt><dd><time datetime="2026-11">Nov 2026</time></dd></div>
+            <!-- Points at the newest post. Update it with the Latest writing card below. -->
+            <div class="doc-header__latest">
+              <dt>Latest</dt>
+              <dd><a href="pages/writing/designing-the-eval.html" class="hero__meta-link">Most AI evaluation decisions are design decisions</a> <span class="new-tag">New</span></dd>
+            </div>
           </dl>
           <h1 class="hero__headline">
             I lead design on enterprise systems at global scale, and I find the problems nobody put in the brief.
@@ -77,12 +82,12 @@
       </section>
 
       <!-- SELECTED WORK -->
-      <section class="work" data-paintable="Selected work">
+      <section class="work">
         <div class="container">
           <h2 class="section-heading">Selected work</h2>
 
           <!-- Amazon EDM -->
-          <article class="feature feature--lead" data-card data-paintable="Employee Document Management and AI">
+          <article class="feature feature--lead" data-card>
             <img
               class="feature__image"
               src="images/projects/edm-cover.webp"
@@ -107,7 +112,7 @@
           </article>
 
           <!-- Self-Service Resignation -->
-          <article class="feature" data-card data-paintable="Self-Service Resignation">
+          <article class="feature" data-card>
             <img
               class="feature__image"
               src="images/resignation/Frame%2048095835.webp"
@@ -131,7 +136,7 @@
           </article>
 
           <!-- Discovery Education Studio -->
-          <article class="feature" data-card data-paintable="Discovery Education Studio">
+          <article class="feature" data-card>
             <img
               class="feature__image"
               src="images/projects/studio-cover.webp"
@@ -158,22 +163,26 @@
       </section>
 
       <!-- WRITING — when you publish, move the current latest post into the list below -->
-      <section class="writing-teaser" data-paintable="Latest writing">
+      <section class="writing-teaser">
         <div class="container">
           <h2 class="section-heading">Latest writing</h2>
-          <article class="latest-post" data-card data-paintable="Latest article">
+          <!-- Remove the "New" tags here and in the hero about a month after publishing. -->
+          <article class="latest-post latest-post--new" data-card>
             <p class="latest-post__meta">
-              <time datetime="2026-09-24">Sep 24, 2026</time> &middot; Perspective &middot; 3 min read
+              <span class="new-tag">New</span>
+              <time datetime="2026-11-22">Nov 22, 2026</time> &middot; Perspective &middot; 7 min read
             </p>
-            <h3 class="latest-post__title">Your usability tests can&rsquo;t see the users who already left</h3>
+            <h3 class="latest-post__title">Most AI evaluation decisions are design decisions</h3>
             <p class="latest-post__dek">
-              On Amazon&rsquo;s employee document platform, a lot of employees with disabilities had stopped using
-              the product the way we designed it. Our research never flagged it, because it only studied the people
-              who were still using it.
+              The rubric, the raters, and the test conditions shape what a model ships as much as any screen does.
+              The basics of AI evaluation for designers who shape model behavior, with an example eval spec.
             </p>
-            <a href="pages/writing/accessibility-invisible-users.html" class="latest-post__cta card-link" aria-label="Read the article: Your usability tests can’t see the users who already left">Read the article →</a>
+            <a href="pages/writing/designing-the-eval.html" class="latest-post__cta card-link" aria-label="Read the article: Most AI evaluation decisions are design decisions">Read the article →</a>
           </article>
           <ul class="writing-teaser__list">
+            <li>
+              <a href="pages/writing/accessibility-invisible-users.html">Your usability tests can&rsquo;t see the users who already left</a>
+            </li>
             <li>
               <a href="pages/writing/exit-flow-retention.html">Designing an exit flow that gives people a reason to stay</a>
             </li>
@@ -186,13 +195,13 @@
       </section>
 
       <!-- MORE WORK -->
-      <section class="work work--more" data-paintable="More work">
+      <section class="work work--more">
         <div class="container">
           <!-- More work -->
           <h2 class="section-heading">More work</h2>
           <ul class="work-list">
             <li>
-              <div class="work-list__item" data-card data-paintable="AI evaluation and design">
+              <div class="work-list__item" data-card>
                 <img class="work-list__thumb" src="main/assets/img/MA2.png" width="1440" height="1680" alt="" loading="lazy" />
                 <span class="work-list__text">
                   <span class="work-list__title">AI evaluation and design</span>
@@ -202,7 +211,7 @@
               </div>
             </li>
             <li>
-              <div class="work-list__item" data-card data-paintable="Media player redesign">
+              <div class="work-list__item" data-card>
                 <img class="work-list__thumb" src="images/projects/media-cover-new.webp" width="1280" height="1291" alt="" loading="lazy" />
                 <span class="work-list__text">
                   <span class="work-list__title">Media player redesign</span>
@@ -212,7 +221,7 @@
               </div>
             </li>
             <li>
-              <div class="work-list__item" data-card data-paintable="Discovery Education Home">
+              <div class="work-list__item" data-card>
                 <img class="work-list__thumb" src="images/projects/home-cover.webp" width="2300" height="1291" alt="" loading="lazy" />
                 <span class="work-list__text">
                   <span class="work-list__title">Discovery Education Home</span>
@@ -243,7 +252,6 @@
     </footer>
 
     <script src="js/main.js" defer></script>
-    <script src="js/paint.js" defer></script>
     <script src="js/analytics.js"></script>
   </body>
 </html>
