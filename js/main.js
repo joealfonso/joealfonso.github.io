@@ -60,12 +60,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // ─── Writing: reading time ────────────────────────────────────────────────
   // Counts words in the article body (not the header or summary) and writes
   // "N min read" into every [data-reading-time] element. The HTML ships with
-  // a static fallback value in case JS doesn't run.
+  // a static fallback value in case JS doesn't run. Term preview cards
+  // (.term__tip) are skipped, since readers only open the ones they need.
   const articleBody = document.querySelector('[data-article-body]');
 
   if (articleBody) {
     const WORDS_PER_MINUTE = 238;
-    const words = articleBody.textContent.trim().split(/\s+/).length;
+    const counted = articleBody.cloneNode(true);
+    counted.querySelectorAll('.term__tip').forEach((tip) => tip.remove());
+    const words = counted.textContent.trim().split(/\s+/).length;
     const minutes = Math.max(1, Math.round(words / WORDS_PER_MINUTE));
     document.querySelectorAll('[data-reading-time]').forEach((el) => {
       el.textContent = `${minutes} min read`;
@@ -328,6 +331,67 @@ document.addEventListener('DOMContentLoaded', () => {
           open(img);
         }
       });
+    });
+  }
+
+  // ─── Writing: term explanations ───────────────────────────────────────────
+  // A .term wraps a button and a short tooltip. On devices with a mouse, CSS
+  // shows the tip on hover; keyboard users see it on focus. A click or tap
+  // toggles it, so it also works on touch screens. Escape closes it
+  // (WCAG 1.4.13), and so does a tap anywhere else.
+  const terms = document.querySelectorAll('.term');
+  if (terms.length) {
+    const setOpen = (term, open) => {
+      term.classList.toggle('is-open', open);
+      term.querySelector('.term__trigger').setAttribute('aria-expanded', String(open));
+    };
+    const closeAll = (except) => {
+      terms.forEach((term) => { if (term !== except) setOpen(term, false); });
+    };
+    // Keep the card inside the viewport: nudge it sideways near the edges and
+    // flip it below the term when there's no room above (sticky header).
+    const place = (term) => {
+      const tip = term.querySelector('.term__tip');
+      tip.style.setProperty('--term-shift', '0px');
+      term.classList.remove('is-below');
+      if (window.matchMedia('(max-width: 640px)').matches) return;
+      const gap = 16;
+      const header = document.querySelector('.site-header');
+      const top = header ? header.getBoundingClientRect().bottom : 0;
+      const rect = tip.getBoundingClientRect();
+      let shift = 0;
+      if (rect.left < gap) shift = gap - rect.left;
+      else if (rect.right > window.innerWidth - gap) shift = window.innerWidth - gap - rect.right;
+      tip.style.setProperty('--term-shift', `${Math.round(shift)}px`);
+      if (rect.top < top + gap) term.classList.add('is-below');
+    };
+
+    terms.forEach((term) => {
+      term.querySelector('.term__trigger').addEventListener('click', (event) => {
+        event.stopPropagation();
+        const open = !term.classList.contains('is-open');
+        closeAll(term);
+        if (open) place(term);
+        term.classList.remove('is-dismissed');
+        setOpen(term, open);
+      });
+      term.addEventListener('mouseenter', () => place(term));
+      term.addEventListener('focusin', () => place(term));
+      term.addEventListener('mouseleave', () => term.classList.remove('is-dismissed'));
+      term.addEventListener('focusout', () => term.classList.remove('is-dismissed'));
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest('.term')) closeAll();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      terms.forEach((term) => {
+        if (term.classList.contains('is-open') || term.matches(':hover, :focus-within')) {
+          term.classList.add('is-dismissed');
+        }
+      });
+      closeAll();
     });
   }
 

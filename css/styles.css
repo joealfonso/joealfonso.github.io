@@ -54,16 +54,6 @@
   --color-selection-ink: #16181B;
   --color-selection:     var(--pen-yellow);
 
-  /* Paint mode (home page): swatches and the ink that sits on them.
-     Every swatch/ink pair is at least 5.3:1, so painted text passes AA. */
-  --paint-yellow:        var(--pen-yellow);
-  --paint-pink:          var(--pen-pink);
-  --paint-mint:          var(--pen-green);
-  --paint-sky:           var(--pen-blue);
-  --paint-navy:          #1F2A5C;
-  --paint-forest:        #1C4D36;
-  --paint-plum:          #4B2559;
-  --paint-brick:         #7A2E22;
 
   --ink-dark-text:       #16181B;
   --ink-dark-secondary:  #2B2E33;
@@ -268,7 +258,7 @@ a:focus-visible {
      bloom   — the stroke bursts outward from the middle
      thicken — a faint underline at rest that swells into a full highlight
    The stroke gradient is set on the links themselves (not :root) so it
-   follows --color-mark wherever it's overridden, e.g. painted regions. */
+   follows --color-mark wherever it's overridden. */
 :root {
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
@@ -2408,233 +2398,6 @@ html:has(.lightbox[open]) { overflow: hidden; }
 
 
 /* ============================================================
-   PAINT MODE (home page)
-   Built by js/paint.js. Pick a swatch, then click a [data-paintable]
-   region to fill it. paint.js sets --paint-bg and data-ink on the
-   region; the ink rules below re-point the color tokens inside it, so
-   every component stays readable without its own paint styles.
-   ============================================================ */
-
-[data-painted] {
-  background-color: var(--paint-bg);
-  transition:
-    background-color var(--duration-slow) var(--ease-default),
-    box-shadow var(--duration-slow) var(--ease-default);
-}
-
-/* Fills bleed past the box with a shadow rather than padding, so painting
-   never shifts the layout. Cards bleed all round; sections bleed up into
-   the empty space above them. */
-[data-paintable]:not(section)[data-painted] {
-  border-radius: var(--radius-md);
-  box-shadow: 0 0 0 var(--space-4) var(--paint-bg);
-}
-
-section[data-painted] {
-  box-shadow: 0 calc(var(--space-8) * -1) 0 0 var(--paint-bg);
-}
-
-[data-ink="dark"] {
-  --color-text:           var(--ink-dark-text);
-  --color-text-secondary: var(--ink-dark-secondary);
-  --color-text-muted:     var(--ink-dark-muted);
-  --color-accent:         var(--ink-dark-text);
-  --color-accent-hover:   var(--ink-dark-text);
-  --color-border:         var(--ink-dark-border);
-  --color-border-strong:  var(--ink-dark-border);
-  --color-mark:           var(--ink-dark-mark);
-  --color-surface:        transparent;
-  color: var(--color-text);
-}
-
-[data-ink="light"] {
-  --color-text:           var(--ink-light-text);
-  --color-text-secondary: var(--ink-light-secondary);
-  --color-text-muted:     var(--ink-light-muted);
-  --color-accent:         var(--ink-light-text);
-  --color-accent-hover:   var(--ink-light-text);
-  --color-border:         var(--ink-light-border);
-  --color-border-strong:  var(--ink-light-border);
-  --color-mark:           var(--ink-light-mark);
-  --color-surface:        transparent;
-  color: var(--color-text);
-}
-
-/* While painting: outline what a click would fill */
-.is-painting [data-paintable] { cursor: crosshair; }
-.is-painting [data-paintable] * { cursor: inherit; }
-
-.is-painting [data-paintable]:hover:not(:has([data-paintable]:hover)),
-.is-painting [data-paintable]:focus-visible {
-  outline: 2px dashed var(--paint-current, var(--color-accent));
-  outline-offset: var(--space-2);
-}
-
-/* Toggle + toolbar */
-.paint-toggle {
-  position: fixed;
-  right: var(--space-4);
-  bottom: var(--space-4);
-  z-index: var(--z-overlay);
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  min-height: 44px;
-  padding: var(--space-2) var(--space-4);
-  border: 1px solid var(--color-border-strong);
-  border-radius: var(--radius-full);
-  background: var(--color-surface-elevated);
-  color: var(--color-text);
-  font: inherit;
-  font-size: var(--text-sm);
-  font-weight: var(--weight-medium);
-  box-shadow: var(--shadow-md);
-  cursor: pointer;
-  transition: border-color var(--duration-fast) var(--ease-default);
-}
-
-.paint-toggle:hover { border-color: var(--color-accent); }
-
-.paint-toggle svg { width: 18px; height: 18px; fill: currentColor; }
-
-.paint-toggle[aria-expanded="true"] { visibility: hidden; }
-
-.paint-toolbar {
-  position: fixed;
-  left: 50%;
-  bottom: var(--space-4);
-  z-index: var(--z-overlay);
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-2);
-  max-width: calc(100vw - var(--space-8));
-  padding: var(--space-3) var(--space-4);
-  border: 1px solid var(--color-border-strong);
-  border-radius: var(--radius-xl);
-  background: var(--color-surface-elevated);
-  box-shadow: var(--shadow-lg);
-  animation: paint-toolbar-in var(--duration-base) var(--ease-default);
-}
-
-.paint-toolbar[hidden] { display: none; }
-
-@keyframes paint-toolbar-in {
-  from { opacity: 0; transform: translate(-50%, var(--space-2)); }
-  to   { opacity: 1; transform: translate(-50%, 0); }
-}
-
-.paint-toolbar__tools {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: var(--space-2);
-}
-
-.paint-swatch,
-.paint-tool {
-  width: 36px;
-  height: 36px;
-  display: grid;
-  place-items: center;
-  padding: 0;
-  border: 2px solid var(--color-border-strong);
-  border-radius: var(--radius-full);
-  background: var(--swatch, transparent);
-  color: var(--color-text);
-  font: inherit;
-  font-size: var(--text-md);
-  line-height: 1;
-  cursor: pointer;
-  transition: transform var(--duration-fast) var(--ease-spring);
-}
-
-.paint-swatch:hover,
-.paint-tool:hover { transform: scale(1.1); }
-
-.paint-swatch[aria-pressed="true"],
-.paint-tool[aria-pressed="true"] {
-  border-color: var(--color-text);
-  box-shadow: 0 0 0 2px var(--color-surface-elevated), 0 0 0 4px var(--color-text);
-  transform: scale(1.1);
-}
-
-.paint-swatch:focus-visible,
-.paint-tool:focus-visible,
-.paint-toolbar__text-btn:focus-visible,
-.paint-toggle:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 3px;
-}
-
-.paint-swatch--yellow { --swatch: var(--paint-yellow); }
-.paint-swatch--pink   { --swatch: var(--paint-pink); }
-.paint-swatch--mint   { --swatch: var(--paint-mint); }
-.paint-swatch--sky    { --swatch: var(--paint-sky); }
-.paint-swatch--navy   { --swatch: var(--paint-navy); }
-.paint-swatch--forest { --swatch: var(--paint-forest); }
-.paint-swatch--plum   { --swatch: var(--paint-plum); }
-.paint-swatch--brick  { --swatch: var(--paint-brick); }
-
-.paint-tool svg { width: 18px; height: 18px; fill: currentColor; }
-
-.paint-toolbar__divider {
-  width: 1px;
-  height: 24px;
-  background: var(--color-border-strong);
-}
-
-.paint-toolbar__text-btn {
-  min-height: 36px;
-  padding: 0 var(--space-3);
-  border: 0;
-  border-radius: var(--radius-full);
-  background: transparent;
-  color: var(--color-text-secondary);
-  font: inherit;
-  font-size: var(--text-sm);
-  font-weight: var(--weight-medium);
-  cursor: pointer;
-}
-
-.paint-toolbar__text-btn:hover { color: var(--color-text); background: var(--color-surface); }
-
-.paint-toolbar__hint {
-  max-width: none;
-  margin: 0;
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .paint-toolbar__divider { display: none; }
-
-  .paint-toolbar {
-    left: var(--space-4);
-    right: var(--space-4);
-    max-width: none;
-    transform: none;
-  }
-
-  @keyframes paint-toolbar-in {
-    from { opacity: 0; transform: translateY(var(--space-2)); }
-    to   { opacity: 1; transform: none; }
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  [data-painted] { transition: none; }
-  .paint-toolbar { animation: none; }
-  .paint-swatch,
-  .paint-tool { transition: none; }
-}
-
-
-/* ============================================================
    13. UTILITIES
    ============================================================ */
 
@@ -2810,4 +2573,273 @@ section[data-painted] {
     --color-accent-subtle: #DDEFF1;
     --color-mark:          rgba(14, 106, 120, 0.14);
   }
+}
+
+/* Article diagrams (inline SVG figures in writing posts) */
+.article-figure {
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.article-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.article-figure__label {
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+  margin-right: var(--space-2);
+}
+
+.fig-box { fill: var(--color-surface-elevated); stroke: var(--color-border-strong); stroke-width: 1; }
+.fig-box--accent { stroke: var(--color-accent); stroke-width: 2; }
+.fig-text { fill: var(--color-text); font-family: var(--font-sans); font-size: 14px; font-weight: 600; }
+.fig-text--muted { fill: var(--color-text-secondary); font-weight: 400; font-size: 12px; }
+.fig-line { stroke: var(--color-border-strong); stroke-width: 1.5; fill: none; }
+.fig-dot--pass { fill: var(--color-accent); }
+.fig-dot--fail { fill: none; stroke: var(--color-text-muted); stroke-width: 1.5; }
+
+/* Example spec card (writing posts) */
+.eval-spec {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  overflow: hidden;
+}
+
+.eval-spec__header {
+  padding: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.article-body .eval-spec__label,
+.article-body .eval-spec__title,
+.article-body .eval-spec__version { margin-bottom: 0; }
+
+.eval-spec__label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.eval-spec__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-text);
+  margin-top: var(--space-2);
+}
+
+.eval-spec__version {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+.eval-spec__row {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.eval-spec__term {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+}
+
+.eval-spec__value {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.eval-spec__pattern {
+  display: block;
+  width: fit-content;
+  margin-top: var(--space-2);
+  padding: 0 var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--color-text);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-full);
+}
+
+.eval-spec__row:last-child {
+  border-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .eval-spec__row { grid-template-columns: 1fr; gap: var(--space-1); }
+}
+
+/* Term explanations (writing posts). Hover or focus on desktop, tap on touch.
+   Behavior lives in js/main.js. */
+.term {
+  position: relative;
+}
+
+.term__trigger {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: help;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.25em;
+}
+
+.term__tip {
+  position: absolute;
+  bottom: calc(100% + var(--space-2));
+  left: 50%;
+  transform: translateX(calc(-50% + var(--term-shift, 0px)));
+  z-index: var(--z-overlay);
+  width: 20rem;
+  max-width: calc(100vw - var(--space-8));
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-style: normal;
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  text-align: left;
+  color: var(--color-text);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
+}
+
+/* No room above (sticky header): open below the term instead */
+.term.is-below .term__tip {
+  bottom: auto;
+  top: calc(100% + var(--space-2));
+}
+
+.term.is-below .term__tip::after {
+  top: auto;
+  bottom: 100%;
+}
+
+/* Invisible bridge so the pointer can move from the term onto the tip */
+.term__tip::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: var(--space-2);
+}
+
+.term__title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  margin-bottom: var(--space-2);
+}
+
+.term__body {
+  display: block;
+  color: var(--color-text-secondary);
+}
+
+.term__source {
+  display: block;
+  margin-top: var(--space-3);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.term.is-open .term__tip,
+.term:not(.is-dismissed) .term__trigger:focus-visible + .term__tip {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (hover: hover) {
+  /* Short delay, like a link preview, so passing the pointer over a term
+     doesn't flash a card. */
+  .term:not(.is-dismissed):hover .term__tip {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: 0.3s;
+  }
+}
+
+@media (max-width: 640px) {
+  .term__tip {
+    position: fixed;
+    top: auto;
+    bottom: var(--space-4);
+    left: var(--space-4);
+    right: var(--space-4);
+    transform: none;
+    width: auto;
+    max-width: none;
+    padding: var(--space-4);
+    font-size: var(--text-base);
+  }
+  .term__tip::after { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .term__tip { transition: none; }
+}
+
+.article-note {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* "New" tag for the newest post: a swipe of the site's yellow highlighter.
+   Dark ink on the pen color reads in both color schemes (about 14:1). */
+.new-tag {
+  display: inline-block;
+  padding: 0.1em 0.5em;
+  margin-right: var(--space-2);
+  background: var(--pen-yellow);
+  color: var(--color-selection-ink);
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  line-height: var(--leading-normal);
+  border-radius: var(--radius-sm);
+  transform: rotate(-2deg);
+  vertical-align: 0.1em;
+}
+
+.doc-header__latest dd .new-tag { margin: 0 0 0 var(--space-2); }
+
+/* Newest post card: a soft highlighter wash behind the card and a thicker
+   accent edge, so it reads as fresh without breaking the section. */
+.latest-post--new {
+  border-left-width: 6px;
+  background:
+    linear-gradient(100deg, var(--color-mark), transparent 55%),
+    var(--color-surface);
 }
