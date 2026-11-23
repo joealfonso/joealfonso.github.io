@@ -13,23 +13,47 @@ Plain HTML, CSS, and JavaScript. No build tools, no frameworks, no npm. Everythi
 ---
 
 ## File structure
+The repo root is the site root. GitHub Pages serves it at josephalfonso.com.
+
 ```
-site/
-├── index.html              → Home — project cards grid, hero/intro
+.
+├── index.html              → Home: hero/intro and project cards grid
+├── 404.html                → Not-found page
 ├── pages/
 │   ├── about.html          → Background, experience, mentoring (Designlab, SVC Seattle)
 │   ├── work.html           → Full project listing / case study index
-│   └── contact.html        → Contact
+│   ├── contact.html        → Contact
+│   ├── side-projects.html  → Side projects
+│   ├── ai-work.html        → Case study: AI Evaluation and Design
+│   ├── resignation.html    → Case study: Self-Service Resignation
+│   ├── player.html         → Case study: Media Redesign
+│   ├── studio.html         → Case study: Discovery Education Studio
+│   ├── home.html           → Case study: Discovery Education Home
+│   ├── writing.html        → Writing index
+│   └── writing/            → Articles, `_template-*.html` starters (noindex), README.md on how to publish
+├── main/
+│   ├── EDM.html            → Case study: Employee Document Management (the only page under main/)
+│   └── assets/img/         → Case study images used by the home page, work.html and most case studies
+├── lab/                    → Lab index plus one folder per experiment
+├── laws-of-ai-evaluation/  → Generated reference site. Edit build/build.py, never the HTML (see CI checks)
 ├── css/
-│   ├── reset.css           → CSS reset — do not edit
-│   └── styles.css          → All styles — variables, layout, components
+│   ├── reset.css           → CSS reset, do not edit
+│   └── styles.css          → All styles: variables, layout, components
 ├── js/
-│   └── main.js             → JS entry point, runs on DOMContentLoaded
+│   ├── main.js             → Entry point, runs on DOMContentLoaded (nav, cards, lightbox, writing features)
+│   ├── theme.js            → Picks a random accent theme on each page load, loaded in <head>
+│   └── analytics.js        → GA4 custom events
 ├── images/
-│   ├── projects/           → Case study screenshots, covers, before/afters
-│   └── icons/              → Favicons, social, UI icons
-└── fonts/                  → Local font files (woff2 preferred)
+│   ├── projects/           → Card covers for the home page, work.html and side projects
+│   ├── resignation/        → Resignation case study images
+│   ├── og/                 → Share preview images
+│   └── icons/              → Favicons
+├── robots.txt, sitemap.xml → Crawler files
+├── CNAME, .nojekyll        → GitHub Pages config
+└── .github/                → CI workflow and the check scripts it runs
 ```
+
+Fonts (Instrument Sans, Source Serif 4) load from Google Fonts. There is no local fonts folder.
 
 ---
 
