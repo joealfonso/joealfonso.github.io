@@ -133,7 +133,7 @@
             <h3>Read outputs before you define good</h3>
             <p>
               Most teams write the criteria first and read outputs later. It usually goes the other way.
-              <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-shankar">When researchers watched people grade model outputs</button><span class="term__tip" role="tooltip" id="tip-shankar"><span class="term__title">Who Validates the Validators? Aligning LLM-Assisted Evaluation of LLM Outputs with Human Preferences</span><span class="term__body">A team led by UC Berkeley researchers watched nine practitioners use a tool for building AI graders and saw their criteria change as they graded.</span><span class="term__source">Shankar et al. &middot; UIST 2024</span></span></span>, grading changed what they thought
+              When <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-shankar">researchers watched</button><span class="term__tip" role="tooltip" id="tip-shankar"><span class="term__title">Who Validates the Validators? Aligning LLM-Assisted Evaluation of LLM Outputs with Human Preferences</span><span class="term__body">A team led by UC Berkeley researchers watched nine practitioners use a tool for building AI graders and saw their criteria change as they graded.</span><span class="term__source">Shankar et al. &middot; UIST 2024</span></span></span> people grade model outputs, grading changed what they thought
               &ldquo;good&rdquo; meant. Tone, or whether an answer admits what it doesn&rsquo;t know, only showed up as a
               criterion after they&rsquo;d read a pile of examples. The researchers called it <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-drift">criteria drift</button><span class="term__tip" role="tooltip" id="tip-drift"><span class="term__title">Criteria drift</span><span class="term__body">Your definition of a good answer changes as you read more answers. That&rsquo;s normal, but scores from before and after the change can&rsquo;t be compared.</span></span></span>, and
               anyone who&rsquo;s done synthesis will recognize it: you don&rsquo;t write the headings on the affinity map
@@ -166,28 +166,20 @@
             </p>
 
             <figure class="article-figure">
-              <svg viewBox="0 0 640 220" role="img" aria-labelledby="fig-a-title fig-a-desc">
-                <title id="fig-a-title">Three conditions to evaluate</title>
-                <desc id="fig-a-desc">Three boxes, labeled human alone, AI alone, and human plus AI, each feeding into a box labeled accuracy when the AI is wrong.</desc>
-                <rect class="fig-box" x="10" y="20" width="180" height="64" rx="8" />
-                <text class="fig-text" x="100" y="50" text-anchor="middle">Human alone</text>
-                <text class="fig-text fig-text--muted" x="100" y="70" text-anchor="middle">baseline judgment</text>
-                <rect class="fig-box" x="230" y="20" width="180" height="64" rx="8" />
-                <text class="fig-text" x="320" y="50" text-anchor="middle">AI alone</text>
-                <text class="fig-text fig-text--muted" x="320" y="70" text-anchor="middle">the usual eval</text>
-                <rect class="fig-box fig-box--accent" x="450" y="20" width="180" height="64" rx="8" />
-                <text class="fig-text" x="540" y="50" text-anchor="middle">Human + AI</text>
-                <text class="fig-text fig-text--muted" x="540" y="70" text-anchor="middle">what actually ships</text>
-                <path class="fig-line" d="M100 84 V120 H540 V84 M320 84 V160" />
-                <rect class="fig-box fig-box--accent" x="170" y="160" width="300" height="52" rx="8" />
-                <text class="fig-text" x="320" y="184" text-anchor="middle">Accuracy when the AI is wrong</text>
-                <text class="fig-text fig-text--muted" x="320" y="202" text-anchor="middle">plus time, effort, and confidence</text>
-              </svg>
+              <div class="fig-flow">
+                <ul class="fig-flow__inputs">
+                  <li class="fig-node"><strong>Human alone</strong><span>baseline judgment</span></li>
+                  <li class="fig-node"><strong>AI alone</strong><span>the usual eval</span></li>
+                  <li class="fig-node fig-node--accent"><strong>Human + AI</strong><span>what actually ships</span></li>
+                </ul>
+                <div class="fig-flow__join" aria-hidden="true"></div>
+                <p class="fig-node fig-node--accent fig-flow__result"><strong>Accuracy when the AI is wrong</strong><span>plus time, effort, and confidence</span></p>
+              </div>
               <figcaption><span class="article-figure__label">Fig. A</span>Score all three conditions. The pair is the product, and its weakest moment is when the model is wrong.</figcaption>
             </figure>
 
             <p>
-              People also can&rsquo;t see where the <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-frontier">model&rsquo;s edge</button><span class="term__tip" role="tooltip" id="tip-frontier"><span class="term__title">The jagged frontier</span><span class="term__body">The study&rsquo;s name for the uneven edge of what AI does well. Some hard-looking tasks sit inside it and some easy-looking ones sit outside, with no visible line between them.</span></span></span> is. <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-dellacqua">In a big experiment with BCG consultants</button><span class="term__tip" role="tooltip" id="tip-dellacqua"><span class="term__title">Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality</span><span class="term__body">Researchers from Harvard Business School and other schools worked with Boston Consulting Group on a field experiment. 758 BCG consultants did realistic work with or without GPT-4.</span><span class="term__source">Dell&rsquo;Acqua et al. &middot; HBS Working Paper 24-013, 2023</span></span></span>, people using <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-gpt4">GPT-4</button><span class="term__tip" role="tooltip" id="tip-gpt4"><span class="term__title">GPT-4</span><span class="term__body">OpenAI&rsquo;s most capable model when the study ran in spring 2023.</span></span></span> finished more tasks and did better work on the tasks the model
+              People also can&rsquo;t see where the <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-frontier">model&rsquo;s edge</button><span class="term__tip" role="tooltip" id="tip-frontier"><span class="term__title">The jagged frontier</span><span class="term__body">The study&rsquo;s name for the uneven edge of what AI does well. Some hard-looking tasks sit inside it and some easy-looking ones sit outside, with no visible line between them.</span></span></span> is. In a big experiment with <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-dellacqua">BCG consultants</button><span class="term__tip" role="tooltip" id="tip-dellacqua"><span class="term__title">Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality</span><span class="term__body">Researchers from Harvard Business School and other schools worked with Boston Consulting Group on a field experiment. 758 BCG consultants did realistic work with or without GPT-4.</span><span class="term__source">Dell&rsquo;Acqua et al. &middot; HBS Working Paper 24-013, 2023</span></span></span>, people using <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-gpt4">GPT-4</button><span class="term__tip" role="tooltip" id="tip-gpt4"><span class="term__title">GPT-4</span><span class="term__body">OpenAI&rsquo;s most capable model when the study ran in spring 2023.</span></span></span> finished more tasks and did better work on the tasks the model
               was good at. On one task built to trip it up, 84% of people working without AI answered correctly. With AI, that
               dropped to somewhere between 60% and 70%. Test your actual tasks one by one, including the ones that seem too
               easy to bother with, and do it again whenever the model changes.
@@ -198,30 +190,41 @@
             <p>
               A lot of evals run each test once, or keep the best of a few tries. That tells you what a model can do, not whether it does it every time someone asks. There are two ways to score repeat
               tries. <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-passk">Pass@k</button><span class="term__tip" role="tooltip" id="tip-passk"><span class="term__title">pass@k</span><span class="term__body">Counts a task as solved if at least one of k tries works. It comes from coding benchmarks, where each try can be checked against unit tests and the passing one kept.</span></span></span> counts a task as solved if any try works, and <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-passhatk">Pass^k</button><span class="term__tip" role="tooltip" id="tip-passhatk"><span class="term__title">pass^k</span><span class="term__body">Counts a task as solved only if all k tries work. It measures consistency, which is closer to what a person using the product experiences.</span></span></span> only counts it if
-              every try works. In <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-taubench">one test of AI customer service agents</button><span class="term__tip" role="tooltip" id="tip-taubench"><span class="term__title">&tau;-bench (tau-bench)</span><span class="term__body">A test where an AI agent helps simulated customers with retail and airline requests, using company tools and following company policy.</span><span class="term__source">Yao et al. &middot; ICLR 2025</span></span></span>, <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-gpt4o">GPT-4o</button><span class="term__tip" role="tooltip" id="tip-gpt4o"><span class="term__title">GPT-4o</span><span class="term__body">An OpenAI model released in 2024 and one of the strongest available when &tau;-bench was published.</span></span></span> solved about 61% of
+              every try works. In <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-taubench">one test</button><span class="term__tip" role="tooltip" id="tip-taubench"><span class="term__title">&tau;-bench (tau-bench)</span><span class="term__body">A test where an AI agent helps simulated customers with retail and airline requests, using company tools and following company policy.</span><span class="term__source">Yao et al. &middot; ICLR 2025</span></span></span> of AI customer service agents, <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-gpt4o">GPT-4o</button><span class="term__tip" role="tooltip" id="tip-gpt4o"><span class="term__title">GPT-4o</span><span class="term__body">An OpenAI model released in 2024 and one of the strongest available when &tau;-bench was published.</span></span></span> solved about 61% of
               retail tasks on the first try. Asked to do the same task eight times, it passed all eight less than a quarter of the time.
             </p>
 
             <figure class="article-figure">
-              <svg viewBox="0 0 640 200" role="img" aria-labelledby="fig-b-title fig-b-desc">
-                <title id="fig-b-title">Pass at k versus pass to the k</title>
-                <desc id="fig-b-desc">Three tasks run four times each. Task one passes all four runs, task two passes two, task three passes one. Under pass at 4 all three count as solved. Under pass to the 4 only task one counts.</desc>
-                <text class="fig-text fig-text--muted" x="10" y="30">4 runs per task</text>
-                <text class="fig-text fig-text--muted" x="400" y="30" text-anchor="middle">pass@4</text>
-                <text class="fig-text fig-text--muted" x="540" y="30" text-anchor="middle">pass^4</text>
-                <text class="fig-text" x="10" y="74">Task 1</text>
-                <circle class="fig-dot--pass" cx="130" cy="69" r="11" /><circle class="fig-dot--pass" cx="170" cy="69" r="11" /><circle class="fig-dot--pass" cx="210" cy="69" r="11" /><circle class="fig-dot--pass" cx="250" cy="69" r="11" />
-                <text class="fig-text" x="400" y="74" text-anchor="middle">solved</text>
-                <text class="fig-text" x="540" y="74" text-anchor="middle">solved</text>
-                <text class="fig-text" x="10" y="124">Task 2</text>
-                <circle class="fig-dot--pass" cx="130" cy="119" r="11" /><circle class="fig-dot--fail" cx="170" cy="119" r="11" /><circle class="fig-dot--pass" cx="210" cy="119" r="11" /><circle class="fig-dot--fail" cx="250" cy="119" r="11" />
-                <text class="fig-text" x="400" y="124" text-anchor="middle">solved</text>
-                <text class="fig-text fig-text--muted" x="540" y="124" text-anchor="middle">not solved</text>
-                <text class="fig-text" x="10" y="174">Task 3</text>
-                <circle class="fig-dot--fail" cx="130" cy="169" r="11" /><circle class="fig-dot--fail" cx="170" cy="169" r="11" /><circle class="fig-dot--pass" cx="210" cy="169" r="11" /><circle class="fig-dot--fail" cx="250" cy="169" r="11" />
-                <text class="fig-text" x="400" y="174" text-anchor="middle">solved</text>
-                <text class="fig-text fig-text--muted" x="540" y="174" text-anchor="middle">not solved</text>
-              </svg>
+              <table class="fig-runs">
+                <thead>
+                  <tr>
+                    <th scope="col">Task</th>
+                    <th scope="col">4 runs</th>
+                    <th scope="col">pass@4</th>
+                    <th scope="col">pass^4</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Task 1</th>
+                    <td><span class="fig-runs__dots" aria-hidden="true"><span class="fig-dot fig-dot--pass"></span><span class="fig-dot fig-dot--pass"></span><span class="fig-dot fig-dot--pass"></span><span class="fig-dot fig-dot--pass"></span></span><span class="sr-only">4 of 4 passed</span></td>
+                    <td>solved</td>
+                    <td>solved</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Task 2</th>
+                    <td><span class="fig-runs__dots" aria-hidden="true"><span class="fig-dot fig-dot--pass"></span><span class="fig-dot fig-dot--fail"></span><span class="fig-dot fig-dot--pass"></span><span class="fig-dot fig-dot--fail"></span></span><span class="sr-only">2 of 4 passed</span></td>
+                    <td>solved</td>
+                    <td class="fig-runs__muted">not solved</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Task 3</th>
+                    <td><span class="fig-runs__dots" aria-hidden="true"><span class="fig-dot fig-dot--fail"></span><span class="fig-dot fig-dot--fail"></span><span class="fig-dot fig-dot--pass"></span><span class="fig-dot fig-dot--fail"></span></span><span class="sr-only">1 of 4 passed</span></td>
+                    <td>solved</td>
+                    <td class="fig-runs__muted">not solved</td>
+                  </tr>
+                </tbody>
+              </table>
               <figcaption><span class="article-figure__label">Fig. B</span>Same runs, two readouts. Pass@4 says three for three. Pass^4 says one. Users experience the second number.</figcaption>
             </figure>
 
@@ -243,7 +246,7 @@
               matter before you look at the overall number, and put the worst one right next to the average.
             </p>
             <p>
-              Where the model runs matters too. <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-beede">When Google brought an eye screening tool into clinics in Thailand</button><span class="term__tip" role="tooltip" id="tip-beede"><span class="term__title">A Human-Centered Evaluation of a Deep Learning System Deployed in Clinics for the Detection of Diabetic Retinopathy</span><span class="term__body">Google Health researchers watched nurses use an AI screening tool for diabetic eye disease in 11 clinics in Thailand.</span><span class="term__source">Beede et al. &middot; CHI 2020</span></span></span>,
+              Where the model runs matters too. When Google brought an <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-beede">eye screening tool</button><span class="term__tip" role="tooltip" id="tip-beede"><span class="term__title">A Human-Centered Evaluation of a Deep Learning System Deployed in Clinics for the Detection of Diabetic Retinopathy</span><span class="term__body">Google Health researchers watched nurses use an AI screening tool for diabetic eye disease in 11 clinics in Thailand.</span><span class="term__source">Beede et al. &middot; CHI 2020</span></span></span> into clinics in Thailand,
               lighting and busy workflows hurt how it performed, and it rejected photos the nurses could realistically take.
               The model had passed its tests. The system hadn&rsquo;t. Designers already own the methods that catch this, like
               contextual inquiry and small pilots.
