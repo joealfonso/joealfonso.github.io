@@ -2,45 +2,46 @@
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV6CVTX4BZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K17M6WE3GP"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-NV6CVTX4BZ');
+      gtag('config', 'G-K17M6WE3GP');
     </script>
     <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.google.com https://*.g.doubleclick.net; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.google.com https://*.g.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Media Redesign | Joseph Alfonso</title>
-    <meta name="description" content="How iterative design sprints and focused research led to a significantly more effective media experience for millions of K–12 students and teachers at Discovery Education." />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    <meta name="description" content="How short design sprints reshaped the Resource Player, the most-used page on the Discovery Education platform." />
+    <link rel="canonical" href="https://josephalfonso.com/pages/player.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Joseph Alfonso" />
+    <meta property="og:title" content="Media Redesign" />
+    <meta property="og:description" content="How short design sprints reshaped the Resource Player, the most-used page on the Discovery Education platform." />
+    <meta property="og:url" content="https://josephalfonso.com/pages/player.html" />
+    <meta property="og:image" content="https://josephalfonso.com/images/og/player.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Discovery Education redesigned video player" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../images/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../images/icons/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../images/icons/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&display=swap">
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/styles.css" />
-    <script>
-      (function () {
-        var palettes = [
-          { accent: '#0052CC', accentHover: '#003D99', accentSubtle: '#EBF2FF',   accentDark: '#4D94FF', accentHoverDark: '#7AB3FF', accentSubtleDark: '#0F1E38' },
-          { accent: '#0D9488', accentHover: '#0F766E', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
-          { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
-          { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
-          { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
-        ];
-        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var p = palettes[Math.floor(Math.random() * palettes.length)];
-        var r = document.documentElement;
-        r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
-        r.style.setProperty('--color-accent-hover',  dark ? p.accentHoverDark  : p.accentHover);
-        r.style.setProperty('--color-accent-subtle', dark ? p.accentSubtleDark : p.accentSubtle);
-      })();
-    </script>
-  </head>
+    <script src="../js/theme.js"></script>
+</head>
   <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
     <!-- NAV -->
     <header class="site-header">
-      <nav class="nav">
+      <nav class="nav" aria-label="Main">
         <a href="../index.html" class="nav__logo">Joseph Alfonso</a>
         <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
           <span class="nav__toggle-bar"></span>
@@ -50,12 +51,14 @@
         <ul class="nav__links" id="nav-links">
           <li><a href="about.html">About</a></li>
           <li><a href="work.html">Work</a></li>
+          <li><a href="writing.html">Writing</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a class="nav__callout" href="side-projects.html">Side projects</a></li>
         </ul>
       </nav>
     </header>
 
-    <main>
+    <main id="main">
 
       <!-- CASE STUDY HEADER -->
       <section class="case-study-header container">
@@ -72,7 +75,7 @@
         <div class="case-study-meta">
           <div class="case-study-meta__item">
             <p class="case-study-meta__label">Role</p>
-            <p class="case-study-meta__value">Lead Product Designer</p>
+            <p class="case-study-meta__value">UX Lead and Design Strategist</p>
           </div>
           <div class="case-study-meta__item">
             <p class="case-study-meta__label">Company</p>
@@ -96,7 +99,9 @@
       <!-- COVER IMAGE -->
       <div class="case-study-cover container">
         <img
-          src="../main/assets/img/player/Player-Hero-1.png"
+          src="../main/assets/img/player/Player-Hero-1.webp"
+          width="1678"
+          height="1013"
           alt="Discovery Education Resource Player redesign shown across devices"
           loading="eager"
         />
@@ -119,7 +124,7 @@
             <p class="stat-block__label">Defined upfront, used to evaluate every decision</p>
           </div>
           <div class="stat-block__item">
-            <p class="stat-block__value">Before &amp; after</p>
+            <p class="stat-block__value">Before and after</p>
             <p class="stat-block__label">Clear improvement in task success and content engagement</p>
           </div>
         </div>
@@ -128,21 +133,22 @@
         <p>
           "Player" is shorthand for the Resource Player: the page where students and teachers
           view individual videos, documents, and interactive media on Discovery Education.
-          It's not a flashy product. It doesn't have a lot of moving parts. But it's the most
-          visited page on the platform, which means every friction point compounds across
-          millions of sessions a day.
+          It's a plain page with few moving parts, and it's also the most visited page on the
+          platform, so every friction point compounds across millions of sessions a day.
         </p>
         <p>
           We approached the redesign around three core goals that research had identified as
           what students and teachers actually needed from the experience: understand the resource
           quickly, engage with it effectively, and know how to use it in the classroom. That
-          third goal was the most distinctive. Discovery Education isn't just a media library.
-          It's a teaching tool, and the Player needed to reflect that.
+          third goal set Discovery Education apart: teachers use it to teach with, so the Player
+          had to help with lesson planning as well as playback.
         </p>
 
         <figure>
           <img
-            src="../main/assets/img/player/Player-Old.png"
+            src="../main/assets/img/player/Player-Old.webp"
+            width="1280"
+            height="1292"
             alt="Old version of the Discovery Education Resource Player"
             loading="lazy"
           />
@@ -181,11 +187,13 @@
 
         <figure>
           <img
-            src="../main/assets/img/player/FamiliarPatterns.png"
+            src="../main/assets/img/player/FamiliarPatterns.webp"
+            width="2265"
+            height="676"
             alt="Familiar design patterns applied in the new Player"
             loading="lazy"
           />
-          <figcaption>Leveraging familiar patterns from other parts of the platform to reduce cognitive load.</figcaption>
+          <figcaption>Related resources reuse the carousel cards students already knew from the rest of the platform: thumbnail, runtime, type and title.</figcaption>
         </figure>
 
         <h3>The "like" problem</h3>
@@ -198,8 +206,8 @@
         <p>
           The answer was: all three, depending on who you asked. Age, platform context, and
           icon choice all influenced how people interpreted it. The heart icon in particular
-          produced consistently split reactions. This ambiguity wasn't just a UI problem.
-          It was connected to saving, content weighting in search results, and a broader
+          produced consistently split reactions. The confusion went beyond the icon.
+          It was tied to saving, content weighting in search results, and a broader
           personalization system we were building in parallel.
         </p>
 
@@ -215,8 +223,7 @@
         <p>
           Research sessions revealed a consistent pattern: teachers would move to supplementary
           material before they'd fully engaged with the main resource. Mouse tracking showed
-          highlighting and attention in areas unrelated to the current task. We read this as a
-          hierarchy problem. The page wasn't clearly communicating what mattered most, so users
+          highlighting and attention in areas unrelated to the current task. I read this as a hierarchy problem. The page wasn't clearly communicating what mattered most, so users
           filled the ambiguity with their own navigation behavior.
         </p>
         <p>
@@ -227,28 +234,31 @@
         <h2>Incorporating new patterns</h2>
         <p>
           Discovery Education's platform had modular design patterns developed elsewhere in the
-          product suite. Rather than inventing new conventions for Player, we pulled in and
-          adapted patterns that users already understood from other contexts. This reduced the
+          product suite. Rather than inventing new conventions for Player, I pulled in and adapted patterns that users already understood from other contexts. This reduced the
           learning curve and gave the redesigned Player a consistency that felt like it belonged
           to the same product family.
         </p>
 
         <figure>
           <img
-            src="../main/assets/img/player/Concept-LargeCard.jpg"
+            src="../main/assets/img/player/Concept-LargeCard.webp"
+            width="2373"
+            height="2400"
             alt="Large card concept exploration for related content"
             loading="lazy"
           />
-          <figcaption>Applying the platform's card pattern to related content discovery within Player.</figcaption>
+          <figcaption>An early concept: video on top, tabs for details, segments and transcript underneath, and a row of large related-resource cards at the bottom.</figcaption>
         </figure>
 
         <figure>
           <img
-            src="../main/assets/img/player/EarlySidePanelConcepts.png"
+            src="../main/assets/img/player/EarlySidePanelConcepts.webp"
+            width="1503"
+            height="1766"
             alt="Early sidebar and side panel concept explorations"
             loading="lazy"
           />
-          <figcaption>Early side panel explorations for surfacing supplementary content without disrupting the main experience.</figcaption>
+          <figcaption>Side panel explorations: curriculum standards, segments, transcript, Studio templates, teaching strategies and downloads, each one click from the video.</figcaption>
         </figure>
 
         <h2>Experimenting with process</h2>
@@ -285,17 +295,21 @@
           <picture>
             <source srcset="../main/assets/img/player/Concept-Sidebar1.webp" type="image/webp" />
             <img
-              src="../main/assets/img/player/Concept-Sidebar1.png"
+              src="../main/assets/img/player/Concept-Sidebar1.webp"
+              width="2400"
+              height="1500"
               alt="Redesigned Player with sidebar navigation and content focus"
               loading="lazy"
             />
           </picture>
-          <figcaption>The redesigned experience with a clear content hierarchy and accessible supplementary navigation.</figcaption>
+          <figcaption>The sidebar direction: the video keeps the left two-thirds of the screen, and teaching strategies and related resources sit beside it instead of below.</figcaption>
         </figure>
 
         <figure>
           <img
-            src="../main/assets/img/player/Player-New-Default.png"
+            src="../main/assets/img/player/Player-New-Default.webp"
+            width="1280"
+            height="1291"
             alt="Final redesigned Resource Player"
             loading="lazy"
           />
@@ -304,7 +318,9 @@
 
         <figure>
           <img
-            src="../main/assets/img/player/PlayerNew-1.jpg"
+            src="../main/assets/img/player/PlayerNew-1.webp"
+            width="1677"
+            height="1349"
             alt="Redesigned Player showing related content and classroom integration features"
             loading="lazy"
           />
@@ -369,6 +385,7 @@
       </div>
     </footer>
 
-    <script src="../js/main.js"></script>
-  </body>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/analytics.js"></script>
+</body>
 </html>

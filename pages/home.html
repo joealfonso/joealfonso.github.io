@@ -2,45 +2,46 @@
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV6CVTX4BZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K17M6WE3GP"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-NV6CVTX4BZ');
+      gtag('config', 'G-K17M6WE3GP');
     </script>
     <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.google.com https://*.g.doubleclick.net; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.google.com https://*.g.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Discovery Education Home | Joseph Alfonso</title>
     <meta name="description" content="How I redesigned the Discovery Education platform homepage to serve millions of teachers and students with a personalized, accessible, and deeply researched new experience." />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    <link rel="canonical" href="https://josephalfonso.com/pages/home.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Joseph Alfonso" />
+    <meta property="og:title" content="Discovery Education Home" />
+    <meta property="og:description" content="How I redesigned the Discovery Education platform homepage to serve millions of teachers and students with a personalized, accessible, and deeply researched new experience." />
+    <meta property="og:url" content="https://josephalfonso.com/pages/home.html" />
+    <meta property="og:image" content="https://josephalfonso.com/images/og/home.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Discovery Education Home across multiple devices" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../images/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../images/icons/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../images/icons/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&display=swap">
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/styles.css" />
-    <script>
-      (function () {
-        var palettes = [
-          { accent: '#0052CC', accentHover: '#003D99', accentSubtle: '#EBF2FF',   accentDark: '#4D94FF', accentHoverDark: '#7AB3FF', accentSubtleDark: '#0F1E38' },
-          { accent: '#0D9488', accentHover: '#0F766E', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
-          { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
-          { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
-          { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
-        ];
-        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var p = palettes[Math.floor(Math.random() * palettes.length)];
-        var r = document.documentElement;
-        r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
-        r.style.setProperty('--color-accent-hover',  dark ? p.accentHoverDark  : p.accentHover);
-        r.style.setProperty('--color-accent-subtle', dark ? p.accentSubtleDark : p.accentSubtle);
-      })();
-    </script>
-  </head>
+    <script src="../js/theme.js"></script>
+</head>
   <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
     <!-- NAV -->
     <header class="site-header">
-      <nav class="nav">
+      <nav class="nav" aria-label="Main">
         <a href="../index.html" class="nav__logo">Joseph Alfonso</a>
         <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
           <span class="nav__toggle-bar"></span>
@@ -50,12 +51,14 @@
         <ul class="nav__links" id="nav-links">
           <li><a href="about.html">About</a></li>
           <li><a href="work.html">Work</a></li>
+          <li><a href="writing.html">Writing</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a class="nav__callout" href="side-projects.html">Side projects</a></li>
         </ul>
       </nav>
     </header>
 
-    <main>
+    <main id="main">
 
       <!-- CASE STUDY HEADER -->
       <section class="case-study-header container">
@@ -72,7 +75,7 @@
         <div class="case-study-meta">
           <div class="case-study-meta__item">
             <p class="case-study-meta__label">Role</p>
-            <p class="case-study-meta__value">Lead Product Designer</p>
+            <p class="case-study-meta__value">UX Lead and Design Strategist</p>
           </div>
           <div class="case-study-meta__item">
             <p class="case-study-meta__label">Company</p>
@@ -96,7 +99,9 @@
       <!-- COVER IMAGE -->
       <div class="case-study-cover container">
         <img
-          src="../main/assets/img/home/Platform-HeroDevices.jpg"
+          src="../main/assets/img/home/Platform-HeroDevices.webp"
+          width="2300"
+          height="1291"
           alt="Discovery Education platform shown across multiple devices"
           loading="eager"
         />
@@ -141,7 +146,9 @@
 
         <figure>
           <img
-            src="../main/assets/img/home/oldhome.png"
+            src="../main/assets/img/home/oldhome.webp"
+            width="1370"
+            height="1722"
             alt="The original Discovery Education homepage"
             loading="lazy"
           />
@@ -151,6 +158,8 @@
         <figure>
           <img
             src="../main/assets/img/home/OldHomeAnalytics.png"
+            width="2357"
+            height="1101"
             alt="Analytics data from the original homepage showing low engagement"
             loading="lazy"
           />
@@ -179,44 +188,52 @@
         <p>
           One finding that consistently came up: users assumed personalization already existed.
           They expected to be able to customize their homepage and were surprised when they
-          couldn't. That's not a feature request. That's an expectation gap, and it set the
-          direction for much of the design work that followed.
+          couldn't. We stopped treating personalization as a nice-to-have and started treating
+          its absence as a bug, and that set the direction for much of the design work that followed.
         </p>
 
         <figure>
           <img
             src="../main/assets/img/home/Homeresearch1.png"
+            width="1796"
+            height="1625"
             alt="Research documentation and notes from homepage usability sessions"
             loading="lazy"
           />
-          <figcaption>Research documentation from moderated usability sessions.</figcaption>
+          <figcaption>Raw notes from sessions P1&ndash;P5, one column per teacher, organized by task prompt. P1 went straight to &ldquo;Top Left&rdquo; for resources and asked to drag and drop subscriptions.</figcaption>
         </figure>
 
         <figure>
           <img
             src="../main/assets/img/home/Homeresearch2.png"
+            width="1799"
+            height="765"
             alt="Research synthesis and pattern identification"
             loading="lazy"
           />
-          <figcaption>Synthesizing patterns across sessions to identify consistent themes.</figcaption>
+          <figcaption>Task results per participant: success, seconds to complete, and where they clicked first. Finding a teaching strategy averaged 13.7 seconds; finding a virtual field trip averaged 5.3.</figcaption>
         </figure>
 
         <figure>
           <img
             src="../main/assets/img/home/HomeResearch3.png"
+            width="1447"
+            height="1565"
             alt="Research findings and design implications"
             loading="lazy"
           />
-          <figcaption>Translating research findings into design implications and priorities.</figcaption>
+          <figcaption>The shared findings sheet. Every goal we tested was met; the notes flag the lower cards as the part teachers found overwhelming, and point out that they expected to customize, not just be personalized for.</figcaption>
         </figure>
 
         <figure>
           <img
-            src="../main/assets/img/home/SWOT.jpg"
+            src="../main/assets/img/home/SWOT.webp"
+            width="2400"
+            height="1800"
             alt="SWOT analysis for the homepage redesign"
             loading="lazy"
           />
-          <figcaption>SWOT analysis used to frame the opportunity and identify risks before design work began.</figcaption>
+          <figcaption>Hand-drawn SWOT from early planning. Personalization and customization led the opportunities; inconsistent pages below the top level led the weaknesses.</figcaption>
         </figure>
 
         <h2>Key design challenges</h2>
@@ -226,7 +243,7 @@
           Discovery Education's content library is enormous, and a meaningful portion of
           it looks similar at a glance. Videos, articles, interactive tools — surfacing
           these on a homepage without them blurring together required a system-level approach
-          to visual differentiation. We worked closely with content teams to ensure the
+          to visual differentiation. I worked closely with content teams to ensure the
           right imagery was in place and developed a set of visual conventions that made
           scanning actually work.
         </p>
@@ -234,10 +251,12 @@
         <figure>
           <img
             src="../main/assets/img/home/SameProduct.png"
+            width="901"
+            height="342"
             alt="Challenge of differentiating similar products in the Discovery Education suite"
             loading="lazy"
           />
-          <figcaption>Differentiating visually similar products within the content library was a core design challenge.</figcaption>
+          <figcaption>Two different products, one identical tile. &ldquo;Science Elementary&rdquo; and &ldquo;Science Middle School&rdquo; looked the same until you read the small print.</figcaption>
         </figure>
 
         <p>
@@ -285,7 +304,9 @@
 
         <figure>
           <img
-            src="../main/assets/img/home/HomeNew.png"
+            src="../main/assets/img/home/HomeNew.webp"
+            width="1370"
+            height="1722"
             alt="The redesigned Discovery Education homepage"
             loading="lazy"
           />
@@ -293,9 +314,11 @@
         </figure>
 
         <figure>
-          <video autoplay loop muted playsinline aria-label="Drag and drop card interaction demonstration" loading="lazy">
+          <video data-autoplay controls loop muted playsinline width="1280" height="720">
             <source src="../main/assets/img/home/Cards2.webm" type="video/webm" />
-            <img src="../main/assets/img/home/Cards2.gif" alt="Drag and drop card interaction demonstration" />
+            <source src="../main/assets/img/home/Cards2.mp4" type="video/mp4" />
+            <track kind="captions" src="../main/assets/img/home/Cards2.vtt" srclang="en" label="English" />
+            <img src="../main/assets/img/home/Cards2.gif" width="1280" height="720" alt="Drag and drop card interaction demonstration" />
           </video>
           <figcaption>Drag-and-drop reordering let users arrange their homepage around their own priorities.</figcaption>
         </figure>
@@ -304,8 +327,7 @@
           <p>
             We discovered during testing that users were engaging with the drag-and-drop
             interface outside of assigned tasks, on their own time. That's one of the best
-            signals a designer can get. It means the interaction was genuinely enjoyable,
-            not just functional.
+            signals a designer can get: people were using it because they liked it.
           </p>
         </div>
 
@@ -318,7 +340,9 @@
 
         <figure>
           <img
-            src="../main/assets/img/home/OnboardingScreen1.png"
+            src="../main/assets/img/home/OnboardingScreen1.webp"
+            width="1280"
+            height="808"
             alt="Early onboarding flow version one"
             loading="lazy"
           />
@@ -327,7 +351,9 @@
 
         <figure>
           <img
-            src="../main/assets/img/home/OnboardingScreen2.png"
+            src="../main/assets/img/home/OnboardingScreen2.webp"
+            width="1281"
+            height="808"
             alt="Intermediate onboarding iteration"
             loading="lazy"
           />
@@ -336,7 +362,9 @@
 
         <figure>
           <img
-            src="../main/assets/img/home/OnboardingConsolidated1.png"
+            src="../main/assets/img/home/OnboardingConsolidated1.webp"
+            width="1281"
+            height="808"
             alt="Final consolidated single-screen onboarding on desktop"
             loading="lazy"
           />
@@ -345,7 +373,9 @@
 
         <figure>
           <img
-            src="../main/assets/img/home/OnboardingConsolidatedMobile.png"
+            src="../main/assets/img/home/OnboardingConsolidatedMobile.webp"
+            width="375"
+            height="745"
             alt="Final consolidated onboarding on mobile"
             loading="lazy"
           />
@@ -363,32 +393,43 @@
 
         <figure>
           <img
-            src="../main/assets/img/home/SetupChanges.png"
+            src="../main/assets/img/home/SetupChanges.webp"
+            width="1784"
+            height="902"
             alt="Setup flow changes and design notes"
             loading="lazy"
           />
-          <figcaption>Annotated design notes tracking the rationale behind each setup flow change.</figcaption>
+          <figcaption>Pendo goal tracking for profile setup: completion went from 7% to 21% after the setup changes. Raw counts are redacted.</figcaption>
         </figure>
 
         <figure>
           <img
-            src="../main/assets/img/home/Notes1.jpg"
+            src="../main/assets/img/home/Notes1.webp"
+            width="1800"
+            height="2400"
             alt="Design and research notes from the project"
             loading="lazy"
           />
-          <figcaption>Working notes from research synthesis and design decision-making.</figcaption>
+          <figcaption>Sketch of the new homepage: three sections for three modes (discover, teach, grow), a drag-and-drop area for personalized content, and an empty state that shows people what to add.</figcaption>
         </figure>
 
         <h2>In-product support</h2>
         <p>
           Any personalization system introduces complexity, and complexity means users
-          will occasionally need help. We established three requirements for in-product
-          support: it had to be accessible, contextual, and explorable. Help had to
+          will occasionally need help. I set three requirements for in-product support: it had to be accessible, contextual, and explorable. Help had to
           appear where users were already looking, be relevant to what they were trying
           to do, and allow them to dig deeper if they wanted to.
         </p>
 
         <h2>Post-launch monitoring</h2>
+
+        <div class="stat-block">
+          <div class="stat-block__item">
+            <p class="stat-block__number">7% &rarr; 21%</p>
+            <p class="stat-block__label">Profile setup completion after the onboarding changes</p>
+          </div>
+        </div>
+
         <p>
           After launch, the work shifted to measurement and iteration. We ran satisfaction
           surveys, monitored product and event data, and worked with feedback collection
@@ -401,9 +442,8 @@
         <div class="callout">
           <p>
             Users overwhelmingly assumed personalization already existed before we built it.
-            That expectation gap was the most important finding from the research. We weren't
-            adding a feature. We were closing a gap between what users believed the product
-            could do and what it actually could.
+            That expectation gap was the most important finding from the research, and closing
+            it guided the whole redesign.
           </p>
         </div>
 
@@ -447,6 +487,7 @@
       </div>
     </footer>
 
-    <script src="../js/main.js"></script>
-  </body>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/analytics.js"></script>
+</body>
 </html>

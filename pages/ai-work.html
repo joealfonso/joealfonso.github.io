@@ -2,54 +2,47 @@
 <html lang="en">
   <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV6CVTX4BZ"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K17M6WE3GP"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-NV6CVTX4BZ');
+    gtag('config', 'G-K17M6WE3GP');
   </script>
     <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.google.com https://*.g.doubleclick.net; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.google.com https://*.g.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Design &amp; Tooling | Joseph Alfonso</title>
-    <meta name="description" content="How I design AI-powered products and build the automation tools that make design work faster, smarter, and more human." />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    <title>AI Evaluation and Design | Joseph Alfonso</title>
+    <meta name="description" content="How I set the evaluation bar for AI features on Amazon&rsquo;s employee document platform: accuracy from 76% to 93%, restricted-document errors from 4.1% to 0.6%." />
+    <link rel="canonical" href="https://josephalfonso.com/pages/ai-work.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Joseph Alfonso" />
+    <meta property="og:title" content="AI Evaluation and Design" />
+    <meta property="og:description" content="How I set the evaluation bar for AI features on Amazon&rsquo;s employee document platform: accuracy from 76% to 93%, restricted-document errors from 4.1% to 0.6%." />
+    <meta property="og:url" content="https://josephalfonso.com/pages/ai-work.html" />
+    <meta property="og:image" content="https://josephalfonso.com/images/og/ai-work.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Employee Documents admin dashboard with completion totals" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../images/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../images/icons/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../images/icons/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&display=swap">
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/styles.css" />
-    <script>
-      (function () {
-        var palettes = [
-          { accent: '#0052CC', accentHover: '#003D99', accentSubtle: '#EBF2FF',   accentDark: '#4D94FF', accentHoverDark: '#7AB3FF', accentSubtleDark: '#0F1E38' },
-          { accent: '#0D9488', accentHover: '#0F766E', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
-          { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
-          { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
-          { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
-          { accent: '#64748B', accentHover: '#475569', accentSubtle: '#F8FAFC',   accentDark: '#E2E8F0', accentHoverDark: '#F8FAFC', accentSubtleDark: '#1E293B' },
-        ];
-        var dark = true; // dark mode enforced
-        var p = palettes[Math.floor(Math.random() * palettes.length)];
-        var r = document.documentElement;
-        r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
-        r.style.setProperty('--color-accent-hover',  dark ? p.accentHoverDark  : p.accentHover);
-        r.style.setProperty('--color-accent-subtle', dark ? p.accentSubtleDark : p.accentSubtle);
-        // Derive orb colors from the selected accent so they change each load
-        var hex = (dark ? p.accentDark : p.accent).replace('#', '');
-        var rv = parseInt(hex.slice(0, 2), 16);
-        var gv = parseInt(hex.slice(2, 4), 16);
-        var bv = parseInt(hex.slice(4, 6), 16);
-        r.style.setProperty('--orb-1', 'rgba(' + rv + ',' + gv + ',' + bv + ',0.30)');
-        r.style.setProperty('--orb-2', 'rgba(' + rv + ',' + gv + ',' + bv + ',0.20)');
-        r.style.setProperty('--orb-3', 'rgba(' + rv + ',' + gv + ',' + bv + ',0.15)');
-      })();
-    </script>
-  </head>
+    <script src="../js/theme.js"></script>
+    
+</head>
   <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
     <!-- NAV -->
     <header class="site-header">
-      <nav class="nav">
+      <nav class="nav" aria-label="Main">
         <a href="../index.html" class="nav__logo">Joseph Alfonso</a>
         <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
           <span class="nav__toggle-bar"></span>
@@ -59,46 +52,43 @@
         <ul class="nav__links" id="nav-links">
           <li><a href="about.html">About</a></li>
           <li><a href="work.html">Work</a></li>
+          <li><a href="writing.html">Writing</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a class="nav__callout" href="side-projects.html">Side projects</a></li>
         </ul>
       </nav>
     </header>
 
-    <main>
+    <main id="main">
 
       <!-- CASE STUDY HEADER -->
-      <section class="page-orb-section">
-        <div class="hero__bg" aria-hidden="true">
-          <div class="hero__orb hero__orb--1"></div>
-          <div class="hero__orb hero__orb--2"></div>
-          <div class="hero__orb hero__orb--3"></div>
-        </div>
+      <section>
         <div class="case-study-header container">
-        <p class="case-study-header__eyebrow eyebrow">AI Design &amp; Tooling &middot; Ongoing</p>
-        <h1 class="case-study-header__title">Designing for AI  -  and building the tools that make it possible</h1>
+        <p class="case-study-header__eyebrow eyebrow">Amazon &middot; Employee Document Management &middot; 2023&ndash;May 2026</p>
+        <h1 class="case-study-header__title">Setting the bar AI features ship against</h1>
         <p class="case-study-header__summary">
-          Most designers work with AI. I also build with it. Over the past two years I've been designing AI-powered product features
-          at Amazon while simultaneously building the automation tooling  -  MCP servers, LangGraph agents, workflow pipelines  - 
-          that I use in my own design practice. That dual perspective shapes how I approach AI product work in ways
-          that purely design-side or purely engineering-side roles don't get.
+          On Amazon&rsquo;s employee document platform, a wrong AI answer can put the wrong document in front of the
+          wrong person, or misstate someone&rsquo;s pay or start date. I owned the evaluation bar those features had
+          to clear before launch, designed the AI layer across four product surfaces, and built my own AI tools to
+          do the design work faster.
         </p>
 
         <div class="case-study-meta">
           <div class="case-study-meta__item">
             <p class="case-study-meta__label">Role</p>
-            <p class="case-study-meta__value">Designer &amp; Builder</p>
+            <p class="case-study-meta__value">Principal Product Designer, owner of the AI evaluation bar</p>
           </div>
           <div class="case-study-meta__item">
-            <p class="case-study-meta__label">Context</p>
-            <p class="case-study-meta__value">Amazon + Personal projects</p>
+            <p class="case-study-meta__label">Surfaces</p>
+            <p class="case-study-meta__value">M&amp;A dashboard, bulk generation, HR admin portal, employee portal</p>
           </div>
           <div class="case-study-meta__item">
             <p class="case-study-meta__label">Timeline</p>
-            <p class="case-study-meta__value">2023-Present</p>
+            <p class="case-study-meta__value">2023&ndash;May 2026</p>
           </div>
           <div class="case-study-meta__item">
-            <p class="case-study-meta__label">Focus</p>
-            <p class="case-study-meta__value">AI product design, MCP servers, LangGraph agents</p>
+            <p class="case-study-meta__label">Also built</p>
+            <p class="case-study-meta__value">MCP servers and LangGraph agents for my own design work</p>
           </div>
         </div>
               </div>
@@ -106,80 +96,193 @@
 
       <div class="case-study-body container container--narrow">
 
-        <h2>Designing AI-powered products</h2>
-        <p>
-          At Amazon, designing for AI means navigating a set of problems that don't exist in traditional product work:
-          outputs are probabilistic, not deterministic; users form mental models based on one interaction that don't
-          generalize; and trust is fragile in ways that are hard to anticipate until something goes wrong.
-        </p>
-        <p>
-          My approach starts with the failure modes, not the happy path. When I'm designing an AI feature,
-          I spend as much time mapping what happens when the model gets it wrong  -  and how the interface
-          recovers  -  as I do on the primary flow. This is especially important in enterprise HR contexts,
-          where a confused or misleading AI output has real downstream consequences for real people.
-        </p>
-        <p>A few principles I've developed through this work:</p>
-
         <div class="stat-block">
           <div class="stat-block__item">
-            <p class="stat-block__value">Show, don't assert</p>
-            <p class="stat-block__label">AI should surface evidence and let users decide, not present conclusions as facts</p>
+            <p class="stat-block__number">76% &rarr; 93%</p>
+            <p class="stat-block__label">Accuracy against the golden set</p>
           </div>
           <div class="stat-block__item">
-            <p class="stat-block__value">Graceful degradation</p>
-            <p class="stat-block__label">Every AI feature needs a designed fallback  -  the experience can't collapse when confidence is low</p>
+            <p class="stat-block__number">4.1% &rarr; 0.6%</p>
+            <p class="stat-block__label">Errors on restricted documents</p>
           </div>
           <div class="stat-block__item">
-            <p class="stat-block__value">Human in the loop</p>
-            <p class="stat-block__label">Enterprise AI must preserve accountability  -  who approved what, and when, always needs an answer</p>
+            <p class="stat-block__number">~20%</p>
+            <p class="stat-block__label">Less task time for HR business partners</p>
+          </div>
+          <div class="stat-block__item">
+            <p class="stat-block__number">35%</p>
+            <p class="stat-block__label">Faster design iteration with my own AI toolkit</p>
           </div>
         </div>
 
-        <h2>Building AI tools for design work</h2>
+        <!-- PROBLEM -->
+        <h2>The problem</h2>
         <p>
-          Parallel to the product work, I've been building my own AI tooling. This started as curiosity  -  I wanted
-          to understand how these systems actually worked, not just how they appeared from the outside.
-          It's become a core part of how I work.
+          After we shipped the new document platform, it was still reactive. It showed people what had happened and
+          left them to work out what to do about it. AI could close that gap, but HR documents are an unforgiving place
+          to use it. The same input can give a different answer tomorrow. People decide whether to trust a feature
+          after one bad interaction. And some documents are restricted: showing one to the wrong person is a legal problem.
         </p>
 
-        <h3>MCP servers</h3>
+        <!-- ROLE -->
+        <h2>My role</h2>
         <p>
-          I've built and shipped several MCP (Model Context Protocol) servers that connect AI agents to external
-          services  -  design systems, documentation, research repositories, project tracking. The goal is to give
-          AI assistants real context about the work instead of making them operate on vague prompts. A server
-          that can pull the current design system tokens, recent usability findings, and open tickets simultaneously
-          is a fundamentally different collaborator than one working from memory.
+          I owned two things. First, the evaluation bar: the rubrics, the test set and the thresholds each AI feature
+          had to meet before it shipped. Second, the design of the AI layer itself across four surfaces, from the
+          cross-functional workshops that picked where AI would help through to the final screens. Every concept came from a research finding or an existing backlog item.
         </p>
 
-        <h3>LangGraph agents</h3>
+        <!-- EVALUATION -->
+        <h2>Defining &ldquo;good enough&rdquo;</h2>
         <p>
-          I've used LangGraph to build multi-step research and synthesis agents  -  workflows that can gather
-          competitive information, surface patterns across user research sessions, and generate structured
-          design briefs with minimal manual input. These aren't replacements for design judgment. They're
-          tools that compress the time between "we need to understand X" and "here's what we know about X"
-          so that judgment can happen faster and with better information.
+          I wrote the scoring rubrics and built a golden set of 1,800 documents across 15 document types and
+          8 languages, so the model was tested on the variety it would actually meet, including non-English and country-specific documents. Cases the rubric couldn&rsquo;t settle went to human
+          review panels.
+        </p>
+        <p>
+          It gave every launch review the same measure to check against. Over the course of the work, accuracy against the golden set went from 76% to 93%, and errors on restricted documents fell from
+          4.1% to 0.6%.
         </p>
 
-        <h3>Why this matters for product work</h3>
+        <div class="callout">
+          <p>I tracked restricted-document errors separately from overall accuracy. An overall number can look healthy while the rare, high-risk mistakes stay hidden in the average.</p>
+        </div>
+
+        <!-- DESIGN PRINCIPLES -->
+        <h2>Designing for when the model is wrong</h2>
         <p>
-          Building these tools has changed how I design AI features. I understand the actual constraints  - 
-          context windows, tool-calling reliability, hallucination patterns, latency tradeoffs  -  not as
-          abstract engineering concerns but as things I've personally run into. When a product manager
-          says "can the AI just figure that out automatically?", I can give a grounded answer and propose
-          a design approach that works within the real constraints, not an idealized version of them.
+          For every AI feature I spent as long on what happens when the model is wrong, and how the screen recovers,
+          as on the main flow. Three rules held across all four surfaces:
+        </p>
+
+        <div class="stat-block">
+          <div class="stat-block__item">
+            <p class="stat-block__value">Show the evidence</p>
+            <p class="stat-block__label">Put the source next to the suggestion and let the person make the call</p>
+          </div>
+          <div class="stat-block__item">
+            <p class="stat-block__value">Design the fallback</p>
+            <p class="stat-block__label">When the model isn&rsquo;t confident, the screen still has to work without it</p>
+          </div>
+          <div class="stat-block__item">
+            <p class="stat-block__value">Keep a person accountable</p>
+            <p class="stat-block__label">Someone has to be able to answer who approved what, and when</p>
+          </div>
+        </div>
+
+        <!-- SURFACES -->
+        <h2>Four surfaces</h2>
+
+        <h3>M&amp;A dashboard: from a percentage to a next step</h3>
+        <p>
+          Managers tracking acquisition paperwork had one signal: a completion percentage. They had to work out for
+          themselves whether 57% was on track and what was holding it up. I designed risk scoring with a
+          plain-language reason on each project, a forecast close date based on how fast documents were actually
+          coming in, and anomaly detection that names the real blocker instead of leaving it in a table.
+        </p>
+
+        <figure>
+          <img
+            src="../main/assets/img/MA2.png"
+            width="1440"
+            height="1680"
+            alt="M&amp;A project summary showing 43 of 75 employees complete, a 57% progress bar, and tables of completion totals and incomplete documents"
+            loading="lazy"
+          />
+          <figcaption>The M&amp;A project summary before the AI layer: 43 of 75 employees complete, a 57% bar, and three tables the manager had to read to find the problem.</figcaption>
+        </figure>
+
+        <h3>Bulk generation: ending the re-upload loop</h3>
+        <p>
+          When a bulk upload had errors, HR downloaded the file, fixed it offline and uploaded everything again. For
+          72 employees with 8 bad rows, that meant repeating the whole job. I designed inline fixes instead: the system
+          proposes the likely correction, shows its confidence and reasoning, and HR accepts or rejects each one. Rows it
+          can&rsquo;t fix are flagged plainly and don&rsquo;t hold up the rest. About 75% of common errors became
+          fixable without leaving the page.
+        </p>
+
+        <figure>
+          <img
+            src="../main/assets/img/BulkUpload2.png"
+            width="1440"
+            height="1405"
+            alt="Bulk upload screen with instructions to fix errors in the spreadsheet and re-upload it"
+            loading="lazy"
+          />
+          <figcaption>The upload step before inline fixes. The instructions say it all: &ldquo;If there are any errors found, fix them in your spreadsheet and re-upload it again.&rdquo;</figcaption>
+        </figure>
+
+        <h3>HR admin portal: context before the approver opens the file</h3>
+        <p>
+          Approvers were reading 14-page agreements start to finish to find out whether anything was wrong. A pre-review
+          panel now checks the document against Workday first and flags pay band violations, legal entity mismatches
+          and expired IDs. The approver still makes the decision; they just start with the problems instead of hunting
+          for them.
+        </p>
+
+        <h3>Employee portal: understanding what you sign</h3>
+        <p>
+          New hires on their first day, warehouse employees on phones, and non-native speakers reading bilingual legal
+          agreements needed the most help. A plain-language panel explains each section and flags clauses with real
+          consequences, such as non-solicitation terms on page 8. A section tracker notices when someone skims past a
+          high-stakes clause, so the product can step in before the signature instead of after.
+        </p>
+
+        <p>
+          The full platform story, including the accessibility work these features build on, is in the
+          <a href="../main/EDM.html#ai-layer">Employee Document Management case study</a>.
+        </p>
+
+        <!-- TOOLS -->
+        <h2>Building my own tools</h2>
+        <p>
+          Alongside the product work I build AI tools for my own design practice. I started because I wanted to know how
+          these systems behave from the inside, and it has cut my design iteration time by about 35%.
+        </p>
+        <p>
+          <strong>MCP servers</strong> connect AI assistants to what a designer actually uses: design systems,
+          documentation, research repositories and project tracking. An assistant that can read the current design
+          tokens, last week&rsquo;s usability findings and the open tickets gives far better help than one guessing from
+          a prompt.
+        </p>
+        <p>
+          <strong>LangGraph agents</strong> gather competitive information, find patterns across research sessions and
+          draft structured design briefs. They don&rsquo;t make design decisions. They shorten the time between
+          &ldquo;we need to understand X&rdquo; and &ldquo;here&rsquo;s what we know.&rdquo;
+        </p>
+        <p>
+          Building them changed how I design AI products. I&rsquo;ve hit context-window limits, unreliable tool calls,
+          hallucinations and slow responses myself, so when someone asks &ldquo;can the AI just figure that out?&rdquo;
+          I can give a straight answer and suggest a design that works within the real limits.
+        </p>
+
+        <!-- OUTCOMES -->
+        <h2>Outcomes</h2>
+        <ul>
+          <li>Accuracy against the golden set rose from 76% to 93%.</li>
+          <li>Errors on restricted documents fell from 4.1% to 0.6%.</li>
+          <li>HR business partners spend about 20% less time on the tasks the AI layer covers.</li>
+          <li>About 75% of common bulk-upload errors are now fixed inline instead of by re-uploading.</li>
+        </ul>
+
+        <!-- REFLECTION -->
+        <h2>What I&rsquo;d do differently</h2>
+        <p>
+          I&rsquo;d build the measurement infrastructure first. We got there, but later than I wanted. Server-side task
+          timing and a continuous feedback loop from day one would have given us signal during design, not only after
+          launch.
+        </p>
+        <p>
+          I&rsquo;d also bring legal and compliance into the AI workshops from the start. Many of the constraints we
+          designed around were ones I already knew from the platform work, and having those stakeholders in the room
+          earlier would have sped things up and likely surfaced edge cases we missed.
         </p>
 
         <h2>What I think about AI and design</h2>
         <p>
-          The most important thing AI changes about design isn't the output  -  it's the speed of iteration and
-          the cost of a bad decision. When you can prototype five directions in an afternoon instead of a week,
-          the bottleneck shifts from making things to evaluating them. That puts a premium on the skills that
-          have always mattered most in senior design roles: knowing what question to ask, identifying which
-          signal to trust, and making a call when the data is ambiguous.
-        </p>
-        <p>
-          I'm not worried that AI makes designers less relevant. I'm more interested in what it makes possible
-          when designers know how to use it well  -  and how to design products that other people can use well too.
+          The biggest change AI brings to design is speed. When you can prototype five directions in an afternoon, the
+          slow part becomes deciding which one is right. That makes the old senior skills more valuable: asking the
+          right question, knowing which signal to trust, and making a call when the data is unclear.
         </p>
 
       </div>
@@ -187,7 +290,7 @@
       <hr class="divider container" />
 
       <!-- CTA -->
-      <section class="container" style="padding-block: var(--space-16);">
+      <section class="container case-study-cta">
         <div class="about__links">
           <a href="contact.html" class="btn btn--primary">Get in touch</a>
           <a href="work.html" class="btn btn--secondary">View all work</a>
@@ -207,6 +310,7 @@
       </div>
     </footer>
 
-    <script src="../js/main.js"></script>
-  </body>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/analytics.js"></script>
+</body>
 </html>

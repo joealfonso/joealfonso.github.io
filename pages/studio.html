@@ -2,45 +2,46 @@
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV6CVTX4BZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K17M6WE3GP"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-NV6CVTX4BZ');
+      gtag('config', 'G-K17M6WE3GP');
     </script>
     <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.google.com https://*.g.doubleclick.net; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.google.com https://*.g.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Discovery Education Studio | Joseph Alfonso</title>
-    <meta name="description" content="How I led UX for Discovery Education Studio, replacing a legacy tool with a real-time K–12 collaboration platform used by millions of students and teachers." />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    <meta name="description" content="How I led the design of Discovery Education Studio, a real-time collaboration platform that replaced a legacy creation tool for K-12 classrooms." />
+    <link rel="canonical" href="https://josephalfonso.com/pages/studio.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Joseph Alfonso" />
+    <meta property="og:title" content="Discovery Education Studio" />
+    <meta property="og:description" content="How I led the design of Discovery Education Studio, a real-time collaboration platform that replaced a legacy creation tool for K-12 classrooms." />
+    <meta property="og:url" content="https://josephalfonso.com/pages/studio.html" />
+    <meta property="og:image" content="https://josephalfonso.com/images/og/studio.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Discovery Education Studio screens" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../images/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../images/icons/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../images/icons/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&display=swap">
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/styles.css" />
-    <script>
-      (function () {
-        var palettes = [
-          { accent: '#0052CC', accentHover: '#003D99', accentSubtle: '#EBF2FF',   accentDark: '#4D94FF', accentHoverDark: '#7AB3FF', accentSubtleDark: '#0F1E38' },
-          { accent: '#0D9488', accentHover: '#0F766E', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
-          { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
-          { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
-          { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
-        ];
-        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var p = palettes[Math.floor(Math.random() * palettes.length)];
-        var r = document.documentElement;
-        r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
-        r.style.setProperty('--color-accent-hover',  dark ? p.accentHoverDark  : p.accentHover);
-        r.style.setProperty('--color-accent-subtle', dark ? p.accentSubtleDark : p.accentSubtle);
-      })();
-    </script>
-  </head>
+    <script src="../js/theme.js"></script>
+</head>
   <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
     <!-- NAV -->
     <header class="site-header">
-      <nav class="nav">
+      <nav class="nav" aria-label="Main">
         <a href="../index.html" class="nav__logo">Joseph Alfonso</a>
         <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
           <span class="nav__toggle-bar"></span>
@@ -50,12 +51,14 @@
         <ul class="nav__links" id="nav-links">
           <li><a href="about.html">About</a></li>
           <li><a href="work.html">Work</a></li>
+          <li><a href="writing.html">Writing</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a class="nav__callout" href="side-projects.html">Side projects</a></li>
         </ul>
       </nav>
     </header>
 
-    <main>
+    <main id="main">
 
       <!-- CASE STUDY HEADER -->
       <section class="case-study-header container">
@@ -72,7 +75,7 @@
         <div class="case-study-meta">
           <div class="case-study-meta__item">
             <p class="case-study-meta__label">Role</p>
-            <p class="case-study-meta__value">Lead Product Designer</p>
+            <p class="case-study-meta__value">UX Lead and Design Strategist</p>
           </div>
           <div class="case-study-meta__item">
             <p class="case-study-meta__label">Company</p>
@@ -96,7 +99,9 @@
       <!-- COVER IMAGE -->
       <div class="case-study-cover container">
         <img
-          src="../main/assets/img/studio/Perspective-App-Screens-Mock-Up.jpg"
+          src="../main/assets/img/studio/Perspective-App-Screens-Mock-Up.webp"
+          width="1400"
+          height="1046"
           alt="Discovery Education Studio boards shown across multiple devices"
           loading="eager"
         />
@@ -139,7 +144,7 @@
 
         <h2>My role</h2>
         <p>
-          As Lead Designer and UX Architect, I owned the full experience: research, information
+          As UX lead and architect, I owned the full experience: research, information
           architecture, interaction design, motion, design system integration, and cross-functional
           alignment. I worked alongside engineers, product managers, educators, and the marketing
           team across every phase of the project.
@@ -152,21 +157,22 @@
 
         <h2>A new model for classrooms</h2>
         <p>
-          One of the core insights from early research was that teachers and students weren't just
-          looking for a better creation tool. They were managing a fragmented mess of content:
+          One of the core insights from early research was that teachers and students didn't
+          mainly want a better creation tool. They were managing a fragmented mess of content:
           downloading, re-uploading, emailing, screenshotting, and improvising workflows that
           shouldn't need to exist.
         </p>
         <p>
-          Studio wasn't just a product redesign. It was a new model for how digital resources
-          lived in a classroom. Instead of files that moved between people, Studio introduced
+          So Studio changed how digital resources lived in a classroom. Instead of files that moved between people, Studio introduced
           shared Boards: persistent, living spaces where teachers and students could bring
           content, create together, and build on each other's work in real time.
         </p>
 
         <figure>
           <img
-            src="../main/assets/img/studio/MainModel.png"
+            src="../main/assets/img/studio/MainModel.webp"
+            width="2400"
+            height="1152"
             alt="Behavior model of digital resource management in classrooms"
             loading="lazy"
           />
@@ -175,7 +181,7 @@
 
         <h2>Research, planning, and alignment</h2>
         <p>
-          We built on prior research to map user frustrations, desires, and existing behaviors.
+          I built on prior research to map user frustrations, desires, and existing behaviors.
           From there the challenge was alignment: Studio could do a lot, which meant the risk of
           trying to do everything was real. I used personas, journey maps, and working sessions
           to anchor the team on the users who mattered most and the outcomes they actually needed.
@@ -183,27 +189,31 @@
 
         <figure>
           <img
-            src="../main/assets/img/studio/PersonaTemplate.png"
+            src="../main/assets/img/studio/PersonaTemplate.webp"
+            width="2100"
+            height="1200"
             alt="Sample persona used during early research phases"
             loading="lazy"
           />
-          <figcaption>Sample persona used to ground design and product decisions.</figcaption>
+          <figcaption>Peter K., one of our student personas: seven years old, can&rsquo;t read yet, and wants to &ldquo;quiz my friends when I get home.&rdquo;</figcaption>
         </figure>
 
         <figure>
           <img
-            src="../main/assets/img/studio/Diagrams.png"
+            src="../main/assets/img/studio/Diagrams.webp"
+            width="1151"
+            height="2400"
             alt="User flow and architecture diagrams for Studio"
             loading="lazy"
           />
-          <figcaption>Architecture and flow diagrams produced during the planning phase.</figcaption>
+          <figcaption>Thirteen sharing patterns Studio had to support, from inviting one student to distributing copies to groups to presenting to several circles at once.</figcaption>
         </figure>
 
         <h2>Early exploration</h2>
         <p>
           Early prototypes were too complex. The first iterations gave users too much control
           at once, which worked fine for power users but overwhelmed everyone else. The lesson
-          was clear: open-ended creation tools need guardrails, not just freedom.
+          was that open-ended creation tools need guardrails.
         </p>
         <p>
           We iterated fast. Prototypes went through multiple rounds of usability testing with
@@ -214,10 +224,12 @@
         <figure>
           <img
             src="../main/assets/img/studio/Studio-EarlyPrototypes.png"
+            width="2899"
+            height="1276"
             alt="Early Studio dashboard design explorations"
             loading="lazy"
           />
-          <figcaption>Early dashboard explorations showing the evolution from complex to focused.</figcaption>
+          <figcaption>Early editor panels: history, layers, member lists, a full color picker with harmony suggestions, and shape and text inspectors. This is the version that gave everyone every control.</figcaption>
         </figure>
 
         <h2>Key features</h2>
@@ -232,7 +244,9 @@
 
         <figure>
           <img
-            src="../main/assets/img/studio/3colorThemes.png"
+            src="../main/assets/img/studio/3colorThemes.webp"
+            width="1453"
+            height="1173"
             alt="Three accessible color theme examples in Studio"
             loading="lazy"
           />
@@ -243,13 +257,15 @@
         <p>
           Users consistently ask for more customization options when surveyed. What research
           actually shows is that too much customization increases cognitive load and reduces
-          completion rates. We solved this with guided customization: a layered system that
+          completion rates. I solved this with guided customization: a layered system that
           surfaced sensible defaults first and revealed depth only when users reached for it.
         </p>
 
         <figure>
           <img
-            src="../main/assets/img/studio/GuidedCustomization.png"
+            src="../main/assets/img/studio/GuidedCustomization.webp"
+            width="2204"
+            height="1520"
             alt="Guided customization interface in Studio"
             loading="lazy"
           />
@@ -260,8 +276,8 @@
         <p>
           Most "collaboration" tools let people take turns editing a shared file. Studio did
           something more ambitious: users could see each other's cursors moving on screen in
-          real time. It wasn't just live editing, it was the feeling of being in the same
-          physical space. That distinction mattered enormously in a classroom context.
+          real time, which felt much closer to working at the same table. In a classroom, that
+          made a big difference.
         </p>
         <p>
           Because so much of the collaborative experience was motion-dependent, I used After
@@ -282,13 +298,15 @@
         <p>
           Every Studio board maintained a full history. Teachers could see how a board evolved
           over time, replay the creation process, and review individual student participation.
-          For teachers, this was a new window into how students think and work, not just what
-          they submitted.
+          Teachers could see how students worked through a problem, as well as what they
+          handed in.
         </p>
 
         <figure>
           <img
             src="../main/assets/img/studio/Timeline.png"
+            width="2752"
+            height="1532"
             alt="Studio board history and timeline interface"
             loading="lazy"
           />
@@ -310,6 +328,8 @@
         <figure>
           <img
             src="../main/assets/img/studio/V2.0.png"
+            width="1280"
+            height="800"
             alt="Studio V2 dashboard final design"
             loading="lazy"
           />
@@ -325,7 +345,9 @@
 
         <figure>
           <img
-            src="../main/assets/img/studio/StudioMarketingSitesmall.png"
+            src="../main/assets/img/studio/StudioMarketingSitesmall.webp"
+            width="1400"
+            height="1770"
             alt="Studio promotional marketing site"
             loading="lazy"
           />
@@ -342,13 +364,33 @@
 
         <h3>In-product help and contextual support</h3>
         <p>
-          We embedded contextual help throughout Studio using third-party tooling, surfacing
+          I built contextual help into Studio using third-party tooling, surfacing
           guidance based on what the user was trying to do rather than forcing them to leave
           the product. As we identified gaps in feature engagement, we layered in progressive
           in-product messaging to guide users toward features they hadn't discovered.
         </p>
 
         <h2>Performance and outcomes</h2>
+
+        <div class="stat-block">
+          <div class="stat-block__item">
+            <p class="stat-block__number">30%</p>
+            <p class="stat-block__label">More repeat engagement from students</p>
+          </div>
+          <div class="stat-block__item">
+            <p class="stat-block__number">4.5M+</p>
+            <p class="stat-block__label">Educators and students on the platform Studio launched into</p>
+          </div>
+          <div class="stat-block__item">
+            <p class="stat-block__number">2019</p>
+            <p class="stat-block__label">Tech and Learning Award of Excellence for the platform</p>
+          </div>
+        </div>
+
+        <p>
+          Studio drove a 30% increase in repeat student engagement. It also launched before COVID made remote
+          and hybrid classrooms the norm, with no comparable tool on the market at the time.
+        </p>
         <p>
           Studio had to integrate across the entire Discovery Education platform, so success
           metrics were composite. We tracked traditional usability measures: time on task,
@@ -424,6 +466,7 @@
       </div>
     </footer>
 
-    <script src="../js/main.js"></script>
-  </body>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/analytics.js"></script>
+</body>
 </html>

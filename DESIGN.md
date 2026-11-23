@@ -7,44 +7,60 @@
 
 ## Aesthetic Direction
 
-Clean, confident, and typographically precise. No decorative elements — the design recedes so the work leads. Influenced by editorial portfolios and product design tooling (Linear, Vercel). Whitespace is intentional and generous. Every component should feel like it belongs in a system, not a personal site.
+Precise, quiet, and deliberate. It should read like a well-kept technical document written by one person, not a SaaS template or a generic "editorial" portfolio. Three independent-foundry typefaces (Besley, Sporting Grotesque, Xanh Mono), cool paper tones, one ink-blue accent, and real work images carry the page. No decorative effects: no gradient orbs, glassmorphism, animated/rotating headlines, or randomized colors. Hierarchy comes from type and layout (one full-width lead project, then featured projects, then a compact list), not from identical cards.
+
+### Signature motif: the annotated document
+
+The site reads like a working document Joseph has marked up. This is what makes it his, so keep it consistent:
+
+- **Doc header** (`.doc-header`) at the top of the homepage: Doc ID, author, location, revision date, in Xanh Mono.
+- **Numbered sections**: `<span class="section-heading__num">01</span>` inside `.section-heading`. No § symbol.
+- **Highlighter** (`<mark>`): only on the one or two figures that matter most in a block. Never decorative.
+- **Margin notes** (`.margin-note`): one or two sentences in Joseph's voice beside a project, the kind of thing he'd say in person. Must be true and specific; no slogans.
+- **Footer**: the colophon only.
+- **Lead project**: EDM on the homepage uses `.feature--lead` (full-width image, larger title, margin note beside the story). This is the one deliberate break in the grid; don't apply it to more than one project.
+- **Captions** say what is specifically in the image (who, what number, what changed), never what kind of artifact it is.
+
+Mono (`--font-mono`, Xanh Mono) is reserved for this document metadata. Don't use it for body copy or headings.
 
 ---
 
 ## Colors
 
-### Light mode (default)
+One accent: **ink blue**, like an editor's pen on a printed draft. Never randomize or rotate the accent.
+
+### Light mode (`prefers-color-scheme: light`)
 
 | Token | Value | Usage |
 |---|---|---|
-| `--color-bg` | `#FFFFFF` | Page background |
-| `--color-surface` | `#F6F6F4` | Cards, code blocks, subtle fills |
-| `--color-surface-elevated` | `#FFFFFF` | Cards with border on surface bg |
-| `--color-border` | `#E4E4E2` | Default borders, dividers |
-| `--color-border-strong` | `#C8C8C6` | Hover borders, inputs |
-| `--color-text` | `#111110` | Primary headings and body |
-| `--color-text-secondary` | `#5C5C5A` | Body copy, descriptions |
-| `--color-text-muted` | `#9A9A98` | Labels, metadata, captions |
-| `--color-text-inverse` | `#FFFFFF` | Text on dark fills |
-| `--color-accent` | `#0052CC` | Links, CTAs, active states |
-| `--color-accent-hover` | `#003D99` | Accent hover state |
-| `--color-accent-subtle` | `#EBF2FF` | Accent background tint |
+| `--color-bg` | `#EEE6D3` | Page background (warm parchment) |
+| `--color-surface` | `#E4D9C1` | Subtle fills, image placeholders |
+| `--color-surface-elevated` | `#F6F0E1` | Cards on surface bg |
+| `--color-border` | `#D2C7AC` | Default borders, dividers |
+| `--color-border-strong` | `#B8AB91` | Section rules, hover borders |
+| `--color-text` | `#1E1A15` | Headings and primary text |
+| `--color-text-secondary` | `#4A4438` | Body copy, descriptions |
+| `--color-text-muted` | `#5B5246` | Labels, metadata (AA on bg and surface) |
+| `--color-text-inverse` | `#EEE6D3` | Text on dark fills |
+| `--color-accent` | `#2E5B45` | Links, metrics, active states |
+| `--color-accent-hover` | `#1F4332` | Accent hover |
+| `--color-accent-subtle` | `#CCD8C1` | Accent background tint |
 
-### Dark mode (`prefers-color-scheme: dark`)
+### Dark mode (default)
 
 | Token | Value |
 |---|---|
-| `--color-bg` | `#0F0F0E` |
-| `--color-surface` | `#1A1A19` |
-| `--color-surface-elevated` | `#222221` |
-| `--color-border` | `#2C2C2A` |
-| `--color-border-strong` | `#3E3E3C` |
-| `--color-text` | `#F0F0EE` |
-| `--color-text-secondary` | `#9A9A98` |
-| `--color-text-muted` | `#5C5C5A` |
-| `--color-accent` | `#4D94FF` |
-| `--color-accent-hover` | `#7AB3FF` |
-| `--color-accent-subtle` | `#0F1E38` |
+| `--color-bg` | `#11160F` |
+| `--color-surface` | `#1B231A` |
+| `--color-surface-elevated` | `#232C21` |
+| `--color-border` | `#3B4535` |
+| `--color-border-strong` | `#56634D` |
+| `--color-text` | `#E6DDC7` |
+| `--color-text-secondary` | `#B9B09A` |
+| `--color-text-muted` | `#9C9584` |
+| `--color-accent` | `#8EBB9B` |
+| `--color-accent-hover` | `#B3D6BF` |
+| `--color-accent-subtle` | `#22352A` |
 
 **Rule:** Never use raw hex values in HTML or CSS. Always reference tokens.
 
@@ -52,7 +68,13 @@ Clean, confident, and typographically precise. No decorative elements — the de
 
 ## Typography
 
-**Font family:** Inter (Google Fonts), fallback to `system-ui, -apple-system, sans-serif`
+**Display (`--font-display`):** Besley (Indestructible Type, OFL). A Clarendon-rooted serif, variable weight. Used for all headings, the nav wordmark, project titles, margin notes and pull metrics (italic). Fallback Georgia.
+**Body (`--font-sans`):** Sporting Grotesque (Velvetyne, OFL). A wide, slightly odd grotesque with only Regular and Bold, so 500 renders Regular and 600/700 render Bold. Fallback `system-ui, -apple-system, sans-serif`.
+**Metadata (`--font-mono`):** Xanh Mono (OFL), a serif monospace. Doc IDs, section numbers and the doc header only.
+
+Fonts are self-hosted in `/fonts` (Latin subset, woff2) and declared with `@font-face` at the top of `styles.css`. No Google Fonts requests. Avoid swapping in Inter, Fraunces, Instrument Serif or other fonts that have become the default look of portfolio sites.
+
+Headings use medium weight (500), not bold. Avoid uppercase tracked "eyebrow" labels on the homepage; use sentence-case muted text instead. Uppercase labels are fine for case-study metadata only.
 
 ### Type scale
 
@@ -247,8 +269,7 @@ Grid of labeled data points: Role, Company, Timeline, Platform, Outcome. Always 
 **Do:**
 - Use `clamp()` for fluid headline sizing on hero and case study headers
 - Use `--color-text-secondary` for body copy (not full black — too heavy)
-- Add `.eyebrow` above every major section heading
-- Put quantified outcomes in `.card__metric` — this is primary signal for Principal-level readers
+- Put quantified outcomes in `.feature__metric` / `.card__metric` — this is primary signal for Principal-level readers
 - Use `--leading-relaxed` for case study body copy
 
 **Don't:**
@@ -257,4 +278,6 @@ Grid of labeled data points: Role, Company, Timeline, Platform, Outcome. Always 
 - Don't use more than 2 font weights on a single component
 - Don't use color for decoration — only for meaning (accent = interactive/important)
 - Don't center-align body copy or long-form text — left-align only
+- Don't add gradient orbs, blur/glass effects, rotating headline text, or random palettes — they read as template/AI-generated
+- Don't use "X, not Y" slogans or rule-of-three phrasing in copy; use specific facts
 - Don't write placeholder copy. Every piece of text on this site reflects Principal-level positioning.

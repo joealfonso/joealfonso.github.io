@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K17M6WE3GP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-K17M6WE3GP');
+    </script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.google.com https://*.g.doubleclick.net; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.google.com https://*.g.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Writing | Joseph Alfonso</title>
+    <meta name="description" content="Field notes, frameworks, and points of view from Joseph Alfonso on user research, accessibility, stakeholder alignment, and leading design at enterprise scale." />
+    <link rel="canonical" href="https://josephalfonso.com/pages/writing.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Joseph Alfonso" />
+    <meta property="og:title" content="Writing" />
+    <meta property="og:description" content="Field notes, frameworks, and points of view from Joseph Alfonso on user research, accessibility, stakeholder alignment, and leading design at enterprise scale." />
+    <meta property="og:url" content="https://josephalfonso.com/pages/writing.html" />
+    <meta property="og:image" content="https://josephalfonso.com/images/og/default.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Joseph Alfonso, Principal Product Designer" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../images/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../images/icons/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../images/icons/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&display=swap">
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/theme.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- NAV -->
+    <header class="site-header">
+      <nav class="nav" aria-label="Main">
+        <a href="../index.html" class="nav__logo">Joseph Alfonso</a>
+        <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="writing.html" aria-current="page">Writing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a class="nav__callout" href="side-projects.html">Side projects</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+
+      <!-- INTRO -->
+      <section class="page-intro container">
+        <h1 class="page-intro__title">Writing</h1>
+        <p class="page-intro__lead">
+          What I&rsquo;ve learned about research, accessibility, getting stakeholders to agree, and designing with AI.
+          Each piece starts with a short summary, so you can tell in a minute whether it&rsquo;s worth your time.
+        </p>
+      </section>
+
+      <!-- POSTS -->
+      <section class="writing-list container">
+
+        <!--
+          Topic filter: add a button for each topic you publish under.
+          data-filter must match a value in a post's data-topics list.
+        -->
+        <div class="topic-filter" role="group" aria-label="Filter by topic">
+          <button type="button" class="topic-filter__btn" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="topic-filter__btn" data-filter="accessibility" aria-pressed="false">Accessibility</button>
+          <button type="button" class="topic-filter__btn" data-filter="ai" aria-pressed="false">AI design</button>
+          <button type="button" class="topic-filter__btn" data-filter="enterprise-ux" aria-pressed="false">Enterprise UX</button>
+          <button type="button" class="topic-filter__btn" data-filter="research" aria-pressed="false">User research</button>
+          <button type="button" class="topic-filter__btn" data-filter="edtech" aria-pressed="false">EdTech</button>
+        </div>
+
+        <!--
+          Newest first. To add a post, copy an <li> block below and update:
+          href, datetime + date, reading time (from the article page), topic,
+          title, summary (reuse the article's "short version" lead), and tags.
+        -->
+        <ol class="post-list" reversed>
+
+          <li class="post-list__item" data-topics="ai">
+            <article class="post">
+              <p class="post__meta">
+                <time datetime="2026-11-22">Nov 22, 2026</time>
+                <span aria-hidden="true">&middot;</span>
+                <span>7 min read</span>
+                <span aria-hidden="true">&middot;</span>
+                <span>Perspective</span>
+              </p>
+              <h2 class="post__title">
+                <a href="writing/designing-the-eval.html">Most AI evaluation decisions are design decisions</a>
+              </h2>
+              <p class="post__summary">
+                The rubric, the raters, and the test conditions shape what a model ships as much as any screen does. The basics of AI evaluation for designers who shape model behavior.
+              </p>
+              <div class="post__tags">
+                <span class="tag">AI design</span>
+                <span class="tag">AI evaluation</span>
+                <span class="tag">Accessibility</span>
+              </div>
+            </article>
+          </li>
+
+          <li class="post-list__item" data-topics="accessibility research">
+            <article class="post">
+              <p class="post__meta">
+                <time datetime="2026-09-24">Sep 24, 2026</time>
+                <span aria-hidden="true">&middot;</span>
+                <span>3 min read</span>
+                <span aria-hidden="true">&middot;</span>
+                <span>Perspective</span>
+              </p>
+              <h2 class="post__title">
+                <a href="writing/accessibility-invisible-users.html">Your usability tests can’t see the users who already left</a>
+              </h2>
+              <p class="post__summary">
+                Accessibility problems don’t always show up as complaints. Sometimes people just work around your product, and your research never runs into them.
+              </p>
+              <div class="post__tags">
+                <span class="tag">Accessibility</span>
+                <span class="tag">User research</span>
+                <span class="tag">Enterprise UX</span>
+              </div>
+            </article>
+          </li>
+
+          <li class="post-list__item" data-topics="enterprise-ux research">
+            <article class="post">
+              <p class="post__meta">
+                <time datetime="2026-09-24">Sep 24, 2026</time>
+                <span aria-hidden="true">&middot;</span>
+                <span>3 min read</span>
+                <span aria-hidden="true">&middot;</span>
+                <span>Field notes</span>
+              </p>
+              <h2 class="post__title">
+                <a href="writing/exit-flow-retention.html">Designing an exit flow that gives people a reason to stay</a>
+              </h2>
+              <p class="post__summary">
+                We set out to build a resignation form. It turned into a way to learn why people were leaving and, where it made sense, give them a reason to stay.
+              </p>
+              <div class="post__tags">
+                <span class="tag">Enterprise UX</span>
+                <span class="tag">Stakeholder alignment</span>
+                <span class="tag">HR design</span>
+              </div>
+            </article>
+          </li>
+
+          <li class="post-list__item" data-topics="ai enterprise-ux">
+            <article class="post">
+              <p class="post__meta">
+                <time datetime="2026-09-24">Sep 24, 2026</time>
+                <span aria-hidden="true">&middot;</span>
+                <span>3 min read</span>
+                <span aria-hidden="true">&middot;</span>
+                <span>Playbook</span>
+              </p>
+              <h2 class="post__title">
+                <a href="writing/ai-compliance-playbook.html">How to design AI features for compliance-heavy workflows</a>
+              </h2>
+              <p class="post__summary">
+                In compliance work, AI should point things out and let a person decide. A six-step method for designing AI features where a wrong guess can create real legal risk.
+              </p>
+              <div class="post__tags">
+                <span class="tag">AI design</span>
+                <span class="tag">Compliance</span>
+                <span class="tag">Enterprise UX</span>
+              </div>
+            </article>
+          </li>
+
+          <li class="post-list__item" data-topics="research edtech">
+            <article class="post">
+              <p class="post__meta">
+                <time datetime="2019-12-26">Dec 26, 2019</time>
+                <span aria-hidden="true">&middot;</span>
+                <span>4 min read</span>
+                <span aria-hidden="true">&middot;</span>
+                <span>Field notes</span>
+              </p>
+              <h2 class="post__title">
+                <a href="writing/edtech-research-challenges.html">Running user research in EdTech: four challenges and what worked</a>
+              </h2>
+              <p class="post__summary">
+                Four problems that kept coming up in research with teachers: locked-down devices, surprise participants,
+                content that didn't match what they teach, and very little free time. Here's how we worked around each one.
+              </p>
+              <div class="post__tags">
+                <span class="tag">User research</span>
+                <span class="tag">EdTech</span>
+                <span class="tag">Remote testing</span>
+              </div>
+            </article>
+          </li>
+
+        </ol>
+
+        <p class="post-list__empty" hidden>Nothing published under this topic yet.</p>
+
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">&copy; 2026 Joseph Alfonso</p>
+        <nav class="site-footer__links" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/jalfonsodesign/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="mailto:J.ALFONSO84@gmail.com">Email</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+    <script src="../js/analytics.js"></script>
+  </body>
+</html>

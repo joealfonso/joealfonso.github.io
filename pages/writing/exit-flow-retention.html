@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K17M6WE3GP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-K17M6WE3GP');
+    </script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.google.com https://*.g.doubleclick.net; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.google.com https://*.g.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Designing an exit flow that gives people a reason to stay | Joseph Alfonso</title>
+    <meta name="description" content="What I learned leading Amazon’s Self-Service Resignation experience, where Legal, HR, Product, and Engineering all had a stake in how people leave the company." />
+    <link rel="canonical" href="https://josephalfonso.com/pages/writing/exit-flow-retention.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Designing an exit flow that gives people a reason to stay" />
+    <meta property="og:description" content="What I learned leading Amazon’s Self-Service Resignation experience, where Legal, HR, Product, and Engineering all had a stake in how people leave the company." />
+    <meta property="og:url" content="https://josephalfonso.com/pages/writing/exit-flow-retention.html" />
+    <meta property="og:site_name" content="Joseph Alfonso" />
+    <meta property="og:image" content="https://josephalfonso.com/images/og/default.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Joseph Alfonso, Principal Product Designer" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="article:published_time" content="2026-09-24" />
+    <meta property="article:author" content="Joseph Alfonso" />
+    <link rel="icon" href="../../images/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../../images/icons/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../../images/icons/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&display=swap">
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <script src="../../js/theme.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <div class="reading-progress" aria-hidden="true"></div>
+
+    <!-- NAV -->
+    <header class="site-header">
+      <nav class="nav" aria-label="Main">
+        <a href="../../index.html" class="nav__logo">Joseph Alfonso</a>
+        <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../writing.html" aria-current="page">Writing</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a class="nav__callout" href="../side-projects.html">Side projects</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <article>
+
+        <!-- ARTICLE HEADER -->
+        <header class="article-header container container--narrow">
+          <a href="../writing.html" class="article-header__back">← All writing</a>
+          <p class="eyebrow">Field notes &middot; Enterprise UX</p>
+          <h1 class="article-header__title">Designing an exit flow that gives people a reason to stay</h1>
+          <p class="article-header__dek">
+            What I learned leading Amazon’s Self-Service Resignation experience in the A to Z app, where five teams had different priorities for one of the most sensitive moments in anyone’s time at the company.
+          </p>
+          <dl class="article-meta">
+            <div>
+              <dt class="article-meta__label">Published</dt>
+              <dd class="article-meta__value"><time datetime="2026-09-24">Sep 24, 2026</time></dd>
+            </div>
+            <div>
+              <dt class="article-meta__label">Reading time</dt>
+              <dd class="article-meta__value" data-reading-time>3 min read</dd>
+            </div>
+            <div>
+              <dt class="article-meta__label">Topic</dt>
+              <dd class="article-meta__value">Enterprise UX</dd>
+            </div>
+            <div>
+              <dt class="article-meta__label">Best for</dt>
+              <dd class="article-meta__value">Design leads, PMs, People Experience teams</dd>
+            </div>
+          </dl>
+        </header>
+
+        <div class="container container--narrow">
+
+          <!-- SUMMARY -->
+          <aside class="article-summary" aria-labelledby="summary-label">
+            <p class="article-summary__label" id="summary-label">The short version</p>
+            <p class="article-summary__lead">
+              We set out to build a resignation form. It turned into a way to learn why people were leaving and, where it made sense, give them a reason to stay.
+            </p>
+            <ul class="article-summary__points">
+              <li><strong>Competing priorities:</strong> I got leadership aligned on the vision and ran cross-functional workshops before anyone drew a wireframe.</li>
+              <li><strong>Two populations:</strong> we mapped full-time and contingent worker journeys side by side to find where one design could work for both.</li>
+              <li><strong>Retention without pressure:</strong> the reason someone gives for leaving decides which alternatives they see, and they can still change their mind.</li>
+              <li><strong>The business case:</strong> I modeled what it costs to recruit and onboard a replacement to justify the investment.</li>
+              <li><strong>Result:</strong> shipped in 3–6 months to tens of thousands of employees, with measurable retention and NPS gains.</li>
+            </ul>
+          </aside>
+
+          <!-- TABLE OF CONTENTS (populated by main.js) -->
+          <nav class="article-toc" aria-labelledby="toc-label" data-article-toc hidden>
+            <p class="article-toc__label" id="toc-label">In this article</p>
+            <ol class="article-toc__list"></ol>
+          </nav>
+
+          <!-- BODY -->
+          <div class="article-body" data-article-body>
+
+            <h2>Context</h2>
+            <p>
+              Before this project, Amazon didn’t have a single self-service way for employees to resign, see what would happen next,
+              or find resources that might address why they were leaving. I was the lead designer and owned the full experience in
+              the A to Z app, on mobile and web. I worked with Engineering, Product, Legal, Compliance, and People Experience
+              leadership from early strategy through launch.
+            </p>
+            <p>
+              On paper, it was a multi-step form with some conditional logic. The hard part was everything around it, and honestly,
+              the most useful work I did happened before we designed a single screen.
+            </p>
+
+            <h2>Challenge 1: Five teams, five definitions of success</h2>
+            <p>
+              Every group had a real stake in this. Employees who were already stressed needed empathy, not paperwork. Legal and
+              Compliance needed exact language, documented consent, and reliable data capture. HR leadership wanted retention
+              options in the flow without it feeling manipulative. Product and Engineering needed something that would scale globally.
+            </p>
+
+            <h3>What worked: aligning before designing</h3>
+            <p>
+              I started by meeting with People Experience leadership to agree on a shared vision. That included retention metrics
+              we could actually measure and a clear picture of how the experience would affect the people going through it. Then I
+              ran workshops with stakeholders from all five groups.
+            </p>
+            <p>
+              Doing this early made a big difference. The workshops surfaced assumptions that would otherwise have turned into
+              arguments in design reviews, and we came out with a shared framework we kept going back to whenever we had to make a tradeoff.
+            </p>
+
+            <h2>Challenge 2: Two populations, two legal frameworks</h2>
+            <p>
+              The flow had to work for full-time employees and contingent workers, who have different access policies and legal
+              protections. If we’d designed for one group and adapted it for the other, it would have broken in ways that were hard to spot.
+            </p>
+
+            <h3>What worked: side-by-side service blueprints</h3>
+            <p>
+              We interviewed current employees who had thought about resigning and former employees who had actually left. From
+              those interviews, we built service blueprints that tracked both groups side by side. That showed us where their needs
+              were different and where one design could cover both. People Experience teams have since reused that approach on
+              other projects.
+            </p>
+
+            <h2>Challenge 3: Offering alternatives without pressuring people</h2>
+            <p>
+              HR wanted retention options in the flow. Employees needed to feel respected, not sold to. If we got that wrong, the
+              whole thing would feel like a trap.
+            </p>
+
+            <h3>What worked: let the reason decide what people see</h3>
+            <p>
+              The flow starts with a short personal acknowledgment, then asks for the main reason someone is leaving, with follow-up
+              questions specific to that reason. Everything after that depends on the answer. If someone’s leaving for growth, they
+              see training resources, career development materials, and a link to the A to Z Assistant. If it’s about scheduling,
+              they see alternate shift options.
+            </p>
+            <p>
+              We were also careful to protect people’s right to choose. The last step shows a full summary they can edit before
+              submitting, and it’s clear they can change their mind up to 24 hours before their last day. The cancel modal adds a
+              little friction to confirm intent, but not enough to get in anyone’s way.
+            </p>
+
+            <h2>Challenge 4: Making the case for an investment in people</h2>
+            <p>
+              The hardest part was justifying the project at all. It didn’t make money, so proving its value meant translating
+              things like retention and satisfaction into dollars.
+            </p>
+
+            <h3>What worked: putting a number on attrition</h3>
+            <p>
+              I estimated what it costs to replace someone who leaves, including recruiting, onboarding time, and lost productivity,
+              and compared that to the retention lift from the flow. That’s what got us long-term support, and it changed how People
+              Experience leadership looked at employee-facing projects from then on.
+            </p>
+
+            <h2>What changed halfway through</h2>
+            <p>
+              Partway through, research and stakeholder conversations turned up something we hadn’t expected. Employees didn’t just
+              want more training. They wanted access to training from other teams across Amazon. A lot of them weren’t looking to get
+              better at their current job. They wanted to see where else they could go inside the company.
+            </p>
+            <p>
+              That changed what we were building. The resignation form became one part of a bigger retention effort, centered on an
+              Explore hub that brought together career growth resources, team openings and leader profiles, flex shift options, and
+              self-service resignation. Each one gave people another possible reason to stay.
+            </p>
+
+            <h2>Results</h2>
+            <div class="stat-block">
+              <div class="stat-block__item">
+                <p class="stat-block__number">3–6 mo</p>
+                <p class="stat-block__label">Strategy to ship, on the original timeline</p>
+              </div>
+              <div class="stat-block__item">
+                <p class="stat-block__number">10,000s</p>
+                <p class="stat-block__label">Full-time and contingent employees served globally</p>
+              </div>
+            </div>
+            <p>
+              The flow measurably reduced attrition in the groups it served, moved NPS in the right direction, and cut recruiting
+              spend, both in our model and in practice. The way we connected a structured form to the A to Z Assistant is now used
+              in other self-service HR features.
+            </p>
+          </div>
+
+          <!-- ARTICLE FOOTER -->
+          <footer class="article-footer">
+            <div>
+              <p class="article-footer__name">Joseph Alfonso</p>
+              <p class="article-footer__bio">
+                Principal Product Designer at Amazon. 15+ years designing enterprise platforms, accessibility-first
+                products, and K–12 learning experiences.
+              </p>
+            </div>
+            <div class="article-footer__actions">
+              <a class="btn btn--secondary btn--sm" data-share="linkedin" href="https://www.linkedin.com/in/jalfonsodesign/" target="_blank" rel="noopener noreferrer">Share on LinkedIn ↗</a>
+              <a class="btn btn--ghost btn--sm" href="../writing.html">More writing</a>
+              <a class="btn btn--ghost btn--sm" href="../contact.html">Get in touch</a>
+            </div>
+          </footer>
+
+        </div>
+      </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">&copy; 2026 Joseph Alfonso</p>
+        <nav class="site-footer__links" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/jalfonsodesign/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="mailto:J.ALFONSO84@gmail.com">Email</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../../js/main.js" defer></script>
+    <script src="../../js/analytics.js"></script>
+  </body>
+</html>
