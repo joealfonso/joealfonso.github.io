@@ -13,6 +13,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Design &amp; Tooling | Joseph Alfonso</title>
     <meta name="description" content="How I design AI-powered products and build the automation tools that make design work faster, smarter, and more human." />
+    <link rel="canonical" href="https://josephalfonso.com/pages/ai-work.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Joseph Alfonso" />
+    <meta property="og:title" content="AI Design &amp; Tooling" />
+    <meta property="og:description" content="How I design AI-powered products and build the automation tools that make design work faster, smarter, and more human." />
+    <meta property="og:url" content="https://josephalfonso.com/pages/ai-work.html" />
+    <meta property="og:image" content="https://josephalfonso.com/images/og/ai-work.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="AI-enhanced M&A dashboard showing risk scoring and anomaly detection" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../images/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../images/icons/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../images/icons/apple-touch-icon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
@@ -22,13 +36,13 @@
       (function () {
         var palettes = [
           { accent: '#0052CC', accentHover: '#003D99', accentSubtle: '#EBF2FF',   accentDark: '#4D94FF', accentHoverDark: '#7AB3FF', accentSubtleDark: '#0F1E38' },
-          { accent: '#0D9488', accentHover: '#0F766E', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
+          { accent: '#0F766E', accentHover: '#115E59', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
           { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
-          { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
-          { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
-          { accent: '#64748B', accentHover: '#475569', accentSubtle: '#F8FAFC',   accentDark: '#E2E8F0', accentHoverDark: '#F8FAFC', accentSubtleDark: '#1E293B' },
+          { accent: '#B45309', accentHover: '#92400E', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
+          { accent: '#BE123C', accentHover: '#9F1239', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
+          { accent: '#475569', accentHover: '#334155', accentSubtle: '#F8FAFC',   accentDark: '#E2E8F0', accentHoverDark: '#F8FAFC', accentSubtleDark: '#1E293B' },
         ];
-        var dark = true; // dark mode enforced
+        var dark = !window.matchMedia('(prefers-color-scheme: light)').matches; // follows the stylesheet: dark unless the system asks for light
         var p = palettes[Math.floor(Math.random() * palettes.length)];
         var r = document.documentElement;
         r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
@@ -46,6 +60,7 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
     <!-- NAV -->
     <header class="site-header">
@@ -64,7 +79,7 @@
       </nav>
     </header>
 
-    <main>
+    <main id="main">
 
       <!-- CASE STUDY HEADER -->
       <section class="page-orb-section">
@@ -182,12 +197,18 @@
           when designers know how to use it well  -  and how to design products that other people can use well too.
         </p>
 
+        <h3>Writing</h3>
+        <p>
+          <a href="writing/designing-the-eval.html">Designing the eval: the basics of AI evaluation for people who shape model behavior</a>.
+          Rubrics, raters, reliability, and why the person and the model should be tested together.
+        </p>
+
       </div>
 
       <hr class="divider container" />
 
       <!-- CTA -->
-      <section class="container" style="padding-block: var(--space-16);">
+      <section class="container section-pad">
         <div class="about__links">
           <a href="contact.html" class="btn btn--primary">Get in touch</a>
           <a href="work.html" class="btn btn--secondary">View all work</a>

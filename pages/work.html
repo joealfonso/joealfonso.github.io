@@ -13,6 +13,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Work | Joseph Alfonso</title>
     <meta name="description" content="Case studies and projects from Joseph Alfonso, Product Design Leader with 15 years designing enterprise systems at Amazon and Discovery Education." />
+    <link rel="canonical" href="https://josephalfonso.com/pages/work.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Joseph Alfonso" />
+    <meta property="og:title" content="Work" />
+    <meta property="og:description" content="Case studies and projects from Joseph Alfonso, Product Design Leader with 15 years designing enterprise systems at Amazon and Discovery Education." />
+    <meta property="og:url" content="https://josephalfonso.com/pages/work.html" />
+    <meta property="og:image" content="https://josephalfonso.com/images/og/default.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Joseph Alfonso, Product Design Leader and Teacher" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../images/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../images/icons/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../images/icons/apple-touch-icon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
@@ -22,12 +36,12 @@
       (function () {
         var palettes = [
           { accent: '#0052CC', accentHover: '#003D99', accentSubtle: '#EBF2FF',   accentDark: '#4D94FF', accentHoverDark: '#7AB3FF', accentSubtleDark: '#0F1E38' },
-          { accent: '#0D9488', accentHover: '#0F766E', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
+          { accent: '#0F766E', accentHover: '#115E59', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
           { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
-          { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
-          { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
+          { accent: '#B45309', accentHover: '#92400E', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
+          { accent: '#BE123C', accentHover: '#9F1239', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
         ];
-        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var dark = !window.matchMedia('(prefers-color-scheme: light)').matches; // follows the stylesheet: dark unless the system asks for light
         var p = palettes[Math.floor(Math.random() * palettes.length)];
         var r = document.documentElement;
         r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
@@ -37,6 +51,7 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
     <!-- NAV -->
     <header class="site-header">
@@ -55,15 +70,15 @@
       </nav>
     </header>
 
-    <main>
+    <main id="main">
 
       <!-- INTRO -->
-      <section class="container" style="padding-block: var(--space-16) var(--space-10);">
+      <section class="container page-intro">
         <p class="eyebrow">Work</p>
-        <h1 style="font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl)); font-weight: var(--weight-bold); letter-spacing: var(--tracking-tight); max-width: 20ch; line-height: var(--leading-tight);">
+        <h1 class="page-intro__title">
           15 years of designing things that matter at scale.
         </h1>
-        <p style="font-size: var(--text-md); color: var(--color-text-secondary); max-width: 56ch; margin-top: var(--space-4); line-height: var(--leading-normal);">
+        <p class="page-intro__lede">
           Enterprise HR, real-time collaboration, educational media, and platform design.
           Each project below is a case study with the full story: problem, process, and outcome.
         </p>
@@ -75,10 +90,10 @@
           <div class="projects__grid">
 
             <!-- Amazon EDM -->
-            <a href="../main/EDM.html" class="card">
+            <a href="edm.html" class="card">
               <img
                 class="card__image"
-                src="../images/projects/edm-cover.png"
+                src="../images/projects/edm-cover.webp"
                 alt="Amazon Employee Document Management admin dashboard"
                 loading="lazy"
               />
@@ -102,22 +117,22 @@
               </div>
             </a>
 
-            <!-- Self-Service Resignation -->
+            <!-- AI Assisted Retention and Resignation -->
             <a href="resignation.html" class="card">
               <img
                 class="card__image"
-                src="../images/resignation/Frame%2048095835.png"
-                alt="Self-Service Resignation explore hub showing alternative pathways for employees"
+                src="../images/resignation/Frame-48095835.webp"
+                alt="AI Assisted Retention and Resignation explore hub showing alternative pathways for employees"
                 loading="lazy"
               />
               <div class="card__body">
                 <p class="card__eyebrow">Amazon &middot; Lead Designer &middot; A to Z App</p>
-                <h2 class="card__title">Self-Service Resignation</h2>
+                <h2 class="card__title">AI Assisted Retention and Resignation</h2>
                 <p class="card__metric">Humanizing Amazon's highest-stakes HR moment</p>
                 <p class="card__description">
                   Led the end-to-end redesign of Amazon's resignation flow in the A to Z mobile app.
                   Ran leadership workshops, built the business case, and advocated for an experience
-                  that treated leaving employees with dignity — not just compliance.
+                  that treated leaving employees with dignity, not just compliance.
                 </p>
               </div>
               <div class="card__footer">
@@ -134,7 +149,7 @@
             <a href="ai-work.html" class="card">
               <img
                 class="card__image"
-                src="../main/assets/img/MA2.png"
+                src="../images/edm/MA2.webp"
                 alt="AI-enhanced M&A dashboard showing risk scoring and anomaly detection"
                 loading="lazy"
               />
@@ -144,7 +159,7 @@
                 <p class="card__metric">Designing AI-powered products and building the tools behind the work</p>
                 <p class="card__description">
                   How I design AI-powered products and build the automation tools that make design
-                  work faster, smarter, and more human — from decision-support features at enterprise
+                  work faster, smarter, and more human: from decision-support features at enterprise
                   scale to the internal tooling that accelerates the design process itself.
                 </p>
               </div>
@@ -162,7 +177,7 @@
             <a href="studio.html" class="card">
               <img
                 class="card__image"
-                src="../images/projects/studio-cover.jpg"
+                src="../images/projects/studio-cover.webp"
                 alt="Discovery Education Studio board with student-created content"
                 loading="lazy"
               />
@@ -190,7 +205,7 @@
             <a href="player.html" class="card">
               <img
                 class="card__image"
-                src="../images/projects/media-cover-new.png"
+                src="../images/projects/media-cover-new.webp"
                 alt="Discovery Education Media redesigned video player interface"
                 loading="lazy"
               />
@@ -218,7 +233,7 @@
             <a href="home.html" class="card">
               <img
                 class="card__image"
-                src="../images/projects/home-cover.jpg"
+                src="../images/projects/home-cover.webp"
                 alt="Discovery Education Home redesigned across multiple devices"
                 loading="lazy"
               />

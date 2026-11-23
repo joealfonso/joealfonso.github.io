@@ -80,6 +80,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
+  // ─── About photo fallback ────────────────────────────────────────────────────
+  // If the headshot file is missing, drop the src so the styled placeholder
+  // shows instead of a broken-image icon.
+  const aboutImage = document.querySelector('.about__image');
+
+  if (aboutImage) {
+    const showPlaceholder = () => aboutImage.removeAttribute('src');
+    if (aboutImage.complete && aboutImage.naturalWidth === 0) showPlaceholder();
+    else aboutImage.addEventListener('error', showPlaceholder, { once: true });
+  }
+
   // ─── Rotating hero text ───────────────────────────────────────────────────
   // Cycles through phrases in the hero headline with a smooth fade transition.
   const rotateEl = document.getElementById('js-rotate');
@@ -89,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
       'designs at scale.',
       'mentors the next generation.',
       'navigates AI with intention.',
-      'is a positive disruptor.',
+      'builds accessibility in from the start.',
       'makes the complex feel simple.',
     ];
 
@@ -111,7 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }, FADE_MS);
     };
 
-    setInterval(cycle, HOLD_MS + FADE_MS);
+    // The headline keeps its first phrase for anyone who asks for reduced motion.
+    if (!reducedMotion) setInterval(cycle, HOLD_MS + FADE_MS);
   }
 
 });

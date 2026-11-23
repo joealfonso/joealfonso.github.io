@@ -33,7 +33,7 @@
 
   --color-text:             #F0F0EE;
   --color-text-secondary:   #9A9A98;
-  --color-text-muted:       #5C5C5A;
+  --color-text-muted:       #8A8A88;
   --color-text-inverse:     #0F0F0E;
 
   --color-accent:           #4D94FF;
@@ -272,6 +272,25 @@ section + section {
    4. NAVIGATION
    ============================================================ */
 
+/* Skip link: first focusable element on every page, visible only on focus */
+.skip-link {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: calc(var(--z-nav) + 1);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-text);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -461,6 +480,7 @@ section + section {
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .bg-orb { animation: none; translate: 0 0 !important; }
+  .hero__rotate { transition: none; }
 }
 
 .hero__eyebrow {
@@ -873,6 +893,12 @@ section + section {
   margin: 0;
   font-size: var(--text-md);
   color: var(--color-text);
+}
+
+.callout .callout__source {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
 }
 
 
@@ -1310,6 +1336,30 @@ section + section {
 /* Margin / padding resets */
 .mt-0 { margin-top: 0 !important; }
 .mb-0 { margin-bottom: 0 !important; }
+.mt-8  { margin-top: var(--space-8); }
+.mt-10 { margin-top: var(--space-10); }
+.mt-12 { margin-top: var(--space-12); }
+
+/* Section padding and page intro (Work index) */
+.section-pad { padding-block: var(--space-16); }
+
+.page-intro { padding-block: var(--space-16) var(--space-10); }
+
+.page-intro__title {
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+  max-width: 20ch;
+}
+
+.page-intro__lede {
+  font-size: var(--text-md);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+  max-width: 56ch;
+  margin-top: var(--space-4);
+}
 
 
 /* ============================================================
@@ -1403,7 +1453,7 @@ section + section {
 
     --color-text:             #111110;
     --color-text-secondary:   #5C5C5A;
-    --color-text-muted:       #9A9A98;
+    --color-text-muted:       #6B6B69;
     --color-text-inverse:     #FFFFFF;
 
     --color-accent:           #0052CC;
@@ -1515,4 +1565,179 @@ section + section {
   padding: 2px 6px;
   border-radius: var(--radius-sm);
   color: var(--color-text-secondary);
+}
+
+
+/* ============================================================
+   17. PHOTO PAGE (lab/photography.html)
+   ============================================================ */
+
+.photo-page {
+  overflow: hidden;
+}
+
+.photo-page .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.photo-page__main {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-base);
+}
+
+.photo-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+
+.photo-canvas:active {
+  cursor: grabbing;
+}
+
+.photo-hint {
+  position: fixed;
+  bottom: var(--space-10);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-overlay);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-5);
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
+  color: rgba(255, 255, 255, 0.65);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  pointer-events: none;
+  white-space: nowrap;
+  transition: opacity 0.9s ease;
+}
+
+.photo-hint--gone {
+  opacity: 0;
+}
+
+/* ============================================================
+   Article (writing / blog entries)
+   ============================================================ */
+.article-epigraph {
+  font-size: var(--text-lg);
+  font-style: italic;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.article-epigraph-source {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-10);
+}
+
+.article-toc {
+  padding: var(--space-6) var(--space-8);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  margin-block: var(--space-10);
+}
+
+.article-toc__label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.article-toc ol {
+  list-style: decimal;
+  padding-left: var(--space-6);
+}
+
+.article-toc li {
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+.article-toc a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.article-toc a:hover,
+.article-toc a:focus-visible {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.article-body h2 {
+  font-size: var(--text-lg);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  scroll-margin-top: var(--space-24);
+}
+
+.article-list {
+  list-style: decimal;
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.article-list li {
+  margin-bottom: var(--space-5);
+  line-height: var(--leading-relaxed);
+}
+
+.article-figure {
+  margin-block: var(--space-10);
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.article-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.case-study-body .article-figure figcaption {
+  margin: var(--space-4) 0 0;
+  text-align: left;
+}
+
+.article-figure__label {
+  font-weight: var(--weight-bold);
+  color: var(--color-text);
+  margin-right: var(--space-2);
+}
+
+.fig-box { fill: var(--color-surface-elevated); stroke: var(--color-border-strong); stroke-width: 1; }
+.fig-box--accent { stroke: var(--color-accent); stroke-width: 2; }
+.fig-text { fill: var(--color-text); font-family: var(--font-sans); font-size: 14px; font-weight: 600; }
+.fig-text--muted { fill: var(--color-text-secondary); font-weight: 400; font-size: 12px; }
+.fig-line { stroke: var(--color-border-strong); stroke-width: 1.5; fill: none; }
+.fig-dot--pass { fill: var(--color-accent); }
+.fig-dot--fail { fill: none; stroke: var(--color-text-muted); stroke-width: 1.5; }
+
+.article-author-note {
+  font-size: var(--text-sm);
+  font-style: italic;
+  color: var(--color-text-secondary);
+  margin-top: var(--space-12);
+}
+
+.article-cta {
+  padding-block: var(--space-16);
 }

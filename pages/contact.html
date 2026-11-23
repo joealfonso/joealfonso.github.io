@@ -13,6 +13,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact | Joseph Alfonso</title>
     <meta name="description" content="Get in touch with Joseph Alfonso, Product Design Leader and Teacher based in Seattle." />
+    <link rel="canonical" href="https://josephalfonso.com/pages/contact.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Joseph Alfonso" />
+    <meta property="og:title" content="Contact" />
+    <meta property="og:description" content="Get in touch with Joseph Alfonso, Product Design Leader and Teacher based in Seattle." />
+    <meta property="og:url" content="https://josephalfonso.com/pages/contact.html" />
+    <meta property="og:image" content="https://josephalfonso.com/images/og/default.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Joseph Alfonso, Product Design Leader and Teacher" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../images/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../images/icons/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../images/icons/apple-touch-icon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
@@ -22,12 +36,12 @@
       (function () {
         var palettes = [
           { accent: '#0052CC', accentHover: '#003D99', accentSubtle: '#EBF2FF',   accentDark: '#4D94FF', accentHoverDark: '#7AB3FF', accentSubtleDark: '#0F1E38' },
-          { accent: '#0D9488', accentHover: '#0F766E', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
+          { accent: '#0F766E', accentHover: '#115E59', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
           { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
-          { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
-          { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
+          { accent: '#B45309', accentHover: '#92400E', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
+          { accent: '#BE123C', accentHover: '#9F1239', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
         ];
-        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var dark = !window.matchMedia('(prefers-color-scheme: light)').matches; // follows the stylesheet: dark unless the system asks for light
         var p = palettes[Math.floor(Math.random() * palettes.length)];
         var r = document.documentElement;
         r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
@@ -37,6 +51,7 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
     <!-- NAV -->
     <header class="site-header">
@@ -55,7 +70,7 @@
       </nav>
     </header>
 
-    <main>
+    <main id="main">
 
       <!-- CONTACT HERO -->
       <section class="contact container">
@@ -96,7 +111,7 @@
           I'm used to ambiguity, stakeholder complexity, and shipping things that actually work.
         </p>
 
-        <h2 class="about-detail__heading" style="margin-top: var(--space-12);">Mentoring</h2>
+        <h2 class="about-detail__heading mt-12">Mentoring</h2>
 
         <p>
           I also work with early-career designers through
@@ -107,7 +122,7 @@
           systems thinking, or transitioning into leadership. Reach out.
         </p>
 
-        <div class="about__links" style="margin-top: var(--space-10);">
+        <div class="about__links mt-10">
           <a href="mailto:J.ALFONSO84@gmail.com" class="btn btn--primary">Email me ↗</a>
           <a href="about.html" class="btn btn--secondary">Learn more about me</a>
         </div>

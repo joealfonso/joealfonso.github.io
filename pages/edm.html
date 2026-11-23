@@ -1,389 +1,558 @@
 <!DOCTYPE html>
- 
-<head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV6CVTX4BZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-NV6CVTX4BZ');
-  </script>
-<link rel="stylesheet" href="../styles/styles.css">
- <link rel="stylesheet" href="../styles/nav.css">
- <!-- <link rel="stylesheet" href="../styles/typeplate.css"> -->
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js"
-   integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1"
-   crossorigin="anonymous"></script>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
- <script src="../js/main.js"></script>
- <script src="../js/nav.js"></script>
-</head>
-<html>
- 
-<body>
- 
-  <header class="cd-auto-hide-header">
-    <!-- <div class="logo"><a href="#0"></a></div> -->
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV6CVTX4BZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NV6CVTX4BZ');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Document Management &amp; AI | Joseph Alfonso</title>
+    <meta name="description" content="How I led UX for Amazon's global document platform managing 4.8 billion documents across 67 countries, then designed the AI integration layer across four product surfaces to make the system actively intelligent for every user type." />
+    <link rel="canonical" href="https://josephalfonso.com/pages/edm.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Joseph Alfonso" />
+    <meta property="og:title" content="Employee Document Management &amp; AI" />
+    <meta property="og:description" content="How I led UX for Amazon's global document platform managing 4.8 billion documents across 67 countries, then designed the AI integration layer across four product surfaces to make the system actively intelligent for every user type." />
+    <meta property="og:url" content="https://josephalfonso.com/pages/edm.html" />
+    <meta property="og:image" content="https://josephalfonso.com/images/og/edm.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Amazon Employee Document Management admin dashboard" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../images/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../images/icons/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../images/icons/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script>
+      (function () {
+        var palettes = [
+          { accent: '#0052CC', accentHover: '#003D99', accentSubtle: '#EBF2FF',   accentDark: '#4D94FF', accentHoverDark: '#7AB3FF', accentSubtleDark: '#0F1E38' },
+          { accent: '#0F766E', accentHover: '#115E59', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
+          { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
+          { accent: '#B45309', accentHover: '#92400E', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
+          { accent: '#BE123C', accentHover: '#9F1239', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
+        ];
+        var dark = !window.matchMedia('(prefers-color-scheme: light)').matches; // follows the stylesheet: dark unless the system asks for light
+        var p = palettes[Math.floor(Math.random() * palettes.length)];
+        var r = document.documentElement;
+        r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
+        r.style.setProperty('--color-accent-hover',  dark ? p.accentHoverDark  : p.accentHover);
+        r.style.setProperty('--color-accent-subtle', dark ? p.accentSubtleDark : p.accentSubtle);
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
-    <nav class="cd-primary-nav" aria-label="primary">
-      <a href="#cd-navigation" class="nav-trigger">
-        <span><em aria-hidden="true"></em>
-        </span>
-      </a> <!-- .nav-trigger -->
-      <ul id="cd-navigation">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../pages/writing/EdTechResearchChallenges.html">Writing</a></li>
-        <li><a href="../pages/about.html">About</a></li>
-      </ul>
-    </nav> <!-- .cd-primary-nav -->
-  </header> <!-- .cd-auto-hide-header -->
-
-
- <section class="wrapperHero">
-   <div class="content projectHero">
-     <h1 class="projectTitle">Employee Document Management</h1>
-     <p class="projectSubhead">I was the lead designer for the the Employee Document Management (EDM) tool which is a critical system for managing documents across Amazon's vast potential and current workforce. It supports over 4.8 billion documents and counting for employees in 67 countries, including candidates, employees, alumni, students, and more. Furthermore, EDM replaced an older software service with an accessible web application, saving Amazon well over $7 million annually in contracts and extensions. 
-     </p>
-     <p class="projectHeroDisclaimer">
-       Disclaimer: Due to company privacy terms and conditions, much of the contenthas been adjusted, hidden, or removed completely. The statements and opinions represent me as an indivdidual, not Amazon the company.
-     </p>
-   </div>
- </section>
-
-
- <p class="output">Voice control. Try "navigate to [project name]" or "scroll up/down"</p>
-
-
- <section class="wrapper">
-   <div class="content">
-     <h2 class="projectSectionHeading">High Concept</h2>
-     <p></p>
-     <p>Employee Document Management empowers a wide range of users including candidates, employees, alumni, and students, to efficiently and securely manage, generate, and execute their documents on any device throughout their time with Amazon and after as well. Furthermore, on the administrative side, HR can leverage EDM for comprehensive document lifecycle management, including compliance, distribution, legal support, and country specific template management. EDM simplifies document sharing across all stages of the employment journey, fostering a more efficient, easy to use, and delightful document experience for enterprise and user solutions.
-      - Amazon relied on a third party contractor for document management which lead to fragmented and error-prone products resulting in frustrating experience for both Admins and employees. The impacts were spread across multiple systems and databases causing errors at all points of the employment life cycle. Our team set out to launching in-house first party document solution that would be fully integrated into the end-to-end lifecycle for employment documents.
-     </p>
-     <p>Some of our higher levels usability goals were:</p>
-       <ul>
-        <li><Strong>Persona group 1: HR Admins and Enterprise Partners</Strong></li>
-        <ul>
-         <li>Deprecate the current third-party document management software suite</li>
-         <li>Reduce person-hours required by a certain amount for specific document management tasks</li>
+    <!-- NAV -->
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="nav__logo">Joseph Alfonso</a>
+        <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
-         <li><Strong>Persona group 2: Employees, candidates, students, alumni, contractors</Strong></li>
-        <ul>
-          <li>Provide a world class experience for people seeking career within Amazon</li>
-          <li>Provide employees an easier to find and use document and self-service experiences</li>
-          <li>Create a more trustworthy experience by keping the entire hiring and employee journey 100% first party</li>
-        </ul>
-       </ul>
- 
+      </nav>
+    </header>
 
-     </p>
-   </div>
- </section>
- 
- <section class="wrapper fullImageWrapper">
-   <figure>
-     <img src="../images/platform/Platform-HeroDevices.jpg"
-       aria-label="Perspective mocks of various Studio board examples" class="projectFullWidthImage">
-   </figure>
- </section>
- 
- 
- 
- <section class="wrapper wrapperGrey">
-   <div class="content grid">
-     <article class="span-col-12">
-     <h2 class="projectSectionHeading">My Role</h2>
-     <p></p>
-     <p>I was the lead designer across the full EDM product family  -  not embedded in a single workstream, but owning UX strategy and execution across all child products and experiences simultaneously. That meant setting the design direction, running research, managing quality across deliverables, and making sure design was integrated into each country's progressive launch schedule, not bolted on after the fact.</p>
-     <p>I sat at the intersection of UX, engineering, product management, legal, and external vendors. A lot of my work was about getting alignment early  -  running workshops, translating competing stakeholder needs into clear design rationale, and advocating for users in rooms where design didn't always have a seat.</p>
-     <p>My scope covered the parent EDM product and all of its child services: Document Generation, the employee self-service experience, bulk admin tools, and the full administrative experience.</p>
-    </article>
- 
-     <article class="span-col-6">
-       <h5 class="sectionSubHead">Market and user research alignment</h5>
-       <p>Early product development we needed a set of goals and philosophies that act as our guiding light when making
-         decisions, gathering feedback, and assessing the performance of experiences. As that was being explored over
-         the course of a few months I was conducting both internal and external research gathering as much feedback as
-         I could while another team was conducting market research about the brand and product positioning. 
-     After some large scale surveys and reviews we realized that Discovery Education really is a digital first brand that has print that supplements the experience. As a result we used the design system Comet as the starting point for the new product launch.
-       </p>
-     </article>
-     <article class="span-col-6">
-        <h5 class="sectionSubHead">Accessibility and Touch Compliance Lead</h5>
-        <p>Partnering with an excellent developer, we made sure all production designs were AA compliant, appropriate for screen readers, and made sure we design around touch interfaces. We strive to allow every student the ability to have the same experience as the next, regardless of situation. We're legally obligated to be AA compliant, but that's a minimum and we believe our work should result in a higher quality of product.
+    <main id="main">
+
+      <!-- CASE STUDY HEADER -->
+      <section class="case-study-header container">
+        <p class="case-study-header__eyebrow eyebrow">Amazon &middot; Employee Document Management &amp; AI</p>
+        <h1 class="case-study-header__title">Designing the document infrastructure for Amazon's global workforce, then making it intelligent</h1>
+        <p class="case-study-header__summary">
+          Amazon's employee document system was fragmented, inaccessible, and outsourced across 67 countries.
+          I led the end-to-end UX strategy to replace it with a first-party platform managing 4.8 billion
+          documents annually. Then I led the AI integration phase: designing decision-support features across
+          four product surfaces, grounded in the same research discipline that built the platform.
         </p>
+
+        <a href="#ai-layer" class="ai-jump-link">
+          <span class="ai-jump-link__badge">AI</span>
+          Jump to Phase 2: Intelligence Layer &darr;
+        </a>
+
+        <div class="case-study-meta">
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Role</p>
+            <p class="case-study-meta__value">Lead Product Designer</p>
+          </div>
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Scope</p>
+            <p class="case-study-meta__value">9 product experiences + AI layer</p>
+          </div>
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Duration</p>
+            <p class="case-study-meta__value">2+ years</p>
+          </div>
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Scale</p>
+            <p class="case-study-meta__value">67 countries</p>
+          </div>
+          <div class="case-study-meta__item">
+            <p class="case-study-meta__label">Impact</p>
+            <p class="case-study-meta__value">$10M+ annual savings</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- COVER IMAGE -->
+      <div class="container">
+        <img
+          src="../images/edm/AdminDashboard-Default.webp"
+          alt="EDM Admin Dashboard showing the document management interface"
+          class="case-study-cover"
+          loading="eager"
+        />
+      </div>
+
+      <!-- BODY -->
+      <article class="case-study-body container container--narrow">
+
+        <!-- THE CHALLENGE -->
+        <h2>The challenge</h2>
+        <p>
+          Amazon managed employee documents through a patchwork of third-party contractors spread across
+          67 countries. The result was a fragmented, error-prone system that failed employees and
+          administrators at nearly every stage of the employment lifecycle, from candidates signing
+          offer letters to alumni accessing records.
+        </p>
+        <p>
+          The system couldn't scale. It created poor candidate experiences, lacked accessibility
+          compliance, and produced recurring errors across hiring, onboarding, and HR workflows.
+          For a company operating at Amazon's scale, this wasn't just a UX problem. It was a
+          legal, operational, and reputational one.
+        </p>
+
+        <div class="callout">
+          <p>"It always comes down to a person."</p>
+          <p class="callout__source">HR Administrator, during a research interview</p>
+        </div>
+
+        <!-- MY ROLE -->
+        <h2>My role</h2>
+        <p>
+          I was the lead product designer for EDM for over two years, owning end-to-end UX strategy
+          and execution across nine distinct product experiences within the ecosystem. This wasn't an
+          embedded designer role. I drove the design direction, facilitated workshops with global
+          stakeholders, advocated for user-centered decisions with leadership, and supervised all UX
+          deliverables for quality and deadline alignment.
+        </p>
+        <p>
+          I acted as the primary liaison between UX, engineering, product management, legal, HR
+          compliance, and vendor teams across multiple countries. I collaborated with researchers to
+          define study strategies and ensured UX work stayed ahead of development to accommodate
+          inevitable pivots, especially in a product where country-specific legal requirements
+          could change the entire scope of a feature.
+        </p>
+        <p>My direct scope covered:</p>
+        <ul class="case-study-list">
+          <li>Employee document portal (user-facing)</li>
+          <li>Administrative portal</li>
+          <li>Bulk document generation</li>
+          <li>Document Collection Requests (DCRs)</li>
+          <li>Mergers &amp; Acquisitions document tooling</li>
+          <li>Bulk employee data changes</li>
+          <li>Contextual document uploads</li>
+          <li>Document collection (country-specific compliance)</li>
+          <li>Document viewing and accessibility</li>
+        </ul>
+
+        <!-- DISCOVERY -->
+        <h2>Getting oriented</h2>
+        <p>
+          When I joined, the team had existing research: heuristic evaluations, usability tests,
+          SUS scores, and journey maps from pre-hire through alumni. But it hadn't been socialized
+          across the full team. A significant amount of institutional knowledge existed in silos.
+        </p>
+        <p>
+          I spent the first few months conducting intensive interviews with the prior design team,
+          reviewing all existing documentation, and holding frequent syncs with product managers to
+          develop a clearer picture than anyone on the team currently had. This wasn't just onboarding.
+          It was creating a shared foundation from which the entire team could move faster.
+        </p>
+
+        <figure>
+          <img
+            src="../images/edm/JTBD-Grouped.webp"
+            alt="Jobs to be done mapping across user types"
+            loading="lazy"
+          />
+          <figcaption>Jobs-to-be-done mapped across candidates, employees, admins, and alumni</figcaption>
+        </figure>
+
+        <p>
+          By surfacing and synthesizing what already existed, we bypassed months of redundant foundational
+          research and focused immediately on evaluating the performance of changes. We expedited
+          a three-year plan by delivering UX work ahead of development, which gave every team
+          (engineering, product, legal) a common place to align, debate, and move forward from.
+        </p>
+
+        <figure>
+          <img
+            src="../images/edm/Journeys-Grouped.webp"
+            alt="Current and future state user journeys"
+            loading="lazy"
+          />
+          <figcaption>Current and future-state journeys developed collaboratively across teams</figcaption>
+        </figure>
+
+        <!-- KEY DESIGN DECISIONS -->
+        <h2>Key design decisions</h2>
+
+        <h3>Shifting from document-centric to people-centric search</h3>
+        <p>
+          The entire paradigm of document management had always centered on the document itself:
+          find it, edit it, store it. The existing software reflected this. Admins could only
+          search by exact document IDs or person IDs, which wasn't practical at Amazon's scale.
+        </p>
+        <p>
+          What I kept noticing in research and hearing in conversations was that every document
+          task ultimately existed because of a person. The "why" behind document management was
+          people, not paper. I advocated internally for flipping the default search paradigm to
+          employee-based, while preserving document search as a secondary mode for complex bulk tasks.
+        </p>
+
+        <figure>
+          <img
+            src="../images/edm/UIBreakdown.webp"
+            alt="Employee-based search interface breakdown"
+            loading="lazy"
+          />
+          <figcaption>The redesigned search model: employee-first, with document mode available for bulk contexts</figcaption>
+        </figure>
+
+        <p>
+          The shift resulted in dramatically faster admin workflows and a significant increase in
+          automation, reducing the time spent per document task and enabling admins to handle
+          larger volumes without proportional increases in effort.
+        </p>
+
+        <h3>Making document completion feel urgent without punishing users</h3>
+        <p>
+          Incomplete documents were a persistent legal risk. But document management systems had
+          a well-known engagement problem: people only accessed them when they needed something
+          they'd already completed. There was no inherent urgency to proactively submit.
+        </p>
+        <p>
+          During interviews, one user crystallized the problem: <em>"Can you remove the overdue
+          documents? They're distracting."</em> Rather than treating this as an edge case, I
+          recognized it as a signal about how people perceived completion. The further they were
+          from a required date, the less the document registered as important.
+        </p>
+        <p>
+          We removed the literal overdue date and replaced it with a contextual "overdue" label,
+          preserving urgency without anchoring to a specific date that became noise over time.
+          Completion rates improved and admin follow-up volume decreased.
+        </p>
+
+        <h3>Accessible document viewing</h3>
+        <p>
+          During user interviews, I discovered something unexpected: most employees with disabilities
+          were bypassing the document portal entirely, downloading PDFs directly to their computers
+          so they could use their own assistive tools. The default document viewer wasn't screen-readable,
+          and these users had adapted by memorizing menu positions and workflows just to get basic
+          tasks done.
+        </p>
+        <p>
+          This wasn't a minor inconvenience. It was a complete breakdown of the intended experience
+          for a significant portion of the workforce, and it had gone undetected because standard
+          testing doesn't catch people who abandon the product entirely.
+        </p>
+
+        <figure>
+          <img
+            src="../images/edm/ViewingDocument-Password.webp"
+            alt="Redesigned document viewing experience"
+            loading="lazy"
+          />
+          <figcaption>Redesigned document viewing built on the Mozilla PDF reader for full accessibility compliance</figcaption>
+        </figure>
+
+        <p>
+          I worked with engineering to evaluate and implement the Mozilla PDF reader, which provided
+          full screen-reader compatibility with minimal operational impact. Documents requiring
+          signatures needed a separate solution, involving legal and financial teams to align on
+          an approach. After launching the new viewer, I revisited the same participants. The response
+          was immediate and meaningful. People were visibly moved that they'd been considered.
+        </p>
+
+        <div class="callout">
+          <p>"I appreciate the effort you put into something that is often taken for granted, especially for employees who need accessible administrative and internal tools."</p>
+          <p class="callout__source">Stakeholder</p>
+        </div>
+
+        <h3>Bulk document generation at global scale</h3>
+        <p>
+          Amazon's hiring volume is among the largest in the world, spanning facilities, corporate,
+          services, student programs, and acquisitions. Bulk document generation had to work across
+          67 countries, each with its own legal requirements, governing bodies, and file storage
+          rules. Some required locally hosted servers or country-specific trusted proxies.
+        </p>
+        <p>
+          To handle this complexity without creating an administrative burden, I designed a logic
+          gating system: a rules-based framework that automated document routing and generation
+          based on the employee's context. Once configured, the system ran autonomously and only
+          required human intervention for adjustments or additions.
+        </p>
+
+        <figure>
+          <img
+            src="../images/edm/BulkUpload1.webp"
+            alt="Bulk document generation interface"
+            loading="lazy"
+          />
+          <figcaption>Bulk generation workflow with logic gating for country-specific requirements</figcaption>
+        </figure>
+
+        <h3>Contextual document uploads</h3>
+        <p>
+          Previously, uploading a document required leaving the current context, initiating a new
+          search, locating the individual, and then selecting the relevant document. We redesigned
+          uploads to happen contextually, directly within the page the admin was already on, with
+          the system inferring the relevant individual and document type automatically.
+        </p>
+
+        <figure>
+          <img
+            src="../images/edm/ContextualUploads.webp"
+            alt="Contextual uploads within the admin workflow"
+            loading="lazy"
+          />
+          <figcaption>Contextual uploads eliminated unnecessary context switching and increased tasks completed per shift</figcaption>
+        </figure>
+
+        <p>
+          More tasks were being completed per shift as a result, not because of speed improvements
+          but because reducing cognitive load per task created headroom for additional work within
+          the same session.
+        </p>
+
+        <!-- PHASE 2: AI INTEGRATION -->
+        <h2 id="ai-layer">Phase 2: Adding an intelligence layer</h2>
+        <p>
+          After shipping the platform, the system was still largely reactive. It showed you what had
+          happened. It didn't tell you what to do about it. I led a second phase of work focused on
+          AI integration: running cross-functional workshops, identifying where intelligence could
+          close the gap for each user type, and designing enhancements grounded in the same research
+          we'd already done.
+        </p>
+        <p>
+          Every concept came from a validated research finding or an existing backlog item. The
+          framing I used across all of it: what does this person actually need right now that the
+          system isn't surfacing for them?
+        </p>
+
+        <div class="ai-highlight">
+          <p class="ai-highlight__label">AI Integration Layer</p>
+          <p class="ai-highlight__heading">Four surfaces, each made actively intelligent</p>
+          <div class="ai-surfaces">
+            <div class="ai-surface-card">
+              <p class="ai-surface-card__num">01</p>
+              <p class="ai-surface-card__title">M&amp;A Dashboard</p>
+              <p class="ai-surface-card__desc">Risk scoring, velocity forecasting, and anomaly detection replace a plain completion percentage, so managers know what to act on, not just what happened.</p>
+            </div>
+            <div class="ai-surface-card">
+              <p class="ai-surface-card__num">02</p>
+              <p class="ai-surface-card__title">Bulk Document Generation</p>
+              <p class="ai-surface-card__desc">Inline error detection with proposed corrections and confidence levels eliminates the upload–fix–re-upload loop. ~75% of common errors resolved without leaving the page.</p>
+            </div>
+            <div class="ai-surface-card">
+              <p class="ai-surface-card__num">03</p>
+              <p class="ai-surface-card__title">HR Admin Portal</p>
+              <p class="ai-surface-card__desc">A pre-review panel cross-references Workday before the approver opens a document, surfacing pay band violations, legal entity mismatches, and expired IDs automatically.</p>
+            </div>
+            <div class="ai-surface-card">
+              <p class="ai-surface-card__num">04</p>
+              <p class="ai-surface-card__title">Employee Portal</p>
+              <p class="ai-surface-card__desc">Plain-language summaries, a mobile briefing card, and section-level tracking help new hires and non-native speakers understand what they're signing before they sign it.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3>M&amp;A dashboard: from status to decision support</h3>
+        <p>
+          Managers tracking acquisition document completion had one signal: a percentage.
+          57% complete. They had to do all the interpretation themselves. Is that on track?
+          What's the blocker? What do I do next?
+        </p>
+        <p>
+          The AI layer I designed changes that question entirely. Risk scoring on each project card
+          with a plain-language explanation of why. Velocity-based close date forecasting. Anomaly
+          detection that surfaces the actual blocker, three unreleased Critical employees, instead
+          of leaving it buried in a table. And a conversational assistant that lets managers ask
+          the system direct questions about any employee's status and get a synthesized answer,
+          not a raw data dump.
+        </p>
+
+        <figure>
+          <img
+            src="../images/edm/MA2.webp"
+            alt="M&A dashboard with AI risk scoring and anomaly detection panel"
+            loading="lazy"
+          />
+          <figcaption>AI layer on the M&amp;A dashboard: risk scoring, anomaly detection, and velocity forecasting replace a plain completion percentage</figcaption>
+        </figure>
+
+        <h3>Bulk generation: breaking the error round trip</h3>
+        <p>
+          The existing error handling for bulk document generation was a full round trip. HR uploaded
+          a spreadsheet, the system found errors, they downloaded a new file, fixed it offline, and
+          re-uploaded. For 72 employees with 8 errors, that meant repeating the entire process for 8 rows.
+        </p>
+        <p>
+          The self-fix feature I designed eliminates that loop. The system detects each error,
+          proposes the most likely correction with its reasoning, assigns a confidence level, and
+          lets HR accept or reject inline. Rows that genuinely can't be auto-resolved are flagged
+          explicitly with a clear explanation. They don't block the other 64 employees from
+          generating. About 75% of common errors became fixable without leaving the page.
+        </p>
+        <p>
+          A principle I held throughout: the "can't auto-fix" state had to be honest, not papered over.
+          In a compliance context, an AI that guesses and gets it wrong isn't just a UX problem.
+          It's a liability.
+        </p>
+
+        <h3>HR admin portal: reviewing with context instead of cold</h3>
+        <p>
+          Document approvers were opening 14-page agreements with no context and reading the entire
+          thing to find out if anything was wrong. For passport and ID collection, they were manually
+          reading scanned documents and mentally cross-checking fields against the employee record.
+        </p>
+        <p>
+          The AI pre-review panel I designed does the reading before the approver opens the document.
+          It cross-references against Workday, surfaces pay band violations, legal entity mismatches,
+          and expired documents before a single line is read. For ID documents, it extracts key
+          fields automatically and flags expiry issues immediately. The approver still makes the call.
+          What AI removes is the archaeology.
+        </p>
+
+        <h3>Employee portal: comprehension, not just completion</h3>
+        <p>
+          The employee side had the most vulnerable users in the system: new hires on their first day,
+          warehouse workers on phones, non-native speakers reading bilingual legal agreements. The
+          accessibility work I'd already done gave us the foundation. The AI layer builds directly on it.
+        </p>
+        <p>
+          A plain language panel runs alongside the document and explains each section in real terms,
+          flagging clauses with real consequences that employees consistently miss (non-solicitation
+          terms buried on page 8 are the thing people get surprised by months later). On mobile, a
+          briefing card surfaces three things to know before the user starts scrolling. A section
+          tracker flags when someone has moved quickly past a high-stakes clause, giving the
+          experience a chance to intervene before the signature rather than after.
+        </p>
+
+        <div class="callout">
+          <p>AI should surface, not decide. Every enhancement in this phase kept the human in the loop. The approver still approves. The HR admin still releases. What changed is how much work they have to do to understand what matters before they act.</p>
+        </div>
+
+        <!-- PROGRESSIVE LAUNCH -->
+        <h2>Progressive global launch</h2>
+        <p>
+          Every launch was phased by country group, and each phase was treated as a live User
+          Acceptance Test. Small, real-world groups gave us feedback before each broader rollout,
+          ensuring the primary user populations received a thoroughly vetted experience.
+        </p>
+        <p>
+          Country-specific legal requirements (Germany's Work Councils requiring physical wet signatures,
+          region-specific file hosting rules, language and vocabulary differences) meant that what
+          worked in one market sometimes required significant rethinking for another. Phased launching
+          let us respond in real time rather than discovering issues after a global rollout.
+        </p>
+
+        <!-- OUTCOMES -->
+        <h2>Outcomes</h2>
+
+        <div class="stat-block">
+          <div class="stat-block__item">
+            <p class="stat-block__number">4.8B</p>
+            <p class="stat-block__label">Documents managed annually</p>
+          </div>
+          <div class="stat-block__item">
+            <p class="stat-block__number">$10M+</p>
+            <p class="stat-block__label">Annual savings vs. third-party contracts</p>
+          </div>
+          <div class="stat-block__item">
+            <p class="stat-block__number">67</p>
+            <p class="stat-block__label">Countries on the platform</p>
+          </div>
+          <div class="stat-block__item">
+            <p class="stat-block__number">9</p>
+            <p class="stat-block__label">Product experiences delivered</p>
+          </div>
+        </div>
+
+        <p>
+          Beyond the headline numbers, the most meaningful outcomes were harder to quantify.
+          Application abandonment dropped after the document viewing redesign, a result we
+          hadn't anticipated. Accessibility compliance was achieved for the first time. Admin
+          workflows that previously spanned seven steps and five tools were reduced to three
+          steps and two tools for bulk employee data changes.
+        </p>
+
+        <!-- REFLECTION -->
+        <h2>What I'd do differently</h2>
+        <p>
+          The accessibility discovery came too late. Users with disabilities had been adapting
+          around a broken experience for a long time before we surfaced it, because standard
+          usability testing doesn't catch people who abandon the product entirely. I'd build
+          inclusive participant recruitment into the research plan from day one, not as a
+          secondary study.
+        </p>
+        <p>
+          I'd also invest earlier in vocabulary alignment. The language challenges around
+          "documents vs. files," Document Collection Requests, and country-specific terminology
+          created friction that cascaded into design decisions, engineering estimates, and user
+          confusion. Establishing a shared taxonomy before defining features would have saved
+          significant rework across multiple workstreams.
+        </p>
+        <p>
+          On the AI work specifically: I'd establish the measurement infrastructure earlier.
+          We built it, but later than I'd have liked. Having server-side task timing and a
+          continuous feedback loop from day one would have given us better signal during the
+          design phase, not just after launch. I'd also push to involve legal and compliance
+          teams in the AI design process from the start. Many of the constraints we designed
+          around were things I already knew from the platform work. Getting those stakeholders
+          into the AI workshops earlier would have accelerated the work and likely surfaced
+          edge cases we hadn't anticipated.
+        </p>
+
+        <!-- NAV -->
+        <div class="case-study-nav">
+          <a href="../index.html" class="btn btn--secondary">&larr; Back to work</a>
+          <a href="studio.html" class="btn btn--secondary">Next: Discovery Education Studio &rarr;</a>
+        </div>
+
       </article>
-      <article class="span-col-6">
-          <h5 class="sectionSubHead">User Research Planning and Facilitation</h5>
-          <p>As we progressed through the product development process, I would meet with the team in order to plan research for the next few quarters. Different types of research depending on where in the proejct we were, but the important part was to always have something going on. We aimed to for 5%-25% of project resources to be allocated to research.
-          </p>
-        </article>
- 
-   </div>
- </section>
- 
- 
- 
- <section class="wrapper wrapperGrey">
-   <div class="content grid">
-     <h2 class="projectSectionHeading span-col-12">Developing and Practicing Common Goals</h2>
-     <p class="span-col-12">Step one was getting on the same page. From top to bottom of an organization's structure teams operate differently, have different goals, and speak to
-       a different scope of people. It's important to get everyone to align on what is being built and why it's being
-       built but in practice that's actually quite a difficult task that can come from many different sources.
-     </p>
-     <p class="span-col-12">The documentation and goals changed over the course of time up until launche, but the important part was that these changes were all done within the same environment. The single source of truth reduced the effort on the organization to find, reference, and keep track of these sem-tangible deliverables. At the end of the day, they're still just words in a document that we have to follow.</p>
-     <p class="span-col-12">In order to communicate more effectively with the development team and make better decisions about user research, I had to make sure the entire organization was aligned. My job was the make sure this was facilitated. Goals came from every direction, so including the appropriate people and delgating a select few to be the sources of truth was step one. From there we went with Confluence since it was already in use with Development and everyone had access to it.</p>
-     <p class="span-col-12"> This allowed us to share goals with stakeholders, and then as we did research, it would always support the greater goals of the organization. I found this helped sell and validate the planning and facilitation of user research, which can often be a significant obstacle.
-     </p>
-   </div>
- </section>
+    </main>
 
- <section class="wrapper ">
-  <div class="content grid">
-    <h2 class="projectSectionHeading span-col-12">Path of Discovery</h2>
-    <p class="span-col-12">After conducting a significant amount of user and market research, we had identified which areas of Discovery Educaiton to improve, how to improve them, and what we needed to do in order to create the most engaging, easy to use, and time saving solution.
-
-    </p>
-    <p class="span-col-12">After conducting a significant amount of user and market research, we had identified which areas of Discovery Educaiton to improve, how to improve them, and what we needed to do in order to create the most engaging, easy to use, time saving solution.
-
-    </p>
-  </div>
-</section>
-
-<section class="wrapper wrapperGrey" id="performance">
-  <div class="content grid">
-    <h2 class="projectSectionHeading span-col-12">Products in Scope</h2>
-    <p class="span-col-12">The overall product portfolio of Discovery Education was plagued with issues that all
-      contributed to the case for a redesign. Aesthetically the experience was dated, inconsistent, and generally
-      tested poorly with users when doing preference and satisfaction research. Functionally, while the site was
-      accessible, it lagged significantly behind competing products, it didn't take advantage of any type of
-      innovative or current technology, was an absolute Information Architecture nightmare, and had been optimized in
-      regards to development, including back-end which resulted in an absurd amount of server requests.
-    </p>
-    <h5 class="sectionSubHead span-col-12">Home</h5>
-    <p class="span-col-12">Everyone owns the home page an no one owns the home page. The home page always has, and
-      always will be the most contentious experience for a product, and it was no different with DE. One of our main
-      challenges was creating alignment and shared expectations across a wide enough scope of people taking into
-      account enough feedback from stakeholders and users. While slightly more modernized and attractive, functionally
-      the current home page was not a successful nor engaging experience.
-    </p>
-    <div class="span-col-6">
-      <img src="../images/platform/Home-Old-Short.png" aria-label="Perspetive mocks of various Studio board examples"
-        class="projectFullWidthImage">
-      <p class="projectCaption">Previous version of DE Home.</p>
-    </div>
-    <div class="span-col-6">
-      <img src="../images/platform/platformHome.jpg" aria-label="Perspetive mocks of various Studio board examples"
-        class="projectFullWidthImage">
-      <p class="projectCaption">The new version of Home.</p>
-      </p>
-    </div>
-    <p class="span-col-12">It was a poorly implemented social feed just like so many other social feeds made by teams
-      that don't specialize in that type of work. Irrelevant content sorted by a poorly done ranking algorithm
-      resulted in a social feed with minimal engagement from users. Through a series of redesigns, we were able to
-      regain and increase usage with the hero, the body of the page remains a struggle. The right side of the page
-      offers what was some useful information but where the link took you was unpredictable. Even when the homepage
-      functioned well, where you went after was often unpredictable in regards to the experience.
-    </p>
-    <h5 class="sectionSubHead span-col-12">Player</h5>
-    <p class="span-col-12"> This is the page that is designated to hold a single resource. It could be anything from a
-      video, and image, to an interactive to a virtual field trip where you're taken through a virtual tour of an
-      event or place.
-    </p>
-    <p class="span-col-12">One of the main goals of the Player page was to allow users to quickly assess whether a
-      piece of content was valuable enough to use. The content was most important, but we also had to make sure
-      certain features like closed captioning, language options, and curriculum standards were included and easy to
-      identify. It was common to hear about teachers not using a resource solely because it couldn't be experienced
-      equally by every student in
-      the classroom. Inclusive design is a guiding principle of ours and we can identify direct impact of it.
-    </p>
-    <div class="span-col-6">
-        <img src="../images/player/Player-Old.png" aria-label="Perspetive mocks of various Studio board examples"
-          class="projectFullWidthImage">
-        <p class="projectCaption">Previous version of DE Home.</p>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">&copy; 2026 Joseph Alfonso</p>
+        <nav class="site-footer__links" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/jalfonsodesign/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="mailto:J.ALFONSO84@gmail.com">Email</a>
+        </nav>
       </div>
-      <div class="span-col-6">
-        <img src="../images/player/Player-New-Default.png" aria-label="Perspetive mocks of various Studio board examples"
-          class="projectFullWidthImage">
-        <p class="projectCaption">The new version of Home.</p>
-        </p>
-      </div>
+    </footer>
 
-    <h5 class="sectionSubHead span-col-12">Networks Channels</h5>
-    <p class="span-col-12">Discovery Education provides a wide variety of media and content ranging from first-party
-      sources like MythBusters, to popular publishers, and even user-generated content in addition to all formal and
-      curriculum required content. This content is also unrestricted and included when districts are provisioned
-      products providing additional content for students and teachers to learn and use. </p>
-    <p class="span-col-12">It was discovered though, over the course of many studies, that a large portion of teachers
-      weren't aware of all of the content available and at the same time (not surprisingly) expressed a strong desire
-      to have access to additional trusted content. This lead to the inception of the idea of Networks and Channels
-      which resulted in completely reworking,repositioning, and consolidating all of that extra material and content
-      into a system that made sense, was discoverable and explorable. Channels and networks are experiences setup to
-      help students and teachers explore and sort through groups of content. Prior to this, users much of the
-      supplemental material Discovery Education offered
-      </p">
-
-
-  </div>
-</section>
- 
- <section class="wrapper ">
-   <div class="content">
-     <h2 class="projectSectionHeading">Home is where the... products are</h2>
-     <p>A common theme is that generally all of the products were outdated, but Home was the slight exception to the
-       rule. Seeing as the homepage traditionally has the most visibility, and it was no different at DE, many of the
-       internal exercises and projects that are expected to provide results start on the home page. It was for this
-       reason that Home was slightly updated to adhere to the preliminary design specifications of the soon to be Comet
-       Design System.
- 
-     </p>
-   </div>
- </section>
- 
- 
- <section class="wrapper ">
-   <div class="content">
-     <h2 class="projectSectionHeading">High Quality Content</h2>
-     <p>You can have the nicest looking most well made solution, but if the content isn't good, no one is going to want to use it. Experiences are there to facilitate something for the user. Fortunately at no point in any
-       of our research was content ever an issue. Most of the time in fact, teachers spoke very highly of the
-       availability and quality of the content offered by Discovery Education. Having high quality content that users desired made everything we did extra validating. We knew that if we managed to provide a good experience, users It's a huge luxury to be supported by a tested and successful content library. This makes our
-       research more valuable, testing is more conclusive, and generally users are excited and enthusiastic to speak
-       about it because they really value it. THe content helps make sure we understand we're working towards a good purpose.
-     </p>
-   </div>
- </section>
- 
- 
- 
- <section class="wrapper ">
-   <div class="content">
-     <h2 class="projectSectionHeading">Leveraging Core Competencies</h2>
-     <h5 class="sectionSubHead">A trusted all-in-one experience</h5>
-     <p>One of the truly unique experiences that Discovery Education offers that is rarely seen anywhere else is that
-       you can find cited and scholarly materials, save and organize it, edit and create with it, and then share it
-       out. It's common to find sites that allow collecting, sorting tagging, organizing and sharing, but they don't
-       provide content. Or maybe a site provides content, but it's not trusted, or it has advertisements and unfit
-       material for the classroom.
-     </p>
-     <h5 class="sectionSubHead">New content from trusted publishers</h5>
-     <p>Having the relationship with Discovery Communications allows teachers to explore an always changing and
-       improving library of digital content to supplement their curriculum and standards based content. Some of the
-       most common feedback by education leaders and district representatives has been that the issue isn't with the
-       content. That content is consistently high quality and a leading reason for account retention.
-     </p>
-     <h5 class="sectionSubHead">Classroom management</h5>
-     <p>Every year a new roster of students is added and changed for schools and teachers. As regular and as often as
-       that experience is. In as many places (everywhere) that it happens, by now you would think there would be some
-       sort of universal solution. There isn't. Sometimes it works and sometimes it doesn't It can vary by school, and
-       district and there isn't any real standardization that would validate work on developing integration templates.
-       We provided a way for teachers to manage individual students and run large batch actions for manual control of
-       rosters that didn't always integrate. Saving time is important to teachers and roster management is seen as an
-       unnecessary time sink for teachers and this is a feature that comes up often in feedback sessions.
-     </p>
-     <h5 class="sectionSubHead">Single Sign-On and Product integration</h5>
-     <p>It's common for a classroom to leverage multiple tools as a part of their product suite. This often requires
-       multiple logins for however many students are within a district. This also means additional support and points
-       for potential problems. As a huge compliment to the developments teams, DE is known as having one of the better
-       experiences in regards to single sign-on systems.
-     </p>
-     <img src="../images/studio/Timeline.png" aria-label="Initial elements panel prototypes" class="projectImage " />
-   </div>
- </section>
- 
- <section class="wrapper wrapperGrey">
-   <div class="content grid">
-     <h2 class="projectSectionHeading span-col-12">Personas and User insights</h2>
-     <p class="span-col-12">The goals and red tasks on a certain page varied from persona to persona a little more
-       explicitly than projects I've been involved in the past. Since You could, explore, save, and share content all
-       within the same experience, what the users were looking to get done depended on the mode they were in. The goal
-       of a user who was on a resource page because they're planning their next lesson is going to have a different goal then the user who is looking for something quickly to share with the class who will have a different goal than the student who had the resource shared with them. Some unique persona splits were age bands, grade bands,
-       roles, modes, and saving styles</p>
-     <article class="span-col-6">
-       <h5 class="sectionSubHead">Grade Bands</h5>
-       <p>Sections of grades that are generally accepted. Some overlap between districts naturally occur. Significant cognitive, and developmental differences occur early resulting in specialized design choices.</p>
-     </article>
-     <article class="span-col-6">
-       <h5 class="sectionSubHead">Age Bands</h5>
-       <p>Age bands were for wider scoping research and teachers most of the time. Generally the student and teacher experiences were separate/</p>
-     </article>
-     <article class="span-col-6">
-       <h5 class="sectionSubHead">Roles</h5>
-       <p> Roles include, student, teacher, admin, and certain time other specialized positions. Each role comes with a different set of goals and tasks that dictate the experiences differences.</p>
-     </article>
-     <article class="span-col-6">
-       <h5 class="sectionSubHead">Modes</h5>
-       <p>Modes are what we have identified as the core reason people user the service. The modes we developed are the explorer, the user who is just browsing on their own free will "going down the rabbit hole" and seeking further knowledge about topics. The planner and collector is someone who has an objective about what they're looking for and want to save and organize material for later. </p>
-     </article>
-     <article class="span-col-6">
-         <h5 class="sectionSubHead">Saving Style</h5>
-         <p>Users usually collecting and saved in one of two different ways. The planner would organize as they saved resources making sure to tag and label as they events resulting in a lower quantity, but higher ration of usage. The collector would save a high volume of content, but would go back at a later time and sift through to organize or use it all. One style is front loaded while the other is heavy in effort later on in the process.</p>
-       </article>
- 
-   </div>
- </section>
- 
- <section class="wrapper ">
-   <div class="content">
-     <h2 class="projectSectionHeading">Unique Challenges</h2>
-     <h5 class="sectionSubHead">Target Demographic</h5>
-     <p>Given that the audience Discovery Education serves ranges from students in kindergarten to admins who are
-       unfamiliar with modern technology trends. The technical literacy of our users ranges from developmental abilities
-       at a young age to general lack of experience with computers in old age. We can provide the students and teachers
-       with separate experiences, but there still needs to be enough alignment that the teacher can share and align with
-       students at the same time as having their "enhanced" teacher version. This results in many elements of the
-       experiences overlapping.</p>
-   </div>
- </section>
- 
- 
- 
- <section class="wrapper ">
-   <div class="content">
-     <h2 class="projectSectionHeading">My Key Contributions</h2>
-     <h4 class="sectionSubHead">Developed Centralized Research Data Repository</h4>
-     <p>Part of the value and beauty of user research is that it's valuable for a long time. Each research study is an investment if stored in a way to make it easily accessible over long periods of time.
-       By centralizing and codifying studies we could easily search and recall any material about any study which was something we commonly did when starting on new features and exploring solutions.
-     </p>
-     <h4 class="subsectionSubHead">Reduced User Research costs</h4>
-     <p>Working with another researcher we figured out new and creative ways to facilitate remote user research. We cycle systems for interviews because we like to continue to leverage different tools and services for their different strengths. If we needed a card sort, and the current active services didn't include that we needed to plan accordingly and reallocate funds. Working with a budget, even if it was fair, and having restrictions forced us to generate creative solutions if we wanted to stick to such an am bitious and active plan.
-      
-     </p>
-     <h5 class="sectionSubHead">Positive Development Relationship and Integration</h5>
-     <p>By working with the development team closely we were able to directly handle many issues that would normally have taken significant time in formal iterations due to the system.
-       Early on when working with the developers we would establish to what degree they wanted to be included in on User Experience and design tasks. The result was so much better than we could have expected.
-       Developers were able to supplement their work with any user experience work at any point in the process with the simple obligation to attend the regular meetings. And I was able to engage and learn by osmosis and by getting hands on with production level code.
-     </p>
-   </div>
- </section>
- 
- 
- <section class="wrapper ">
-   <div class="content">
-     <h2 class="projectSectionHeading">Retrospective</h2>
-     <h4 class="sectionSubHead">What we did well</h4>
-     <h4 class="subsectionSubHead">Developed a Unique System for Discovery Education</h4>
-     <p>It might sound obvious, but it's common to try to implement another company's strategy, process or plan, without changing it at all, and then wonder why it didn't work. Utilizing team workshops and break-out sessions, we were able to make sure everyone had their voices heard systematically. Leveraging smaller groups with leaders that could then communicate, group dynamics were improved and group engagement was improved with attitudes becoming more positive after seeing actual progress.
-     </p>
- 
-   </div>
- </section>
- 
- <section class="wrapper wrapperGrey">
-   <div class="content">
-     <h2 class="projectSectionHeading">Interface samples and explorations</h2>
- 
-   </div>
- </section>
- 
- 
- 
- 
- 
- <script src="../js/voiceControlScript.js"></script>
-</body>
- 
+    <script src="../js/main.js"></script>
+  </body>
 </html>
- 

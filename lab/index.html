@@ -12,6 +12,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lab | Joseph Alfonso</title>
+    <link rel="icon" href="../images/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../images/icons/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../images/icons/apple-touch-icon.png" />
     <meta name="description" content="Experiments and prototypes by Joseph Alfonso." />
     <meta name="robots" content="noindex" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,12 +26,12 @@
       (function () {
         var palettes = [
           { accent: '#0052CC', accentHover: '#003D99', accentSubtle: '#EBF2FF',   accentDark: '#4D94FF', accentHoverDark: '#7AB3FF', accentSubtleDark: '#0F1E38' },
-          { accent: '#0D9488', accentHover: '#0F766E', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
+          { accent: '#0F766E', accentHover: '#115E59', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
           { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
-          { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
-          { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
+          { accent: '#B45309', accentHover: '#92400E', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
+          { accent: '#BE123C', accentHover: '#9F1239', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
         ];
-        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var dark = !window.matchMedia('(prefers-color-scheme: light)').matches; // follows the stylesheet: dark unless the system asks for light
         var p = palettes[Math.floor(Math.random() * palettes.length)];
         var r = document.documentElement;
         r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
@@ -38,6 +41,7 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
     <!-- NAV -->
     <header class="site-header">
@@ -57,7 +61,7 @@
       </nav>
     </header>
 
-    <main>
+    <main id="main">
 
       <section class="container">
         <div class="lab-hero">
@@ -68,10 +72,6 @@
 
         <!-- Experiment list — add new entries here -->
         <div class="lab-grid">
-          <a href="photography.html" class="lab-card">
-            <p class="lab-card__title">Photography</p>
-            <p class="lab-card__meta">Infinite pan-anywhere canvas — drag to explore photos scattered across a seamless, wrapping space.</p>
-          </a>
           <a href="design-review-card/" class="lab-card">
             <p class="lab-card__title">Design Review Card</p>
             <p class="lab-card__meta">A fast, repeatable pass over any design before it goes to build. Produces a follow-up list, not a grade. Includes an optional AI check.</p>
