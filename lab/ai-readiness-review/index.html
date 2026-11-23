@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.google.com https://*.g.doubleclick.net; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.google.com https://*.g.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="../../images/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../images/icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../images/icons/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Readiness Review v1.0</title>
+<style>
+:root{
+  --bg:#f6f4f0; --paper:#fff; --ink:#181c22; --ink-2:#4c545e; --ink-3:#626a74;
+  --line:#e3ded4; --line-2:#f0ece4;
+  --accent:#1f3fbe; --accent-bg:#eaeefc; --on-fill:#fff;
+  --ok:#136b41; --ok-bg:#e6f4ec;
+  --warn:#8a5300; --warn-bg:#faefdb;
+  --bad:#a91f16; --bad-bg:#fbe9e7;
+  --t1:#4c545e; --t2:#8a5300; --t3:#a91f16;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#14171b; --paper:#1c2027; --ink:#eef1f4; --ink-2:#b3bcc6; --ink-3:#8a939d;
+    --line:#2e343d; --line-2:#252a31;
+    --accent:#7f9cff; --accent-bg:#1e2740; --on-fill:#10131a;
+    --ok:#5fd39b; --ok-bg:#16301f;
+    --warn:#e8b25c; --warn-bg:#33260f;
+    --bad:#ff8b80; --bad-bg:#3a1a17;
+    --t1:#b3bcc6; --t2:#e8b25c; --t3:#ff8b80;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  padding-bottom:112px;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:44px 22px 32px}
+
+/* ---------- masthead ---------- */
+.masthead{border-bottom:2px solid var(--ink);padding-bottom:22px;margin-bottom:14px}
+.mast-top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap}
+.instrument-id{
+  font:700 .68rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+  border:1px solid var(--accent);border-radius:4px;padding:5px 8px;display:inline-block;margin-bottom:14px;
+}
+h1{font-size:2.15rem;line-height:1.1;letter-spacing:-.02em;margin:0 0 8px;font-weight:750}
+.sub{font-size:1.02rem;color:var(--ink-2);max-width:640px;margin:0}
+.version-block{font:.74rem/1.7 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink-3);text-align:right;white-space:nowrap}
+.version-block b{color:var(--ink-2);font-weight:600}
+
+.abstract{
+  background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:var(--r);padding:16px 18px;margin:22px 0 8px;font-size:.93rem;color:var(--ink-2);
+}
+.abstract strong{color:var(--ink)}
+
+/* ---------- nav ---------- */
+.tocnav{
+  display:flex;gap:6px;flex-wrap:wrap;margin:24px 0 8px;
+  border-bottom:1px solid var(--line);padding-bottom:14px;
+}
+.tocnav a{
+  font-size:.8rem;font-weight:600;text-decoration:none;color:var(--ink-2);
+  border:1px solid var(--line);border-radius:999px;padding:5px 11px;background:var(--paper);
+}
+.tocnav a:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ---------- structure ---------- */
+.section{margin-top:44px}
+.sec-num{
+  font:700 .7rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:7px;
+}
+h2{font-size:1.42rem;letter-spacing:-.01em;margin:0 0 7px;font-weight:700}
+.sec-desc{color:var(--ink-2);font-size:.94rem;margin:0 0 18px;max-width:720px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;margin-bottom:16px}
+
+/* ---------- metadata ---------- */
+.meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+label.fl{display:block;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:5px}
+input[type=text],select,textarea{
+  width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:6px;
+  font:inherit;font-size:.9rem;color:var(--ink);background:var(--bg);
+}
+input[type=text]:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+textarea{resize:vertical;min-height:56px;font-size:.86rem}
+
+/* ---------- screening ---------- */
+.screen-q{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;padding:14px 0;border-bottom:1px solid var(--line-2)}
+.screen-q:last-of-type{border-bottom:none}
+.screen-q .qtext{font-size:.94rem;font-weight:600;margin:0 0 3px}
+.screen-q .qref{font-size:.78rem;color:var(--ink-3);margin:0}
+.yn{display:flex;gap:6px}
+.yn button{
+  min-width:52px;height:32px;border:1px solid var(--line);background:var(--bg);color:var(--ink-2);
+  border-radius:7px;font:600 .8rem/1 inherit;cursor:pointer;
+}
+.yn button:hover{border-color:var(--accent)}
+.yn button.on-yes{background:var(--warn-bg);border-color:var(--warn);color:var(--warn)}
+.yn button.on-no{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+
+.tier-out{
+  margin-top:18px;padding:16px 18px;border-radius:var(--r);border:1px solid var(--line);background:var(--bg);
+}
+.tier-badge{
+  display:inline-block;font:700 .74rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;
+  text-transform:uppercase;padding:6px 10px;border-radius:5px;margin-bottom:9px;
+}
+.tier-1{background:var(--line-2);color:var(--t1);border:1px solid var(--line)}
+.tier-2{background:var(--warn-bg);color:var(--t2);border:1px solid var(--t2)}
+.tier-3{background:var(--bad-bg);color:var(--t3);border:1px solid var(--t3)}
+.tier-out p{margin:0;font-size:.88rem;color:var(--ink-2)}
+.tier-out .thresh{margin-top:10px;font:.78rem/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink-3)}
+
+/* ---------- dimensions ---------- */
+.dim{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);margin-bottom:16px;overflow:hidden}
+.dim-head{padding:18px 22px 14px;border-bottom:1px solid var(--line-2)}
+.dim-head-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+.dim-title{font-size:1.06rem;font-weight:700}
+.dim-code{font:700 .7rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink-3);letter-spacing:.1em;margin-right:9px}
+.dim-score{font:700 .82rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink-2);white-space:nowrap}
+.dim-score.low{color:var(--bad)}
+.dim-desc{color:var(--ink-2);font-size:.88rem;margin:6px 0 0}
+
+.crit{padding:17px 22px;border-bottom:1px solid var(--line-2)}
+.crit:last-child{border-bottom:none}
+.crit.na-dim{opacity:.45}
+.crit-row{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start}
+.crit-id{font:700 .68rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink-3);letter-spacing:.08em}
+.crit-text{font-size:.95rem;font-weight:600;margin:5px 0 5px}
+.crit-detail{font-size:.845rem;color:var(--ink-2);margin:0 0 8px}
+.crit-detail em{color:var(--ink-3);font-style:normal}
+.refs{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+.ref{
+  font:600 .69rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+  background:var(--accent-bg);color:var(--accent);border-radius:4px;padding:4px 6px;
+  text-decoration:none;border:1px solid transparent;
+}
+.ref:hover{border-color:var(--accent)}
+.gate-tag{
+  display:inline-block;font:700 .64rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.07em;
+  text-transform:uppercase;padding:3px 6px;border-radius:4px;margin-left:8px;vertical-align:1px;
+  background:var(--bad-bg);color:var(--bad);border:1px solid var(--bad);
+}
+.gate-tag.dormant{background:var(--line-2);color:var(--ink-3);border-color:var(--line)}
+.scorer{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.sb{
+  min-width:36px;height:33px;padding:0 9px;border:1px solid var(--line);background:var(--bg);
+  color:var(--ink-2);border-radius:7px;font:700 .8rem/1 inherit;cursor:pointer;
+}
+.sb:hover{border-color:var(--accent)}
+.sb.a0{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.sb.a1{background:var(--warn-bg);border-color:var(--warn);color:var(--warn)}
+.sb.a2{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.sb.ana{background:var(--line-2);border-color:var(--ink-3);color:var(--ink-3)}
+.ev{margin-top:9px}
+.ev label{font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:4px}
+.ev textarea{min-height:38px}
+.ev.required label::after{content:" · required for score 2";color:var(--warn);font-weight:600;letter-spacing:0;text-transform:none}
+.ev-flag{font-size:.78rem;color:var(--warn);font-weight:600;margin-top:5px;display:none}
+
+/* ---------- crosswalk ---------- */
+table.xw{width:100%;border-collapse:collapse;font-size:.84rem}
+table.xw th,table.xw td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line-2);vertical-align:top}
+table.xw th{font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);border-bottom:1px solid var(--line)}
+table.xw td:first-child{font:700 .74rem/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink-3);white-space:nowrap}
+.xw-wrap{overflow-x:auto}
+
+/* ---------- references ---------- */
+ol.refs-list{padding-left:20px;margin:0;font-size:.87rem;color:var(--ink-2)}
+ol.refs-list li{margin-bottom:9px}
+ol.refs-list a{color:var(--accent)}
+ol.refs-list .rl-key{font:700 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink);display:inline-block;margin-right:5px}
+
+/* ---------- status bar ---------- */
+.statusbar{position:fixed;left:0;right:0;bottom:0;background:var(--paper);border-top:1px solid var(--line);box-shadow:0 -3px 20px rgba(0,0,0,.09);padding:12px 22px;z-index:60}
+.status-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.verdict{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.95rem;padding:9px 15px;border-radius:999px;white-space:nowrap}
+.v-none{background:var(--line-2);color:var(--ink-3)}
+.v-ready{background:var(--ok-bg);color:var(--ok)}
+.v-cond{background:var(--warn-bg);color:var(--warn)}
+.v-not{background:var(--bad-bg);color:var(--bad)}
+.v-block{background:var(--bad);color:var(--on-fill)}
+.metrics{font:600 .8rem/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink-2)}
+.blockers{flex-basis:100%;font-size:.79rem;color:var(--bad);font-weight:600;line-height:1.5}
+.acts{margin-left:auto;display:flex;gap:7px;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:9px 13px;border-radius:7px;font:600 .83rem/1 inherit;cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--on-fill)}
+.btn.pri:hover{opacity:.88}
+
+footer.doc-foot{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-size:.8rem;color:var(--ink-3);line-height:1.7}
+footer.doc-foot a{color:var(--accent)}
+
+@media print{
+  body{padding-bottom:0;background:#fff}
+  .statusbar{position:static;box-shadow:none;border-top:2px solid #000;margin-top:30px}
+  .acts,.tocnav{display:none}
+  .sb{display:none}
+  .sb.a0,.sb.a1,.sb.a2,.sb.ana{display:inline-block}
+  .dim,.card{break-inside:avoid}
+}
+
+.backlink{
+  display:inline-flex;align-items:center;gap:7px;text-decoration:none;
+  font-size:.82rem;font-weight:600;color:var(--ink-3);
+  border:1px solid var(--line);border-radius:999px;padding:6px 13px;
+  background:var(--paper);margin-bottom:26px;
+}
+.backlink:hover{border-color:var(--accent);color:var(--accent)}
+@media print{.backlink{display:none}}
+
+/* Scoring method card */
+.card.method p{font-size:.92rem;color:var(--ink-2)}
+.card.method p:first-child{margin-top:0}
+.card.method p:last-child{margin-bottom:0}
+.card.method strong{color:var(--ink)}
+.card.method ol{font-size:.9rem;color:var(--ink-2);padding-left:20px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="backlink" href="../">← Lab</a>
+
+
+
+<header class="masthead">
+  <div class="mast-top">
+    <div>
+      <span class="instrument-id">AI Readiness Review · v1.0</span>
+      <h1>AI Readiness Review</h1>
+      <p class="sub">A structured instrument for assessing whether an AI-assisted product experience is fit to ship, scored against published human-AI interaction research and regulatory requirements.</p>
+    </div>
+    <div class="version-block">
+      <b>Instrument</b> AIRR-1.0<br>
+      <b>Released</b> August 2026<br>
+      <b>Criteria</b> 27 across 7 dimensions<br>
+      <b>Author</b> Joseph Alfonso<br>
+      <b>Scope</b> Design-layer review
+    </div>
+  </div>
+</header>
+
+<div class="abstract">
+  <strong>What this instrument is for.</strong> Most AI governance frameworks operate at the organizational or model layer. Very few translate into decisions a designer makes about a specific screen. This instrument sits in that gap: it takes obligations and findings from NIST AI RMF, the EU AI Act, the Microsoft HAX guidelines, Google PAIR, ISO/IEC 42001, and WCAG, and expresses them as reviewable properties of an interface. It is a <strong>design-layer instrument</strong>, it does not assess model performance, data governance, or legal compliance, and it is not a substitute for a formal conformity assessment or legal review.
+</div>
+
+<nav class="tocnav">
+  <a href="#scoping">1 · Scoping</a>
+  <a href="#method">2 · Method</a>
+  <a href="#assessment">3 · Assessment</a>
+  <a href="#crosswalk">4 · Crosswalk</a>
+  <a href="#references">5 · References</a>
+</nav>
+
+<!-- ============ 0 · REVIEW RECORD ============ -->
+<section class="section" id="record">
+  <span class="sec-num">Section 0</span>
+  <h2>Review record</h2>
+  <p class="sec-desc">Identifying metadata for this assessment. Included in every export.</p>
+  <div class="card">
+    <div class="meta-grid">
+      <div><label class="fl" for="m-feature">Feature under review</label><input type="text" id="m-feature" placeholder="e.g. Claims triage assistant"></div>
+      <div><label class="fl" for="m-org">Organization / team</label><input type="text" id="m-org" placeholder="e.g. Platform Experience"></div>
+      <div><label class="fl" for="m-stage">Lifecycle stage</label>
+        <select id="m-stage">
+          <option value="">Select…</option>
+          <option>Concept / exploration</option>
+          <option>Design in progress</option>
+          <option>Pre-handoff</option>
+          <option>Pre-launch gate</option>
+          <option>Post-launch audit</option>
+        </select>
+      </div>
+      <div><label class="fl" for="m-reviewer">Reviewer</label><input type="text" id="m-reviewer" placeholder="Name, role"></div>
+      <div><label class="fl" for="m-date">Review date</label><input type="text" id="m-date" placeholder="e.g. 12 Aug 2026"></div>
+      <div><label class="fl" for="m-artifact">Artifact assessed</label><input type="text" id="m-artifact" placeholder="e.g. Figma v14, staging build"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 1 · SCOPING ============ -->
+<section class="section" id="scoping">
+  <span class="sec-num">Section 1</span>
+  <h2>Risk tier determination</h2>
+  <p class="sec-desc">Rigor should scale with consequence. Answer five screening questions to establish the review tier. The tier sets which criteria act as hard gates and what score thresholds apply, following the risk-proportionate logic used by the EU AI Act and NIST AI RMF's MAP function.</p>
+  <div class="card">
+    <div id="screening"></div>
+    <div class="tier-out" id="tier-out">
+      <span class="tier-badge tier-1" id="tier-badge">Tier not set</span>
+      <p id="tier-desc">Answer the screening questions above to determine the applicable review tier.</p>
+      <div class="thresh" id="tier-thresh"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2 · METHOD ============ -->
+<section class="section" id="method">
+  <span class="sec-num">Section 2</span>
+  <h2>Scoring method</h2>
+  <div class="card method">
+    <p>
+      <strong>Scale.</strong> Each criterion is scored <b>0</b> (not met), <b>1</b> (partially met), or <b>2</b> (met, with evidence). <b>N/A</b> removes a criterion from both the numerator and denominator. A score of 2 requires a stated artifact, test result, or observation in the evidence field, not reviewer impression. This is the primary control on inter-rater drift.
+    </p>
+    <p>
+      <strong>Three independent conditions</strong> must all hold for a <b>Ready</b> verdict. A single aggregate percentage can hide a systemic failure inside a good average, so it is deliberately not the only test.
+    </p>
+    <ol>
+      <li><b>Composite threshold</b> — total score meets the tier minimum.</li>
+      <li><b>Dimension floor</b> — no single dimension falls below the tier floor. Prevents one neglected area being averaged away by strength elsewhere.</li>
+      <li><b>Gate clearance</b> — every gate criterion active at this tier is satisfied. Gates encode obligations that cannot be traded off, largely derived from EU AI Act Articles 13, 14 and 50. A failed gate returns <b>Blocked</b> regardless of composite score.</li>
+    </ol>
+    <p>
+      <strong>Verdicts.</strong>
+      <b>Ready</b>: all three conditions met.
+      <b>Conditional</b>: composite met, one other condition failed, re-review required after remediation.
+      <b>Not ready</b>: composite below threshold.
+      <b>Blocked</b>: an active gate scored 0 at Tier 2, or below 2 at Tier 3.
+    </p>
+  </div>
+</section>
+
+<!-- ============ 3 · ASSESSMENT ============ -->
+<section class="section" id="assessment">
+  <span class="sec-num">Section 3</span>
+  <h2>Assessment</h2>
+  <p class="sec-desc">Twenty-seven criteria across seven dimensions. Each carries source references, click a reference chip to jump to the citation.</p>
+  <div id="dims"></div>
+</section>
+
+<!-- ============ 4 · CROSSWALK ============ -->
+<section class="section" id="crosswalk">
+  <span class="sec-num">Section 4</span>
+  <h2>Framework crosswalk</h2>
+  <p class="sec-desc">Every criterion mapped to its source obligation or finding. Use this to show a compliance, legal, or risk partner that a design review already covers ground they care about.</p>
+  <div class="card xw-wrap">
+    <table class="xw"><thead><tr><th scope="col">ID</th><th scope="col">Criterion</th><th scope="col">Source references</th></tr></thead><tbody id="xw-body"></tbody></table>
+  </div>
+</section>
+
+<!-- ============ 5 · REFERENCES ============ -->
+<section class="section" id="references">
+  <span class="sec-num">Section 5</span>
+  <h2>References</h2>
+  <p class="sec-desc">Primary sources underpinning this instrument. Reference keys used throughout appear in monospace.</p>
+  <div class="card">
+    <ol class="refs-list" id="refs-list"></ol>
+  </div>
+</section>
+
+<footer class="doc-foot">
+  <strong>AI Readiness Review v1.0</strong> · Compiled by Joseph Alfonso, <a href="https://josephalfonso.com/">josephalfonso.com</a> · <a href="methodology.md">Full methodology</a><br>
+  This instrument runs entirely in the browser and retains no data between sessions. Export before closing.<br>
+  Regulatory citations reflect published text as of August 2026 and are provided for design guidance. They are not legal advice and do not constitute a conformity assessment. Verify current obligations with qualified counsel.
+</footer>
+</div>
+
+<div class="statusbar">
+  <div class="status-inner">
+    <span class="verdict v-none" id="verdict">Not scored</span>
+    <span class="metrics" id="metrics"></span>
+    <div class="acts">
+      <button class="btn" id="b-reset">Reset</button>
+      <button class="btn" id="b-print">Print / PDF</button>
+      <button class="btn" id="b-json">Export JSON</button>
+      <button class="btn pri" id="b-md">Copy report</button>
+    </div>
+    <div class="blockers" id="blockers"></div>
+  </div>
+</div>
+
+<script>
+/* ======================= REFERENCE LIBRARY ======================= */
+const REFS = {
+  NIST:   {key:"NIST AI 100-1", full:"National Institute of Standards and Technology (2023). <i>Artificial Intelligence Risk Management Framework (AI RMF 1.0)</i>, NIST AI 100-1. Core functions GOVERN, MAP, MEASURE, MANAGE; seven trustworthiness characteristics.", url:"https://airc.nist.gov/airmf-resources/airmf/"},
+  NISTG:  {key:"NIST AI 600-1", full:"National Institute of Standards and Technology (2024). <i>Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile</i>, NIST AI 600-1. Twelve risk categories including Confabulation and Human-AI Configuration.", url:"https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf"},
+  AIA13:  {key:"AI Act Art. 13", full:"Regulation (EU) 2024/1689 (AI Act), Article 13 — <i>Transparency and provision of information to deployers</i>. High-risk systems must be sufficiently transparent for deployers to interpret and appropriately use output. Instructions for use must cover accuracy and its metrics, robustness, circumstances affecting accuracy, and human oversight measures. Several sub-items, including performance regarding specific persons or groups, are qualified &ldquo;where applicable&rdquo; or &ldquo;when appropriate.&rdquo;", url:"https://artificialintelligenceact.eu/article/13/"},
+  AIA14:  {key:"AI Act Art. 14", full:"Regulation (EU) 2024/1689 (AI Act), Article 14 — <i>Human oversight</i>. A <b>provider</b> obligation: the system must be delivered so that assigned overseers are enabled, <i>as appropriate and proportionate</i>, to understand its capacities and limitations, remain aware of automation bias, correctly interpret output, disregard or override output, and interrupt the system.", url:"https://artificialintelligenceact.eu/article/14/"},
+  AIA50:  {key:"AI Act Art. 50", full:"Regulation (EU) 2024/1689 (AI Act), Article 50 — <i>Transparency obligations for providers and deployers of certain AI systems</i>. Persons must be informed they are interacting with an AI system unless that is obvious, clearly and at latest at first interaction, conforming to applicable accessibility requirements. A narrow exemption applies to systems authorised by law for criminal-offence detection and prosecution.", url:"https://artificialintelligenceact.eu/article/50/"},
+  HAX:    {key:"HAX G1–G18", full:"Amershi, S. et al. (2019). <i>Guidelines for Human-AI Interaction</i>. CHI '19 Proceedings, ACM. Eighteen guidelines validated across 20 products, grouped as Initially, During interaction, When wrong, Over time. Maintained as the Microsoft HAX Toolkit.", url:"https://www.microsoft.com/en-us/haxtoolkit/ai-guidelines/"},
+  PAIR:   {key:"PAIR Guidebook", full:"Google People + AI Research (2019, updated for generative AI). <i>People + AI Guidebook</i>. Chapters: User Needs + Defining Success, Data Collection + Evaluation, Mental Models, Explainability + Trust, Feedback + Control, Errors + Graceful Failure.", url:"https://pair.withgoogle.com/guidebook-v2/"},
+  ISO:    {key:"ISO/IEC 42001", full:"ISO/IEC 42001:2023 — <i>Information technology, Artificial intelligence, Management system</i>. Annex A controls including A.5 Assessing impacts of AI systems, A.6 AI system life cycle, A.8 Information for interested parties.", url:"https://www.iso.org/standard/42001"},
+  WCAG:   {key:"WCAG 2.2", full:"W3C Web Content Accessibility Guidelines 2.2. W3C Recommendation 5 October 2023, republished with editorial updates 12 December 2024. Level AA is the level referenced by EN 301 549, Section 508, and the European Accessibility Act.", url:"https://www.w3.org/WAI/standards-guidelines/wcag/"},
+  W3CAI:  {key:"W3C AI-A11y", full:"W3C Accessible Platform Architectures WG. <i>Accessibility of machine learning and generative AI</i> — <b>Editor's Draft, work in progress.</b> Documents that automated alternative text delivers only &ldquo;a basic and minimised understanding of an image,&rdquo; and that automatic speech recognition captioning is &ldquo;still not adequately accessible as a standalone feature,&rdquo; recommending it as a complementary tool alongside curated content. Cited here for those specific findings only; the draft explicitly states it should not be cited as other than a work in progress.", url:"https://w3c.github.io/ai-accessibility/"},
+  PR97:   {key:"Parasuraman 1997", full:"Parasuraman, R. &amp; Riley, V. (1997). <i>Humans and Automation: Use, Misuse, Disuse, Abuse</i>. Human Factors 39(2), 230–253. Foundational treatment of automation <i>misuse</i>, defined as over-reliance on automation resulting in failures of monitoring or decision biases. Note: the term &ldquo;automation bias&rdquo; originates with Mosier &amp; Skitka, which this paper cites.", url:"https://journals.sagepub.com/doi/10.1518/001872097778543886"},
+  MS96:   {key:"Mosier 1996", full:"Mosier, K. L. &amp; Skitka, L. J. (1996). <i>Human Decision Makers and Automated Decision Aids: Made for Each Other?</i> In Parasuraman &amp; Mouloua (eds.), Automation and Human Performance. Origin of the term &ldquo;automation bias&rdquo;: the tendency to over-trust automated cues and under-weigh contradictory evidence.", url:"https://psycnet.apa.org/record/1996-97323-008"},
+};
+
+/* ======================= SCREENING ======================= */
+const SCREEN = [
+  {id:"s1", q:"Does the output influence a decision about a person's employment, finances, health, housing, legal status, education, or benefits?",
+   ref:"Mirrors the EU AI Act Annex III high-risk domains."},
+  {id:"s2", q:"Can the system take an action, or commit a result, without a human confirming it first?",
+   ref:"Autonomy without confirmation raises the oversight burden under AI Act Art. 14."},
+  {id:"s3", q:"Does the feature process personal, sensitive, or identifiable data?",
+   ref:"Engages privacy-enhancement as a trustworthiness characteristic (NIST AI 100-1)."},
+  {id:"s4", q:"Will non-expert, vulnerable, or unsupported users rely on the output without a specialist intermediary?",
+   ref:"Determines whether explanation must be legible to a lay audience."},
+  {id:"s5", q:"Are the effects of a wrong output slow, costly, or impossible to reverse?",
+   ref:"Reversibility governs how much recovery design is required (PAIR, Errors + Graceful Failure)."},
+];
+
+const TIERS = {
+  1:{name:"Tier 1 — Routine", desc:"Low-consequence assistive feature. Errors are visible, cheap, and reversible by the user. Gate criteria are recorded but not enforced.", composite:70, floor:40, gateLevel:99},
+  2:{name:"Tier 2 — Elevated", desc:"The output shapes a meaningful decision or the system acts with partial autonomy. Tier 2 gates are enforced and must score at least 1.", composite:80, floor:50, gateLevel:2},
+  3:{name:"Tier 3 — Consequential", desc:"The output materially affects a person's rights, livelihood, or wellbeing, or is hard to reverse. All gates are enforced and must score 2. Treat this review as a launch gate, not a critique.", composite:90, floor:67, gateLevel:2},
+};
+
+/* ======================= CRITERIA ======================= */
+const DIMS = [
+  {code:"D1", title:"Capability disclosure", desc:"Whether the user knows an AI is involved, what it is for, and how well it performs, before they rely on it.",
+   crit:[
+    {id:"D1.1", text:"Users are told they are interacting with an AI system, clearly and at or before first interaction.",
+     detail:"Met: a persistent, legible indicator at the point of interaction. <em>Not met: disclosure buried in a terms page, a settings screen, or a one-time dismissed modal.</em>",
+     refs:["AIA50","HAX"], gate:2},
+    {id:"D1.2", text:"Expected reliability is communicated in terms the user can act on, not as an unqualified capability claim.",
+     detail:"Met: \"correct on roughly 4 of 5 standard cases, less reliable on multi-entity documents.\" <em>Not met: silence, or marketing language implying near-perfect accuracy.</em>",
+     refs:["HAX","AIA13","NIST"], gate:null},
+    {id:"D1.3", text:"Scope boundaries are stated: the interface communicates what the system is not for.",
+     detail:"Met: explicit out-of-scope statement near the point of use. <em>Not met: boundaries known internally but never surfaced, leaving users to discover them through failure.</em>",
+     refs:["HAX","PAIR","AIA13"], gate:null},
+    {id:"D1.4", text:"Expectation-setting is staged across the experience rather than front-loaded into a single disclaimer.",
+     detail:"Met: onboarding introduces capability progressively and reinforces limits in context. <em>Not met: a wall of caveats at signup that no one reads and nothing thereafter.</em>",
+     refs:["PAIR"], gate:null},
+   ]},
+  {code:"D2", title:"Output legibility", desc:"Whether a user can tell why the system produced this result and how much to trust it.",
+   crit:[
+    {id:"D2.1", text:"Uncertainty is expressed per output and reflects actual model confidence rather than a fixed decorative label.",
+     detail:"Met: a confidence signal that meaningfully varies and has been checked against real output distribution. <em>Not met: every result labelled \"High confidence,\" or confidence shown as an unexplained bare number.</em>",
+     refs:["NIST","HAX","NISTG"], gate:null},
+    {id:"D2.2", text:"The reason for a given output is available at the point of decision, in plain language.",
+     detail:"Met: a short, specific rationale visible or one interaction away, where the user acts. <em>Not met: rationale accessible only through support escalation, engineering logs, or a separate documentation site.</em>",
+     refs:["HAX","AIA13","NIST"], gate:2},
+    {id:"D2.3", text:"Output is traceable to the inputs, records, or rules that produced it.",
+     detail:"Met: \"flagged because the record in System B shows a conflicting value.\" <em>Not met: an unattributed flag the user cannot investigate or contest.</em>",
+     refs:["NIST","ISO","AIA13"], gate:null},
+    {id:"D2.4", text:"Confidence signals and explanations are conveyed non-visually as well as visually.",
+     detail:"Met: uncertainty and rationale are exposed to assistive technology, verified by test, not by inspecting markup. <em>Not met: confidence encoded only in color, icon, or position.</em>",
+     refs:["WCAG","AIA50","W3CAI"], gate:2},
+   ]},
+  {code:"D3", title:"Human agency and oversight", desc:"Whether a person remains genuinely in control, and whether the design supports rather than erodes their judgment.",
+   crit:[
+    {id:"D3.1", text:"The user can see what the system proposes to do before it takes effect.",
+     detail:"Met: a distinct proposal or preview state preceding commitment. <em>Not met: the action completes and an undo affordance appears afterwards.</em>",
+     refs:["AIA14","HAX"], gate:2},
+    {id:"D3.2", text:"A person can disregard, override, or reverse the output without engineering assistance.",
+     detail:"Met: an in-product override control available to the operating role. <em>Not met: correcting a wrong output requires a bug ticket, a data fix, or a support request.</em>",
+     refs:["AIA14","HAX"], gate:2},
+    {id:"D3.3", text:"Consequential actions require explicit human confirmation; the system does not execute them silently.",
+     detail:"Met: an affirmative approve or reject step for anything with material effect on a person. <em>Not met: automatic execution with notification after the fact.</em>",
+     refs:["AIA14"], gate:2},
+    {id:"D3.4", text:"The design actively counters automation bias rather than encouraging uncritical acceptance.",
+     detail:"Met: the interface makes independent verification easy and does not pre-select or visually privilege the AI's answer. <em>Not met: a pre-checked recommendation, or a review flow where accepting is one click and disagreeing is six.</em>",
+     refs:["AIA14","PR97","MS96","NISTG"], gate:3},
+   ]},
+  {code:"D4", title:"Uncertainty and failure design", desc:"What the experience does when the system is unsure, wrong, or outside its competence. Every AI feature will be here eventually.",
+   crit:[
+    {id:"D4.1", text:"An explicit \"cannot determine\" state exists and is structurally distinct from a confident answer.",
+     detail:"Met: a designed abstention state that routes to human review. <em>Not met: every input receives a confident-looking answer regardless of input quality, the classic confabulation failure.</em>",
+     refs:["PAIR","HAX","NISTG"], gate:2},
+    {id:"D4.2", text:"Low-confidence output receives different visual and interaction treatment from high-confidence output.",
+     detail:"Met: uncertain results are visibly and behaviorally distinct, for example requiring an extra confirmation. <em>Not met: identical presentation, leaving the user to guess.</em>",
+     refs:["HAX","PAIR"], gate:null},
+    {id:"D4.3", text:"A designed recovery path exists for AI-specific errors, separate from generic system error handling.",
+     detail:"Met: a flow addressing what the user does when the AI is confidently wrong, including how to correct it and what happens to the correction. <em>Not met: AI failures fall through to the same toast as a network timeout.</em>",
+     refs:["PAIR","HAX"], gate:2},
+    {id:"D4.4", text:"Failure is contained: one bad output does not block, corrupt, or silently alter unrelated work.",
+     detail:"Met: in a batch, a flagged item is isolated while the rest proceed. <em>Not met: an all-or-nothing operation where one unresolvable row halts the set.</em>",
+     refs:["NIST","PAIR"], gate:null},
+   ]},
+  {code:"D5", title:"Equity and accessibility", desc:"Whether the experience holds up across the full user population, not the reference user it was designed against.",
+   crit:[
+    {id:"D5.1", text:"The AI-specific interface has been tested with assistive technology, not only reviewed visually or inherited from a component library.",
+     detail:"Met: a screen reader and keyboard-only pass on the AI surfaces themselves, with findings recorded. <em>Not met: \"our design system is accessible\" offered as the answer.</em>",
+     refs:["WCAG","W3CAI"], gate:2},
+    {id:"D5.2", text:"Performance disparities across user subgroups, languages, or regions have been measured rather than assumed absent.",
+     detail:"Met: documented evaluation across representative name, language, and data patterns. <em>Not met: no subgroup testing, or testing on a single locale generalized to all.</em>",
+     refs:["NIST","NISTG","AIA13","HAX"], gate:3},
+    {id:"D5.3", text:"AI-generated accessibility content is human-reviewed before it is relied upon.",
+     detail:"Met: machine-generated alt text, captions, or plain-language summaries are treated as complementary to curated content and reviewed before being relied on. <em>Not met: raw model output shipped as a standalone accessibility feature, which W3C's draft finds inadequate for both automated alt text and ASR captioning.</em>",
+     refs:["W3CAI","WCAG"], gate:null},
+    {id:"D5.4", text:"The experience adapts to user context and stakes rather than offering one undifferentiated path.",
+     detail:"Met: a plain-language or simplified path for users facing the highest consequences and the least support. <em>Not met: an expert-oriented interface presented identically to every audience.</em>",
+     refs:["HAX","PAIR"], gate:null},
+   ]},
+  {code:"D6", title:"Demonstrated value", desc:"Whether the AI actually improves the work, measured against a baseline, rather than relocating complexity somewhere less visible.",
+   crit:[
+    {id:"D6.1", text:"The efficiency or quality claim is measured against a real pre-AI baseline, not estimated.",
+     detail:"Met: instrumented task timing or error rates with defined start and end points, before and after. <em>Not met: a stakeholder demo, or a percentage derived from an assumption.</em>",
+     refs:["NIST","ISO"], gate:null},
+    {id:"D6.2", text:"Complexity is genuinely removed rather than displaced into a downstream step, another team, or a later moment.",
+     detail:"Met: an end-to-end step and tool count that falls. <em>Not met: the front end looks simpler while a support team absorbs the reconciliation.</em>",
+     refs:["NIST","PAIR"], gate:null},
+    {id:"D6.3", text:"A granular feedback mechanism exists and demonstrably routes into system improvement.",
+     detail:"Met: per-output feedback with a defined owner and review cadence. <em>Not met: a thumbs-up control whose data nobody reads.</em>",
+     refs:["HAX","PAIR"], gate:null},
+    {id:"D6.4", text:"Post-deployment monitoring is defined, with a named owner and a threshold that triggers action.",
+     detail:"Met: a documented metric, threshold, owner, and escalation path. <em>Not met: monitoring described as an intention with no trigger condition.</em>",
+     refs:["NIST","ISO"], gate:null},
+   ]},
+  {code:"D7", title:"Accountability record", desc:"Whether the decisions behind this experience are documented well enough to be defended, inherited, or audited later.",
+   crit:[
+    {id:"D7.1", text:"Known limitations are documented in a form that actually reaches the people who deploy and use the system.",
+     detail:"Met: limitations expressed in operator-facing documentation and reflected in the interface. <em>Not met: limitations known only to the build team.</em>",
+     refs:["AIA13","ISO"], gate:2},
+    {id:"D7.2", text:"A named human owner is accountable for this feature's behavior in production.",
+     detail:"Met: a specific person or role, not a team alias, answerable for the AI's output. <em>Not met: distributed ownership with no one designated.</em>",
+     refs:["NIST","ISO"], gate:null},
+    {id:"D7.3", text:"An impact assessment covering affected individuals and groups was completed before launch.",
+     detail:"Met: a documented assessment identifying who is affected and how, including those who are not direct users. <em>Not met: impact considered informally or only for the primary persona.</em>",
+     refs:["ISO","NIST"], gate:3},
+   ]},
+];
+
+/* ======================= STATE ======================= */
+const S = {screen:{}, score:{}, evidence:{}, tier:null};
+
+/* ======================= BUILD: SCREENING ======================= */
+function buildScreening(){
+  const host = document.getElementById('screening');
+  SCREEN.forEach(s => {
+    const row = document.createElement('div');
+    row.className = 'screen-q';
+    row.innerHTML = `<div><p class="qtext">${s.q}</p><p class="qref">${s.ref}</p></div>
+      <div class="yn" id="yn-${s.id}">
+        <button type="button" data-v="yes">Yes</button>
+        <button type="button" data-v="no">No</button>
+      </div>`;
+    host.appendChild(row);
+    row.querySelectorAll('.yn button').forEach(b => {
+      b.addEventListener('click', () => {
+        S.screen[s.id] = (S.screen[s.id] === b.dataset.v) ? undefined : b.dataset.v;
+        paintScreen(s.id); computeTier(); render();
+      });
+    });
+  });
+}
+function paintScreen(id){
+  document.querySelectorAll(`#yn-${id} button`).forEach(b => {
+    b.classList.remove('on-yes','on-no');
+    if(S.screen[id] === b.dataset.v) b.classList.add(b.dataset.v === 'yes' ? 'on-yes' : 'on-no');
+  });
+}
+function computeTier(){
+  const answered = SCREEN.filter(s => S.screen[s.id]).length;
+  if(answered < SCREEN.length){ S.tier = null; paintTier(); return; }
+  const yes = SCREEN.filter(s => S.screen[s.id] === 'yes').length;
+  const q1 = S.screen.s1 === 'yes', q2 = S.screen.s2 === 'yes';
+  if(yes >= 3 || (q1 && q2)) S.tier = 3;
+  else if(yes >= 1) S.tier = 2;
+  else S.tier = 1;
+  paintTier();
+}
+function paintTier(){
+  const badge = document.getElementById('tier-badge');
+  const desc  = document.getElementById('tier-desc');
+  const th    = document.getElementById('tier-thresh');
+  if(!S.tier){
+    badge.className = 'tier-badge tier-1'; badge.textContent = 'Tier not set';
+    desc.textContent = 'Answer all five screening questions above to determine the applicable review tier.';
+    th.textContent = '';
+    return;
+  }
+  const t = TIERS[S.tier];
+  badge.className = 'tier-badge tier-' + S.tier;
+  badge.textContent = t.name;
+  desc.textContent = t.desc;
+  const gateNote = S.tier === 1 ? 'gates not enforced'
+    : S.tier === 2 ? 'Tier 2 gates must score ≥ 1'
+    : 'all gates must score 2';
+  th.textContent = `Composite threshold ${t.composite}%  ·  dimension floor ${t.floor}%  ·  ${gateNote}`;
+}
+
+/* ======================= BUILD: DIMENSIONS ======================= */
+function refChips(keys){
+  return keys.map(k => `<a class="ref" href="#ref-${k}" title="${REFS[k].key}">${REFS[k].key}</a>`).join('');
+}
+function buildDims(){
+  const host = document.getElementById('dims');
+  DIMS.forEach(d => {
+    const box = document.createElement('div');
+    box.className = 'dim';
+    box.innerHTML = `<div class="dim-head">
+        <div class="dim-head-row">
+          <div><span class="dim-code">${d.code}</span><span class="dim-title">${d.title}</span></div>
+          <div class="dim-score" id="ds-${d.code}">—</div>
+        </div>
+        <p class="dim-desc">${d.desc}</p>
+      </div>`;
+    d.crit.forEach(c => {
+      const el = document.createElement('div');
+      el.className = 'crit';
+      el.innerHTML = `
+        <div class="crit-row">
+          <div>
+            <span class="crit-id">${c.id}</span>${c.gate ? `<span class="gate-tag dormant" id="gt-${c.id}">Gate T${c.gate}+</span>` : ''}
+            <p class="crit-text">${c.text}</p>
+            <p class="crit-detail">${c.detail}</p>
+            <div class="refs">${refChips(c.refs)}</div>
+          </div>
+          <div class="scorer" id="sc-${c.id}">
+            <button type="button" class="sb" data-v="0">0</button>
+            <button type="button" class="sb" data-v="1">1</button>
+            <button type="button" class="sb" data-v="2">2</button>
+            <button type="button" class="sb" data-v="na">N/A</button>
+          </div>
+        </div>
+        <div class="ev" id="ev-${c.id}">
+          <label for="evi-${c.id}">Evidence</label>
+          <textarea id="evi-${c.id}" placeholder="Artifact, test result, or observation supporting this score…"></textarea>
+          <div class="ev-flag" id="evf-${c.id}">Score of 2 recorded without evidence. Add an artifact reference or reduce to 1.</div>
+        </div>`;
+      box.appendChild(el);
+      el.querySelectorAll('.sb').forEach(b => {
+        b.addEventListener('click', () => {
+          S.score[c.id] = (S.score[c.id] === b.dataset.v) ? undefined : b.dataset.v;
+          paintCrit(c.id); render();
+        });
+      });
+      el.querySelector('textarea').addEventListener('input', e => {
+        S.evidence[c.id] = e.target.value; render();
+      });
+    });
+    host.appendChild(box);
+  });
+}
+function paintCrit(id){
+  document.querySelectorAll(`#sc-${CSS.escape(id)} .sb`).forEach(b => {
+    b.classList.remove('a0','a1','a2','ana');
+    if(S.score[id] === b.dataset.v){
+      b.classList.add(b.dataset.v === 'na' ? 'ana' : 'a' + b.dataset.v);
+    }
+  });
+}
+
+/* ======================= BUILD: CROSSWALK + REFS ======================= */
+function buildCrosswalk(){
+  const body = document.getElementById('xw-body');
+  DIMS.forEach(d => d.crit.forEach(c => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${c.id}</td><td>${c.text}</td><td>${c.refs.map(k=>REFS[k].key).join(' · ')}</td>`;
+    body.appendChild(tr);
+  }));
+}
+function buildRefs(){
+  const ol = document.getElementById('refs-list');
+  Object.entries(REFS).forEach(([k,r]) => {
+    const li = document.createElement('li');
+    li.id = 'ref-' + k;
+    li.innerHTML = `<span class="rl-key">[${r.key}]</span> ${r.full} <a href="${r.url}" target="_blank" rel="noopener">Source</a>`;
+    ol.appendChild(li);
+  });
+}
+
+/* ======================= SCORING ======================= */
+function evaluate(){
+  const tier = S.tier;
+  const gateLevel = tier ? TIERS[tier].gateLevel : 99;
+  let earned = 0, possible = 0, scoredCount = 0;
+  const dimResults = [];
+  const gateFails = [], evidenceGaps = [];
+
+  DIMS.forEach(d => {
+    let de = 0, dp = 0;
+    d.crit.forEach(c => {
+      const v = S.score[c.id];
+      const gateActive = !!c.gate && tier && c.gate >= gateLevel;
+
+      if(c.gate){
+        const tag = document.getElementById('gt-' + c.id);
+        if(tag){
+          tag.className = 'gate-tag' + (gateActive ? '' : ' dormant');
+          tag.textContent = gateActive ? (tier === 3 ? 'Gate · must score 2' : 'Gate · active') : `Gate T${c.gate}+`;
+        }
+      }
+      const evEl = document.getElementById('ev-' + c.id);
+      const evFlag = document.getElementById('evf-' + c.id);
+      const hasEv = (S.evidence[c.id] || '').trim().length > 0;
+      if(v === '2' && !hasEv){ if(evEl) evEl.classList.add('required'); if(evFlag) evFlag.style.display='block'; evidenceGaps.push(c.id); }
+      else { if(evEl) evEl.classList.remove('required'); if(evFlag) evFlag.style.display='none'; }
+
+      if(v === undefined) return;
+      scoredCount++;              // N/A is a deliberate review judgment, it counts as reviewed
+      if(v === 'na') return;      // ...but is excluded from the numerator and denominator
+      const n = parseInt(v,10);
+      de += n; dp += 2; earned += n; possible += 2;
+
+      if(gateActive){
+        if(tier === 3 && n < 2) gateFails.push(c.id);
+        else if(tier === 2 && n === 0) gateFails.push(c.id);
+      }
+    });
+    const pct = dp ? Math.round(de/dp*100) : null;
+    dimResults.push({code:d.code, title:d.title, earned:de, possible:dp, pct});
+    const el = document.getElementById('ds-' + d.code);
+    if(el){
+      el.textContent = dp ? `${de}/${dp} · ${pct}%` : '—';
+      const floor = tier ? TIERS[tier].floor : 0;
+      el.classList.toggle('low', pct !== null && tier && pct < floor);
+    }
+  });
+
+  const composite = possible ? Math.round(earned/possible*100) : null;
+  const totalCrit = DIMS.reduce((a,d)=>a+d.crit.length,0);
+  let verdict = 'none', reasons = [];
+
+  if(composite === null){ verdict = 'none'; }
+  else if(!tier){ verdict = 'none'; reasons.push('Complete Section 1 to determine the review tier before a verdict can be issued.'); }
+  else {
+    const T = TIERS[tier];
+    const floorFails = dimResults.filter(r => r.pct !== null && r.pct < T.floor);
+    if(gateFails.length){
+      verdict = 'block';
+      reasons.push('Gate failure — ' + gateFails.join(', '));
+    } else if(composite < T.composite){
+      verdict = 'not';
+      reasons.push(`Composite ${composite}% below Tier ${tier} threshold of ${T.composite}%.`);
+    } else if(floorFails.length){
+      verdict = 'cond';
+      reasons.push('Dimension floor not met — ' + floorFails.map(f=>`${f.code} at ${f.pct}%`).join(', ') + `. Tier ${tier} floor is ${T.floor}%.`);
+    } else if(scoredCount < totalCrit){
+      verdict = 'cond';
+      const gap = totalCrit - scoredCount;
+      reasons.push(`${gap} ${gap === 1 ? 'criterion' : 'criteria'} unscored. Complete the assessment to confirm readiness.`);
+    } else {
+      verdict = 'ready';
+    }
+    if(evidenceGaps.length) reasons.push(`Evidence missing for score of 2 at: ${evidenceGaps.join(', ')}.`);
+  }
+  return {composite, earned, possible, scoredCount, totalCrit, dimResults, verdict, reasons, gateFails, evidenceGaps, tier};
+}
+
+const VERDICT_META = {
+  none:  {cls:'v-none',  label:'Not scored'},
+  ready: {cls:'v-ready', label:'Ready'},
+  cond:  {cls:'v-cond',  label:'Conditional'},
+  not:   {cls:'v-not',   label:'Not ready'},
+  block: {cls:'v-block', label:'Blocked'},
+};
+
+function render(){
+  const r = evaluate();
+  const vEl = document.getElementById('verdict');
+  const m = VERDICT_META[r.verdict];
+  vEl.className = 'verdict ' + m.cls;
+  vEl.textContent = m.label;
+  document.getElementById('metrics').textContent = r.composite === null ? ''
+    : `${r.earned}/${r.possible} pts · ${r.composite}% · ${r.scoredCount}/${r.totalCrit} scored${r.tier ? ' · Tier ' + r.tier : ''}`;
+  document.getElementById('blockers').textContent = r.reasons.join('  ');
+  return r;
+}
+
+/* ======================= EXPORT ======================= */
+function meta(){
+  const g = id => (document.getElementById(id).value || '').trim();
+  return {feature:g('m-feature'), organization:g('m-org'), stage:g('m-stage'),
+          reviewer:g('m-reviewer'), date:g('m-date'), artifact:g('m-artifact')};
+}
+function buildMarkdown(){
+  const r = evaluate(), M = meta();
+  const L = [];
+  L.push(`# AI Readiness Review (v1.0)`);
+  L.push(``);
+  L.push(`**Feature:** ${M.feature || '—'}`);
+  L.push(`**Organization:** ${M.organization || '—'}  |  **Stage:** ${M.stage || '—'}`);
+  L.push(`**Reviewer:** ${M.reviewer || '—'}  |  **Date:** ${M.date || '—'}`);
+  L.push(`**Artifact assessed:** ${M.artifact || '—'}`);
+  L.push(``);
+  L.push(`## Verdict: ${VERDICT_META[r.verdict].label}`);
+  if(r.tier) L.push(`Risk tier: **${TIERS[r.tier].name}** (composite threshold ${TIERS[r.tier].composite}%, dimension floor ${TIERS[r.tier].floor}%)`);
+  if(r.composite !== null) L.push(`Composite score: **${r.earned}/${r.possible} = ${r.composite}%** across ${r.scoredCount} of ${r.totalCrit} criteria`);
+  if(r.reasons.length){ L.push(``); r.reasons.forEach(x => L.push(`> ${x}`)); }
+  L.push(``);
+  L.push(`### Screening`);
+  SCREEN.forEach(s => L.push(`- ${(S.screen[s.id]||'unanswered').toUpperCase()} — ${s.q}`));
+  L.push(``);
+  L.push(`### Dimension scores`);
+  L.push(``);
+  L.push(`| Dimension | Score | % |`);
+  L.push(`|---|---|---|`);
+  r.dimResults.forEach(d => L.push(`| ${d.code} ${d.title} | ${d.possible ? d.earned + '/' + d.possible : '—'} | ${d.pct === null ? '—' : d.pct + '%'} |`));
+  L.push(``);
+  L.push(`### Detail`);
+  DIMS.forEach(d => {
+    L.push(``);
+    L.push(`#### ${d.code} · ${d.title}`);
+    d.crit.forEach(c => {
+      const v = S.score[c.id];
+      const lab = v === undefined ? '–' : (v === 'na' ? 'N/A' : v);
+      const gateActive = !!c.gate && r.tier && c.gate >= TIERS[r.tier].gateLevel;
+      L.push(`- **[${lab}] ${c.id}**${gateActive ? ' *(gate)*' : ''} ${c.text}`);
+      L.push(`  - Refs: ${c.refs.map(k=>REFS[k].key).join(', ')}`);
+      const e = (S.evidence[c.id]||'').trim();
+      if(e) L.push(`  - Evidence: ${e}`);
+    });
+  });
+  L.push(``);
+  L.push(`---`);
+  L.push(`Scored with the AI Readiness Review v1.0. Design-layer instrument mapped to NIST AI 100-1, NIST AI 600-1, EU AI Act Arts. 13/14/50, Microsoft HAX guidelines, Google PAIR, ISO/IEC 42001, and WCAG 2.2. Not a legal or conformity assessment.`);
+  return L.join('\n');
+}
+function buildJSON(){
+  const r = evaluate();
+  return JSON.stringify({
+    instrument:{id:'AIRR', name:'AI Readiness Review', version:'1.0'},
+    record: meta(),
+    screening: SCREEN.map(s => ({id:s.id, question:s.q, answer:S.screen[s.id] || null})),
+    tier: r.tier,
+    thresholds: r.tier ? TIERS[r.tier] : null,
+    verdict: VERDICT_META[r.verdict].label,
+    composite: r.composite,
+    points:{earned:r.earned, possible:r.possible},
+    coverage:{scored:r.scoredCount, total:r.totalCrit},
+    dimensions: r.dimResults,
+    gateFailures: r.gateFails,
+    evidenceGaps: r.evidenceGaps,
+    criteria: DIMS.flatMap(d => d.crit.map(c => ({
+      id:c.id, dimension:d.code, criterion:c.text,
+      gateTier:c.gate, references:c.refs.map(k=>REFS[k].key),
+      score: S.score[c.id] === undefined ? null : S.score[c.id],
+      evidence: (S.evidence[c.id]||'').trim() || null
+    })))
+  }, null, 2);
+}
+
+document.getElementById('b-md').addEventListener('click', () => {
+  const txt = buildMarkdown();
+  const btn = document.getElementById('b-md');
+  navigator.clipboard.writeText(txt).then(() => {
+    const o = btn.textContent; btn.textContent = 'Copied'; setTimeout(()=>btn.textContent=o,1500);
+  }).catch(() => {
+    const w = window.open('', '_blank');
+    if(w){ w.document.write('<pre>' + txt.replace(/[&<>]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[ch])) + '</pre>'); }
+  });
+});
+document.getElementById('b-json').addEventListener('click', () => {
+  const blob = new Blob([buildJSON()], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const f = (meta().feature || 'review').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  a.href = url; a.download = `ai-readiness-review-${f || 'untitled'}.json`;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(()=>URL.revokeObjectURL(url), 1000);
+});
+document.getElementById('b-print').addEventListener('click', () => window.print());
+document.getElementById('b-reset').addEventListener('click', () => {
+  if(!confirm('Clear the entire review? This cannot be undone.')) return;
+  Object.keys(S.screen).forEach(k=>delete S.screen[k]);
+  Object.keys(S.score).forEach(k=>delete S.score[k]);
+  Object.keys(S.evidence).forEach(k=>delete S.evidence[k]);
+  S.tier = null;
+  document.querySelectorAll('.yn button').forEach(b=>b.classList.remove('on-yes','on-no'));
+  document.querySelectorAll('.sb').forEach(b=>b.classList.remove('a0','a1','a2','ana'));
+  document.querySelectorAll('.ev textarea').forEach(t=>t.value='');
+  document.querySelectorAll('#record input, #record select').forEach(i=>i.value='');
+  paintTier(); render();
+});
+
+/* ======================= INIT ======================= */
+buildScreening();
+buildDims();
+buildCrosswalk();
+buildRefs();
+paintTier();
+render();
+</script>
+</body>
+</html>
