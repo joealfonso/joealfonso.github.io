@@ -85,7 +85,7 @@
 
           <aside class="article-summary" aria-labelledby="summary-label">
             <p class="article-summary__label" id="summary-label">The short version</p>
-            <p class="article-summary__lead">An eval is a behavior spec. The rubric, the raters, and the test conditions shape what ships as much as any screen does, so designers should own them.</p>
+            <p class="article-summary__lead">An eval is a behavior spec. The rubric and the people grading against it shape what ships as much as any screen does, so designers should own them.</p>
             <ul class="article-summary__points">
               <li><strong>Read before you define:</strong> what &ldquo;good&rdquo; means shows up in real outputs, not in a rubric written up front.</li>
               <li><strong>Score the pair:</strong> people and models together often do worse than either alone, and the interface decides which way it goes.</li>
@@ -105,36 +105,33 @@
 
             <h2>The rubric is a spec</h2>
             <p>
-              Every eval is a <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-proxy">proxy</button><span class="term__tip" role="tooltip" id="tip-proxy"><span class="term__title">Proxy</span><span class="term__body">A number you can measure that stands in for something you can&rsquo;t, like a test score standing in for skill.</span></span></span>. A <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-benchmark">coding benchmark</button><span class="term__tip" role="tooltip" id="tip-benchmark"><span class="term__title">Benchmark</span><span class="term__body">A fixed set of test questions used to compare models on the same task. Popular ones get reused for years, so models can end up tuned to the test.</span></span></span> stands in for useful software. A helpfulness
-              score stands in for whether someone found what they came for. The trouble starts when people, or the model
-              itself, start pushing on the number. It goes up, and the thing it was supposed to measure doesn&rsquo;t.
-            </p>
-            <p>
-              <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-gao">One OpenAI study</button><span class="term__tip" role="tooltip" id="tip-gao"><span class="term__title">Scaling Laws for Reward Model Overoptimization</span><span class="term__body">OpenAI researchers optimized models against an automated grader and tracked what happened to real quality as the optimization pushed further.</span><span class="term__source">Gao, Schulman &amp; Hilton &middot; ICML 2023</span></span></span> showed this cleanly. The researchers tuned models to please an
-              <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-reward-model">automated grader</button><span class="term__tip" role="tooltip" id="tip-reward-model"><span class="term__title">Reward model</span><span class="term__body">A second AI model trained on human ratings so it can score outputs automatically. It stands in for people during training, which makes it a proxy too.</span></span></span> and kept a <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-gold">second, hidden score</button><span class="term__tip" role="tooltip" id="tip-gold"><span class="term__title">Gold score</span><span class="term__body">In this study, a larger reward model played the part of real human judgment. The models were never optimized against it, so it showed whether quality improved for real.</span></span></span> on the side. The grader&rsquo;s score
-              kept climbing. The hidden one rose for a while, then fell.
+              Every eval is a <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-proxy">proxy</button><span class="term__tip" role="tooltip" id="tip-proxy"><span class="term__title">Proxy</span><span class="term__body">A number you can measure that stands in for something you can&rsquo;t, like a test score standing in for skill.</span></span></span>. A <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-benchmark">coding benchmark</button><span class="term__tip" role="tooltip" id="tip-benchmark"><span class="term__title">Benchmark</span><span class="term__body">A fixed set of test questions used to compare models on the same task. Popular ones get reused for years, so models can end up tuned to the test.</span></span></span> stands in for useful software, and a
+              helpfulness score stands in for whether someone found what they came for. Once people, or the model itself,
+              start pushing on that number, it goes up and the thing it was supposed to measure doesn&rsquo;t.
+              <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-gao">One OpenAI study</button><span class="term__tip" role="tooltip" id="tip-gao"><span class="term__title">Scaling Laws for Reward Model Overoptimization</span><span class="term__body">OpenAI researchers optimized models against an automated grader and tracked what happened to real quality as the optimization pushed further.</span><span class="term__source">Gao, Schulman &amp; Hilton &middot; ICML 2023</span></span></span> showed this by tuning models to please an <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-reward-model">automated grader</button><span class="term__tip" role="tooltip" id="tip-reward-model"><span class="term__title">Reward model</span><span class="term__body">A second AI model trained on human ratings so it can score outputs automatically. It stands in for people during training, which makes it a proxy too.</span></span></span> while
+              keeping a <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-gold">second, hidden score</button><span class="term__tip" role="tooltip" id="tip-gold"><span class="term__title">Gold score</span><span class="term__body">In this study, a larger reward model played the part of real human judgment. The models were never optimized against it, so it showed whether quality improved for real.</span></span></span> on the side. The grader&rsquo;s score kept climbing. The hidden one
+              rose for a while and then fell.
             </p>
             <p>
               That&rsquo;s why I treat a rubric like any other spec. Writing &ldquo;concise&rdquo; or &ldquo;admits
-              uncertainty&rdquo; into it shapes what ships as much as a component spec shapes a screen, so it needs clear
-              definitions, examples of pass and fail, and an owner. When a score jumps, my first question is what the cheapest
+              uncertainty&rdquo; into it shapes what ships as much as a component spec shapes a screen, so it needs
+              definitions with examples and somebody who owns it. When a score jumps, my first question is what the cheapest
               way to cause that jump would be. If the answer is something users would hate, like padding answers for a grader
               that likes length, the rubric needs work.
             </p>
 
-            <blockquote>A rubric is a behavior spec that happens to be written as a grading sheet.</blockquote>
-
             <h3>Read outputs before you define good</h3>
             <p>
-              Most teams write the criteria first and read outputs later. In practice it goes the other way.
+              Most teams write the criteria first and read outputs later. It usually goes the other way.
               <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-shankar">When researchers watched people grade model outputs</button><span class="term__tip" role="tooltip" id="tip-shankar"><span class="term__title">Who Validates the Validators? Aligning LLM-Assisted Evaluation of LLM Outputs with Human Preferences</span><span class="term__body">A team led by UC Berkeley researchers watched nine practitioners use a tool for building AI graders and saw their criteria change as they graded.</span><span class="term__source">Shankar et al. &middot; UIST 2024</span></span></span>, grading changed what they thought
-              &ldquo;good&rdquo; meant. Things like tone, or whether an answer admits what it doesn&rsquo;t know, only showed
-              up after they&rsquo;d read a pile of examples. The researchers called it <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-drift">criteria drift</button><span class="term__tip" role="tooltip" id="tip-drift"><span class="term__title">Criteria drift</span><span class="term__body">Your definition of a good answer changes as you read more answers. That&rsquo;s normal, but scores from before and after the change can&rsquo;t be compared.</span></span></span>.
+              &ldquo;good&rdquo; meant. Tone, or whether an answer admits what it doesn&rsquo;t know, only showed up as a
+              criterion after they&rsquo;d read a pile of examples. The researchers called it <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-drift">criteria drift</button><span class="term__tip" role="tooltip" id="tip-drift"><span class="term__title">Criteria drift</span><span class="term__body">Your definition of a good answer changes as you read more answers. That&rsquo;s normal, but scores from before and after the change can&rsquo;t be compared.</span></span></span>, and
+              anyone who&rsquo;s done synthesis will recognize it: you don&rsquo;t write the headings on the affinity map
+              before you read the sticky notes.
             </p>
             <p>
-              Designers already know this one. You don&rsquo;t write the headings on the affinity map before you read the
-              sticky notes. Read a few dozen real outputs first, put a date and a reason on every rubric change, and re-grade
-              a fixed set of examples whenever it moves.
+              Read a few dozen real outputs before you write anything down. After that, date every rubric change and re-grade
+              the same set of examples each time, so a new rubric never passes for a better model.
             </p>
             <p>
               The graders need checking too. <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-northcutt">Even the answer keys</button><span class="term__tip" role="tooltip" id="tip-northcutt"><span class="term__title">Pervasive Label Errors in Test Sets Destabilize Machine Learning Benchmarks</span><span class="term__body">Researchers from MIT and AWS checked the answer keys of ten widely used test sets, including ImageNet, and found mistakes in all of them.</span><span class="term__source">Northcutt, Athalye &amp; Mueller &middot; NeurIPS 2021 Datasets and Benchmarks</span></span></span> of popular test sets have
@@ -145,16 +142,17 @@
 
             <h2>Test the person and the model together</h2>
             <p>
-              Most AI products keep a person in the loop, so the result comes from the pair. This is the part I think
-              designers should care about most, because the interface decides whether someone catches a wrong answer or waves
-              it through.
+              Most AI products keep a person in the loop, so the result comes from the pair, and the interface decides
+              whether someone catches a wrong answer or waves it through.
             </p>
+            <p>This is the part I think designers should care about most.</p>
             <p>
-              The research here isn&rsquo;t encouraging. <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-vaccaro">A review of 106 studies</button><span class="term__tip" role="tooltip" id="tip-vaccaro"><span class="term__title">When combinations of humans and AI are useful: A systematic review and meta-analysis</span><span class="term__body">MIT researchers combined the results of 106 experiments, published from 2020 to mid-2023, that compared people, AI, and the two working together.</span><span class="term__source">Vaccaro, Almaatouq &amp; Malone &middot; Nature Human Behaviour, 2024</span></span></span> found that people and AI working
-              together usually did worse on decisions than the better of the two working alone. Pairs did better on creative
-              work. <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-bansal">Adding explanations</button><span class="term__tip" role="tooltip" id="tip-bansal"><span class="term__title">Does the Whole Exceed its Parts? The Effect of AI Explanations on Complementary Team Performance</span><span class="term__body">Researchers from the University of Washington and Microsoft Research tested whether AI explanations help a person and an AI decide better together.</span><span class="term__source">Bansal et al. &middot; CHI 2021</span></span></span> didn&rsquo;t fix it. People trusted the AI more whether it was right or
-              not. What helped were <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-forcing">small speed bumps</button><span class="term__tip" role="tooltip" id="tip-forcing"><span class="term__title">Cognitive forcing function</span><span class="term__body">An interaction that makes a person think before leaning on the AI, such as asking for their own answer first or making them click to reveal the suggestion.</span></span></span> that ask people to make their own call before they see the
-              AI&rsquo;s. <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-bucinca">In one study</button><span class="term__tip" role="tooltip" id="tip-bucinca"><span class="term__title">To Trust or to Think: Cognitive Forcing Functions Can Reduce Overreliance on AI in AI-assisted Decision-making</span><span class="term__body">A Harvard-led team had 199 people make decisions with an AI helper, comparing plain explanations against designs that slowed people down.</span><span class="term__source">Bu&ccedil;inca, Malaya &amp; Gajos &middot; CSCW 2021</span></span></span>, those cut <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-overreliance">overreliance</button><span class="term__tip" role="tooltip" id="tip-overreliance"><span class="term__title">Overreliance</span><span class="term__body">Accepting the AI&rsquo;s answer when it&rsquo;s wrong, usually because it&rsquo;s often right or sounds sure of itself.</span></span></span>, even though people liked them less.
+              The research isn&rsquo;t encouraging. <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-vaccaro">A review of 106 studies</button><span class="term__tip" role="tooltip" id="tip-vaccaro"><span class="term__title">When combinations of humans and AI are useful: A systematic review and meta-analysis</span><span class="term__body">MIT researchers combined the results of 106 experiments, published from 2020 to mid-2023, that compared people, AI, and the two working together.</span><span class="term__source">Vaccaro, Almaatouq &amp; Malone &middot; Nature Human Behaviour, 2024</span></span></span> found that people and AI working
+              together usually did worse on decisions than the better of the two alone, though pairs did better on creative
+              work. <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-bansal">Adding explanations</button><span class="term__tip" role="tooltip" id="tip-bansal"><span class="term__title">Does the Whole Exceed its Parts? The Effect of AI Explanations on Complementary Team Performance</span><span class="term__body">Researchers from the University of Washington and Microsoft Research tested whether AI explanations help a person and an AI decide better together.</span><span class="term__source">Bansal et al. &middot; CHI 2021</span></span></span> didn&rsquo;t fix it, because people trusted the AI more whether it was
+              right or not. What helped were <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-forcing">small speed bumps</button><span class="term__tip" role="tooltip" id="tip-forcing"><span class="term__title">Cognitive forcing function</span><span class="term__body">An interaction that makes a person think before leaning on the AI, such as asking for their own answer first or making them click to reveal the suggestion.</span></span></span> that ask people to make their own call before they
+              see the AI&rsquo;s. <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-bucinca">In one study</button><span class="term__tip" role="tooltip" id="tip-bucinca"><span class="term__title">To Trust or to Think: Cognitive Forcing Functions Can Reduce Overreliance on AI in AI-assisted Decision-making</span><span class="term__body">A Harvard-led team had 199 people make decisions with an AI helper, comparing plain explanations against designs that slowed people down.</span><span class="term__source">Bu&ccedil;inca, Malaya &amp; Gajos &middot; CSCW 2021</span></span></span>, those cut <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-overreliance">overreliance</button><span class="term__tip" role="tooltip" id="tip-overreliance"><span class="term__title">Overreliance</span><span class="term__body">Accepting the AI&rsquo;s answer when it&rsquo;s wrong, usually because it&rsquo;s often right or sounds sure of itself.</span></span></span>, even though people liked
+              them less.
             </p>
 
             <figure class="article-figure">
@@ -179,26 +177,21 @@
             </figure>
 
             <p>
-              People also can&rsquo;t see where the <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-frontier">model&rsquo;s edge</button><span class="term__tip" role="tooltip" id="tip-frontier"><span class="term__title">The jagged frontier</span><span class="term__body">The study&rsquo;s name for the uneven edge of what AI does well. Some hard-looking tasks sit inside it and some easy-looking ones sit outside, with no visible line between them.</span></span></span> is. <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-dellacqua">In a big experiment with BCG consultants</button><span class="term__tip" role="tooltip" id="tip-dellacqua"><span class="term__title">Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality</span><span class="term__body">Researchers from Harvard Business School and other schools worked with Boston Consulting Group on a field experiment. 758 BCG consultants did realistic work with or without GPT-4.</span><span class="term__source">Dell&rsquo;Acqua et al. &middot; HBS Working Paper 24-013, 2023</span></span></span>, people using <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-gpt4">GPT-4</button><span class="term__tip" role="tooltip" id="tip-gpt4"><span class="term__title">GPT-4</span><span class="term__body">OpenAI&rsquo;s most capable model when the study ran in spring 2023.</span></span></span> did more work, faster and better, on tasks the model was good at. On
-              one task built to trip it up, 84% of people working without AI answered correctly. With AI, that dropped to
-              somewhere between 60% and 70%.
-            </p>
-            <p>
-              The fix isn&rsquo;t glamorous. Test your actual tasks one by one, including the ones that seem too easy to
-              bother with, and do it again every time the model changes.
+              People also can&rsquo;t see where the <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-frontier">model&rsquo;s edge</button><span class="term__tip" role="tooltip" id="tip-frontier"><span class="term__title">The jagged frontier</span><span class="term__body">The study&rsquo;s name for the uneven edge of what AI does well. Some hard-looking tasks sit inside it and some easy-looking ones sit outside, with no visible line between them.</span></span></span> is. <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-dellacqua">In a big experiment with BCG consultants</button><span class="term__tip" role="tooltip" id="tip-dellacqua"><span class="term__title">Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality</span><span class="term__body">Researchers from Harvard Business School and other schools worked with Boston Consulting Group on a field experiment. 758 BCG consultants did realistic work with or without GPT-4.</span><span class="term__source">Dell&rsquo;Acqua et al. &middot; HBS Working Paper 24-013, 2023</span></span></span>, people using <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-gpt4">GPT-4</button><span class="term__tip" role="tooltip" id="tip-gpt4"><span class="term__title">GPT-4</span><span class="term__body">OpenAI&rsquo;s most capable model when the study ran in spring 2023.</span></span></span> finished more tasks and did better work on the tasks the model
+              was good at. On one task built to trip it up, 84% of people working without AI answered correctly. With AI, that
+              dropped to somewhere between 60% and 70%. Test your actual tasks one by one, including the ones that seem too
+              easy to bother with, and do it again whenever the model changes.
             </p>
 
             <h2>Distrust the headline number</h2>
             <h3>One good answer isn&rsquo;t a behavior</h3>
             <p>
-              A lot of evals run each test once, or keep the best of a few tries. That tells you what a model can do. It
-              doesn&rsquo;t tell you what someone gets on Tuesday when they ask the same thing they asked on Monday.
-            </p>
-            <p>
-              There are two ways to score repeat tries. <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-passk">Pass@k</button><span class="term__tip" role="tooltip" id="tip-passk"><span class="term__title">pass@k</span><span class="term__body">Counts a task as solved if at least one of k tries works. It comes from coding benchmarks, where each try can be checked against unit tests and the passing one kept.</span></span></span> counts a task as solved if any try works.
-              <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-passhatk">Pass^k</button><span class="term__tip" role="tooltip" id="tip-passhatk"><span class="term__title">pass^k</span><span class="term__body">Counts a task as solved only if all k tries work. It measures consistency, which is closer to what a person using the product experiences.</span></span></span> only counts it if every try works. The gap between them can be huge. In
-              <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-taubench">one test of AI customer service agents</button><span class="term__tip" role="tooltip" id="tip-taubench"><span class="term__title">&tau;-bench (tau-bench)</span><span class="term__body">A test where an AI agent helps simulated customers with retail and airline requests, using company tools and following company policy.</span><span class="term__source">Yao et al. &middot; ICLR 2025</span></span></span>, <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-gpt4o">GPT-4o</button><span class="term__tip" role="tooltip" id="tip-gpt4o"><span class="term__title">GPT-4o</span><span class="term__body">An OpenAI model released in 2024 and one of the strongest available when &tau;-bench was published.</span></span></span> solved about 61% of retail tasks on the
-              first try. Asked to do the same task eight times, it nailed all eight less than a quarter of the time.
+              A lot of evals run each test once, or keep the best of a few tries. That tells you what a model can do, not what
+              someone gets on Tuesday when they ask the same thing they asked on Monday. There are two ways to score repeat
+              tries. <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-passk">Pass@k</button><span class="term__tip" role="tooltip" id="tip-passk"><span class="term__title">pass@k</span><span class="term__body">Counts a task as solved if at least one of k tries works. It comes from coding benchmarks, where each try can be checked against unit tests and the passing one kept.</span></span></span> counts a task as solved if any try works, and <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-passhatk">Pass^k</button><span class="term__tip" role="tooltip" id="tip-passhatk"><span class="term__title">pass^k</span><span class="term__body">Counts a task as solved only if all k tries work. It measures consistency, which is closer to what a person using the product experiences.</span></span></span> only counts it if
+              every try works. In <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-taubench">one test of AI customer service agents</button><span class="term__tip" role="tooltip" id="tip-taubench"><span class="term__title">&tau;-bench (tau-bench)</span><span class="term__body">A test where an AI agent helps simulated customers with retail and airline requests, using company tools and following company policy.</span><span class="term__source">Yao et al. &middot; ICLR 2025</span></span></span>, <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-gpt4o">GPT-4o</button><span class="term__tip" role="tooltip" id="tip-gpt4o"><span class="term__title">GPT-4o</span><span class="term__body">An OpenAI model released in 2024 and one of the strongest available when &tau;-bench was published.</span></span></span> solved about 61% of
+              retail tasks on the first try. Asked to do the same task eight times, it nailed all eight less than a quarter of
+              the time.
             </p>
 
             <figure class="article-figure">
@@ -225,10 +218,9 @@
             </figure>
 
             <p>
-              Inconsistency is an experience problem before it&rsquo;s a metrics problem. When I review an eval plan, I ask
-              for every case to run at least three times, with a few rewordings of each request, and both scores reported.
-              How high the bar goes depends on what a failure costs. A brainstorming tool can live with some variance. A tool
-              answering benefits questions can&rsquo;t.
+              When I review an eval plan, I ask for every case to run at least three times, with a few rewordings of each
+              request, and both scores reported. How high the bar goes depends on what a failure costs. A brainstorming tool
+              can live with some variance. A tool answering benefits questions can&rsquo;t.
             </p>
 
             <h3>The average is hiding somebody</h3>
@@ -239,15 +231,14 @@
             </p>
             <p>
               To me this is accessibility work in a different form. We don&rsquo;t ship an interface because the average user
-              finished the task. We test with screen readers and slow connections because that&rsquo;s where things break.
-              Pick the groups that matter before you look at the overall number, and put the worst one right next to the
-              average.
+              finished the task. We test with screen readers, because that&rsquo;s where things break. Pick the groups that
+              matter before you look at the overall number, and put the worst one right next to the average.
             </p>
             <p>
               Where the model runs matters too. <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-beede">When Google brought an eye screening tool into clinics in Thailand</button><span class="term__tip" role="tooltip" id="tip-beede"><span class="term__title">A Human-Centered Evaluation of a Deep Learning System Deployed in Clinics for the Detection of Diabetic Retinopathy</span><span class="term__body">Google Health researchers watched nurses use an AI screening tool for diabetic eye disease in 11 clinics in Thailand.</span><span class="term__source">Beede et al. &middot; CHI 2020</span></span></span>,
               lighting and busy workflows hurt how it performed, and it rejected photos the nurses could realistically take.
-              The model had passed its tests. The system hadn&rsquo;t. Contextual inquiry, diary studies, and small pilots
-              catch this, and designers already own those methods.
+              The model had passed its tests. The system hadn&rsquo;t. Designers already own the methods that catch this, like
+              contextual inquiry and small pilots.
             </p>
 
             
@@ -358,18 +349,18 @@
 
             <h2>Where this argument breaks down</h2>
             <p>
-              Some of evaluation is research work, not design work. <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-error-bars">Error bars</button><span class="term__tip" role="tooltip" id="tip-error-bars"><span class="term__title">Error bars</span><span class="term__body">The range a score could land in by chance. If two models&rsquo; ranges overlap, the gap between them may not be real.</span></span></span>,
-              <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-contamination">test contamination</button><span class="term__tip" role="tooltip" id="tip-contamination"><span class="term__title">Test contamination</span><span class="term__body">Test questions that leak into a model&rsquo;s training data, so a high score can reflect memory instead of skill.</span></span></span>, and <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-significance">statistical significance</button><span class="term__tip" role="tooltip" id="tip-significance"><span class="term__title">Statistical significance</span><span class="term__body">A check on whether a difference is bigger than random noise would produce.</span></span></span> belong with people trained
-              for them, and a designer who waves those away does more harm than one who stays out of the room. Some of what
-              I&rsquo;ve cited is also thin. The criteria drift study watched nine people on one task, and it didn&rsquo;t test
-              the fixes I&rsquo;m suggesting. My point isn&rsquo;t that designers should run the eval. It&rsquo;s that they
-              should own the parts that decide behavior: the rubric, the graders, the pair, the groups, and the setting.
+              Some of evaluation is research work, not design work. <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-error-bars">Error bars</button><span class="term__tip" role="tooltip" id="tip-error-bars"><span class="term__title">Error bars</span><span class="term__body">The range a score could land in by chance. If two models&rsquo; ranges overlap, the gap between them may not be real.</span></span></span> and
+              <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-significance">statistical significance</button><span class="term__tip" role="tooltip" id="tip-significance"><span class="term__title">Statistical significance</span><span class="term__body">A check on whether a difference is bigger than random noise would produce.</span></span></span> belong with people trained for them, and so does spotting
+              <span class="term"><button type="button" class="term__trigger" aria-expanded="false" aria-describedby="tip-contamination">test contamination</button><span class="term__tip" role="tooltip" id="tip-contamination"><span class="term__title">Test contamination</span><span class="term__body">Test questions that leak into a model&rsquo;s training data, so a high score can reflect memory instead of skill.</span></span></span>. A designer who waves those away does more harm than one who stays out of
+              the room. Some of what I&rsquo;ve cited is also thin. The criteria drift study watched nine people on one task,
+              and it didn&rsquo;t test the fixes I&rsquo;m suggesting. Designers shouldn&rsquo;t run the eval. They should own
+              the parts that decide behavior, starting with the rubric and the people grading against it.
             </p>
 
             
 <h2>Lessons learned</h2>
             <ol>
-              <li><strong>Treat the rubric as a design artifact.</strong> Give it an owner, examples of pass and fail, and a version history with reasons.</li>
+              <li><strong>Treat the rubric as a design artifact.</strong> Give it an owner and a version history with reasons.</li>
               <li><strong>Read outputs before you write criteria.</strong> Keep a fixed reference set so a rubric change never passes for a model improvement.</li>
               <li><strong>Score the pair, not the model.</strong> Look hardest at the cases where the model is wrong. That&rsquo;s where the interface helps or hurts.</li>
               <li><strong>Put the worst number next to the headline.</strong> Report the all-runs-pass rate beside the average and the worst group beside the overall score.</li>
