@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&amp;family=Chivo:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Timetable | Gym template by CodyHouse</title>
+</head>
+<body>
+  <!-- pre-header -->
+  <div class="pre-header bg padding-y-xs position-relative z-index-1 js-pre-header" data-theme="dark">
+    <div class="container max-width-lg position-relative">
+      <div class="text-component text-center text-sm padding-x-lg">
+        <p>Saturno, gym template by CodyHouse. <a href="https://codyhouse.co/template/saturno" class="color-inherit">Buy Now &rarr;</a></p>
+      </div>
+  
+      <button class="reset pre-header__close-btn js-pre-header__close-btn js-tab-focus">
+        <svg class="icon" viewBox="0 0 20 20">
+          <title>Close header banner</title>
+          <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            <line x1="4" y1="4" x2="16" y2="16" />
+            <line x1="16" y1="4" x2="4" y2="16" />
+          </g>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- header -->
+  <header class="f-header position-absolute bg-transparent js-f-header">
+    <div class="f-header__mobile-content container max-width-lg">
+      <a href="index.html" class="f-header__logo" aria-label="Go to homepage">
+        <img src="assets/img/logo.svg" alt="logo">
+      </a>
+  
+      <button class="reset anim-menu-btn js-anim-menu-btn f-header__nav-control js-tab-focus" aria-label="Toggle menu">
+        <i class="anim-menu-btn__icon anim-menu-btn__icon--close" aria-hidden="true"></i>
+      </button>
+    </div>
+  
+    <div class="f-header__nav" role="navigation">
+      <div class="f-header__nav-grid justify-between@md container max-width-lg">
+        <div class="f-header__nav-logo-wrapper flex-grow flex-basis-0">
+          <a href="index.html" class="f-header__logo" aria-label="Go to homepage">
+            <img src="assets/img/logo.svg" alt="logo">
+          </a>
+        </div>
+  
+        <ul class="f-header__list flex-grow flex-basis-0 justify-center@md">
+          <li class="f-header__item">
+            <a href="about.html" class="f-header__link js-tab-focus">
+              <span>About</span>
+              <svg class="f-header__dropdown-icon icon" aria-hidden="true" viewBox="0 0 12 12"><path d="M6,9l4-5H2Z" /></svg>
+            </a>
+
+            <ul class="f-header__dropdown">
+              <li><a href="about.html" class="f-header__dropdown-link">Who are we?</a></li>
+              <li><a href="trainers.html" class="f-header__dropdown-link">Trainers</a></li>
+              <li><a href="classes.html" class="f-header__dropdown-link">Classes</a></li>
+            </ul>
+          </li>
+
+          <li class="f-header__item"><a href="club.html" class="f-header__link">The Club</a></li>
+          <li class="f-header__item"><a href="membership.html" class="f-header__link">Membership</a></li>
+          <li class="f-header__item"><a href="timetable.html" class="f-header__link" aria-current="page">Timetable</a></li>
+          <li class="f-header__item"><a href="contact.html" class="f-header__link">Contact</a></li>
+        </ul>
+  
+        <ul class="f-header__list flex-grow flex-basis-0 justify-end@md">
+          <li class="f-header__item"><a href="login.html" class="f-header__link">Login</a></li>
+          <li class="f-header__item"><a href="timetable.html" class="f-header__btn btn btn--primary">Book Class</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- timetable -->
+  <section class="position-relative z-index-1 padding-top-header">
+    <div class="container max-width-xl position-relative z-index-2 padding-y-xl">
+      <div class="margin-bottom-lg">
+        <div class="text-component text-center">
+          <h1 class="text-center">Classes Timetable</h1>
+          <p><a href="account-classes.html">View booked classes &rarr;</a></p>
+        </div>
+      </div>
+
+      <div class="w-schedule js-tabs js-w-schedule" data-w-schedule-timeline="09:00-18:00">
+        <!-- 👇 tabs control (mobile) -->
+        <ul class="w-schedule__controls js-tabs__controls" aria-label="Select day">
+          <li class="w-schedule__control-wrapper">
+            <a class="w-schedule__control" href="#w-schedule-mon" aria-selected="true">
+              <div class="text-xs opacity-50% text-uppercase letter-spacing-md margin-bottom-xxs">Mon</div>
+              <div class="text-lg font-medium line-height-1">11</div>
+            </a>
+          </li>
+      
+          <li class="w-schedule__control-wrapper">
+            <a class="w-schedule__control" href="#w-schedule-tue">
+              <div class="text-xs opacity-50% text-uppercase letter-spacing-md margin-bottom-xxs">Tue</div>
+              <div class="text-lg font-medium line-height-1">12</div>
+            </a>
+          </li>
+      
+          <li class="w-schedule__control-wrapper">
+            <a class="w-schedule__control" href="#w-schedule-wed">
+              <div class="text-xs opacity-50% text-uppercase letter-spacing-md margin-bottom-xxs">Wed</div>
+              <div class="text-lg font-medium line-height-1">13</div>
+            </a>
+          </li>
+      
+          <li class="w-schedule__control-wrapper">
+            <a class="w-schedule__control" href="#w-schedule-thu">
+              <div class="text-xs opacity-50% text-uppercase letter-spacing-md margin-bottom-xxs">Thu</div>
+              <div class="text-lg font-medium line-height-1">14</div>
+            </a>
+          </li>
+      
+          <li class="w-schedule__control-wrapper">
+            <a class="w-schedule__control" href="#w-schedule-fri">
+              <div class="text-xs opacity-50% text-uppercase letter-spacing-md margin-bottom-xxs">Fri</div>
+              <div class="text-lg font-medium line-height-1">15</div>
+            </a>
+          </li>
+      
+          <li class="w-schedule__control-wrapper">
+            <a class="w-schedule__control" href="#w-schedule-sat">
+              <div class="text-xs opacity-50% text-uppercase letter-spacing-md margin-bottom-xxs">Sat</div>
+              <div class="text-lg font-medium line-height-1">16</div>
+            </a>
+          </li>
+        </ul>
+      
+        <!-- 👇 events -->
+        <div class="w-schedule__days js-tabs__panels">
+          <!-- Monday -->
+          <section id="w-schedule-mon" class="w-schedule__day js-tabs__panel">
+            <div class="w-schedule__col-label text-sm">Monday</div>
+      
+            <ul class="w-schedule__events">
+              <li class="w-schedule__event-wrapper">
+                <a class="w-schedule__event w-schedule__event--1 js-w-schedule__event" href="#0" aria-controls="w-schedule-modal-id" data-w-schedule-url="gym-classes/abs-circuit.html">
+                  <time class="text-sm opacity-60% text-xs@md" datetime="09:30PT1H"><!-- content created in JS --></time>
+                  <div class="text-md font-medium text-base@md">Abs Circuit</div>
+                </a>
+              </li>
+      
+              <li class="w-schedule__event-wrapper">
+                <a class="w-schedule__event w-schedule__event--2 js-w-schedule__event" href="#0" aria-controls="w-schedule-modal-id" data-w-schedule-url="gym-classes/rowing-workout.html">
+                  <time class="text-sm opacity-60% text-xs@md" datetime="11:00PT1H30M"><!-- content created in JS --></time>
+                  <div class="text-md font-medium text-base@md">Rowing Workout</div>
+                </a>
+              </li>
+      
+              <li class="w-schedule__event-wrapper">
+                <a class="w-schedule__event w-schedule__event--3 js-w-schedule__event" href="#0" aria-controls="w-schedule-modal-id" data-w-schedule-url="gym-classes/yoga-level-1.html">
+                  <time class="text-sm opacity-60% text-xs@md" datetime="14:00PT1H15M"><!-- content created in JS --></time>
+                  <div class="text-md font-medium text-base@md">Yoga Level 1</div>
+                </a>
+              </li>
+            </ul>
+          </section>
+      
+          <!-- Tuesday -->
+          <section id="w-schedule-tue" class="w-schedule__day js-tabs__panel">
+            <div class="w-schedule__col-label text-sm">Tuesday</div>
+      
+            <ul class="w-schedule__events">
+              <li class="w-schedule__event-wrapper">
+                <a class="w-schedule__event w-schedule__event--2 js-w-schedule__event" href="#0" aria-controls="w-schedule-modal-id" data-w-schedule-url="gym-classes/rowing-workout.html">
+                  <time class="text-sm opacity-60% text-xs@md" datetime="10:00PT1H"><!-- content created in JS --></time>
+                  <div class="text-md font-medium text-base@md">Rowing Workout</div>
+                </a>
+              </li>
+      
+              <li class="w-schedule__event-wrapper">
+                <a class="w-schedule__event w-schedule__event--4 js-w-schedule__event" href="#0" aria-controls="w-schedule-modal-id" data-w-schedule-url="gym-classes/restorative-yoga.html">
+                  <time class="text-sm opacity-60% text-xs@md" datetime="11:30PT1H30M"><!-- content created in JS --></time>
+                  <div class="text-md font-medium text-base@md">Restorative Yoga</div>
+                </a>
+              </li>
+      
+              <li class="w-schedule__event-wrapper">
+                <a class="w-schedule__event w-schedule__event--1 js-w-schedule__event" href="#0" aria-controls="w-schedule-modal-id" data-w-schedule-url="gym-classes/abs-circuit.html">
+                  <time class="text-sm opacity-60% text-xs@md" datetime="13:30PT1H30M"><!-- content created in JS --></time>
+                  <div class="text-md font-medium text-base@md">Abs Circuit</div>
+                </a>
+              </li>
+      
+              <li class="w-schedule__event-wrapper">
+                <a class="w-schedule__event w-schedule__event--3 js-w-schedule__event" href="#0" aria-controls="w-schedule-modal-id" data-w-schedule-url="gym-classes/yoga-level-1.html">
+                  <time class="text-sm opacity-60% text-xs@md" datetime="15:45PT1H"><!-- content created in JS --></time>
+                  <div class="text-md font-medium text-base@md">Yoga Level 1</div>
+                </a>
+              </li>
+            </ul>
+          </section>
+      
+          <!-- Wednesday -->
+          <section id="w-schedule-wed" class="w-schedule__day js-tabs__panel">
+            <div class="w-schedule__col-label text-sm">Wednesday</div>
+      
+            <ul class="w-schedule__events">
+              <li class="w-schedule__event-wrapper">
+                <a class="w-schedule__event w-schedule__event--4 js-w-schedule__event" href="#0" aria-controls="w-schedule-modal-id" data-w-schedule-url="gym-classes/restorative-yoga.html">
+                  <time class="text-sm opacity-60% text-xs@md" datetime="09:00PT1H15M"><!-- content created in JS --></time>
+                  <div class="text-md font-medium text-base@md">Restorative Yoga</div>
+                </a>
+              </li>
+      
+              <li class="w-schedule__event-wrapper">
+                <a class="w-schedule__event w-schedule__event--3 js-w-schedule__event" href="#0" aria-controls="w-schedule-modal-id" data-w-schedule-url="gym-classes/yoga-level-1.html">
+                  <time class="text-sm opacity-60% text-xs@md" datetime="10:45PT1H"><!-- content created in JS --></time>
+                  <div class="text-md font-medium text-base@md">Yoga Level 1</div>
+                </a>
+              </li>
+      
+              <li class="w-schedule__event-wrapper">
+                <a class="w-schedule__event w-schedule__event--2 js-w-schedule__event" href="#0" aria-controls="w-schedule-modal-id" data-w-schedule-url="gym-classes/rowing-workout.html">
+                  <time class="text-sm opacity-60% text-xs@md" datetime="12:00PT1H45M"><!-- content created in JS --></time>
+                  <div class="text-md font-medium text-base@md">Rowing Workout</div>
+                </a>
+              </li>
+      
+              <li class="w-schedule__event-wrapper">
+                <a class="w-schedule__event w-schedule__event--3 js-w-schedule__event" href="#0" aria-controls="w-schedule-modal-id" data-w-schedule-url="gym-classes/yoga-level-1.html">
+                  <time class="text-sm opacity-60% text-xs@md" datetime="13:45PT1H15M"><!-- content created in JS --></time>
+                  <div class="text-md font-medium text-base@md">Yoga Level 1</div>
+                </a>
+              </li>
+            </ul>
+          </section>
+      
+          <!-- Thursday -->
+          <section id="w-schedule-thu" class="w-schedule__day js-tabs__panel">
+            <div class="w-schedule__col-label text-sm">Thursday</div>
+      
+            <ul class="w-schedule__events">
+              <li class="w-schedule__event-wrapper">
+                <a class="w-schedule__event w-schedule__event--1 js-w-schedule__event" href="#0" aria-controls="w-schedule-modal-id" data-w-schedule-url="gym-classes/abs-circuit.html">
+                  <time class="text-sm opacity-60% text-xs@md" datetime="09:30PT1H"><!-- content created in JS --></time>
+                  <div class="text-md font-medium text-base@md">Abs Circuit</div>
+                </a>
+              </li>
+      
+              <li class="w-schedule__event-wrapper">
+                <a class="w-schedule__event w-schedule__event--4 js-w-schedule__event" href="#0" aria-controls="w-schedule-modal-id" data-w-schedule-url="gym-classes/restorative-yoga.html">
+                  <time class="text-sm opacity-60% text-xs@md" datetime="12:00PT1H45M"><!-- content created in JS --></time>
+                  <div class="text-md font-medium text-base@md">Restorative Yoga</div>
+                </a>
+              </li>
+      
+              <li class="w-schedule__event-wrapper">
+                <a class="w-schedule__event w-schedule__event--1 js-w-schedule__event" href="#0" aria-controls="w-schedule-modal-id" data-w-schedule-url="gym-classes/abs-circuit.html">
+                  <time class="text-sm opacity-60% text-xs@md" datetime="15:30PT1H"><!-- content created in JS --></time>
+                  <div class="text-md font-medium text-base@md">Abs Circuit</div>
+                </a>
+              </li>
+      
+              <li class="w-schedule__event-wrapper">
+                <a class="w-schedule__event w-schedule__event--2 js-w-schedule__event" href="#0" aria-controls="w-schedule-modal-id" data-w-schedule-url="gym-classes/rowing-workout.html">
+                  <time class="text-sm opacity-60% text-xs@md" datetime="17:00PT1H"><!-- content created in JS --></time>
+                  <div class="text-md font-medium text-base@md">Rowing Workout</div>
+                </a>
+              </li>
+            </ul>
+          </section>
+      
+          <!-- Friday -->
+          <section id="w-schedule-fri" class="w-schedule__day js-tabs__panel">
+            <div class="w-schedule__col-label text-sm">Friday</div>
+      
+            <ul class="w-schedule__events">
+              <li class="w-schedule__event-wrapper">
+                <a class="w-schedule__event w-schedule__event--2 js-w-schedule__event" href="#0" aria-controls="w-schedule-modal-id" data-w-schedule-url="gym-classes/rowing-workout.html">
+                  <time class="text-sm opacity-60% text-xs@md" datetime="10:00PT1H"><!-- content created in JS --></time>
+                  <div class="text-md font-medium text-base@md">Rowing Workout</div>
+                </a>
+              </li>
+      
+              <li class="w-schedule__event-wrapper">
+                <a class="w-schedule__event w-schedule__event--1 js-w-schedule__event" href="#0" aria-controls="w-schedule-modal-id" data-w-schedule-url="gym-classes/abs-circuit.html">
+                  <time class="text-sm opacity-60% text-xs@md" datetime="12:30PT1H30M"><!-- content created in JS --></time>
+                  <div class="text-md font-medium text-base@md">Abs Circuit</div>
+                </a>
+              </li>
+      
+              <li class="w-schedule__event-wrapper">
+                <a class="w-schedule__event w-schedule__event--3 js-w-schedule__event" href="#0" aria-controls="w-schedule-modal-id" data-w-schedule-url="gym-classes/yoga-level-1.html">
+                  <time class="text-sm opacity-60% text-xs@md" datetime="15:45PT1H"><!-- content created in JS --></time>
+                  <div class="text-md font-medium text-base@md">Yoga Level 1</div>
+                </a>
+              </li>
+            </ul>
+          </section>
+      
+          <!-- Saturday -->
+          <section id="w-schedule-sat" class="w-schedule__day js-tabs__panel">
+            <div class="w-schedule__col-label text-sm">Saturday</div>
+      
+            <p class="text-center hide@md">No classes on Saturday 👏</p>
+          </section>
+        </div>
+      
+        <!-- background rows -->
+        <div class="w-schedule__grid js-w-schedule__grid" aria-hidden="true">
+          <!-- grid created in JS -->
+        </div>
+      </div>
+    </div>
+
+    <figure class="bg-decoration-v3 z-index-1" aria-hidden="true">
+      <svg class="bg-decoration-v3__svg top-0 left-50% -translate-x-50% color-primary opacity-20%" viewBox="0 0 1920 280">
+        <g fill="currentColor">
+          <polygon points="1917 -2 1750.5 250.5 1919 -2 1917 -2" />
+          <polygon points="1909 -2 1742.5 250.5 1911 -2 1909 -2" />
+          <polygon points="1901 -2 1734.5 250.5 1903 -2 1901 -2" />
+          <polygon points="1893 -2 1726.5 250.5 1895 -2 1893 -2" />
+          <polygon points="1885 -2 1718.5 250.5 1887 -2 1885 -2" />
+          <polygon points="1877 -2 1710.5 250.5 1879 -2 1877 -2" />
+          <polygon points="1869 -2 1702.5 250.5 1871 -2 1869 -2" />
+          <polygon points="1861 -2 1694.5 250.5 1863 -2 1861 -2" />
+          <polygon points="1853 -2 1686.5 250.5 1855 -2 1853 -2" />
+          <polygon points="1845 -2 1678.5 250.5 1847 -2 1845 -2" />
+          <polygon points="1837 -2 1670.5 250.5 1839 -2 1837 -2" />
+          <polygon points="1829 -2 1662.5 250.5 1831 -2 1829 -2" />
+          <polygon points="1821 -2 1654.5 250.5 1823 -2 1821 -2" />
+          <polygon points="1813 -2 1646.5 250.5 1815 -2 1813 -2" />
+          <polygon points="1805 -2 1638.5 250.5 1807 -2 1805 -2" />
+          <polygon points="1797 -2 1630.5 250.5 1799 -2 1797 -2" />
+          <polygon points="1789 -2 1622.5 250.5 1791 -2 1789 -2" />
+          <polygon points="1781 -2 1614.5 250.5 1783 -2 1781 -2" />
+          <polygon points="1773 -2 1606.5 250.5 1775 -2 1773 -2" />
+          <polygon points="1765 -2 1598.5 250.5 1767 -2 1765 -2" />
+          <polygon points="1757 -2 1590.5 250.5 1759 -2 1757 -2" />
+          <polygon points="1749 -2 1582.5 250.5 1751 -2 1749 -2" />
+          <polygon points="1741 -2 1574.5 250.5 1743 -2 1741 -2" />
+          <polygon points="1733 -2 1566.5 250.5 1735 -2 1733 -2" />
+          <polygon points="1725 -2 1558.5 250.5 1727 -2 1725 -2" />
+          <polygon points="1717 -2 1550.5 250.5 1719 -2 1717 -2" />
+          <polygon points="1709 -2 1542.5 250.5 1711 -2 1709 -2" />
+          <polygon points="1701 -2 1534.5 250.5 1703 -2 1701 -2" />
+          <polygon points="1693 -2 1526.5 250.5 1695 -2 1693 -2" />
+          <polygon points="1685 -2 1518.5 250.5 1687 -2 1685 -2" />
+          <polygon points="1677 -2 1510.5 250.5 1679 -2 1677 -2" />
+          <polygon points="1669 -2 1502.5 250.5 1671 -2 1669 -2" />
+          <polygon points="1661 -2 1494.5 250.5 1663 -2 1661 -2" />
+          <polygon points="1653 -2 1486.5 250.5 1655 -2 1653 -2" />
+          <polygon points="1645 -2 1478.5 250.5 1647 -2 1645 -2" />
+          <polygon points="1637 -2 1470.5 250.5 1639 -2 1637 -2" />
+          <polygon points="1629 -2 1462.5 250.5 1631 -2 1629 -2" />
+          <polygon points="1621 -2 1454.5 250.5 1623 -2 1621 -2" />
+          <polygon points="1613 -2 1446.5 250.5 1615 -2 1613 -2" />
+          <polygon points="1605 -2 1438.5 250.5 1607 -2 1605 -2" />
+          <polygon points="1597 -2 1430.5 250.5 1599 -2 1597 -2" />
+          <polygon points="1589 -2 1422.5 250.5 1591 -2 1589 -2" />
+          <polygon points="1581 -2 1414.5 250.5 1583 -2 1581 -2" />
+          <polygon points="1573 -2 1406.5 250.5 1575 -2 1573 -2" />
+          <polygon points="1565 -2 1398.5 250.5 1567 -2 1565 -2" />
+          <polygon points="1557 -2 1390.5 250.5 1559 -2 1557 -2" />
+          <polygon points="1549 -2 1382.5 250.5 1551 -2 1549 -2" />
+          <polygon points="1541 -2 1374.5 250.5 1543 -2 1541 -2" />
+          <polygon points="1533 -2 1366.5 250.5 1535 -2 1533 -2" />
+          <polygon points="1525 -2 1358.5 250.5 1527 -2 1525 -2" />
+          <polygon points="1517 -2 1350.5 250.5 1519 -2 1517 -2" />
+          <polygon points="1509 -2 1342.5 250.5 1511 -2 1509 -2" />
+          <polygon points="1501 -2 1334.5 250.5 1503 -2 1501 -2" />
+          <polygon points="1493 -2 1326.5 250.5 1495 -2 1493 -2" />
+          <polygon points="1485 -2 1318.5 250.5 1487 -2 1485 -2" />
+          <polygon points="1477 -2 1310.5 250.5 1479 -2 1477 -2" />
+          <polygon points="1469 -2 1302.5 250.5 1471 -2 1469 -2" />
+          <polygon points="1461 -2 1294.5 250.5 1463 -2 1461 -2" />
+          <polygon points="1453 -2 1286.5 250.5 1455 -2 1453 -2" />
+          <polygon points="1445 -2 1278.5 250.5 1447 -2 1445 -2" />
+          <polygon points="1437 -2 1270.5 250.5 1439 -2 1437 -2" />
+          <polygon points="1429 -2 1262.5 250.5 1431 -2 1429 -2" />
+          <polygon points="1421 -2 1254.5 250.5 1423 -2 1421 -2" />
+          <polygon points="1413 -2 1246.5 250.5 1415 -2 1413 -2" />
+          <polygon points="1405 -2 1238.5 250.5 1407 -2 1405 -2" />
+          <polygon points="1397 -2 1230.5 250.5 1399 -2 1397 -2" />
+          <polygon points="1389 -2 1222.5 250.5 1391 -2 1389 -2" />
+          <polygon points="1381 -2 1214.5 250.5 1383 -2 1381 -2" />
+          <polygon points="1373 -2 1206.5 250.5 1375 -2 1373 -2" />
+          <polygon points="1365 -2 1198.5 250.5 1367 -2 1365 -2" />
+          <polygon points="1357 -2 1190.5 250.5 1359 -2 1357 -2" />
+          <polygon points="1349 -2 1182.5 250.5 1351 -2 1349 -2" />
+          <polygon points="1341 -2 1174.5 250.5 1343 -2 1341 -2" />
+          <polygon points="1333 -2 1166.5 250.5 1335 -2 1333 -2" />
+          <polygon points="1325 -2 1158.5 250.5 1327 -2 1325 -2" />
+          <polygon points="1317 -2 1150.5 250.5 1319 -2 1317 -2" />
+          <polygon points="1309 -2 1142.5 250.5 1311 -2 1309 -2" />
+          <polygon points="1301 -2 1134.5 250.5 1303 -2 1301 -2" />
+          <polygon points="1293 -2 1126.5 250.5 1295 -2 1293 -2" />
+          <polygon points="1285 -2 1118.5 250.5 1287 -2 1285 -2" />
+          <polygon points="1277 -2 1110.5 250.5 1279 -2 1277 -2" />
+        </g>
+      </svg>
+    </figure>
+  </section>
+
+  <!-- download app -->
+  <section class="position-relative z-index-1 padding-y-xxl" data-theme="dark">
+    <div class="container max-width-adaptive-lg position-relative z-index-2">
+      <div class="grid gap-md items-center@sm">
+        <div class="col-6@sm order-2@sm">
+          <div class="text-component margin-bottom-sm">
+            <h1>Download the app</h1>
+            <p class="color-contrast-medium">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto quaerat ducimus aspernatur, vero consequuntur veniam cumque nulla libero laboriosam dicta.</p>
+          </div>
+
+          <div class="margin-bottom-sm">
+            <ul class="grid gap-xxs">
+              <li class="flex items-center">
+                <div class="flex-shrink-0 flex flex-center width-md height-md radius-50% bg-success bg-opacity-20% margin-right-xxs">
+                  <svg class="icon icon--xs color-success" viewBox="0 0 16 16"><polyline points="1 8 5.5 12.5 15 3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+                </div>
+                <p>Lorem, ipsum dolor</p>
+              </li>
+  
+              <li class="flex items-center">
+                <div class="flex-shrink-0 flex flex-center width-md height-md radius-50% bg-success bg-opacity-20% margin-right-xxs">
+                  <svg class="icon icon--xs color-success" viewBox="0 0 16 16"><polyline points="1 8 5.5 12.5 15 3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+                </div>
+                <p>Amet consectetur adipisicing</p>
+              </li>
+            </ul>
+          </div>
+
+          <ul class="flex gap-xxs">
+            <li>
+              <a href="#0" aria-label="Download on the Apple store">
+                <img class="block" src="assets/img/badge-app-store.svg" alt="Apple Store badge">
+              </a>
+            </li>
+
+            <li>
+              <a href="#0" aria-label="Download on the Google Play store">
+                <img class="block" src="assets/img/badge-play-store.svg" alt="Play Store badge">
+              </a>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="col-6@sm order-1@sm flex justify-center items-center">
+          <img class="block max-width-xxxxs" src="assets/img/phone-mockup.png" alt="App preview">
+        </div>
+      </div>
+    </div>
+
+    <figure class="bg-decoration-v3 z-index-1" aria-hidden="true">
+      <svg class="bg-decoration-v3__svg top-0 left-0 color-contrast-higher opacity-20%" viewBox="0 0 1920 610">
+        <defs>  
+          <linearGradient id="bg-dec-v3-gradient-5" gradientTransform="rotate(90)">  
+            <stop offset="0" stop-color="white" stop-opacity="1" />  
+            <stop offset="1" stop-color="white" stop-opacity="0" />  
+          </linearGradient>
+        
+          <mask id="bg-dec-v3-gradient-mask-5">  
+            <rect x="0" y="0" width="1920" height="610" fill="url(#bg-dec-v3-gradient-5)"  />  
+          </mask>  
+        </defs>
+  
+        <g fill="none" stroke="currentColor" stroke-miterlimit="10" mask="url(#bg-dec-v3-gradient-mask-5)">
+          <polyline points="-699.07 -165.58 38.206 443.271 107.459 386.081 341.853 579.647 1305 -215.731" />
+          <polyline points="-651.354 -164.839 50.813 420.594 116.769 365.604 340.001 551.725 1257.284 -213.061" />
+          <polyline points="-605.911 -164.127 62.821 398.79 125.635 345.915 338.237 524.877 1211.84 -210.495" />
+          <polyline points="-562.631 -163.442 74.256 377.824 134.079 326.983 336.558 499.061 1168.56 -208.026" />
+          <polyline points="-521.412 -162.784 85.147 357.665 142.121 308.778 334.958 474.239 1127.342 -205.653" />
+          <polyline points="-482.156 -162.151 95.519 338.28 149.781 291.275 333.435 450.371 1088.086 -203.371" />
+          <polyline points="-444.769 -161.542 105.398 319.642 157.075 274.444 331.984 427.421 1050.699 -201.177" />
+          <polyline points="-409.163 -160.957 114.806 301.72 164.022 258.261 330.602 405.354 1015.093 -199.067" />
+          <polyline points="-375.252 -160.394 123.766 284.488 170.639 242.7 329.286 384.136 981.182 -197.039" />
+          <polyline points="-342.956 -159.853 132.299 267.918 176.94 227.737 328.032 363.734 948.886 -195.088" />
+          <polyline points="-312.198 -159.332 140.426 251.986 182.941 213.35 326.839 344.116 918.127 -193.213" />
+          <polyline points="-282.904 -158.832 148.166 236.666 188.656 199.517 325.702 325.253 888.834 -191.409" />
+          <polyline points="-255.006 -158.351 155.537 221.936 194.1 186.215 324.619 307.115 860.935 -189.675" />
+          <polyline points="-228.436 -157.888 162.558 207.772 199.284 173.425 323.588 289.676 834.365 -188.008" />
+          <polyline points="-203.131 -157.443 169.244 194.153 204.221 161.127 322.606 272.906 809.061 -186.404" />
+          <polyline points="-179.031 -157.016 175.611 181.058 208.923 149.302 321.671 256.782 784.961 -184.863" />
+          <polyline points="-156.079 -156.605 181.676 168.466 213.401 137.932 320.78 241.278 762.009 -183.381" />
+          <polyline points="-134.22 -156.209 187.451 156.359 217.666 126.999 319.932 226.37 740.149 -181.955" />
+          <polyline points="-113.402 -155.829 192.952 144.717 221.728 116.487 319.124 212.036 719.331 -180.585" />
+          <polyline points="-93.575 -155.463 198.191 133.523 225.596 106.379 318.354 198.253 699.504 -179.267" />
+          <polyline points="-74.692 -155.112 203.18 122.76 229.281 96.659 317.621 185 680.621 -178" />
+        </g>
+      </svg>
+    </figure>
+
+    <div class="corner-decoration corner-decoration--right bg" aria-hidden="true"></div>
+  </section>
+
+  <!-- footer -->
+  <footer class="footer-v6">
+    <div class="container max-width-lg">
+      <div class="padding-y-xl border-bottom border-contrast-higher border-opacity-10% margin-bottom-lg margin-bottom-xl@md">
+        <div class="flex flex-column gap-xs flex-row@md justify-between@md items-center@md">
+          <div><h1>Be better, be stronger.</h1></div>
+          <div><a class="btn btn--primary" href="membership.html">Join Our Club</a></div>
+        </div>
+      </div>
+  
+      <div class="margin-bottom-xl">
+        <div class="grid gap-lg">
+          <div class="col-6@xs col-3@md">
+            <div class="margin-bottom-lg">
+              <h4 class="margin-bottom-xs text-base@md">Menu</h4>
+              <ul class="grid gap-xs text-sm@md">
+                <li><a class="footer-v6__link" href="club.html">The Club</a></li>
+                <li><a class="footer-v6__link" href="membership.html">Membership</a></li>
+                <li><a class="footer-v6__link" href="timetable.html">Timetable</a></li>
+                <li><a class="footer-v6__link" href="account.html">Account</a></li>
+                <li><a class="footer-v6__link" href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+  
+            <div>
+              <h4 class="margin-bottom-xs text-base@md">Legal</h4>
+              <ul class="grid gap-xs text-sm@md">
+                <li><a class="footer-v6__link" href="legal.html">Terms</a></li>
+                <li><a class="footer-v6__link" href="legal.html">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+    
+          <div class="col-6@xs col-3@md">
+            <h4 class="margin-bottom-xs text-base@md">Opening Times</h4>
+            <dl class="grid gap-xs color-contrast-medium text-sm@md max-width-xxxxs width-70%@lg">
+              <div class="flex items-baseline justify-between">
+                <dt>Mon</dt>
+                <dd class="margin-left-xxs">06 AM - 08 PM</dd>
+              </div>
+    
+              <div class="flex items-baseline justify-between">
+                <dt>Tue</dt>
+                <dd class="margin-left-xxs">06 AM - 08 PM</dd>
+              </div>
+    
+              <div class="flex items-baseline justify-between">
+                <dt>Wed</dt>
+                <dd class="margin-left-xxs">09 AM - 08 PM</dd>
+              </div>
+    
+              <div class="flex items-baseline justify-between">
+                <dt>Thu</dt>
+                <dd class="margin-left-xxs">06 AM - 08 PM</dd>
+              </div>
+    
+              <div class="flex items-baseline justify-between">
+                <dt>Fri</dt>
+                <dd class="margin-left-xxs">06 AM - 08 PM</dd>
+              </div>
+    
+              <div class="flex items-baseline justify-between">
+                <dt>Sat</dt>
+                <dd class="margin-left-xxs">09 AM - 08 PM</dd>
+              </div>
+    
+              <div class="flex items-baseline justify-between">
+                <dt>Sun</dt>
+                <dd class="margin-left-xxs">09 AM - 12 PM</dd>
+              </div>
+            </dl>
+          </div>
+    
+          <div class="col-6@xs col-3@md">
+            <h4 class="margin-bottom-xs text-base@md">Connect</h4>
+            <ul class="grid gap-xs text-sm@md">
+              <li>
+                <a class="footer-v6__link inline-flex items-center" href="#0">
+                  <span class="footer-v6__link-icon" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 16 16"><g><circle cx="12.145" cy="3.892" r="0.96"></circle><path d="M8,12c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S10.206,12,8,12z M8,6C6.897,6,6,6.897,6,8 s0.897,2,2,2s2-0.897,2-2S9.103,6,8,6z"></path><path d="M12,16H4c-2.056,0-4-1.944-4-4V4c0-2.056,1.944-4,4-4h8c2.056,0,4,1.944,4,4v8C16,14.056,14.056,16,12,16z M4,2C3.065,2,2,3.065,2,4v8c0,0.953,1.047,2,2,2h8c0.935,0,2-1.065,2-2V4c0-0.935-1.065-2-2-2H4z"></path></g></svg>
+                  </span>
+                  <span class="margin-left-xxxs">Instagram</span>
+                </a>
+              </li>
+  
+              <li>
+                <a class="footer-v6__link inline-flex items-center" href="#0">
+                  <span class="footer-v6__link-icon" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 16 16"><g><path d="M16,3c-0.6,0.3-1.2,0.4-1.9,0.5c0.7-0.4,1.2-1,1.4-1.8c-0.6,0.4-1.3,0.6-2.1,0.8c-0.6-0.6-1.5-1-2.4-1 C9.3,1.5,7.8,3,7.8,4.8c0,0.3,0,0.5,0.1,0.7C5.2,5.4,2.7,4.1,1.1,2.1c-0.3,0.5-0.4,1-0.4,1.7c0,1.1,0.6,2.1,1.5,2.7 c-0.5,0-1-0.2-1.5-0.4c0,0,0,0,0,0c0,1.6,1.1,2.9,2.6,3.2C3,9.4,2.7,9.4,2.4,9.4c-0.2,0-0.4,0-0.6-0.1c0.4,1.3,1.6,2.3,3.1,2.3 c-1.1,0.9-2.5,1.4-4.1,1.4c-0.3,0-0.5,0-0.8,0c1.5,0.9,3.2,1.5,5,1.5c6,0,9.3-5,9.3-9.3c0-0.1,0-0.3,0-0.4C15,4.3,15.6,3.7,16,3z"></path></g></svg>
+                  </span>
+                  <span class="margin-left-xxxs">Twitter</span>
+                </a>
+              </li>
+  
+              <li>
+                <a class="footer-v6__link inline-flex items-center" href="#0">
+                  <span class="footer-v6__link-icon" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 16 16"><g><path d="M15.8,4.8c-0.2-1.3-0.8-2.2-2.2-2.4C11.4,2,8,2,8,2S4.6,2,2.4,2.4C1,2.6,0.3,3.5,0.2,4.8C0,6.1,0,8,0,8 s0,1.9,0.2,3.2c0.2,1.3,0.8,2.2,2.2,2.4C4.6,14,8,14,8,14s3.4,0,5.6-0.4c1.4-0.3,2-1.1,2.2-2.4C16,9.9,16,8,16,8S16,6.1,15.8,4.8z M6,11V5l5,3L6,11z"></path></g></svg>
+                  </span>
+                  <span class="margin-left-xxxs">YouTube</span>
+                </a>
+              </li>
+  
+              <li>
+                <a class="footer-v6__link inline-flex items-center" href="#0">
+                  <span class="footer-v6__link-icon" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 16 16"><g><path d="M16,8.048a8,8,0,1,0-9.25,7.9V10.36H4.719V8.048H6.75V6.285A2.822,2.822,0,0,1,9.771,3.173a12.2,12.2,0,0,1,1.791.156V5.3H10.554a1.155,1.155,0,0,0-1.3,1.25v1.5h2.219l-.355,2.312H9.25v5.591A8,8,0,0,0,16,8.048Z"></path></g></svg>
+                  </span>
+                  <span class="margin-left-xxxs">Facebook</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+    
+          <div class="col-6@xs col-3@md">
+            <div class="text-component margin-bottom-sm">
+              <h4 class="text-base@md">Newsletter</h4>
+              <p class="text-sm color-contrast-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+    
+            <form class="grid gap-xxxs text-sm@md">
+              <input class="form-control" type="email" placeholder="Your email address" aria-label="Email address">
+              <button class="btn btn--subtle">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+  
+      <div class="padding-y-sm border-top border-contrast-higher border-opacity-10%">
+        <p class="text-xs color-contrast-medium">&copy;MyCompany</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- weekly schedule modal window -->
+  <div id="w-schedule-modal-id" class="w-schedule-modal modal modal--animate-fade bg-contrast-higher bg-opacity-90% js-w-schedule-modal js-modal" data-modal-prevent-scroll="body">
+    <div class="w-schedule-modal__content modal__content overflow-auto flex flex-column bg radius-md shadow-md opacity-0 flex-row@md overflow-hidden@md js-w-schedule-modal__content" role="alertdialog" aria-label="Event Info">
+      <!-- modal content -> dynamically loaded -->
+      <div class="ske height-25% height-100%@md width-30%@md" aria-hidden="true"></div>
+  
+      <div class="padding-md width-70%@md" aria-hidden="true">
+        <ul class="grid gap-xs">
+          <li class="col-3 padding-bottom-sm"><div class="ske ske--text text-xl"></div></li>
+          <li><div class="ske ske--text"></div></li>
+          <li><div class="ske ske--text"></div></li>
+          <li class="col-6"><div class="ske ske--text"></div></li>
+        </ul>
+      </div>
+      <!-- [end] modal content -->
+    </div>
+  </div>
+  
+  <div class="w-schedule-morph-bg bg radius-md is-hidden js-w-schedule-morph-bg" aria-hidden="true"></div>
+  
+  <button class="reset w-schedule-close-btn js-tab-focus js-w-schedule-close-btn">
+    <svg class="icon icon--sm" viewBox="0 0 24 24">
+      <title>Close modal window</title>
+      <g fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="3" x2="21" y2="21" />
+        <line x1="21" y1="3" x2="3" y2="21" />
+      </g>
+    </svg>
+  </button>
+  <!-- [end] weekly schedule modal window -->
+<script src="assets/js/scripts.js"></script>
+</body>
+</html>

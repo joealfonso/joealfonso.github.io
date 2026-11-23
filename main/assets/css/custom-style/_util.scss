@@ -1,0 +1,56 @@
+@use '../base' as *;
+// --------------------------------
+
+// Top
+
+// --------------------------------
+
+.top-md { 
+  top: var(--space-md);
+}
+
+@each $breakpoint, $value in $breakpoints { 
+  @include breakpoint(#{$breakpoint}) {
+    .top-md\@#{$breakpoint} {
+      top: var(--space-md);
+    }
+  }
+}
+
+// --------------------------------
+
+// Padding
+
+// --------------------------------
+
+.padding-top-header {
+  padding-top: var(--f-header-height);
+}
+
+// --------------------------------
+
+// Overflow
+
+// --------------------------------
+
+@each $breakpoint, $value in $breakpoints { 
+  @include breakpoint(#{$breakpoint}) {
+    .overflow-hidden\@#{$breakpoint} {
+      overflow: hidden;
+    }
+
+    .overflow-auto\@#{$breakpoint} {
+      overflow: auto;
+    }
+  }
+}
+
+// --------------------------------
+
+// Scroll Behavior
+
+// --------------------------------
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}

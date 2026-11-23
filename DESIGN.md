@@ -13,7 +13,7 @@ Clean, confident, and typographically precise. No decorative elements — the de
 
 ## Colors
 
-### Light mode (`prefers-color-scheme: light`)
+### Light mode (default)
 
 | Token | Value | Usage |
 |---|---|---|
@@ -24,13 +24,13 @@ Clean, confident, and typographically precise. No decorative elements — the de
 | `--color-border-strong` | `#C8C8C6` | Hover borders, inputs |
 | `--color-text` | `#111110` | Primary headings and body |
 | `--color-text-secondary` | `#5C5C5A` | Body copy, descriptions |
-| `--color-text-muted` | `#6B6B69` | Labels, metadata, captions |
+| `--color-text-muted` | `#9A9A98` | Labels, metadata, captions |
 | `--color-text-inverse` | `#FFFFFF` | Text on dark fills |
 | `--color-accent` | `#0052CC` | Links, CTAs, active states |
 | `--color-accent-hover` | `#003D99` | Accent hover state |
 | `--color-accent-subtle` | `#EBF2FF` | Accent background tint |
 
-### Dark mode (default)
+### Dark mode (`prefers-color-scheme: dark`)
 
 | Token | Value |
 |---|---|
@@ -41,7 +41,7 @@ Clean, confident, and typographically precise. No decorative elements — the de
 | `--color-border-strong` | `#3E3E3C` |
 | `--color-text` | `#F0F0EE` |
 | `--color-text-secondary` | `#9A9A98` |
-| `--color-text-muted` | `#8A8A88` |
+| `--color-text-muted` | `#5C5C5A` |
 | `--color-accent` | `#4D94FF` |
 | `--color-accent-hover` | `#7AB3FF` |
 | `--color-accent-subtle` | `#0F1E38` |

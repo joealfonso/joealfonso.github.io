@@ -1,0 +1,36 @@
+@use '../base' as *;
+/* -------------------------------- 
+
+File#: _1_pre-header
+Title: Pre-header 
+Descr: Pre-header (top) banner
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+.pre-header {
+  display: block;
+  @include fontSmooth;
+}
+
+.pre-header--is-hidden {
+  display: none;
+}
+
+.pre-header__close-btn {
+  position: absolute;
+  right: 0;
+  top: calc(50% - 0.5em);
+  cursor: pointer;
+  will-change: transform;
+  transition: .2s;
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  .icon {
+    display: block;
+  }
+}

@@ -13,20 +13,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About | Joseph Alfonso</title>
     <meta name="description" content="Joseph Alfonso is a Product Design Leader and Teacher with 15+ years designing enterprise systems at global scale. Based in Seattle." />
-    <link rel="canonical" href="https://josephalfonso.com/pages/about.html" />
-    <meta property="og:type" content="profile" />
-    <meta property="og:site_name" content="Joseph Alfonso" />
-    <meta property="og:title" content="About" />
-    <meta property="og:description" content="Joseph Alfonso is a Product Design Leader and Teacher with 15+ years designing enterprise systems at global scale. Based in Seattle." />
-    <meta property="og:url" content="https://josephalfonso.com/pages/about.html" />
-    <meta property="og:image" content="https://josephalfonso.com/images/og/default.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Joseph Alfonso, Product Design Leader and Teacher" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" href="../images/icons/favicon.svg" type="image/svg+xml" />
-    <link rel="icon" href="../images/icons/favicon-32.png" sizes="32x32" type="image/png" />
-    <link rel="apple-touch-icon" href="../images/icons/apple-touch-icon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
@@ -36,12 +22,12 @@
       (function () {
         var palettes = [
           { accent: '#0052CC', accentHover: '#003D99', accentSubtle: '#EBF2FF',   accentDark: '#4D94FF', accentHoverDark: '#7AB3FF', accentSubtleDark: '#0F1E38' },
-          { accent: '#0F766E', accentHover: '#115E59', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
+          { accent: '#0D9488', accentHover: '#0F766E', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
           { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
-          { accent: '#B45309', accentHover: '#92400E', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
-          { accent: '#BE123C', accentHover: '#9F1239', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
+          { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
+          { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
         ];
-        var dark = !window.matchMedia('(prefers-color-scheme: light)').matches; // follows the stylesheet: dark unless the system asks for light
+        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         var p = palettes[Math.floor(Math.random() * palettes.length)];
         var r = document.documentElement;
         r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
@@ -51,7 +37,6 @@
     </script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to main content</a>
 
     <!-- NAV -->
     <header class="site-header">
@@ -70,7 +55,7 @@
       </nav>
     </header>
 
-    <main id="main">
+    <main>
 
       <!-- INTRO -->
       <section class="about container">
@@ -83,13 +68,14 @@
               src="../images/joseph-alfonso.jpg"
               alt="Joseph Alfonso"
               class="about__image"
+              onerror="this.style.background='var(--color-surface)';this.removeAttribute('src')"
             />
           </div>
 
           <!-- Content -->
           <div class="about__content">
             <p class="eyebrow">About</p>
-            <h1 class="about__title">I believe great design makes the complex feel simple, and people happy.</h1>
+            <h1 class="about__title">I believe great design makes the complex feel simple — and people happy.</h1>
 
             <p class="about__body">
               I'm a Product Design Leader and Teacher based in Seattle with 15 years of experience
@@ -101,7 +87,7 @@
               My work tends to live at the intersection of scale and humanity. I've designed systems
               managing billions of documents across 67 countries, built real-time collaboration tools
               for K–12 classrooms, and redesigned learning experiences used by millions of students
-              and educators. The common thread isn't the subject matter, it's the conviction that
+              and educators. The common thread isn't the subject matter — it's the conviction that
               complex systems deserve thoughtful, accessible, human-centered design.
             </p>
 
@@ -110,7 +96,7 @@
               <a href="https://designlab.com" target="_blank" rel="noopener noreferrer">Designlab</a>
               and the
               <a href="https://www.svcseattle.com" target="_blank" rel="noopener noreferrer">School of Visual Concepts</a>
-              in Seattle. Teaching keeps me honest. Explaining your decisions clearly to someone
+              in Seattle. Teaching keeps me honest — explaining your decisions clearly to someone
               learning the craft is one of the best ways to pressure-test whether you actually
               understand them yourself.
             </p>
@@ -140,7 +126,7 @@
 
           <div class="about-timeline__item">
             <div class="about-timeline__meta">
-              <p class="label">2020–Present</p>
+              <p class="label">2020 — Present</p>
             </div>
             <div class="about-timeline__body">
               <p class="about-timeline__role">Lead Product Designer</p>
@@ -232,7 +218,7 @@
             <p class="about-principles__body">
               Enterprise design is hard because the problems are genuinely hard. Legal constraints,
               country-specific requirements, competing stakeholder needs, legacy systems. I don't
-              find this discouraging. Constraints are where good design actually happens. They're
+              find this discouraging. Constraints are where good design actually happens — they're
               what separates interesting solutions from obvious ones.
             </p>
           </div>
@@ -254,7 +240,7 @@
           When I'm not designing: mentoring, laser cutting things in my garage, and
           tinkering with home automation setups that are almost always more complicated than they need to be.
         </p>
-        <div class="about__links mt-8">
+        <div class="about__links" style="margin-top: var(--space-8);">
           <a href="contact.html" class="btn btn--primary">Get in touch</a>
           <a href="../index.html" class="btn btn--secondary">View work</a>
         </div>

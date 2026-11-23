@@ -13,20 +13,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Discovery Education Home | Joseph Alfonso</title>
     <meta name="description" content="How I redesigned the Discovery Education platform homepage to serve millions of teachers and students with a personalized, accessible, and deeply researched new experience." />
-    <link rel="canonical" href="https://josephalfonso.com/pages/home.html" />
-    <meta property="og:type" content="article" />
-    <meta property="og:site_name" content="Joseph Alfonso" />
-    <meta property="og:title" content="Discovery Education Home" />
-    <meta property="og:description" content="How I redesigned the Discovery Education platform homepage to serve millions of teachers and students with a personalized, accessible, and deeply researched new experience." />
-    <meta property="og:url" content="https://josephalfonso.com/pages/home.html" />
-    <meta property="og:image" content="https://josephalfonso.com/images/og/home.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Discovery Education Home across multiple devices" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" href="../images/icons/favicon.svg" type="image/svg+xml" />
-    <link rel="icon" href="../images/icons/favicon-32.png" sizes="32x32" type="image/png" />
-    <link rel="apple-touch-icon" href="../images/icons/apple-touch-icon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
@@ -36,12 +22,12 @@
       (function () {
         var palettes = [
           { accent: '#0052CC', accentHover: '#003D99', accentSubtle: '#EBF2FF',   accentDark: '#4D94FF', accentHoverDark: '#7AB3FF', accentSubtleDark: '#0F1E38' },
-          { accent: '#0F766E', accentHover: '#115E59', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
+          { accent: '#0D9488', accentHover: '#0F766E', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
           { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
-          { accent: '#B45309', accentHover: '#92400E', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
-          { accent: '#BE123C', accentHover: '#9F1239', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
+          { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
+          { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
         ];
-        var dark = !window.matchMedia('(prefers-color-scheme: light)').matches; // follows the stylesheet: dark unless the system asks for light
+        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         var p = palettes[Math.floor(Math.random() * palettes.length)];
         var r = document.documentElement;
         r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
@@ -51,7 +37,6 @@
     </script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to main content</a>
 
     <!-- NAV -->
     <header class="site-header">
@@ -70,7 +55,7 @@
       </nav>
     </header>
 
-    <main id="main">
+    <main>
 
       <!-- CASE STUDY HEADER -->
       <section class="case-study-header container">
@@ -111,7 +96,7 @@
       <!-- COVER IMAGE -->
       <div class="case-study-cover container">
         <img
-          src="../images/home/Platform-HeroDevices.webp"
+          src="../main/assets/img/home/Platform-HeroDevices.jpg"
           alt="Discovery Education platform shown across multiple devices"
           loading="eager"
         />
@@ -156,7 +141,7 @@
 
         <figure>
           <img
-            src="../images/home/oldhome.webp"
+            src="../main/assets/img/home/oldhome.png"
             alt="The original Discovery Education homepage"
             loading="lazy"
           />
@@ -165,7 +150,7 @@
 
         <figure>
           <img
-            src="../images/home/OldHomeAnalytics.webp"
+            src="../main/assets/img/home/OldHomeAnalytics.png"
             alt="Analytics data from the original homepage showing low engagement"
             loading="lazy"
           />
@@ -200,7 +185,7 @@
 
         <figure>
           <img
-            src="../images/home/Homeresearch1.webp"
+            src="../main/assets/img/home/Homeresearch1.png"
             alt="Research documentation and notes from homepage usability sessions"
             loading="lazy"
           />
@@ -209,7 +194,7 @@
 
         <figure>
           <img
-            src="../images/home/Homeresearch2.webp"
+            src="../main/assets/img/home/Homeresearch2.png"
             alt="Research synthesis and pattern identification"
             loading="lazy"
           />
@@ -218,7 +203,7 @@
 
         <figure>
           <img
-            src="../images/home/HomeResearch3.webp"
+            src="../main/assets/img/home/HomeResearch3.png"
             alt="Research findings and design implications"
             loading="lazy"
           />
@@ -227,7 +212,7 @@
 
         <figure>
           <img
-            src="../images/home/SWOT.webp"
+            src="../main/assets/img/home/SWOT.jpg"
             alt="SWOT analysis for the homepage redesign"
             loading="lazy"
           />
@@ -239,7 +224,7 @@
         <h3>Differentiating a product suite full of similar things</h3>
         <p>
           Discovery Education's content library is enormous, and a meaningful portion of
-          it looks similar at a glance. Videos, articles, interactive tools: surfacing
+          it looks similar at a glance. Videos, articles, interactive tools — surfacing
           these on a homepage without them blurring together required a system-level approach
           to visual differentiation. We worked closely with content teams to ensure the
           right imagery was in place and developed a set of visual conventions that made
@@ -248,7 +233,7 @@
 
         <figure>
           <img
-            src="../images/home/SameProduct.webp"
+            src="../main/assets/img/home/SameProduct.png"
             alt="Challenge of differentiating similar products in the Discovery Education suite"
             loading="lazy"
           />
@@ -300,7 +285,7 @@
 
         <figure>
           <img
-            src="../images/home/HomeNew.webp"
+            src="../main/assets/img/home/HomeNew.png"
             alt="The redesigned Discovery Education homepage"
             loading="lazy"
           />
@@ -309,8 +294,8 @@
 
         <figure>
           <video autoplay loop muted playsinline aria-label="Drag and drop card interaction demonstration" loading="lazy">
-            <source src="../images/home/Cards2.webm" type="video/webm" />
-            <img src="../images/home/Cards2.gif" alt="Drag and drop card interaction demonstration" />
+            <source src="../main/assets/img/home/Cards2.webm" type="video/webm" />
+            <img src="../main/assets/img/home/Cards2.gif" alt="Drag and drop card interaction demonstration" />
           </video>
           <figcaption>Drag-and-drop reordering let users arrange their homepage around their own priorities.</figcaption>
         </figure>
@@ -333,7 +318,7 @@
 
         <figure>
           <img
-            src="../images/home/OnboardingScreen1.webp"
+            src="../main/assets/img/home/OnboardingScreen1.png"
             alt="Early onboarding flow version one"
             loading="lazy"
           />
@@ -342,7 +327,7 @@
 
         <figure>
           <img
-            src="../images/home/OnboardingScreen2.webp"
+            src="../main/assets/img/home/OnboardingScreen2.png"
             alt="Intermediate onboarding iteration"
             loading="lazy"
           />
@@ -351,7 +336,7 @@
 
         <figure>
           <img
-            src="../images/home/OnboardingConsolidated1.webp"
+            src="../main/assets/img/home/OnboardingConsolidated1.png"
             alt="Final consolidated single-screen onboarding on desktop"
             loading="lazy"
           />
@@ -360,7 +345,7 @@
 
         <figure>
           <img
-            src="../images/home/OnboardingConsolidatedMobile.webp"
+            src="../main/assets/img/home/OnboardingConsolidatedMobile.png"
             alt="Final consolidated onboarding on mobile"
             loading="lazy"
           />
@@ -378,7 +363,7 @@
 
         <figure>
           <img
-            src="../images/home/SetupChanges.webp"
+            src="../main/assets/img/home/SetupChanges.png"
             alt="Setup flow changes and design notes"
             loading="lazy"
           />
@@ -387,7 +372,7 @@
 
         <figure>
           <img
-            src="../images/home/Notes1.webp"
+            src="../main/assets/img/home/Notes1.jpg"
             alt="Design and research notes from the project"
             loading="lazy"
           />
@@ -443,7 +428,7 @@
           <span class="case-study-nav__label">Previous</span>
           <span class="case-study-nav__title">Media Redesign</span>
         </a>
-        <a href="edm.html" class="case-study-nav__link case-study-nav__link--next">
+        <a href="../main/EDM.html" class="case-study-nav__link case-study-nav__link--next">
           <span class="case-study-nav__label">Next</span>
           <span class="case-study-nav__title">Employee Document Management</span>
         </a>
