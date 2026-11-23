@@ -451,6 +451,29 @@ section + section {
    4. NAVIGATION
    ============================================================ */
 
+/* Skip link: first focusable element on every page, visible only on focus */
+.skip-link {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: calc(var(--z-nav) + 1);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-text);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  transform: translateY(-200%);
+}
+
+.skip-link:hover,
+.skip-link:focus,
+.skip-link:focus-visible {
+  color: var(--color-text-inverse);
+  transform: translateY(0);
+}
+
 .site-header {
   position: sticky;
   top: 0;
