@@ -2,22 +2,27 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.google.com https://*.g.doubleclick.net; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.google.com https://*.g.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="../../images/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../images/icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../images/icons/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Design Review Card</title>
 <style>
 :root{
-  --bg:#f7f5f1; --paper:#fff; --ink:#1a1e24; --ink-2:#525a64; --ink-3:#8b939d;
+  --bg:#f7f5f1; --paper:#fff; --ink:#1a1e24; --ink-2:#525a64; --ink-3:#626a74;
   --line:#e4dfd6; --line-2:#f1ede6;
-  --accent:#1f3fbe; --accent-bg:#ecf0fd;
+  --accent:#1f3fbe; --accent-bg:#ecf0fd; --on-fill:#fff;
   --ok:#136b41; --ok-bg:#e7f4ed;
   --q:#8a5300; --q-bg:#fbf0da;
-  --skip:#8b939d; --skip-bg:#eeebe5;
+  --skip:#626a74; --skip-bg:#eeebe5;
 }
 @media (prefers-color-scheme:dark){
   :root{
     --bg:#15181c; --paper:#1d2128; --ink:#eff2f5; --ink-2:#b4bcc6; --ink-3:#868f99;
     --line:#2f353e; --line-2:#252a31;
-    --accent:#82a0ff; --accent-bg:#1e2740;
+    --accent:#82a0ff; --accent-bg:#1e2740; --on-fill:#10131a;
     --ok:#63d69e; --ok-bg:#173123;
     --q:#eab55f; --q-bg:#342710;
     --skip:#868f99; --skip-bg:#262b32;
@@ -108,6 +113,7 @@ ol.fu-list .fu-src{font:600 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace
 .fu-empty{font-size:.88rem;color:var(--ink-3);font-style:italic}
 .fu-skipped{margin-top:16px;padding-top:14px;border-top:1px solid var(--line-2);font-size:.85rem;color:var(--ink-2)}
 .fu-skipped b{color:var(--ink)}
+.fu-skipped--ai,.fu-skipped--ai b{color:var(--q)}
 
 /* status */
 .bar{position:fixed;left:0;right:0;bottom:0;background:var(--paper);border-top:1px solid var(--line);box-shadow:0 -3px 18px rgba(0,0,0,.08);padding:12px 20px;z-index:40}
@@ -118,7 +124,7 @@ ol.fu-list .fu-src{font:600 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace
 .acts{margin-left:auto;display:flex;gap:7px;flex-wrap:wrap}
 .btn{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:8px 13px;border-radius:7px;font:600 .83rem/1 inherit;cursor:pointer}
 .btn:hover{border-color:var(--accent)}
-.btn.pri{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--on-fill)}
 
 footer{margin-top:32px;padding-top:14px;border-top:1px solid var(--line);font-size:.78rem;color:var(--ink-3);line-height:1.7}
 footer a{color:var(--accent)}
@@ -352,7 +358,7 @@ function render(){
   }
   const aiQs = followups.filter(f => f.sec === 'AI check').length;
   if(aiQs >= 3){
-    html += `<div class="fu-skipped" style="color:var(--q)"><b style="color:var(--q)">${aiQs} of 5 AI questions are open.</b> Worth running a full AI Readiness Review before this goes to build.</div>`;
+    html += `<div class="fu-skipped fu-skipped--ai"><b>${aiQs} of 5 AI questions are open.</b> Worth running a full AI Readiness Review before this goes to build.</div>`;
   }
   body.innerHTML = html;
 }

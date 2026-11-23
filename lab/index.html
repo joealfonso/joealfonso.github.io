@@ -2,46 +2,36 @@
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV6CVTX4BZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K17M6WE3GP"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-NV6CVTX4BZ');
+      gtag('config', 'G-K17M6WE3GP');
     </script>
     <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.google.com https://*.g.doubleclick.net; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.google.com https://*.g.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lab | Joseph Alfonso</title>
     <meta name="description" content="Experiments and prototypes by Joseph Alfonso." />
     <meta name="robots" content="noindex" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    <link rel="icon" href="../images/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../images/icons/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../images/icons/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&display=swap">
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/styles.css" />
-    <script>
-      (function () {
-        var palettes = [
-          { accent: '#0052CC', accentHover: '#003D99', accentSubtle: '#EBF2FF',   accentDark: '#4D94FF', accentHoverDark: '#7AB3FF', accentSubtleDark: '#0F1E38' },
-          { accent: '#0D9488', accentHover: '#0F766E', accentSubtle: '#CCFBF1',   accentDark: '#2DD4BF', accentHoverDark: '#5EEAD4', accentSubtleDark: '#042F2E' },
-          { accent: '#7C3AED', accentHover: '#6D28D9', accentSubtle: '#EDE9FE',   accentDark: '#A78BFA', accentHoverDark: '#C4B5FD', accentSubtleDark: '#1E1040' },
-          { accent: '#D97706', accentHover: '#B45309', accentSubtle: '#FEF3C7',   accentDark: '#FCD34D', accentHoverDark: '#FDE68A', accentSubtleDark: '#2D1B00' },
-          { accent: '#E11D48', accentHover: '#BE123C', accentSubtle: '#FFE4E6',   accentDark: '#FB7185', accentHoverDark: '#FDA4AF', accentSubtleDark: '#2D0A12' },
-        ];
-        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var p = palettes[Math.floor(Math.random() * palettes.length)];
-        var r = document.documentElement;
-        r.style.setProperty('--color-accent',        dark ? p.accentDark       : p.accent);
-        r.style.setProperty('--color-accent-hover',  dark ? p.accentHoverDark  : p.accentHover);
-        r.style.setProperty('--color-accent-subtle', dark ? p.accentSubtleDark : p.accentSubtle);
-      })();
-    </script>
+    <script src="../js/theme.js"></script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
     <!-- NAV -->
     <header class="site-header">
-      <nav class="nav">
+      <nav class="nav" aria-label="Main">
         <a href="../index.html" class="nav__logo">Joseph Alfonso</a>
         <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
           <span class="nav__toggle-bar"></span>
@@ -51,13 +41,15 @@
         <ul class="nav__links" id="nav-links">
           <li><a href="../pages/about.html">About</a></li>
           <li><a href="../pages/work.html">Work</a></li>
+          <li><a href="../pages/writing.html">Writing</a></li>
           <li><a href="../pages/contact.html">Contact</a></li>
           <li><a href="index.html" aria-current="page">Lab</a></li>
+          <li><a class="nav__callout" href="../pages/side-projects.html">Side projects</a></li>
         </ul>
       </nav>
     </header>
 
-    <main>
+    <main id="main">
 
       <section class="container">
         <div class="lab-hero">
@@ -66,12 +58,8 @@
           <p class="lab-hero__desc">A scratchpad for prototypes, UI explorations, and design ideas in progress. Nothing here is finished.</p>
         </div>
 
-        <!-- Experiment list — add new entries here -->
+        <!-- Experiment list: add new entries here -->
         <div class="lab-grid">
-          <a href="photography.html" class="lab-card">
-            <p class="lab-card__title">Photography</p>
-            <p class="lab-card__meta">Infinite pan-anywhere canvas — drag to explore photos scattered across a seamless, wrapping space.</p>
-          </a>
           <a href="design-review-card/" class="lab-card">
             <p class="lab-card__title">Design Review Card</p>
             <p class="lab-card__meta">A fast, repeatable pass over any design before it goes to build. Produces a follow-up list, not a grade. Includes an optional AI check.</p>
@@ -90,12 +78,17 @@
       <div class="site-footer__inner">
         <p class="site-footer__copy">&copy; 2026 Joseph Alfonso</p>
         <nav class="site-footer__links" aria-label="Social links">
-          <a href="https://www.linkedin.com/in/jalfonsodesign/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a
+            href="https://www.linkedin.com/in/jalfonsodesign/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >LinkedIn ↗</a>
           <a href="mailto:J.ALFONSO84@gmail.com">Email</a>
         </nav>
       </div>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/analytics.js"></script>
   </body>
 </html>

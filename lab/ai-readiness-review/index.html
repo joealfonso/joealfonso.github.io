@@ -2,13 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.google.com https://*.g.doubleclick.net; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.google.com https://*.g.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="../../images/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../images/icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../images/icons/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Readiness Review v1.0</title>
 <style>
 :root{
-  --bg:#f6f4f0; --paper:#fff; --ink:#181c22; --ink-2:#4c545e; --ink-3:#79828d;
+  --bg:#f6f4f0; --paper:#fff; --ink:#181c22; --ink-2:#4c545e; --ink-3:#626a74;
   --line:#e3ded4; --line-2:#f0ece4;
-  --accent:#1f3fbe; --accent-bg:#eaeefc;
+  --accent:#1f3fbe; --accent-bg:#eaeefc; --on-fill:#fff;
   --ok:#136b41; --ok-bg:#e6f4ec;
   --warn:#8a5300; --warn-bg:#faefdb;
   --bad:#a91f16; --bad-bg:#fbe9e7;
@@ -19,7 +24,7 @@
   :root{
     --bg:#14171b; --paper:#1c2027; --ink:#eef1f4; --ink-2:#b3bcc6; --ink-3:#8a939d;
     --line:#2e343d; --line-2:#252a31;
-    --accent:#7f9cff; --accent-bg:#1e2740;
+    --accent:#7f9cff; --accent-bg:#1e2740; --on-fill:#10131a;
     --ok:#5fd39b; --ok-bg:#16301f;
     --warn:#e8b25c; --warn-bg:#33260f;
     --bad:#ff8b80; --bad-bg:#3a1a17;
@@ -180,13 +185,13 @@ ol.refs-list .rl-key{font:700 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospa
 .v-ready{background:var(--ok-bg);color:var(--ok)}
 .v-cond{background:var(--warn-bg);color:var(--warn)}
 .v-not{background:var(--bad-bg);color:var(--bad)}
-.v-block{background:var(--bad);color:#fff}
+.v-block{background:var(--bad);color:var(--on-fill)}
 .metrics{font:600 .8rem/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink-2)}
 .blockers{flex-basis:100%;font-size:.79rem;color:var(--bad);font-weight:600;line-height:1.5}
 .acts{margin-left:auto;display:flex;gap:7px;flex-wrap:wrap}
 .btn{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:9px 13px;border-radius:7px;font:600 .83rem/1 inherit;cursor:pointer}
 .btn:hover{border-color:var(--accent)}
-.btn.pri{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--on-fill)}
 .btn.pri:hover{opacity:.88}
 
 footer.doc-foot{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-size:.8rem;color:var(--ink-3);line-height:1.7}
@@ -209,6 +214,13 @@ footer.doc-foot a{color:var(--accent)}
 }
 .backlink:hover{border-color:var(--accent);color:var(--accent)}
 @media print{.backlink{display:none}}
+
+/* Scoring method card */
+.card.method p{font-size:.92rem;color:var(--ink-2)}
+.card.method p:first-child{margin-top:0}
+.card.method p:last-child{margin-bottom:0}
+.card.method strong{color:var(--ink)}
+.card.method ol{font-size:.9rem;color:var(--ink-2);padding-left:20px}
 </style>
 </head>
 <body>
@@ -291,20 +303,20 @@ footer.doc-foot a{color:var(--accent)}
 <section class="section" id="method">
   <span class="sec-num">Section 2</span>
   <h2>Scoring method</h2>
-  <div class="card">
-    <p style="margin-top:0;font-size:.92rem;color:var(--ink-2)">
-      <strong style="color:var(--ink)">Scale.</strong> Each criterion is scored <b>0</b> (not met), <b>1</b> (partially met), or <b>2</b> (met, with evidence). <b>N/A</b> removes a criterion from both the numerator and denominator. A score of 2 requires a stated artifact, test result, or observation in the evidence field, not reviewer impression. This is the primary control on inter-rater drift.
+  <div class="card method">
+    <p>
+      <strong>Scale.</strong> Each criterion is scored <b>0</b> (not met), <b>1</b> (partially met), or <b>2</b> (met, with evidence). <b>N/A</b> removes a criterion from both the numerator and denominator. A score of 2 requires a stated artifact, test result, or observation in the evidence field, not reviewer impression. This is the primary control on inter-rater drift.
     </p>
-    <p style="font-size:.92rem;color:var(--ink-2)">
-      <strong style="color:var(--ink)">Three independent conditions</strong> must all hold for a <b>Ready</b> verdict. A single aggregate percentage can hide a systemic failure inside a good average, so it is deliberately not the only test.
+    <p>
+      <strong>Three independent conditions</strong> must all hold for a <b>Ready</b> verdict. A single aggregate percentage can hide a systemic failure inside a good average, so it is deliberately not the only test.
     </p>
-    <ol style="font-size:.9rem;color:var(--ink-2);padding-left:20px">
+    <ol>
       <li><b>Composite threshold</b> — total score meets the tier minimum.</li>
       <li><b>Dimension floor</b> — no single dimension falls below the tier floor. Prevents one neglected area being averaged away by strength elsewhere.</li>
       <li><b>Gate clearance</b> — every gate criterion active at this tier is satisfied. Gates encode obligations that cannot be traded off, largely derived from EU AI Act Articles 13, 14 and 50. A failed gate returns <b>Blocked</b> regardless of composite score.</li>
     </ol>
-    <p style="font-size:.92rem;color:var(--ink-2);margin-bottom:0">
-      <strong style="color:var(--ink)">Verdicts.</strong>
+    <p>
+      <strong>Verdicts.</strong>
       <b>Ready</b>: all three conditions met.
       <b>Conditional</b>: composite met, one other condition failed, re-review required after remediation.
       <b>Not ready</b>: composite below threshold.
@@ -327,7 +339,7 @@ footer.doc-foot a{color:var(--accent)}
   <h2>Framework crosswalk</h2>
   <p class="sec-desc">Every criterion mapped to its source obligation or finding. Use this to show a compliance, legal, or risk partner that a design review already covers ground they care about.</p>
   <div class="card xw-wrap">
-    <table class="xw"><thead><tr><th>ID</th><th>Criterion</th><th>Source references</th></tr></thead><tbody id="xw-body"></tbody></table>
+    <table class="xw"><thead><tr><th scope="col">ID</th><th scope="col">Criterion</th><th scope="col">Source references</th></tr></thead><tbody id="xw-body"></tbody></table>
   </div>
 </section>
 
